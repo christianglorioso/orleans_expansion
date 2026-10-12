@@ -172,7 +172,14 @@ OldWater_SongHouse_EventScript_SetStory22:
 	return
 
 OldWater_SongHouse_EventScript_TupeloLater:
+	goto_if_set FLAG_BADGE05_GET, OldWater_SongHouse_EventScript_TupeloLater5
 	msgbox OldWater_SongHouse_Text_TupeloLater, MSGBOX_DEFAULT
+	release
+	end
+
+@ Ch5: the brothers' verse (the song house's wall has panels for verses 1-4 only: no art for 5-8 yet, see the plan's open questions)
+OldWater_SongHouse_EventScript_TupeloLater5:
+	msgbox OldWater_SongHouse_Text_TupeloLater5, MSGBOX_DEFAULT
 	release
 	end
 
@@ -298,3 +305,8 @@ OldWater_SongHouse_Text_WrenBattleAfter:
 OldWater_SongHouse_Text_WrenNoRematch:
 	.string "WREN: Anytime. The song house is\nalways open.$"
 
+OldWater_SongHouse_Text_TupeloLater5:
+	.string "TUPELO: Five verses. The people ate\n"
+	.string "together and the land was fed. I can\p"
+	.string "hear the table in it. The wall has\n"
+	.string "no room for it yet. We'll carve one.$"

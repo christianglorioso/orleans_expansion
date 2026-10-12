@@ -8,6 +8,6 @@ CampCocodrie_Cabin3_EventScript_Captain0::
 	end
 
 CampCocodrie_Cabin3_Text_Captain0:
-	.string "will take you round the bayou\nonce the boat routes open$"
+	.string "I run the airboat. When the lake\nroad opens I'll take you across.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

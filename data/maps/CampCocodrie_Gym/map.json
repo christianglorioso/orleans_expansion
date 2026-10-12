@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CAMP_COCODRIE_GYM_BOUDREAUX0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 3,
       "y": 4,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_CAMP_COCODRIE_GYM_THIBODEAUX1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 15,
       "y": 4,
       "elevation": 3,
@@ -67,5 +67,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CampCocodrie_Gym_EventScript_JudgingTable"
+    }
+  ]
 }

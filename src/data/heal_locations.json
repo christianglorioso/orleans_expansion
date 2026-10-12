@@ -425,6 +425,16 @@
       "respawn_npc": "LOCALID_POINTE_ROUGE_POKECENTER_NURSE0",
       "respawn_x": 7,
       "respawn_y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_CAMP_COCODRIE",
+      "map": "MAP_CAMP_COCODRIE",
+      "x": 7,
+      "y": 22,
+      "respawn_map": "MAP_CAMP_COCODRIE_NURSE_CABIN",
+      "respawn_npc": "LOCALID_CAMP_COCODRIE_NURSE_CABIN_NURSE0",
+      "respawn_x": 5,
+      "respawn_y": 4
     }
   ]
 }

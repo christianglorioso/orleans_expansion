@@ -340,6 +340,27 @@ def world_gates():
     check(s26 == want26, f"story 26 (verse 5): Routes 10-13 and Lutin's Hollow open, nothing more (extra {sorted(s26 - want26)}, missing {sorted(want26 - s26)})")
 
 
+def camp_cocodrie():
+    """Chapter 5: the nurse cabin's door is held by Isaac until his battle; every cook-off ingredient and the judging table are reachable."""
+    cc = Grid("CampCocodrie")
+    isaac = next((o for o in cc.m["object_events"] if o.get("local_id") == "LOCALID_CAMP_COCODRIE_ISAAC"), None)
+    door = (7, 21)
+    nb = [(door[0] + dx, door[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+          if cc.walk(door[0] + dx, door[1] + dy) or (isaac and (door[0] + dx, door[1] + dy) == (isaac["x"], isaac["y"]))]
+    check(isaac is not None and isaac["flag"] == "FLAG_HIDE_CAMP_ISAAC" and nb == [(isaac["x"], isaac["y"])],
+          f"Camp Cocodrie: the nurse cabin door's only approach cell {nb} is held by Isaac (hidden by FLAG_HIDE_CAMP_ISAAC)")
+    # outdoor ingredient spots: standing cells next to the okra patches, the fisherman and the doors are reachable from the landing side (east edge)
+    reach = cc.fill([(48, 13), (48, 14)])
+    for label, cell in (("okra patch 1", (45, 7)), ("okra patch 2", (46, 5)), ("the dock fisherman", (24, 24)), ("the smokehouse door", (31, 22)),
+                        ("cabin 1 door", (4, 12)), ("cabin 4 door", (47, 12)), ("the gym door", (17, 12))):
+        check(cell in reach, f"Camp Cocodrie: {label} (standing cell {cell}) is reachable from the landing")
+    for room, cells in (("CampCocodrie_Gym", [(9, 4), (5, 4), (13, 4)]), ("CampCocodrie_Smokehouse", [(5, 6)]), ("CampCocodrie_Cabin1", [(3, 3)])):
+        g = Grid(room)
+        ex = g.m["warp_events"][0]
+        r = g.fill([(ex["x"], ex["y"] - 1)])
+        check(all(c in r for c in cells), f"{room}: the judging table / fire door / old neighbour's standing cells {cells} are reachable from the door")
+
+
 def all_triggers():
     names = {json.load(open(os.path.join("tools/mapgen/maps", f), encoding="utf-8"))["map"]
              for f in os.listdir("tools/mapgen/maps")
@@ -382,6 +403,7 @@ if __name__ == "__main__":
     crescent_doors()
     crescent_gym()
     pointe_gym()
+    camp_cocodrie()
     world_gates()
     pointe_rouge_east()
     all_triggers()

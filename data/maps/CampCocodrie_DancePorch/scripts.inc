@@ -8,20 +8,20 @@ CampCocodrie_DancePorch_EventScript_ZydecoBand0::
 	end
 
 CampCocodrie_DancePorch_Text_ZydecoBand0:
-	.string "gives the Exploudite after gym\n6$"
+	.string "We play Saturday nights. After a\nhard-won verse, we play louder.$"
 
 CampCocodrie_DancePorch_EventScript_Dancer1::
 	msgbox CampCocodrie_DancePorch_Text_Dancer1, MSGBOX_NPC
 	end
 
 CampCocodrie_DancePorch_Text_Dancer1:
-	.string "the accordion player came from\nISLE MARAIS$"
+	.string "The accordion player came from ISLE\nMARAIS. Same tune, other bayou.$"
 
 CampCocodrie_DancePorch_EventScript_OldNeighbours2::
 	msgbox CampCocodrie_DancePorch_Text_OldNeighbours2, MSGBOX_NPC
 	end
 
 CampCocodrie_DancePorch_Text_OldNeighbours2:
-	.string "grandma has filé, if you ask\nnicely$"
+	.string "Grandma has filé, if you ask nicely.\nVery nicely.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

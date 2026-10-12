@@ -878,6 +878,8 @@
 
 
 
+
+
 // --- orleans trainers (begin) ---
 #define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
 #define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1
@@ -926,6 +928,27 @@
 #define TRAINER_ORLEANS_WREN_OLD_WATER_CHIKORITA         TRAINER_LEROY
 #define TRAINER_ORLEANS_WREN_OLD_WATER_FUECOCO           TRAINER_WILTON_1
 #define TRAINER_ORLEANS_WREN_OLD_WATER_TOTODILE          TRAINER_EDGAR
+#define TRAINER_ORLEANS_ROUTE6_SWIMMER                   TRAINER_ALBERT
+#define TRAINER_ORLEANS_ROUTE6_FISHERMAN                 TRAINER_SAMUEL
+#define TRAINER_ORLEANS_ROUTE6_SWIMMER_F                 TRAINER_VITO
+#define TRAINER_ORLEANS_ROUTE6_SAILOR                    TRAINER_OWEN
+#define TRAINER_ORLEANS_ROUTE7_CAMPER                    TRAINER_WILTON_2
+#define TRAINER_ORLEANS_ROUTE7_PICNICKER                 TRAINER_WILTON_3
+#define TRAINER_ORLEANS_ROUTE7_BUG_MANIAC                TRAINER_WILTON_4
+#define TRAINER_ORLEANS_ROUTE7_BIRD_KEEPER               TRAINER_WILTON_5
+#define TRAINER_ORLEANS_ROUTE8_HIKER                     TRAINER_WARREN
+#define TRAINER_ORLEANS_ROUTE8_SWIMMER                   TRAINER_MARY
+#define TRAINER_ORLEANS_ROUTE8_SWIMMER_F                 TRAINER_ALEXIA
+#define TRAINER_ORLEANS_ROUTE8_FISHERMAN                 TRAINER_JODY
+#define TRAINER_ORLEANS_ROUTE8_CAMPER                    TRAINER_WENDY
+#define TRAINER_ORLEANS_ROUTE9_PICNICKER                 TRAINER_KEIRA
+#define TRAINER_ORLEANS_ROUTE9_HIKER                     TRAINER_BROOKE_1
+#define TRAINER_ORLEANS_ROUTE9_SAILOR                    TRAINER_JENNIFER
+#define TRAINER_ORLEANS_ROUTE9_BIRD_KEEPER               TRAINER_HOPE
+#define TRAINER_ORLEANS_ISAAC_CAMP                       TRAINER_SHANNON
+#define TRAINER_ORLEANS_CAMP_FISHERMAN                   TRAINER_MICHELLE
+#define TRAINER_BOUDREAUX                                TRAINER_TATE_AND_LIZA_1
+#define TRAINER_THIBODEAUX                               TRAINER_CAROLINE
 // --- orleans trainers (end) ---
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

@@ -151,26 +151,26 @@
 #define FLAG_ROUTE25_OPEN                                0x73 // Orleans: the channel to the Oldest Shrine is open (set once BOTH raids are done; the Route 25 water gate keys on it)
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_ORLEANS_POOL_024                           0x76
+#define FLAG_CAMP_FIRE_STOKED                            0x76 // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
 #define FLAG_LANDMARK_MIRAGE_TOWER           0x78
-#define FLAG_ORLEANS_POOL_025                           0x79
-#define FLAG_ORLEANS_POOL_026                           0x7A
-#define FLAG_ORLEANS_POOL_027                           0x7B
-#define FLAG_ORLEANS_POOL_028                           0x7C
-#define FLAG_ORLEANS_POOL_029                           0x7D
+#define FLAG_CAMP_ANDOUILLE                              0x79 // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
+#define FLAG_CAMP_SHRIMP                                 0x7A // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
+#define FLAG_CAMP_OKRA_ASKED                             0x7B // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
+#define FLAG_CAMP_OKRA                                   0x7C // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
+#define FLAG_CAMP_FILE                                   0x7D // Orleans Ch5: the gumbo cook-off ingredients (smokehouse fire stoked / andouille / shrimp / okra asked / okra picked / file)
 #define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
-#define FLAG_ORLEANS_POOL_030                           0x7F
+#define FLAG_RECEIVED_TM_SLUDGE_BOMB                     0x7F // Orleans Ch5: the brothers' TM Sludge Bomb was handed over
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_ORLEANS_POOL_031                           0x82
-#define FLAG_ORLEANS_POOL_032                           0x83
-#define FLAG_ORLEANS_POOL_033                           0x84
+#define FLAG_HIDE_CAMP_ISAAC                             0x82 // Orleans Ch5: Isaac left the nurse cabin door (set once his battle is won)
+#define FLAG_ROUTE7_STUMP_OPENED                         0x83 // Orleans Ch5: Route 7's cut stump (Pry Bar) was opened
+#define FLAG_ROUTE6_ITEM_STEALTH_ROCK                    0x84 // Orleans Ch5: item balls placed by the story pass
 #define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
-#define FLAG_ORLEANS_POOL_034                           0x87
+#define FLAG_ROUTE8_ITEM_NASTY_PLOT                      0x87 // Orleans Ch5: item balls placed by the story pass
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
 #define FLAG_ORLEANS_POOL_035                           0x89
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
@@ -565,7 +565,7 @@
 #define FLAG_POINTE_HIDDEN_AUGURITE                      (FLAG_HIDDEN_ITEMS_START + 0x03) // Orleans Ch4: hidden items
 #define FLAG_ROUTE4_HIDDEN_DUSK_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x04) // Orleans Ch4: hidden items
 #define FLAG_ROUTE5_HIDDEN_SUN_STONE                     (FLAG_HIDDEN_ITEMS_START + 0x05) // Orleans Ch4: hidden items
-#define FLAG_ORLEANS_POOL_181                           (FLAG_HIDDEN_ITEMS_START + 0x06)
+#define FLAG_CAMP_HIDDEN_PEAT_BLOCK                      (FLAG_HIDDEN_ITEMS_START + 0x06) // Orleans Ch5: hidden Peat Block at the camp
 #define FLAG_ORLEANS_POOL_182                           (FLAG_HIDDEN_ITEMS_START + 0x07)
 #define FLAG_ORLEANS_POOL_183                           (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_ORLEANS_POOL_184                           (FLAG_HIDDEN_ITEMS_START + 0x09)
