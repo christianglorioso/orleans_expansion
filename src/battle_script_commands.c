@@ -7504,6 +7504,7 @@ static void Cmd_switchoutabilities(void)
         MarkBattlerForControllerExec(battler);
         break;
     case ABILITY_REGENERATOR:
+    case ABILITY_GRAVEYARD_MOSS:
     {
         u32 regenerate = GetNonDynamaxMaxHP(battler) / 3;
         regenerate += gBattleMons[battler].hp;

@@ -4773,6 +4773,28 @@ BattleScript_ActivateTerrainAbility:
 	restoretarget
 	return
 
+BattleScript_DeathRollActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TARGETCANTESCAPENOW
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_ClingingMossActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	call BattleScript_MoveEffectLeechSeed
+	return
+
+BattleScript_WebWeaverActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	setstickyweb BattleScript_WebWeaverActivatesEnd
+	printstring STRINGID_STICKYWEBUSED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_WebWeaverActivatesEnd:
+	return
+
 BattleScript_ElectricSurgeActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp

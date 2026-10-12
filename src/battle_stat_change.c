@@ -565,7 +565,7 @@ static bool32 IsMistProtected(struct BattleCalcValues *cv, struct StatChange *st
     if (st->certain)
         return FALSE;
 
-    if (!IsBattlerAlly(cv->battlerDef, cv->battlerAtk) && cv->abilities[cv->battlerAtk] == ABILITY_INFILTRATOR)
+    if (!IsBattlerAlly(cv->battlerDef, cv->battlerAtk) && ABILITY_IS_INFILTRATOR(cv->abilities[cv->battlerAtk]))
         return FALSE;
 
     if (!st->onlyChecking)
@@ -646,6 +646,7 @@ static bool32 IsIntimidateBlocked(struct BattleCalcValues *cv, struct StatChange
     {
     case ABILITY_INNER_FOCUS:
     case ABILITY_SCRAPPY:
+    case ABILITY_ZYDECO:
     case ABILITY_OWN_TEMPO:
     case ABILITY_OBLIVIOUS:
         if (GetConfig(B_UPDATED_INTIMIDATE) < GEN_8)
@@ -787,6 +788,7 @@ static void AdjustStatStage(struct BattleCalcValues *cv, struct StatChange *st)
     switch (cv->abilities[cv->battlerDef])
     {
     case ABILITY_CONTRARY:
+    case ABILITY_REGAL_COIL:
         st->stage = -1 * st->stage;
         if (!st->onlyChecking)
             RecordAbilityBattle(cv->battlerDef, cv->abilities[cv->battlerDef]);
@@ -806,6 +808,7 @@ static bool32 CanAbilityPreventStatLoss(enum Ability ability)
     switch (ability)
     {
     case ABILITY_CLEAR_BODY:
+    case ABILITY_FLEUR_DE_LIS:
     case ABILITY_FULL_METAL_BODY:
     case ABILITY_WHITE_SMOKE:
         return TRUE;
@@ -954,7 +957,7 @@ bool32 CompareStat(enum BattlerId battler, enum Stat statId, u32 cmpTo, u32 cmpK
 
     // Because this command is used as a way of checking if a stat can be lowered/raised,
     // we need to do some modification at run-time.
-    if (ability == ABILITY_CONTRARY)
+    if (ABILITY_IS_CONTRARY(ability))
     {
         if (cmpKind == CMP_GREATER_THAN)
             cmpKind = CMP_LESS_THAN;

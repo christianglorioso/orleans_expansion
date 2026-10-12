@@ -6,6 +6,8 @@
 #include "constants/battle_string_ids.h"
 #include "constants/hold_effects.h"
 #include "constants/battle_stat_change.h"
+#include "constants/abilities.h"
+#include "orleans_abilities.h"
 
 struct DamageContext
 {
@@ -269,6 +271,7 @@ void SetMonVolatile(enum BattlerId battler, enum Volatile _volatile, u32 newValu
 bool32 ItemHealMonVolatile(enum BattlerId battler, enum Item itemId);
 void PushHazardTypeToQueue(enum BattleSide side, enum Hazards hazardType);
 bool32 IsHazardOnSide(enum BattleSide side, enum Hazards hazardType);
+void OrleansApplyDeadZone(enum BattlerId battler);
 bool32 AreAnyHazardsOnSide(enum BattleSide side);
 bool32 IsHazardOnSideAndClear(enum BattleSide side, enum Hazards hazardType);
 void RemoveHazardFromField(enum BattleSide side, enum Hazards hazardType);

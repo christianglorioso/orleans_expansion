@@ -1539,6 +1539,7 @@ bool32 IsDazzlingAbility(enum Ability ability)
     {
     case ABILITY_DAZZLING:        return TRUE;
     case ABILITY_QUEENLY_MAJESTY: return TRUE;
+    case ABILITY_REGAL_COIL:      return TRUE;
     case ABILITY_ARMOR_TAIL:      return TRUE;
     default: break;
     }
@@ -3495,7 +3496,7 @@ static enum MoveEndResult MoveEndQueueDancer(struct BattleCalcValues *cv)
         if (battler == cv->battlerAtk)
             continue;
 
-        if (cv->abilities[battler] == ABILITY_DANCER)
+        if (ABILITY_IS_DANCER(cv->abilities[battler]))
             gBattleMons[battler].volatiles.activateDancer = TRUE;
     }
 
@@ -4351,7 +4352,7 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
                     gBattleScripting.moveendState++;
                     return MOVEEND_RESULT_CONTINUE;
                 }
-                else if (cv->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
+                else if (ABILITY_IS_SUCTION_CUPS(cv->abilities[battlerDef]))
                 {
                     gBattlerAbility = battlerDef;
                     BattleScriptCall(BattleScript_AbilityPreventsPhasingOutRet);

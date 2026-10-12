@@ -556,7 +556,9 @@ struct PartyState
     u32 sentOut:1;
     u32 isKnockedOff:1;
     u32 freezeTurns:2;
-    u32 padding:3;
+    u32 softShellMolted:1; // Orleans: Soft Shell, once per battle
+    u32 webWeaverUsed:1; // Orleans: Web Weaver, once per battle
+    u32 padding:1;
     enum Item usedHeldItem;
 };
 

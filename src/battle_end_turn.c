@@ -1343,6 +1343,9 @@ static bool32 HandleEndTurnThirdEventBlock(enum BattlerId battler)
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
             break;
+        case ABILITY_DEAD_ZONE:
+            OrleansApplyDeadZone(battler);
+            break;
         default:
             break;
         }

@@ -370,7 +370,7 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
         }
         break;
     case HAZARDS_STEALTH_ROCK:
-        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_BLUR)
         {
             gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)

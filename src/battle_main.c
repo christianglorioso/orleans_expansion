@@ -43,6 +43,7 @@
 #include "pokeball.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "rtc.h"
 #include "pokerus.h"
 #include "random.h"
 #include "recorded_battle.h"
@@ -4403,6 +4404,8 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gBattleMons[battler].volatiles.unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_NIGHT_GLOW && GetTimeOfDay() == TIME_NIGHT)
+        speed = (speed * 150) / 100;
 
     // player's badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
@@ -4491,6 +4494,15 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
     else if (ability == ABILITY_TRIAGE && IsHealingMove(move))
     {
         priority += 3;
+    }
+    else if (ability == ABILITY_PENDULUM && OrleansIsSleepInducingMove(move))
+    {
+        gProtectStructs[battler].pranksterElevated = 1;
+        priority++;
+    }
+    else if (ability == ABILITY_PLUNGE_DIVE && IsBattlersFirstTurn(battler))
+    {
+        priority++;
     }
 
     return priority;
