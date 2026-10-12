@@ -4635,6 +4635,10 @@ enum Species NationalPokedexNumToSpecies(enum NationalDexOrder nationalNum)
     if (species == NUM_SPECIES)
         return SPECIES_NONE;
 
+    // Orleans: forms that have their own national number (Alolan Vulpix, Rotom-Heat, ...) are their own entry
+    if (gSpeciesInfo[GET_BASE_SPECIES_ID(species)].natDexNum != nationalNum)
+        return species;
+
     return GET_BASE_SPECIES_ID(species);
 }
 

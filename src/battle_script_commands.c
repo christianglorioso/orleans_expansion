@@ -1722,6 +1722,7 @@ void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effectBattle
         break;
     case MOVE_EFFECT_BURN:
         gBattleMons[effectBattler].status1 |= STATUS1_BURN;
+        gBattleStruct->burnedByLureLight[effectBattler] = (battlerAtk != effectBattler && GetBattlerAbility(battlerAtk) == ABILITY_LURE_LIGHT);
         gBattlescriptCurrInstr = BattleScript_MoveEffectBurn;
         break;
     case MOVE_EFFECT_FREEZE:

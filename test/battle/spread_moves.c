@@ -65,7 +65,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will activate both resist
         PLAYER(SPECIES_GARDEVOIR);
         PLAYER(SPECIES_RALTS);
         OPPONENT(SPECIES_RAICHU) { Item(ITEM_CHILAN_BERRY); }
-        OPPONENT(SPECIES_SANDSLASH) { Item(ITEM_CHILAN_BERRY); }
+        OPPONENT(SPECIES_DUGTRIO) { Item(ITEM_CHILAN_BERRY); } // Orleans: Sandslash is Ground/Steel now
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_HYPER_VOICE); }
         TURN { MOVE(playerLeft, MOVE_HYPER_VOICE); }
@@ -78,7 +78,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will activate both resist
         HP_BAR(opponentRight, captureDamage: &opponentRightDmg[0]);
 
         MESSAGE("The opposing Raichu's Chilan Berry lessened the damage it took!");
-        MESSAGE("The opposing Sandslash's Chilan Berry lessened the damage it took!");
+        MESSAGE("The opposing Dugtrio's Chilan Berry lessened the damage it took!");
 
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPER_VOICE, playerLeft);
@@ -102,7 +102,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: If a spread move attack will activate a resist
         PLAYER(SPECIES_GARDEVOIR);
         PLAYER(SPECIES_RALTS);
         OPPONENT(SPECIES_RAICHU)
-        OPPONENT(SPECIES_SANDSLASH) { Item(ITEM_CHILAN_BERRY); }
+        OPPONENT(SPECIES_DUGTRIO) { Item(ITEM_CHILAN_BERRY); } // Orleans: Sandslash is Ground/Steel now
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_HYPER_VOICE); }
         TURN { MOVE(playerLeft, MOVE_HYPER_VOICE); }
@@ -112,7 +112,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: If a spread move attack will activate a resist
         HP_BAR(opponentLeft, captureDamage: &opponentLeftDmg[0]);
         HP_BAR(opponentRight, captureDamage: &opponentRightDmg[0]);
 
-        MESSAGE("The opposing Sandslash's Chilan Berry lessened the damage it took!");
+        MESSAGE("The opposing Dugtrio's Chilan Berry lessened the damage it took!");
 
         ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPER_VOICE, playerLeft);
         HP_BAR(opponentLeft, captureDamage: &opponentLeftDmg[1]);
@@ -457,7 +457,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: Doesn't affect any target")
 DOUBLE_BATTLE_TEST("Spread Moves: Unless move hits every target user will not include partner in the target count")
 {
     GIVEN {
-        PLAYER(SPECIES_SANDSLASH);
+        PLAYER(SPECIES_DUGTRIO); // Orleans: Sandslash is Ground/Steel now
         PLAYER(SPECIES_WYNAUT) { HP(1); }
         PLAYER(SPECIES_RALTS);
         OPPONENT(SPECIES_TORKOAL);

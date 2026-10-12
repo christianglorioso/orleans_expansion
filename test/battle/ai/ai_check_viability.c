@@ -65,13 +65,13 @@ AI_SINGLE_BATTLE_TEST("AI sees increased base power of Wake Up Slap")
         ASSUME(GetMoveEffect(MOVE_WAKE_UP_SLAP) == EFFECT_DOUBLE_POWER_ON_ARG_STATUS);
         ASSUME(GetMoveEffectArg_Status(MOVE_WAKE_UP_SLAP) == STATUS1_SLEEP);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_MEGANIUM) { HP(35); Status1(status1); }
+        PLAYER(SPECIES_BAYLEEF) { HP(35); Status1(status1); } // Orleans: Meganium's stats changed
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_BODY_SLAM, MOVE_WAKE_UP_SLAP); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, expectedMove); }
     } SCENE {
         if (expectedMove == MOVE_WAKE_UP_SLAP)
-            MESSAGE("Meganium fainted!");
+            MESSAGE("Bayleef fainted!");
     }
 }
 
@@ -156,13 +156,13 @@ AI_SINGLE_BATTLE_TEST("AI will only use Dream Eater if target is asleep")
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_MEGANIUM) { HP(38); Status1(status1); }
+        PLAYER(SPECIES_BAYLEEF) { HP(38); Status1(status1); } // Orleans: Meganium's stats changed
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_BODY_SLAM, MOVE_DREAM_EATER); }
     } WHEN {
         TURN { EXPECT_MOVE(opponent, expectedMove); }
     } SCENE {
         if (expectedMove == MOVE_DREAM_EATER)
-            MESSAGE("Meganium fainted!");
+            MESSAGE("Bayleef fainted!");
     }
 }
 

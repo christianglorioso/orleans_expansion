@@ -202,9 +202,9 @@ SINGLE_BATTLE_TEST("Galvanize doesn't affect Terrain Pulse's type")
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TERRAIN_PULSE) == EFFECT_TERRAIN_PULSE);
         ASSUME(GetMoveType(MOVE_TERRAIN_PULSE) == TYPE_NORMAL);
-        ASSUME(GetSpeciesType(SPECIES_SANDSHREW, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_SANDSHREW, 1) == TYPE_GROUND);
+        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_DIGLETT, 1) == TYPE_GROUND);
         PLAYER(SPECIES_GEODUDE_ALOLA) { Ability(ABILITY_GALVANIZE); }
-        OPPONENT(SPECIES_SANDSHREW);
+        OPPONENT(SPECIES_DIGLETT); // Orleans: Sandshrew is Ground/Steel now
     } WHEN {
         TURN { MOVE(opponent, MOVE_GRASSY_TERRAIN); MOVE(player, MOVE_CELEBRATE); }
         TURN { MOVE(player, MOVE_TERRAIN_PULSE); }

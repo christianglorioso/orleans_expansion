@@ -142,15 +142,15 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't override Electrify")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ELECTRIFY) == EFFECT_ELECTRIFY);
-        ASSUME(GetSpeciesType(SPECIES_SANDSHREW, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_SANDSHREW, 1) == TYPE_GROUND);
+        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_DIGLETT, 1) == TYPE_GROUND);
         PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); }
-        OPPONENT(SPECIES_SANDSHREW);
+        OPPONENT(SPECIES_DIGLETT); // Orleans: Sandshrew is Ground/Steel now
     } WHEN {
         TURN { MOVE(opponent, MOVE_ELECTRIFY); MOVE(player, MOVE_SCRATCH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ELECTRIFY, opponent);
         NOT { ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player); }
-        MESSAGE("It doesn't affect the opposing Sandshrew…");
+        MESSAGE("It doesn't affect the opposing Diglett…");
     }
 }
 
@@ -158,9 +158,9 @@ SINGLE_BATTLE_TEST("Refrigerate overrides Ion Deluge")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ION_DELUGE) == EFFECT_ION_DELUGE);
-        ASSUME(GetSpeciesType(SPECIES_SANDSHREW, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_SANDSHREW, 1) == TYPE_GROUND);
+        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_DIGLETT, 1) == TYPE_GROUND);
         PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); }
-        OPPONENT(SPECIES_SANDSHREW);
+        OPPONENT(SPECIES_DIGLETT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_ION_DELUGE); MOVE(player, MOVE_SCRATCH); }
     } SCENE {
@@ -207,16 +207,16 @@ SINGLE_BATTLE_TEST("Refrigerate doesn't affect Terrain Pulse's type")
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TERRAIN_PULSE) == EFFECT_TERRAIN_PULSE);
         ASSUME(GetMoveType(MOVE_TERRAIN_PULSE) == TYPE_NORMAL);
-        ASSUME(GetSpeciesType(SPECIES_SANDSHREW, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_SANDSHREW, 1) == TYPE_GROUND);
+        ASSUME(GetSpeciesType(SPECIES_DIGLETT, 0) == TYPE_GROUND || GetSpeciesType(SPECIES_DIGLETT, 1) == TYPE_GROUND);
         PLAYER(SPECIES_AMAURA) { Ability(ABILITY_REFRIGERATE); }
-        OPPONENT(SPECIES_SANDSHREW);
+        OPPONENT(SPECIES_DIGLETT);
     } WHEN {
         TURN { MOVE(opponent, MOVE_ELECTRIC_TERRAIN); MOVE(player, MOVE_CELEBRATE); }
         TURN { MOVE(player, MOVE_TERRAIN_PULSE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ELECTRIC_TERRAIN, opponent);
         NOT { ANIMATION(ANIM_TYPE_MOVE, MOVE_TERRAIN_PULSE, player); }
-        MESSAGE("It doesn't affect the opposing Sandshrew…");
+        MESSAGE("It doesn't affect the opposing Diglett…");
     }
 }
 

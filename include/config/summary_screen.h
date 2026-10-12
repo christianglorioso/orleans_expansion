@@ -38,14 +38,14 @@ Info taken from https://bulbapedia.bulbagarden.net/wiki/Stats_judge.
 #define P_ENABLE_ALL_LEVEL_UP_MOVES      FALSE   // If TRUE, it enables the Pokémon to learn all level up moves, regardless of its level.
 
 // TM Relearner
-#define P_TM_MOVES_RELEARNER             FALSE   // If TRUE, enables machine move relearner.
+#define P_TM_MOVES_RELEARNER             TRUE    // Orleans: TM moves relearnable from the summary screen while the TM is in the bag
 #define P_ENABLE_ALL_TM_MOVES            FALSE   // If TRUE, it enables the Pokémon to learn all TMs its compatible with, regardless of it being in the bag.
 
 // Relearner flags - Redundant if P_ENABLE_MOVE_RELEARNERS is TRUE, but still added here incase you don't want all relearners unlocked at the same time.
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
 // Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag to toggle the feature.
-#define P_FLAG_EGG_MOVES                 0       // If this flag is set, enables egg move relearner.
-#define P_FLAG_TUTOR_MOVES               0       // If this flag is set, enables tutor move relearner.
+#define P_FLAG_EGG_MOVES                 FLAG_ORLEANS_EGG_RELEARNER // Orleans: set by the Crescent City tutor; opens the egg-move list in the Move Relearner
+#define P_FLAG_TUTOR_MOVES               FLAG_ORLEANS_TUTOR_RELEARNER // Orleans: set by the Crescent City tutor; opens the tutor list in the Move Relearner
 
 // Move Relearner summary screen
 #define P_SUMMARY_SCREEN_MOVE_RELEARNER  TRUE   // If TRUE, shows an option for Pokémon to relearn moves on the summary screen moves page.

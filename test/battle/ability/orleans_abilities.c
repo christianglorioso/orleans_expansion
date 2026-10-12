@@ -260,3 +260,55 @@ SINGLE_BATTLE_TEST("Orleans: Live Wire adds the Electric type")
         EXPECT(IS_BATTLER_OF_TYPE(0, TYPE_ELECTRIC));
     }
 }
+
+SINGLE_BATTLE_TEST("Orleans: Mold Breaker ignores Buoyancy's Ground immunity (the custom Levitate twins are breakable)")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_BUOYANCY); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_MOLD_BREAKER); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_EARTHQUAKE); }
+    } SCENE {
+        HP_BAR(player);
+    }
+}
+
+SINGLE_BATTLE_TEST("Orleans: Mold Breaker ignores Cypress Knees' Water absorption")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_CYPRESS_KNEES); }
+        OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_MOLD_BREAKER); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_WATER_GUN); }
+    } SCENE {
+        HP_BAR(player);
+    }
+}
+
+SINGLE_BATTLE_TEST("Orleans: Lure Light traps a foe it burned")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_LURE_LIGHT); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
+    } WHEN {
+        TURN { MOVE(player, MOVE_WILL_O_WISP); }
+    } THEN {
+        EXPECT(opponent->status1 & STATUS1_BURN);
+        EXPECT(IsAbilityPreventingEscape(1));
+    }
+}
+
+SINGLE_BATTLE_TEST("Orleans: Lure Light does not trap a foe burned by something else")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_LURE_LIGHT); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_FLAME_ORB); }
+        OPPONENT(SPECIES_WYNAUT);
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+    } THEN {
+        EXPECT(opponent->status1 & STATUS1_BURN);
+        EXPECT(!IsAbilityPreventingEscape(1));
+    }
+}

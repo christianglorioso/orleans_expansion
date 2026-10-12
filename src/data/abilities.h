@@ -2562,6 +2562,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Blur"),
         .description = COMPOUND_STRING("Technician; immune to Rock."),
         .aiRating = 7,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_BOILING_POINT] =
@@ -2576,6 +2577,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Bottom Feeder"),
         .description = COMPOUND_STRING("Ups Attack if hit by Grass."),
         .aiRating = 5,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_BUOYANCY] =
@@ -2583,6 +2585,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Buoyancy"),
         .description = COMPOUND_STRING("Levitates; holds its ground."),
         .aiRating = 7,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_BURNING_SEASON] =
@@ -2611,6 +2614,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Croc and Roll"),
         .description = COMPOUND_STRING("Punk Rock plus Unaware."),
         .aiRating = 8,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_CYPRESS_KNEES] =
@@ -2618,6 +2622,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Cypress Knees"),
         .description = COMPOUND_STRING("Water heals; holds position."),
         .aiRating = 7,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_DEAD_ZONE] =
@@ -2646,6 +2651,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Firedamp"),
         .description = COMPOUND_STRING("Levitate; burns the poisoned."),
         .aiRating = 7,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_FISH_HAWK] =
@@ -2660,6 +2666,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Fleur-de-Lis"),
         .description = COMPOUND_STRING("Ups Grass/Fairy; stats safe."),
         .aiRating = 8,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_GRAVEYARD_MOSS] =
@@ -2674,6 +2681,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Heartwood"),
         .description = COMPOUND_STRING("Stamina plus Cypress Knees."),
         .aiRating = 8,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_IRIS_BLOOM] =
@@ -2688,6 +2696,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Live Wire"),
         .description = COMPOUND_STRING("Adds Electric; Levitates."),
         .aiRating = 8,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_LOST_LIGHT] =
@@ -2737,6 +2746,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Regal Coil"),
         .description = COMPOUND_STRING("Contrary and Queenly Majesty."),
         .aiRating = 8,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_ROLLING_BOIL] =
@@ -2765,6 +2775,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Sky Scorcher"),
         .description = COMPOUND_STRING("Levitate plus Drought."),
         .aiRating = 9,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_SOFT_SHELL] =
@@ -2786,6 +2797,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Swamp Gas"),
         .description = COMPOUND_STRING("Levitate; may poison or burn."),
         .aiRating = 7,
+        .breakable = TRUE, // mirrors a breakable stock ability (Mold Breaker ignores it)
     },
 
     [ABILITY_TIMBER] =

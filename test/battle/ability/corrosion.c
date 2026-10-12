@@ -305,7 +305,7 @@ SINGLE_BATTLE_TEST("Corrosion does not affect Poison Spikes")
 {
     enum Species species;
 
-    PARAMETRIZE { species = SPECIES_ODDISH; }
+    PARAMETRIZE { species = SPECIES_GRIMER; } // Orleans: Oddish is pure Grass now
     PARAMETRIZE { species = SPECIES_BELDUM; }
 
     GIVEN {

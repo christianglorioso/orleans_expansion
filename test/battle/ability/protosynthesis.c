@@ -263,7 +263,7 @@ SINGLE_BATTLE_TEST("Protosynthesis keeps its initial boosted stat after Speed is
 
     GIVEN {
         PLAYER(SPECIES_FLUTTER_MANE) { Ability(ABILITY_PROTOSYNTHESIS); Attack(10); Defense(10); SpAttack(150); SpDefense(120); Speed(180); Moves(MOVE_ROUND); }
-        OPPONENT(SPECIES_NINETALES) { Ability(ABILITY_DROUGHT); Moves(MOVE_ICY_WIND, MOVE_CELEBRATE); Speed(100); }
+        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); Moves(MOVE_ICY_WIND, MOVE_CELEBRATE); Speed(100); } // Orleans: Ninetales is Fire/Ghost now (Normal Round would miss)
     } WHEN {
         TURN { MOVE(player, MOVE_ROUND); MOVE(opponent, MOVE_ICY_WIND); }
         TURN { MOVE(player, MOVE_ROUND); MOVE(opponent, MOVE_CELEBRATE); }

@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Low Kick's damage varies based on the target's weight", s16 
     u32 weight;
 
     PARAMETRIZE { species = SPECIES_CUBONE;     weight = 65;   } //   0.1 - 9.9 kg   (20 power)
-    PARAMETRIZE { species = SPECIES_SANDSHREW;  weight = 120;  } //  10.0 - 24.9 kg  (40 power)
+    PARAMETRIZE { species = SPECIES_MACHOP;     weight = 195;  } //  10.0 - 24.9 kg  (40 power) (Orleans: Sandshrew is Ground/Steel now, which resists Fighting)
     PARAMETRIZE { species = SPECIES_MAROWAK;    weight = 450;  } //  25.0 - 49.9 kg  (60 power)
     PARAMETRIZE { species = SPECIES_SANDACONDA; weight = 655;  } //  50.0 - 99.9 kg  (80 power)
     PARAMETRIZE { species = SPECIES_DONPHAN;    weight = 1200; } // 100.0 - 199.9 kg (100 power)

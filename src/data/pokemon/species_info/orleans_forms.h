@@ -821,6 +821,7 @@
         .levelUpLearnset = sVoltorbLevelUpLearnset,
         .teachableLearnset = sVoltorbTeachableLearnset,
         .formSpeciesIdTable = sVoltorbFormSpeciesIdTable,
+        .eggMoveLearnset = sVoltorbOrleanianEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ELECTRODE_ORLEANIAN}),
     },
 

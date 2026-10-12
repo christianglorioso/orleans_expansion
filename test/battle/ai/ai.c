@@ -1310,7 +1310,7 @@ AI_SINGLE_BATTLE_TEST("Bolt Beak damage will be correctly seen by AI (singles)")
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_STARMIE) { Speed(playerSpeed); Moves(MOVE_PROTECT, MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_ZAPDOS) { Speed(aiSpeed); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); }
+        OPPONENT(SPECIES_RAIKOU) { Speed(aiSpeed); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); } // Orleans: Zapdos has Drizzle now
     } WHEN {
         if (playerSpeed > aiSpeed) {
             TURN { MOVE(player, MOVE_PROTECT); EXPECT_MOVE(opponent, MOVE_THUNDER); }
@@ -1328,8 +1328,8 @@ AI_DOUBLE_BATTLE_TEST("Bolt Beak damage will be correctly seen by AI (doubles)")
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
         PLAYER(SPECIES_WOBBUFFET) { Speed(1); Moves(MOVE_PROTECT, MOVE_CELEBRATE); }
         PLAYER(SPECIES_WOBBUFFET) { Speed(3); Moves(MOVE_PROTECT, MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_ZAPDOS)  { Speed(2); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); }
-        OPPONENT(SPECIES_ZAPDOS)  { Speed(4); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); }
+        OPPONENT(SPECIES_RAIKOU)  { Speed(2); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); }
+        OPPONENT(SPECIES_RAIKOU)  { Speed(4); Moves(MOVE_BOLT_BEAK, MOVE_THUNDER); }
         TIE_BREAK_TARGET(TARGET_TIE_HI, 0);
     } WHEN {
         TURN {

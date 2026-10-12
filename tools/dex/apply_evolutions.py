@@ -19,7 +19,7 @@ EVOS = {
                       f"                            {{EVO_LEVEL, 0, SPECIES_SYLVEON, CONDITIONS({{IF_MIN_FRIENDSHIP, {F}}}, {{IF_KNOWS_MOVE_TYPE, TYPE_FAIRY}})}},\n"
                       f"                            {{EVO_LEVEL, 0, SPECIES_ESPEON, CONDITIONS({{IF_MIN_FRIENDSHIP, {F}}}, {{IF_NOT_TIME, TIME_NIGHT}})}},\n"
                       f"                            {{EVO_LEVEL, 0, SPECIES_UMBREON, CONDITIONS({{IF_MIN_FRIENDSHIP, {F}}}, {{IF_TIME, TIME_NIGHT}})}})"),
-    "SPECIES_SCYTHER": ("EVOLUTION({EVO_ITEM, ITEM_LINKING_CORD, SPECIES_SCIZOR, CONDITIONS({IF_HOLD_ITEM, ITEM_METAL_COAT})},\n"
+    "SPECIES_SCYTHER": ("EVOLUTION({EVO_ITEM, ITEM_LINKING_CORD, SPECIES_SCIZOR},\n"
                         "                            {EVO_ITEM, ITEM_BLACK_AUGURITE, SPECIES_KLEAVOR})"),
     "SPECIES_CRABRAWLER": "EVOLUTION({EVO_ITEM, ITEM_ICE_STONE, SPECIES_CRABOMINABLE})",
     "SPECIES_FEEBAS": "EVOLUTION({EVO_ITEM, ITEM_PRISM_SCALE, SPECIES_MILOTIC})",
@@ -54,7 +54,7 @@ def add_ribbon_item():
                 lambda m: f"\n    ITEM_FAIS_DO_DO_RIBBON = {nxt},  // Orleans: evolves Petilil into Hisuian Lilligant (tools/dex/apply_evolutions.py)\n" + m.group(1),
                 ct, count=1)
     block = ('\n    [ITEM_FAIS_DO_DO_RIBBON] =\n    {\n        .name = ITEM_NAME("Fais Do-Do Ribbon"),\n        .price = 0,\n'
-             '        .description = COMPOUND_STRING(\n            "A dance hall ribbon.\\n"\n            "Makes certain Pokémon\\n"\n            "evolve."),\n'
+             '        .description = COMPOUND_STRING(\n            "A dance hall ribbon.\\n"\n            "Makes certain\\n"\n            "Pokémon evolve."),\n'
              '        .pocket = POCKET_ITEMS,\n        .sortType = ITEM_TYPE_EVOLUTION_STONE,\n        .type = ITEM_USE_PARTY_MENU,\n'
              '        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,\n        .effect = gItemEffect_EvoItem,\n'
              '        .flingPower = 30,\n        .iconPic = gItemIcon_SunStone,\n        .iconPalette = gItemIconPalette_SunStone,\n    },\n')

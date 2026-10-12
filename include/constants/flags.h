@@ -102,8 +102,8 @@
 #define FLAG_RECEIVED_TM_ECLAIR_SHOCK_WAVE      0x48 // Orleans Ch2: Eclair's TM Shock Wave was handed over
 #define FLAG_RESPAWN_GRAND_OAK_SET       0x49 // Orleans: the Grand Oak respawn point was set on the first arrival (later visits must not override a Center healed at elsewhere)
 #define FLAG_RESPAWN_STORMS_EDGE_SET     0x4A // Orleans: the Storm's Edge respawn point was set on the first arrival
-#define FLAG_ORLEANS_POOL_000                           0x4B
-#define FLAG_ORLEANS_POOL_001                           0x4C
+#define FLAG_ORLEANS_TUTOR_RELEARNER                     0x4B // Orleans: the Crescent City tutor has opened the Move Relearner tutor list (P_FLAG_TUTOR_MOVES)
+#define FLAG_ORLEANS_EGG_RELEARNER                       0x4C // Orleans: the Crescent City tutor has opened the Move Relearner egg-move list (P_FLAG_EGG_MOVES)
 #define FLAG_ORLEANS_POOL_002                           0x4D
 #define FLAG_ORLEANS_POOL_003                           0x4E
 #define FLAG_ORLEANS_POOL_004                           0x4F

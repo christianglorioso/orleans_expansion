@@ -379,7 +379,7 @@ SINGLE_BATTLE_TEST("Pursuit user mega evolves before attacking a switching foe a
 DOUBLE_BATTLE_TEST("Pursuit user mega evolves before attacking a switching foe and others mega evolve after switch")
 {
     GIVEN {
-        PLAYER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_X); }
+        PLAYER(SPECIES_CHARIZARD) { Item(ITEM_CHARIZARDITE_Y); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_ZIGZAGOON);
         OPPONENT(SPECIES_WOBBUFFET);

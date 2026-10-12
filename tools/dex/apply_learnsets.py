@@ -32,6 +32,9 @@ ITEMS_D = ROOT / "src/data/items.h"
 GLOBAL_H = ROOT / "include/constants/global.h"
 RELEARNER_H = ROOT / "include/constants/move_relearner.h"
 OUT = Path(__file__).resolve().parent / "out"
+# lines that overflow the 102 px bag/shop description width when reflowed by characters (test/text.c)
+DESC_OVERRIDE = {"MOVE_ROUND": ["A song that hurts.", "Others can join in", "for more power."]}
+EGG_ARRAY_NEW = {"SPECIES_VOLTORB_ORLEANIAN", "SPECIES_IMPIDIMP", "SPECIES_MAGNEMITE"}
 NUM_TMS = 122  # total TM001..TM122: item ids < 1024 (10-bit heldItem) and SaveBlock1 size (4 bytes per bag slot, 40 bytes spare); see tm_list.md
 
 
@@ -106,18 +109,57 @@ def level_up_and_egg(rows, sf):
         res = replace_array(egg, r"static const u16 " + p + r"\[\] = \{.*?\n\};\n", egg_text(p, r["egg"]))
         assert res is not None, p
         egg = res
+    # breedable species the engine has no egg-move array for (Voltorb, Impidimp, Magnemite): create one
+    for r in rows:
+        if r["const"] in EGG_ARRAY_NEW and r["egg"] and (not r["ptr_egg"] or "None" in r["ptr_egg"]):
+            newp = "s" + g.pascal(r["const"]) + "EggMoveLearnset"
+            blk = sf.get(r["const"])
+            assert blk, r["const"]
+            sf.put(r["const"], g.set_or_insert_field(blk, "eggMoveLearnset", newp, before=("evolutions", "formSpeciesIdTable", "formChangeTable")))
+            if "EggMoveLearnset" + "[]" in egg and (newp + "[]") in egg:
+                egg = replace_array(egg, r"static const u16 " + newp + r"\[\] = \{.*?\n\};\n", egg_text(newp, r["egg"]))
+            else:
+                egg = egg.rstrip("\n") + "\n\n" + egg_text(newp, r["egg"])
+            r["ptr_egg"] = newp
+            notes.append(f"{r['name']}: new egg-move array {newp}")
     LV_H.write_text(lv, encoding="utf-8", newline="\n")
     EGG_H.write_text(egg, encoding="utf-8", newline="\n")
     return notes
 
 
 # --------------------------------------------------------------------------------------------- TMs / tutors
-def reflow(desc, width=20, lines=3):
+def _glyph_widths():
+    """FONT_NORMAL glyph widths by charmap byte (src/fonts.c) -> width of each character, as the bag/shop description uses"""
+    f = (ROOT / "src/fonts.c").read_text(encoding="utf-8")
+    body = f[f.index("gFontNormalLatinGlyphWidths[] = {"):]
+    body = body[body.index("{") + 1:body.index("};")]
+    widths = [int(x) for x in re.findall(r"\d+", body)]
+    cm = {}
+    for line in (ROOT / "charmap.txt").read_text(encoding="utf-8").splitlines():
+        m = re.match(r"^'(.)'\s*=\s*([0-9A-F]{2})$", line)
+        if m:
+            cm[m.group(1)] = widths[int(m.group(2), 16)]
+    return cm
+
+
+_GW = None
+
+
+def px(text):
+    global _GW
+    if _GW is None:
+        _GW = _glyph_widths()
+    return sum(_GW.get(c, 6) for c in text)
+
+
+def reflow(desc, width=102, lines=3):
+    """greedy word wrap by pixel width (test/text.c: descriptions must fit 102 px per line in FONT_NORMAL)"""
     words = desc.split()
     out, cur = [], ""
     for w in words:
-        if len(cur) + len(w) + (1 if cur else 0) <= width:
-            cur = (cur + " " + w) if cur else w
+        cand = (cur + " " + w) if cur else w
+        if px(cand) <= width:
+            cur = cand
         else:
             out.append(cur)
             cur = w
@@ -231,7 +273,7 @@ def update_item_data(new_tms, descs):
         if i <= 50:
             continue
         name = "TM%02d" % i if i < 100 else "TM%d" % i
-        d = reflow(descs.get(mv, "?????"))
+        d = DESC_OVERRIDE.get(mv) or reflow(descs.get(mv, "?????"))
         desc = "\n".join(f'            "{l}{chr(92)}n"' if k < len(d) - 1 else f'            "{l}"' for k, l in enumerate(d))
         blocks.append(f'    [ITEM_TM_{mv[5:]}] =\n    {{\n        .name = ITEM_NAME("{name}"),\n        .price = 3000,\n'
                       f'        .description = COMPOUND_STRING(\n{desc}),\n        .importance = I_REUSABLE_TMS,\n'

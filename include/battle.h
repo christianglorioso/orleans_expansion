@@ -724,6 +724,7 @@ struct BattleStruct
     u8 hazardsQueue[NUM_BATTLE_SIDES][HAZARDS_MAX_COUNT];
     u8 numHazards[NUM_BATTLE_SIDES];
     u8 hazardsCounter:4; // Counter for applying hazard on switch in
+    bool8 burnedByLureLight[MAX_BATTLERS_COUNT]; // Orleans: Lure Light traps only the foes it burned
     enum SubmoveState submoveAnnouncement:2;
     enum VictoryCatch victoryCatchState:2;
     u32 incrementEchoedVoice:1;

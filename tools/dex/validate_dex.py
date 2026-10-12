@@ -141,6 +141,8 @@ def main():
     # decided methods that must not exist any more
     for name, k in sp_of.items():
         ev = evo_dump.evos(k) or ""
+        if "ITEM_LINKING_CORD" in ev and "IF_HOLD_ITEM" in ev:
+            bad("evolutions", f"{name}: Linking Cord evolution still needs a held item (the Linking Cord alone evolves every trade evolution)")
         if "EVO_TRADE" in ev:
             bad("evolutions", f"{name}: still has a plain trade evolution (Linking Cord only)")
 
@@ -237,7 +239,8 @@ def main():
             bad("trainers", str(p))
     not_dex = sorted({m["species"] for x in cur if x["const"] in orl for m in x["mons"]
                       if sm.canonical(pc.species_const(m["species"])) not in dexset})
-    info.append(f"Orleans trainers use {len(not_dex)} species outside the Orleans dex (story decision, not changed): {', '.join(not_dex)}")
+    for sp_ in not_dex:
+        bad("trainers", f"Orleans trainer uses {sp_}, which is not in the Orleans dex")
 
     print(f"checked {ntype} sheet rows, {len(rows)} learnset rows, {len(order)} regional dex entries")
     for i in info:

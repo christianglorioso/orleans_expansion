@@ -71,8 +71,8 @@ SINGLE_BATTLE_TEST("Normalize still makes Freeze-Dry do super effective damage t
     GIVEN {
         ASSUME(GetMoveType(MOVE_FREEZE_DRY) == TYPE_ICE);
         ASSUME(GetMoveEffect(MOVE_FREEZE_DRY) == EFFECT_SUPER_EFFECTIVE_ON_ARG);
-        ASSUME(GetSpeciesType(SPECIES_MUDKIP, 0) == TYPE_WATER);
-        PLAYER(SPECIES_MUDKIP);
+        ASSUME(GetSpeciesType(SPECIES_SQUIRTLE, 0) == TYPE_WATER);
+        PLAYER(SPECIES_SQUIRTLE); // Orleans: Mudkip is Water/Ground now
         OPPONENT(SPECIES_SKITTY) { Ability(ability); Moves(MOVE_FREEZE_DRY); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_FREEZE_DRY); }
@@ -282,9 +282,9 @@ SINGLE_BATTLE_TEST("Normalize doesn't change Tera Blast's type when Terastallize
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_TERA_BLAST) == EFFECT_TERA_BLAST);
         ASSUME(GetMoveType(MOVE_TERA_BLAST) == TYPE_NORMAL);
-        ASSUME(GetSpeciesType(SPECIES_MISDREAVUS, 0) == TYPE_GHOST);
+        ASSUME(GetSpeciesType(SPECIES_DUSKULL, 0) == TYPE_GHOST);
         PLAYER(SPECIES_SKITTY) { Ability(ABILITY_NORMALIZE); TeraType(TYPE_DARK); }
-        OPPONENT(SPECIES_MISDREAVUS);
+        OPPONENT(SPECIES_DUSKULL); // Orleans: Misdreavus is Ghost/Fairy now
     } WHEN {
         TURN { MOVE(player, MOVE_TERA_BLAST, gimmick: GIMMICK_TERA); }
     } SCENE {

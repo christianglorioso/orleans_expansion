@@ -48,7 +48,10 @@ def art_doc():
             "- Fais Do-Do Ribbon (`ITEM_FAIS_DO_DO_RIBBON`) uses the Sun Stone icon", "",
             "## Other art notes", "",
             "- The regional Pokedex still shows the HOENN title graphic on its first page (pokedex background tiles); the text modes say ORLEANS.",
-            "- Descriptions (Pokedex text) of the Orleanian forms are the base species' text; rewrite them with the art.", ""]
+            "- Descriptions (Pokedex text) of the Orleanian forms are the base species' text; rewrite them with the art.",
+            "- ART REQUEST (not drawn): the HOENN label sprite on the regional Pokedex list header (graphics/pokedex/interface.png, `sSpriteAnim_HoennText` in src/pokedex.c) should read ORLEANS.",
+            "- ART REQUEST (not drawn): the PokeNav header `gPokenavLeftHeaderHoennMap_Gfx` and the Pokedex region-map graphics (graphics/pokedex/region_map.png, Hoenn terrain) need Orleans versions; the Area page shows no glow for Orleans map sections until then.",
+            "- ART REQUEST (not drawn): the Pokedex background/search-menu files are still named bg_hoenn / search_menu_hoenn; recolour/rename only if the artist redoes the screen.", ""]
     (HERE / "commissioned_art_pending.md").write_text("\n".join(out), encoding="utf-8")
     return len(sm.ORLEANIAN) + len(sm.CUSTOM_MEGA_BASE)
 
@@ -82,11 +85,12 @@ def tm_doc():
              "The first 51 are the original list (Hoenn TM01-TM50 order, then Trailblaze as TM051); TM052 onward are the next most widely",
              "learnable moves in the sheet (by number of dex species that learn them by TM or tutor).", "",
              "## Limits found (why not 489)",
-             "- Item ids are a 10-bit field (held items, bag, party): ITEMS_COUNT must stay below 1024. It is now about 975, so ~48 ids remain for story items.",
+             "- Item ids are a 10-bit field (held items, bag, party): ITEMS_COUNT must stay below 1024. ITEMS_COUNT is 916, so 107 ids remain for story items (1023 - 916).",
              "  Each extra TM costs one id, so the TM list is capped at 122 (it was 100 slots, 51 filled).",
              "- SaveBlock1 has 40 spare bytes after sizing the TM pocket (BAG_TMHM_COUNT = 130 = 122 TMs + 8 HMs, 4 bytes a slot). More TMs would not fit the save.",
              "- Every other move the sheet teaches by TM or tutor is taught through the Move Relearner's tutor list (src/data/pokemon/special_movesets.json",
-             f"  `extraTutors`, {len(overflow)} moves; P_FLAG_TUTOR_MOVES must be set, or P_ENABLE_MOVE_RELEARNERS). Compatibility follows the sheet either way.",
+             f"  `extraTutors`, {len(overflow)} moves). P_FLAG_TUTOR_MOVES = FLAG_ORLEANS_TUTOR_RELEARNER, which the Crescent City tutor (services house) sets on first talk;",
+             "  the tutor's new 'OTHER MOVES' choice opens the relearner's tutor list for any party Pokemon (free). Dedicated tutor NPCs would just set the same flag.",
              "- HMs: the 8 Hoenn HMs (Cut, Fly, Surf, Strength, Flash, Rock Smash, Waterfall, Dive) are unchanged. No HM was added. They are only a learnset category now;",
              "  the field effects are key items (Garden Shears, Pry Bar, ...), Surf stays a move.", "",
              "## TM numbers", "", "| TM | Move | Type | Cat | Power | Species | Suggested source |", "|---|---|---|---|---|---|---|"]
@@ -120,3 +124,43 @@ def tm_doc():
 
 if __name__ == "__main__":
     print("art entries:", art_doc(), "tms:", tm_doc())
+
+
+def obtain_doc():
+    mega_rows = [f"| {n} | {stone} | {disp} |" for n, (b, stone, disp) in sm.CUSTOM_MEGA_BASE.items()]
+    lines = ["# Not-yet-obtainable items, trades and conditions (planning doc)", "",
+             "Nothing here is placed in the world by the dex work; the story chapters schedule these.", "",
+             "## Evolution items with no source yet",
+             "| Item | Needed for | Note |", "|---|---|---|",
+             "| Prism Scale | Feebas -> Milotic | now usable from the party menu and SOLD in the Crescent City department store (floor 2, clerk 0) once the 3rd badge is held |",
+             "| Peat Block | Ursaring -> Ursaluna (at night) | no source |",
+             "| Black Augurite | Scyther -> Kleavor | no source |",
+             "| Metal Alloy | Duraludon -> Archaludon | design doc: department store, 6 badges |",
+             "| Metal Coat (held) + Linking Cord | Scyther -> Scizor | Linking Cord is sold; Metal Coat has no source |",
+             "| Sun Stone | Petilil -> Lilligant, Gloom -> Bellossom, Sunkern -> Sunflora | no source |",
+             "| Ice Stone | Alolan Vulpix/Sandshrew lines, Crabrawler -> Crabominable, Eevee -> Glaceon | no source |",
+             "| Dusk Stone | Lampent_O -> Chandelure_O, Misdreavus -> Mismagius | no source |",
+             "| Shiny Stone | Roselia_O -> Roserade_O, Floette -> Florges | no source |",
+             "| Fais Do-Do Ribbon (new item) | Petilil -> Hisuian Lilligant | designed to come from the Isle Marais dance hall after gym 6 |",
+             "| Linking Cord | Haunter -> Gengar, Boldore -> Gigalith, Poliwhirl -> Politoed, Scyther -> Scizor | already sold (dept store floor 2) |", "",
+             "Sold today: Fire, Water, Thunder, Leaf Stone, Linking Cord, Everstone, Prism Scale (badge 3).", "",
+             "## NPC trades missing (src/data/trade.h)",
+             "- Raichu for Alolan Raichu, Vulpix for Alolan Vulpix (Crescent City). Without them Alolan Raichu / Mega Alolan Raichu and Alolan Vulpix / Ninetales are unobtainable.", "",
+             "## Conditions that need world support",
+             "- Goodra: Sliggoo Lv 50 while it is raining in the overworld. Only Isle Marais has rain weather today; schedule a rainy route or change the condition.",
+             "- Kabuto: fossil revival at Lafayette's conservation center (Route 19 tidal flats fossil). The revival mechanic is not built.",
+             "- Ursaluna: needs night plus a Peat Block. Inkay -> Malamar: Lv 30 at night. Budew -> Roselia: friendship by day. Eevee: friendship day/night (Espeon/Umbreon), friendship plus a Fairy move (Sylveon).",
+             "- Lycanroc Midnight: also a one-off wild encounter (Route 14 levee, night, about Lv 42); Mega Lycanroc stone from the same place.",
+             "- Gimmighoul -> Gholdengo: Lv 60 (no coins needed).", "",
+             "## Mega Evolution",
+             "- The Mega Ring (`ITEM_MEGA_RING`) is not given by any script yet. Mega stones have price 0 and no source.",
+             "- Official stones needed by Megas in the dex: Venusaurite, Charizardite Y (X is unwired), Gengarite, Gyaradosite, Swampertite, Scizorite, Victreebelite, Dragoninite, Meganiumite, Feraligite, Chandelurite, Delphoxite, Staraptite, Scovillainite, Floettite (Eternal Flower only), Metagrossite, Malamarite, Crabominite, Barbaracite, Sharpedonite, Excadrite, Dragalgite, Raichunite X, Raichunite Y (Alolan Raichu); Mega Rayquaza needs Dragon Ascent; Primal Groudon/Kyogre the Red/Blue Orb.",
+             "- Custom stones (new items, placeholder icon):", "", "| Mega | Constant | Name |", "|---|---|---|"] + mega_rows + [
+             "", "## Move tutor / TMs",
+             "- The Crescent City tutor sets FLAG_ORLEANS_TUTOR_RELEARNER; the Move Relearner tutor list works only after the player has talked to him. Other places that should offer it must set the same flag.",
+             "- TM placements: see tm_list.md.", ""]
+    (HERE / "obtainability.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    obtain_doc()

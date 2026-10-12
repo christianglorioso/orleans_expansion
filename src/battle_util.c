@@ -5193,7 +5193,7 @@ u32 IsAbilityPreventingEscape(enum BattlerId battler)
         if (ability == ABILITY_MAGNET_PULL && IS_BATTLER_OF_TYPE(battler, TYPE_STEEL))
             return battlerDef + 1;
 
-        if (ability == ABILITY_LURE_LIGHT && (gBattleMons[battler].status1 & STATUS1_BURN))
+        if (ability == ABILITY_LURE_LIGHT && (gBattleMons[battler].status1 & STATUS1_BURN) && gBattleStruct->burnedByLureLight[battler])
             return battlerDef + 1;
     }
 
