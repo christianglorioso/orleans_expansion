@@ -60,9 +60,17 @@ def joins():
     return out
 
 
+# The engine copies the neighbour's WHOLE strip (all of its columns for a N/S join, all rows for E/W), so cells of the neighbour
+# up to 7 columns (N/S joins) / 5 rows (E/W joins) PAST the overlap sit inside the camera too (the corners): the band reaches that
+# far along the edge, on both maps.
+ALONG = {"N": 7, "S": 7, "W": 5, "E": 5}
+
+
 def side_cells(key, side, lo, hi):
     w, h = info()[key]["w"], info()[key]["h"]
     d = DEPTH[side]
+    length = w if side in "NS" else h
+    lo, hi = max(0, lo - ALONG[side]), min(length, hi + ALONG[side])
     cells = set()
     for i in range(lo, hi):
         for k in range(d):

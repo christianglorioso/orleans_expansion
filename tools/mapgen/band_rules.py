@@ -58,8 +58,20 @@ def is_structure(b, bd):
                 or STRUCTURE.match(str(bd.get("label", ""))))
 
 
+def _primary_cell(b, c):
+    if isinstance(c, str):
+        return _primary_name(b, c)
+    if isinstance(c, dict) and "overlay" in c and not c.get("walk") and not c.get("upper"):
+        build = _build(b)
+        art = c["overlay"].split(":")[0]
+        if art == "mag" and b.spec["tileset"] == "orleans_pointe":
+            return False
+        return art in build.PRIMARY_ART        # primary art over a primary ground (grass, paving, water)
+    return False
+
+
 def prefab_is_primary(b, bd):
-    return all(isinstance(c, str) and _primary_name(b, c) for _, _, c in prefab_cells(b, bd))
+    return all(_primary_cell(b, c) for _, _, c in prefab_cells(b, bd))
 
 
 def prepare(b, key):
@@ -85,10 +97,15 @@ def prepare(b, key):
             keep.append(bd)
         elif is_structure(b, bd) and (b.ts["prefabs"][bd["prefab"]].get("door") or bd.get("door")) and nudge(b, bd, strict, keep):
             keep.append(bd)
+        elif bd.get("closed") and "Tower" not in str(bd.get("label")):          # a decorative building with a shut door that cannot move out: trimmed
+            dropped.append(bd)
+            b.band_log.append(f"closed building {bd.get('label', bd['prefab'])} at ({bd['x']},{bd['y']}) trimmed from the band")
         elif is_structure(b, bd):
             keep.append(bd)
             b.band_unresolved.append(f"{bd.get('label', bd['prefab'])} ({bd['prefab']}) at ({bd['x']},{bd['y']}): {len(inside)} of "
                                      f"{len(cells)} cells in the band")
+        elif relocate(b, bd, strict, keep + [x for x in spec.get("buildings", []) if x not in dropped]):
+            keep.append(bd)
         else:
             dropped.append(bd)
     if dropped:
@@ -157,18 +174,54 @@ def nudge(b, bd, strict, others):
         busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, [])}
     for ex in b.spec.get("exits", []):
         busy |= {tuple(c) for c in ex["cells"]}
-    for side in sorted(sides, key=lambda s_: -sum(1 for x, y, _ in cells if (x, y) in strict)):
-        dx, dy = INWARD[side]
-        for step in range(1, 12):
-            moved = [(x + dx * step, y + dy * step) for x, y, _ in cells]
-            if any(not (0 <= x < b.w and 0 <= y < b.h) for x, y in moved):
-                break
-            if any((x, y) in strict or (x, y) in busy or b.grid[y][x] != "." for x, y in moved):
-                continue
-            bd["x"] += dx * step
-            bd["y"] += dy * step
-            b.band_log.append(f"{bd.get('label', bd['prefab'])} ({bd['prefab']}) moved {step} cell(s) inward, to ({bd['x']},{bd['y']})")
-            return True
+    cand = sorted(((dx, dy) for dx in range(-12, 13) for dy in range(-12, 13) if (dx, dy) != (0, 0)), key=lambda d: (abs(d[0]) + abs(d[1]), d))
+    for dx, dy in cand:
+        moved = [(x + dx, y + dy) for x, y, _ in cells]
+        if any(not (0 <= x < b.w and 0 <= y < b.h) for x, y in moved):
+            continue
+        if any((x, y) in strict or (x, y) in busy or b.grid[y][x] in "~Iw#" for x, y in moved):
+            continue
+        # keep one free ring row below it (the door's approach) and not on a road
+        if any(b.grid[y][x] in ":=%&p" for x, y in moved):
+            continue
+        bd["x"] += dx
+        bd["y"] += dy
+        b.band_log.append(f"{bd.get('label', bd['prefab'])} ({bd['prefab']}) moved by ({dx},{dy}) to ({bd['x']},{bd['y']})")
+        return True
+    return False
+
+
+def relocate(b, bd, strict, others):
+    """A prop that stands in a band moves to the nearest spot outside it where every cell sits on the same ground character it
+    stood on (a sign, a lamp, a bench, a boulder, a shrine stone ...), clear of buildings and events; its sign event moves with it.
+    Returns True if moved. (Blocking props that gated a way are NOT relocated: their cells stay impassable, see prepare.)"""
+    p = b.ts["prefabs"][bd["prefab"]]
+    if not re.match(r"(sign|lamp|bench|boulder|shrine|barrel|crates)", bd["prefab"]):
+        return False
+    cells = prefab_cells(b, bd)
+    busy = {(x, y) for o in others if o is not bd for x, y, _ in prefab_cells(b, o)}
+    for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
+        busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, []) if (o["x"], o["y"]) not in {(x, y) for x, y, _ in cells}}
+    for ex in b.spec.get("exits", []):
+        busy |= {tuple(c) for c in ex["cells"]}
+    grounds = [b.grid[y][x] for x, y, _ in cells]
+    cand = sorted(((dx, dy) for dx in range(-14, 15) for dy in range(-14, 15) if (dx, dy) != (0, 0)), key=lambda d: (abs(d[0]) + abs(d[1]), d))
+    for dx, dy in cand:
+        moved = [(x + dx, y + dy) for x, y, _ in cells]
+        if any(not (0 <= x < b.w and 0 <= y < b.h) or (x, y) in strict or (x, y) in busy for x, y in moved):
+            continue
+        if any(b.grid[y][x] != g for (x, y), g in zip(moved, grounds)):
+            continue
+        if any(b.grid[y][x] in ":=%&p" for x, y in moved):
+            continue
+        for g in b.spec.get("signs", []):
+            if (g["x"], g["y"]) in {(x, y) for x, y, _ in cells}:
+                g["x"] += dx
+                g["y"] += dy
+        bd["x"] += dx
+        bd["y"] += dy
+        b.band_log.append(f"{bd.get('label', bd['prefab'])} ({bd['prefab']}) moved out of the band by ({dx},{dy})")
+        return True
     return False
 
 
@@ -260,4 +313,12 @@ def repair(b):
                 if b.grid[j][i] != new and b.grid[j][i] not in ':=%&p':   # roads keep their cells
                     b.grid[j][i] = new
                     changed = True
+    if changed and "d" in terr:
+        # a dry-country set (cane, pepper, earth, gully, salt, rock) may not touch meadow: a plain dry cell stands between
+        sets = set("GgqQweysrv")
+        for y in range(b.h):
+            for x in range(b.w):
+                if b.grid[y][x] in sets and any(0 <= x + i < b.w and 0 <= y + j < b.h and b.grid[y + j][x + i] == "."
+                                                for i in (-1, 0, 1) for j in (-1, 0, 1)):
+                    b.grid[y][x] = "d"
     return changed

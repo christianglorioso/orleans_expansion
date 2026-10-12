@@ -108,20 +108,6 @@
   }
  },
  {
-  "id": "ovl_props_bench_0__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_0"
-  }
- },
- {
-  "id": "ovl_props_bench_1__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_1"
-  }
- },
- {
   "id": "blend_marsh_N_inNE",
   "blend": {
    "A": "ekat:water_N",
@@ -303,48 +289,6 @@
   "pixels": "tools/mapgen/tilesets/approach/ap_ecd13d88f0d5.png",
   "base": "johto:0D1",
   "attr_of": "johto:0D1"
- },
- {
-  "id": "ovl_mag_00__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:00"
-  }
- },
- {
-  "id": "ovl_mag_01__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:01"
-  }
- },
- {
-  "id": "ovl_mag_02__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:02"
-  }
- },
- {
-  "id": "ovl_mag_10__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:10"
-  }
- },
- {
-  "id": "ovl_mag_11__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:11"
-  }
- },
- {
-  "id": "ovl_mag_12__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:12"
-  }
  },
  {
   "id": "blend_marsh_E_inNE",

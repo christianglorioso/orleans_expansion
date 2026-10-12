@@ -210,7 +210,11 @@ def analyse(wd, stem):
         kinds = [src[cell(i, 1)[1] * W + cell(i, 1)[0]] for i in range(length)]
         for a, b, kind in runs(kinds):
             seg = {"side": side, "a": a, "b": b, "len": b - a, "kind": kind, "depth": depth}
-            cells = [(cell(i, k), i, k) for i in range(a, b) for k in range(1, depth + 1)]
+            # a connection copies the neighbour's WHOLE strip: its cells up to 7 columns (N/S) / 5 rows (E/W) past the overlap are in the
+            # camera too (the corners), drawn with THIS map's tileset: grade them as well (only cells that really hold this neighbour)
+            ext = 7 if side in "NS" else 5
+            cells = [(cell(i, k), i, k) for i in range(a - (ext if kind is not None else 0), b + (ext if kind is not None else 0))
+                     for k in range(1, depth + 1) if kind is None or (0 <= cell(i, k)[0] < W and 0 <= cell(i, k)[1] < H)]
             if kind is not None:                      # connected
                 nts = wd.ts(kind)
                 sec = wrong = garb = n = 0

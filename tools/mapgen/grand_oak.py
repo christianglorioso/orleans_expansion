@@ -32,7 +32,7 @@ import natural  # noqa: E402
 
 KEY, NAME, CONST = "grand_oak", "GrandOak", "MAP_GRAND_OAK"
 CFG = "orleans_town"
-W, H = 40, 34
+W, H = 44, 34   # 4 columns wider on the EAST (nothing else moves): the Route 2 seam band (7 columns + the corner reach) then starts at x 37, clear of the greenhouse and the south-east cabin
 SPEC = os.path.join(HERE, "maps", KEY + ".json")
 GRID = os.path.join(HERE, "maps", KEY + ".grid.txt")
 SEED = 1210
@@ -50,7 +50,7 @@ FIXED = [
     ("planter", 23, 24, "Flower planter"), ("planter", 27, 24, "Flower planter"),
 ]
 # cells that must stay walkable (NPCs, triggers, hidden items, exits)
-KEEP_WALK = [(25, 7), (35, 13), (37, 13), (39, 13), (39, 14), (39, 15), (32, 7), (29, 7), (30, 7), (31, 7), (29, 8), (30, 8),
+KEEP_WALK = [(25, 7), (35, 13), (37, 13), (43, 13), (43, 14), (43, 15), (32, 7), (29, 7), (30, 7), (31, 7), (29, 8), (30, 8),
              (31, 8), (11, 21), (26, 27), (19, 33), (20, 33)]
 SIGN = (18, 32)
 
@@ -120,7 +120,7 @@ def fillet(cx, cy, sx, sy, k):
 def design_paths(t):
     P = set()
     P |= block(5, 12, 14, 16, cut=1)                    # the Pokemon Center / Mart plaza (a rounded rectangle)
-    P |= block(5, 13, 39, 15)                           # the main street, 3 wide, straight to the gate
+    P |= block(5, 13, 43, 15)                           # the main street, 3 wide, straight to the gate
     # the gym court: an octagon, the lawn (a smaller octagon, x 28-31, y 9-12) left out, opening into the main street
     P |= {(x, y) for y, (a, b) in {7: (27, 32), 8: (26, 33), 9: (25, 34), 10: (25, 34), 11: (25, 34), 12: (25, 34)}.items()
           for x in range(a, b + 1)} - {(x, y) for y, (a, b) in {9: (29, 30), 10: (28, 31), 11: (28, 31), 12: (29, 30)}.items() for x in range(a, b + 1)}
@@ -170,9 +170,9 @@ TREES = [
     (36, 28),
     # east of the nursery: an avenue line and a grove
     (28, 18), (31, 19), (34, 17), (36, 20),
-    # the east tree-wall (x 38-39): the road to Route 2 (rows 13-15, closed by the storm hedge) is the only gap, so the hedge really
+    # the east tree-wall (x 42-43): the road to Route 2 (rows 13-15, closed by the storm hedge) is the only gap, so the hedge really
     # gates Route 2 (the connection covers rows 5-30). Rows 4-12 and 16-30, 3 rows a tree.
-    (38, 4), (38, 7), (38, 10), (38, 16), (38, 19), (38, 22), (38, 25), (38, 28),
+    (42, 4), (42, 7), (42, 10), (42, 16), (42, 19), (42, 22), (42, 25), (42, 28),
 ]
 
 def trees(t):
@@ -357,10 +357,12 @@ def write_spec(t):
     for o in spec["objects"]:       # the gardener's second line was 38 characters (the box holds 36)
         o["text"] = o["text"].replace("Come back when the storms have passed.", "Come back after the storms.")
     spec["signs"] = [dict(sg, x=SIGN[0], y=SIGN[1]) for sg in spec["signs"]]    # the town sign, beside the street
-    # the magnolia tree-walls along the Route 2 and Route 1 sides stand in seam bands (props may not): the same walls are
-    # canopy cells of the primary (borders.py "walls"), gaps at the roads: the east wall gates the Route 2 road (rows 13-15)
-    spec["walls"] = [{"side": "E", "depth": 2, "lo": 5, "hi": 31, "gaps": [[13, 16]]},
-                     {"side": "S", "depth": 2, "lo": 5, "hi": 33, "gaps": [[19, 21]]}]
+    spec.pop("walls", None)
+    for e in spec.get("exits", []):   # the east edge moved from x 39 to x 43
+        e["cells"] = [[43 if c[0] == 39 else c[0], c[1]] for c in e["cells"]]
+    for o in spec.get("objects", []):
+        if o["x"] == 39:
+            o["x"] = 43
     dump(SPEC, spec)
 
 

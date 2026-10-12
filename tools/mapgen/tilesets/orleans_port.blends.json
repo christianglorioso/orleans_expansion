@@ -116,41 +116,6 @@
   "group": "levee"
  },
  {
-  "id": "ovl_props_barrel__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:barrel"
-  }
- },
- {
-  "id": "ovl_props_bench_1__ekat_water_landSE",
-  "overlay": {
-   "base": "ekat:water_landSE",
-   "art": "props:bench_1"
-  }
- },
- {
-  "id": "ovl_props_crates__ekat_water_landSE",
-  "overlay": {
-   "base": "ekat:water_landSE",
-   "art": "props:crates"
-  }
- },
- {
-  "id": "ovl_props_crates__ekat_water_landSW",
-  "overlay": {
-   "base": "ekat:water_landSW",
-   "art": "props:crates"
-  }
- },
- {
-  "id": "ovl_props_trap__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:trap"
-  }
- },
- {
   "id": "ovl_sbr_0_0__ekat_water_C",
   "overlay": {
    "base": "ekat:water_C",
@@ -977,41 +942,6 @@
   }
  },
  {
-  "id": "ovl_props_bench_0__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_0"
-  }
- },
- {
-  "id": "ovl_props_bench_1__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_1"
-  }
- },
- {
-  "id": "ovl_props_crates__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:crates"
-  }
- },
- {
-  "id": "ovl_props_lamp_post__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:lamp_post"
-  }
- },
- {
-  "id": "ovl_props_lamp_top__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:lamp_top"
-  }
- },
- {
   "id": "ovl_seq_0_0__johto_0E0",
   "overlay": {
    "base": "johto:0E0",
@@ -1516,20 +1446,6 @@
   "group": "levee"
  },
  {
-  "id": "ovl_props_bench_0__ekat_water_N",
-  "overlay": {
-   "base": "ekat:water_N",
-   "art": "props:bench_0"
-  }
- },
- {
-  "id": "ovl_props_bench_1__ekat_water_N",
-  "overlay": {
-   "base": "ekat:water_N",
-   "art": "props:bench_1"
-  }
- },
- {
   "id": "ovl_spl_1_0__ekat_water_C",
   "overlay": {
    "base": "ekat:water_C",
@@ -1563,25 +1479,5 @@
    "base": "ekat:water_landNE",
    "art": "ssb:7_0"
   }
- },
- {
-  "id": "bk_swamp_E0_5de71585",
-  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_5de71585.png",
-  "attr_of": "johto:0E1"
- },
- {
-  "id": "bk_swamp_E0_7167a350",
-  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_7167a350.png",
-  "attr_of": "ekat:tallgrass"
- },
- {
-  "id": "bk_swamp_E1_7167a350",
-  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_7167a350.png",
-  "attr_of": "ekat:tallgrass"
- },
- {
-  "id": "bk_swamp_E1_8c018226",
-  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_8c018226.png",
-  "attr_of": "johto:0D1"
  }
 ]

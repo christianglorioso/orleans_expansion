@@ -35,6 +35,8 @@ SHARED = [
     r"^patch:pier_",           # the Olivine/Route 40 plank dock over grass, water and banks (piers may stand in a band)
     r"^brg:",                  # the railed road bridge's own pieces ...
     r"^patch:ovl_brg_",        # ... and its overlays on water / grass / banks (tilesets/orleans_general.blends.json)
+    r"^patch:ovl_mag_",        # the magnolia and the street furniture (lamp, bench ...) over grass / paving: props may stand in a band
+    r"^patch:ovl_props_",
     r"^patch:bdg_",            # swamp border edge cells baked over grass (tilesets/orleans_general.blends.json)
     r"^bd:swamp_",             # border art, swamp style (make_borders.py): canopy block, wall-edge cells on marsh and water
     r"^dry:0_0$",              # the plain dry-country ground: the ONE dry fill a seam band may hold
@@ -76,6 +78,17 @@ def main(args):
                                "transparent": [[255, 0, 255]], "_comment": "Map border art (make_borders.py).",
                                "metatiles": [{"id": n, "bottom": list(xy)} for n, xy in sorted(bd["cells"].items())]})
         cur["blends_file"] = "orleans_general.blends.json"
+        # magnolia + street furniture art (one copy of each sheet; the overlays over grass and paving live in the primary blends)
+        for nm in ("mag", "props"):
+            ids, src = {}, None
+            for t in ("orleans_port", "orleans_crescent", "orleans_town", "orleans_camp", "orleans_harbor"):
+                rr = json.load(open(os.path.join(RECIPES, t + ".json"), encoding="utf-8"))
+                for x in rr["sources"]:
+                    if x["name"] == nm and (src is None or x["image"] == src["image"]):
+                        src = src or dict(x)
+                        ids.update({m["id"]: m for m in x["metatiles"]})
+            src["metatiles"] = [ids[k] for k in sorted(ids)]
+            cur["sources"].append(src)
         cur["patches"] = [p for p in route["patches"] if p["id"].startswith(WANT_PATCH)]
         cur["shared"] = SHARED
         # grass and water must come out exact: keep the colours the route tileset keeps, plus the water the ekat sheet uses

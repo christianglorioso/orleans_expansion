@@ -35,7 +35,7 @@ TOWN_CFG["route_2"] = "orleans_port"   # edges pass: Route 2 shares Storm's Edge
 DRY_ROUTES = ["route_15", "route_16", "route_17", "route_23", "route_24"]
 TOWN_CFG.update({k: "orleans_route_dry" for k in DRY_ROUTES})
 # ... and the dry-country art (cane wall, red earth, rock wall, gully, salt) overflowed one set: the farm routes split off
-TOWN_CFG.update({"route_15": "orleans_route_farm", "route_16": "orleans_route_farm", "route_17": "orleans_route_farm"})
+TOWN_CFG.update({"route_15": "orleans_route_farm", "route_16": "orleans_route_farm", "route_17": "orleans_capital"})   # edges pass: Route 17 shares Redfield's tileset
 # dry routes whose edge meets a green map: side -> cells over which the dry ground fades into green meadow
 # (Route 15's west edge is Route 14's; Route 23's west edge is Pointe Rouge's)
 DRY_FADE = {"route_15": {"W": 11, "N": 7}, "route_23": {"W": 11}}

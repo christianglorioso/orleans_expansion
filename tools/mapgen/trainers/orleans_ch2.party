@@ -83,7 +83,7 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Voltorb
+Voltorb-Orleanian
 Level: 15
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
@@ -203,7 +203,7 @@ Music: Cool
 Double Battle: No
 AI: Basic Trainer
 
-Voltorb
+Voltorb-Orleanian
 Level: 20
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -229,7 +229,7 @@ Magnemite
 Level: 16
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Voltorb
+Voltorb-Orleanian
 Level: 17
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -329,11 +329,11 @@ AI: Check Bad Move / Try To Faint
 Items: Super Potion / Super Potion
 Starting Status: Electric Terrain Temporary
 
-Voltorb
+Voltorb-Orleanian
 Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Electro Ball
-- Spark
+- Volt Switch
 - Thunder Wave
 - Screech
 

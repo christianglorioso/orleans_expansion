@@ -491,48 +491,6 @@
   }
  },
  {
-  "id": "ovl_mag_00__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:00"
-  }
- },
- {
-  "id": "ovl_mag_01__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:01"
-  }
- },
- {
-  "id": "ovl_mag_02__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:02"
-  }
- },
- {
-  "id": "ovl_mag_10__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:10"
-  }
- },
- {
-  "id": "ovl_mag_11__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:11"
-  }
- },
- {
-  "id": "ovl_mag_12__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:12"
-  }
- },
- {
   "id": "ovl_pl_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",

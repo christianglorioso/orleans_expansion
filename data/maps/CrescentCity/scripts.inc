@@ -513,11 +513,32 @@ CrescentCity_EventScript_OldCypressSign::
 CrescentCity_Text_OldCypressSign:
 	.string "THE OLD CYPRESS\nThe oldest tree in the park.$"
 
+CrescentCity_EventScript_CitySign::
+	msgbox CrescentCity_Text_CitySign, MSGBOX_SIGN
+	end
+
+CrescentCity_Text_CitySign:
+	.string "CRESCENT CITY\nThe Crescent on the Emerald River.$"
+
+CrescentCity_EventScript_ParkSign::
+	msgbox CrescentCity_Text_ParkSign, MSGBOX_SIGN
+	end
+
+CrescentCity_Text_ParkSign:
+	.string "CITY PARK\nPlease keep off the flower beds.$"
+
 CrescentCity_EventScript_FrontierSign::
 	msgbox CrescentCity_Text_FrontierSign, MSGBOX_SIGN
 	end
 
 CrescentCity_Text_FrontierSign:
 	.string "BATTLE FRONTIER\nOpen to champions only.$"
+
+CrescentCity_EventScript_LeveeSign::
+	msgbox CrescentCity_Text_LeveeSign, MSGBOX_SIGN
+	end
+
+CrescentCity_Text_LeveeSign:
+	.string "SOUTH: Route 14\nThe levee road.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

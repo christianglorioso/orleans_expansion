@@ -96,13 +96,6 @@
   }
  },
  {
-  "id": "ovl_props_crates__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:crates"
-  }
- },
- {
   "id": "blend_marsh_landNW_inSW",
   "blend": {
    "A": "ekat:water_landNW",
@@ -1066,55 +1059,6 @@
   "overlay": {
    "base": "ekat:marsh_C",
    "art": "camp:9_9"
-  }
- },
- {
-  "id": "ovl_mag_00__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:00"
-  }
- },
- {
-  "id": "ovl_mag_01__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:01"
-  }
- },
- {
-  "id": "ovl_mag_02__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:02"
-  }
- },
- {
-  "id": "ovl_mag_10__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:10"
-  }
- },
- {
-  "id": "ovl_mag_11__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:11"
-  }
- },
- {
-  "id": "ovl_mag_12__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "mag:12"
-  }
- },
- {
-  "id": "ovl_props_crates__ekat_marsh_C",
-  "overlay": {
-   "base": "ekat:marsh_C",
-   "art": "props:crates"
   }
  },
  {
@@ -2296,20 +2240,6 @@
   "overlay": {
    "base": "ekat:mudwater_S",
    "art": "camp:4_21"
-  }
- },
- {
-  "id": "ovl_mag_00__ekat_water_S",
-  "overlay": {
-   "base": "ekat:water_S",
-   "art": "mag:00"
-  }
- },
- {
-  "id": "ovl_mag_10__ekat_water_S",
-  "overlay": {
-   "base": "ekat:water_S",
-   "art": "mag:10"
   }
  },
  {

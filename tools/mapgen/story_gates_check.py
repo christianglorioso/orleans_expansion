@@ -120,7 +120,7 @@ def storms_edge():
 
 
 def grand_oak_route2():
-    go_hedges = [(39, 13), (39, 14), (39, 15)]
+    go_hedges = [(43, 13), (43, 14), (43, 15)]
     ids = {o["local_id"] for o in json.load(open("data/maps/GrandOak/map.json"))["object_events"]
            if o.get("local_id", "").startswith("LOCALID_GRAND_OAK_STORM_HEDGE")}
     check(len(ids) == 3, f"Grand Oak: {len(ids)} storm hedge objects (3 expected, the road is 3 wide)")
@@ -130,13 +130,13 @@ def grand_oak_route2():
         # Route 2 y = Grand Oak y - 5 (connection offset 5); both are fills in one space: Route 2 shifted by (40, 5)
         seen_go = go.fill([(19, 33), (20, 33)])
         reach = set()
-        frontier = [(0, y - 5) for (x, y) in seen_go if x == 39 and 0 <= y - 5 < r2.h and r2.walk(0, y - 5)]
+        frontier = [(0, y - 5) for (x, y) in seen_go if x == 43 and 0 <= y - 5 < r2.h and r2.walk(0, y - 5)]
         if frontier:
             reach = r2.fill(frontier)
         # Grand Oak rows 5-30 are the Route 2 connection (offset 5); rows 0-4 and 31-33 at x 39 are the map's edge with no neighbour
-        east_edge = [(x, y) for (x, y) in seen_go if x == 39 and 5 <= y <= 30]
+        east_edge = [(x, y) for (x, y) in seen_go if x == 43 and 5 <= y <= 30]
         if gone:
-            check(bool(reach), f"Grand Oak + Route 2, {label}: Route 2 is reachable (x=39 cells reached: {sorted(y for _, y in east_edge)})")
+            check(bool(reach), f"Grand Oak + Route 2, {label}: Route 2 is reachable (x=43 cells reached: {sorted(y for _, y in east_edge)})")
         else:
             check(not reach and not east_edge, f"Grand Oak + Route 2, {label}: no cell of the east edge and nothing of Route 2 is reachable "
                   f"(edge cells found: {sorted(y for _, y in east_edge)})")

@@ -59,6 +59,13 @@ Redfield_EventScript_Boatman::
 Redfield_Text_Boatman:
 	.string "Boats to Route 18 run on the river.\n(Story pass: the boat crossing.)$"
 
+Redfield_EventScript_SignTown::
+	msgbox Redfield_Text_SignTown, MSGBOX_SIGN
+	end
+
+Redfield_Text_SignTown:
+	.string "REDFIELD\nSugarcane and pepper country. Mill road west to Route 17.$"
+
 Redfield_EventScript_SignMill::
 	msgbox Redfield_Text_SignMill, MSGBOX_SIGN
 	end

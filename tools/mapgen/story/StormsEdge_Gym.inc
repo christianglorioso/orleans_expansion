@@ -266,10 +266,10 @@ StormsEdge_Gym_EventScript_Electrician2::
 StormsEdge_Gym_EventScript_Voltorb4::
 	lock
 	faceplayer
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_VOLTORB_ORLEANIAN, CRY_MODE_ENCOUNTER
 	msgbox StormsEdge_Gym_Text_VoltorbRolls, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_VOLTORB, 15
+	setwildbattle SPECIES_VOLTORB_ORLEANIAN, 15
 	dowildbattle
 	setflag FLAG_HIDE_STORMS_EDGE_VOLTORB_1
 	removeobject LOCALID_STORMS_EDGE_GYM_VOLTORB4
@@ -279,10 +279,10 @@ StormsEdge_Gym_EventScript_Voltorb4::
 StormsEdge_Gym_EventScript_Voltorb5::
 	lock
 	faceplayer
-	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_VOLTORB_ORLEANIAN, CRY_MODE_ENCOUNTER
 	msgbox StormsEdge_Gym_Text_VoltorbRolls, MSGBOX_DEFAULT
 	waitmoncry
-	setwildbattle SPECIES_VOLTORB, 16
+	setwildbattle SPECIES_VOLTORB_ORLEANIAN, 16
 	dowildbattle
 	setflag FLAG_HIDE_STORMS_EDGE_VOLTORB_2
 	removeobject LOCALID_STORMS_EDGE_GYM_VOLTORB5

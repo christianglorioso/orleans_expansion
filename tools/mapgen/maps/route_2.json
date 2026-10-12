@@ -321,6 +321,45 @@
       "x": 37,
       "y": 24,
       "label": "Water prop"
+    },
+    {
+      "prefab": "boulder",
+      "x": 23,
+      "y": 8,
+      "label": "Fallen power line",
+      "art": "fallen_line",
+      "rows": [
+        [
+          "cian:342",
+          "cian:343"
+        ]
+      ]
+    },
+    {
+      "prefab": "boulder",
+      "x": 26,
+      "y": 9,
+      "label": "Fallen power line",
+      "art": "fallen_line",
+      "rows": [
+        [
+          "cian:342",
+          "cian:343"
+        ]
+      ]
+    },
+    {
+      "prefab": "boulder",
+      "x": 24,
+      "y": 10,
+      "label": "Fallen power line",
+      "art": "fallen_line",
+      "rows": [
+        [
+          "cian:342",
+          "cian:343"
+        ]
+      ]
     }
   ],
   "objects": [
@@ -428,20 +467,6 @@
         [
           49,
           12
-        ]
-      ]
-    }
-  ],
-  "walls": [
-    {
-      "side": "W",
-      "depth": 2,
-      "lo": 0,
-      "hi": 26,
-      "gaps": [
-        [
-          8,
-          11
         ]
       ]
     }

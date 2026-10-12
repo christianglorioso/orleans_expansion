@@ -152,7 +152,7 @@ VARIANTS = {
     "orleans_capital": dict(symbol="gTileset_OrleansCapital", drop=[], brick=["brick_shop", "brick_row"],
                             trim=HOUSES + KNEES + BOAT + MUD,
                             lighthouse=False, church=False, extras=("bench", "lamp", "barrel", "crates", "magnolia", "airboat"),
-                            addon="redfield_tileset"),
+                            addon="redfield_tileset", adopt=["orleans_route_farm"]),   # Route 17 joins Redfield
     # Crescent City: its own art, prefabs and trims live in crescent_tileset.py (applied last, see make())
     "orleans_crescent": dict(symbol="gTileset_OrleansCrescent", drop=["barn", "shady"], trim=KNEES + BOAT + MART + MUD,
                              paved=":=", brick=list(BRICK), lighthouse=False, church=True,

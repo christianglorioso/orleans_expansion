@@ -116,6 +116,8 @@ def prepare(b, key):
         return
     style = b.border_style
     b.border_names = BLOCK[style] if ENABLED else None
+    for n in (b.border_names or []):   # the border pieces count as placed (a demand tileset keeps them) and must exist
+        sys.modules[type(b).__module__].hx(n)
     sp = unconnected(key)
     if not ENABLED:
         sp = {s_: [] for s_ in "NSWE"}

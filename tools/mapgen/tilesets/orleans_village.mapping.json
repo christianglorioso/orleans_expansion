@@ -86,10 +86,14 @@
 "patch:ovl_rk_wv_20__ekat_marshwater_W": 583,
 "patch:ovl_rk_wv_20__ekat_marshwater_inNE": 584,
 "patch:ovl_rk_wv_20__ekat_marshwater_landSW": 585,
-"patch:ovl_rk_hut_20__ekat_marsh_W": 586,
-"patch:ovl_rk_hut_21__ekat_marsh_W": 587,
-"patch:ovl_rk_hut_22__ekat_marsh_W": 588,
-"patch:ovl_rk_hut_23__ekat_marsh_W": 589
+"patch:ovl_rk_hut_00__ekat_marsh_W": 586,
+"patch:ovl_rk_hut_01__ekat_marsh_W": 587,
+"patch:ovl_rk_hut_02__ekat_marsh_W": 588,
+"patch:ovl_rk_hut_03__ekat_marsh_W": 589,
+"patch:ovl_rk_hut_10__ekat_marsh_E": 590,
+"patch:ovl_rk_hut_11__ekat_marsh_E": 591,
+"patch:ovl_rk_hut_12__ekat_marsh_E": 592,
+"patch:ovl_rk_hut_13__ekat_marsh_E__door": 593
 },
 "palettes": null,
 "tiles": {}

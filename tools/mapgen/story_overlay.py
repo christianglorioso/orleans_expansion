@@ -102,7 +102,7 @@ OVERLAY = {
     "GrandOak": {
         # the road to Route 2 is three cells wide (rows 13-15): the hedge covers all three (the east edge is a magnolia wall)
         "add_objects": [
-            {"id": "LOCALID_GRAND_OAK_STORM_HEDGE_3", "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE", "x": 39, "y": 13,
+            {"id": "LOCALID_GRAND_OAK_STORM_HEDGE_3", "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE", "x": 43, "y": 13,
              "move": "MOVEMENT_TYPE_NONE", "text": "A storm-tangled hedge blocks the road.\nGarden Shears could cut it.",
              "custom": True, "flag": "FLAG_CUT_STORM_HEDGE"},
         ],

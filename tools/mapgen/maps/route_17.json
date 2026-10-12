@@ -4,7 +4,7 @@
   "map_const": "MAP_ORLEANS_ROUTE17",
   "layout": "LAYOUT_ORLEANS_ROUTE17",
   "layout_dir": "data/layouts/Route17",
-  "tileset": "orleans_route_farm",
+  "tileset": "orleans_capital",
   "mockup": "../orleans_maps/r17_route_17.png",
   "grid": "route_17.grid.txt",
   "edits": [],

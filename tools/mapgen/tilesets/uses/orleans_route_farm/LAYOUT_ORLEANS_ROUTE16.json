@@ -1,4 +1,8 @@
 [
+"bd:dry_scrub_00",
+"bd:dry_scrub_01",
+"bd:dry_scrub_10",
+"bd:dry_scrub_11",
 "dry:0_0",
 "dry:0_14",
 "dry:0_15",
@@ -7,6 +11,7 @@
 "dry:0_3",
 "dry:0_4",
 "dry:1_0",
+"dry:1_1",
 "dry:1_14",
 "dry:1_15",
 "dry:1_20",

@@ -1808,7 +1808,7 @@
     {
       "id": "LAYOUT_GRAND_OAK",
       "name": "GrandOak_Layout",
-      "width": 40,
+      "width": 44,
       "height": 34,
       "primary_tileset": "gTileset_OrleansGeneral",
       "secondary_tileset": "gTileset_OrleansTown",
@@ -2071,7 +2071,7 @@
       "width": 46,
       "height": 26,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansRouteFarm",
+      "secondary_tileset": "gTileset_OrleansCapital",
       "border_filepath": "data/layouts/Route17/border.bin",
       "blockdata_filepath": "data/layouts/Route17/map.bin"
     },

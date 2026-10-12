@@ -19,7 +19,8 @@ def build(key):
     r = subprocess.run(PY + [os.path.join(HERE, "build.py"), os.path.join(HERE, "maps", key + ".json")],
                        capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=world.ROOT)
     t = (r.stdout + r.stderr)
-    return r.returncode == 0, "transition tiles needed" in t, t
+    missing = "MISSING PIECES" in t     # a demand tileset left out a named piece: compose asks for it, nothing was written
+    return r.returncode == 0 or missing, "transition tiles needed" in t or missing, t
 
 
 def main(keys):

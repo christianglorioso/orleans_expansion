@@ -386,5 +386,299 @@
   "id": "bdg_swamp_W1_542aa1ca",
   "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_W1_542aa1ca.png",
   "attr_of": "ekat:grass"
+ },
+ {
+  "id": "ovl_props_crates__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_mag_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:01"
+  }
+ },
+ {
+  "id": "ovl_mag_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:02"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:11"
+  }
+ },
+ {
+  "id": "ovl_mag_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:12"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_mag_00__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_props_barrel__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:barrel"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_crates__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "props:lamp_top"
+  }
+ },
+ {
+  "id": "ovl_mag_00__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_00__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_01__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "mag:01"
+  }
+ },
+ {
+  "id": "ovl_mag_02__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "mag:02"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_water_landSW",
+  "overlay": {
+   "base": "ekat:water_landSW",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_11__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "mag:11"
+  }
+ },
+ {
+  "id": "ovl_mag_11__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "mag:11"
+  }
+ },
+ {
+  "id": "ovl_mag_12__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "mag:12"
+  }
+ },
+ {
+  "id": "ovl_mag_12__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "mag:12"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_top"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "props:lamp_top"
+  }
+ },
+ {
+  "id": "ovl_props_barrel__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:barrel"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_water_landSE",
+  "overlay": {
+   "base": "ekat:water_landSE",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_water_landSE",
+  "overlay": {
+   "base": "ekat:water_landSE",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_water_landSW",
+  "overlay": {
+   "base": "ekat:water_landSW",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_trap__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:trap"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_mag_02__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "mag:02"
+  }
+ },
+ {
+  "id": "ovl_mag_12__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "mag:12"
+  }
  }
 ]

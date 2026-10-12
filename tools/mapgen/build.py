@@ -26,7 +26,7 @@ WANTED = set()  # pieces it needs that its demand-driven tileset left out last t
 DEMAND = False
 
 
-PRIMARY_ART = ("brg",)  # overlay art that lives in the primary (make_primary_recipe.py): the railed road bridge
+PRIMARY_ART = ("brg", "mag", "props")  # overlay art that lives in the primary (make_primary_recipe.py): the railed road bridge
 PRIMARY_IDS = None  # metatile ids the (pruned) primary really holds: tilesets/orleans_general.mapping.json
 CHECK_PRIMARY = False  # set by Builder for maps on gTileset_OrleansGeneral
 
@@ -174,7 +174,7 @@ class Builder:
         and every diagonal, bend and mouth gets a matching piece. A tile with two or more corners in
         the patch takes the patch's elevation (e.g. surfable water); otherwise it stays land."""
         con, on = a["connects"], a["apply_on"]
-        if self.key in ("redfield", "route_17") and "p" in self.ts["terrain"] and "d" in con:
+        if self.key == "route_17" and "p" in self.ts["terrain"] and "d" in con:
             con += "p"   # the Johto road through the dry join (Route 17 / Redfield) is dry underfoot: no dry edge pieces beside it
         neutral = a.get("neutral", "")
         patch_elev = a["elev"]
@@ -370,7 +370,7 @@ class Builder:
 
     def path_tile(self, x, y, a):
         con = a["connects"]
-        if (x, y) in self.band and self.key in ("redfield", "route_17") and "C" in a and a is self.ts["autotile"].get("path_g"):
+        if (x, y) in self.band and self.key == "route_17" and "C" in a and a is self.ts["autotile"].get("path_g"):
             return hx(a["C"])  # the Johto path through a dry-country seam band: plain dirt, no green kerb pieces against the sand
         if not hasattr(self, "_decks"):  # a bridge's deck carries the road on: no kerb or rounded end against it
             self._decks = {(b["x"] + i, b["y"] + j) for b in self.spec.get("buildings", [])
@@ -791,7 +791,7 @@ def main(argv):
         # primary: every secondary reaches it there, and it may stand in a seam band
         def pool(e):
             o = e.get("overlay")
-            if o and o["art"].split(":")[0] in PRIMARY_ART and 0 <= MAPPING.get(o["base"], 9999) < 512:
+            if o and o["art"].split(":")[0] in PRIMARY_ART and 0 <= MAPPING.get(o["base"], 9999) < 512                     and not (o["art"].startswith("mag:") and b.spec["tileset"] == "orleans_pointe"):   # Pointe's magnolia is its own art
                 return "orleans_general.blends.json"
             if e["id"].startswith("bdg_"):   # swamp border cells baked over grass: the primary's
                 return "orleans_general.blends.json"
@@ -808,6 +808,19 @@ def main(argv):
         print(f"{len(b.pending_blends)} transition tiles needed: added to {', '.join(by_file)}. Re-run compose, then build again.")
     if "--preview" in argv:
         b.preview(root, argv[argv.index("--preview") + 1])
+    if WANTED and "--allow-missing" not in argv:
+        # a piece the tileset does not have would be drawn as metatile 0 (plain grass): never write that. Compose, build again.
+        lp = os.path.join(root, "data/layouts/layouts.json")   # the layout's tileset is recorded all the same (compose reads it)
+        layouts = json.load(open(lp))
+        for l in layouts["layouts"]:
+            if l.get("id") == b.spec["layout"] and (l["primary_tileset"], l["secondary_tileset"]) != (b.ts["primary"], b.ts["secondary"]):
+                l["primary_tileset"], l["secondary_tileset"] = b.ts["primary"], b.ts["secondary"]
+                with open(lp, "w", newline="\n") as f:
+                    json.dump(layouts, f, indent=2)
+                    f.write("\n")
+        print(f"MISSING PIECES: {len(WANTED)} named pieces are not in the tileset's mapping, nothing was written: "
+              f"{', '.join(sorted(WANTED)[:8])}")
+        sys.exit(3)
     if "--dry-run" not in argv:
         b.write_layout(root)
         b.write_events(root)

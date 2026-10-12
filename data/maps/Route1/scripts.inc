@@ -221,4 +221,11 @@ Route1_Text_ThroughTheReeds:
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
+Route1_EventScript_MespritShrine::
+	msgbox Route1_Text_MespritShrine, MSGBOX_SIGN
+	end
+
+Route1_Text_MespritShrine:
+	.string "A weathered stone. Someone has\nleft fresh flowers on it.$"
+
 @ --- mapgen: generated NPC scripts (end) ---

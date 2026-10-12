@@ -246,6 +246,14 @@
   "bg_events": [
     {
       "type": "sign",
+      "x": 3,
+      "y": 16,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_SignTown"
+    },
+    {
+      "type": "sign",
       "x": 28,
       "y": 16,
       "elevation": 3,

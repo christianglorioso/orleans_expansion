@@ -1306,5 +1306,62 @@
    "M": "ekat:marsh_inNE",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "ovl_rk_hut_00__ekat_marsh_W",
+  "overlay": {
+   "base": "ekat:marsh_W",
+   "art": "rk_hut:00"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_01__ekat_marsh_W",
+  "overlay": {
+   "base": "ekat:marsh_W",
+   "art": "rk_hut:01"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_02__ekat_marsh_W",
+  "overlay": {
+   "base": "ekat:marsh_W",
+   "art": "rk_hut:02"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_03__ekat_marsh_W",
+  "overlay": {
+   "base": "ekat:marsh_W",
+   "art": "rk_hut:03"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_10__ekat_marsh_E",
+  "overlay": {
+   "base": "ekat:marsh_E",
+   "art": "rk_hut:10"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_11__ekat_marsh_E",
+  "overlay": {
+   "base": "ekat:marsh_E",
+   "art": "rk_hut:11"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_12__ekat_marsh_E",
+  "overlay": {
+   "base": "ekat:marsh_E",
+   "art": "rk_hut:12"
+  }
+ },
+ {
+  "id": "ovl_rk_hut_13__ekat_marsh_E__door",
+  "overlay": {
+   "base": "ekat:marsh_E",
+   "art": "rk_hut:13",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
  }
 ]

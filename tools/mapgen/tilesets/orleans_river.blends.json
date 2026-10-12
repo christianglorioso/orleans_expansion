@@ -754,20 +754,6 @@
   "group": "levee"
  },
  {
-  "id": "ovl_props_bench_0__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_0"
-  }
- },
- {
-  "id": "ovl_props_bench_1__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "props:bench_1"
-  }
- },
- {
   "id": "lv_7c46fc48061b",
   "pixels": "tools/mapgen/tilesets/levee/lv_7c46fc48061b.png",
   "base": "ekat:water_landSW",
