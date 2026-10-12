@@ -385,54 +385,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_PokeMart
     },
     {
-        .metatileNum = METATILE_Petalburg_Door_Littleroot,
-        .tileset = &gTileset_Petalburg,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Littleroot,
-        .palettes = sDoorAnimPalettes_Littleroot
-    },
-    {
-        .metatileNum = METATILE_Petalburg_Door_BirchsLab,
-        .tileset = &gTileset_Petalburg,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_BirchsLab,
-        .palettes = sDoorAnimPalettes_BirchsLab
-    },
-    {
-        .metatileNum = METATILE_Rustboro_Door_Tan,
-        .tileset = &gTileset_Rustboro,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_RustboroTan,
-        .palettes = sDoorAnimPalettes_RustboroTan
-    },
-    {
-        .metatileNum = METATILE_Rustboro_Door_Gray,
-        .tileset = &gTileset_Rustboro,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_RustboroGray,
-        .palettes = sDoorAnimPalettes_RustboroGray
-    },
-    {
-        .metatileNum = METATILE_Fallarbor_Door_LightRoof,
-        .tileset = &gTileset_Fallarbor,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_FallarborLightRoof,
-        .palettes = sDoorAnimPalettes_FallarborLightRoof
-    },
-    {
-        .metatileNum = METATILE_Petalburg_Door_Oldale,
-        .tileset = &gTileset_Petalburg,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Oldale,
-        .palettes = sDoorAnimPalettes_Oldale
-    },
-    {
         .metatileNum = METATILE_Mauville_Door,
         .tileset = &gTileset_Mauville,
         .sound = DOOR_SOUND_NORMAL,
@@ -447,22 +399,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .size = DOOR_SIZE_1x2,
         .tiles = sDoorAnimTiles_Verdanturf,
         .palettes = sDoorAnimPalettes_Verdanturf
-    },
-    {
-        .metatileNum = METATILE_Slateport_Door,
-        .tileset = &gTileset_Slateport,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Slateport,
-        .palettes = sDoorAnimPalettes_Slateport
-    },
-    {
-        .metatileNum = METATILE_Dewford_Door,
-        .tileset = &gTileset_Dewford,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Dewford,
-        .palettes = sDoorAnimPalettes_Dewford
     },
     {
         .metatileNum = METATILE_General_Door_Contest,
@@ -489,54 +425,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_LilycoveWooden
     },
     {
-        .metatileNum = METATILE_Mossdeep_Door,
-        .tileset = &gTileset_Mossdeep,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Mossdeep,
-        .palettes = sDoorAnimPalettes_Mossdeep
-    },
-    {
-        .metatileNum = METATILE_Sootopolis_Door_PeakedRoof,
-        .tileset = &gTileset_Sootopolis,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_SootopolisPeakedRoof,
-        .palettes = sDoorAnimPalettes_SootopolisPeakedRoof
-    },
-    {
-        .metatileNum = METATILE_Sootopolis_Door,
-        .tileset = &gTileset_Sootopolis,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Sootopolis,
-        .palettes = sDoorAnimPalettes_Sootopolis
-    },
-    {
-        .metatileNum = METATILE_EverGrande_Door_PokemonLeague,
-        .tileset = &gTileset_EverGrande,
-        .sound = DOOR_SOUND_SLIDING,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_PokemonLeague,
-        .palettes = sDoorAnimPalettes_PokemonLeague
-    },
-    {
-        .metatileNum = METATILE_Pacifidlog_Door,
-        .tileset = &gTileset_Pacifidlog,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_Pacifidlog,
-        .palettes = sDoorAnimPalettes_Pacifidlog
-    },
-    {
-        .metatileNum = METATILE_PetalburgGym_Door,
-        .tileset = &gTileset_PetalburgGym,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_PetalburgGym,
-        .palettes = sDoorAnimPalettes_PetalburgGym
-    },
-    {
         .metatileNum = METATILE_Mauville_Door_CyclingRoad,
         .tileset = &gTileset_Mauville,
         .sound = DOOR_SOUND_NORMAL,
@@ -561,14 +449,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_SafariZone
     },
     {
-        .metatileNum = METATILE_Mossdeep_Door_SpaceCenter,
-        .tileset = &gTileset_Mossdeep,
-        .sound = DOOR_SOUND_SLIDING,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_MossdeepSpaceCenter,
-        .palettes = sDoorAnimPalettes_MossdeepSpaceCenter
-    },
-    {
         .metatileNum = METATILE_PokemonCenter_Door_CableClub,
         .tileset = &gTileset_PokemonCenter,
         .sound = DOOR_SOUND_SLIDING,
@@ -577,43 +457,12 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_CableClub
     },
     {
-        .metatileNum = METATILE_InsideShip_IntactDoor_Bottom_Unlocked,
-        .tileset = &gTileset_InsideShip,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2, sDoorAnimTiles_AbandonedShip,
-        .palettes = sDoorAnimPalettes_AbandonedShip
-    },
-    {
-        .metatileNum = METATILE_Fallarbor_Door_DarkRoof,
-        .tileset = &gTileset_Fallarbor,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_FallarborDarkRoof,
-        .palettes = sDoorAnimPalettes_FallarborDarkRoof
-    },
-    {
-        .metatileNum = METATILE_InsideShip_IntactDoor_Bottom_Interior,
-        .tileset = &gTileset_InsideShip,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_AbandonedShipRoom,
-        .palettes = sDoorAnimPalettes_AbandonedShipRoom
-    },
-    {
         .metatileNum = METATILE_Shop_Door_Elevator,
         .tileset = &gTileset_Shop,
         .sound = DOOR_SOUND_SLIDING,
         .size = DOOR_SIZE_1x2,
         .tiles = sDoorAnimTiles_LilycoveDeptStoreElevator,
         .palettes = sDoorAnimPalettes_LilycoveDeptStoreElevator
-    },
-    {
-        .metatileNum = METATILE_Dewford_Door_BattleTower,
-        .tileset = &gTileset_Dewford,
-        .sound = DOOR_SOUND_SLIDING,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_BattleTowerOld,
-        .palettes = sDoorAnimPalettes_BattleTowerOld
     },
     {
         .metatileNum = METATILE_BattleFrontier_Door_Elevator,
@@ -680,24 +529,8 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .palettes = sDoorAnimPalettes_BattlePalaceLobby
     },
     {
-        .metatileNum = METATILE_Slateport_Door_BattleTent,
-        .tileset = &gTileset_Slateport,
-        .sound = DOOR_SOUND_SLIDING,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_BattleTent,
-        .palettes = sDoorAnimPalettes_BattleTent
-    },
-    {
         .metatileNum = METATILE_Mauville_Door_BattleTent,
         .tileset = &gTileset_Mauville,
-        .sound = DOOR_SOUND_SLIDING,
-        .size = DOOR_SIZE_1x2,
-        .tiles = sDoorAnimTiles_BattleTent,
-        .palettes = sDoorAnimPalettes_BattleTent
-    },
-    {
-        .metatileNum = METATILE_Fallarbor_Door_BattleTent,
-        .tileset = &gTileset_Fallarbor,
         .sound = DOOR_SOUND_SLIDING,
         .size = DOOR_SIZE_1x2,
         .tiles = sDoorAnimTiles_BattleTent,

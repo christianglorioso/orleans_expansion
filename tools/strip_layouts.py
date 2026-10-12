@@ -32,10 +32,10 @@ lit = {}
 for root in ['src', 'include', 'data', 'test', 'asm']:
     for dp, dn, fn in os.walk(root):
         d = dp.replace(os.sep, '/')
-        if d.startswith(('data/maps', 'data/layouts', 'data/tilesets', 'include/constants/layouts')):
+        if d.startswith(('data/layouts', 'data/tilesets', 'include/constants/layouts')):
             continue
         for f in fn:
-            if not f.endswith(('.c', '.h', '.s', '.inc', '.json', '.party', '.mk')):
+            if not f.endswith(('.c', '.h', '.s', '.inc', '.party', '.mk')):
                 continue
             if f == 'layouts.h':
                 continue
@@ -53,7 +53,7 @@ for l in base['layouts']:
     i = l['id']
     if i == 'LAYOUT_STRIP_STUB':
         continue
-    if i in used:
+    if i in used or any(x.startswith('data/maps/') for x in lit.get(i, ())):
         out.append(l)
         kept_n += 1
     elif i in lit:
