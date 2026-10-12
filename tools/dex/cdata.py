@@ -15,7 +15,8 @@ STAT_FIELDS = dict(hp="baseHP       ", atk="baseAttack   ", def_="baseDefense  "
 
 class SpeciesFiles:
     def __init__(self):
-        self.text = {p: p.read_text(encoding="utf-8") for p in SI_FILES}
+        extra = [SI_DIR / "orleans_forms.h", SI_DIR / "orleans_megas.h"]
+        self.text = {p: p.read_text(encoding="utf-8") for p in SI_FILES + [x for x in extra if x.exists()]}
 
     def find(self, const):
         for p, t in self.text.items():

@@ -4112,6 +4112,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Exploud,
             gShinyOverworldPalette_Exploud
         )
+        .formChangeTable = sExploudFormChangeTable,
+        .formSpeciesIdTable = sExploudFormSpeciesIdTable,
         .levelUpLearnset = sExploudLevelUpLearnset,
         .teachableLearnset = sExploudTeachableLearnset,
     },

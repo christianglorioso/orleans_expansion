@@ -282,6 +282,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_Serperior,
             gShinyOverworldPalette_Serperior
         )
+        .formChangeTable = sSerperiorFormChangeTable,
+        .formSpeciesIdTable = sSerperiorFormSpeciesIdTable,
         .levelUpLearnset = sSerperiorLevelUpLearnset,
         .teachableLearnset = sSerperiorTeachableLearnset,
     },

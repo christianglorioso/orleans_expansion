@@ -176,6 +176,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     #include "species_info/orleans_forms.h"
 
+    #include "species_info/orleans_megas.h"
+
     /* You may add any custom species below this point based on the following structure: */
 
     /*

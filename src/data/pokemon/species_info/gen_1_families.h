@@ -4105,6 +4105,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .isAlolanForm = TRUE,
         .levelUpLearnset = sRaichuAlolaLevelUpLearnset,
         .teachableLearnset = sRaichuAlolaTeachableLearnset,
+        .formChangeTable = sRaichuAlolaFormChangeTable,
         .formSpeciesIdTable = sRaichuFormSpeciesIdTable,
     },
 #endif //P_ALOLAN_FORMS
@@ -4221,10 +4222,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         FOOTPRINT(Raichu)
         SHADOW(-3, 10, SHADOW_SIZE_S)
         .isMegaEvolution = TRUE,
-        .levelUpLearnset = sRaichuLevelUpLearnset,
-        .teachableLearnset = sRaichuTeachableLearnset,
+        .levelUpLearnset = sRaichuAlolaLevelUpLearnset,
+        .teachableLearnset = sRaichuAlolaTeachableLearnset,
         .formSpeciesIdTable = sRaichuFormSpeciesIdTable,
-        .formChangeTable = sRaichuFormChangeTable,
+        .formChangeTable = sRaichuAlolaFormChangeTable,
     },
 #endif //P_GEN_9_MEGA_EVOLUTIONS
 #endif //P_FAMILY_PIKACHU
@@ -16379,6 +16380,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
+        .formChangeTable = sScytherFormChangeTable,
+        .formSpeciesIdTable = sScytherFormSpeciesIdTable,
         .levelUpLearnset = sScytherLevelUpLearnset,
         .teachableLearnset = sScytherTeachableLearnset,
         .eggMoveLearnset = sScytherEggMoveLearnset,
@@ -16618,6 +16621,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             gOverworldPalette_Kleavor,
             gShinyOverworldPalette_Kleavor
         )
+        .formChangeTable = sKleavorFormChangeTable,
+        .formSpeciesIdTable = sKleavorFormSpeciesIdTable,
         .levelUpLearnset = sKleavorLevelUpLearnset,
         .teachableLearnset = sKleavorTeachableLearnset,
     },

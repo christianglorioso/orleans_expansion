@@ -407,6 +407,7 @@ static const u16 sKinglerFormSpeciesIdTable[] = {
 #if P_GIGANTAMAX_FORMS
     SPECIES_KINGLER_GMAX,
 #endif
+    SPECIES_KINGLER_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_KRABBY
@@ -427,6 +428,7 @@ static const u16 sElectrodeFormSpeciesIdTable[] = {
 #if P_HISUIAN_FORMS
     SPECIES_ELECTRODE_HISUI,
 #endif
+    SPECIES_ELECTRODE_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_VOLTORB
@@ -438,6 +440,7 @@ static const u16 sExeggutorFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_EXEGGUTOR_ALOLA,
 #endif
+    SPECIES_EXEGGUTOR_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_EXEGGCUTE
@@ -460,6 +463,7 @@ static const u16 sWeezingFormSpeciesIdTable[] = {
 #if P_GALARIAN_FORMS
     SPECIES_WEEZING_GALAR,
 #endif
+    SPECIES_WEEZING_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_KOFFING
@@ -1926,6 +1930,7 @@ static const u16 sLycanrocFormSpeciesIdTable[] = {
     SPECIES_LYCANROC_MIDDAY,
     SPECIES_LYCANROC_MIDNIGHT,
     SPECIES_LYCANROC_DUSK,
+    SPECIES_LYCANROC_MIDNIGHT_MEGA,
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_ROCKRUFF
@@ -2584,6 +2589,7 @@ static const u16 sTangelaFormSpeciesIdTable[] = {
 static const u16 sTangrowthFormSpeciesIdTable[] = {
     SPECIES_TANGROWTH_ORLEANIAN,
     SPECIES_TANGROWTH,
+    SPECIES_TANGROWTH_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 static const u16 sBonslyFormSpeciesIdTable[] = {
@@ -2594,6 +2600,7 @@ static const u16 sBonslyFormSpeciesIdTable[] = {
 static const u16 sSudowoodoFormSpeciesIdTable[] = {
     SPECIES_SUDOWOODO_ORLEANIAN,
     SPECIES_SUDOWOODO,
+    SPECIES_SUDOWOODO_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 static const u16 sCorphishFormSpeciesIdTable[] = {
@@ -2604,6 +2611,7 @@ static const u16 sCorphishFormSpeciesIdTable[] = {
 static const u16 sCrawdauntFormSpeciesIdTable[] = {
     SPECIES_CRAWDAUNT_ORLEANIAN,
     SPECIES_CRAWDAUNT,
+    SPECIES_CRAWDAUNT_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 static const u16 sKoffingFormSpeciesIdTable[] = {
@@ -2644,6 +2652,7 @@ static const u16 sRoseliaFormSpeciesIdTable[] = {
 static const u16 sRoseradeFormSpeciesIdTable[] = {
     SPECIES_ROSERADE_ORLEANIAN,
     SPECIES_ROSERADE,
+    SPECIES_ROSERADE_ORLEANIAN_MEGA,
     FORM_SPECIES_END,
 };
 static const u16 sSpearowFormSpeciesIdTable[] = {
@@ -2654,5 +2663,36 @@ static const u16 sSpearowFormSpeciesIdTable[] = {
 static const u16 sFearowFormSpeciesIdTable[] = {
     SPECIES_FEAROW_ORLEANIAN,
     SPECIES_FEAROW,
+    SPECIES_FEAROW_ORLEANIAN_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sSkeledirgeFormSpeciesIdTable[] = {
+    SPECIES_SKELEDIRGE,
+    SPECIES_SKELEDIRGE_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sScytherFormSpeciesIdTable[] = {
+    SPECIES_SCYTHER,
+    SPECIES_SCYTHER_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sQuaquavalFormSpeciesIdTable[] = {
+    SPECIES_QUAQUAVAL,
+    SPECIES_QUAQUAVAL_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sExploudFormSpeciesIdTable[] = {
+    SPECIES_EXPLOUD,
+    SPECIES_EXPLOUD_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sKleavorFormSpeciesIdTable[] = {
+    SPECIES_KLEAVOR,
+    SPECIES_KLEAVOR_MEGA,
+    FORM_SPECIES_END,
+};
+static const u16 sSerperiorFormSpeciesIdTable[] = {
+    SPECIES_SERPERIOR,
+    SPECIES_SERPERIOR_MEGA,
     FORM_SPECIES_END,
 };

@@ -386,6 +386,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_Skeledirge,
             gShinyOverworldPalette_Skeledirge
         )
+        .formChangeTable = sSkeledirgeFormChangeTable,
+        .formSpeciesIdTable = sSkeledirgeFormSpeciesIdTable,
         .levelUpLearnset = sSkeledirgeLevelUpLearnset,
         .teachableLearnset = sSkeledirgeTeachableLearnset,
     },
@@ -580,6 +582,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_Quaquaval,
             gShinyOverworldPalette_Quaquaval
         )
+        .formChangeTable = sQuaquavalFormChangeTable,
+        .formSpeciesIdTable = sQuaquavalFormSpeciesIdTable,
         .levelUpLearnset = sQuaquavalLevelUpLearnset,
         .teachableLearnset = sQuaquavalTeachableLearnset,
     },

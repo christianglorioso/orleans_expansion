@@ -2340,6 +2340,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         )
         .levelUpLearnset = sLycanrocMidnightLevelUpLearnset,
         .teachableLearnset = sLycanrocMidnightTeachableLearnset,
+        .formChangeTable = sLycanrocMidnightFormChangeTable,
         .formSpeciesIdTable = sLycanrocFormSpeciesIdTable,
     },
 

@@ -152,6 +152,7 @@
             TRACKS_FOOT,
             sAnimTable_Following
         )
+        .formChangeTable = sTangrowthOrleanianFormChangeTable,
         .formSpeciesIdTable = sTangrowthFormSpeciesIdTable,
         .levelUpLearnset = sTangrowthLevelUpLearnset,
         .teachableLearnset = sTangrowthTeachableLearnset,
@@ -308,6 +309,7 @@
             TRACKS_FOOT,
             sAnimTable_Following
         )
+        .formChangeTable = sSudowoodoOrleanianFormChangeTable,
         .formSpeciesIdTable = sSudowoodoFormSpeciesIdTable,
         .levelUpLearnset = sSudowoodoLevelUpLearnset,
         .teachableLearnset = sSudowoodoTeachableLearnset,
@@ -453,6 +455,7 @@
             gOverworldPalette_Crawdaunt,
             gShinyOverworldPalette_Crawdaunt
         )
+        .formChangeTable = sCrawdauntOrleanianFormChangeTable,
         .formSpeciesIdTable = sCrawdauntFormSpeciesIdTable,
         .levelUpLearnset = sCrawdauntLevelUpLearnset,
         .teachableLearnset = sCrawdauntTeachableLearnset,
@@ -602,6 +605,7 @@
         )
         .levelUpLearnset = sWeezingLevelUpLearnset,
         .teachableLearnset = sWeezingTeachableLearnset,
+        .formChangeTable = sWeezingOrleanianFormChangeTable,
         .formSpeciesIdTable = sWeezingFormSpeciesIdTable,
     },
 
@@ -744,6 +748,7 @@
         )
         .levelUpLearnset = sKinglerLevelUpLearnset,
         .teachableLearnset = sKinglerTeachableLearnset,
+        .formChangeTable = sKinglerOrleanianFormChangeTable,
         .formSpeciesIdTable = sKinglerFormSpeciesIdTable,
     },
 
@@ -892,6 +897,7 @@
         )
         .levelUpLearnset = sElectrodeLevelUpLearnset,
         .teachableLearnset = sElectrodeTeachableLearnset,
+        .formChangeTable = sElectrodeOrleanianFormChangeTable,
         .formSpeciesIdTable = sElectrodeFormSpeciesIdTable,
     },
 
@@ -1050,6 +1056,7 @@
         )
         .levelUpLearnset = sExeggutorLevelUpLearnset,
         .teachableLearnset = sExeggutorTeachableLearnset,
+        .formChangeTable = sExeggutorOrleanianFormChangeTable,
         .formSpeciesIdTable = sExeggutorFormSpeciesIdTable,
     },
 
@@ -1262,6 +1269,7 @@
         )
         .levelUpLearnset = sChandelureLevelUpLearnset,
         .teachableLearnset = sChandelureTeachableLearnset,
+        .formChangeTable = sChandelureFormChangeTable,
         .formSpeciesIdTable = sChandelureFormSpeciesIdTable,
     },
 
@@ -1509,6 +1517,7 @@
             TRACKS_FOOT,
             sAnimTable_Following_Asym
         )
+        .formChangeTable = sRoseradeOrleanianFormChangeTable,
         .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
@@ -1658,6 +1667,7 @@
             gOverworldPalette_Fearow,
             gShinyOverworldPalette_Fearow
         )
+        .formChangeTable = sFearowOrleanianFormChangeTable,
         .formSpeciesIdTable = sFearowFormSpeciesIdTable,
         .levelUpLearnset = sFearowLevelUpLearnset,
         .teachableLearnset = sFearowTeachableLearnset,
