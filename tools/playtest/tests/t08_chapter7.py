@@ -42,6 +42,32 @@ def press_mirror(b, k):
     b.frames(20)
 
 
+def menu_choice(b, down):
+    for _ in range(60):
+        if any("ultichoice" in str(x) for x in b.active_tasks()):
+            break
+        b.press("A", 4, 30)
+    b.frames(20)
+    for _ in range(down):
+        b.press("DOWN", 6, 14)
+        b.frames(6)
+    b.press("A", 4, 30)
+    b.frames(20)
+
+
+def lose_battle(b, max_s=60):
+    """force a LOSS (the autopilot only wins): at the action selection point jump to the lost end-of-turn"""
+    main_func = b.sym("gBattleMainFunc")
+    for i in range(max_s * 2):
+        if not b.in_battle():
+            return True
+        if (b.r32(main_func) & ~1) == b.sym("HandleTurnActionSelectionState"):
+            b.w8(b.sym("gBattleOutcome"), 2)                                       # B_OUTCOME_LOST
+            b.w32(main_func, b.syms.call_addr("HandleEndTurn_BattleLost"))
+        b.press("A", 4, 26)
+    return not b.in_battle()
+
+
 def mirror_bits(b):
     return b.var("VAR_REDFIELD_MIRRORS")
 
@@ -149,6 +175,37 @@ def run(b, t):
     t.check("Isaac and the grunts are gone for good, Wren too", b.flag("FLAG_HIDE_RAID_ISAAC") and b.flag("FLAG_HIDE_RAID_GRUNT1")
             and b.flag("FLAG_HIDE_RAID_GRUNT2") and b.flag("FLAG_HIDE_REDFIELD_WREN"))
 
+    # a LOSS in the raid, then NOT YET: back in Redfield, the raid reset, Wren waiting outside the mill
+    b.set_var("VAR_ORLEANS_STORY", 33)
+    b.set_var("VAR_REDFIELD_RAID_CALL", 1)
+    b.set_var("VAR_OLD_WATER_RAID", 1)
+    b.warp("OldWater", 22, 32)
+    for _ in range(80):
+        if b.in_battle():
+            break
+        b.press("A", 4, 30)
+    lose_battle(b)
+    menu_choice(b, 1)                              # TRY AGAIN / NOT YET: NOT YET
+    for _ in range(30):
+        if b.map_name() == "Redfield":
+            break
+        b.advance_text(60)
+        b.frames(30)
+    b.frames(40)
+    b.advance_text(60)
+    t.check("a loss then NOT YET: back in Redfield, story 33, raid var 0, Wren waits outside the mill",
+            b.map_name() == "Redfield" and b.var("VAR_ORLEANS_STORY") == 33 and b.var("VAR_OLD_WATER_RAID") == 0
+            and not b.flag("FLAG_HIDE_REDFIELD_WREN"), "%s story=%d var=%d" % (b.where(), b.var("VAR_ORLEANS_STORY"), b.var("VAR_OLD_WATER_RAID")))
+    b.shot("raid_not_yet")
+    b.warp("Redfield", 37, 14)
+    b.interact("R", 400)                           # Wren (38, 14): the retry path after NOT YET
+    for _ in range(40):
+        if b.var("VAR_ORLEANS_STORY") == 34:
+            break
+        b.advance_text(120)
+        b.frames(30)
+    t.check("after NOT YET, talking to Wren retries the raid and it can be won (story 34)", b.var("VAR_ORLEANS_STORY") == 34 and b.var("VAR_OLD_WATER_RAID") == 2,
+            "story=%d var=%d" % (b.var("VAR_ORLEANS_STORY"), b.var("VAR_OLD_WATER_RAID")))
     b.warp("OldWater", 22, 32)
     b.frames(30)
     t.check("outside the raid the Old Water has no raiders (hidden on load)", b.flag("FLAG_HIDE_RAID_ISAAC") and b.flag("FLAG_HIDE_RAID_GRUNT1")

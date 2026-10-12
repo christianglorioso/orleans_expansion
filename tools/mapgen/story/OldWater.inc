@@ -77,11 +77,36 @@ OldWater_EventScript_BattleTotodile:
 	multi_fixed_2_vs_2 TRAINER_ORLEANS_RAID_GRUNT_A, OldWater_Text_DefeatA, TRAINER_ORLEANS_RAID_GRUNT_B, OldWater_Text_DefeatB, PARTNER_WREN_TOTODILE
 	return
 
+@ a loss: heal, then TRY AGAIN or NOT YET (B = not yet): NOT YET sends the player back to Redfield with the raid reset (Wren waits outside the mill)
 OldWater_EventScript_RaidLost:
 	special HealPlayerParty
 	msgbox OldWater_Text_Retry, MSGBOX_DEFAULT
+	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, OldWater_Text_ChoiceAgain, OldWater_Text_ChoiceNotYet
+	goto_if_eq VAR_RESULT, 0, OldWater_EventScript_RaidAgain
+	goto OldWater_EventScript_RaidNotYet
+
+OldWater_EventScript_RaidAgain:
 	closemessage
 	goto OldWater_EventScript_RaidBattle
+
+OldWater_EventScript_RaidNotYet:
+	msgbox OldWater_Text_NotYet, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_OLD_WATER_RAID, 0
+	setvar VAR_REDFIELD_RAID_CALL, 1
+	setflag FLAG_HIDE_RAID_ISAAC
+	setflag FLAG_HIDE_RAID_GRUNT1
+	setflag FLAG_HIDE_RAID_GRUNT2
+	setflag FLAG_HIDE_RAID_WREN
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_OLD_WATER_RAID_ISAAC
+	removeobject LOCALID_OLD_WATER_RAID_GRUNT1
+	removeobject LOCALID_OLD_WATER_RAID_GRUNT2
+	removeobject LOCALID_OLD_WATER_RAID_WREN
+	warpsilent MAP_REDFIELD, 37, 14
+	waitstate
+	releaseall
+	end
 
 OldWater_EventScript_RaidWon:
 	special HealPlayerParty
@@ -179,5 +204,16 @@ OldWater_Text_Wren3:
 	.string "faster than the road.$"
 
 OldWater_Text_Retry:
-	.string "WREN: Again. Together this time!$"
+	.string "WREN: Again? Together this time?\n"
+	.string "Or come back later?$"
+
+OldWater_Text_NotYet:
+	.string "WREN: Not yet, then. Back to the\n"
+	.string "mill. I'll be waiting.$"
+
+OldWater_Text_ChoiceAgain:
+	.string "TRY AGAIN$"
+
+OldWater_Text_ChoiceNotYet:
+	.string "NOT YET$"
 

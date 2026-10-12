@@ -320,16 +320,8 @@ def people(t):
             continue
         t.objects.append({"id": f"LOCALID_REDFIELD_{name}", "gfx": gfx, "x": x, "y": y, "move": move, "text": text})
         t.occ.add((x, y))
-    # the Mega Stones and the Mask (mockup 3, 4, 5): ordinary balls with stable flags; the story pass gates them
-    for x, y, item, key, what in (
-            (42, 7, "ITEM_HEARTHFLAME_MASK", "0", "Hearthflame Mask (mockup 5, post-game): the yard's east corridor"),
-            (26, 12, "ITEM_CHANDELURITE", "chandelurite", "Chandelurite (mockup 3, post-game): beside Rita's office"),
-            (34, 32, "ITEM_SCOVILLAINITE", "scovillainite", "Scovillainite (mockup 4): by the bottling works")):
-        if (x, y) in t.occ or t.g[y][x] not in "d:":
-            t.skipped.append(("item " + item, x, y))
-            continue
-        t.items.append({"x": x, "y": y, "item": item, "flag": item_flag(CONST, key), "_comment": what})
-        t.occ.add((x, y))
+    # the Mega Stones and the Mask (mockup 3, 4, 5) are POST-GAME (plan 7.7): no balls until the post-game chapter places them:
+    # Hearthflame Mask (42, 7), Chandelurite (26, 12) beside Rita's office, Scovillainite (34, 32) by the bottling works (tools/dex/obtainability.md)
 
 
 # ---------------------------------------------------------------- the levee ground

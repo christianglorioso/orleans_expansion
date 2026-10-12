@@ -91,7 +91,7 @@ OldWater_SongHouse_Text_TupeloTrust:
 	.string "Outsiders have taken our songs\n"
 	.string "before. They took them wrong.\p"
 	.string "The telling has eight verses.\n"
-	.string "Eight SINGERS keep them, spread\l"
+	.string "Eight SINGERS keep them, spread\p"
 	.string "across the land.\p"
 	.string "The first is MAGNOLIA, in\n"
 	.string "GRAND OAK.\p"
@@ -100,7 +100,7 @@ OldWater_SongHouse_Text_TupeloTrust:
 
 OldWater_SongHouse_Text_TupeloBringVerse:
 	.string "TUPELO: MAGNOLIA keeps the first\n"
-	.string "verse. GRAND OAK is north of the\l"
+	.string "verse. GRAND OAK is north of the\p"
 	.string "boat landing.$"
 
 OldWater_SongHouse_Text_TupeloFirstVerse:

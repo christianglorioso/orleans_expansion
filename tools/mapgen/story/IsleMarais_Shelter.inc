@@ -255,7 +255,7 @@ IsleMarais_Shelter_Text_ReceivedPokenav:
 
 IsleMarais_Shelter_Text_MotherPokenav:
 	.string "MOM: And keep this on you.\n"
-	.string "If the lines go down again,\l"
+	.string "If the lines go down again,\p"
 	.string "I want to know where you are.$"
 
 IsleMarais_Shelter_Text_DoorBangs:
@@ -264,10 +264,10 @@ IsleMarais_Shelter_Text_DoorBangs:
 
 IsleMarais_Shelter_Text_RescuersArrive:
 	.string "FISHERMAN: PROFESSOR! We found\n"
-	.string "these three on a porch roof in\l"
+	.string "these three on a porch roof in\p"
 	.string "the flooded district!\p"
 	.string "LAFAYETTE: Bring them here.\n"
-	.string "{PLAYER}, could you give me a hand\l"
+	.string "{PLAYER}, could you give me a hand\p"
 	.string "settling them?$"
 
 IsleMarais_Shelter_Text_MotherGoOn:
@@ -289,7 +289,7 @@ IsleMarais_Shelter_Text_LafayettePick:
 
 IsleMarais_Shelter_Text_FishermanRescue:
 	.string "FISHERMAN: The water came right up\n"
-	.string "the streets. We pulled what we could\l"
+	.string "the streets. We pulled what we could\p"
 	.string "off the roofs.$"
 
 IsleMarais_Shelter_Text_FishermanOfferRod:

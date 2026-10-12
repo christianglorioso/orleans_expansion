@@ -116,7 +116,7 @@ Route1_EventScript_Wren::
 @ ---------------------------------------------------------------- text
 Route1_Text_TooDangerous:
 	.string "A voice calls from the levee:\n"
-	.string "“Not without a POKéMON, kid!\l"
+	.string "“Not without a POKéMON, kid!\p"
 	.string "The water's still moving things!”$"
 
 Route1_Text_LafayetteCalls:
@@ -124,7 +124,7 @@ Route1_Text_LafayetteCalls:
 
 Route1_Text_LafayettePokedex:
 	.string "LAFAYETTE: The storm moved every\n"
-	.string "species on the island. Some won't\l"
+	.string "species on the island. Some won't\p"
 	.string "find their way home on their own.\p"
 	.string "I need help counting them, so none\n"
 	.string "are forgotten. Take this.$"
@@ -134,7 +134,7 @@ Route1_Text_ReceivedPokedex:
 
 Route1_Text_LafayetteBalls:
 	.string "LAFAYETTE: And these. A BUG,\n"
-	.string "FLYING or POISON POKéMON would\l"
+	.string "FLYING or POISON POKéMON would\p"
 	.string "serve you well in GRAND OAK.$"
 
 Route1_Text_LafayetteGoAhead:
@@ -216,5 +216,5 @@ Route1_Text_WrenTrusts:
 
 Route1_Text_ThroughTheReeds:
 	.string "WREN steers the canoe through a\n"
-	.string "gap in the reeds you'd never have\l"
+	.string "gap in the reeds you'd never have\p"
 	.string "seen on your own...$"

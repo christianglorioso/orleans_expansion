@@ -38,5 +38,5 @@ OldWater_CanoeDocks_Text_BoatmanNo:
 
 OldWater_CanoeDocks_Text_BoatmanTupeloFirst:
 	.string "BOATMAN: TUPELO's waiting for you\n"
-	.string "in the song house. North, up the\l"
+	.string "in the song house. North, up the\p"
 	.string "walkways.$"

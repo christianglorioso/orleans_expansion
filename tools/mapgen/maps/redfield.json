@@ -1607,29 +1607,7 @@
     }
   ],
   "surf_only": [],
-  "items": [
-    {
-      "x": 42,
-      "y": 7,
-      "item": "ITEM_HEARTHFLAME_MASK",
-      "flag": "FLAG_UNUSED_0x277",
-      "_comment": "Hearthflame Mask (mockup 5, post-game): the yard's east corridor"
-    },
-    {
-      "x": 26,
-      "y": 12,
-      "item": "ITEM_CHANDELURITE",
-      "flag": "FLAG_UNUSED_0x2A8",
-      "_comment": "Chandelurite (mockup 3, post-game): beside Rita's office"
-    },
-    {
-      "x": 34,
-      "y": 32,
-      "item": "ITEM_SCOVILLAINITE",
-      "flag": "FLAG_UNUSED_0x2A9",
-      "_comment": "Scovillainite (mockup 4): by the bottling works"
-    }
-  ],
+  "items": [],
   "hidden_items": [],
   "signs": [
     {
