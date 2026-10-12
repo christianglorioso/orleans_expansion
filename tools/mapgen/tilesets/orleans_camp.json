@@ -108,6 +108,18 @@
    "name": "levee ground (river channels; levee.py draws the embankment)",
    "tile": "ekat:grass",
    "elev": 3
+  },
+  "%": {
+   "name": "city paving carried onto the route (approach.py)",
+   "tile": "1C1",
+   "elev": 3,
+   "autotile": "paved"
+  },
+  "&": {
+   "name": "city paving breaking up into the dirt road (approach.py draws the paving over it)",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path"
   }
  },
  "autotile": {
@@ -292,6 +304,23 @@
      }
     }
    ]
+  },
+  "paved": {
+   "_comment": "Johto flagstone paving (primary 1B8-1CA): the cities' roads carried a few cells onto the routes that leave them (approach.py).",
+   "connects": "%&",
+   "NW": "1B8",
+   "N": "1B9",
+   "NE": "1BA",
+   "W": "1C0",
+   "C": "1C1",
+   "E": "1C2",
+   "SW": "1C8",
+   "S": "1C9",
+   "SE": "1CA",
+   "iNW": "1BB",
+   "iNE": "1BC",
+   "iSW": "1C3",
+   "iSE": "1C4"
   }
  },
  "prefabs": {
@@ -5587,6 +5616,1252 @@
      "003"
     ]
    ]
+  },
+  "boat": {
+   "_comment": "Brick City sailboat set on swamp water; stands in for the stranded shrimp boats.",
+   "rows": [
+    [
+     null,
+     null,
+     "patch:boat_373",
+     null
+    ],
+    [
+     "patch:boat_352",
+     "patch:boat_353",
+     "patch:boat_354",
+     "patch:boat_355"
+    ],
+    [
+     "patch:boat_2DF",
+     "patch:boat_35B",
+     "patch:boat_35C",
+     "patch:boat_35D"
+    ]
+   ],
+   "door": null,
+   "elev": 1
+  },
+  "boulder": {
+   "_comment": "Cianwood sea boulder on grass, 3x2.",
+   "rows": [
+    [
+     "cian:342",
+     "cian:343",
+     "cian:344"
+    ],
+    [
+     "cian:352",
+     "cian:353",
+     "cian:354"
+    ]
+   ]
+  },
+  "cave_mouth": {
+   "_comment": "A boulder with a cave opening, 3x2.",
+   "door": [
+    1,
+    1
+   ],
+   "rows": [
+    [
+     "cian:342",
+     "cian:343",
+     "cian:344"
+    ],
+    [
+     "cian:352",
+     "patch:cave_door",
+     "cian:354"
+    ]
+   ]
+  },
+  "lamp": {
+   "_comment": "Johto street lamp (primary 02A/03A), 1x2: at the city limits (approach.py).",
+   "rows": [
+    [
+     "02A"
+    ],
+    [
+     "03A"
+    ]
+   ]
+  },
+  "offshore_platform": {
+   "_comment": "Abandoned offshore platform on water, 6x6 (the two stacked 6x3 rects the generator reserves, as one picture; or place offshore_platform_n over offshore_platform_s): a rusted steel deck with a railing (one stretch bent down), the snapped stub of the derrick in the middle, oil drums, rust stains; four great legs braced in an X (blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_0"
+     },
+     {
+      "overlay": "lmk:1_0"
+     },
+     {
+      "overlay": "lmk:2_0"
+     },
+     {
+      "overlay": "lmk:3_0"
+     },
+     {
+      "overlay": "lmk:4_0"
+     },
+     {
+      "overlay": "lmk:5_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_1"
+     },
+     {
+      "overlay": "lmk:1_1"
+     },
+     {
+      "overlay": "lmk:2_1"
+     },
+     {
+      "overlay": "lmk:3_1"
+     },
+     {
+      "overlay": "lmk:4_1"
+     },
+     {
+      "overlay": "lmk:5_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_2"
+     },
+     {
+      "overlay": "lmk:1_2"
+     },
+     {
+      "overlay": "lmk:2_2"
+     },
+     {
+      "overlay": "lmk:3_2"
+     },
+     {
+      "overlay": "lmk:4_2"
+     },
+     {
+      "overlay": "lmk:5_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_3"
+     },
+     {
+      "overlay": "lmk:1_3"
+     },
+     {
+      "overlay": "lmk:2_3"
+     },
+     {
+      "overlay": "lmk:3_3"
+     },
+     {
+      "overlay": "lmk:4_3"
+     },
+     {
+      "overlay": "lmk:5_3"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_4"
+     },
+     {
+      "overlay": "lmk:1_4"
+     },
+     {
+      "overlay": "lmk:2_4"
+     },
+     {
+      "overlay": "lmk:3_4"
+     },
+     {
+      "overlay": "lmk:4_4"
+     },
+     {
+      "overlay": "lmk:5_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_5"
+     },
+     {
+      "overlay": "lmk:1_5"
+     },
+     {
+      "overlay": "lmk:2_5"
+     },
+     {
+      "overlay": "lmk:3_5"
+     },
+     {
+      "overlay": "lmk:4_5"
+     },
+     {
+      "overlay": "lmk:5_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "temple_gate": {
+   "_comment": "Half-flooded Rootkin temple doorway: stepped crest, a lintel of spirals, carved pillars, a corbelled doorway sealed by a slab with a faintly glowing spiral seal, steps down into the water (5x4, door (2,3) = the dive entrance).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:7_0"
+     },
+     {
+      "overlay": "lmk:8_0"
+     },
+     {
+      "overlay": "lmk:9_0"
+     },
+     {
+      "overlay": "lmk:10_0"
+     },
+     {
+      "overlay": "lmk:11_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_1"
+     },
+     {
+      "overlay": "lmk:8_1"
+     },
+     {
+      "overlay": "lmk:9_1"
+     },
+     {
+      "overlay": "lmk:10_1"
+     },
+     {
+      "overlay": "lmk:11_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_2"
+     },
+     {
+      "overlay": "lmk:8_2"
+     },
+     {
+      "overlay": "lmk:9_2"
+     },
+     {
+      "overlay": "lmk:10_2"
+     },
+     {
+      "overlay": "lmk:11_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_3"
+     },
+     {
+      "overlay": "lmk:8_3"
+     },
+     {
+      "overlay": "lmk:9_3",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_3"
+     },
+     {
+      "overlay": "lmk:11_3"
+     }
+    ]
+   ],
+   "door": [
+    2,
+    3
+   ],
+   "passable": [],
+   "_lmk": true
+  },
+  "great_oak": {
+   "_comment": "The great live oak on marsh: a vast crown, a limb sweeping low to the ground each side, Spanish moss, a massive trunk, roots coiling like serpents (4x4, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_0"
+     },
+     {
+      "overlay": "lmk:13_0"
+     },
+     {
+      "overlay": "lmk:14_0"
+     },
+     {
+      "overlay": "lmk:15_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_1"
+     },
+     {
+      "overlay": "lmk:13_1"
+     },
+     {
+      "overlay": "lmk:14_1"
+     },
+     {
+      "overlay": "lmk:15_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_2"
+     },
+     {
+      "overlay": "lmk:13_2"
+     },
+     {
+      "overlay": "lmk:14_2"
+     },
+     {
+      "overlay": "lmk:15_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_3"
+     },
+     {
+      "overlay": "lmk:13_3"
+     },
+     {
+      "overlay": "lmk:14_3"
+     },
+     {
+      "overlay": "lmk:15_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "lookout": {
+   "_comment": "Shore lookout: a board-and-batten hut on short stilts, a railed roof deck with a brass spyglass on a tripod, a ladder up the east side, a life ring; the door (shut) at the bottom centre with steps up to it (3x4, door (1,3)).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:7_4"
+     },
+     {
+      "overlay": "lmk:8_4"
+     },
+     {
+      "overlay": "lmk:9_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_5"
+     },
+     {
+      "overlay": "lmk:8_5"
+     },
+     {
+      "overlay": "lmk:9_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_6"
+     },
+     {
+      "overlay": "lmk:8_6"
+     },
+     {
+      "overlay": "lmk:9_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_7"
+     },
+     {
+      "overlay": "lmk:8_7",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_7"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ],
+   "passable": [],
+   "_lmk": true
+  },
+  "power_tower": {
+   "_comment": "Steel lattice transmission pylon, two crossarms with glass insulator strings, concrete footings, rust at the joints (2x4, blocking). The wires leave its top cell's sides 8 and 12 px down (wire_span_l / wire_span_r meet them).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:10_4"
+     },
+     {
+      "overlay": "lmk:11_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_5"
+     },
+     {
+      "overlay": "lmk:11_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_6"
+     },
+     {
+      "overlay": "lmk:11_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_7"
+     },
+     {
+      "overlay": "lmk:11_7"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "bird_platform": {
+   "_comment": "Heron roost on water: a weathered plank platform on pilings, forked dead-branch perches, two stick nests, droppings (6x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_6"
+     },
+     {
+      "overlay": "lmk:1_6"
+     },
+     {
+      "overlay": "lmk:2_6"
+     },
+     {
+      "overlay": "lmk:3_6"
+     },
+     {
+      "overlay": "lmk:4_6"
+     },
+     {
+      "overlay": "lmk:5_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_7"
+     },
+     {
+      "overlay": "lmk:1_7"
+     },
+     {
+      "overlay": "lmk:2_7"
+     },
+     {
+      "overlay": "lmk:3_7"
+     },
+     {
+      "overlay": "lmk:4_7"
+     },
+     {
+      "overlay": "lmk:5_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_8"
+     },
+     null,
+     {
+      "overlay": "lmk:2_8"
+     },
+     {
+      "overlay": "lmk:3_8"
+     },
+     null,
+     {
+      "overlay": "lmk:5_8"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "shrine_steps": {
+   "_comment": "Worn stone steps rising out of the water to the shrine island between two carved cheek walls (6x3; the flight, columns 1-4, walkable; the walls block).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_8"
+     },
+     {
+      "overlay": "lmk:7_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_8"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_9"
+     },
+     {
+      "overlay": "lmk:7_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_10"
+     },
+     {
+      "overlay": "lmk:7_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_10"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "_lmk": true
+  },
+  "shipwreck": {
+   "_comment": "Half-sunk wooden hull on water, listing: bow reared up west, stern under east, ribs showing through the stove-in planking, a broken leaning mast and yard, weed and foam at the waterline (4x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_4"
+     },
+     {
+      "overlay": "lmk:13_4"
+     },
+     {
+      "overlay": "lmk:14_4"
+     },
+     null
+    ],
+    [
+     {
+      "overlay": "lmk:12_5"
+     },
+     {
+      "overlay": "lmk:13_5"
+     },
+     {
+      "overlay": "lmk:14_5"
+     },
+     {
+      "overlay": "lmk:15_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_6"
+     },
+     {
+      "overlay": "lmk:13_6"
+     },
+     {
+      "overlay": "lmk:14_6"
+     },
+     {
+      "overlay": "lmk:15_6"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "mine_mouth": {
+   "_comment": "Timbered mine tunnel mouth in a rock face: timber set, a second set deep in the dark, rusty rails running out, a lit lantern on a hook (3x3, door (1,2)).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_7"
+     },
+     {
+      "overlay": "lmk:13_7"
+     },
+     {
+      "overlay": "lmk:14_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_8"
+     },
+     {
+      "overlay": "lmk:13_8"
+     },
+     {
+      "overlay": "lmk:14_8"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_9"
+     },
+     {
+      "overlay": "lmk:13_9",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:14_9"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    2
+   ],
+   "passable": [],
+   "_lmk": true
+  },
+  "scorched_cypress": {
+   "_comment": "Lightning-split bald cypress on marsh: two charred halves leaning apart, pale heartwood along the split, black snags, two live tufts, knees and roots (3x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_9"
+     },
+     {
+      "overlay": "lmk:1_9"
+     },
+     {
+      "overlay": "lmk:2_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_10"
+     },
+     {
+      "overlay": "lmk:1_10"
+     },
+     {
+      "overlay": "lmk:2_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_11"
+     },
+     {
+      "overlay": "lmk:1_11"
+     },
+     {
+      "overlay": "lmk:2_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "nav_beacon": {
+   "_comment": "Navigation beacon on stilts on water: braced timber piles, a railed platform, a post with a green lantern and a red day-mark, a ladder (2x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:3_9"
+     },
+     {
+      "overlay": "lmk:4_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:3_10"
+     },
+     {
+      "overlay": "lmk:4_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:3_11"
+     },
+     {
+      "overlay": "lmk:4_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "levee_gate": {
+   "_comment": "Levee gate: two heavy concrete posts, each with a red-and-white swing bar folded back (pointing north along the road), hinge, counterweight, hazard chevrons; the middle two columns are open road (4x2, columns 1-2 walkable and empty).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_10"
+     },
+     null,
+     null,
+     {
+      "overlay": "lmk:15_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_11"
+     },
+     null,
+     null,
+     {
+      "overlay": "lmk:15_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "_lmk": true
+  },
+  "oyster_bed": {
+   "_comment": "A heap of oyster shells and stones: grey shells piled low, a few open showing nacre, wet at the foot (3x2, blocking). For the islets: on mud or sand.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:5_11"
+     },
+     {
+      "overlay": "lmk:6_11"
+     },
+     {
+      "overlay": "lmk:7_11"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:5_12"
+     },
+     {
+      "overlay": "lmk:6_12"
+     },
+     {
+      "overlay": "lmk:7_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "rail_car": {
+   "_comment": "A sun-faded red boxcar standing on the east-west track; its bottom row carries the track (rail_h) under the wheels, so it drops into a rail_h run (3x2, blocking; the track row is y of the rail).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:8_11"
+     },
+     {
+      "overlay": "lmk:9_11"
+     },
+     {
+      "overlay": "lmk:10_11"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:8_12"
+     },
+     {
+      "overlay": "lmk:9_12"
+     },
+     {
+      "overlay": "lmk:10_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "sunken_ruin_l": {
+   "_comment": "Larger ruin in water: a pillar stump and a toppled carved capital half-sunk at a tilt (2x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_12"
+     },
+     {
+      "overlay": "lmk:1_12"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_13"
+     },
+     {
+      "overlay": "lmk:1_13"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "channel_buoy": {
+   "_comment": "Red-and-white channel buoy on water: striped float, little red tower, a lit lamp; lap line and ripples (1x2, blocking). Also the tournament float.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_6"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "sunken_piling": {
+   "_comment": "Barnacled piling in water: an old round timber pile, cut top, a frayed rope, a crust of barnacles and weed (1x2, blocking). Route 20's pilings (placed as sunken_ruin today).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:15_8"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "sunken_ruin": {
+   "_comment": "A broken carved Rootkin pillar standing in water: ragged break, spiral carvings, moss from the waterline (1x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:5_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:5_10"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "felled_log": {
+   "_comment": "Felled trunk on grass: furrowed bark, a sawn end with rings, a broken end, a branch stub, moss (3x1, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:2_12"
+     },
+     {
+      "overlay": "lmk:3_12"
+     },
+     {
+      "overlay": "lmk:4_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "cut_stump": {
+   "_comment": "A cut stump on grass, rings on its axe-cut top, a notch (1x1, blocking; the Kleavorite spot).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_7"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "rail_h": {
+   "_comment": "Railway track running east-west (1x1, walkable, seamless, any ground).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_9",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "_lmk": true
+  },
+  "rail_v": {
+   "_comment": "Railway track running north-south: two rails on timber ties every 8 px, no ballast (1x1, walkable, seamless along a run, any ground).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:11_11",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "_lmk": true
+  },
+  "wire_span": {
+   "_comment": "Overhead wires mid-span, hanging level (1x1, walkable, over the player); repeat it between wire_span_l and wire_span_r.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_12",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "_lmk": true
+  },
+  "wire_span_l": {
+   "_comment": "Overhead wires, the cell east of a tower: leaving the crossarms and sagging 2 px (1x1, walkable; drawn over the player).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:2_13",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "_lmk": true
+  },
+  "wire_span_r": {
+   "_comment": "Overhead wires, the cell west of a tower: rising to the crossarms (1x1, walkable, over the player; wire_span_l mirrored).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:3_13",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "_lmk": true
+  },
+  "offshore_platform_n": {
+   "_comment": "Offshore platform, north half (6x3): place over offshore_platform_s.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_0"
+     },
+     {
+      "overlay": "lmk:1_0"
+     },
+     {
+      "overlay": "lmk:2_0"
+     },
+     {
+      "overlay": "lmk:3_0"
+     },
+     {
+      "overlay": "lmk:4_0"
+     },
+     {
+      "overlay": "lmk:5_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_1"
+     },
+     {
+      "overlay": "lmk:1_1"
+     },
+     {
+      "overlay": "lmk:2_1"
+     },
+     {
+      "overlay": "lmk:3_1"
+     },
+     {
+      "overlay": "lmk:4_1"
+     },
+     {
+      "overlay": "lmk:5_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_2"
+     },
+     {
+      "overlay": "lmk:1_2"
+     },
+     {
+      "overlay": "lmk:2_2"
+     },
+     {
+      "overlay": "lmk:3_2"
+     },
+     {
+      "overlay": "lmk:4_2"
+     },
+     {
+      "overlay": "lmk:5_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "offshore_platform_s": {
+   "_comment": "Offshore platform, south half (6x3): the legs in the water.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_3"
+     },
+     {
+      "overlay": "lmk:1_3"
+     },
+     {
+      "overlay": "lmk:2_3"
+     },
+     {
+      "overlay": "lmk:3_3"
+     },
+     {
+      "overlay": "lmk:4_3"
+     },
+     {
+      "overlay": "lmk:5_3"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_4"
+     },
+     {
+      "overlay": "lmk:1_4"
+     },
+     {
+      "overlay": "lmk:2_4"
+     },
+     {
+      "overlay": "lmk:3_4"
+     },
+     {
+      "overlay": "lmk:4_4"
+     },
+     {
+      "overlay": "lmk:5_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_5"
+     },
+     {
+      "overlay": "lmk:1_5"
+     },
+     {
+      "overlay": "lmk:2_5"
+     },
+     {
+      "overlay": "lmk:3_5"
+     },
+     {
+      "overlay": "lmk:4_5"
+     },
+     {
+      "overlay": "lmk:5_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
   }
  },
  "variants": {

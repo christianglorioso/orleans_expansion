@@ -3,7 +3,7 @@
   "map_const": "MAP_ORLEANS_ROUTE1",
   "layout": "LAYOUT_ORLEANS_ROUTE1",
   "layout_dir": "data/layouts/Route1",
-  "tileset": "orleans_route",
+  "tileset": "orleans_bayou",
   "mockup": "../orleans_maps/r01_route_1.png",
   "grid": "route_1.grid.txt",
   "_edits": "No edits: the grid is final (route_1.py wrote it from the original in route_1.base.*).",
@@ -131,8 +131,8 @@
       "x": 16,
       "y": 38,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
-      "text": "LAFAYETTE: Every species out here\\nneeds counting before the water\\pmoves them. Take this POKéDEX.",
-      "_note": "1. Lafayette gives the Pokédex (placeholder; script later)",
+      "text": "LAFAYETTE: Every species out here\\nneeds counting before the water\\pmoves them. Take this POK\u00c3\u00a9DEX.",
+      "_note": "1. Lafayette gives the Pok\u00c3\u00a9dex (placeholder; script later)",
       "custom": true,
       "flag": "FLAG_HIDE_ROUTE1_LAFAYETTE"
     },
@@ -216,7 +216,7 @@
       "x": 24,
       "y": 24,
       "flag": "FLAG_ITEM_ROUTE1_POKE_BALL",
-      "_note": "5. Poké Ball (moved from the pond to its shore)"
+      "_note": "5. Pok\u00c3\u00a9 Ball (moved from the pond to its shore)"
     },
     {
       "item": "ITEM_ORAN_BERRY",

@@ -46,7 +46,7 @@ KEY, NAME, CONST = "pointe_rouge", "PointeRouge", "MAP_POINTE_ROUGE"
 CFG = "orleans_pointe"
 W, H = 66, 48
 SPEC = os.path.join(HERE, "maps", KEY + ".json")
-RIVER_EAST = 60  # first land column east of the river
+RIVER_EAST = 58  # first land column east of the river
 FERRY = "--no-ferry" not in sys.argv  # the ferry pier and Crescent's riverboat (pointe_tileset.py adds its art; --no-ferry leaves it out)
 
 
@@ -149,8 +149,8 @@ def terrain(t):
     S(39, 40, 9, 4)         # the gym's forecourt on the quay
     S(26, 44, 22, 2)        # the levee road along the south, out to the quay
     S(QUAY_X, 9, 1, 39)     # the quay's edge from the north bridge down off the map
-    S(60, 5, 6, 2)          # Route 23, east of the north bridge (north-east exit, rows 5-6)
-    S(60, 26, 6, 2)         # Route 23's second road, east of the south bridge (east exit, rows 26-27)
+    S(58, 5, 8, 2)          # Route 23, east of the north bridge (north-east exit, rows 5-6)
+    S(58, 26, 8, 2)         # Route 23's second road, east of the south bridge (east exit, rows 26-27)
     S(61, 7, 2, 19)         # the east-bank riverside walk between the bridges
     S(31, 15, 4, 2)         # Capitol plaza at the foot of the staircase
     S(26, 37, 6, 2)         # the south house's lane off the avenue ...

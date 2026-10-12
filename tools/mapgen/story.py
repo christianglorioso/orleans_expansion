@@ -18,7 +18,7 @@ import sys
 BEGIN = "@ --- mapgen: generated NPC scripts (begin) ---"
 HERE = os.path.dirname(os.path.abspath(__file__))
 STORY = os.path.join(HERE, "story")
-MAPPINGS = ("orleans_interior", "orleans_building")
+MAPPINGS = ("orleans_interior", "orleans_building", "orleans_bayou", "orleans_general")  # outdoor pieces by name: ids move when a tileset is recomposed
 
 
 def metatile_ids():
@@ -38,17 +38,27 @@ def resolve(text, ids, where):
     return re.sub(r"@@mt:([^@]+)@@", sub, text)
 
 
+def splice(name, ids=None):
+    """splice story/<name>.inc into data/maps/<name>/scripts.inc (above the generated block); False if the map has no story file"""
+    path = os.path.join(STORY, name + ".inc")
+    if not os.path.exists(path):
+        return False
+    ids = ids or metatile_ids()
+    target = f"data/maps/{name}/scripts.inc"
+    current = open(target, encoding="utf-8").read()
+    generated = current[current.index(BEGIN):] if BEGIN in current else ""
+    story = resolve(open(path, encoding="utf-8").read().rstrip("\n"), ids, path)
+    with open(target, "w", encoding="utf-8", newline="\n") as f:
+        f.write(story + "\n\n" + generated)
+    return True
+
+
 def main():
     ids = metatile_ids()
     for path in sorted(glob.glob(os.path.join(STORY, "*.inc"))):
         name = os.path.splitext(os.path.basename(path))[0]
-        target = f"data/maps/{name}/scripts.inc"
-        current = open(target, encoding="utf-8").read()
-        generated = current[current.index(BEGIN):] if BEGIN in current else ""
-        story = resolve(open(path, encoding="utf-8").read().rstrip("\n"), ids, path)
-        with open(target, "w", encoding="utf-8", newline="\n") as f:
-            f.write(story + "\n\n" + generated)
-        print(target)
+        splice(name, ids)
+        print(f"data/maps/{name}/scripts.inc")
 
 
 if __name__ == "__main__":

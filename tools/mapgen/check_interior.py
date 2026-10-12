@@ -104,6 +104,13 @@ def main(args):
                     if (nx, ny) not in seen and walk(nx, ny) and (nx, ny) not in npcs:
                         seen.add((nx, ny))
                         q.append((nx, ny))
+            npcs0 = {(o["x"], o["y"]) for o in m["object_events"]}
+            if start in npcs0:
+                problems.append(f"a person stands on {start}, the only tile in front of the exit (the door is blocked)")
+            else:
+                free_floor = {(x, y) for x in range(w) for y in range(h) if walk(x, y)} - npcs0
+                if len(seen) < 3 and len(free_floor) > 3:
+                    problems.append(f"only {len(seen)} tile(s) can be reached from the door: the room is blocked off")
         else:
             problems.append("no walkable tile next to the exit")
         for ex, ey in exits[1:]:

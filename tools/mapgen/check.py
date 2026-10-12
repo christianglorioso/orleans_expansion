@@ -38,7 +38,7 @@ OBJECT_PREFIXES = ("johto:02A", "johto:03A", "johto:003",  # the approach lamp (
                    "patch:shrine", "patch:ovl_", "vgen:", "patch:mart", "patch:pc_door",
                    "patch:gym_door", "ekat:log", "ekat:stump", "ekat:cane", "004", "patch:peppers", "patch:cane", "patch:fl_", "patch:fnt_fl", "np:", "patch:gymsign",
                    "ccwr:", "cclr:", "ccsr:", "lep:", "patch:pcw_", "patch:fence_", "patch:sign_dry", "patch:lamp_dry",
-                   "patch:se_h", "patch:se_step")  # Crescent City's own opaque pieces (boardwalk planks, flower beds); lep: Land's End's planks
+                   "patch:se_h", "patch:se_step", "bd:", "patch:bdg_", "patch:bk_")  # Crescent City's own opaque pieces (boardwalk planks, flower beds); lep: Land's End's planks
 
 
 def opt(args, name, default):
@@ -125,6 +125,17 @@ def main(args):
             sheet.paste(c, ((k % 8)*148, (k // 8)*148))
         sheet.save(os.path.join(out_dir, f"{stem}_seams.png"))
 
+    # ---- seam bands (bands.py / band_rules.py) and borders (borders.py)
+    import band_rules
+    left = band_rules.violations(b) if b.band else []
+    print(f"seam-band cells that are not primary pieces: {len(left)}" + (f" (band cells {len(b.band)})" if b.band else ""))
+    for n in sorted({n for *_, n in left})[:8]:
+        print(f"  {n} x{sum(1 for *_, m in left if m == n)}")
+    for line in b.band_log + [f"UNRESOLVED {u}" for u in b.band_unresolved]:
+        print("  band:", line)
+    for line in b.border_log + [f"CONFLICT {c}" for c in b.border_conflicts]:
+        print("  border:", line)
+    print(f"band violations: {len(left)}")
     # ---- off-palette grass
     ts = Tilesets(ts_cfg["primary_dir"], ts_cfg["secondary_dir"])
     grass_name = ts_cfg["terrain"]["."]["tile"]
@@ -213,7 +224,7 @@ def main(args):
                 problems.append(f"exit {ex['name']} not reachable on foot")
     # prefabs drawn on a patch base (e.g. cypress_marsh) must sit fully inside that patch: every tile's
     # four corner cells must be the patch, or the patch border runs through the object
-    for bld in spec.get("buildings", []):
+    for bld in b.spec.get("buildings", []):   # the builder's own list (the seam-band rule may have taken props out)
         base = ts_cfg["prefabs"].get(bld["prefab"], {}).get("on_patch")
         if not base:
             continue

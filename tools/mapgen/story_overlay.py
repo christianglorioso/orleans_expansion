@@ -114,8 +114,8 @@ OVERLAY = {
         # gym 6. (NEVER "var": "0": that is TRIGGER_RUN_IMMEDIATELY and freezes on a msgbox.) A later chapter replaces this
         # with the real water state.
         "triggers": [
-            {"x": x, "y": 65, "var": "FLAG_BADGE06_GET", "value": 0, "script": "CrescentCity_EventScript_FloodedRoad"}
-            for x in (39, 40, 41, 44, 45, 46, 49) + tuple(range(51, 67))
+            {"x": x, "y": 65, "elevation": e, "var": "FLAG_BADGE06_GET", "value": 0, "script": "CrescentCity_EventScript_FloodedRoad"}
+            for x in range(39, 67) for e in (3, 1)  # the whole connection (Route 14 is 28 wide); elevation 1 = a surfer on the water
         ],
     },
 }
@@ -163,6 +163,27 @@ INTERIOR = {
 }
 
 
+# ---------------------------------------------------------------------------------------------- Chapter 3 (story_data_ch3.py)
+import story_data_ch3 as _c3  # noqa: E402
+
+
+def _merge_ch3():
+    cc = OVERLAY["CrescentCity"]
+    cc.setdefault("add_hidden", []).extend(_c3.CRESCENT.get("add_hidden", []))
+    OVERLAY.setdefault("Route3", {}).setdefault("add_hidden", []).extend(_c3.ROUTE3["add_hidden"])
+    OVERLAY["PointeRouge"] = _c3.POINTE_ROUGE
+    for key in ("patch_objects", "add_objects", "add_items"):
+        if isinstance(_c3.CRESCENT.get(key), dict):
+            cc.setdefault(key, {}).update(_c3.CRESCENT[key])
+        else:
+            cc.setdefault(key, []).extend(_c3.CRESCENT.get(key, []))
+    OVERLAY["Route4"] = _c3.ROUTE4
+    for k, v in _c3.ROOMS.items():
+        INTERIOR[k] = v
+
+
+_merge_ch3()
+
 # ---------------------------------------------------------------------------------------------- application
 def apply(spec):
     """Layer the story pass onto a spec (in place; returns it). A map with no overlay is returned unchanged."""
@@ -189,6 +210,12 @@ def apply(spec):
             byflag[it["flag"]].update(it)
         else:
             items.append(dict(it))
+    if ov.get("add_hidden"):
+        hid = spec.setdefault("hidden_items", [])
+        have_h = {h["flag"] for h in hid}
+        for h in ov["add_hidden"]:
+            if h["flag"] not in have_h:
+                hid.append(dict(h))
     trig = spec.setdefault("triggers", []) if ov.get("triggers") else spec.get("triggers")
     for t in ov.get("triggers", []):
         if t not in trig:
@@ -210,7 +237,7 @@ def interior_people(key, people, positions):
     ov = INTERIOR.get(key)
     if ov and ov.get("people"):
         return list(ov["people"]), list(ov.get("positions", positions))
-    if ov and (ov.get("texts") or ov.get("opts")):  # change some of the generated people in place
+    if ov and (ov.get("texts") or ov.get("opts") or ov.get("extra")):  # change some of the generated people in place
         out = []
         for i, p in enumerate(people):
             kind, text = p[0], p[1]
@@ -218,15 +245,21 @@ def interior_people(key, people, positions):
             text = ov.get("texts", {}).get(i, text)
             opts.update(ov.get("opts", {}).get(i, {}))
             out.append((kind, text, opts) if opts else (kind, text))
-        return out, positions
+        pos = list(positions)
+        for kind, text, opts, at in ov.get("extra", []):  # people the markers didn't make (appended: their index is after the generated ones)
+            out.append((kind, text, opts) if opts else (kind, text))
+            pos.append(at)
+        return out, pos
     return people, positions
 
 
 def interior_events(key, which, existing):
-    """existing + the overlay's bg_events / coord_events for the room, without duplicates (same x, y, script)."""
+    """existing + the overlay's bg_events / coord_events for the room. An overlay event REPLACES the existing events that run
+    the same script (so moving a light in the overlay moves it in the map instead of leaving the old one behind)."""
     ov = INTERIOR.get(key, {}).get(which, [])
-    have = {(e.get("x"), e.get("y"), e.get("script")) for e in existing}
-    return list(existing) + [dict(e) for e in ov if (e.get("x"), e.get("y"), e.get("script")) not in have]
+    scripts = {e.get("script") for e in ov}
+    kept = [e for e in existing if e.get("script") not in scripts]
+    return kept + [dict(e) for e in ov]
 
 
 # ---------------------------------------------------------------------------------------------- self check

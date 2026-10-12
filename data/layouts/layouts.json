@@ -1831,7 +1831,7 @@
       "width": 28,
       "height": 48,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansRoute",
+      "secondary_tileset": "gTileset_OrleansBayou",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
     },
@@ -1921,7 +1921,7 @@
       "width": 50,
       "height": 26,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansCoast",
+      "secondary_tileset": "gTileset_OrleansPort",
       "border_filepath": "data/layouts/Route2/border.bin",
       "blockdata_filepath": "data/layouts/Route2/map.bin"
     },
@@ -1991,7 +1991,7 @@
       "width": 46,
       "height": 26,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansRoute",
+      "secondary_tileset": "gTileset_OrleansCamp",
       "border_filepath": "data/layouts/Route9/border.bin",
       "blockdata_filepath": "data/layouts/Route9/map.bin"
     },
@@ -2101,7 +2101,7 @@
       "width": 50,
       "height": 26,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansGulf",
+      "secondary_tileset": "gTileset_OrleansHarbor",
       "border_filepath": "data/layouts/Route20/border.bin",
       "blockdata_filepath": "data/layouts/Route20/map.bin"
     },
@@ -2111,7 +2111,7 @@
       "width": 50,
       "height": 30,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansOffshore",
+      "secondary_tileset": "gTileset_OrleansHarbor",
       "border_filepath": "data/layouts/Route21/border.bin",
       "blockdata_filepath": "data/layouts/Route21/map.bin"
     },
@@ -2154,6 +2154,16 @@
       "secondary_tileset": "gTileset_OrleansOffshore",
       "border_filepath": "data/layouts/Route25/border.bin",
       "blockdata_filepath": "data/layouts/Route25/map.bin"
+    },
+    {
+      "id": "LAYOUT_STRIP_STUB",
+      "name": "StripStub_Layout",
+      "width": 1,
+      "height": 1,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansBayou",
+      "border_filepath": "data/layouts/StripStub/border.bin",
+      "blockdata_filepath": "data/layouts/StripStub/map.bin"
     },
     {
       "id": "LAYOUT_ISLE_MARAIS_SHELTER",
@@ -2386,6 +2396,86 @@
       "blockdata_filepath": "data/layouts/OldWater_CanoeDocks/map.bin"
     },
     {
+      "id": "LAYOUT_STORMS_EDGE_POKECENTER",
+      "name": "StormsEdge_Pokecenter_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_Pokecenter/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_Pokecenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_MART",
+      "name": "StormsEdge_Mart_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_GYM",
+      "name": "StormsEdge_Gym_Layout",
+      "width": 21,
+      "height": 18,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_SEAFOOD_MARKET",
+      "name": "StormsEdge_SeafoodMarket_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_SeafoodMarket/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_SeafoodMarket/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_HOUSE_W",
+      "name": "StormsEdge_HouseW_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_HouseW/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_HouseW/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_HOUSE_C",
+      "name": "StormsEdge_HouseC_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_HouseC/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_HouseC/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_HOUSE_E",
+      "name": "StormsEdge_HouseE_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_HouseE/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_HouseE/map.bin"
+    },
+    {
+      "id": "LAYOUT_STORMS_EDGE_LIGHTHOUSE",
+      "name": "StormsEdge_Lighthouse_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/StormsEdge_Lighthouse/border.bin",
+      "blockdata_filepath": "data/layouts/StormsEdge_Lighthouse/map.bin"
+    },
+    {
       "id": "LAYOUT_STORMS_EDGE_LIGHTHOUSE_GALLERY",
       "name": "StormsEdge_LighthouseGallery_Layout",
       "width": 11,
@@ -2536,6 +2626,16 @@
       "blockdata_filepath": "data/layouts/CrescentCity_Tutor/map.bin"
     },
     {
+      "id": "LAYOUT_CRESCENT_CITY_DAY_CARE",
+      "name": "CrescentCity_DayCare_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_DayCare/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_DayCare/map.bin"
+    },
+    {
       "id": "LAYOUT_CRESCENT_CITY_CONSERVATION",
       "name": "CrescentCity_Conservation_Layout",
       "width": 23,
@@ -2556,6 +2656,16 @@
       "blockdata_filepath": "data/layouts/CrescentCity_IceCream/map.bin"
     },
     {
+      "id": "LAYOUT_CRESCENT_CITY_RIVERBOAT_TERMINAL",
+      "name": "CrescentCity_RiverboatTerminal_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_RiverboatTerminal/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_RiverboatTerminal/map.bin"
+    },
+    {
       "id": "LAYOUT_CRESCENT_CITY_PELIPPER_POST",
       "name": "CrescentCity_PelipperPost_Layout",
       "width": 13,
@@ -2564,6 +2674,136 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/CrescentCity_PelipperPost/border.bin",
       "blockdata_filepath": "data/layouts/CrescentCity_PelipperPost/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRESCENT_CITY_GYM",
+      "name": "CrescentCity_Gym_Layout",
+      "width": 21,
+      "height": 18,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRESCENT_CITY_BLACKSNAKE_BASE",
+      "name": "CrescentCity_BlacksnakeBase_Layout",
+      "width": 23,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_BlacksnakeBase/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_BlacksnakeBase/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_CAPITOL_LOBBY",
+      "name": "PointeRouge_CapitolLobby_Layout",
+      "width": 17,
+      "height": 12,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_CapitolLobby/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_CapitolLobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_CAPITOL_DECK",
+      "name": "PointeRouge_CapitolDeck_Layout",
+      "width": 17,
+      "height": 11,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_CapitolDeck/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_CapitolDeck/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_POKECENTER",
+      "name": "PointeRouge_Pokecenter_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_Pokecenter/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_Pokecenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_MART",
+      "name": "PointeRouge_Mart_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_TACKLE_SHOP",
+      "name": "PointeRouge_TackleShop_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_TackleShop/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_TackleShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_ICE_PLANT",
+      "name": "PointeRouge_IcePlant_Layout",
+      "width": 19,
+      "height": 14,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_IcePlant/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_IcePlant/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_REFINERY",
+      "name": "PointeRouge_Refinery_Layout",
+      "width": 23,
+      "height": 17,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_Refinery/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_Refinery/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_HOUSE_NW",
+      "name": "PointeRouge_HouseNw_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_HouseNw/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_HouseNw/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_HOUSE_NE",
+      "name": "PointeRouge_HouseNe_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_HouseNe/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_HouseNe/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_HOUSE_S",
+      "name": "PointeRouge_HouseS_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_HouseS/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_HouseS/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_GYM",
+      "name": "PointeRouge_Gym_Layout",
+      "width": 21,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_Gym/map.bin"
     },
     {
       "id": "LAYOUT_CAMP_COCODRIE_GYM",
@@ -2894,246 +3134,6 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/LandsEnd_House5/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_House5/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_CAPITOL_LOBBY",
-      "name": "PointeRouge_CapitolLobby_Layout",
-      "width": 17,
-      "height": 12,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_CapitolLobby/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_CapitolLobby/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_CAPITOL_DECK",
-      "name": "PointeRouge_CapitolDeck_Layout",
-      "width": 17,
-      "height": 11,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_CapitolDeck/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_CapitolDeck/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_POKECENTER",
-      "name": "PointeRouge_Pokecenter_Layout",
-      "width": 15,
-      "height": 10,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_Pokecenter/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_Pokecenter/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_MART",
-      "name": "PointeRouge_Mart_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_Mart/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_Mart/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_TACKLE_SHOP",
-      "name": "PointeRouge_TackleShop_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_TackleShop/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_TackleShop/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_ICE_PLANT",
-      "name": "PointeRouge_IcePlant_Layout",
-      "width": 19,
-      "height": 14,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_IcePlant/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_IcePlant/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_REFINERY",
-      "name": "PointeRouge_Refinery_Layout",
-      "width": 23,
-      "height": 17,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_Refinery/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_Refinery/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_HOUSE_NW",
-      "name": "PointeRouge_HouseNw_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_HouseNw/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_HouseNw/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_HOUSE_NE",
-      "name": "PointeRouge_HouseNe_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_HouseNe/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_HouseNe/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_HOUSE_S",
-      "name": "PointeRouge_HouseS_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_HouseS/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_HouseS/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_GYM",
-      "name": "PointeRouge_Gym_Layout",
-      "width": 21,
-      "height": 16,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_Gym/map.bin"
-    },
-    {
-      "id": "LAYOUT_CRESCENT_CITY_RIVERBOAT_TERMINAL",
-      "name": "CrescentCity_RiverboatTerminal_Layout",
-      "width": 15,
-      "height": 10,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_RiverboatTerminal/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_RiverboatTerminal/map.bin"
-    },
-    {
-      "id": "LAYOUT_CRESCENT_CITY_GYM",
-      "name": "CrescentCity_Gym_Layout",
-      "width": 21,
-      "height": 18,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_Gym/map.bin"
-    },
-    {
-      "id": "LAYOUT_CRESCENT_CITY_BLACKSNAKE_BASE",
-      "name": "CrescentCity_BlacksnakeBase_Layout",
-      "width": 23,
-      "height": 16,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_BlacksnakeBase/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_BlacksnakeBase/map.bin"
-    },
-    {
-      "id": "LAYOUT_CRESCENT_CITY_DAY_CARE",
-      "name": "CrescentCity_DayCare_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_DayCare/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_DayCare/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_POKECENTER",
-      "name": "StormsEdge_Pokecenter_Layout",
-      "width": 15,
-      "height": 10,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_Pokecenter/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_Pokecenter/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_MART",
-      "name": "StormsEdge_Mart_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_Mart/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_Mart/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_GYM",
-      "name": "StormsEdge_Gym_Layout",
-      "width": 21,
-      "height": 18,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_Gym/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_SEAFOOD_MARKET",
-      "name": "StormsEdge_SeafoodMarket_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_SeafoodMarket/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_SeafoodMarket/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_HOUSE_W",
-      "name": "StormsEdge_HouseW_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_HouseW/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_HouseW/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_HOUSE_C",
-      "name": "StormsEdge_HouseC_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_HouseC/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_HouseC/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_HOUSE_E",
-      "name": "StormsEdge_HouseE_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_HouseE/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_HouseE/map.bin"
-    },
-    {
-      "id": "LAYOUT_STORMS_EDGE_LIGHTHOUSE",
-      "name": "StormsEdge_Lighthouse_Layout",
-      "width": 11,
-      "height": 11,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/StormsEdge_Lighthouse/border.bin",
-      "blockdata_filepath": "data/layouts/StormsEdge_Lighthouse/map.bin"
-    },
-    {
-      "id": "LAYOUT_STRIP_STUB",
-      "name": "StripStub_Layout",
-      "width": 1,
-      "height": 1,
-      "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansBayou",
-      "border_filepath": "data/layouts/StripStub/border.bin",
-      "blockdata_filepath": "data/layouts/StripStub/map.bin"
     }
   ]
 }

@@ -195,6 +195,14 @@
       "flag": "FLAG_UNUSED_0x292"
     },
     {
+      "type": "hidden_item",
+      "x": 40,
+      "y": 20,
+      "elevation": 3,
+      "item": "ITEM_BOTTLE_CAP",
+      "flag": "FLAG_UNUSED_0x2AE"
+    },
+    {
       "type": "sign",
       "x": 46,
       "y": 13,

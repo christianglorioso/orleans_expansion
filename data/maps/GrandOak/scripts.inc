@@ -127,11 +127,4 @@ GrandOak_EventScript_Recruiter2::
 GrandOak_Text_Recruiter2:
 	.string "Sign up today. The bayou\nwon't fix itself.$"
 
-GrandOak_EventScript_TownSign::
-	msgbox GrandOak_Text_TownSign, MSGBOX_SIGN
-	end
-
-GrandOak_Text_TownSign:
-	.string "GRAND OAK\nWhere the old oaks keep the town.$"
-
 @ --- mapgen: generated NPC scripts (end) ---

@@ -36,12 +36,6 @@
 "ekat:water_landNE",
 "ekat:water_landSE",
 "ekat:water_lily",
-"patch:ap_71db1b1d2390",
-"patch:ap_7820c634c2f0",
-"patch:ap_82bef3b02304",
-"patch:ap_9fc8bda1765b",
-"patch:ap_da5cde087f10",
-"patch:ap_e4fa3625e33a",
 "patch:blend_marsh_landNE_inNW",
 "patch:blend_marsh_landNW_inNE",
 "patch:blend_marsh_landSE_inSW",
@@ -66,8 +60,6 @@
 "patch:ovl_lmk_12_11__ekat_grass",
 "patch:ovl_lmk_15_10__ekat_grass",
 "patch:ovl_lmk_15_11__ekat_grass",
-"patch:ovl_props_bench_0__ekat_grass",
-"patch:ovl_props_bench_1__ekat_grass",
 "patch:reeds_marsh",
 "patch:reeds_top_marsh"
 ]

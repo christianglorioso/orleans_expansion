@@ -594,5 +594,15 @@
    "base": "ekat:grass",
    "art": "pl:22"
   }
+ },
+ {
+  "id": "bk_swamp_N0_c8cafc26",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N0_c8cafc26.png",
+  "attr_of": "johto:0E0"
+ },
+ {
+  "id": "bk_swamp_N1_b24158b1",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N1_b24158b1.png",
+  "attr_of": "johto:0E2"
  }
 ]

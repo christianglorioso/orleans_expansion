@@ -294,7 +294,7 @@
 #define METATILE_General_SecretBase_VineLeft        0xF1C   // unused in Orleans (no such piece in gTileset_OrleansGeneral; never matches)
 #define METATILE_General_SecretBase_VineRight       0xF1D   // unused in Orleans (no such piece in gTileset_OrleansGeneral; never matches)
 #define METATILE_General_TallGrass                  0x062   // ekat:tallgrass
-#define METATILE_General_TallGrass_Marsh            0x085   // patch:tallgrass_marsh
+#define METATILE_General_TallGrass_Marsh            0x104   // patch:tallgrass_marsh
 #define METATILE_General_TallGrass_TreeLeft         0xF1E   // unused in Orleans (no such piece in gTileset_OrleansGeneral; never matches)
 #define METATILE_General_TallGrass_TreeRight        0xF1F   // unused in Orleans (no such piece in gTileset_OrleansGeneral; never matches)
 #define METATILE_General_TallGrass_TreeUp           0xF20   // unused in Orleans (no such piece in gTileset_OrleansGeneral; never matches)

@@ -4,7 +4,7 @@
   "map_const": "MAP_ORLEANS_ROUTE2",
   "layout": "LAYOUT_ORLEANS_ROUTE2",
   "layout_dir": "data/layouts/Route2",
-  "tileset": "orleans_coast",
+  "tileset": "orleans_port",
   "mockup": "../orleans_maps/r02_route_2.png",
   "grid": "route_2.grid.txt",
   "edits": [],
@@ -39,45 +39,6 @@
       "x": 43,
       "y": 3,
       "label": "Transmission tower"
-    },
-    {
-      "prefab": "boulder",
-      "x": 23,
-      "y": 8,
-      "label": "Fallen power line",
-      "art": "fallen_line",
-      "rows": [
-        [
-          "cian:342",
-          "cian:343"
-        ]
-      ]
-    },
-    {
-      "prefab": "boulder",
-      "x": 26,
-      "y": 9,
-      "label": "Fallen power line",
-      "art": "fallen_line",
-      "rows": [
-        [
-          "cian:342",
-          "cian:343"
-        ]
-      ]
-    },
-    {
-      "prefab": "boulder",
-      "x": 24,
-      "y": 10,
-      "label": "Fallen power line",
-      "art": "fallen_line",
-      "rows": [
-        [
-          "cian:342",
-          "cian:343"
-        ]
-      ]
     },
     {
       "prefab": "pirogue",
@@ -467,6 +428,20 @@
         [
           49,
           12
+        ]
+      ]
+    }
+  ],
+  "walls": [
+    {
+      "side": "W",
+      "depth": 2,
+      "lo": 0,
+      "hi": 26,
+      "gaps": [
+        [
+          8,
+          11
         ]
       ]
     }

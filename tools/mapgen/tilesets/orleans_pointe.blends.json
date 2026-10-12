@@ -2660,5 +2660,43 @@
    "base": "johto:1C1",
    "art": "tank:2_2"
   }
+ },
+ {
+  "id": "ovl_sbr_0_1__ekat_water_inSE__normal",
+  "overlay": {
+   "base": "ekat:water_inSE",
+   "art": "sbr:0_1",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_sbr_0_1__ekat_water_landNW__normal",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "sbr:0_1",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_sbr_1_2__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "sbr:1_2",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_quay_0_0__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "quay:0_0"
+  }
+ },
+ {
+  "id": "ovl_quay_0_0__johto_1CA",
+  "overlay": {
+   "base": "johto:1CA",
+   "art": "quay:0_0"
+  }
  }
 ]

@@ -3099,6 +3099,133 @@
    ]
   },
   {
+   "name": "bd",
+   "type": "image",
+   "image": "tools/mapgen/sources/orleans_custom/borders.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "_comment": "Map border art (make_borders.py), the dry scrub cells.",
+   "metatiles": [
+    {
+     "id": "dry_E_dry_0",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "dry_E_dry_1",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "dry_N_dry_0",
+     "bottom": [
+      2,
+      4
+     ]
+    },
+    {
+     "id": "dry_N_dry_1",
+     "bottom": [
+      3,
+      4
+     ]
+    },
+    {
+     "id": "dry_S_dry_0",
+     "bottom": [
+      0,
+      4
+     ]
+    },
+    {
+     "id": "dry_S_dry_1",
+     "bottom": [
+      1,
+      4
+     ]
+    },
+    {
+     "id": "dry_W_dry_0",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "dry_W_dry_1",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "dry_in_NE_dry",
+     "bottom": [
+      9,
+      4
+     ]
+    },
+    {
+     "id": "dry_in_NW_dry",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "dry_in_SE_dry",
+     "bottom": [
+      11,
+      4
+     ]
+    },
+    {
+     "id": "dry_in_SW_dry",
+     "bottom": [
+      10,
+      4
+     ]
+    },
+    {
+     "id": "dry_scrub_00",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "dry_scrub_01",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "dry_scrub_10",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "dry_scrub_11",
+     "bottom": [
+      3,
+      1
+     ]
+    }
+   ]
+  },
+  {
    "name": "dry",
    "type": "image",
    "image": "tools/mapgen/sources/orleans_custom/dry_country.png",

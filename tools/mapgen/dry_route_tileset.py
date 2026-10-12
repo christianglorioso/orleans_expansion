@@ -28,6 +28,7 @@ SAND = "dry:0_0"
 
 
 def apply(r, c):
+    rf.add_border_art(r)
     dry = rf.load("dry_country.json")
     if not dry or "terrain" not in dry:
         raise SystemExit("dry_country.json missing: the dry routes need the dry-country art set")

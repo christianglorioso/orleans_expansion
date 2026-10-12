@@ -14,7 +14,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OK_NON_ASCII = set("éÉ“”")
+OK_NON_ASCII = set("éÉ“”¥")  # accented e, curly quotes and the yen sign: all in charmap.txt
 CODES = {"PLAYER": 7, "RIVAL": 7, "STR_VAR_1": 12, "STR_VAR_2": 12, "STR_VAR_3": 12}
 
 

@@ -180,12 +180,31 @@ def dry_terrain(r, c, dry):
         a.update({k: names[k] for k in CORNER_KEYS})
         c["autotile"]["dry"] = a
     if "road_C" in names:  # the road set on dry ground replaces the Johto path pieces
+        if "path_g" not in c["autotile"]:  # ... but the Johto dirt path stays as 'p': seam bands (band_rules.py) may only hold primary pieces
+            import copy
+            c["autotile"]["path_g"] = copy.deepcopy(c["autotile"]["path"])
+            c["autotile"]["path_g"]["connects"] = ":=p"
+            T.setdefault("p", {"name": "road on grass (Johto dirt path, primary pieces: the road through a seam band)",
+                               "tile": "0D9", "elev": 3, "autotile": "path_g"})
+            c["autotile"]["path"]["connects"] = ":=p"
         for key in ROAD_KEYS:
             if "road_" + key in names:
                 c["autotile"]["path"][key] = names["road_" + key]
 
 
+def add_border_art(r):
+    """the dry-scrub border art (borders.py / make_borders.py): the scrub block and the dry-earth edge cells, opaque metatiles
+    (demand-driven: only the ones a map places cost tiles)"""
+    bd = json.load(open(os.path.join(HERE, "sources", "orleans_custom", "borders.json"), encoding="utf-8"))
+    if any(x["name"] == "bd" for x in r["sources"]):
+        return
+    r["sources"].append({"name": "bd", "type": "image", "image": "tools/mapgen/sources/orleans_custom/borders.png",
+                         "transparent": [[255, 0, 255]], "_comment": "Map border art (make_borders.py), the dry scrub cells.",
+                         "metatiles": [{"id": n, "bottom": list(xy)} for n, xy in sorted(bd["cells"].items()) if n.startswith("dry_")]})
+
+
 def apply(r, c):
+    add_border_art(r)
     # ---- terrain: dry ground and pepper rows (stand-ins until the dry set is delivered)
     T = c["terrain"]
     T["d"] = {"name": "dry ground (stand-in: grass)", "tile": "ekat:grass", "elev": 3}

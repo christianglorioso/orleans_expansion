@@ -116,115 +116,6 @@
   "group": "levee"
  },
  {
-  "id": "ovl_brg_00__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:00"
-  }
- },
- {
-  "id": "ovl_brg_01__ekat_grass__normal",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:01",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_02__ekat_grass__normal",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:02",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_03__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:03"
-  }
- },
- {
-  "id": "ovl_brg_10__ekat_water_E__normal",
-  "overlay": {
-   "base": "ekat:water_E",
-   "art": "brg:10",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_10__ekat_water_W",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "brg:10"
-  }
- },
- {
-  "id": "ovl_brg_11__ekat_water_E__normal",
-  "overlay": {
-   "base": "ekat:water_E",
-   "art": "brg:11",
-   "layer": "normal",
-   "behavior": "MB_BRIDGE_OVER_POND_LOW"
-  }
- },
- {
-  "id": "ovl_brg_11__ekat_water_W__normal",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "brg:11",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_12__ekat_water_E__normal",
-  "overlay": {
-   "base": "ekat:water_E",
-   "art": "brg:12",
-   "layer": "normal",
-   "behavior": "MB_BRIDGE_OVER_POND_LOW"
-  }
- },
- {
-  "id": "ovl_brg_12__ekat_water_W__normal",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "brg:12",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_13__ekat_water_W",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "brg:13"
-  }
- },
- {
-  "id": "ovl_brg_20__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:20"
-  }
- },
- {
-  "id": "ovl_brg_21__ekat_grass__normal",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:21",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_22__ekat_grass__normal",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:22",
-   "layer": "normal"
-  }
- },
- {
   "id": "ovl_props_barrel__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
@@ -959,55 +850,6 @@
   "group": "levee"
  },
  {
-  "id": "ovl_brg_10__ekat_water_C__normal",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "brg:10",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_11__ekat_water_C__normal",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "brg:11",
-   "layer": "normal",
-   "behavior": "MB_BRIDGE_OVER_POND_LOW"
-  }
- },
- {
-  "id": "ovl_brg_12__ekat_water_C__normal",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "brg:12",
-   "layer": "normal",
-   "behavior": "MB_BRIDGE_OVER_POND_LOW"
-  }
- },
- {
-  "id": "ovl_brg_13__ekat_water_C__normal",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "brg:13",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_13__ekat_water_E__normal",
-  "overlay": {
-   "base": "ekat:water_E",
-   "art": "brg:13",
-   "layer": "normal"
-  }
- },
- {
-  "id": "ovl_brg_23__ekat_grass",
-  "overlay": {
-   "base": "ekat:grass",
-   "art": "brg:23"
-  }
- },
- {
   "id": "ovl_lh_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
@@ -1224,5 +1066,522 @@
    "art": "seq:1_0",
    "walk": true
   }
+ },
+ {
+  "id": "ovl_seq_0_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:0_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_0_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:0_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_0_3__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:0_3"
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:1_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_2__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "seq:1_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_3__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "seq:1_3"
+  }
+ },
+ {
+  "id": "ovl_seq_1_3__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "seq:1_3"
+  }
+ },
+ {
+  "id": "ovl_sst_0_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "sst:0_0"
+  }
+ },
+ {
+  "id": "ovl_sst_1_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "sst:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_sst_1_0__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "sst:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_sst_2_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "sst:2_0"
+  }
+ },
+ {
+  "id": "ovl_seq_0_0__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "seq:0_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_00__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_00"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_01__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_01"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_10__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_10"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_11__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_11"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_20__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_20"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_21__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_21"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_30__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_30"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_31__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "custom:pirogue_31"
+  }
+ },
+ {
+  "id": "ovl_lmk_10_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:10_4"
+  }
+ },
+ {
+  "id": "ovl_lmk_10_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:10_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_10_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:10_6"
+  }
+ },
+ {
+  "id": "ovl_lmk_10_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:10_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_11_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:11_4"
+  }
+ },
+ {
+  "id": "ovl_lmk_11_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:11_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_11_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:11_6"
+  }
+ },
+ {
+  "id": "ovl_lmk_11_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:11_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_15_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:15_12",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_lmk_2_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:2_13",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_lmk_3_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:3_13",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_lmk_7_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:7_4"
+  }
+ },
+ {
+  "id": "ovl_lmk_7_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:7_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_7_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:7_6"
+  }
+ },
+ {
+  "id": "ovl_lmk_7_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:7_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_8_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:8_4"
+  }
+ },
+ {
+  "id": "ovl_lmk_8_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:8_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_8_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:8_6"
+  }
+ },
+ {
+  "id": "ovl_lmk_8_7__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:8_7",
+   "walk": true,
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_lmk_9_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:9_4"
+  }
+ },
+ {
+  "id": "ovl_lmk_9_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:9_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_9_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:9_6"
+  }
+ },
+ {
+  "id": "ovl_lmk_9_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:9_7"
+  }
+ },
+ {
+  "id": "lv_07e1cc1db260",
+  "pixels": "tools/mapgen/tilesets/levee/lv_07e1cc1db260.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_27c08df5a352",
+  "pixels": "tools/mapgen/tilesets/levee/lv_27c08df5a352.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_3ae3bb1e4c1a",
+  "pixels": "tools/mapgen/tilesets/levee/lv_3ae3bb1e4c1a.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_3e3d0a1cc208",
+  "pixels": "tools/mapgen/tilesets/levee/lv_3e3d0a1cc208.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4f0c0db36480",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4f0c0db36480.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_52f040464530",
+  "pixels": "tools/mapgen/tilesets/levee/lv_52f040464530.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_6460675d5f76",
+  "pixels": "tools/mapgen/tilesets/levee/lv_6460675d5f76.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_694f0c22e076",
+  "pixels": "tools/mapgen/tilesets/levee/lv_694f0c22e076.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_7bd41cbc6f3e",
+  "pixels": "tools/mapgen/tilesets/levee/lv_7bd41cbc6f3e.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_a65592a395fe",
+  "pixels": "tools/mapgen/tilesets/levee/lv_a65592a395fe.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_a8d34ba0f7e0",
+  "pixels": "tools/mapgen/tilesets/levee/lv_a8d34ba0f7e0.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_bfed93fa4cb9",
+  "pixels": "tools/mapgen/tilesets/levee/lv_bfed93fa4cb9.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_c6860a46809e",
+  "pixels": "tools/mapgen/tilesets/levee/lv_c6860a46809e.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_c7cf4e6ba3b2",
+  "pixels": "tools/mapgen/tilesets/levee/lv_c7cf4e6ba3b2.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_cbfa9f09c721",
+  "pixels": "tools/mapgen/tilesets/levee/lv_cbfa9f09c721.png",
+  "base": "ekat:water_inSW",
+  "attr_of": "ekat:water_inSW",
+  "group": "levee"
+ },
+ {
+  "id": "lv_cc85f8f49610",
+  "pixels": "tools/mapgen/tilesets/levee/lv_cc85f8f49610.png",
+  "base": "ekat:water_E",
+  "attr_of": "ekat:water_E",
+  "group": "levee"
+ },
+ {
+  "id": "lv_e9cd6ff106ab",
+  "pixels": "tools/mapgen/tilesets/levee/lv_e9cd6ff106ab.png",
+  "base": "ekat:water_inSE",
+  "attr_of": "ekat:water_inSE",
+  "group": "levee"
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_spl_1_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "spl:1_0"
+  }
+ },
+ {
+  "id": "ovl_spl_1_1__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "spl:1_1"
+  }
+ },
+ {
+  "id": "ovl_spl_2_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "spl:2_0"
+  }
+ },
+ {
+  "id": "ovl_spl_2_1__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "spl:2_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_7_0__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "ssb:7_0"
+  }
+ },
+ {
+  "id": "bk_swamp_E0_5de71585",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_5de71585.png",
+  "attr_of": "johto:0E1"
+ },
+ {
+  "id": "bk_swamp_E0_7167a350",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_7167a350.png",
+  "attr_of": "ekat:tallgrass"
+ },
+ {
+  "id": "bk_swamp_E1_7167a350",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_7167a350.png",
+  "attr_of": "ekat:tallgrass"
+ },
+ {
+  "id": "bk_swamp_E1_8c018226",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_8c018226.png",
+  "attr_of": "johto:0D1"
  }
 ]

@@ -26,6 +26,7 @@ WANTED = set()  # pieces it needs that its demand-driven tileset left out last t
 DEMAND = False
 
 
+PRIMARY_ART = ("brg",)  # overlay art that lives in the primary (make_primary_recipe.py): the railed road bridge
 PRIMARY_IDS = None  # metatile ids the (pruned) primary really holds: tilesets/orleans_general.mapping.json
 CHECK_PRIMARY = False  # set by Builder for maps on gTileset_OrleansGeneral
 
@@ -75,6 +76,10 @@ class Builder:
             story_overlay.apply(self.spec)
         except ImportError:
             pass
+        self.key = os.path.splitext(os.path.basename(spec_path))[0]
+        self.band, self.band_log, self.band_unresolved = set(), [], []
+        self.band_blends = set()
+        self.border_names, self.border_style, self.wall, self.edge = None, None, set(), {}
         self.ts = json.load(open(os.path.join(HERE, "tilesets", self.spec["tileset"] + ".json")))
         global DEMAND, CHECK_PRIMARY
         CHECK_PRIMARY = self.ts.get("primary") == "gTileset_OrleansGeneral"
@@ -169,6 +174,8 @@ class Builder:
         and every diagonal, bend and mouth gets a matching piece. A tile with two or more corners in
         the patch takes the patch's elevation (e.g. surfable water); otherwise it stays land."""
         con, on = a["connects"], a["apply_on"]
+        if self.key in ("redfield", "route_17") and "p" in self.ts["terrain"] and "d" in con:
+            con += "p"   # the Johto road through the dry join (Route 17 / Redfield) is dry underfoot: no dry edge pieces beside it
         neutral = a.get("neutral", "")
         patch_elev = a["elev"]
         cl = lambda v, hi: max(0, min(v, hi - 1))
@@ -212,7 +219,9 @@ class Builder:
                         bl = alt["blend"]
                         mbits = "".join("1" if (bit == "1" or ch(c) in alt["chars"]) else "0" for c, bit in zip(corners, bits))
                         mkey = self.CORNER_KEYS.get(mbits)
-                        if mkey:
+                        if (x, y) in self.band:   # no secondary blend tile in a seam band: band_rules.repair() removes the junction
+                            self.band_blends.add((x, y))
+                        elif mkey:
                             m_tile = bl["patch"][mkey] if not isinstance(bl["patch"][mkey], list) else bl["patch"][mkey][0]
                             a_tile = a[key] if not isinstance(a[key], list) else a[key][0]
                             bid = f"blend_{bl['name']}_{key}_{mkey}"
@@ -221,8 +230,8 @@ class Builder:
                             else:
                                 self.pending_blends[bid] = {"id": bid, "blend": {"A": a_tile, "B": alt["tiles"][key],
                                                             "M": m_tile, "land": bl["land"]}}
-                if isinstance(tile, list):  # variations for the open patch
-                    tile = tile[0] if (x * 31 + y * 17) % 9 else tile[(x * 7 + y * 13) % len(tile)]
+                if isinstance(tile, list):  # variations for the open patch (none inside a seam band: they might be secondary)
+                    tile = tile[0] if ((x * 31 + y * 17) % 9 or (x, y) in self.band) else tile[(x * 7 + y * 13) % len(tile)]
                 n = bits.count("1")
                 elev = patch_elev if n >= 2 else self.ts["terrain"].get(self.grid[y][x], {"elev": 3})["elev"]
                 # "collision": a blocking patch (the dry country's cane wall): its tiles with two or more corners in it
@@ -293,7 +302,7 @@ class Builder:
             if cond:
                 return hx(a[key])
         centers = a["C"] if isinstance(a["C"], list) else [a["C"]]
-        return hx(centers[(x * 7 + y * 13) % len(centers)] if (x * 31 + y * 17) % 9 == 0 else centers[0])
+        return hx(centers[(x * 7 + y * 13) % len(centers)] if (x * 31 + y * 17) % 9 == 0 and (x, y) not in self.band else centers[0])
 
     def octagon_land(self, a):
         """Land cells hugging a patch's diagonal get the matching sliver of the patch."""
@@ -361,6 +370,8 @@ class Builder:
 
     def path_tile(self, x, y, a):
         con = a["connects"]
+        if (x, y) in self.band and self.key in ("redfield", "route_17") and "C" in a and a is self.ts["autotile"].get("path_g"):
+            return hx(a["C"])  # the Johto path through a dry-country seam band: plain dirt, no green kerb pieces against the sand
         if not hasattr(self, "_decks"):  # a bridge's deck carries the road on: no kerb or rounded end against it
             self._decks = {(b["x"] + i, b["y"] + j) for b in self.spec.get("buildings", [])
                            if b.get("label") == "Bridge" for i, j in b.get("passable", [])}
@@ -417,7 +428,34 @@ class Builder:
 
     def draw(self):
         """Everything, in order: terrain, river levees, city approaches, then the buildings and objects on top.
-        Every tool that draws a map (build, check, previews) goes through here so they all see the same map."""
+        Every tool that draws a map (build, check, previews) goes through here so they all see the same map.
+        The seam-band rule (band_rules.py) is applied around it: props out of the bands first, then draw / repair / draw
+        until no band cell holds a secondary piece (or nothing more can be repaired)."""
+        import band_rules
+        import borders
+        band_rules.prepare(self, self.key)
+        borders.prepare(self, self.key)
+        if not self.band:
+            return self.draw_once()
+        used0, wanted0, pend0 = set(USED), set(WANTED), dict(self.pending_blends)
+        for rnd in range(band_rules.MAX_ROUNDS):
+            self.draw_once()
+            if not band_rules.repair(self):
+                break
+            USED.clear(); USED.update(used0); WANTED.clear(); WANTED.update(wanted0)
+            self.pending_blends = dict(pend0)
+            self.warps = []
+            self.band_blends = set()
+            for a in ("_corner_sets", "_decks", "_graves"):
+                if hasattr(self, a):
+                    delattr(self, a)
+            self.blocks = [[0] * self.w for _ in range(self.h)]
+        left = band_rules.violations(self)
+        if left:
+            self.band_log.append(f"{len(left)} band cells are still secondary pieces after repair: "
+                                 + ", ".join(sorted({n for *_, n in left}))[:300])
+
+    def draw_once(self):
         self.terrain()
         self.levee()
         import approach
@@ -426,6 +464,8 @@ class Builder:
         self.buildings()
         for x, y in self.spec.get("block", []):  # cells made impassable on top of whatever is drawn there (spec "block")
             self.blocks[y][x] = (self.blocks[y][x] & ~0x0C00) | (1 << 10)
+        import borders
+        borders.apply(self)  # the inward walls and their edge cells (borders.py)
 
     def states(self):
         """Alternative looks a map script swaps in with setmetatile (spec "states": {name: [cells]}, e.g. Storm's
@@ -488,6 +528,8 @@ class Builder:
         out_dir = os.path.join(HERE, "tilesets", "levee")
         os.makedirs(out_dir, exist_ok=True)
         for (x, y), im in cells.items():
+            if (x, y) in self.band:
+                continue  # no secondary levee piece in a seam band (the bank is plain ground and water there)
             # the levee is an overlay on the named ground piece under it, combined by compose from the source
             # art (so the name doesn't change when a recompose nudges the ground's palette)
             under = inv.get(self.blocks[y][x] & 0x3FF)
@@ -620,7 +662,7 @@ class Builder:
     def write_layout(self, root):
         d = os.path.join(root, self.spec["layout_dir"])
         open(os.path.join(d, "map.bin"), "wb").write(struct.pack(f"<{self.w * self.h}H", *self.flat()))
-        border = [block(hx(m), 0, 0) for m in self.ts["border"]]
+        border = [block(hx(m), 0, 0) for m in (getattr(self, "border_names", None) or self.ts["border"])]
         open(os.path.join(d, "border.bin"), "wb").write(struct.pack("<4H", *border))
         lp = os.path.join(root, "data/layouts/layouts.json")
         layouts = json.load(open(lp))
@@ -680,6 +722,8 @@ class Builder:
             f.write("\n")
         self.write_scripts(os.path.join(root, "data/maps", name, "scripts.inc"))
         include_map_scripts(root, name)
+        import story  # a rebuild must never drop the hand-written story scripts: splice them back in (story.py)
+        story.splice(name)
 
     def write_scripts(self, path):
         begin, end = "@ --- mapgen: generated NPC scripts (begin) ---", "@ --- mapgen: generated NPC scripts (end) ---"
@@ -743,12 +787,25 @@ def main(argv):
     if b.pending_blends and "--no-blends" in argv:  # first passes: keep the plain tiles, don't grow the tileset
         print(f"{len(b.pending_blends)} transition tiles left as plain tiles (--no-blends)")
     elif b.pending_blends:
-        bf = os.path.join(HERE, "tilesets", b.ts.get("blends_file", "blends.json"))
-        have = json.load(open(bf)) if os.path.exists(bf) else []
-        known = {e["id"] for e in have}
-        have += [e for k, e in sorted(b.pending_blends.items()) if k not in known]
-        json.dump(have, open(bf, "w"), indent=1)
-        print(f"{len(b.pending_blends)} transition tiles needed: added to {bf}. Re-run compose, then build again.")
+        # an overlay of primary art on a primary piece (the shared bridge, tilesets/orleans_general.blends.json) belongs to the
+        # primary: every secondary reaches it there, and it may stand in a seam band
+        def pool(e):
+            o = e.get("overlay")
+            if o and o["art"].split(":")[0] in PRIMARY_ART and 0 <= MAPPING.get(o["base"], 9999) < 512:
+                return "orleans_general.blends.json"
+            if e["id"].startswith("bdg_"):   # swamp border cells baked over grass: the primary's
+                return "orleans_general.blends.json"
+            return b.ts.get("blends_file", "blends.json")
+        by_file = {}
+        for k, e in sorted(b.pending_blends.items()):
+            by_file.setdefault(pool(e), []).append((k, e))
+        for name, items in by_file.items():
+            bf = os.path.join(HERE, "tilesets", name)
+            have = json.load(open(bf)) if os.path.exists(bf) else []
+            known = {e["id"] for e in have}
+            have += [e for k, e in items if k not in known]
+            json.dump(have, open(bf, "w"), indent=1)
+        print(f"{len(b.pending_blends)} transition tiles needed: added to {', '.join(by_file)}. Re-run compose, then build again.")
     if "--preview" in argv:
         b.preview(root, argv[argv.index("--preview") + 1])
     if "--dry-run" not in argv:

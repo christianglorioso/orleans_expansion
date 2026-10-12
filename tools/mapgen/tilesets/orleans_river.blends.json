@@ -846,5 +846,176 @@
   "pixels": "tools/mapgen/tilesets/approach/ap_e069c13a7926.png",
   "base": "johto:0D9",
   "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_02503c162be9",
+  "pixels": "tools/mapgen/tilesets/approach/ap_02503c162be9.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_3038db4157f8",
+  "pixels": "tools/mapgen/tilesets/approach/ap_3038db4157f8.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_54a971375860",
+  "pixels": "tools/mapgen/tilesets/approach/ap_54a971375860.png",
+  "base": "patch:path_iSE",
+  "attr_of": "patch:path_iSE"
+ },
+ {
+  "id": "ap_58f2ec6cf8f1",
+  "pixels": "tools/mapgen/tilesets/approach/ap_58f2ec6cf8f1.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_6e2e1d559931",
+  "pixels": "tools/mapgen/tilesets/approach/ap_6e2e1d559931.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_9bfd3ee6de17",
+  "pixels": "tools/mapgen/tilesets/approach/ap_9bfd3ee6de17.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_b40b07108a51",
+  "pixels": "tools/mapgen/tilesets/approach/ap_b40b07108a51.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_bc9b425835c3",
+  "pixels": "tools/mapgen/tilesets/approach/ap_bc9b425835c3.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_e34e1f48b257",
+  "pixels": "tools/mapgen/tilesets/approach/ap_e34e1f48b257.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_ea4b7c9f260e",
+  "pixels": "tools/mapgen/tilesets/approach/ap_ea4b7c9f260e.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_f0b62db06eff",
+  "pixels": "tools/mapgen/tilesets/approach/ap_f0b62db06eff.png",
+  "base": "johto:0E2",
+  "attr_of": "johto:0E2"
+ },
+ {
+  "id": "lv_0681d91129a9",
+  "pixels": "tools/mapgen/tilesets/levee/lv_0681d91129a9.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_0cf913247f63",
+  "pixels": "tools/mapgen/tilesets/levee/lv_0cf913247f63.png",
+  "base": "ekat:water_N",
+  "attr_of": "ekat:water_N",
+  "group": "levee"
+ },
+ {
+  "id": "lv_257514705395",
+  "pixels": "tools/mapgen/tilesets/levee/lv_257514705395.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_27c08df5a352",
+  "pixels": "tools/mapgen/tilesets/levee/lv_27c08df5a352.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_31709a90dbac",
+  "pixels": "tools/mapgen/tilesets/levee/lv_31709a90dbac.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4f0c0db36480",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4f0c0db36480.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_7c19433ec4ab",
+  "pixels": "tools/mapgen/tilesets/levee/lv_7c19433ec4ab.png",
+  "base": "ekat:water_N",
+  "attr_of": "ekat:water_N",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8b9a695bcf2b",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8b9a695bcf2b.png",
+  "base": "ekat:water_N",
+  "attr_of": "ekat:water_N",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8d688d579ea7",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8d688d579ea7.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_9901bd39322c",
+  "pixels": "tools/mapgen/tilesets/levee/lv_9901bd39322c.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_99f6a6f239c1",
+  "pixels": "tools/mapgen/tilesets/levee/lv_99f6a6f239c1.png",
+  "base": "ekat:water_N",
+  "attr_of": "ekat:water_N",
+  "group": "levee"
+ },
+ {
+  "id": "lv_a1ccc02b5c3f",
+  "pixels": "tools/mapgen/tilesets/levee/lv_a1ccc02b5c3f.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_a2839c368499",
+  "pixels": "tools/mapgen/tilesets/levee/lv_a2839c368499.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_ad4036304dd2",
+  "pixels": "tools/mapgen/tilesets/levee/lv_ad4036304dd2.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_cc5cb1dee0da",
+  "pixels": "tools/mapgen/tilesets/levee/lv_cc5cb1dee0da.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
  }
 ]

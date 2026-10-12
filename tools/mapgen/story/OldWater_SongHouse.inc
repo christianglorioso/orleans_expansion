@@ -43,6 +43,7 @@ OldWater_SongHouse_EventScript_Tupelo0::
 	lock
 	faceplayer
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
+	goto_if_set FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloCarvingCheck
 	goto_if_eq VAR_ORLEANS_STORY, 7, OldWater_SongHouse_EventScript_TupeloFirstVerse
 	goto_if_ge VAR_ORLEANS_STORY, 8, OldWater_SongHouse_EventScript_TupeloAfterVerse
 	msgbox OldWater_SongHouse_Text_TupeloBringVerse, MSGBOX_DEFAULT
@@ -111,3 +112,24 @@ OldWater_SongHouse_Text_TupeloFirstVerse:
 OldWater_SongHouse_Text_TupeloAfterVerse:
 	.string "TUPELO: Seven verses left.\n"
 	.string "The water is patient.$"
+
+@ Ch3: the Drowned Ward carving (story 17). Shown once; the old carvers' word for the lay-down verse is a mistranslation.
+OldWater_SongHouse_EventScript_TupeloCarvingCheck:
+	goto_if_unset FLAG_CARVING_SHOWN_TUPELO, OldWater_SongHouse_EventScript_TupeloCarving
+	goto_if_eq VAR_ORLEANS_STORY, 7, OldWater_SongHouse_EventScript_TupeloFirstVerse
+	goto_if_set FLAG_BADGE02_GET, OldWater_SongHouse_EventScript_TupeloSecondVerse
+	msgbox OldWater_SongHouse_Text_TupeloAfterVerse, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloCarving:
+	setflag FLAG_CARVING_SHOWN_TUPELO
+	msgbox OldWater_SongHouse_Text_TupeloCarving, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_Text_TupeloCarving:
+	.string "TUPELO: You found a carving under\nthe city? Show me. Tell me.\p"
+	.string "The old word we sing as 'lay\ndown'... the carvers meant 'laid\p"
+	.string "low'. Sunk, not rested. We have\nbeen singing a drowning.\p"
+	.string "Keep walking. The next Singer\nwill know what to do with it.$"

@@ -1297,5 +1297,14 @@
    "base": "ekat:marsh_W",
    "art": "rk_hut:23"
   }
+ },
+ {
+  "id": "blend_marsh_E_inNE",
+  "blend": {
+   "A": "ekat:water_E",
+   "B": "ekat:marshwater_E",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
  }
 ]

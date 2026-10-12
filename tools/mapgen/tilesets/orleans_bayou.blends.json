@@ -61,5 +61,61 @@
    "M": "ekat:mud_inNE",
    "land": "ekat:mud_C"
   }
+ },
+ {
+  "id": "ovl_custom_pirogue_00__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_00"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_01__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_01"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_10__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_10"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_11__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_11"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_20__ekat_mudwater_landNE",
+  "overlay": {
+   "base": "ekat:mudwater_landNE",
+   "art": "custom:pirogue_20"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_21__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_21"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_30__ekat_mudwater_S",
+  "overlay": {
+   "base": "ekat:mudwater_S",
+   "art": "custom:pirogue_30"
+  }
+ },
+ {
+  "id": "ovl_custom_pirogue_31__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "custom:pirogue_31"
+  }
  }
 ]

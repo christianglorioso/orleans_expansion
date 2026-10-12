@@ -27,7 +27,8 @@ TOWN_CFG.update({f"route_{n}": "orleans_gulf" for n in (18, 19, 20)})
 TOWN_CFG.update({f"route_{n}": "orleans_offshore" for n in (21, 22, 25)})
 TOWN_CFG["oldest_shrine"] = "orleans_route_b"
 # Route 2 (power line, wire spans, lookout, beach) has its own set: with the landmark art orleans_route overflowed 512 tiles
-TOWN_CFG["route_2"] = "orleans_coast"
+TOWN_CFG.update({"route_9": "orleans_camp", "route_20": "orleans_harbor", "route_21": "orleans_harbor"})  # edges pass: they share their town's tileset (adopt.py)
+TOWN_CFG["route_2"] = "orleans_port"   # edges pass: Route 2 shares Storm's Edge's tileset (its join has no seam band: adopt.py)
 # the dry country (Redfield's neighbours: dry farmland and hills) shares the dry-country art set (sources/orleans_custom/
 # dry_country.*, art_requests/dry_country.md) on a third copy of the route set, orleans_route_dry (dry_route_tileset.py):
 # the 107 tiles of the set would not fit in orleans_route_b

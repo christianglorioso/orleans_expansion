@@ -138,15 +138,17 @@ def extras(want=("bench", "lamp", "planter", "barrel", "crates", "trap", "magnol
 VARIANTS = {
     "orleans_harbor": dict(symbol="gTileset_OrleansHarbor", drop=[], brick=[], trim=HOUSES + KNEES + BOAT + MART,
                            lighthouse=False, church=False, extras=("bench", "crates", "trawler"),
-                           addon="lands_end_tileset"),
+                           addon="lands_end_tileset",
+                           adopt=["orleans_gulf", "orleans_offshore"]),   # Routes 20 and 21 join Land's End
     "orleans_camp": dict(symbol="gTileset_OrleansCamp", drop=[], brick=[], trim=HOUSES + KNEES + BOAT + MART,
                          lighthouse=False, church=False, extras=("bench", "crates", "magnolia", "airboat"),
-                         addon="camp_tileset"),
+                         addon="camp_tileset", adopt=["orleans_route"]),   # Route 9 joins Camp Cocodrie
     "orleans_hollow": dict(symbol="gTileset_OrleansHollow", drop=[], brick=[], trim=HOUSES + KNEES + BOAT + MART,
                            lighthouse=False, church=False, extras=("crates", "magnolia"), addon="hollow_tileset"),
     "orleans_port": dict(symbol="gTileset_OrleansPort", drop=["barn"], brick=["brick_shop", "brick_hall"],
                          trim=HOUSES + KNEES + BOAT + MUD, lighthouse=True, church=False,
-                         extras=("bench", "lamp", "crates", "trawler"), addon="storms_tileset"),
+                         extras=("bench", "lamp", "crates", "trawler"), addon="storms_tileset",
+                         adopt=["orleans_coast"]),   # Route 2 (power line, wire spans, lookout) is drawn with Storm's Edge's tileset
     "orleans_capital": dict(symbol="gTileset_OrleansCapital", drop=[], brick=["brick_shop", "brick_row"],
                             trim=HOUSES + KNEES + BOAT + MUD,
                             lighthouse=False, church=False, extras=("bench", "lamp", "barrel", "crates", "magnolia", "airboat"),
@@ -249,6 +251,9 @@ def make(name):
     if v.get("addon"):  # a handmade town's own pieces on a demand variant (e.g. storms_tileset for Storm's Edge)
         sys.path.insert(0, HERE)
         __import__(v["addon"]).apply(r, c)
+    if v.get("adopt"):  # routes whose joins with this town must share its secondary tileset (adopt.py)
+        sys.path.insert(0, HERE)
+        __import__("adopt").apply(r, c, v["adopt"])
     for path, obj in ((os.path.join(TS, "recipes", f"{name}.json"), r), (os.path.join(TS, f"{name}.json"), c)):
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             json.dump(obj, f, indent=1, ensure_ascii=False)

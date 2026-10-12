@@ -405,14 +405,5 @@
       "script": "Route1_EventScript_LandingStandoff"
     }
   ],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 3,
-      "y": 9,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route1_EventScript_MespritShrine"
-    }
-  ]
+  "bg_events": []
 }

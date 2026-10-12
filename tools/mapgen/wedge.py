@@ -64,6 +64,8 @@ def apply_to_spec(spec, key):
     keep = [b for b in spec["buildings"] if (b["x"], b["y"]) not in drop and not b.get("_w")]
     keep += [dict(b, _w=True) for b in e.get("add", [])]
     spec["buildings"] = keep
+    if e.get("walls"):  # gate walls of canopy inside a seam band (borders.py "walls")
+        spec["walls"] = e["walls"]
     return spec
 
 

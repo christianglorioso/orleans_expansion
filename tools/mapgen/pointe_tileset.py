@@ -48,6 +48,9 @@ EKAT_DROP |= {f"cypress_small_{x}{y}" for x in range(2) for y in range(3)}
 # the floating logs and snags and the second water plant never appear (tools/mapgen/usage.py orleans_pointe)
 EKAT_DROP |= {"marsh", "water_N", "water_S", "water_inNE", "water_inSE", "water_landNW", "water_landSW", "water_sTLBR",
               "water_sTRBL", "water_weeds1", "waterlog_0", "waterlog_1", "snag_top_water", "waterstump"}
+# the shared terrain (marsh, mud, water, banks, tall grass) lives in the primary and costs this tileset nothing: keep it all, so
+# overlays and seam-band repairs can ask for any piece
+EKAT_DROP = {n for n in EKAT_DROP if not n.startswith(("marsh", "mud", "water", "tallgrass"))}
 VGEN_DROP = {"02A", "040", "041", "061"}  # the doors are patches; 02A (an empty roof tile) is unused
 PATCH_DROP = ("boat_", "grave_", "shrine_", "tallgrass_", "path_i", "shady_", "barn_", "pier_", "reeds_",
               "cypress_small_")
@@ -288,8 +291,8 @@ def make():
     c["prefabs"].pop("cypress_water", None)  # no trees in the river
     c["terrain"]["~"]["decor"]["tiles"] = ["ekat:water_lily"]
     w = c["autotile"]["water"]
-    for k in [k for k, v in w.items() if isinstance(v, str) and v.split(":")[-1] in EKAT_DROP]:
-        del w[k]  # pieces this river never needs; the builder stops loudly if a new shape asks for one
+    # (the water set lives in the primary now, so every bank piece is free: nothing is dropped, and a seam-band repair
+    # may ask for any shape)
     w["connects"] = "~w"
     w["apply_on"] = "~.w"
     w.pop("alt_land", None)

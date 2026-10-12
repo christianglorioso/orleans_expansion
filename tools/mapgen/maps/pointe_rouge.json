@@ -1428,12 +1428,6 @@
             "overlay": "sbr:0_0"
           },
           {
-            "overlay": "sbr:0_0"
-          },
-          {
-            "overlay": "sbr:0_0"
-          },
-          {
             "overlay": "sbr:3_0"
           }
         ],
@@ -1449,13 +1443,9 @@
           "johto:1C1",
           "johto:1C1",
           "johto:1C1",
-          "johto:1C1",
-          "johto:1C1",
           "johto:1C1"
         ],
         [
-          "johto:1C1",
-          "johto:1C1",
           "johto:1C1",
           "johto:1C1",
           "johto:1C1",
@@ -1472,12 +1462,6 @@
         [
           {
             "overlay": "sbr:1_1"
-          },
-          {
-            "overlay": "sbr:0_1"
-          },
-          {
-            "overlay": "sbr:0_1"
           },
           {
             "overlay": "sbr:0_1"
@@ -1564,14 +1548,6 @@
           1
         ],
         [
-          12,
-          1
-        ],
-        [
-          13,
-          1
-        ],
-        [
           0,
           2
         ],
@@ -1618,14 +1594,6 @@
         [
           11,
           2
-        ],
-        [
-          12,
-          2
-        ],
-        [
-          13,
-          2
         ]
       ],
       "kind": "stone"
@@ -1637,12 +1605,6 @@
       "label": "Bridge",
       "rows": [
         [
-          {
-            "overlay": "sbr:0_2"
-          },
-          {
-            "overlay": "sbr:1_2"
-          },
           {
             "overlay": "sbr:0_2"
           },
@@ -1689,7 +1651,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 59,
+      "x": 57,
       "y": 8,
       "label": "Bridge abutment",
       "rows": [
@@ -1744,12 +1706,6 @@
             "overlay": "sbr:0_0"
           },
           {
-            "overlay": "sbr:0_0"
-          },
-          {
-            "overlay": "sbr:0_0"
-          },
-          {
             "overlay": "sbr:3_0"
           }
         ],
@@ -1765,13 +1721,9 @@
           "johto:1C1",
           "johto:1C1",
           "johto:1C1",
-          "johto:1C1",
-          "johto:1C1",
           "johto:1C1"
         ],
         [
-          "johto:1C1",
-          "johto:1C1",
           "johto:1C1",
           "johto:1C1",
           "johto:1C1",
@@ -1788,12 +1740,6 @@
         [
           {
             "overlay": "sbr:1_1"
-          },
-          {
-            "overlay": "sbr:0_1"
-          },
-          {
-            "overlay": "sbr:0_1"
           },
           {
             "overlay": "sbr:0_1"
@@ -1880,14 +1826,6 @@
           1
         ],
         [
-          12,
-          1
-        ],
-        [
-          13,
-          1
-        ],
-        [
           0,
           2
         ],
@@ -1934,14 +1872,6 @@
         [
           11,
           2
-        ],
-        [
-          12,
-          2
-        ],
-        [
-          13,
-          2
         ]
       ],
       "kind": "stone"
@@ -1953,12 +1883,6 @@
       "label": "Bridge",
       "rows": [
         [
-          {
-            "overlay": "sbr:0_2"
-          },
-          {
-            "overlay": "sbr:1_2"
-          },
           {
             "overlay": "sbr:0_2"
           },
@@ -2005,7 +1929,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 59,
+      "x": 57,
       "y": 29,
       "label": "Bridge abutment",
       "rows": [

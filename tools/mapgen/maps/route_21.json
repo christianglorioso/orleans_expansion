@@ -4,7 +4,7 @@
   "map_const": "MAP_ORLEANS_ROUTE21",
   "layout": "LAYOUT_ORLEANS_ROUTE21",
   "layout_dir": "data/layouts/Route21",
-  "tileset": "orleans_offshore",
+  "tileset": "orleans_harbor",
   "mockup": "../orleans_maps/r21_route_21.png",
   "grid": "route_21.grid.txt",
   "edits": [],

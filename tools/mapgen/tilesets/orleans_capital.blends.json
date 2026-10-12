@@ -2400,5 +2400,68 @@
    "base": "dry:0_0",
    "art": "props:lamp_top"
   }
+ },
+ {
+  "id": "lv_1930e0e09b31",
+  "pixels": "tools/mapgen/tilesets/levee/lv_1930e0e09b31.png",
+  "base": "ekat:water_inSW",
+  "attr_of": "ekat:water_inSW",
+  "group": "levee"
+ },
+ {
+  "id": "lv_2e2c628976de",
+  "pixels": "tools/mapgen/tilesets/levee/lv_2e2c628976de.png",
+  "base": "ekat:water_landNE",
+  "attr_of": "ekat:water_landNE",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4f9faae01147",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4f9faae01147.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8348c2766104",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8348c2766104.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4564760293e6",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4564760293e6.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_c8fce225497f",
+  "pixels": "tools/mapgen/tilesets/levee/lv_c8fce225497f.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_f258168d9848",
+  "pixels": "tools/mapgen/tilesets/levee/lv_f258168d9848.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_a679126aa567",
+  "pixels": "tools/mapgen/tilesets/levee/lv_a679126aa567.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_ed9813785da7",
+  "pixels": "tools/mapgen/tilesets/levee/lv_ed9813785da7.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
  }
 ]

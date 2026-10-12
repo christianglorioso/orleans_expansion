@@ -1,0 +1,431 @@
+{
+ "_comment": "Map border art (make_borders.py; its docstring has the details). Cells are [x, y] in 16 px units of borders.png, all opaque. blocks: the 2x2 border blocks as [[cell at (x&1, y&1) = (0,0), (1,0)], [(0,1), (1,1)]]; the same cells are the inward wall, placed by map parity. edges: per border, per terrain, the wall-transition cell of every face (+ _parity).",
+ "png": "borders.png",
+ "palettes": {
+  "swamp": {
+   "colours": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     96,
+     136,
+     136
+    ],
+    [
+     120,
+     168,
+     128
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     96,
+     128,
+     88
+    ],
+    [
+     144,
+     184,
+     152
+    ],
+    [
+     40,
+     56,
+     40
+    ],
+    [
+     64,
+     96,
+     64
+    ],
+    [
+     72,
+     96,
+     64
+    ],
+    [
+     80,
+     112,
+     96
+    ],
+    [
+     80,
+     80,
+     80
+    ],
+    [
+     104,
+     152,
+     120
+    ],
+    [
+     72,
+     112,
+     112
+    ],
+    [
+     104,
+     144,
+     96
+    ]
+   ],
+   "note": "slot 0 transparent; exactly the core green palette of the Ekat terrain (orleans_route_b/10, orleans_village/07, orleans_pointe/06; slot 15 free). The swamp cells use only these colours."
+  },
+  "dry": {
+   "colours": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     240,
+     224,
+     184
+    ],
+    [
+     224,
+     200,
+     144
+    ],
+    [
+     200,
+     168,
+     112
+    ],
+    [
+     160,
+     128,
+     88
+    ],
+    [
+     216,
+     184,
+     88
+    ],
+    [
+     176,
+     144,
+     64
+    ],
+    [
+     24,
+     48,
+     32
+    ],
+    [
+     40,
+     80,
+     48
+    ],
+    [
+     64,
+     112,
+     56
+    ],
+    [
+     96,
+     144,
+     64
+    ],
+    [
+     152,
+     184,
+     88
+    ],
+    [
+     104,
+     96,
+     80
+    ],
+    [
+     152,
+     144,
+     120
+    ],
+    [
+     200,
+     192,
+     168
+    ],
+    [
+     64,
+     40,
+     32
+    ]
+   ],
+   "note": "slot 0 transparent; 15 colours, all from make_dry_country.py (earth DH D1 D2 D3, straw ST ST_D, leaves L0-L4, rock K0-K2, outline B0). Its own palette."
+  }
+ },
+ "blocks": {
+  "swamp_canopy": [
+   [
+    "swamp_canopy_00",
+    "swamp_canopy_10"
+   ],
+   [
+    "swamp_canopy_01",
+    "swamp_canopy_11"
+   ]
+  ],
+  "dry_scrub": [
+   [
+    "dry_scrub_00",
+    "dry_scrub_10"
+   ],
+   [
+    "dry_scrub_01",
+    "dry_scrub_11"
+   ]
+  ]
+ },
+ "cells": {
+  "swamp_canopy_00": [
+   0,
+   0
+  ],
+  "swamp_canopy_10": [
+   1,
+   0
+  ],
+  "swamp_canopy_01": [
+   0,
+   1
+  ],
+  "swamp_canopy_11": [
+   1,
+   1
+  ],
+  "dry_scrub_00": [
+   2,
+   0
+  ],
+  "dry_scrub_10": [
+   3,
+   0
+  ],
+  "dry_scrub_01": [
+   2,
+   1
+  ],
+  "dry_scrub_11": [
+   3,
+   1
+  ],
+  "swamp_S_marsh_0": [
+   0,
+   2
+  ],
+  "swamp_S_marsh_1": [
+   1,
+   2
+  ],
+  "swamp_N_marsh_0": [
+   2,
+   2
+  ],
+  "swamp_N_marsh_1": [
+   3,
+   2
+  ],
+  "swamp_E_marsh_0": [
+   4,
+   2
+  ],
+  "swamp_E_marsh_1": [
+   5,
+   2
+  ],
+  "swamp_W_marsh_0": [
+   6,
+   2
+  ],
+  "swamp_W_marsh_1": [
+   7,
+   2
+  ],
+  "swamp_in_NW_marsh": [
+   8,
+   2
+  ],
+  "swamp_in_NE_marsh": [
+   9,
+   2
+  ],
+  "swamp_in_SW_marsh": [
+   10,
+   2
+  ],
+  "swamp_in_SE_marsh": [
+   11,
+   2
+  ],
+  "swamp_S_water_0": [
+   0,
+   3
+  ],
+  "swamp_S_water_1": [
+   1,
+   3
+  ],
+  "swamp_N_water_0": [
+   2,
+   3
+  ],
+  "swamp_N_water_1": [
+   3,
+   3
+  ],
+  "swamp_E_water_0": [
+   4,
+   3
+  ],
+  "swamp_E_water_1": [
+   5,
+   3
+  ],
+  "swamp_W_water_0": [
+   6,
+   3
+  ],
+  "swamp_W_water_1": [
+   7,
+   3
+  ],
+  "swamp_in_NW_water": [
+   8,
+   3
+  ],
+  "swamp_in_NE_water": [
+   9,
+   3
+  ],
+  "swamp_in_SW_water": [
+   10,
+   3
+  ],
+  "swamp_in_SE_water": [
+   11,
+   3
+  ],
+  "dry_S_dry_0": [
+   0,
+   4
+  ],
+  "dry_S_dry_1": [
+   1,
+   4
+  ],
+  "dry_N_dry_0": [
+   2,
+   4
+  ],
+  "dry_N_dry_1": [
+   3,
+   4
+  ],
+  "dry_E_dry_0": [
+   4,
+   4
+  ],
+  "dry_E_dry_1": [
+   5,
+   4
+  ],
+  "dry_W_dry_0": [
+   6,
+   4
+  ],
+  "dry_W_dry_1": [
+   7,
+   4
+  ],
+  "dry_in_NW_dry": [
+   8,
+   4
+  ],
+  "dry_in_NE_dry": [
+   9,
+   4
+  ],
+  "dry_in_SW_dry": [
+   10,
+   4
+  ],
+  "dry_in_SE_dry": [
+   11,
+   4
+  ]
+ },
+ "edges": {
+  "swamp": {
+   "marsh": {
+    "S_0": "swamp_S_marsh_0",
+    "S_1": "swamp_S_marsh_1",
+    "N_0": "swamp_N_marsh_0",
+    "N_1": "swamp_N_marsh_1",
+    "E_0": "swamp_E_marsh_0",
+    "E_1": "swamp_E_marsh_1",
+    "W_0": "swamp_W_marsh_0",
+    "W_1": "swamp_W_marsh_1",
+    "in_NW": "swamp_in_NW_marsh",
+    "in_NE": "swamp_in_NE_marsh",
+    "in_SW": "swamp_in_SW_marsh",
+    "in_SE": "swamp_in_SE_marsh"
+   },
+   "water": {
+    "S_0": "swamp_S_water_0",
+    "S_1": "swamp_S_water_1",
+    "N_0": "swamp_N_water_0",
+    "N_1": "swamp_N_water_1",
+    "E_0": "swamp_E_water_0",
+    "E_1": "swamp_E_water_1",
+    "W_0": "swamp_W_water_0",
+    "W_1": "swamp_W_water_1",
+    "in_NW": "swamp_in_NW_water",
+    "in_NE": "swamp_in_NE_water",
+    "in_SW": "swamp_in_SW_water",
+    "in_SE": "swamp_in_SE_water"
+   }
+  },
+  "dry": {
+   "dry": {
+    "S_0": "dry_S_dry_0",
+    "S_1": "dry_S_dry_1",
+    "N_0": "dry_N_dry_0",
+    "N_1": "dry_N_dry_1",
+    "E_0": "dry_E_dry_0",
+    "E_1": "dry_E_dry_1",
+    "W_0": "dry_W_dry_0",
+    "W_1": "dry_W_dry_1",
+    "in_NW": "dry_in_NW_dry",
+    "in_NE": "dry_in_NE_dry",
+    "in_SW": "dry_in_SW_dry",
+    "in_SE": "dry_in_SE_dry"
+   }
+  }
+ },
+ "rules": {
+  "border": "layout border (4 metatiles) = blocks[name] in the order 00, 10, 01, 11 (engine: border[(x & 1) + (y & 1) * 2])",
+  "wall": "an inward wall cell (x, y) = blocks[name][y & 1][x & 1], the border's own cell at that parity",
+  "depth": "d = wall depth in cells, 0 = no inward wall (the border itself is the wall)",
+  "S": "wall on the map's north edge: edge row y = d, d even (0, 2, 4); cell edges[..]['S_<x & 1>']",
+  "E": "wall on the west edge: edge column x = d, d even (0, 2, 4); cell edges[..]['E_<y & 1>']",
+  "N": "wall on the south edge: first wall row h - d even, edge row h - d - 1; cell edges[..]['N_<x & 1>']",
+  "W": "wall on the east edge: first wall column w - d even, edge col w - d - 1; cell edges[..]['W_<y & 1>']",
+  "corners": "where two walls meet, the open corner cell: in_NW (canopy N and W) sits at a cell with (x & 1, y & 1) = (0, 0), in_NE at (1, 0), in_SW at (0, 1), in_SE at (1, 1)",
+  "other_ground": "make_borders.bake_edge(style, face, parity, base16) bakes an edge cell on any 16x16 ground cell (e.g. where a wall crosses a marsh-water bank)",
+  "passability": "border, wall and edge cells are all impassable (canopy / scrub over the terrain)"
+ }
+}

@@ -357,6 +357,10 @@ def write_spec(t):
     for o in spec["objects"]:       # the gardener's second line was 38 characters (the box holds 36)
         o["text"] = o["text"].replace("Come back when the storms have passed.", "Come back after the storms.")
     spec["signs"] = [dict(sg, x=SIGN[0], y=SIGN[1]) for sg in spec["signs"]]    # the town sign, beside the street
+    # the magnolia tree-walls along the Route 2 and Route 1 sides stand in seam bands (props may not): the same walls are
+    # canopy cells of the primary (borders.py "walls"), gaps at the roads: the east wall gates the Route 2 road (rows 13-15)
+    spec["walls"] = [{"side": "E", "depth": 2, "lo": 5, "hi": 31, "gaps": [[13, 16]]},
+                     {"side": "S", "depth": 2, "lo": 5, "hi": 33, "gaps": [[19, 21]]}]
     dump(SPEC, spec)
 
 

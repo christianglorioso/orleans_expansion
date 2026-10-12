@@ -32,9 +32,15 @@ SHARED = [
     r"^patch:cypress_",        # cypress canopy on marsh / water (big and small)
     r"^patch:path_i",          # Johto path inner corners
     r"^patch:tallgrass_marsh$",
+    r"^patch:pier_",           # the Olivine/Route 40 plank dock over grass, water and banks (piers may stand in a band)
+    r"^brg:",                  # the railed road bridge's own pieces ...
+    r"^patch:ovl_brg_",        # ... and its overlays on water / grass / banks (tilesets/orleans_general.blends.json)
+    r"^patch:bdg_",            # swamp border edge cells baked over grass (tilesets/orleans_general.blends.json)
+    r"^bd:swamp_",             # border art, swamp style (make_borders.py): canopy block, wall-edge cells on marsh and water
+    r"^dry:0_0$",              # the plain dry-country ground: the ONE dry fill a seam band may hold
 ]
 # patches taken over from the route tileset (the canonical green-route recipe): their sources are all in the primary
-WANT_PATCH = ("cypress_", "path_i", "tallgrass_marsh")
+WANT_PATCH = ("cypress_", "path_i", "tallgrass_marsh", "pier_")
 
 
 def main(args):
@@ -55,6 +61,21 @@ def main(args):
         # recoloured exactly the way a secondary recolours it: the primary's table + the route recipe's, with its tolerance
         ekat["own_recolor"] = {"table": route["recolor"], "tolerance": route.get("recolor_tolerance", 0)}
         cur["sources"].append(ekat)
+        dry = [s for s in json.load(open(os.path.join(RECIPES, "orleans_route_dry.json"), encoding="utf-8"))["sources"]
+               if s["name"] == "dry"][0]
+        dry = {k: v for k, v in dry.items() if k != "metatiles"}
+        dry["metatiles"] = [{"id": "0_0", "bottom": [0, 0]}]
+        dry["own_recolor"] = ekat["own_recolor"]
+        cur["sources"].append(dry)
+        r40 = [s for s in route["sources"] if s["name"] == "r40"][0]
+        port = json.load(open(os.path.join(RECIPES, "orleans_port.json"), encoding="utf-8"))
+        brg = [s for s in port["sources"] if s["name"] == "brg"][0]
+        cur["sources"] += [dict(r40), dict(brg)]
+        bd = json.load(open(os.path.join(HERE, "sources", "orleans_custom", "borders.json"), encoding="utf-8"))
+        cur["sources"].append({"name": "bd", "type": "image", "image": "tools/mapgen/sources/orleans_custom/borders.png",
+                               "transparent": [[255, 0, 255]], "_comment": "Map border art (make_borders.py).",
+                               "metatiles": [{"id": n, "bottom": list(xy)} for n, xy in sorted(bd["cells"].items())]})
+        cur["blends_file"] = "orleans_general.blends.json"
         cur["patches"] = [p for p in route["patches"] if p["id"].startswith(WANT_PATCH)]
         cur["shared"] = SHARED
         # grass and water must come out exact: keep the colours the route tileset keeps, plus the water the ekat sheet uses

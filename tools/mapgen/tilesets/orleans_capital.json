@@ -122,12 +122,18 @@
    "name": "dry grass",
    "tile": "dry:4_0",
    "elev": 3
+  },
+  "p": {
+   "name": "road on grass (Johto dirt path, primary pieces: the road through a seam band)",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path_g"
   }
  },
  "autotile": {
   "path": {
    "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
-   "connects": ":=",
+   "connects": ":=p",
    "NW": "dry:5_3",
    "N": "dry:1_3",
    "NE": "dry:6_3",
@@ -332,6 +338,23 @@
    "landNW": "dry:4_2",
    "sTLBR": "dry:5_2",
    "sTRBL": "dry:6_2"
+  },
+  "path_g": {
+   "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
+   "connects": ":=p",
+   "NW": "0D0",
+   "N": "0D1",
+   "NE": "0D2",
+   "W": "0D8",
+   "C": "0D9",
+   "E": "0DA",
+   "SW": "0E0",
+   "S": "0E1",
+   "SE": "0E2",
+   "iNW": "patch:path_iNW",
+   "iNE": "patch:path_iNE",
+   "iSW": "patch:path_iSW",
+   "iSE": "patch:path_iSE"
   }
  },
  "prefabs": {

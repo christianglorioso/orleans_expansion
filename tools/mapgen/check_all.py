@@ -20,7 +20,9 @@ for key in world.OUTDOOR:
     seams = re.search(r"terrain seams above 20: (\d+)", t)
     off = re.search(r"off-palette grass .*?: (\d+)", t)
     gp = re.search(r"gameplay problems: (\d+)", t)
-    line = f"{key:16s} seams={seams.group(1) if seams else '?':>3} offpal={off.group(1) if off else '?':>3} gameplay={gp.group(1) if gp else '?':>3}"
+    bv = re.search(r"band violations: (\d+)", t)
+    conf = len(re.findall(r"border: CONFLICT", t))
+    line = f"{key:16s} seams={seams.group(1) if seams else '?':>3} offpal={off.group(1) if off else '?':>3} gameplay={gp.group(1) if gp else '?':>3} band={bv.group(1) if bv else '?':>3} border_conflicts={conf}"
     if r.returncode or not seams:
         line += "  FAILED: " + t.strip().splitlines()[-1][:150] if t.strip() else "  FAILED"
     print(line, flush=True)

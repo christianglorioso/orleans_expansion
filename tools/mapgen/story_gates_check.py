@@ -157,16 +157,32 @@ def route_3():
 
 
 def crescent():
-    trig = [(c["x"], c["y"]) for c in json.load(open("data/maps/CrescentCity/map.json"))["coord_events"]
-            if "FloodedRoad" in c["script"]]
+    m = json.load(open("data/maps/CrescentCity/map.json"))
+    ev = [(c["x"], c["y"], c["elevation"]) for c in m["coord_events"] if "FloodedRoad" in c["script"]]
+    trig = [(x, y) for x, y, _ in ev]
     g = Grid("CrescentCity")
-    check(bool(trig), f"Crescent City: {len(trig)} floodwater trigger cells in the bottom row")
+    check(bool(trig), f"Crescent City: {len(ev)} floodwater trigger events in the bottom row")
     reach = g.fill([(3, 43), (3, 44)], stop=trig)
     south = sorted(x for (x, y) in reach if y == g.h - 1 and 39 <= x <= 66)
     check(not south, f"Crescent City: with the triggers blocked no bottom-row cell inside the Route 14 connection is reachable (found {south})")
-    free = g.fill([(3, 43), (3, 44)])
-    cover = {x for (x, y) in free if y == g.h - 1 and 39 <= x <= 66}
-    check(cover <= {x for x, _ in trig}, f"Crescent City: every walkable bottom-row cell in x 39-66 is a trigger (uncovered: {sorted(cover - {x for x, _ in trig})})")
+    # every standable cell of the connection (water included: a surfer is at the water's elevation) has a trigger at its own elevation
+    stand = [(x, g.mb[(g.h - 1) * g.w + x] >> 12) for x in range(39, 67) if not (g.mb[(g.h - 1) * g.w + x] >> 10) & 3]
+    unc = [(x, e) for x, e in stand if not any(tx == x and ty == g.h - 1 and te in (e, 0) for tx, ty, te in ev)]
+    check(not unc, f"Crescent City: every standable bottom-row cell in x 39-66 (surf included) is a trigger at its elevation (uncovered: {unc})")
+
+
+def crescent_doors():
+    """The Drowned Ward door and the gym door each have one approach cell, held by an object until its flag (people are solid)."""
+    g = Grid("CrescentCity")
+    objs = {o.get("local_id"): o for o in g.m["object_events"]}
+    reach = g.fill([(3, 43), (3, 44)])
+    for door, guard, flag in (((62, 26), "LOCALID_CRESCENT_CITY_WARD_GUARD", "FLAG_BADGE03_GET"),
+                              ((22, 18), "LOCALID_CRESCENT_CITY_GYM_USHER", "FLAG_HIDE_CRESCENT_GYM_USHER")):
+        o = objs.get(guard)
+        nbrs = [(door[0] + dx, door[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)) if g.walk(door[0] + dx, door[1] + dy) or (door[0] + dx, door[1] + dy) == (o["x"], o["y"])]
+        check(o is not None and o["flag"] == flag and nbrs == [(o["x"], o["y"])],
+              f"Crescent City: door {door} has exactly one approach cell {nbrs}, held by {guard} (hidden by {flag})")
+        check(door not in reach, f"Crescent City: with {guard} in place the door {door} cannot be reached on foot")
 
 
 def crescent_route6():
@@ -191,6 +207,70 @@ def crescent_route6():
             check(not west, f"Route 6, {label}: nothing west of x 29 is reachable from Crescent (found {len(west)})")
 
 
+def crescent_gym():
+    g = Grid("CrescentCity_Gym")
+    lights = [c for c in g.m["coord_events"] if c.get("type") == "trigger" and "Light" in c["script"]]
+    orange = {(c["x"], c["y"]) for c in lights if "Orange" in c["script"]}
+    blue = {(c["x"], c["y"]) for c in lights if "Blue" in c["script"]}
+    leader = next(o for o in g.m["object_events"] if o["local_id"].endswith("FIFOLET0"))
+    check(len(orange) == 3 and len(blue) == 2, f"Crescent gym: {len(orange)} orange (send-back) and {len(blue)} blue lights")
+    reach = g.fill([(10, 15)], stop=orange)
+    check((leader["x"], leader["y"] + 1) in reach, "Crescent gym: Fifolet's tile is reachable with every orange light blocked")
+    # the maze (rows 5-15, people solid): simple paths from the entrance hall's door to the leader's door
+    cells = {(x, y) for x in range(g.w) for y in range(5, 16) if g.walk(x, y)}
+
+    def paths(blocked):
+        out, path, seen = [], [(10, 15)], {(10, 15)}
+
+        def dfs(c):
+            if c == (10, 5):
+                out.append(tuple(path))
+                return
+            for n in ((c[0] + 1, c[1]), (c[0] - 1, c[1]), (c[0], c[1] + 1), (c[0], c[1] - 1)):
+                if n in cells and n not in blocked and n not in seen:
+                    seen.add(n)
+                    path.append(n)
+                    dfs(n)
+                    path.pop()
+                    seen.discard(n)
+        dfs((10, 15))
+        return out
+    free, lit = paths(set()), paths(orange)
+    check(len(free) > 1 and len(lit) == 1, f"Crescent gym: the maze has {len(free)} routes; with the orange lights lit exactly {len(lit)} remains (it must be 1)")
+    check(bool(lit) and blue <= set(lit[0]) and not (orange & set(lit[0])),
+          "Crescent gym: both blue lights are on the true way and no orange light is")
+    check(all(c["var"] == "FLAG_BADGE03_GET" for c in lights), "Crescent gym: every light is dead once the badge is earned")
+
+
+def pointe_rouge_east():
+    """The dust-storm gate: every cell of Pointe Rouge's last column that the player can stand on is a flag trigger."""
+    m, mb, w, h = layout("PointeRouge")
+    free = lambda x, y: 0 <= x < w and 0 <= y < h and not (mb[y * w + x] >> 10) & 3  # any elevation, water too (surf, bridges)
+    trig = {(c["x"], c["y"]) for c in m["coord_events"]
+            if c.get("script") == "PointeRouge_EventScript_DustStorm" and c["var"] == "FLAG_DUST_STORMS_LIFTED" and str(c["var_value"]) == "0"}
+    last = {(w - 1, y) for y in range(h) if free(w - 1, y)}
+    check(bool(trig) and last <= trig, f"Pointe Rouge: every standable cell of the east edge column is a dust-storm trigger (uncovered: {sorted(last - trig)})")
+    check(all(mb[y * w + x] >> 12 == next(c for c in m["coord_events"] if (c["x"], c["y"]) == (x, y))["elevation"] for x, y in trig if free(x, y)),
+          "Pointe Rouge: every dust-storm trigger's elevation matches its cell")
+    # flood fill (any elevation) from the Route 5 edge and the Route 4 edge with the triggers blocked: nothing at x >= w-1 is reached
+    src = [(0, y) for y in range(h) if free(0, y)] + [(x, h - 1) for x in range(w) if free(x, h - 1)]
+    seen, q = set(), deque()
+    for sx in src:
+        if sx not in trig:
+            seen.add(sx)
+            q.append(sx)
+    while q:
+        x, y = q.popleft()
+        for n in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+            if n not in seen and n not in trig and free(*n):
+                seen.add(n)
+                q.append(n)
+    check(not any(x >= w - 1 for x, _ in seen), f"Pointe Rouge, triggers blocked: nothing in the east column is reachable ({len(seen)} cells reached)")
+    check(not (seen & {(w - 1, y) for y in range(h)}) and any(x >= 60 for x, _ in seen), "Pointe Rouge: the east half IS reachable up to the gate (sanity)")
+    check(m["connections"] and any(c["map"] == "MAP_ORLEANS_ROUTE23" and c["direction"] == "right" for c in m["connections"]),
+          "Pointe Rouge: the only way east is the Route 23 connection on the last column")
+
+
 def all_triggers():
     names = {json.load(open(os.path.join("tools/mapgen/maps", f), encoding="utf-8"))["map"]
              for f in os.listdir("tools/mapgen/maps")
@@ -210,6 +290,14 @@ def all_triggers():
             ok_var = var.startswith(("VAR_", "FLAG_"))
             cell = mb[c["y"] * w + c["x"]] >> 12
             ok_el = c["elevation"] == cell or c["elevation"] == 0 or (cell == 15 and c["elevation"] == 4)
+            walkable = not (mb[c["y"] * w + c["x"]] >> 10) & 3
+            sibling = any(o is not c and (o["x"], o["y"]) == (c["x"], c["y"]) and o.get("type") == "trigger"
+                          and (o["elevation"] == cell or o["elevation"] == 0 or (cell == 15 and o["elevation"] == 4))
+                          for o in m.get("coord_events", []))
+            if not (ok_el or not walkable or sibling):  # (a blocked cell never fires; a sibling at the cell's elevation covers it)
+                ok_el = False
+            else:
+                ok_el = True
             if not (ok_var and ok_el):
                 bad += 1
                 print(f"      {d} ({c['x']},{c['y']}) var {var!r} elevation {c['elevation']} cell elevation {cell} -> {c['script']}")
@@ -222,6 +310,9 @@ if __name__ == "__main__":
     route_3()
     crescent()
     crescent_route6()
+    crescent_doors()
+    crescent_gym()
+    pointe_rouge_east()
     all_triggers()
     print(f"{results.count(False)} failed of {len(results)}")
     sys.exit(1 if False in results else 0)
