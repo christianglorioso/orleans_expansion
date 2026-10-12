@@ -54,7 +54,7 @@ def add_ribbon_item():
                 lambda m: f"\n    ITEM_FAIS_DO_DO_RIBBON = {nxt},  // Orleans: evolves Petilil into Hisuian Lilligant (tools/dex/apply_evolutions.py)\n" + m.group(1),
                 ct, count=1)
     block = ('\n    [ITEM_FAIS_DO_DO_RIBBON] =\n    {\n        .name = ITEM_NAME("Fais Do-Do Ribbon"),\n        .price = 0,\n'
-             '        .description = COMPOUND_STRING(\n            "A dance hall ribbon.\n"\n            "Makes certain Pokémon\n"\n            "evolve."),\n'
+             '        .description = COMPOUND_STRING(\n            "A dance hall ribbon.\\n"\n            "Makes certain Pokémon\\n"\n            "evolve."),\n'
              '        .pocket = POCKET_ITEMS,\n        .sortType = ITEM_TYPE_EVOLUTION_STONE,\n        .type = ITEM_USE_PARTY_MENU,\n'
              '        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,\n        .effect = gItemEffect_EvoItem,\n'
              '        .flingPower = 30,\n        .iconPic = gItemIcon_SunStone,\n        .iconPalette = gItemIconPalette_SunStone,\n    },\n')

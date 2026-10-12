@@ -52,7 +52,78 @@
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT) \
-    F(TRAILBLAZE) /* Orleans: Magnolia's TM */
+    F(TRAILBLAZE)  /* Orleans: Magnolia's TM */ \
+    F(ROUND) \
+    F(CONFIDE) \
+    F(TERA_BLAST) \
+    F(TAKE_DOWN) \
+    F(HELPING_HAND) \
+    F(NATURAL_GIFT) \
+    F(GIGA_IMPACT) \
+    F(CURSE) \
+    F(HEADBUTT) \
+    F(CAPTIVATE) \
+    F(UPROAR) \
+    F(SCARY_FACE) \
+    F(KNOCK_OFF) \
+    F(FLING) \
+    F(BULLDOZE) \
+    F(GRASS_KNOT) \
+    F(ENDEAVOR) \
+    F(AGILITY) \
+    F(ENERGY_BALL) \
+    F(MUD_SHOT) \
+    F(CHILLING_WATER) \
+    F(PAYBACK) \
+    F(ECHOED_VOICE) \
+    F(SEED_BOMB) \
+    F(WEATHER_BALL) \
+    F(HYDRO_PUMP) \
+    F(STOMPING_TANTRUM) \
+    F(BIDE) \
+    F(RAGE) \
+    F(WORK_UP) \
+    F(SCALD) \
+    F(WHIRLPOOL) \
+    F(CHARM) \
+    F(ZEN_HEADBUTT) \
+    F(EARTH_POWER) \
+    F(LIQUIDATION) \
+    F(SPITE) \
+    F(STEALTH_ROCK) \
+    F(LOW_KICK) \
+    F(U_TURN) \
+    F(HYPER_VOICE) \
+    F(CRUNCH) \
+    F(ENCORE) \
+    F(NASTY_PLOT) \
+    F(SIGNAL_BEAM) \
+    F(DARK_PULSE) \
+    F(DAZZLING_GLEAM) \
+    F(DEFOG) \
+    F(NATURE_POWER) \
+    F(ACROBATICS) \
+    F(LASER_FOCUS) \
+    F(SKULL_BASH) \
+    F(STONE_EDGE) \
+    F(COVET) \
+    F(OMINOUS_WIND) \
+    F(SCREECH) \
+    F(TAILWIND) \
+    F(AIR_CUTTER) \
+    F(MAGICAL_LEAF) \
+    F(TRICK) \
+    F(WILL_O_WISP) \
+    F(BATON_PASS) \
+    F(IRON_DEFENSE) \
+    F(POWER_UP_PUNCH) \
+    F(THROAT_CHOP) \
+    F(WORRY_SEED) \
+    F(AIR_SLASH) \
+    F(FOUL_PLAY) \
+    F(FOCUS_BLAST) \
+    F(INFESTATION) \
+    F(CONFUSE_RAY)
 
 #define FOREACH_HM(F) \
     F(CUT) \
