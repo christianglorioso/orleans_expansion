@@ -43,7 +43,8 @@ OldWater_SongHouse_EventScript_Tupelo0::
 	lock
 	faceplayer
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
-	goto_if_eq VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Entry
+	goto_if_ge VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Gate
+OldWater_SongHouse_EventScript_TupeloRest:
 	goto_if_set FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloCarvingCheck
 	goto_if_ge VAR_ORLEANS_STORY, 22, OldWater_SongHouse_EventScript_TupeloLater
 	goto_if_eq VAR_ORLEANS_STORY, 7, OldWater_SongHouse_EventScript_TupeloFirstVerse
@@ -143,25 +144,30 @@ OldWater_SongHouse_Text_TupeloCarving:
 @ "laid down to guard" reading: the carving's "laid low" was chipped), and the Rootkin give the player HM Surf (decision 3
 @ follow-up: Surf, not a boat). Bag-full safe: the debris flag marks the first half done; the story value moves to 22 only once
 @ HM Surf is in the bag, so talking to Tupelo again retries. Wren's friendly battle and the Rockruff are Wren1's, open from story 22.
-@ the carving scene (Ch3) comes first if the player has found the carving and Tupelo has not seen it yet
-OldWater_SongHouse_EventScript_TupeloVerse4Entry:
+@ Keyed on the story value being AT LEAST 21 and HM Surf not yet received, never on exactly 21: whatever else the player did meanwhile, Tupelo
+@ offers the HM until it is in the bag. Order matters: the verse (and the true piece) first (FLAG_VERSE4_HEARD, shown once), then the HM,
+@ and only with the HM in the bag are the Route 6 debris cleared and the story moved to 22 together, so the way west is never open
+@ without the HM and story 22 is never skipped (the camp's scenes need 22, 23, ... in turn).
+OldWater_SongHouse_EventScript_TupeloVerse4Gate:
+	goto_if_set FLAG_RECEIVED_HM_SURF, OldWater_SongHouse_EventScript_TupeloRest
+	@ the carving scene (Ch3) comes first if the player has found the carving and Tupelo has not seen it yet
 	goto_if_unset FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloVerse4
 	goto_if_set FLAG_CARVING_SHOWN_TUPELO, OldWater_SongHouse_EventScript_TupeloVerse4
 	setflag FLAG_CARVING_SHOWN_TUPELO
 	msgbox OldWater_SongHouse_Text_TupeloCarving, MSGBOX_DEFAULT
 OldWater_SongHouse_EventScript_TupeloVerse4:
-	goto_if_set FLAG_ROUTE6_DEBRIS_CLEARED, OldWater_SongHouse_EventScript_TupeloGiveSurf
+	goto_if_set FLAG_VERSE4_HEARD, OldWater_SongHouse_EventScript_TupeloVerse4Offer
+	goto_if_set FLAG_ROUTE6_DEBRIS_CLEARED, OldWater_SongHouse_EventScript_TupeloVerse4Offer
 	msgbox OldWater_SongHouse_Text_Verse4A, MSGBOX_DEFAULT
 	msgbox OldWater_SongHouse_Text_Verse4B, MSGBOX_DEFAULT
-	msgbox OldWater_SongHouse_Text_Verse4C, MSGBOX_DEFAULT
-	setflag FLAG_ROUTE6_DEBRIS_CLEARED
-OldWater_SongHouse_EventScript_TupeloGiveSurf:
-	goto_if_set FLAG_RECEIVED_HM_SURF, OldWater_SongHouse_EventScript_TupeloSurfDone
+	setflag FLAG_VERSE4_HEARD
+OldWater_SongHouse_EventScript_TupeloVerse4Offer:
 	msgbox OldWater_SongHouse_Text_Verse4D, MSGBOX_DEFAULT
 	giveitem ITEM_HM_SURF
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_HM_SURF
-OldWater_SongHouse_EventScript_TupeloSurfDone:
+	msgbox OldWater_SongHouse_Text_Verse4C, MSGBOX_DEFAULT
+	setflag FLAG_ROUTE6_DEBRIS_CLEARED
 	call_if_lt VAR_ORLEANS_STORY, 22, OldWater_SongHouse_EventScript_SetStory22
 	msgbox OldWater_SongHouse_Text_Verse4E, MSGBOX_DEFAULT
 	release

@@ -315,7 +315,7 @@ StormsEdge_Gym_EventScript_EclairDefeated::
 	setflag FLAG_STORMS_EDGE_GRID_RESTORED
 	setflag FLAG_HIDE_STORMS_EDGE_ECLAIR
 	clearflag FLAG_UNUSED_0x28F
-	setvar VAR_ORLEANS_STORY, 11
+	call_if_lt VAR_ORLEANS_STORY, 11, StormsEdge_Gym_EventScript_SetStory11
 	msgbox StormsEdge_Gym_Text_BadgeInfo, MSGBOX_DEFAULT
 	msgbox StormsEdge_Gym_Text_GridBack, MSGBOX_DEFAULT
 	call StormsEdge_Gym_EventScript_GiveRewards
@@ -476,3 +476,7 @@ StormsEdge_Gym_Text_EclairPost:
 	.string "3 runs on to CRESCENT CITY.\p"
 	.string "FIFOLET keeps the third verse in\n"
 	.string "the old cemetery. Go by night!$"
+
+StormsEdge_Gym_EventScript_SetStory11:
+	setvar VAR_ORLEANS_STORY, 11
+	return

@@ -32,9 +32,11 @@ GATES = [
     {"map": "Route21", "axis": "y", "at": 8, "flag": "FLAG_BADGE08_GET", "script": "Route21_EventScript_WaterGate",
      "back": "walk_up", "word": "DEBRIS", "first": 1, "objects": [(x, 8) for x in range(22, 28)],
      "text": T("A wrecked barge and a wall of rain", "block the way into the Gulf.")},
-    # both raids (Kyogre and Groudon calmed, either order): Route 25 to the Oldest Shrine. Route 25 at row 20.
-    {"map": "Route25", "axis": "y", "at": 20, "flag": "FLAG_ROUTE25_OPEN", "script": "Route25_EventScript_WaterGate",
-     "back": "walk_down", "word": "JAM", "first": 1, "objects": [(x, 20) for x in range(16, 20)],
+    # both raids (Kyogre and Groudon calmed, either order): ALL of Route 25 (wild Lv 59-63) and the Oldest Shrine stay shut. The cut is
+    # Route 8's row 1, just inside its north exit (the 8/25 seam): the 'up' connection is the only one that reaches row 0 (Route 9's
+    # and Route 7's connections start at rows 2 and 3), so row 1 across the whole width seals it. No objects (rows 0-4 are the seam band).
+    {"map": "Route8", "axis": "y", "at": 1, "flag": "FLAG_ROUTE25_OPEN", "script": "Route8_EventScript_WaterGate",
+     "back": "walk_down", "word": "JAM", "first": 1, "objects": [],
      "text": T("The channel boils under a wall of", "storm. Nothing can cross it.")},
 ]
 

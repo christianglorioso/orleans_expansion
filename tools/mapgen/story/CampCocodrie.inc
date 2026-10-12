@@ -17,7 +17,7 @@ CampCocodrie_EventScript_Arrival::
 	lockall
 	setvar VAR_CAMP_ARRIVAL, 1
 	setrespawn HEAL_LOCATION_CAMP_COCODRIE
-	call_if_lt VAR_ORLEANS_STORY, 23, CampCocodrie_EventScript_SetStory23
+	call_if_eq VAR_ORLEANS_STORY, 22, CampCocodrie_EventScript_SetStory23
 	msgbox CampCocodrie_Text_Arrival1, MSGBOX_DEFAULT
 	msgbox CampCocodrie_Text_Arrival2, MSGBOX_DEFAULT
 	releaseall
@@ -39,7 +39,7 @@ CampCocodrie_EventScript_Isaac::
 CampCocodrie_EventScript_IsaacDefeated::
 	msgbox CampCocodrie_Text_IsaacSeed1, MSGBOX_DEFAULT
 	msgbox CampCocodrie_Text_IsaacSeed2, MSGBOX_DEFAULT
-	call_if_lt VAR_ORLEANS_STORY, 24, CampCocodrie_EventScript_SetStory24
+	call_if_eq VAR_ORLEANS_STORY, 23, CampCocodrie_EventScript_SetStory24
 	setflag FLAG_HIDE_CAMP_ISAAC
 	closemessage
 	fadescreen FADE_TO_BLACK

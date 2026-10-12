@@ -307,7 +307,7 @@ def world_gates():
         ("Crescent floodwater (verse 6)", "FLAG_BADGE06_GET", ["Route14", "Route15", "Route16", "Route17", "Redfield", "Route18", "Route19", "Route20", "LandsEnd", "Route21", "Route22"], {}),
         ("Route 18 water gate (verse 7)", "FLAG_BADGE07_GET", ["Route19", "Route20", "LandsEnd", "Route21", "Route22"], {"Route18": lambda c: c[0] > 38}),
         ("Route 21 water gate (verse 8)", "FLAG_BADGE08_GET", ["Route22"], {"Route21": lambda c: c[1] > 8}),
-        ("Route 25 water gate (both raids)", "FLAG_ROUTE25_OPEN", ["OldestShrine"], {"Route25": lambda c: c[1] < 20}),
+        ("Route 25 storm wall at the Route 8 seam (both raids): no Route 25 cell at all", "FLAG_ROUTE25_OPEN", ["Route25", "OldestShrine"], {}),
         ("Pointe Rouge dust storm", "FLAG_DUST_STORMS_LIFTED", ["Route23", "Route24"], {}),
     ]
     starts = W.STARTS["west"] + W.STARTS["pointe"]
@@ -333,8 +333,8 @@ def world_gates():
     s21 = set(W.reach(starts, set()))
     check(s21 == base, f"story 21 (Kingfisher beaten, verse not yet sung): a surfer reaches the west, Pointe, Route 6 and Route 10's near sides only (extra {sorted(s21 - base)}, missing {sorted(base - s21)})")
     s22 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED"}))
-    intended = base | {"Route7", "Route8", "Route9", "CampCocodrie", "Route25"}
-    check(s22 == intended, f"story 22 (verse 4 sung, badge 4 + Surf): Routes 6-9 and Camp Cocodrie open (Route 25 only up to its storm wall), nothing else (extra {sorted(s22 - intended)}, missing {sorted(intended - s22)})")
+    intended = base | {"Route7", "Route8", "Route9", "CampCocodrie"}
+    check(s22 == intended, f"story 22 (verse 4 sung, badge 4 + Surf): Routes 6-9 and Camp Cocodrie open, no Route 25 cell, nothing else (extra {sorted(s22 - intended)}, missing {sorted(intended - s22)})")
     s26 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET"}))
     want26 = intended | {"Route11", "Route12", "Route13", "LutinsHollow"}
     check(s26 == want26, f"story 26 (verse 5): Routes 10-13 and Lutin's Hollow open, nothing more (extra {sorted(s26 - want26)}, missing {sorted(want26 - s26)})")

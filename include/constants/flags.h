@@ -172,7 +172,7 @@
 #define FLAG_PENDING_DAYCARE_EGG             0x86
 #define FLAG_ROUTE8_ITEM_NASTY_PLOT                      0x87 // Orleans Ch5: item balls placed by the story pass
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_ORLEANS_POOL_035                           0x89
+#define FLAG_VERSE4_HEARD                                0x89 // Orleans Ch4: Tupelo has sung verse 4 and given the true piece (the HM offer follows; retried until HM Surf is in the bag)
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
 #define FLAG_ORLEANS_POOL_036                           0x8C

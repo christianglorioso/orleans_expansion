@@ -128,7 +128,458 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route8_EventScript_WaterGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

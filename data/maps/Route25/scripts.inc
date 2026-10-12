@@ -52,34 +52,6 @@ Route25_EventScript_Trainer6::
 Route25_Text_Trainer6:
 	.string "(Trainer: first-pass placeholder.)$"
 
-Route25_EventScript_Jam1::
-	msgbox Route25_Text_Jam1, MSGBOX_NPC
-	end
-
-Route25_Text_Jam1:
-	.string "The channel boils under a wall of\nstorm. Nothing can cross it.$"
-
-Route25_EventScript_Jam2::
-	msgbox Route25_Text_Jam2, MSGBOX_NPC
-	end
-
-Route25_Text_Jam2:
-	.string "The channel boils under a wall of\nstorm. Nothing can cross it.$"
-
-Route25_EventScript_Jam3::
-	msgbox Route25_Text_Jam3, MSGBOX_NPC
-	end
-
-Route25_Text_Jam3:
-	.string "The channel boils under a wall of\nstorm. Nothing can cross it.$"
-
-Route25_EventScript_Jam4::
-	msgbox Route25_Text_Jam4, MSGBOX_NPC
-	end
-
-Route25_Text_Jam4:
-	.string "The channel boils under a wall of\nstorm. Nothing can cross it.$"
-
 Route25_EventScript_RouteSign1::
 	msgbox Route25_Text_RouteSign1, MSGBOX_SIGN
 	end

@@ -1,6 +1,29 @@
 Route8_MapScripts::
 	.byte 0
 
+@ The finale gate (story_data_gates.py): Route 8's row 1, the seam to Route 25. Flag triggers turn walkers and surfers back until BOTH
+@ raids are done (the finale script sets FLAG_ROUTE25_OPEN once FLAG_KYOGRE_CALMED and FLAG_GROUDON_CALMED are set).
+Route8_EventScript_WaterGate::
+	lockall
+	goto_if_set FLAG_ROUTE25_OPEN, Route8_EventScript_WaterGateOpen
+	msgbox Route8_Text_WaterGate, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Route8_Movement_TurnBack
+	waitmovement 0
+Route8_EventScript_WaterGateOpen:
+	releaseall
+	end
+
+Route8_Movement_TurnBack:
+	walk_down
+	step_end
+
+Route8_Text_WaterGate:
+	.string "The channel north boils under a wall\n"
+	.string "of storm. Nothing can cross it.\p"
+	.string "Not until the two great ones are\n"
+	.string "calmed.$"
+
 @ --- route trainers (gen_route_trainers.py) ---
 Route8_EventScript_Trainer0::
 	trainerbattle_single TRAINER_ORLEANS_ROUTE8_HIKER, Route8_Text_Route8HikerIntro, Route8_Text_Route8HikerDefeat

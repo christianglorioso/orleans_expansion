@@ -53,7 +53,7 @@ CampCocodrie_Gym_EventScript_JudgingTable::
 	end
 
 CampCocodrie_Gym_EventScript_TableTie:
-	call_if_lt VAR_ORLEANS_STORY, 25, CampCocodrie_Gym_EventScript_SetStory25
+	call_if_eq VAR_ORLEANS_STORY, 24, CampCocodrie_Gym_EventScript_SetStory25
 	msgbox CampCocodrie_Gym_Text_TableTie, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -123,7 +123,7 @@ CampCocodrie_Gym_EventScript_BrothersDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	setflag FLAG_BADGE05_GET
-	call_if_lt VAR_ORLEANS_STORY, 26, CampCocodrie_Gym_EventScript_SetStory26
+	call_if_eq VAR_ORLEANS_STORY, 25, CampCocodrie_Gym_EventScript_SetStory26
 	msgbox CampCocodrie_Gym_Text_BadgeInfo, MSGBOX_DEFAULT
 	call CampCocodrie_Gym_EventScript_GiveRewards
 	release

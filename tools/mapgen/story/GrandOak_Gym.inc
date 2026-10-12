@@ -24,7 +24,7 @@ GrandOak_Gym_EventScript_MagnoliaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	setflag FLAG_BADGE01_GET
-	setvar VAR_ORLEANS_STORY, 7
+	call_if_lt VAR_ORLEANS_STORY, 7, GrandOak_Gym_EventScript_SetStory7
 	@ recovery: Mom moves back into the house
 	setflag FLAG_HIDE_SHELTER_MOM
 	clearflag FLAG_HIDE_PLAYERS_HOUSE_MOM
@@ -116,3 +116,7 @@ GrandOak_Gym_Text_FirstVerse:
 GrandOak_Gym_Text_MagnoliaPostBattle:
 	.string "MAGNOLIA: ÉCLAIR keeps the next\n"
 	.string "verse, out past the storm hedge.$"
+
+GrandOak_Gym_EventScript_SetStory7:
+	setvar VAR_ORLEANS_STORY, 7
+	return

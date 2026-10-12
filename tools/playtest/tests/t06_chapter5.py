@@ -141,3 +141,29 @@ def run(b, t):
     b.set_flag("FLAG_ROUTE7_STUMP_OPENED", False)
     talk(b, "Route7", "Stump", "D")
     t.check("the stump opens with the Pry Bar", b.flag("FLAG_ROUTE7_STUMP_OPENED"))
+
+    # ---------------------------------------------------------------- Route 8's north exit (the Route 25 storm wall) stays shut until FLAG_ROUTE25_OPEN
+    md = map_data("Route8")
+    xs = [x for x in range(8, 40) if not md["coll"][1][x] and not md["coll"][2][x]]
+    b.set_flag("FLAG_ROUTE25_OPEN", False)
+    b.warp("Route8", xs[len(xs) // 2], 2)
+    b.step("U")
+    b.frames(20)
+    t.check("Route 8's north row is the storm wall: it stops the player", b.script_status() != 2, b.where())
+    b.advance_text(60)
+    t.check("and turns them back south", b.map_name() == "Route8" and b.pos()[1] >= 2, b.where())
+    b.set_flag("FLAG_ROUTE25_OPEN", True)
+    b.warp("Route8", xs[len(xs) // 2], 2)
+    b.step("U")
+    b.frames(20)
+    t.check("with FLAG_ROUTE25_OPEN the way north is open", b.script_status() == 2 and b.pos()[1] == 1, b.where())
+
+    # ---------------------------------------------------------------- HM Surf is offered at ANY story value >= 21 until it is received
+    b.set_var("VAR_ORLEANS_STORY", 24)
+    b.set_flag("FLAG_RECEIVED_HM_SURF", False)
+    b.set_flag("FLAG_ROUTE6_DEBRIS_CLEARED", True)
+    b.set_flag("FLAG_VERSE4_HEARD", True)
+    talk(b, "OldWater_SongHouse", "Tupelo0", "D")
+    t.check("at story 24 without the HM Tupelo still gives it, and the story never goes down", b.flag("FLAG_RECEIVED_HM_SURF") and b.var("VAR_ORLEANS_STORY") == 24,
+            "hm=%s story=%d" % (b.flag("FLAG_RECEIVED_HM_SURF"), b.var("VAR_ORLEANS_STORY")))
+
