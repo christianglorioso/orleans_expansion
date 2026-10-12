@@ -15,6 +15,7 @@ enum FieldMoveUnlockType
     CANT_UNLOCK,
     ALWAYS_UNLOCKED,
     BADGE_UNLOCK,
+    BADGE_AND_HM_SURF_UNLOCK, // Orleans: badge `arg` AND FLAG_RECEIVED_HM_SURF (Tupelo's visit)
     FIELD_MOVE_UNLOCK_COUNT
 };
 

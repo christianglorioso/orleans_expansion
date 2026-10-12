@@ -187,7 +187,8 @@ def main(args):
     for o in m["object_events"] + m["bg_events"]:
         if o.get("type") == "sign":
             continue  # signs sit on the object they describe; the reachability test covers them
-        if not walk(o["x"], o["y"]) and (o["x"], o["y"]) not in surf_only:  # swimmers belong on water
+        gate_obj = any(w in str(o.get("local_id", "")) for w in ("_DEBRIS_", "_JAM_", "_SPAN_")) and (mb[o["y"]*W+o["x"]] >> 12) == 1
+        if not walk(o["x"], o["y"]) and (o["x"], o["y"]) not in surf_only and not gate_obj:  # swimmers belong on water; so do the verse gates' jams (story_data_gates.py)
             problems.append(f"event at ({o['x']},{o['y']}) on a blocked or water tile: {beh(o['x'], o['y'])}")
     if m["warp_events"]:
         w0 = m["warp_events"][0]

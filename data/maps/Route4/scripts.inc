@@ -25,6 +25,10 @@ Route4_EventScript_Arrival::
 	end
 
 Route4_EventScript_ArrivalSkip:
+	@ a debug warp below story 18 plays nothing and stays armed; above 18 the scene can no longer happen: switch the frame script off
+	goto_if_lt VAR_ORLEANS_STORY, 18, Route4_EventScript_ArrivalSkipEnd
+	setvar VAR_ROUTE4_ARRIVAL, 1
+Route4_EventScript_ArrivalSkipEnd:
 	end
 
 @ The riverboat landing's deckhand takes the player back to Crescent City's terminal.
@@ -35,6 +39,7 @@ Route4_EventScript_Deckhand::
 	goto_if_eq VAR_RESULT, NO, Route4_EventScript_DeckhandNo
 	msgbox Route4_Text_DeckhandGo, MSGBOX_DEFAULT
 	closemessage
+	setrespawn HEAL_LOCATION_CRESCENT_CITY_WATERFRONT
 	fadescreen FADE_TO_BLACK
 	warp MAP_CRESCENT_CITY, 56, 51
 	waitstate

@@ -1,4 +1,5 @@
-"""Fail if any map / story script uses an OBJ_EVENT_GFX_* id whose gObjectEventGraphicsInfoPointers entry is NULL.
+"""Fail if any map / story script uses an OBJ_EVENT_GFX_* id whose gObjectEventGraphicsInfoPointers entry is NULL, or that is not
+defined at all (an undefined id passes the compile and fails the link).
 
 Why: in this Emerald-mode build (IS_FRLG is 0) the FRLG-only block of src/data/object_events/object_event_graphics_info_pointers.h is
 compiled out, so those ids point at NULL. An object event using one gets a garbage sprite and the game resets a few frames after the
@@ -28,7 +29,9 @@ for line in open(f"{ROOT}/src/data/object_events/object_event_graphics_info_poin
         if m:
             set_names.add(m.group(1))
 null = {n for n in names if n not in set_names}
+defined = set(names) | set(re.findall(r"#define\s+(OBJ_EVENT_GFX_\w+)", hdr))
 bad = {}
+undefined = {}
 files = [f for f in glob.glob(f"{ROOT}/data/maps/*/map.json") if "_Frlg" not in f]
 files += glob.glob(f"{ROOT}/data/maps/*/scripts.inc") + glob.glob(f"{ROOT}/tools/mapgen/**/*.py", recursive=True)
 files += glob.glob(f"{ROOT}/tools/mapgen/**/*.inc", recursive=True)
@@ -36,7 +39,12 @@ for f in files:
     for g in set(re.findall(r"OBJ_EVENT_GFX_\w+", open(f, errors="ignore").read())):
         if g in null:
             bad.setdefault(g, []).append(f)
+        elif g not in defined and g not in ("OBJ_EVENT_GFX_SPECIES", "OBJ_EVENT_GFX_VAR_0", "OBJ_EVENT_GFX_VAR_1", "OBJ_EVENT_GFX_VAR_2",
+                                            "OBJ_EVENT_GFX_VAR_3") and not g.endswith("_"):
+            undefined.setdefault(g, []).append(f)
 for g, fs in sorted(bad.items()):
     print("NULL graphics info:", g, "used in", ", ".join(fs[:5]))
-print("gfx_null_check:", "FAIL" if bad else "ok", f"({len(null)} NULL ids, {len(files)} files)")
-sys.exit(1 if bad else 0)
+for g, fs in sorted(undefined.items()):
+    print("UNDEFINED graphics id:", g, "used in", ", ".join(fs[:5]))
+print("gfx_null_check:", "FAIL" if (bad or undefined) else "ok", f"({len(null)} NULL ids, {len(undefined)} undefined, {len(files)} files)")
+sys.exit(1 if (bad or undefined) else 0)

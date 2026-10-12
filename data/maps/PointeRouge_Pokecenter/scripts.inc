@@ -29,6 +29,6 @@ PointeRouge_Pokecenter_EventScript_Angler2::
 	end
 
 PointeRouge_Pokecenter_Text_Angler2:
-	.string "The fishing tournament on Route 5 decides\nwho may face KINGFISHER.$"
+	.string "The Route 5 tournament decides who\nmay face KINGFISHER.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

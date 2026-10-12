@@ -142,13 +142,13 @@
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_ROUTE5_ITEM_AGILITY                         0x6B // Orleans Ch4: item balls placed by the story pass
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
-#define FLAG_ROUTE4_ARRIVAL_SEEN                         0x6D // Orleans Ch4: the riverboat arrival scene on Route 4 was played
+#define FLAG_KYOGRE_CALMED                               0x6D // Orleans finale: the Kyogre raid is done (plan story 40; either order)
 #define FLAG_POINTE_GATE_SCENE_SEEN                      0x6E // Orleans Ch4: the refinery gate scene was played
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_ORLEANS_POOL_022                           0x71
+#define FLAG_GROUDON_CALMED                              0x71 // Orleans finale: the Groudon raid is done (plan story 40; either order)
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
-#define FLAG_ORLEANS_POOL_023                           0x73
+#define FLAG_ROUTE25_OPEN                                0x73 // Orleans: the channel to the Oldest Shrine is open (set once BOTH raids are done; the Route 25 water gate keys on it)
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
 #define FLAG_ORLEANS_POOL_024                           0x76

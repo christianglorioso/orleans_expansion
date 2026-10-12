@@ -108,10 +108,329 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route6_EventScript_Debris2",
       "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_3",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris3",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_4",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris4",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_5",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris5",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_6",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris6",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_7",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris7",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_8",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 29,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route6_EventScript_Debris8",
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 0,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 1,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 2,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 3,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 4,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 5,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 6,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 7,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 8,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 9,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 10,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 11,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 13,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 14,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 15,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 17,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 18,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 19,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 21,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 22,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 23,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 24,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 25,
+      "elevation": 0,
+      "var": "FLAG_ROUTE6_DEBRIS_CLEARED",
+      "var_value": "0",
+      "script": "Route6_EventScript_WaterGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

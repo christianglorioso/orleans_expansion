@@ -30,6 +30,34 @@ Route6_Text_DebrisVerse:
 	.string "TUPELO, at the Old Water, can sing\n"
 	.string "it where the river will hear.$"
 
+@ The cut across the channel (x 29, every row; story_data_gates.py): flag triggers turn walkers and surfers back until the
+@ fourth verse has been sung at the Old Water.
+Route6_EventScript_WaterGate::
+	lockall
+	goto_if_set FLAG_ROUTE6_DEBRIS_CLEARED, Route6_EventScript_WaterGateOpen
+	goto_if_ge VAR_ORLEANS_STORY, 21, Route6_EventScript_WaterGateVerse
+	msgbox Route6_Text_WaterGate, MSGBOX_DEFAULT
+	goto Route6_EventScript_WaterGateBack
+
+Route6_EventScript_WaterGateVerse:
+	msgbox Route6_Text_DebrisVerse, MSGBOX_DEFAULT
+Route6_EventScript_WaterGateBack:
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Route6_Movement_TurnBack
+	waitmovement 0
+Route6_EventScript_WaterGateOpen:
+	releaseall
+	end
+
+Route6_Movement_TurnBack:
+	walk_right
+	step_end
+
+Route6_Text_WaterGate:
+	.string "Storm debris is jammed across the\nchannel, shore to shore.\p"
+	.string "Nothing floats or walks through. The\nold songs say the river clears its\p"
+	.string "own way for those who know it.$"
+
 @ --- mapgen: generated NPC scripts (begin) ---
 
 Route6_EventScript_Trainer0::
@@ -59,5 +87,47 @@ Route6_EventScript_Trainer6::
 
 Route6_Text_Trainer6:
 	.string "(Trainer: first-pass placeholder.)$"
+
+Route6_EventScript_Debris3::
+	msgbox Route6_Text_Debris3, MSGBOX_NPC
+	end
+
+Route6_Text_Debris3:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
+
+Route6_EventScript_Debris4::
+	msgbox Route6_Text_Debris4, MSGBOX_NPC
+	end
+
+Route6_Text_Debris4:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
+
+Route6_EventScript_Debris5::
+	msgbox Route6_Text_Debris5, MSGBOX_NPC
+	end
+
+Route6_Text_Debris5:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
+
+Route6_EventScript_Debris6::
+	msgbox Route6_Text_Debris6, MSGBOX_NPC
+	end
+
+Route6_Text_Debris6:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
+
+Route6_EventScript_Debris7::
+	msgbox Route6_Text_Debris7, MSGBOX_NPC
+	end
+
+Route6_Text_Debris7:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
+
+Route6_EventScript_Debris8::
+	msgbox Route6_Text_Debris8, MSGBOX_NPC
+	end
+
+Route6_Text_Debris8:
+	.string "Storm debris jams the whole channel.\nNothing floats through.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

@@ -24,6 +24,12 @@ static bool32 HasBadgeForFieldMove(enum FieldMove fieldMove)
     return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET);
 }
 
+// Orleans: Surf needs its badge AND the HM from the Old Water midpoint visit (the verse gates are water obstacles, decision 3)
+static bool32 HasBadgeAndSurfHm(enum FieldMove fieldMove)
+{
+    return FlagGet(gFieldMoveInfo[fieldMove].arg + FLAG_BADGE01_GET) && FlagGet(FLAG_RECEIVED_HM_SURF);
+}
+
 const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =
 {
     [CANT_UNLOCK] =
@@ -39,6 +45,11 @@ const struct FieldMoveUnlock gFieldMoveUnlocks[FIELD_MOVE_UNLOCK_COUNT] =
     [BADGE_UNLOCK] =
     {
         .isUnlockedFunc = HasBadgeForFieldMove,
+        .lockedMessage = gText_CantUseUntilNewBadge,
+    },
+    [BADGE_AND_HM_SURF_UNLOCK] =
+    {
+        .isUnlockedFunc = HasBadgeAndSurfHm,
         .lockedMessage = gText_CantUseUntilNewBadge,
     },
 };
@@ -86,7 +97,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
     [FIELD_MOVE_SURF] =
     {
         .fieldMoveFunc = SetUpFieldMove_Surf,
-        .unlockType = BADGE_UNLOCK,
+        .unlockType = BADGE_AND_HM_SURF_UNLOCK,
         .moveID = MOVE_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
         .arg = FLAG_TO_BADGE(FLAG_BADGE04_GET), // Orleans: Surf comes with the 4th badge (the Old Water midpoint visit gives HM Surf)

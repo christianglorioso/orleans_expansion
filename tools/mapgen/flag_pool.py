@@ -9,6 +9,8 @@ usage (from the decomp root):
   python tools/mapgen/flag_pool.py claim FLAG_NEW_NAME "what it means" [--hidden]   -> prints the id it took
   python tools/mapgen/flag_pool.py claimvar VAR_NEW_NAME "what it means"
   python tools/mapgen/flag_pool.py claim FLAG_A,FLAG_B,FLAG_C "..."                   several names in one call
+  python tools/mapgen/flag_pool.py release FLAG_NAME[,FLAG_NAME2] | VAR_NAME          hand a claimed, UNUSED name back to the pool
+                                                                                       (refuses while anything else still mentions it)
 
   --hidden   take an id >= FLAG_HIDDEN_ITEMS_START (0x1F4): the only ids a hidden-item bg event may use
              (without --hidden the lowest free id is taken, which keeps those for hidden items later)
@@ -78,6 +80,53 @@ def claim(path, prefix, names, comment, hidden):
         print(f"{name} = 0x{ident:X} (was {old})")
 
 
+def _original_pool_name(path, ident_text):
+    """the FLAG_/VAR_ORLEANS_POOL_nnn name this value had before it was claimed (from the git history), or None"""
+    import subprocess
+    rel = os.path.relpath(path, ROOT).replace("\\", "/")
+    try:
+        revs = subprocess.run(["git", "log", "--format=%H", "-S_ORLEANS_POOL_", "--", rel], cwd=ROOT, capture_output=True, text=True).stdout.split()
+        for rev in revs:  # newest first: take any revision that still has the define at this value
+            old = subprocess.run(["git", "show", f"{rev}:{rel}"], cwd=ROOT, capture_output=True, text=True).stdout
+            m = re.search(r"^#define ((?:FLAG|VAR)_ORLEANS_POOL_\d+)[ 	]+%s[ 	]*(?://.*)?$" % re.escape(ident_text), old, re.M)
+            if m:
+                return m.group(1)
+    except OSError:
+        pass
+    return None
+
+
+def release(names):
+    """rename claimed names back to pool names (same id). Refuses a name that anything outside its own #define still mentions."""
+    for name in names:
+        path = FLAGS if name.startswith("FLAG_") else VARS
+        text = read(path)
+        m = re.search(r"^#define %s[ 	]+(.+?)[ 	]*(//.*)?$" % re.escape(name), text, re.M)
+        if not m:
+            sys.exit(f"{name}: no such define in {os.path.basename(path)}")
+        val = m.group(1).strip()
+        refs = []
+        for top in ("src", "include", "data", "tools", "test"):
+            for dp, dn, fn in os.walk(os.path.join(ROOT, top)):
+                dn[:] = [d for d in dn if d not in ("sources", "out", "__pycache__", ".git", "build")]
+                for f in fn:
+                    if not f.endswith((".c", ".h", ".inc", ".s", ".py", ".json", ".party", ".txt", ".md")):
+                        continue
+                    fp = os.path.join(dp, f)
+                    try:
+                        body = open(fp, encoding="utf8", errors="replace").read()
+                    except OSError:
+                        continue
+                    if re.search(r"%s" % re.escape(name), body) and fp != path:
+                        refs.append(os.path.relpath(fp, ROOT))
+        if refs:
+            sys.exit(f"{name} is still used in: {', '.join(refs[:6])}")
+        orig = _original_pool_name(path, val) or f"{name.split('_')[0]}_ORLEANS_POOL_{900 + abs(hash(name)) % 90}"
+        text = text[:m.start()] + "#define %s %s" % (orig.ljust(48), val) + text[m.end():]
+        write(path, text)
+        print(f"{name} released -> {orig} ({val})")
+
+
 def status():
     ft, vt = read(FLAGS), read(VARS)
     fe, ve = pool_entries(ft, "FLAG"), pool_entries(vt, "VAR")
@@ -104,6 +153,8 @@ def main(argv):
         return status()
     hidden = "--hidden" in argv
     args = [a for a in argv[2:] if a != "--hidden"]
+    if argv[1] == "release" and args:
+        return release(args[0].split(","))
     if argv[1] in ("claim", "claimvar") and args:
         names = args[0].split(",")
         comment = args[1] if len(args) > 1 else ""

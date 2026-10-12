@@ -88,6 +88,7 @@ PointeRouge_EventScript_Sailor::
 	goto_if_eq VAR_RESULT, NO, PointeRouge_EventScript_SailorNo
 	msgbox PointeRouge_Text_SailorGo, MSGBOX_DEFAULT
 	closemessage
+	setrespawn HEAL_LOCATION_CRESCENT_CITY_WATERFRONT
 	fadescreen FADE_TO_BLACK
 	warp MAP_CRESCENT_CITY, 56, 51
 	waitstate

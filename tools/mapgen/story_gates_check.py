@@ -192,7 +192,7 @@ def crescent_doors():
 def crescent_route6():
     r6 = Grid("Route6")
     deb = [o for o in r6.m["object_events"] if "DEBRIS" in o.get("local_id", "")]
-    check(len(deb) == 2 and all(o["flag"] == "FLAG_ROUTE6_DEBRIS_CLEARED" for o in deb),
+    check(len(deb) >= 2 and {(29, 22), (29, 23)} <= {(o["x"], o["y"]) for o in deb} and all(o["flag"] == "FLAG_ROUTE6_DEBRIS_CLEARED" for o in deb),
           f"Route 6: {len(deb)} storm-debris objects hidden by FLAG_ROUTE6_DEBRIS_CLEARED at {[(o['x'], o['y']) for o in deb]}")
     trig = [(c["x"], c["y"]) for c in json.load(open("data/maps/CrescentCity/map.json"))["coord_events"]
             if "FloodedRoad" in c["script"]]
@@ -297,6 +297,49 @@ def pointe_gym():
     check(guard is not None and nb == [(guard["x"], guard["y"])], f"Pointe Rouge: the ice plant door's only approach cell {nb} is held by the guard")
 
 
+def world_gates():
+    """Every verse / story gate, proved over ALL Orleans maps joined by their connections, walking and Surf together
+    (world_reach.py: any collision-0 cell is passable at any elevation, so the closed proofs are conservative)."""
+    import world_reach as W
+    gates = [  # (name, key flag, maps wholly beyond the gate, {map: predicate on a cell for the part of a map that is beyond})
+        ("Route 6 water gate (verse 4, Old Water)", "FLAG_ROUTE6_DEBRIS_CLEARED", ["Route7", "Route8", "Route9", "CampCocodrie", "Route25", "OldestShrine"], {"Route6": lambda c: c[0] < 29}),
+        ("Route 10 water gate (verse 5)", "FLAG_BADGE05_GET", ["Route11", "Route12", "Route13", "LutinsHollow"], {"Route10": lambda c: c[0] > 11}),
+        ("Crescent floodwater (verse 6)", "FLAG_BADGE06_GET", ["Route14", "Route15", "Route16", "Route17", "Redfield", "Route18", "Route19", "Route20", "LandsEnd", "Route21", "Route22"], {}),
+        ("Route 18 water gate (verse 7)", "FLAG_BADGE07_GET", ["Route19", "Route20", "LandsEnd", "Route21", "Route22"], {"Route18": lambda c: c[0] > 38}),
+        ("Route 21 water gate (verse 8)", "FLAG_BADGE08_GET", ["Route22"], {"Route21": lambda c: c[1] > 8}),
+        ("Route 25 water gate (both raids)", "FLAG_ROUTE25_OPEN", ["OldestShrine"], {"Route25": lambda c: c[1] < 20}),
+        ("Pointe Rouge dust storm", "FLAG_DUST_STORMS_LIFTED", ["Route23", "Route24"], {}),
+    ]
+    starts = W.STARTS["west"] + W.STARTS["pointe"]
+    all_flags = {g[1] for g in gates}
+
+    def beyond(r, maps, parts):
+        out = sorted(m for m in maps if r.get(m))
+        for m, pred in parts.items():
+            if any(pred(c) for c in r.get(m, ())):
+                out.append(m + " (far side)")
+        return out
+    for name, flag, maps, parts in gates:
+        closed = W.reach(starts, all_flags - {flag})
+        got = beyond(closed, maps, parts)
+        check(not got, f"{name}: with {flag} clear (every other gate open) nothing beyond is reachable by foot or Surf (leaks: {got})")
+        opened = W.reach(starts, all_flags)
+        got2 = beyond(opened, maps, parts)
+        check(bool(got2), f"{name}: with {flag} set the far side IS reachable (sanity: {got2[:3]})")
+    # a badge-4 surfer's world, stage by stage (only the gates' own flags matter). Route 10 and Route 25 are partly reachable on their near
+    # side (up to their cuts), which is intended: they join Crescent / Route 8.
+    west = {"CrescentCity", "Route3", "StormsEdge", "Route2", "GrandOak", "Route1", "IsleMarais", "OldWater", "Route4", "Route5", "PointeRouge"}
+    base = west | {"Route6", "Route10"}
+    s21 = set(W.reach(starts, set()))
+    check(s21 == base, f"story 21 (Kingfisher beaten, verse not yet sung): a surfer reaches the west, Pointe, Route 6 and Route 10's near sides only (extra {sorted(s21 - base)}, missing {sorted(base - s21)})")
+    s22 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED"}))
+    intended = base | {"Route7", "Route8", "Route9", "CampCocodrie", "Route25"}
+    check(s22 == intended, f"story 22 (verse 4 sung, badge 4 + Surf): Routes 6-9 and Camp Cocodrie open (Route 25 only up to its storm wall), nothing else (extra {sorted(s22 - intended)}, missing {sorted(intended - s22)})")
+    s26 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET"}))
+    want26 = intended | {"Route11", "Route12", "Route13", "LutinsHollow"}
+    check(s26 == want26, f"story 26 (verse 5): Routes 10-13 and Lutin's Hollow open, nothing more (extra {sorted(s26 - want26)}, missing {sorted(want26 - s26)})")
+
+
 def all_triggers():
     names = {json.load(open(os.path.join("tools/mapgen/maps", f), encoding="utf-8"))["map"]
              for f in os.listdir("tools/mapgen/maps")
@@ -339,6 +382,7 @@ if __name__ == "__main__":
     crescent_doors()
     crescent_gym()
     pointe_gym()
+    world_gates()
     pointe_rouge_east()
     all_triggers()
     print(f"{results.count(False)} failed of {len(results)}")

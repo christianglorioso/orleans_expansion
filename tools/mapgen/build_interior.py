@@ -164,7 +164,7 @@ def gfx_for(text, kind):
                    ("lafayette", "OBJ_EVENT_GFX_SCIENTIST_1"), ("priest", "OBJ_EVENT_GFX_MANIAC"), ("child", "OBJ_EVENT_GFX_LITTLE_BOY"),
                    ("grandmother", "OBJ_EVENT_GFX_OLD_WOMAN"), ("grandson", "OBJ_EVENT_GFX_LITTLE_BOY"), ("fisherman", "OBJ_EVENT_GFX_FISHERMAN"),
                    ("baby", "OBJ_EVENT_GFX_WOMAN_2"), ("healer", "OBJ_EVENT_GFX_WOMAN_5"), ("trader", "OBJ_EVENT_GFX_MAN_3"),
-                   ("carver", "OBJ_EVENT_GFX_MAN_2"), ("boatman", "OBJ_EVENT_GFX_SAILOR"), ("gardener", "OBJ_EVENT_GFX_GARDENER"),
+                   ("carver", "OBJ_EVENT_GFX_MAN_2"), ("boatman", "OBJ_EVENT_GFX_SAILOR"), ("gardener", "OBJ_EVENT_GFX_WOMAN_2"),
                    ("aroma lady", "OBJ_EVENT_GFX_WOMAN_1"), ("accordion", "OBJ_EVENT_GFX_MAN_1"), ("dancer", "OBJ_EVENT_GFX_TWIN"),
                    ("guide", "OBJ_EVENT_GFX_MAN_4"), ("shrimper", "OBJ_EVENT_GFX_OLD_MAN"), ("recruit", "OBJ_EVENT_GFX_MAN_1")):
         if key in t:

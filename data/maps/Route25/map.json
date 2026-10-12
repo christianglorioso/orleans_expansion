@@ -82,6 +82,62 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ORLEANS_ROUTE25_JAM_1",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 16,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route25_EventScript_Jam1",
+      "flag": "FLAG_ROUTE25_OPEN"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE25_JAM_2",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 17,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route25_EventScript_Jam2",
+      "flag": "FLAG_ROUTE25_OPEN"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE25_JAM_3",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 18,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route25_EventScript_Jam3",
+      "flag": "FLAG_ROUTE25_OPEN"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE25_JAM_4",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 19,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route25_EventScript_Jam4",
+      "flag": "FLAG_ROUTE25_OPEN"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 3,
       "y": 17,
@@ -96,7 +152,278 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 20,
+      "elevation": 0,
+      "var": "FLAG_ROUTE25_OPEN",
+      "var_value": "0",
+      "script": "Route25_EventScript_WaterGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

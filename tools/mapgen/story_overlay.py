@@ -207,6 +207,22 @@ def _merge_ch4():
 
 _merge_ch4()
 
+# ---------------------------------------------------------------------------------------------- the water gates (story_data_gates.py)
+import story_data_gates as _gates  # noqa: E402
+
+
+def _merge_gates():
+    import world_reach  # map sizes come from the built layouts
+    for g in _gates.GATES:
+        d = world_reach.load(g["map"])
+        trig, objs = _gates.overlay_for(g, d["w"], d["h"])
+        ov = OVERLAY.setdefault(g["map"], {})
+        ov.setdefault("triggers", []).extend(trig)
+        ov.setdefault("add_objects", []).extend(objs)
+
+
+_merge_gates()
+
 # ---------------------------------------------------------------------------------------------- application
 def apply(spec):
     """Layer the story pass onto a spec (in place; returns it). A map with no overlay is returned unchanged."""

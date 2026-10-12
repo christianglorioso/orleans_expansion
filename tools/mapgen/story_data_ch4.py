@@ -131,7 +131,7 @@ ROOMS = {
     },
     "pointe_rouge_pokecenter": {
         "texts": {1: T("Something's wrong at the plant. They", "sent every one of us home."),
-                  2: T("The fishing tournament on Route 5 decides", "who may face KINGFISHER.")},
+                  2: T("The Route 5 tournament decides who", "may face KINGFISHER.")},
     },
     "pointe_rouge_house_nw": {
         "texts": {0: T("Forty years at the refinery. I never", "saw a leak like this one."),
@@ -148,7 +148,7 @@ ROOMS = {
                   1: T("The tower went up after the great", "flood of '27. Nothing's moved it.")},
     },
     "pointe_rouge_capitol_deck": {
-        "texts": {0: T("Down there, my house stood before the", "river moved. Funny, what a river does.")},
+        "texts": {0: T("My house stood down there, before", "the river moved. Funny, that.")},
         "bg_events": [
             {"type": "sign", "x": 3, "y": 5, "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
              "script": "PointeRouge_CapitolDeck_EventScript_TelescopeEast"},

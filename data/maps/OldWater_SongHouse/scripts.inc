@@ -43,7 +43,7 @@ OldWater_SongHouse_EventScript_Tupelo0::
 	lock
 	faceplayer
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
-	goto_if_eq VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4
+	goto_if_eq VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Entry
 	goto_if_set FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloCarvingCheck
 	goto_if_ge VAR_ORLEANS_STORY, 22, OldWater_SongHouse_EventScript_TupeloLater
 	goto_if_eq VAR_ORLEANS_STORY, 7, OldWater_SongHouse_EventScript_TupeloFirstVerse
@@ -143,6 +143,12 @@ OldWater_SongHouse_Text_TupeloCarving:
 @ "laid down to guard" reading: the carving's "laid low" was chipped), and the Rootkin give the player HM Surf (decision 3
 @ follow-up: Surf, not a boat). Bag-full safe: the debris flag marks the first half done; the story value moves to 22 only once
 @ HM Surf is in the bag, so talking to Tupelo again retries. Wren's friendly battle and the Rockruff are Wren1's, open from story 22.
+@ the carving scene (Ch3) comes first if the player has found the carving and Tupelo has not seen it yet
+OldWater_SongHouse_EventScript_TupeloVerse4Entry:
+	goto_if_unset FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloVerse4
+	goto_if_set FLAG_CARVING_SHOWN_TUPELO, OldWater_SongHouse_EventScript_TupeloVerse4
+	setflag FLAG_CARVING_SHOWN_TUPELO
+	msgbox OldWater_SongHouse_Text_TupeloCarving, MSGBOX_DEFAULT
 OldWater_SongHouse_EventScript_TupeloVerse4:
 	goto_if_set FLAG_ROUTE6_DEBRIS_CLEARED, OldWater_SongHouse_EventScript_TupeloGiveSurf
 	msgbox OldWater_SongHouse_Text_Verse4A, MSGBOX_DEFAULT

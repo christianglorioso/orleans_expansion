@@ -37,6 +37,6 @@ PointeRouge_CapitolDeck_EventScript_OldMan0::
 	end
 
 PointeRouge_CapitolDeck_Text_OldMan0:
-	.string "Down there, my house stood before the\nriver moved. Funny, what a river does.$"
+	.string "My house stood down there, before\nthe river moved. Funny, that.$"
 
 @ --- mapgen: generated NPC scripts (end) ---
