@@ -130,7 +130,7 @@ static uint32_t safePoint; /* function entry hit once per main-loop iteration; c
 /* Run ROM function at addr (thumb if odd). To keep emulator state sane the call is made from a clean point:
  * we step until the game reaches safePoint (an entry that runs once per frame in AgbMainLoop), run the function with
  * LR trapped, and restore every register so the game resumes as if nothing happened. */
-static int callFn(uint32_t addr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t *ret) {
+static int callMany(int n, uint32_t (*args)[5], uint32_t *rets) {
     struct ARMCore *cpu = core->cpu;
     if (safePoint) {
         long guard = 0;
@@ -148,26 +148,30 @@ static int callFn(uint32_t addr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t
     int32_t saved[16]; for (int i = 0; i < 16; i++) saved[i] = cpu->gprs[i];
     union PSR savedPsr = cpu->cpsr;
     int savedHalt = cpu->halted;
-    cpu->halted = 0;
-    uint32_t v;
-    v = a0; core->writeRegister(core, "r0", &v);
-    v = a1; core->writeRegister(core, "r1", &v);
-    v = a2; core->writeRegister(core, "r2", &v);
-    v = a3; core->writeRegister(core, "r3", &v);
-    v = TRAP | 1; core->writeRegister(core, "lr", &v);
-    union PSR p = cpu->cpsr;
-    p.t = (addr & 1) ? 1 : 0;
-    uint32_t pk = p.packed; core->writeRegister(core, "cpsr", &pk);
-    v = addr & ~1u; core->writeRegister(core, "pc", &v);
-    long steps = 0; int done = 0;
-    while (steps++ < 20000000L) {
-        core->step(core);
-        uint32_t pc = (uint32_t) cpu->gprs[15];
-        if (pc >= TRAP && pc < TRAP + 16) { done = 1; break; }
+    int rc = 0;
+    for (int k = 0; k < n; k++) {
+        uint32_t addr = args[k][0], v;
+        cpu->halted = 0;
+        v = args[k][1]; core->writeRegister(core, "r0", &v);
+        v = args[k][2]; core->writeRegister(core, "r1", &v);
+        v = args[k][3]; core->writeRegister(core, "r2", &v);
+        v = args[k][4]; core->writeRegister(core, "r3", &v);
+        v = TRAP | 1; core->writeRegister(core, "lr", &v);
+        union PSR p = savedPsr;
+        p.t = (addr & 1) ? 1 : 0;
+        uint32_t pk = p.packed; core->writeRegister(core, "cpsr", &pk);
+        v = addr & ~1u; core->writeRegister(core, "pc", &v);
+        long steps = 0; int done = 0;
+        while (steps++ < 20000000L) {
+            core->step(core);
+            uint32_t pc = (uint32_t) cpu->gprs[15];
+            if (pc >= TRAP && pc < TRAP + 16) { done = 1; break; }
+        }
+        if (done && rets) rets[k] = (uint32_t) cpu->gprs[0];
+        if (!done) { rc = -2; break; }
     }
-    if (done && ret) *ret = (uint32_t) cpu->gprs[0];
     /* restore */
-    pk = savedPsr.packed; core->writeRegister(core, "cpsr", &pk);
+    uint32_t pk = savedPsr.packed; core->writeRegister(core, "cpsr", &pk);
     for (int i = 0; i < 15; i++) { uint32_t r = saved[i]; char nm[8]; snprintf(nm, 8, "r%d", i); core->writeRegister(core, nm, &r); }
     uint32_t pc = (uint32_t) saved[15];
     /* gprs[15] runs ahead of the next instruction by one fetch (+2 thumb / +4 arm); writeRegister wants the address
@@ -175,12 +179,12 @@ static int callFn(uint32_t addr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t
     pc -= savedPsr.t ? 2 : 4;
     core->writeRegister(core, "pc", &pc);
     cpu->halted = savedHalt;
-    if (getenv("HARNESS_DEBUG")) {
-        fprintf(stderr, "[callFn] saved pc=%08x sp=%08x lr=%08x cpsr=%08x | now pc=%08x sp=%08x lr=%08x cpsr=%08x pf0=%08x\n",
-                (uint32_t) saved[15], (uint32_t) saved[13], (uint32_t) saved[14], savedPsr.packed,
-                (uint32_t) cpu->gprs[15], (uint32_t) cpu->gprs[13], (uint32_t) cpu->gprs[14], cpu->cpsr.packed, (uint32_t) cpu->prefetch[0]);
-    }
-    return done ? 0 : -2;
+    return rc;
+}
+
+static int callFn(uint32_t addr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t a3, uint32_t *ret) {
+    uint32_t args[1][5] = {{addr, a0, a1, a2, a3}};
+    return callMany(1, args, ret);
 }
 
 int main(int argc, char **argv) {
@@ -272,6 +276,34 @@ int main(int argc, char **argv) {
             }
             total_frames += core->frameCounter(core) - startFc;
             printf("OK done %d\n", nn);
+        }
+        else if (!strcmp(cmd, "mapinfo") && a1 && a2 && a3 && a4 && a5) {
+            /* mapinfo X0 Y0 W H BEH COLL ELEV SURF : per cell "bb cc ee ss" hex, via the game's own MapGrid functions */
+            char *tok[16]; int nt = 0; tok[nt++] = a1; tok[nt++] = a2; tok[nt++] = a3; tok[nt++] = a4; tok[nt++] = a5;
+            char *t2; while (nt < 7 && (t2 = strtok(NULL, " \t\r\n"))) tok[nt++] = t2;
+            if (nt < 7) { printf("ERR args\n"); fflush(stdout); continue; }
+            int x0 = atoi(tok[0]), y0 = atoi(tok[1]), w = atoi(tok[2]), h = atoi(tok[3]);
+            uint32_t fb = strtoul(tok[4], 0, 0), fc = strtoul(tok[5], 0, 0), fe = strtoul(tok[6], 0, 0);
+            int n = w * h * 4;
+            uint32_t (*args)[5] = malloc(sizeof(uint32_t[5]) * (size_t) n * 2);
+            uint32_t *rets = calloc((size_t) n * 2, 4);
+            int m = 0;
+            for (int y = 0; y < h; y++) for (int x = 0; x < w; x++) {
+                uint32_t gx = (uint32_t) (x0 + x + 7), gy = (uint32_t) (y0 + y + 7);
+                args[m][0] = fb; args[m][1] = gx; args[m][2] = gy; args[m][3] = 0; args[m][4] = 0; m++;
+                args[m][0] = fc; args[m][1] = gx; args[m][2] = gy; args[m][3] = 0; args[m][4] = 0; m++;
+                args[m][0] = fe; args[m][1] = gx; args[m][2] = gy; args[m][3] = 0; args[m][4] = 0; m++;
+            }
+            int rc = callMany(m, args, rets);
+            if (rc) printf("ERR mapinfo %d\n", rc);
+            else {
+                printf("OK ");
+                for (int i = 0; i < w * h; i++) {
+                    printf("%02x%02x%02x ", rets[i * 3] & 0xFF, rets[i * 3 + 1] & 0xFF, rets[i * 3 + 2] & 0xFF);
+                }
+                printf("\n");
+            }
+            free(args); free(rets);
         }
         else if (!strcmp(cmd, "safepoint") && a1) { safePoint = strtoul(a1, 0, 0) & ~1u; printf("OK\n"); }
         else if (!strcmp(cmd, "call") && a1) {

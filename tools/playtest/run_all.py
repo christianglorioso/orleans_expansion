@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from bot import Bot, ROM, OUT, GameCrash, contact_sheet, rom_sha1  # noqa: E402
 
 TESTS = Path(__file__).resolve().parent / "tests"
+SLOW = {"t_transitions"}          # only with --slow or when named on the command line
 
 
 class T:
@@ -91,10 +92,13 @@ def main():
     ap.add_argument("tests", nargs="*")
     ap.add_argument("--rom", default=str(ROM))
     ap.add_argument("--run", default=None)
+    ap.add_argument("--slow", action="store_true", help="also run the slow tests (t_transitions, 10-15 min)")
     a = ap.parse_args()
     sha = rom_sha1(a.rom)[:8]
     run = a.run or time.strftime("%Y%m%d_%H%M%S") + "_" + sha
     files = sorted(p for p in TESTS.glob("t*.py") if not a.tests or any(p.stem.startswith(x) for x in a.tests))
+    if not a.tests and not a.slow:
+        files = [p for p in files if p.stem not in SLOW]
     print("ROM %s (sha1 %s)  run %s" % (a.rom, sha, run))
     results = []
     for p in files:

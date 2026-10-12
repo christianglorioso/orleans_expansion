@@ -5,6 +5,7 @@ Headless smoke tests for the ROM: a tiny libmgba program (WSL) driven from Pytho
 ```
 python tools/playtest/run_all.py                  # every test against the current pokeemerald.gba
 python tools/playtest/run_all.py t00 t02          # only tests whose file name starts with these
+python tools/playtest/run_all.py --slow           # everything including t_transitions
 python tools/playtest/run_all.py --rom X.gba --run tag
 ```
 
@@ -66,6 +67,7 @@ Map names are the directory names in `data/maps` (`Route3`, `CrescentCity`, ...)
 | t01_slice | Mom's gifts, leaving the shelter, Wingull trigger, Lafayette's Pokedex, Jayden at the landing and the canoe (story 0 to 5) |
 | t02_chapter2 | Storm's Edge arrival, Crescent arrival, the floodwater gate at Crescent's south exit (message + turn back, several columns, open after the badge flag) |
 | t03_jayden_bridge | Jayden on the Route 3 bridge (all five trigger rows) |
+| t_transitions | SLOW (about 4 min, `run_all.py --slow` or name it). Walks the player across all 34 connections in both directions (10 cells before to 10 after, a frame per step, Surf forced on water), detects blocked passages / seam flips / black cells, and grades the border view along every unconnected edge. Output: `out/<run>/t_transitions/{filmstrips,pairs,joins,edges}`, `summary.txt`, `results.json` |
 | t_edges | every outdoor map: warp next to each connection seam and open edge, screenshot (about 335 shots, 8 contact sheets) |
 
 ## Known limits
