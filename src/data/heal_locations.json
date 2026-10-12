@@ -435,6 +435,16 @@
       "respawn_npc": "LOCALID_CAMP_COCODRIE_NURSE_CABIN_NURSE0",
       "respawn_x": 5,
       "respawn_y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_LUTINS_HOLLOW",
+      "map": "MAP_LUTINS_HOLLOW",
+      "x": 8,
+      "y": 16,
+      "respawn_map": "MAP_LUTINS_HOLLOW_POKECENTER",
+      "respawn_npc": "LOCALID_LUTINS_HOLLOW_POKECENTER_NURSE0",
+      "respawn_x": 6,
+      "respawn_y": 4
     }
   ]
 }

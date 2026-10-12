@@ -1,5 +1,11 @@
 LutinsHollow_Pokecenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LutinsHollow_Pokecenter_OnTransition
 	.byte 0
+
+@ Walking in sets the respawn point
+LutinsHollow_Pokecenter_OnTransition:
+	setrespawn HEAL_LOCATION_LUTINS_HOLLOW
+	end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -16,6 +22,6 @@ LutinsHollow_Pokecenter_EventScript_Traveller1::
 	end
 
 LutinsHollow_Pokecenter_Text_Traveller1:
-	.string "the moss moves when nobody's\nlooking$"
+	.string "The moss moves when nobody is\nlooking. I counted. Twice.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

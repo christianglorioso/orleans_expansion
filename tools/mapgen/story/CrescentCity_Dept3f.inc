@@ -1,7 +1,7 @@
 CrescentCity_Dept3f_MapScripts::
 	.byte 0
 
-@ Third floor: the Mega Stone vendor (his stock opens with the cypress charm, story 30: nothing to sell before it) and the vitamin
+@ Third floor: the Mega Stone vendor (his stock opens with the cypress charm, story 30: nothing to sell before it; the stock is in VendorOpen) and the vitamin
 @ clerk (Rare Candy only after the eighth badge).
 CrescentCity_Dept3f_EventScript_Clerk0::
 	lock
@@ -11,10 +11,47 @@ CrescentCity_Dept3f_EventScript_Clerk0::
 	release
 	end
 
+@ Chapter 6: with the cypress charm (story 30) the vendor sells the Mega Stones that have no place in the world (28 of them, 12000 each;
+@ the placed ones, Gengarite, Scizorite, Raichunite Y, Fearowite, Kleavorite, Delphoxite, Exploudite and the later reward stones are not sold).
 CrescentCity_Dept3f_EventScript_VendorOpen:
-	msgbox CrescentCity_Dept3f_Text_VendorLater, MSGBOX_DEFAULT
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart CrescentCity_Dept3f_Pokemart_Vendor
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
+
+	.align 2
+CrescentCity_Dept3f_Pokemart_Vendor:
+	.2byte ITEM_VENUSAURITE
+	.2byte ITEM_SWAMPERTITE
+	.2byte ITEM_VICTREEBELITE
+	.2byte ITEM_DRAGONINITE
+	.2byte ITEM_MEGANIUMITE
+	.2byte ITEM_FERALIGITE
+	.2byte ITEM_CHANDELURITE
+	.2byte ITEM_STARAPTITE
+	.2byte ITEM_SCOVILLAINITE
+	.2byte ITEM_METAGROSSITE
+	.2byte ITEM_MALAMARITE
+	.2byte ITEM_BARBARACITE
+	.2byte ITEM_SHARPEDONITE
+	.2byte ITEM_EXCADRITE
+	.2byte ITEM_DRAGALGITE
+	.2byte ITEM_RAICHUNITE_X
+	.2byte ITEM_SKELEDIRGITE
+	.2byte ITEM_ROSERADITE
+	.2byte ITEM_ELECTRODITE
+	.2byte ITEM_SCYTHERITE
+	.2byte ITEM_CRAWDAUNTITE
+	.2byte ITEM_KINGLERITE
+	.2byte ITEM_TANGROWTHITE
+	.2byte ITEM_SUDOWOODITE
+	.2byte ITEM_EXEGGUTORITE
+	.2byte ITEM_QUAQUAVALITE
+	.2byte ITEM_SERPERITE
+	.2byte ITEM_LYCANROCITE
+	pokemartlistend
 
 CrescentCity_Dept3f_EventScript_Clerk1::
 	lock

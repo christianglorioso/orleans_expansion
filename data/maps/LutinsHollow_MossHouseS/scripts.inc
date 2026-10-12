@@ -8,6 +8,6 @@ LutinsHollow_MossHouseS_EventScript_Woman0::
 	end
 
 LutinsHollow_MossHouseS_Text_Woman0:
-	.string "heard singing by the pools\nlast night (Jayden battle 4\pand Wren's song happen\noutside)$"
+	.string "Heard singing by the south pools\nlast night. A girl, and a boy.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

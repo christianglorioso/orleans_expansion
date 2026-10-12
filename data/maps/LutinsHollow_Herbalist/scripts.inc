@@ -1,35 +1,35 @@
 LutinsHollow_Herbalist_MapScripts::
 	.byte 0
 
-@ --- mapgen: generated NPC scripts (begin) ---
-
+@ The herbalist: bitter medicine that works
 LutinsHollow_Herbalist_EventScript_Clerk0::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart LutinsHollow_Herbalist_Pokemart0
+	pokemart LutinsHollow_Herbalist_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-LutinsHollow_Herbalist_Pokemart0:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_SUPER_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	.2byte ITEM_REPEL
+LutinsHollow_Herbalist_Pokemart:
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_REPEL
 	pokemartlistend
+
+@ --- mapgen: generated NPC scripts (begin) ---
 
 LutinsHollow_Herbalist_EventScript_Apprentice1::
 	msgbox LutinsHollow_Herbalist_Text_Apprentice1, MSGBOX_NPC
 	end
 
 LutinsHollow_Herbalist_Text_Apprentice1:
-	.string "the Floette seed is for later\n(post-game quest)$"
+	.string "The Floette seed is for later. It\nwakes after the great storm.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

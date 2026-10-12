@@ -102,9 +102,9 @@
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_ROUTE4_ARRIVAL                               0x4051 // Orleans Ch4: 0 until the riverboat arrival scene on Route 4 has played, then 1
 #define VAR_CAMP_ARRIVAL                                 0x4052 // Orleans Ch5: 0 until the Camp Cocodrie arrival scene has played, then 1
-#define VAR_ORLEANS_POOL_004                            0x4053
+#define VAR_HOLLOW_ARRIVAL                               0x4053 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_ORLEANS_POOL_005                            0x4055
+#define VAR_HOLLOW_RIDDLES                               0x4055 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
 #define VAR_ORLEANS_POOL_006                            0x4056
 #define VAR_ORLEANS_POOL_007                            0x4057
 #define VAR_ORLEANS_POOL_008                            0x4058

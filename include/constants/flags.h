@@ -175,26 +175,26 @@
 #define FLAG_VERSE4_HEARD                                0x89 // Orleans Ch4: Tupelo has sung verse 4 and given the true piece (the HM offer follows; retried until HM Surf is in the bag)
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
-#define FLAG_ORLEANS_POOL_036                           0x8C
-#define FLAG_ORLEANS_POOL_037                           0x8D
-#define FLAG_ORLEANS_POOL_038                           0x8E
-#define FLAG_ORLEANS_POOL_039                           0x8F
-#define FLAG_ORLEANS_POOL_040                           0x90
+#define FLAG_HIDE_HOLLOW_JAYDEN                          0x8C // Orleans Ch6: Jayden / Wren by the hollow's south pools (hidden after the scene), the gym usher (hidden from story 28)
+#define FLAG_HIDE_HOLLOW_WREN                            0x8D // Orleans Ch6: Jayden / Wren by the hollow's south pools (hidden after the scene), the gym usher (hidden from story 28)
+#define FLAG_HIDE_HOLLOW_GYM_USHER                       0x8E // Orleans Ch6: Jayden / Wren by the hollow's south pools (hidden after the scene), the gym usher (hidden from story 28)
+#define FLAG_RECEIVED_TM_DAZZLING_GLEAM                  0x8F // Orleans Ch6: Lutin's TM Dazzling Gleam was handed over
+#define FLAG_RECEIVED_DELPHOXITE                         0x90 // Orleans Ch6: Delphoxite (riddler) / Exploudite (zydeco band) received
 #define FLAG_CAUGHT_LUGIA                    0x91
 #define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_ORLEANS_POOL_041                           0x93
-#define FLAG_ORLEANS_POOL_042                           0x94
+#define FLAG_RECEIVED_EXPLOUDITE                         0x93 // Orleans Ch6: Delphoxite (riddler) / Exploudite (zydeco band) received
+#define FLAG_VERSE6_HEARD                                0x94 // Orleans Ch6: Tupelo sang verse 6 / the carver gave the cypress-wood charm (the Mega Evolution key item)
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_ORLEANS_POOL_043                           0x96
+#define FLAG_RECEIVED_CYPRESS_CHARM                      0x96 // Orleans Ch6: Tupelo sang verse 6 / the carver gave the cypress-wood charm (the Mega Evolution key item)
 #define FLAG_RECEIVED_CASTFORM               0x97
-#define FLAG_ORLEANS_POOL_044                           0x98
-#define FLAG_ORLEANS_POOL_045                           0x99
-#define FLAG_ORLEANS_POOL_046                           0x9A
-#define FLAG_ORLEANS_POOL_047                           0x9B
+#define FLAG_ROUTE12_ITEM_ENERGY_BALL                    0x98 // Orleans Ch6: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE12_ITEM_EARTH_POWER                    0x99 // Orleans Ch6: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE13_ITEM_ZEN_HEADBUTT                   0x9A // Orleans Ch6: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE13_ITEM_DARK_PULSE                     0x9B // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
-#define FLAG_ORLEANS_POOL_048                           0x9E
-#define FLAG_ORLEANS_POOL_049                           0x9F
+#define FLAG_ROUTE10_ITEM_CRUNCH                         0x9E // Orleans Ch6: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE11_ITEM_LIQUIDATION                    0x9F // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_ORLEANS_POOL_050                           0xA0
 #define FLAG_ORLEANS_POOL_051                           0xA1
 #define FLAG_ORLEANS_POOL_052                           0xA2
@@ -566,7 +566,7 @@
 #define FLAG_ROUTE4_HIDDEN_DUSK_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x04) // Orleans Ch4: hidden items
 #define FLAG_ROUTE5_HIDDEN_SUN_STONE                     (FLAG_HIDDEN_ITEMS_START + 0x05) // Orleans Ch4: hidden items
 #define FLAG_CAMP_HIDDEN_PEAT_BLOCK                      (FLAG_HIDDEN_ITEMS_START + 0x06) // Orleans Ch5: hidden Peat Block at the camp
-#define FLAG_ORLEANS_POOL_182                           (FLAG_HIDDEN_ITEMS_START + 0x07)
+#define FLAG_ROUTE11_HIDDEN_ICE_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x07) // Orleans Ch6: hidden Ice Stone on Route 11
 #define FLAG_ORLEANS_POOL_183                           (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_ORLEANS_POOL_184                           (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_ORLEANS_POOL_185                           (FLAG_HIDDEN_ITEMS_START + 0x0A)

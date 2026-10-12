@@ -338,6 +338,9 @@ def world_gates():
     s26 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET"}))
     want26 = intended | {"Route11", "Route12", "Route13", "LutinsHollow"}
     check(s26 == want26, f"story 26 (verse 5): Routes 10-13 and Lutin's Hollow open, nothing more (extra {sorted(s26 - want26)}, missing {sorted(want26 - s26)})")
+    s29 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET"}))
+    want29 = want26 | {"Route14", "Route15", "Route16", "Route17", "Redfield", "Route18"}  # Route 18 only up to its fallen span
+    check(s29 == want29, f"story 29 (verse 6, the floodwater has receded): Routes 14-17 and Redfield open, Routes 18+ still shut (extra {sorted(s29 - want29)}, missing {sorted(want29 - s29)})")
 
 
 def camp_cocodrie():
@@ -359,6 +362,56 @@ def camp_cocodrie():
         ex = g.m["warp_events"][0]
         r = g.fill([(ex["x"], ex["y"] - 1)])
         check(all(c in r for c in cells), f"{room}: the judging table / fire door / old neighbour's standing cells {cells} are reachable from the door")
+
+
+def lutins_hollow():
+    """Chapter 6: the gym door's only approach cell is held by Lutin's pupil until story 28; the trial's pools and every Lutin are reachable."""
+    hh = Grid("LutinsHollow")
+    usher = next((o for o in hh.m["object_events"] if o.get("local_id") == "LOCALID_LUTINS_HOLLOW_GYM_USHER"), None)
+    door = next((w for w in hh.m["warp_events"] if w["dest_map"] == "MAP_LUTINS_HOLLOW_GYM"), None)
+    door = (door["x"], door["y"])
+    nb = [(door[0] + dx, door[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+          if hh.walk(door[0] + dx, door[1] + dy) or (usher and (door[0] + dx, door[1] + dy) == (usher["x"], usher["y"]))]
+    check(usher is not None and usher["flag"] == "FLAG_HIDE_HOLLOW_GYM_USHER" and nb == [(usher["x"], usher["y"])],
+          f"Lutin's Hollow: the gym door's only approach cell {nb} is held by the pupil (hidden by FLAG_HIDE_HOLLOW_GYM_USHER)")
+    g = Grid("LutinsHollow_Gym")
+    ex = g.m["warp_events"][0]
+    r = g.fill([(ex["x"], ex["y"] - 1)])
+    need = [(5, 8), (10, 8), (15, 8), (15, 5), (5, 5), (10, 5), (19, 7), (3, 11), (17, 11)]
+    check(all(c in r for c in need), f"Lutin's gym: the three pools' standing cells, every Lutin's standing cell and both trainers' are reachable ({[c for c in need if c not in r]} missing)")
+    # the arrival lane: the hollow's only way in is the Route 13 lane; the singers by the south pools are on it (story 27)
+    check(any(o.get("local_id", "").endswith("_JAYDEN") for o in hh.m["object_events"]), "Lutin's Hollow: Jayden and Wren stand by the south pools")
+
+
+def trainers_vs_triggers():
+    """A trainer who spots the player on a flag-trigger cell takes over (the approach/battle runs instead of the coord event), and the player
+    then stands ON the cell and walks on: a gate leak. So no trainer's line of sight may cover a cell that carries a flag trigger."""
+    names = [d for d in sorted(os.listdir("data/maps")) if "Frlg" not in d]
+    bad = []
+    n = 0
+    for d in names:
+        try:
+            m, mb, w, h = layout(d)
+        except (OSError, StopIteration, ValueError, KeyError):
+            continue
+        cells = {(c["x"], c["y"]) for c in m.get("coord_events", [])
+                 if c.get("type") == "trigger" and str(c.get("var", "")).startswith("FLAG_")}
+        if not cells:
+            continue
+        for o in m.get("object_events", []):
+            if o.get("trainer_type") != "TRAINER_TYPE_NORMAL":
+                continue
+            n += 1
+            dx, dy = {"MOVEMENT_TYPE_FACE_UP": (0, -1), "MOVEMENT_TYPE_FACE_DOWN": (0, 1), "MOVEMENT_TYPE_FACE_LEFT": (-1, 0),
+                      "MOVEMENT_TYPE_FACE_RIGHT": (1, 0)}.get(o.get("movement_type"), (0, 0))
+            sight = int(o.get("trainer_sight_or_berry_tree_id", 0))
+            for k in range(1, sight + 1):
+                if (o["x"] + dx * k, o["y"] + dy * k) in cells:
+                    bad.append(f"{d} trainer ({o['x']},{o['y']}) facing {o.get('movement_type')[-4:]} sees the trigger cell {(o['x'] + dx * k, o['y'] + dy * k)}")
+                    break
+            if dx == dy == 0 and o.get("movement_type", "").startswith("MOVEMENT_TYPE_WANDER"):
+                bad.append(f"{d} a wandering trainer ({o['x']},{o['y']}) on a map with flag triggers")
+    check(not bad, f"no trainer's line of sight covers a flag-trigger cell ({n} trainers on maps with flag triggers; leaks: {bad})")
 
 
 def all_triggers():
@@ -404,6 +457,8 @@ if __name__ == "__main__":
     crescent_gym()
     pointe_gym()
     camp_cocodrie()
+    lutins_hollow()
+    trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()
     all_triggers()

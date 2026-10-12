@@ -45,6 +45,7 @@ OldWater_SongHouse_EventScript_Tupelo0::
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
 	goto_if_ge VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Gate
 OldWater_SongHouse_EventScript_TupeloRest:
+	goto_if_ge VAR_ORLEANS_STORY, 29, OldWater_SongHouse_EventScript_TupeloVerse6Gate
 	goto_if_set FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloCarvingCheck
 	goto_if_ge VAR_ORLEANS_STORY, 22, OldWater_SongHouse_EventScript_TupeloLater
 	goto_if_eq VAR_ORLEANS_STORY, 7, OldWater_SongHouse_EventScript_TupeloFirstVerse
@@ -316,6 +317,41 @@ OldWater_SongHouse_Text_TupeloLater5:
 	.string "together and the land was fed. I can\p"
 	.string "hear the table in it. The wall has\n"
 	.string "no room for it yet. We'll carve one.$"
+
+@ ---------------------------------------------------------------- Ch6 beat 6.6: verse 6 (story >= 29) and the charm
+@ The first visit after Lutin: Tupelo hears the sixth verse (FLAG_VERSE6_HEARD, shown once) and sends the player to the carver, who gives the
+@ cypress-wood charm (OldWater_Carver.inc; story 30). Keyed on the story value being at least 29, never exactly.
+OldWater_SongHouse_EventScript_TupeloVerse6Gate:
+	goto_if_set FLAG_VERSE6_HEARD, OldWater_SongHouse_EventScript_TupeloVerse6Done
+	goto_if_unset FLAG_BADGE06_GET, OldWater_SongHouse_EventScript_TupeloContinue
+	msgbox OldWater_SongHouse_Text_Verse6A, MSGBOX_DEFAULT
+	msgbox OldWater_SongHouse_Text_Verse6B, MSGBOX_DEFAULT
+	setflag FLAG_VERSE6_HEARD
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloVerse6Done:
+	goto_if_set FLAG_RECEIVED_CYPRESS_CHARM, OldWater_SongHouse_EventScript_TupeloContinue
+	msgbox OldWater_SongHouse_Text_Verse6Reminder, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloContinue:
+	goto_if_set FLAG_CARVING_FOUND, OldWater_SongHouse_EventScript_TupeloCarvingCheck
+	goto OldWater_SongHouse_EventScript_TupeloLater
+
+OldWater_SongHouse_Text_Verse6A:
+	.string "TUPELO: The sixth verse. Show me.\nWhat the water shows is not the\p"
+	.string "water. The Long One only looked\ndrowned. Under the river it was\p"
+	.string "holding something up.$"
+
+OldWater_SongHouse_Text_Verse6B:
+	.string "TUPELO: Six of eight. You carry the\ntelling now, child, not just the\p"
+	.string "songs. The carver has been waiting\nfor this. Go and see him, in his\p"
+	.string "workshop. He has something for you.$"
+
+OldWater_SongHouse_Text_Verse6Reminder:
+	.string "TUPELO: The carver is waiting in his\nworkshop. He has your charm.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

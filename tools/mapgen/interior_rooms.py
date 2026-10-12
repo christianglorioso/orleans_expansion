@@ -136,7 +136,7 @@ ROOMS = [
          people=[("clerk", ""), ("child", "I collect shiny shells!\\nThis one's my favourite.")],
          mart=["ITEM_NET_BALL", "ITEM_POKE_BALL", "ITEM_POTION", "ITEM_ORAN_BERRY"]),
     room(OW, ROOT, map="OldWater_Carver", const="MAP_OLD_WATER_CARVER", door_label="Carver's workshop", mockup="old_water_carver",
-         people=[("carver", "CARVER: Cypress keeps its shape\\nlonger than any of us.")]),
+         people=[("carver", "", {"custom": True})]),
     room(OW, ROOT, map="OldWater_TupelosHouse", const="MAP_OLD_WATER_TUPELOS_HOUSE", door_label="Tupelo's house", mockup="old_water_tupelo",
          people=[("tupelo", "TUPELO: The water was here first.\\nWe only borrow the banks.")]),
     room(OW, ROOT, map="OldWater_RestHouse", const="MAP_OLD_WATER_REST_HOUSE", door_label="Rest house (bed)", mockup="old_water_rest_house",

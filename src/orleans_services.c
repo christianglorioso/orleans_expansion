@@ -5,6 +5,7 @@
 #include "pokemon.h"
 #include "event_data.h"
 #include "overworld.h"
+#include "rtc.h"
 #include "constants/pokemon.h"
 #include "constants/game_stat.h"
 #include "constants/vars.h"
@@ -86,4 +87,10 @@ void OrleansSvc_SetFishingBaseline(void)
 void OrleansSvc_FishingBites(void)
 {
     gSpecialVar_Result = (u16)((u16)GetGameStat(GAME_STAT_FISHING_ENCOUNTERS) - VarGet(VAR_TOURNEY_BASELINE));
+}
+
+// VAR_RESULT: 1 at night (the zydeco band on Camp Cocodrie's dance porch plays only then), 0 otherwise
+void OrleansSvc_IsNight(void)
+{
+    gSpecialVar_Result = (GetTimeOfDay() == TIME_NIGHT);
 }

@@ -57,7 +57,7 @@ def script_block(m, items):
 def main(ch):
     data = importlib.import_module(f"story_data_{ch}")
     trainers = data.TRAINERS
-    extra = getattr(data, "CAMP_PARTIES", [])
+    extra = getattr(data, "EXTRA_PARTIES", None) or getattr(data, "CAMP_PARTIES", [])
     # party file
     party = "".join(party_block(t) for t in trainers) + "".join(party_block(t) for t in extra)
     open(os.path.join(HERE, "trainers", f"orleans_{ch}.party"), "w", encoding="utf-8", newline="\n").write(party)

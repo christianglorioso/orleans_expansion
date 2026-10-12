@@ -22,3 +22,61 @@ Route10_Text_WaterGate:
 	.string "A jam of logs and rafts chokes\nthe canal. Nothing floats through.\p"
 	.string "The lake beyond has to wait. The\nold songs say the table is shared.$"
 
+@ --- route trainers (gen_route_trainers.py) ---
+Route10_EventScript_Trainer0::
+	trainerbattle_single TRAINER_ORLEANS_ROUTE10_SWIMMER, Route10_Text_Route10SwimmerIntro, Route10_Text_Route10SwimmerDefeat
+	msgbox Route10_Text_Route10SwimmerAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route10_EventScript_Trainer2::
+	trainerbattle_single TRAINER_ORLEANS_ROUTE10_SWIMMER_F, Route10_Text_Route10SwimmerFIntro, Route10_Text_Route10SwimmerFDefeat
+	msgbox Route10_Text_Route10SwimmerFAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route10_EventScript_Trainer3::
+	trainerbattle_single TRAINER_ORLEANS_ROUTE10_SWIMMER_2, Route10_Text_Route10Swimmer2Intro, Route10_Text_Route10Swimmer2Defeat
+	msgbox Route10_Text_Route10Swimmer2After, MSGBOX_AUTOCLOSE
+	end
+
+Route10_EventScript_Trainer6::
+	trainerbattle_single TRAINER_ORLEANS_ROUTE10_CAMPER, Route10_Text_Route10CamperIntro, Route10_Text_Route10CamperDefeat
+	msgbox Route10_Text_Route10CamperAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route10_Text_Route10SwimmerIntro:
+	.string "The lake road's open again! I\nswim it just to say I can.$"
+
+Route10_Text_Route10SwimmerDefeat:
+	.string "Dunked.$"
+
+Route10_Text_Route10SwimmerAfter:
+	.string "The brothers' gumbo smell carries\nall the way to the canal.$"
+
+Route10_Text_Route10SwimmerFIntro:
+	.string "Big Lake is bigger than it looks.\nDon't drown. Battle!$"
+
+Route10_Text_Route10SwimmerFDefeat:
+	.string "Bubbles.$"
+
+Route10_Text_Route10SwimmerFAfter:
+	.string "Past the jam, the lake is clear.\nMostly.$"
+
+Route10_Text_Route10Swimmer2Intro:
+	.string "Nobody swims here uninvited.\nExcept you. Fine!$"
+
+Route10_Text_Route10Swimmer2Defeat:
+	.string "Swept away.$"
+
+Route10_Text_Route10Swimmer2After:
+	.string "The current's strongest at the\nnarrows. Hold on.$"
+
+Route10_Text_Route10CamperIntro:
+	.string "The shore road is mine. I\npitched a tent on it!$"
+
+Route10_Text_Route10CamperDefeat:
+	.string "Tent's down.$"
+
+Route10_Text_Route10CamperAfter:
+	.string "A shrine hides in the meadow\nnorth of here, they say.$"
+
+@ --- end route trainers ---

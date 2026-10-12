@@ -10,7 +10,7 @@ SWF = "OBJ_EVENT_GFX_SWIMMER_F"
 TRAINERS = [
     # ---- Route 6 (the big lake west of Crescent)
     dict(m="Route6", n=0, const="TRAINER_ORLEANS_ROUTE6_SWIMMER", name="TRISTAN", cls="Swimmer M", pic="Swimmer M", sex="Male", music="Swimmer",
-         gfx=SW, face="DOWN", sight=4, team=[("Tentacruel", 31), ("Wailmer", 31), ("Floatzel", 32)],
+         gfx=SW, face="LEFT", sight=4, team=[("Tentacruel", 31), ("Wailmer", 31), ("Floatzel", 32)],
          intro=T("The lake's mine! I swim it every", "morning. Race you, with POKéMON!"),
          defeat=T("Outswum."), after=T("The current bends east. It wants to", "carry you to the camp.")),
     dict(m="Route6", n=2, const="TRAINER_ORLEANS_ROUTE6_FISHERMAN", name="DESIRE", cls="Fisherman", pic="Fisherman", sex="Male", music="Hiker",
@@ -191,8 +191,8 @@ ROOMS = {
     "camp_cocodrie_cabin_3": {"texts": {0: T("I run the airboat. When the lake", "road opens I'll take you across.")}},
     "camp_cocodrie_cabin_4": {"opts": {0: {"custom": True}}},
     "camp_cocodrie_dance_porch": {
-        "texts": {0: T("We play Saturday nights. After a", "hard-won verse, we play louder."),
-                  1: T("The accordion player came from ISLE", "MARAIS. Same tune, other bayou."),
+        "opts": {0: {"custom": True}},
+        "texts": {1: T("The accordion player came from ISLE", "MARAIS. Same tune, other bayou."),
                   2: T("Grandma has filé, if you ask nicely.", "Very nicely.")},
     },
 }

@@ -643,3 +643,4 @@ gSpecials::
 	def_special OrleansSvc_MaxFriendship
 	def_special OrleansSvc_SetFishingBaseline
 	def_special OrleansSvc_FishingBites
+	def_special OrleansSvc_IsNight

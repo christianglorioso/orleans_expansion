@@ -880,6 +880,7 @@
 
 
 
+
 // --- orleans trainers (begin) ---
 #define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
 #define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1
@@ -949,6 +950,27 @@
 #define TRAINER_ORLEANS_CAMP_FISHERMAN                   TRAINER_MICHELLE
 #define TRAINER_BOUDREAUX                                TRAINER_TATE_AND_LIZA_1
 #define TRAINER_THIBODEAUX                               TRAINER_CAROLINE
+#define TRAINER_ORLEANS_ROUTE10_SWIMMER                  TRAINER_JULIE
+#define TRAINER_ORLEANS_ROUTE10_SWIMMER_F                TRAINER_BROOKE_2
+#define TRAINER_ORLEANS_ROUTE10_SWIMMER_2                TRAINER_BROOKE_3
+#define TRAINER_ORLEANS_ROUTE10_CAMPER                   TRAINER_BROOKE_4
+#define TRAINER_ORLEANS_ROUTE11_SWIMMER_F                TRAINER_BROOKE_5
+#define TRAINER_ORLEANS_ROUTE11_SWIMMER                  TRAINER_PATRICIA
+#define TRAINER_ORLEANS_ROUTE11_SWIMMER_2                TRAINER_KINDRA
+#define TRAINER_ORLEANS_ROUTE12_BIRD_KEEPER              TRAINER_TAMMY
+#define TRAINER_ORLEANS_ROUTE12_HIKER                    TRAINER_VALERIE_1
+#define TRAINER_ORLEANS_ROUTE12_PICNICKER                TRAINER_TASHA
+#define TRAINER_ORLEANS_ROUTE12_FISHERMAN                TRAINER_VALERIE_2
+#define TRAINER_ORLEANS_ROUTE13_BUG_MANIAC               TRAINER_VALERIE_3
+#define TRAINER_ORLEANS_ROUTE13_CAMPER                   TRAINER_VALERIE_4
+#define TRAINER_ORLEANS_ROUTE13_PICNICKER                TRAINER_VALERIE_5
+#define TRAINER_ORLEANS_ROUTE13_BIRD_KEEPER              TRAINER_CINDY_1
+#define TRAINER_ORLEANS_HOLLOW_GYM_LASS                  TRAINER_DAPHNE
+#define TRAINER_ORLEANS_HOLLOW_GYM_PSYCHIC               TRAINER_GRUNT_SPACE_CENTER_2
+#define TRAINER_ORLEANS_JAYDEN_HOLLOW_CHIKORITA          TRAINER_CINDY_2
+#define TRAINER_ORLEANS_JAYDEN_HOLLOW_FUECOCO            TRAINER_BRIANNA
+#define TRAINER_ORLEANS_JAYDEN_HOLLOW_TOTODILE           TRAINER_NAOMI
+#define TRAINER_LUTIN                                    TRAINER_NORMAN_1
 // --- orleans trainers (end) ---
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
