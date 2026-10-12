@@ -2325,7 +2325,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     #else
         .cryId = CRY_FLOETTE,
     #endif // P_MODIFIED_MEGA_CRIES
-        .natDexNum = NATIONAL_DEX_FLOETTE,
+        .natDexNum = NATIONAL_DEX_FLOETTE_ETERNAL,
         .categoryName = _("Single Bloom"),
         // height
         // weight

@@ -1179,7 +1179,7 @@
         .bodyColor = BODY_COLOR_RED,
         .speciesName = _("Lycanroc"),
         .cryId = CRY_LYCANROC_MIDNIGHT,
-        .natDexNum = NATIONAL_DEX_LYCANROC,
+        .natDexNum = NATIONAL_DEX_LYCANROC_MIDNIGHT,
         .categoryName = _("Wolf"),
         .height = 11,
         .weight = 250,
