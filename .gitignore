@@ -90,3 +90,4 @@ tools/strip_manifest.md
 *.zip
 *.sav
 !data/*.gba
+tools/playtest/out/
