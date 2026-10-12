@@ -52,6 +52,6 @@ CrescentCity_GameCorner_EventScript_Gambler2::
 	end
 
 CrescentCity_GameCorner_Text_Gambler2:
-	.string "the third slot pays out after\na storm$"
+	.string "The third slot always paid out\nafter a storm. I'll wait.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

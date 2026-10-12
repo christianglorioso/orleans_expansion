@@ -27,6 +27,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CrescentCity_Laundry_EventScript_Owner0",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CRESCENT_CITY_LAUNDRY_ROTOM_WASHER1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ROTOM)",
+      "x": 5,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrescentCity_Laundry_EventScript_RotomWasher1",
+      "flag": "FLAG_CRESCENT_ROTOM_WASHER"
     }
   ],
   "warp_events": [

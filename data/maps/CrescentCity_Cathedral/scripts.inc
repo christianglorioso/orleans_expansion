@@ -8,13 +8,13 @@ CrescentCity_Cathedral_EventScript_Priest0::
 	end
 
 CrescentCity_Cathedral_Text_Priest0:
-	.string "the city kept its bells\nthrough the storm$"
+	.string "The city kept its bells through the\nstorm. Every one rang.$"
 
 CrescentCity_Cathedral_EventScript_ChoirSinger1::
 	msgbox CrescentCity_Cathedral_Text_ChoirSinger1, MSGBOX_NPC
 	end
 
 CrescentCity_Cathedral_Text_ChoirSinger1:
-	.string "hums a tune like the Rootkin's\nsongs$"
+	.string "A tune like the Rootkin's songs, you\nsay? ...Where did you hear it?$"
 
 @ --- mapgen: generated NPC scripts (end) ---

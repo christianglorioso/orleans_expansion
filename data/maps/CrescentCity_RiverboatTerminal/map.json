@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_RIVERBOAT_TERMINAL_TICKET_CLERK0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 4,
       "y": 2,
       "elevation": 3,

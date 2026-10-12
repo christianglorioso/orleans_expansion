@@ -8,20 +8,20 @@ CrescentCity_Trades_EventScript_Trader0::
 	end
 
 CrescentCity_Trades_Text_Trader0:
-	.string "offers Alolan Sandshrew for a\nKantonian one$"
+	.string "I'd swap a Kantonian Sandshrew for\nan Alolan one, if you have it.$"
 
 CrescentCity_Trades_EventScript_Trader1::
 	msgbox CrescentCity_Trades_Text_Trader1, MSGBOX_NPC
 	end
 
 CrescentCity_Trades_Text_Trader1:
-	.string "offers an Alolan Vulpix for a\nKantonian one (if both make\pthe dex)$"
+	.string "Alolan Vulpix for a Kantonian one.\nIf both make the dex, of course.$"
 
 CrescentCity_Trades_EventScript_Collector2::
 	msgbox CrescentCity_Trades_Text_Collector2, MSGBOX_NPC
 	end
 
 CrescentCity_Trades_Text_Collector2:
-	.string "wants to see regional forms\nside by side$"
+	.string "I like regional forms side by side.\nDon't you?$"
 
 @ --- mapgen: generated NPC scripts (end) ---

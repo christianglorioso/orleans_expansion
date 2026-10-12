@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_GYM_FIFOLET0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 10,
       "y": 2,
       "elevation": 3,
@@ -30,35 +30,35 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_GYM_TRAINER1",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
       "x": 14,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "CrescentCity_Gym_EventScript_Trainer1",
       "flag": "0"
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_GYM_TRAINER2",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
       "x": 4,
       "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "CrescentCity_Gym_EventScript_Trainer2",
       "flag": "0"
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_GYM_GYM_GUIDE3",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 12,
       "y": 14,
       "elevation": 3,
@@ -80,6 +80,52 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 11,
+      "elevation": 3,
+      "var": "FLAG_BADGE03_GET",
+      "var_value": "0",
+      "script": "CrescentCity_Gym_EventScript_BlueLight"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 8,
+      "elevation": 3,
+      "var": "FLAG_BADGE03_GET",
+      "var_value": "0",
+      "script": "CrescentCity_Gym_EventScript_BlueLight"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 3,
+      "var": "FLAG_BADGE03_GET",
+      "var_value": "0",
+      "script": "CrescentCity_Gym_EventScript_OrangeLight"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 10,
+      "elevation": 3,
+      "var": "FLAG_BADGE03_GET",
+      "var_value": "0",
+      "script": "CrescentCity_Gym_EventScript_OrangeLight"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 8,
+      "elevation": 3,
+      "var": "FLAG_BADGE03_GET",
+      "var_value": "0",
+      "script": "CrescentCity_Gym_EventScript_OrangeLight"
+    }
+  ],
   "bg_events": []
 }

@@ -22,13 +22,13 @@ CrescentCity_PokecenterQuarter_EventScript_Tourist1::
 	end
 
 CrescentCity_PokecenterQuarter_Text_Tourist1:
-	.string "came for the music, stayed for\nthe storm cleanup$"
+	.string "I came for the music. Stayed for\nthe storm cleanup.$"
 
 CrescentCity_PokecenterQuarter_EventScript_ParadeFan2::
 	msgbox CrescentCity_PokecenterQuarter_Text_ParadeFan2, MSGBOX_NPC
 	end
 
 CrescentCity_PokecenterQuarter_Text_ParadeFan2:
-	.string "the second line passes right\nby here$"
+	.string "The second line passes right by\nhere. You can hear it start.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

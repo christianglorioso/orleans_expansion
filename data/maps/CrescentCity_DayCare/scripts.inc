@@ -1,20 +1,15 @@
 CrescentCity_DayCare_MapScripts::
 	.byte 0
 
-@ --- mapgen: generated NPC scripts (begin) ---
-
+@ The Day Care uses the shared day care scripts (data/scripts/day_care.inc): the lady keeps the deposit counter, the man
+@ is her husband (the Hoenn data's scripts and texts, kept as they are).
 CrescentCity_DayCare_EventScript_DayCare0::
-	msgbox CrescentCity_DayCare_Text_DayCare0, MSGBOX_NPC
-	end
-
-CrescentCity_DayCare_Text_DayCare0:
-	.string "raises two Pokémon$"
+	goto Route117_PokemonDayCare_EventScript_DaycareWoman
 
 CrescentCity_DayCare_EventScript_DayCare1::
-	msgbox CrescentCity_DayCare_Text_DayCare1, MSGBOX_NPC
-	end
+	goto Route117_EventScript_DaycareMan
 
-CrescentCity_DayCare_Text_DayCare1:
-	.string "watches the yard$"
+@ --- mapgen: generated NPC scripts (begin) ---
+
 
 @ --- mapgen: generated NPC scripts (end) ---
