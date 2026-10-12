@@ -1,7 +1,7 @@
 {
   "id": "MAP_METEOR_FALLS_B1F_2R",
   "name": "MeteorFalls_B1F_2R",
-  "layout": "LAYOUT_METEOR_FALLS_B1F_2R",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_CAVE_OF_ORIGIN",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_METEOR_FALLS",
@@ -14,30 +14,8 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 5,
-      "y": 3,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_DRAGON_CLAW",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW"
-    }
-  ],
-  "warp_events": [
-    {
-      "x": 5,
-      "y": 15,
-      "elevation": 3,
-      "dest_map": "MAP_METEOR_FALLS_B1F_1R",
-      "dest_warp_id": "3"
-    }
-  ],
+  "object_events": [],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

@@ -1,7 +1,7 @@
 {
   "id": "MAP_NAVEL_ROCK_ENTRANCE",
   "name": "NavelRock_Entrance",
-  "layout": "LAYOUT_NAVEL_ROCK_ENTRANCE",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_RG_SEVII_CAVE",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_NAVEL_ROCK",
@@ -15,22 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 10,
-      "y": 5,
-      "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_B1F",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 10,
-      "y": 26,
-      "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_EXTERIOR",
-      "dest_warp_id": "1"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

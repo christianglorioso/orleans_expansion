@@ -1,7 +1,7 @@
 {
   "id": "MAP_UNDERWATER_SEALED_CHAMBER",
   "name": "Underwater_SealedChamber",
-  "layout": "LAYOUT_UNDERWATER_SEALED_CHAMBER",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_UNDERWATER",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_UNDERWATER_SEALED_CHAMBER",
@@ -15,24 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 7,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_ROUTE134",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 12,
-      "y": 43,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Underwater_SealedChamber_EventScript_Braille"
-    }
-  ]
+  "bg_events": []
 }

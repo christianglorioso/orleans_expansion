@@ -1,7 +1,7 @@
 {
   "id": "MAP_MOSSDEEP_CITY_SPACE_CENTER_2F",
   "name": "MossdeepCity_SpaceCenter_2F",
-  "layout": "LAYOUT_MOSSDEEP_CITY_SPACE_CENTER_2F",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_RUSTBORO",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_MOSSDEEP_CITY",
@@ -26,7 +26,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_RichBoy",
+      "script": "0x0",
       "flag": "0"
     },
     {
@@ -40,7 +40,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Gentleman",
+      "script": "0x0",
       "flag": "0"
     },
     {
@@ -54,7 +54,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Scientist",
+      "script": "0x0",
       "flag": "0"
     },
     {
@@ -68,8 +68,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Steven",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN"
+      "script": "0x0",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_SPACE_CENTER_GRUNT_6",
@@ -82,8 +82,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Grunt6",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA"
+      "script": "0x0",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_SPACE_CENTER_GRUNT_5",
@@ -96,8 +96,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Grunt5",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA"
+      "script": "0x0",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_SPACE_CENTER_GRUNT_7",
@@ -110,8 +110,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Grunt7",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA"
+      "script": "0x0",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_SPACE_CENTER_TABITHA",
@@ -124,8 +124,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Tabitha",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA"
+      "script": "0x0",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_SPACE_CENTER_MAXIE",
@@ -138,19 +138,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_SpaceCenter_2F_EventScript_Maxie",
-      "flag": "FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA"
+      "script": "0x0",
+      "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 13,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY_SPACE_CENTER_1F",
-      "dest_warp_id": "2"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

@@ -1,7 +1,7 @@
 {
   "id": "MAP_NAVEL_ROCK_DOWN05",
   "name": "NavelRock_Down05",
-  "layout": "LAYOUT_NAVEL_ROCK_LADDER_ROOM1",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_RG_SEVII_CAVE",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_NAVEL_ROCK",
@@ -15,22 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 3,
-      "y": 3,
-      "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_DOWN04",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 5,
-      "y": 5,
-      "elevation": 3,
-      "dest_map": "MAP_NAVEL_ROCK_DOWN06",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

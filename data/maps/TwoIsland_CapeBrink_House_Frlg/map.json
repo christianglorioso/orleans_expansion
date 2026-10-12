@@ -1,7 +1,7 @@
 {
   "id": "MAP_TWO_ISLAND_CAPE_BRINK_HOUSE",
   "name": "TwoIsland_CapeBrink_House_Frlg",
-  "layout": "LAYOUT_HOUSE3_FRLG",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_RG_SEVII_123",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_CAPE_BRINK",
@@ -28,19 +28,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TwoIsland_CapeBrink_House_EventScript_StarterTutor",
+      "script": "0x0",
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 4,
-      "y": 7,
-      "elevation": 3,
-      "dest_map": "MAP_TWO_ISLAND_CAPE_BRINK",
-      "dest_warp_id": "0"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

@@ -1,7 +1,7 @@
 {
   "id": "MAP_UNDERWATER_MARINE_CAVE",
   "name": "Underwater_MarineCave",
-  "layout": "LAYOUT_UNDERWATER_MARINE_CAVE",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_PETALBURG_WOODS",
   "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_UNDERWATER_MARINE_CAVE",
@@ -15,15 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 9,
-      "y": 8,
-      "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": []
 }

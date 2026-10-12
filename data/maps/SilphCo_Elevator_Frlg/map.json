@@ -1,7 +1,7 @@
 {
   "id": "MAP_SILPH_CO_ELEVATOR",
   "name": "SilphCo_Elevator_Frlg",
-  "layout": "LAYOUT_SILPH_CO_ELEVATOR",
+  "layout": "LAYOUT_STRIP_STUB",
   "music": "MUS_RG_SILPH",
   "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_SILPH_CO",
@@ -16,24 +16,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [
-    {
-      "x": 2,
-      "y": 5,
-      "elevation": 3,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 0,
-      "y": 2,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SilphCo_Elevator_EventScript_FloorSelect"
-    }
-  ]
+  "bg_events": []
 }
