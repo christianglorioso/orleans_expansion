@@ -54,9 +54,10 @@ def load(path=PP):
             q += 1
         entries[m.group(1)] = t[b:q + 1]
         pos = q + 1
-        if t[pos:pos + 40].lstrip().startswith(",") is False and "SPECIES_EGG" in m.group(1):
-            break
-        if m.group(1) == "SPECIES_EGG":
+        k2 = pos
+        while k2 < n and (t[k2].isspace() or t[k2] == ","):
+            k2 += 1
+        if k2 < n and t[k2] == "}":
             break
     return t, entries
 

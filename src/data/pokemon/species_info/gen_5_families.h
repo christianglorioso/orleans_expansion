@@ -10075,6 +10075,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_Litwick,
             gShinyOverworldPalette_Litwick
         )
+        .formSpeciesIdTable = sLitwickFormSpeciesIdTable,
         .levelUpLearnset = sLitwickLevelUpLearnset,
         .teachableLearnset = sLitwickTeachableLearnset,
         .eggMoveLearnset = sLitwickEggMoveLearnset,
@@ -10150,6 +10151,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_Lampent,
             gShinyOverworldPalette_Lampent
         )
+        .formSpeciesIdTable = sLampentFormSpeciesIdTable,
         .levelUpLearnset = sLampentLevelUpLearnset,
         .teachableLearnset = sLampentTeachableLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_DUSK_STONE, SPECIES_CHANDELURE}),

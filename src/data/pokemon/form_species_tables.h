@@ -402,6 +402,7 @@ static const u16 sSteelixFormSpeciesIdTable[] = {
 
 #if P_FAMILY_KRABBY
 static const u16 sKinglerFormSpeciesIdTable[] = {
+    SPECIES_KINGLER_ORLEANIAN,
     SPECIES_KINGLER,
 #if P_GIGANTAMAX_FORMS
     SPECIES_KINGLER_GMAX,
@@ -412,6 +413,7 @@ static const u16 sKinglerFormSpeciesIdTable[] = {
 
 #if P_FAMILY_VOLTORB
 static const u16 sVoltorbFormSpeciesIdTable[] = {
+    SPECIES_VOLTORB_ORLEANIAN,
     SPECIES_VOLTORB,
 #if P_HISUIAN_FORMS
     SPECIES_VOLTORB_HISUI,
@@ -420,6 +422,7 @@ static const u16 sVoltorbFormSpeciesIdTable[] = {
 };
 
 static const u16 sElectrodeFormSpeciesIdTable[] = {
+    SPECIES_ELECTRODE_ORLEANIAN,
     SPECIES_ELECTRODE,
 #if P_HISUIAN_FORMS
     SPECIES_ELECTRODE_HISUI,
@@ -430,6 +433,7 @@ static const u16 sElectrodeFormSpeciesIdTable[] = {
 
 #if P_FAMILY_EXEGGCUTE
 static const u16 sExeggutorFormSpeciesIdTable[] = {
+    SPECIES_EXEGGUTOR_ORLEANIAN,
     SPECIES_EXEGGUTOR,
 #if P_ALOLAN_FORMS
     SPECIES_EXEGGUTOR_ALOLA,
@@ -451,6 +455,7 @@ static const u16 sMarowakFormSpeciesIdTable[] = {
 
 #if P_FAMILY_KOFFING
 static const u16 sWeezingFormSpeciesIdTable[] = {
+    SPECIES_WEEZING_ORLEANIAN,
     SPECIES_WEEZING,
 #if P_GALARIAN_FORMS
     SPECIES_WEEZING_GALAR,
@@ -1446,6 +1451,7 @@ static const u16 sEelektrossFormSpeciesIdTable[] = {
 
 #if P_FAMILY_LITWICK
 static const u16 sChandelureFormSpeciesIdTable[] = {
+    SPECIES_CHANDELURE_ORLEANIAN,
     SPECIES_CHANDELURE,
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_CHANDELURE_MEGA,
@@ -2568,3 +2574,85 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+// Orleans regional-form tables (tools/dex/apply_forms.py)
+static const u16 sTangelaFormSpeciesIdTable[] = {
+    SPECIES_TANGELA_ORLEANIAN,
+    SPECIES_TANGELA,
+    FORM_SPECIES_END,
+};
+static const u16 sTangrowthFormSpeciesIdTable[] = {
+    SPECIES_TANGROWTH_ORLEANIAN,
+    SPECIES_TANGROWTH,
+    FORM_SPECIES_END,
+};
+static const u16 sBonslyFormSpeciesIdTable[] = {
+    SPECIES_BONSLY_ORLEANIAN,
+    SPECIES_BONSLY,
+    FORM_SPECIES_END,
+};
+static const u16 sSudowoodoFormSpeciesIdTable[] = {
+    SPECIES_SUDOWOODO_ORLEANIAN,
+    SPECIES_SUDOWOODO,
+    FORM_SPECIES_END,
+};
+static const u16 sCorphishFormSpeciesIdTable[] = {
+    SPECIES_CORPHISH_ORLEANIAN,
+    SPECIES_CORPHISH,
+    FORM_SPECIES_END,
+};
+static const u16 sCrawdauntFormSpeciesIdTable[] = {
+    SPECIES_CRAWDAUNT_ORLEANIAN,
+    SPECIES_CRAWDAUNT,
+    FORM_SPECIES_END,
+};
+static const u16 sKoffingFormSpeciesIdTable[] = {
+    SPECIES_KOFFING_ORLEANIAN,
+    SPECIES_KOFFING,
+    FORM_SPECIES_END,
+};
+static const u16 sKrabbyFormSpeciesIdTable[] = {
+    SPECIES_KRABBY_ORLEANIAN,
+    SPECIES_KRABBY,
+    FORM_SPECIES_END,
+};
+static const u16 sExeggcuteFormSpeciesIdTable[] = {
+    SPECIES_EXEGGCUTE_ORLEANIAN,
+    SPECIES_EXEGGCUTE,
+    FORM_SPECIES_END,
+};
+static const u16 sLitwickFormSpeciesIdTable[] = {
+    SPECIES_LITWICK_ORLEANIAN,
+    SPECIES_LITWICK,
+    FORM_SPECIES_END,
+};
+static const u16 sLampentFormSpeciesIdTable[] = {
+    SPECIES_LAMPENT_ORLEANIAN,
+    SPECIES_LAMPENT,
+    FORM_SPECIES_END,
+};
+static const u16 sBudewFormSpeciesIdTable[] = {
+    SPECIES_BUDEW_ORLEANIAN,
+    SPECIES_BUDEW,
+    FORM_SPECIES_END,
+};
+static const u16 sRoseliaFormSpeciesIdTable[] = {
+    SPECIES_ROSELIA_ORLEANIAN,
+    SPECIES_ROSELIA,
+    FORM_SPECIES_END,
+};
+static const u16 sRoseradeFormSpeciesIdTable[] = {
+    SPECIES_ROSERADE_ORLEANIAN,
+    SPECIES_ROSERADE,
+    FORM_SPECIES_END,
+};
+static const u16 sSpearowFormSpeciesIdTable[] = {
+    SPECIES_SPEAROW_ORLEANIAN,
+    SPECIES_SPEAROW,
+    FORM_SPECIES_END,
+};
+static const u16 sFearowFormSpeciesIdTable[] = {
+    SPECIES_FEAROW_ORLEANIAN,
+    SPECIES_FEAROW,
+    FORM_SPECIES_END,
+};

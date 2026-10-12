@@ -6020,6 +6020,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Budew,
             gShinyOverworldPalette_Budew
         )
+        .formSpeciesIdTable = sBudewFormSpeciesIdTable,
         .levelUpLearnset = sBudewLevelUpLearnset,
         .teachableLearnset = sBudewTeachableLearnset,
         .eggMoveLearnset = sBudewEggMoveLearnset,
@@ -6105,6 +6106,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_FOOT,
             sAnimTable_Following_Asym
         )
+        .formSpeciesIdTable = sRoseliaFormSpeciesIdTable,
         .levelUpLearnset = sRoseliaLevelUpLearnset,
         .teachableLearnset = sRoseliaTeachableLearnset,
         .eggMoveLearnset = sRoseliaEggMoveLearnset,
@@ -6199,6 +6201,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_FOOT,
             sAnimTable_Following_Asym
         )
+        .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
     },
@@ -8469,6 +8472,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Corphish,
             gShinyOverworldPalette_Corphish
         )
+        .formSpeciesIdTable = sCorphishFormSpeciesIdTable,
         .levelUpLearnset = sCorphishLevelUpLearnset,
         .teachableLearnset = sCorphishTeachableLearnset,
         .eggMoveLearnset = sCorphishEggMoveLearnset,
@@ -8540,6 +8544,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             gOverworldPalette_Crawdaunt,
             gShinyOverworldPalette_Crawdaunt
         )
+        .formSpeciesIdTable = sCrawdauntFormSpeciesIdTable,
         .levelUpLearnset = sCrawdauntLevelUpLearnset,
         .teachableLearnset = sCrawdauntTeachableLearnset,
     },

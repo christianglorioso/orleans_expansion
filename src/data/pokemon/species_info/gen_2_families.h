@@ -2594,6 +2594,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             gOverworldPalette_Bonsly,
             gShinyOverworldPalette_Bonsly
         )
+        .formSpeciesIdTable = sBonslyFormSpeciesIdTable,
         .levelUpLearnset = sBonslyLevelUpLearnset,
         .teachableLearnset = sBonslyTeachableLearnset,
         .eggMoveLearnset = sBonslyEggMoveLearnset,
@@ -2680,6 +2681,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             sAnimTable_Following
         )
+        .formSpeciesIdTable = sSudowoodoFormSpeciesIdTable,
         .levelUpLearnset = sSudowoodoLevelUpLearnset,
         .teachableLearnset = sSudowoodoTeachableLearnset,
         .eggMoveLearnset = sSudowoodoEggMoveLearnset,

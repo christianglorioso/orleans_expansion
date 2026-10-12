@@ -174,6 +174,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
     },
 
+    #include "species_info/orleans_forms.h"
+
     /* You may add any custom species below this point based on the following structure: */
 
     /*

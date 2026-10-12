@@ -94,3 +94,33 @@ def ability_const(name):
 def ability_consts():
     src = (ROOT / "include/constants/abilities.h").read_text(encoding="utf-8")
     return set(re.findall(r"ABILITY_(\w+)\s*=", src))
+
+
+# ---------------------------------------------------------------------------
+# New species registry (ids assigned in this order starting after SPECIES_CUSTOM_START's value)
+CUSTOM_MEGA_BASE = {
+    # sheet name: (base species it is cloned from / Mega Evolves from, mega stone item constant, stone display name)
+    "Mega Skeledirge": ("SPECIES_SKELEDIRGE", "ITEM_SKELEDIRGITE", "Skeledirgite"),
+    "Mega Roserade": ("SPECIES_ROSERADE_ORLEANIAN", "ITEM_ROSERADITE", "Roseradite"),
+    "Mega Electrode": ("SPECIES_ELECTRODE_ORLEANIAN", "ITEM_ELECTRODITE", "Electrodite"),
+    "Mega Scyther": ("SPECIES_SCYTHER", "ITEM_SCYTHERITE", "Scytherite"),
+    "Mega Crawdaunt": ("SPECIES_CRAWDAUNT_ORLEANIAN", "ITEM_CRAWDAUNTITE", "Crawdauntite"),
+    "Mega Kingler": ("SPECIES_KINGLER_ORLEANIAN", "ITEM_KINGLERITE", "Kinglerite"),
+    "Mega Weezing": ("SPECIES_WEEZING_ORLEANIAN", "ITEM_WEEZINGITE", "Weezingite"),
+    "Mega Tangrowth": ("SPECIES_TANGROWTH_ORLEANIAN", "ITEM_TANGROWTHITE", "Tangrowthite"),
+    "Mega Sudowoodo": ("SPECIES_SUDOWOODO_ORLEANIAN", "ITEM_SUDOWOODITE", "Sudowoodite"),
+    "Mega Exeggutor": ("SPECIES_EXEGGUTOR_ORLEANIAN", "ITEM_EXEGGUTORITE", "Exeggutorite"),
+    "Mega Fearow": ("SPECIES_FEAROW_ORLEANIAN", "ITEM_FEAROWITE", "Fearowite"),
+    "Mega Quaquaval": ("SPECIES_QUAQUAVAL", "ITEM_QUAQUAVALITE", "Quaquavalite"),
+    "Mega Exploud": ("SPECIES_EXPLOUD", "ITEM_EXPLOUDITE", "Exploudite"),
+    "Mega Kleavor": ("SPECIES_KLEAVOR", "ITEM_KLEAVORITE", "Kleavorite"),
+    "Mega Serperior": ("SPECIES_SERPERIOR", "ITEM_SERPERITE", "Serperite"),
+    "Mega Lycanroc": ("SPECIES_LYCANROC_MIDNIGHT", "ITEM_LYCANROCITE", "Lycanrocite"),
+}
+
+NEW_SPECIES_ORDER = [orleanian_const(n) for n in ORLEANIAN] + [CUSTOM_MEGAS[n] for n in CUSTOM_MEGA_BASE]
+
+
+def base_of_orleanian(name):
+    """the Kantonian etc. species a clone was made from"""
+    return "SPECIES_" + name.upper().replace(" ", "_")
