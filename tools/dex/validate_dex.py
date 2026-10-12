@@ -54,7 +54,17 @@ def species_for(row, cons):
     return sm.base_const(row["name"], cons)
 
 
+def ensure_master_party():
+    """the vanilla trainer list (branch master) tells the Orleans trainers apart from the Hoenn ones"""
+    out = ROOT / "tools/dex/out/trainers_master.party"
+    if not out.exists():
+        out.parent.mkdir(exist_ok=True)
+        r = subprocess.run(["git", "show", "master:src/data/trainers.party"], capture_output=True, cwd=ROOT)
+        out.write_bytes(r.stdout)
+
+
 def main():
+    ensure_master_party()
     if "--pp" in sys.argv:
         run_pp()
     t, ents = ppdata.load()
