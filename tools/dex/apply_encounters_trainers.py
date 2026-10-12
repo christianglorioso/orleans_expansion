@@ -48,6 +48,23 @@ def fix_encounters(log):
     log.append(f"wild_encounters.json: {n} slot species switched to Orleanian forms")
 
 
+REMOVED_SWAP = {"SPECIES_LOTAD": "SPECIES_POLIWAG", "SPECIES_LOMBRE": "SPECIES_POLIWHIRL", "SPECIES_LUDICOLO": "SPECIES_POLIWRATH",
+                "SPECIES_PINCURCHIN": "SPECIES_MAGNEMITE", "SPECIES_CHATOT": "SPECIES_PIKIPEK"}
+
+
+def swap_removed(log):
+    """the removed lines (Lotad line, Pincurchin, Chatot) leave every wild table, including the dormant Hoenn headers"""
+    t = ENC.read_text(encoding="utf-8")
+    n = 0
+    for old, new in REMOVED_SWAP.items():
+        c = t.count('"species": "%s"' % old)
+        if c:
+            t = t.replace('"species": "%s"' % old, '"species": "%s"' % new)
+            n += c
+    ENC.write_text(t, encoding="utf-8", newline=chr(10))
+    log.append(f"wild_encounters.json: {n} dormant Hoenn slots of removed species (Lotad line/Pincurchin/Chatot) swapped")
+
+
 def move_table():
     h, rows = sd.load_move_index()
     d = {}
@@ -137,6 +154,7 @@ def process_party(path, only, info, lv, tc, eg, prev, mtab, mv_const, log):
 def main():
     log = []
     fix_encounters(log)
+    swap_removed(log)
     info, lv, tc, eg, prev = pc.build_tables()
     mtab = move_table()
     mv = sd.load_move_names()

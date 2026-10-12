@@ -44,7 +44,30 @@ def nd_name(const):
     return "NATIONAL_DEX_" + const[len("SPECIES_"):]
 
 
+
+
+def fix_floette_natdex():
+    """FLOETTE_MISC_INFO (shared by the colours and the Eternal Flower form) sets natDexNum; split it like the abilities"""
+    f = cdata.SI_DIR / "gen_6_families.h"
+    lines = f.read_text(encoding="utf-8").split(chr(10))
+    BS = chr(92)
+    i = next(n for n, l in enumerate(lines) if l.startswith("#define FLOETTE_MISC_INFO"))
+    j = next(n for n, l in enumerate(lines) if l.startswith("#define FLOETTE_NORMAL_INFO"))
+    nd = [n for n in range(i, j) if ".natDexNum" in lines[n]]
+    if not nd:
+        return
+    del lines[nd[0]]
+    j -= 1
+    k = next(n for n in range(j, len(lines)) if ".abilities" in lines[n])
+    lines.insert(k + 1, "        .natDexNum = NATIONAL_DEX_FLOETTE,".ljust(88) + BS)
+    e = next(n for n, l in enumerate(lines) if l.startswith("    [SPECIES_FLOETTE_ETERNAL] ="))
+    k = next(n for n in range(e, len(lines)) if ".abilities" in lines[n])
+    lines.insert(k + 1, "        .natDexNum = NATIONAL_DEX_FLOETTE_ETERNAL,")
+    f.write_text(chr(10).join(lines), encoding="utf-8", newline=chr(10))
+
+
 def main():
+    fix_floette_natdex()
     t_pp, ents = ppdata.load()
     cons = sm.species_consts()
     rows = sorted([r for r in sheet_data.load_dex() if r["kind"] == "species"], key=lambda r: r["num"])
