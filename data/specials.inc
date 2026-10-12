@@ -644,3 +644,7 @@ gSpecials::
 	def_special OrleansSvc_SetFishingBaseline
 	def_special OrleansSvc_FishingBites
 	def_special OrleansSvc_IsNight
+	def_special OrleansSvc_TurnMirror
+	def_special OrleansSvc_MirrorFacing
+	def_special OrleansSvc_MirrorRight
+	def_special OrleansSvc_MirrorCheck

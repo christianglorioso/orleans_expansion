@@ -18,7 +18,7 @@ import struct
 import sys
 from collections import deque
 
-OBSTACLE_WORDS = ("DEBRIS", "_JAM", "SPAN", "HEDGE", "_NET")
+OBSTACLE_WORDS = ("DEBRIS", "_JAM", "SPAN", "HEDGE", "_NET", "SHUTTER")
 DIRS = ((1, 0), (-1, 0), (0, 1), (0, -1))
 
 _CACHE = {}

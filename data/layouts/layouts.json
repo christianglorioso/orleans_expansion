@@ -2946,36 +2946,6 @@
       "blockdata_filepath": "data/layouts/LutinsHollow_MossHouseS/map.bin"
     },
     {
-      "id": "LAYOUT_REDFIELD_GYM",
-      "name": "Redfield_Gym_Layout",
-      "width": 21,
-      "height": 16,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/Redfield_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/Redfield_Gym/map.bin"
-    },
-    {
-      "id": "LAYOUT_REDFIELD_RITAS_OFFICE",
-      "name": "Redfield_RitasOffice_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/Redfield_RitasOffice/border.bin",
-      "blockdata_filepath": "data/layouts/Redfield_RitasOffice/map.bin"
-    },
-    {
-      "id": "LAYOUT_REDFIELD_POKECENTER",
-      "name": "Redfield_Pokecenter_Layout",
-      "width": 15,
-      "height": 10,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/Redfield_Pokecenter/border.bin",
-      "blockdata_filepath": "data/layouts/Redfield_Pokecenter/map.bin"
-    },
-    {
       "id": "LAYOUT_REDFIELD_MART",
       "name": "Redfield_Mart_Layout",
       "width": 11,
@@ -2986,16 +2956,6 @@
       "blockdata_filepath": "data/layouts/Redfield_Mart/map.bin"
     },
     {
-      "id": "LAYOUT_REDFIELD_BOTTLING_WORKS",
-      "name": "Redfield_BottlingWorks_Layout",
-      "width": 19,
-      "height": 12,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/Redfield_BottlingWorks/border.bin",
-      "blockdata_filepath": "data/layouts/Redfield_BottlingWorks/map.bin"
-    },
-    {
       "id": "LAYOUT_REDFIELD_SHOTGUN_HOUSE1",
       "name": "Redfield_ShotgunHouse1_Layout",
       "width": 6,
@@ -3004,16 +2964,6 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/Redfield_ShotgunHouse1/border.bin",
       "blockdata_filepath": "data/layouts/Redfield_ShotgunHouse1/map.bin"
-    },
-    {
-      "id": "LAYOUT_REDFIELD_SHOTGUN_HOUSE2",
-      "name": "Redfield_ShotgunHouse2_Layout",
-      "width": 6,
-      "height": 15,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/Redfield_ShotgunHouse2/border.bin",
-      "blockdata_filepath": "data/layouts/Redfield_ShotgunHouse2/map.bin"
     },
     {
       "id": "LAYOUT_REDFIELD_HOUSE1",
@@ -3134,6 +3084,56 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/LandsEnd_House5/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_House5/map.bin"
+    },
+    {
+      "id": "LAYOUT_REDFIELD_GYM",
+      "name": "Redfield_Gym_Layout",
+      "width": 21,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/Redfield_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Redfield_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_REDFIELD_RITAS_OFFICE",
+      "name": "Redfield_RitasOffice_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/Redfield_RitasOffice/border.bin",
+      "blockdata_filepath": "data/layouts/Redfield_RitasOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_REDFIELD_POKECENTER",
+      "name": "Redfield_Pokecenter_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/Redfield_Pokecenter/border.bin",
+      "blockdata_filepath": "data/layouts/Redfield_Pokecenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_REDFIELD_BOTTLING_WORKS",
+      "name": "Redfield_BottlingWorks_Layout",
+      "width": 19,
+      "height": 12,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/Redfield_BottlingWorks/border.bin",
+      "blockdata_filepath": "data/layouts/Redfield_BottlingWorks/map.bin"
+    },
+    {
+      "id": "LAYOUT_REDFIELD_SHOTGUN_HOUSE2",
+      "name": "Redfield_ShotgunHouse2_Layout",
+      "width": 6,
+      "height": 15,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/Redfield_ShotgunHouse2/border.bin",
+      "blockdata_filepath": "data/layouts/Redfield_ShotgunHouse2/map.bin"
     }
   ]
 }

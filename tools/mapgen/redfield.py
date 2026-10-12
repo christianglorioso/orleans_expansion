@@ -213,8 +213,11 @@ def yard(t):
     # the trial: three sundials, six mirrors (they turn: the story pass chooses the facings)
     for x, y in ((28, 4), (32, 6), (32, 10)):
         t.deco("sundial", x, y, "Sundial", ring=0)
-    for prefab, x, y in (("mirror_se", 26, 4), ("mirror_sw", 31, 4), ("mirror_ne", 31, 8), ("mirror_nw", 33, 8),
-                         ("mirror_ne", 30, 10), ("mirror_se", 33, 4)):
+    # the mirrors stand where the player can reach them (the story pass turns them, story_data_ch7.py): the corridor x 31 runs clear from
+    # the road up to the north row, with a mirror beside it at (30, 4), (32, 4) and (32, 8), and three in the pocket west of the
+    # mill road at (26, 10), (29, 10) and (30, 10)
+    for prefab, x, y in (("mirror_se", 30, 4), ("mirror_sw", 32, 4), ("mirror_ne", 32, 8), ("mirror_nw", 26, 10),
+                         ("mirror_ne", 29, 10), ("mirror_se", 30, 10)):
         t.deco(prefab, x, y, "Mirror")
     for prefab, x, y in (("cane_pile", 41, 4), ("cane_pile_b", 34, 4), ("cane_pile_b", 37, 4)):
         t.deco(prefab, x, y, "Cane pile", on="d:")

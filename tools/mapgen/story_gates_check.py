@@ -341,6 +341,9 @@ def world_gates():
     s29 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET"}))
     want29 = want26 | {"Route14", "Route15", "Route16", "Route17", "Redfield", "Route18"}  # Route 18 only up to its fallen span
     check(s29 == want29, f"story 29 (verse 6, the floodwater has receded): Routes 14-17 and Redfield open, Routes 18+ still shut (extra {sorted(s29 - want29)}, missing {sorted(want29 - s29)})")
+    s33 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET"}))
+    want33 = want29 | {"Route19", "Route20", "LandsEnd", "Route21"}  # Route 21 only up to its row-8 cut
+    check(s33 == want33, f"story 33 (verse 7, the fallen span is gone): Routes 18-20, Land's End and Route 21's near side open, no Route 22 cell (extra {sorted(s33 - want33)}, missing {sorted(want33 - s33)})")
 
 
 def camp_cocodrie():
@@ -381,6 +384,50 @@ def lutins_hollow():
     check(all(c in r for c in need), f"Lutin's gym: the three pools' standing cells, every Lutin's standing cell and both trainers' are reachable ({[c for c in need if c not in r]} missing)")
     # the arrival lane: the hollow's only way in is the Route 13 lane; the singers by the south pools are on it (story 27)
     check(any(o.get("local_id", "").endswith("_JAYDEN") for o in hh.m["object_events"]), "Lutin's Hollow: Jayden and Wren stand by the south pools")
+
+
+def redfield_mill():
+    """Chapter 7: Rita holds the yard gate (story 31), the shutter holds the gym door's only approach cell until the three sundials are lit,
+    every mirror and the two sundials the corridor reaches have a reachable standing cell, and Route 14's rougarou stands on land."""
+    src = [(0, 17), (0, 18)]
+    rf = Grid("Redfield")
+    objs = {o["local_id"]: o for o in rf.m["object_events"] if "local_id" in o}
+    shut = objs.get("LOCALID_REDFIELD_SHUTTER_1")
+    door = next(w for w in rf.m["warp_events"] if w["dest_map"] == "MAP_REDFIELD_GYM")
+    door = (door["x"], door["y"])
+    nb = [(door[0] + dx, door[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+          if rf.walk(door[0] + dx, door[1] + dy) or (shut and (door[0] + dx, door[1] + dy) == (shut["x"], shut["y"]))]
+    check(shut is not None and shut["flag"] == "FLAG_REDFIELD_MILL_OPEN" and nb == [(shut["x"], shut["y"])],
+          f"Redfield: the mill door's only approach cell {nb} is held by the shutter (hidden by FLAG_REDFIELD_MILL_OPEN)")
+    trig = {(c["x"], c["y"]) for c in rf.m.get("coord_events", []) if c.get("script") == "Redfield_EventScript_RitaGate"}
+    closed = rf.fill(src, stop=trig)
+    yard = {(x, y) for x in range(26, 43) for y in range(4, 15)}
+    check(len(trig) == 2 and not (closed & yard),
+          f"Redfield: with Rita's two gate triggers {sorted(trig)} blocked nothing inside the mill yard is reachable ({sorted(closed & yard)[:3]})")
+    og = Grid("Redfield", remove_objects=("LOCALID_REDFIELD_SHUTTER_1",))
+    r = og.fill(src)
+    check(shut is not None and (shut["x"], shut["y"]) in r, "Redfield: with the shutter gone the gym door's approach cell is reachable from the west road")
+    need = {}
+    for b in rf.m["bg_events"]:
+        sc = b.get("script", "")
+        if "_EventScript_Mirror" in sc or "_EventScript_Dial" in sc:
+            need[sc.split("_EventScript_")[1]] = (b["x"], b["y"])
+    bad = []
+    for k, (x, y) in need.items():
+        if og.walk(x, y):
+            bad.append(f"{k} {x},{y} is walkable (a mirror or dial must be a prop)")
+        elif not any((x + dx, y + dy) in r for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+            bad.append(f"{k} {x},{y} has no reachable neighbour")
+    check(len(need) == 16 and not bad, f"Redfield: all {len(need)} mirror/dial sign cells are props with a reachable neighbour ({bad})")
+    # the second sundial pair is two cells (x 32), the corridor x 31 is clear
+    check(all((31, y) in r for y in range(4, 12)), "Redfield: the corridor x 31 (y 4-11) is reachable from the road")
+    ow = Grid("OldWater")
+    cells = [(22, 32), (24, 29), (22, 29), (26, 29), (21, 32)]
+    rr = ow.fill([(22, 32)], stop=())
+    check(all(c in rr or c in ow.blocked for c in cells) and all(not (c in ow.blocked and c != (22, 32)) or c in cells for c in cells),
+          "Old Water: the raid's arrival cell (22, 32) and the actors' cells are on reachable land")
+    r14 = Grid("Route14")
+    check(r14.walk(21, 28) or (21, 29) in r14.blocked, "Route 14: the rougarou's crest cell (21, 29) is on land")
 
 
 def trainers_vs_triggers():
@@ -458,6 +505,7 @@ if __name__ == "__main__":
     pointe_gym()
     camp_cocodrie()
     lutins_hollow()
+    redfield_mill()
     trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()

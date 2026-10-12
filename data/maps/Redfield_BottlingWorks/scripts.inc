@@ -8,7 +8,7 @@ Redfield_BottlingWorks_EventScript_Foreman0::
 	end
 
 Redfield_BottlingWorks_Text_Foreman0:
-	.string "the hottest batch in years\nsince the drought$"
+	.string "Hottest batch in years. The sun\nwas on our side this season.$"
 
 Redfield_BottlingWorks_EventScript_Taster1::
 	msgbox Redfield_BottlingWorks_Text_Taster1, MSGBOX_NPC

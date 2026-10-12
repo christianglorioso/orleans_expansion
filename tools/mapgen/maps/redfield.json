@@ -428,38 +428,38 @@
     },
     {
       "prefab": "mirror_se",
-      "x": 26,
+      "x": 30,
       "y": 4,
       "label": "Mirror"
     },
     {
       "prefab": "mirror_sw",
-      "x": 31,
+      "x": 32,
       "y": 4,
       "label": "Mirror"
     },
     {
       "prefab": "mirror_ne",
-      "x": 31,
+      "x": 32,
       "y": 8,
       "label": "Mirror"
     },
     {
       "prefab": "mirror_nw",
-      "x": 33,
-      "y": 8,
+      "x": 26,
+      "y": 10,
       "label": "Mirror"
     },
     {
       "prefab": "mirror_ne",
-      "x": 30,
+      "x": 29,
       "y": 10,
       "label": "Mirror"
     },
     {
       "prefab": "mirror_se",
-      "x": 33,
-      "y": 4,
+      "x": 30,
+      "y": 10,
       "label": "Mirror"
     },
     {

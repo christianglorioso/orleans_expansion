@@ -196,18 +196,18 @@
 #define FLAG_ROUTE10_ITEM_CRUNCH                         0x9E // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_ROUTE11_ITEM_LIQUIDATION                    0x9F // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_RECEIVED_QUAQUAVALITE                       0xA0 // Orleans Ch6/7: the parade leader's Quaquavalite (after badge 6)
-#define FLAG_ORLEANS_POOL_051                           0xA1
-#define FLAG_ORLEANS_POOL_052                           0xA2
-#define FLAG_ORLEANS_POOL_053                           0xA3
-#define FLAG_ORLEANS_POOL_054                           0xA4
-#define FLAG_ORLEANS_POOL_055                           0xA5
-#define FLAG_ORLEANS_POOL_056                           0xA6
-#define FLAG_ORLEANS_POOL_057                           0xA7
-#define FLAG_ORLEANS_POOL_058                           0xA8
-#define FLAG_ORLEANS_POOL_059                           0xA9
-#define FLAG_ORLEANS_POOL_060                           0xAA
-#define FLAG_ORLEANS_POOL_061                           0xAB
-#define FLAG_ORLEANS_POOL_062                           0xAC
+#define FLAG_HIDE_REDFIELD_RITA                          0xA1 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_ORLEANS_POOL_052                            0xA2
+#define FLAG_HIDE_REDFIELD_WREN                          0xA3 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_HIDE_RAID_ISAAC                             0xA4 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_HIDE_RAID_GRUNT1                            0xA5 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_HIDE_RAID_GRUNT2                            0xA6 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_HIDE_RAID_WREN                              0xA7 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_HIDE_ROUTE14_ROUGAROU                       0xA8 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
+#define FLAG_REDFIELD_SUN1                               0xA9 // Chapter 7 mill yard trial: sundials lit, the mill shutter open
+#define FLAG_REDFIELD_SUN2                               0xAA // Chapter 7 mill yard trial: sundials lit, the mill shutter open
+#define FLAG_REDFIELD_SUN3                               0xAB // Chapter 7 mill yard trial: sundials lit, the mill shutter open
+#define FLAG_REDFIELD_MILL_OPEN                          0xAC // Chapter 7 mill yard trial: sundials lit, the mill shutter open
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -225,15 +225,15 @@
 #define FLAG_DECORATION_14                   0xBB
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
-#define FLAG_ORLEANS_POOL_063                           0xBE
-#define FLAG_ORLEANS_POOL_064                           0xBF
-#define FLAG_ORLEANS_POOL_065                           0xC0
-#define FLAG_ORLEANS_POOL_066                           0xC1
-#define FLAG_ORLEANS_POOL_067                           0xC2
-#define FLAG_ORLEANS_POOL_068                           0xC3
-#define FLAG_ORLEANS_POOL_069                           0xC4
-#define FLAG_ORLEANS_POOL_070                           0xC5
-#define FLAG_ORLEANS_POOL_071                           0xC6
+#define FLAG_RECEIVED_TM050_OVERHEAT                     0xBE // Chapter 7: Cayenne's TM Overheat received
+#define FLAG_RECEIVED_CHARIZARDITE_Y                     0xBF // Chapter 7 one-offs: Cayenne rewards, the rougarou and its stone, Rita beaten
+#define FLAG_ROUTE14_ROUGAROU_DONE                       0xC0 // Chapter 7 one-offs: Cayenne rewards, the rougarou and its stone, Rita beaten
+#define FLAG_RECEIVED_LYCANROCITE                        0xC1 // Chapter 7 one-offs: Cayenne rewards, the rougarou and its stone, Rita beaten
+#define FLAG_REDFIELD_RITA_BEATEN                        0xC2 // Chapter 7 one-offs: Cayenne rewards, the rougarou and its stone, Rita beaten
+#define FLAG_ROUTE14_ITEM_SEED_BOMB                      0xC3 // Orleans Ch7: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE15_ITEM_HYPER_VOICE                    0xC4 // Orleans Ch7: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE16_ITEM_THROAT_CHOP                    0xC5 // Orleans Ch7: item balls (TMs) placed by the story pass
+#define FLAG_ROUTE17_ITEM_FOUL_PLAY                      0xC6 // Orleans Ch7: item balls (TMs) placed by the story pass
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
 #define FLAG_ORLEANS_POOL_072                           0xC8
 #define FLAG_ORLEANS_POOL_073                           0xC9

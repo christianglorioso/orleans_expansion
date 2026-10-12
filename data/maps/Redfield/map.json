@@ -27,7 +27,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_REDFIELD_CAYENNE",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_FLANNERY",
       "x": 36,
       "y": 13,
       "elevation": 3,
@@ -41,9 +41,9 @@
     },
     {
       "local_id": "LOCALID_REDFIELD_RITA",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 31,
-      "y": 12,
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 30,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Redfield_EventScript_Rita",
-      "flag": "0"
+      "flag": "FLAG_HIDE_REDFIELD_RITA"
     },
     {
       "local_id": "LOCALID_REDFIELD_FARMHAND",
@@ -136,6 +136,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Redfield_EventScript_Boatman",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_REDFIELD_WREN",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 38,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Redfield_EventScript_Wren",
+      "flag": "FLAG_HIDE_REDFIELD_WREN"
+    },
+    {
+      "local_id": "LOCALID_REDFIELD_SHUTTER_1",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 37,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Redfield_EventScript_Shutter1",
+      "flag": "FLAG_REDFIELD_MILL_OPEN"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -242,7 +270,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "31",
+      "script": "Redfield_EventScript_RitaGate"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "31",
+      "script": "Redfield_EventScript_RitaGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -283,6 +330,134 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Redfield_EventScript_SignLanding"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 4,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorA1"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 5,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorA2"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 4,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorB1"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 5,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorB2"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 8,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorC1"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 9,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorC2"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 10,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorD1"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 11,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorD2"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 10,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorE1"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 11,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorE2"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 10,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorF1"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 11,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_MirrorF2"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 6,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_DialMiddle1"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 7,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_DialMiddle2"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 10,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_DialSouth1"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 11,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Redfield_EventScript_DialSouth2"
     }
   ]
 }

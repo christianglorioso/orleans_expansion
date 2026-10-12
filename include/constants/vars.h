@@ -105,10 +105,10 @@
 #define VAR_HOLLOW_ARRIVAL                               0x4053 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_HOLLOW_RIDDLES                               0x4055 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
-#define VAR_ORLEANS_POOL_006                            0x4056
-#define VAR_ORLEANS_POOL_007                            0x4057
-#define VAR_ORLEANS_POOL_008                            0x4058
-#define VAR_ORLEANS_POOL_009                            0x4059
+#define VAR_REDFIELD_ARRIVAL                             0x4056 // Chapter 7: Redfield arrival scene (0 = not yet seen)
+#define VAR_REDFIELD_RAID_CALL                           0x4057 // Chapter 7: Wren calls the player to the Old Water raid (0 = not yet)
+#define VAR_REDFIELD_MIRRORS                             0x4058 // Chapter 7: mill yard mirror facings, 2 bits each (6 mirrors)
+#define VAR_OLD_WATER_RAID                               0x4059 // Chapter 7: Isaac's raid at the Old Water (0 idle, 1 scene armed, 2 done)
 #define VAR_ORLEANS_POOL_010                            0x405A
 #define VAR_ORLEANS_POOL_011                            0x405B
 #define VAR_ORLEANS_POOL_012                            0x405C

@@ -29,7 +29,8 @@ DEPTH = 10
 OPP = {"up": "down", "down": "up", "left": "right", "right": "left"}
 D_OF = {"up": "U", "down": "D", "left": "L", "right": "R"}
 GATE_FLAGS = ["FLAG_BADGE0%d_GET" % i for i in range(1, 9)] + ["FLAG_CUT_STORM_HEDGE", "FLAG_STORMS_EDGE_GRID_RESTORED",
-                                                              "FLAG_DUST_STORMS_LIFTED", "FLAG_SYS_POKEDEX_GET"]
+                                                              "FLAG_DUST_STORMS_LIFTED", "FLAG_SYS_POKEDEX_GET", "FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_ROUTE25_OPEN"]
+ARRIVAL_VARS = ["VAR_ROUTE4_ARRIVAL", "VAR_CAMP_ARRIVAL", "VAR_HOLLOW_ARRIVAL", "VAR_REDFIELD_ARRIVAL", "VAR_REDFIELD_RAID_CALL"]  # one-off arrival scenes: already seen
 FLIP_MIN = 0.15          # fraction of strip cells that changed
 FLIP_EXCESS = 0.10       # ... above the worst ordinary step on the same walk
 
@@ -45,6 +46,9 @@ def setup(b):
     b.give_mon("SPECIES_MEWTWO", 100)
     b.set_var("VAR_STARTER_MON", 2)
     b.set_var("VAR_ORLEANS_STORY", 44)
+    for v in ARRIVAL_VARS:
+        b.set_var(v, 1)
+    b.set_var("VAR_OLD_WATER_RAID", 2)
     missing = []
     for f in GATE_FLAGS:
         try:

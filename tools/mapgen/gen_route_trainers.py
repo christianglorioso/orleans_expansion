@@ -25,8 +25,11 @@ def party_block(t, iv=None):
     out.append("")
     for mon in t["team"]:
         sp, lv = mon[0], mon[1]
-        out.append(sp)
+        extras = mon[3] if len(mon) > 3 else {}
+        out.append(sp + (f" @ {extras['item']}" if extras.get("item") else ""))
         out.append(f"Level: {lv}")
+        if extras.get("ability"):
+            out.append(f"Ability: {extras['ability']}")
         out.append("IVs: " + " / ".join(f"{iv} {s}" for s in ("HP", "Atk", "Def", "SpA", "SpD", "Spe")))
         for mv in (mon[2] if len(mon) > 2 else []):
             out.append("- " + mv)

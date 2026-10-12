@@ -4,6 +4,9 @@
 
 #define PARTNER_NONE 0
 #define PARTNER_STEVEN 1
-#define PARTNER_COUNT 2
+#define PARTNER_WREN_CHIKORITA 2  // Orleans: Wren in the Old Water raid (one per starter line)
+#define PARTNER_WREN_FUECOCO 3
+#define PARTNER_WREN_TOTODILE 4
+#define PARTNER_COUNT 5
 
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

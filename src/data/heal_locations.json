@@ -445,6 +445,16 @@
       "respawn_npc": "LOCALID_LUTINS_HOLLOW_POKECENTER_NURSE0",
       "respawn_x": 6,
       "respawn_y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_REDFIELD",
+      "map": "MAP_REDFIELD",
+      "x": 27,
+      "y": 28,
+      "respawn_map": "MAP_REDFIELD_POKECENTER",
+      "respawn_npc": "LOCALID_REDFIELD_POKECENTER_NURSE0",
+      "respawn_x": 7,
+      "respawn_y": 4
     }
   ]
 }
