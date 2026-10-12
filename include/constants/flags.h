@@ -104,46 +104,46 @@
 #define FLAG_RESPAWN_STORMS_EDGE_SET     0x4A // Orleans: the Storm's Edge respawn point was set on the first arrival
 #define FLAG_ORLEANS_TUTOR_RELEARNER                     0x4B // Orleans: the Crescent City tutor has opened the Move Relearner tutor list (P_FLAG_TUTOR_MOVES)
 #define FLAG_ORLEANS_EGG_RELEARNER                       0x4C // Orleans: the Crescent City tutor has opened the Move Relearner egg-move list (P_FLAG_EGG_MOVES)
-#define FLAG_ORLEANS_POOL_002                           0x4D
-#define FLAG_ORLEANS_POOL_003                           0x4E
-#define FLAG_ORLEANS_POOL_004                           0x4F
+#define FLAG_POINTE_VALVE_1                              0x4D // Orleans Ch4: refinery valve n shut
+#define FLAG_POINTE_VALVE_2                              0x4E // Orleans Ch4: refinery valve n shut
+#define FLAG_POINTE_VALVE_3                              0x4F // Orleans Ch4: refinery valve n shut
 
 // Scripts
-#define FLAG_ORLEANS_POOL_005                           0x50
+#define FLAG_POINTE_VALVE_4                              0x50 // Orleans Ch4: refinery valve n shut
 #define FLAG_SET_WALL_CLOCK                      0x51
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_ORLEANS_POOL_006                           0x54
-#define FLAG_ORLEANS_POOL_007                           0x55
+#define FLAG_POINTE_GYM_TAILWIND                         0x54 // Orleans Ch4: the gym's tailwind is up, the rafter nets are blown aside
+#define FLAG_POINTE_TOURNEY_WON                          0x55 // Orleans Ch4: the Route 5 fishing tournament was won (weigh-in passed)
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
-#define FLAG_ORLEANS_POOL_008                           0x57
-#define FLAG_ORLEANS_POOL_009                           0x58
-#define FLAG_ORLEANS_POOL_010                           0x59
+#define FLAG_RECEIVED_GOOD_ROD                           0x57 // Orleans Ch4: Good Rod received from the tournament angler
+#define FLAG_RECEIVED_SUPER_ROD                          0x58 // Orleans Ch4: Kingfisher's Super Rod received
+#define FLAG_RECEIVED_TM_AERIAL_ACE                      0x59 // Orleans Ch4: Kingfisher's TM Aerial Ace received
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
-#define FLAG_ORLEANS_POOL_011                           0x5E
+#define FLAG_RECEIVED_HM_SURF                            0x5E // Orleans Ch4: HM Surf received at the Old Water midpoint visit
 #define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F
 #define FLAG_RECEIVED_SECRET_POWER           0x60
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61
-#define FLAG_ORLEANS_POOL_012                           0x62
-#define FLAG_ORLEANS_POOL_013                           0x63
-#define FLAG_ORLEANS_POOL_014                           0x64
-#define FLAG_ORLEANS_POOL_015                           0x65
-#define FLAG_ORLEANS_POOL_016                           0x66
-#define FLAG_ORLEANS_POOL_017                           0x67
+#define FLAG_RECEIVED_ROCKRUFF                           0x62 // Orleans Ch4: Wren's Own Tempo Rockruff received
+#define FLAG_ROUTE6_DEBRIS_CLEARED                       0x63 // Orleans Ch4: verse 4 cleared the Route 6 storm debris (set at the Old Water midpoint visit)
+#define FLAG_HIDE_POINTE_CAMILLE                         0x64 // Orleans Ch4: Camille / Jayden in the refinery, hidden once the sabotage is stopped
+#define FLAG_HIDE_POINTE_JAYDEN                          0x65 // Orleans Ch4: Camille / Jayden in the refinery, hidden once the sabotage is stopped
+#define FLAG_POINTE_ITEM_METAL_COAT                      0x66 // Orleans Ch4: item balls placed by the story pass
+#define FLAG_POINTE_ITEM_SMOKE_BALL                      0x67 // Orleans Ch4: item balls placed by the story pass
 
-#define FLAG_ORLEANS_POOL_018                           0x68
+#define FLAG_POINTE_ITEM_FEAROWITE                       0x68 // Orleans Ch4: item balls placed by the story pass
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
-#define FLAG_ORLEANS_POOL_019                           0x6B
+#define FLAG_ROUTE5_ITEM_AGILITY                         0x6B // Orleans Ch4: item balls placed by the story pass
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
-#define FLAG_ORLEANS_POOL_020                           0x6D
-#define FLAG_ORLEANS_POOL_021                           0x6E
+#define FLAG_ROUTE4_ARRIVAL_SEEN                         0x6D // Orleans Ch4: the riverboat arrival scene on Route 4 was played
+#define FLAG_POINTE_GATE_SCENE_SEEN                      0x6E // Orleans Ch4: the refinery gate scene was played
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
 #define FLAG_ORLEANS_POOL_022                           0x71
@@ -562,9 +562,9 @@
 #define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_ORLEANS_POOL_178                           (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_ORLEANS_POOL_179                           (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_ORLEANS_POOL_180                           (FLAG_HIDDEN_ITEMS_START + 0x05)
+#define FLAG_POINTE_HIDDEN_AUGURITE                      (FLAG_HIDDEN_ITEMS_START + 0x03) // Orleans Ch4: hidden items
+#define FLAG_ROUTE4_HIDDEN_DUSK_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x04) // Orleans Ch4: hidden items
+#define FLAG_ROUTE5_HIDDEN_SUN_STONE                     (FLAG_HIDDEN_ITEMS_START + 0x05) // Orleans Ch4: hidden items
 #define FLAG_ORLEANS_POOL_181                           (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_ORLEANS_POOL_182                           (FLAG_HIDDEN_ITEMS_START + 0x07)
 #define FLAG_ORLEANS_POOL_183                           (FLAG_HIDDEN_ITEMS_START + 0x08)

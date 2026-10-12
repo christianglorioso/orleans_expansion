@@ -415,6 +415,16 @@
       "respawn_npc": "LOCALID_CRESCENT_CITY_POKECENTER_WATERFRONT_NURSE0",
       "respawn_x": 7,
       "respawn_y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_POINTE_ROUGE",
+      "map": "MAP_POINTE_ROUGE",
+      "x": 40,
+      "y": 7,
+      "respawn_map": "MAP_POINTE_ROUGE_POKECENTER",
+      "respawn_npc": "LOCALID_POINTE_ROUGE_POKECENTER_NURSE0",
+      "respawn_x": 7,
+      "respawn_y": 4
     }
   ]
 }

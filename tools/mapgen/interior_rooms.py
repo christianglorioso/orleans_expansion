@@ -131,7 +131,7 @@ ROOMS = [
          people=[("nurse", ""), ("apprentice", "That one's sweetgrass. That one's\\nfor fevers. That one... I forget.")]),
     room(OW, ROOT, map="OldWater_SongHouse", const="MAP_OLD_WATER_SONG_HOUSE", door_label="Song house", mockup="old_water_song_house",
          people=[("tupelo", "", {"custom": True}),
-                 ("wren", "WREN: This is where the telling\\nis kept. Listen.")]),
+                 ("wren", "", {"custom": True})]),
     room(OW, ROOT, map="OldWater_Trader", const="MAP_OLD_WATER_TRADER", door_label="Trader", mockup="old_water_trader",
          people=[("clerk", ""), ("child", "I collect shiny shells!\\nThis one's my favourite.")],
          mart=["ITEM_NET_BALL", "ITEM_POKE_BALL", "ITEM_POTION", "ITEM_ORAN_BERRY"]),

@@ -4,7 +4,10 @@
 #include "global.h"
 #include "pokemon.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "constants/pokemon.h"
+#include "constants/game_stat.h"
+#include "constants/vars.h"
 
 static const u8 sEvData[6] = {MON_DATA_HP_EV, MON_DATA_ATK_EV, MON_DATA_DEF_EV, MON_DATA_SPATK_EV, MON_DATA_SPDEF_EV, MON_DATA_SPEED_EV};
 static const u8 sIvData[6] = {MON_DATA_HP_IV, MON_DATA_ATK_IV, MON_DATA_DEF_IV, MON_DATA_SPATK_IV, MON_DATA_SPDEF_IV, MON_DATA_SPEED_IV};
@@ -71,4 +74,16 @@ void OrleansSvc_MaxFriendship(void)
         return;
     SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
     gSpecialVar_Result = 1;
+}
+
+// The Route 5 fishing tournament: the score is the number of fishing bites (GAME_STAT_FISHING_ENCOUNTERS, +1 per bite).
+// SetFishingBaseline stores the counter at entry in VAR_TOURNEY_BASELINE; FishingBites returns the bites since in VAR_RESULT.
+void OrleansSvc_SetFishingBaseline(void)
+{
+    VarSet(VAR_TOURNEY_BASELINE, (u16)GetGameStat(GAME_STAT_FISHING_ENCOUNTERS));
+}
+
+void OrleansSvc_FishingBites(void)
+{
+    gSpecialVar_Result = (u16)((u16)GetGameStat(GAME_STAT_FISHING_ENCOUNTERS) - VarGet(VAR_TOURNEY_BASELINE));
 }

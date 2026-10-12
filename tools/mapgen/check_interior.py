@@ -97,7 +97,8 @@ def main(args):
         if start:
             q = deque([start])
             seen.add(start)
-            npcs = {(o["x"], o["y"]) for o in m["object_events"]}
+            # objects hidden by a flag (a gym net, a one-off scene) are not walls here: a puzzle gate is proved in story_gates_check.py
+            npcs = {(o["x"], o["y"]) for o in m["object_events"] if str(o.get("flag", "0")) in ("0", "")}
             while q:
                 x, y = q.popleft()
                 for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):

@@ -93,7 +93,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route6_EventScript_Debris1",
-      "flag": "FLAG_BADGE04_GET"
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
     },
     {
       "local_id": "LOCALID_ORLEANS_ROUTE6_DEBRIS_2",
@@ -107,7 +107,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route6_EventScript_Debris2",
-      "flag": "FLAG_BADGE04_GET"
+      "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"
     }
   ],
   "warp_events": [],

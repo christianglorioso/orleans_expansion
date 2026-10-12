@@ -8,13 +8,13 @@ PointeRouge_HouseNw_EventScript_Father0::
 	end
 
 PointeRouge_HouseNw_Text_Father0:
-	.string "forty years at the refinery,\nnever seen a leak like that$"
+	.string "Forty years at the refinery. I never\nsaw a leak like this one.$"
 
 PointeRouge_HouseNw_EventScript_Daughter1::
 	msgbox PointeRouge_HouseNw_Text_Daughter1, MSGBOX_NPC
 	end
 
 PointeRouge_HouseNw_Text_Daughter1:
-	.string "wants to be a Bird Keeper like\nKINGFISHER$"
+	.string "I want to be a Bird Keeper like\nKINGFISHER when I grow up!$"
 
 @ --- mapgen: generated NPC scripts (end) ---

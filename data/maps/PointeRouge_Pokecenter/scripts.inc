@@ -1,5 +1,11 @@
 PointeRouge_Pokecenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PointeRouge_Pokecenter_OnTransition
 	.byte 0
+
+@ Walking in sets the respawn point
+PointeRouge_Pokecenter_OnTransition:
+	setrespawn HEAL_LOCATION_POINTE_ROUGE
+	end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -16,13 +22,13 @@ PointeRouge_Pokecenter_EventScript_RefineryWorker1::
 	end
 
 PointeRouge_Pokecenter_Text_RefineryWorker1:
-	.string "something's wrong at the\nplant, they sent us all home$"
+	.string "Something's wrong at the plant. They\nsent every one of us home.$"
 
 PointeRouge_Pokecenter_EventScript_Angler2::
 	msgbox PointeRouge_Pokecenter_Text_Angler2, MSGBOX_NPC
 	end
 
 PointeRouge_Pokecenter_Text_Angler2:
-	.string "the fishing tournament on\nRoute 5 decides who faces\pKINGFISHER$"
+	.string "The fishing tournament on Route 5 decides\nwho may face KINGFISHER.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

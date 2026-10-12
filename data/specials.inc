@@ -641,3 +641,5 @@ gSpecials::
 	def_special OrleansSvc_ChangeEv
 	def_special OrleansSvc_MaxIv
 	def_special OrleansSvc_MaxFriendship
+	def_special OrleansSvc_SetFishingBaseline
+	def_special OrleansSvc_FishingBites

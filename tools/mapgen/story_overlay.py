@@ -122,11 +122,11 @@ OVERLAY = {
 
 # Routes 6-8 are reachable on foot from Crescent's west edge along Route 6's south shore, but they open with the fourth verse
 # (decision 3: the verse clears a water obstacle, here a jam of storm debris). The shore path narrows to two cells at x 29
-# (rows 22, 23); both are debris objects, hidden by FLAG_BADGE04_GET. (Flood fill: story_gates_check.py.)
+# (rows 22, 23); both are debris objects, hidden by FLAG_ROUTE6_DEBRIS_CLEARED. (Flood fill: story_gates_check.py.)
 OVERLAY["Route6"] = {
     "add_objects": [
         {"id": f"LOCALID_ORLEANS_ROUTE6_DEBRIS_{n}", "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE", "x": 29, "y": y,
-         "move": "MOVEMENT_TYPE_NONE", "text": "", "custom": True, "flag": "FLAG_BADGE04_GET"}
+         "move": "MOVEMENT_TYPE_NONE", "text": "", "custom": True, "flag": "FLAG_ROUTE6_DEBRIS_CLEARED"}
         for n, y in ((1, 22), (2, 23))
     ],
 }
@@ -183,6 +183,29 @@ def _merge_ch3():
 
 
 _merge_ch3()
+
+# ---------------------------------------------------------------------------------------------- Chapter 4 (story_data_ch4.py)
+import story_data_ch4 as _c4  # noqa: E402
+
+
+def _merge_into(dst, src):
+    for key, val in src.items():
+        if isinstance(val, dict):
+            dst.setdefault(key, {}).update(val)
+        elif isinstance(val, list):
+            dst.setdefault(key, []).extend(val)
+        else:
+            dst[key] = val
+
+
+def _merge_ch4():
+    for name, data in (("Route4", _c4.ROUTE4), ("Route5", _c4.ROUTE5), ("PointeRouge", _c4.POINTE_ROUGE)):
+        _merge_into(OVERLAY.setdefault(name, {}), data)
+    for k, v in _c4.ROOMS.items():
+        INTERIOR[k] = v
+
+
+_merge_ch4()
 
 # ---------------------------------------------------------------------------------------------- application
 def apply(spec):

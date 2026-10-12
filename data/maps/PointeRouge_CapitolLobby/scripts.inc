@@ -8,13 +8,13 @@ PointeRouge_CapitolLobby_EventScript_Receptionist0::
 	end
 
 PointeRouge_CapitolLobby_Text_Receptionist0:
-	.string "the observation deck is open\nto the public$"
+	.string "The observation deck is open to the\npublic. Elevator's on the right.$"
 
 PointeRouge_CapitolLobby_EventScript_TourGuide1::
 	msgbox PointeRouge_CapitolLobby_Text_TourGuide1, MSGBOX_NPC
 	end
 
 PointeRouge_CapitolLobby_Text_TourGuide1:
-	.string "the tower was built after the\ngreat flood of the '27$"
+	.string "The tower went up after the great\nflood of '27. Nothing's moved it.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

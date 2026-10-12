@@ -89,7 +89,7 @@ const struct FieldMoveInfo gFieldMoveInfo[FIELD_MOVES_COUNT] =
         .unlockType = BADGE_UNLOCK,
         .moveID = MOVE_SURF,
         .partyMsgID = PARTY_MSG_CANT_SURF_HERE,
-        .arg = FLAG_TO_BADGE(FLAG_BADGE05_GET),
+        .arg = FLAG_TO_BADGE(FLAG_BADGE04_GET), // Orleans: Surf comes with the 4th badge (the Old Water midpoint visit gives HM Surf)
     },
 
     [FIELD_MOVE_FLY] =

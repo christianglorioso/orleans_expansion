@@ -38,6 +38,10 @@ def layout(name):
     return m, struct.unpack(f"<{len(raw) // 2}H", raw), lay["width"], lay["height"]
 
 
+def layout_objects(name):
+    return [o for o in json.load(open(f"data/maps/{name}/map.json"))["object_events"] if "local_id" in o]
+
+
 class Grid:
     def __init__(self, name, extra_block=(), remove_objects=(), raised=None):
         self.m, self.mb, self.w, self.h = layout(name)
@@ -188,8 +192,8 @@ def crescent_doors():
 def crescent_route6():
     r6 = Grid("Route6")
     deb = [o for o in r6.m["object_events"] if "DEBRIS" in o.get("local_id", "")]
-    check(len(deb) == 2 and all(o["flag"] == "FLAG_BADGE04_GET" for o in deb),
-          f"Route 6: {len(deb)} storm-debris objects hidden by FLAG_BADGE04_GET at {[(o['x'], o['y']) for o in deb]}")
+    check(len(deb) == 2 and all(o["flag"] == "FLAG_ROUTE6_DEBRIS_CLEARED" for o in deb),
+          f"Route 6: {len(deb)} storm-debris objects hidden by FLAG_ROUTE6_DEBRIS_CLEARED at {[(o['x'], o['y']) for o in deb]}")
     trig = [(c["x"], c["y"]) for c in json.load(open("data/maps/CrescentCity/map.json"))["coord_events"]
             if "FloodedRoad" in c["script"]]
     cr = Grid("CrescentCity")
@@ -271,6 +275,28 @@ def pointe_rouge_east():
           "Pointe Rouge: the only way east is the Route 23 connection on the last column")
 
 
+def pointe_gym():
+    """Kingfisher's rafters sit behind two nets in the net-rack wall (gaps (6, 7) and (14, 7)); the three fans are reachable first."""
+    nets = [o["local_id"] for o in layout_objects("PointeRouge_Gym") if "_NET" in o["local_id"]]
+    check(len(nets) == 2, f"Pointe Rouge gym: {len(nets)} net objects")
+    g = Grid("PointeRouge_Gym")
+    door = [(10, 14)]
+    reach = g.fill(door)
+    check(not any(y < 7 for _, y in reach), f"Pointe Rouge gym, nets in place: nothing north of the net-rack wall is reachable ({sorted(c for c in reach if c[1] < 7)[:3]})")
+    check({(6, 10), (14, 10), (10, 8)} <= reach, "Pointe Rouge gym: the three fans' standing cells (6, 10), (14, 10), (10, 8) are reachable with the nets in place")
+    king = next(o for o in g.m["object_events"] if o["local_id"].endswith("KINGFISHER0"))
+    g2 = Grid("PointeRouge_Gym", remove_objects=nets)
+    reach2 = g2.fill(door)
+    check((king["x"], king["y"] + 1) in reach2, "Pointe Rouge gym, nets blown away: Kingfisher's tile is reachable")
+    flags = {o["flag"] for o in g.m["object_events"] if o["local_id"] in nets}
+    check(flags == {"FLAG_POINTE_GYM_TAILWIND"}, "Pointe Rouge gym: both nets are hidden by FLAG_POINTE_GYM_TAILWIND")
+    pr = Grid("PointeRouge")
+    guard = next((o for o in pr.m["object_events"] if o.get("local_id") == "LOCALID_POINTE_ROUGE_ICE_PLANT_GUARD"), None)
+    door2 = (39, 25)
+    nb = [(door2[0] + dx, door2[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)) if pr.walk(door2[0] + dx, door2[1] + dy) or guard and (door2[0] + dx, door2[1] + dy) == (guard["x"], guard["y"])]
+    check(guard is not None and nb == [(guard["x"], guard["y"])], f"Pointe Rouge: the ice plant door's only approach cell {nb} is held by the guard")
+
+
 def all_triggers():
     names = {json.load(open(os.path.join("tools/mapgen/maps", f), encoding="utf-8"))["map"]
              for f in os.listdir("tools/mapgen/maps")
@@ -312,6 +338,7 @@ if __name__ == "__main__":
     crescent_route6()
     crescent_doors()
     crescent_gym()
+    pointe_gym()
     pointe_rouge_east()
     all_triggers()
     print(f"{results.count(False)} failed of {len(results)}")
