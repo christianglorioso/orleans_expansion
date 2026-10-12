@@ -1148,7 +1148,7 @@
     {
       "type": "sign",
       "x": 55,
-      "y": 60,
+      "y": 58,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CrescentCity_EventScript_LeveeSign"

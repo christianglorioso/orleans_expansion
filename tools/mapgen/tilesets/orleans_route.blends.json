@@ -1170,5 +1170,12 @@
   "pixels": "tools/mapgen/tilesets/approach/ap_fa52ff971a34.png",
   "base": "johto:0D1",
   "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ovl_lmk_2_9__ekat_marsh_inNE",
+  "overlay": {
+   "base": "ekat:marsh_inNE",
+   "art": "lmk:2_9"
+  }
  }
 ]

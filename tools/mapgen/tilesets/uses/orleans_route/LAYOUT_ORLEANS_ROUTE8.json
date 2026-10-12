@@ -48,6 +48,7 @@
 "patch:blend_marsh_N_inNW",
 "patch:blend_marsh_S_inSE",
 "patch:blend_marsh_S_inSW",
+"patch:blend_marsh_W_inNW",
 "patch:blend_marsh_landNW_inSW",
 "patch:blend_marsh_landSW_inNW",
 "patch:cypress_00_water",
@@ -73,5 +74,5 @@
 "patch:ovl_lmk_1_9__ekat_marsh_C",
 "patch:ovl_lmk_2_10__ekat_marsh_C",
 "patch:ovl_lmk_2_11__ekat_marsh_C",
-"patch:ovl_lmk_2_9__ekat_marsh_C"
+"patch:ovl_lmk_2_9__ekat_marsh_inNE"
 ]

@@ -88,11 +88,17 @@ def prepare(b, key):
         return
     spec = b.spec
     keep, dropped = [], []
+    ev = set()
+    for coll in ("objects", "items", "hidden_items"):
+        ev |= {(o["x"], o["y"]) for o in spec.get(coll, [])}
     for bd in spec.get("buildings", []):
         cells = prefab_cells(b, bd)
         inside = [(x, y) for x, y, _ in cells if (x, y) in strict]
         if not inside:
             keep.append(bd)
+        elif {(x, y) for x, y, _ in cells} & ev and not prefab_is_primary(b, bd):
+            keep.append(bd)          # something stands on it (an NPC on a step, a trainer on a deck): never taken out
+            b.band_unresolved.append(f"{bd.get('label', bd['prefab'])} ({bd['prefab']}) at ({bd['x']},{bd['y']}): an event stands on it")
         elif prefab_is_primary(b, bd):
             keep.append(bd)
         elif is_structure(b, bd) and (b.ts["prefabs"][bd["prefab"]].get("door") or bd.get("door")) and nudge(b, bd, strict, keep):

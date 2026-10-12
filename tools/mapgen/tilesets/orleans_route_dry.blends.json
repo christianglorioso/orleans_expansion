@@ -1484,5 +1484,42 @@
   "pixels": "tools/mapgen/tilesets/approach/ap_fce964fd014f.png",
   "base": "dry:1_3",
   "attr_of": "dry:1_3"
+ },
+ {
+  "id": "ovl_dry_o_5_5__dry_0_19",
+  "overlay": {
+   "base": "dry:0_19",
+   "art": "dry_o:5_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_12_7__dry_1_18",
+  "overlay": {
+   "base": "dry:1_18",
+   "art": "lmk:12_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_13_7__dry_1_19",
+  "overlay": {
+   "base": "dry:1_19",
+   "art": "lmk:13_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_13_8__dry_3_19",
+  "overlay": {
+   "base": "dry:3_19",
+   "art": "lmk:13_8"
+  }
+ },
+ {
+  "id": "ovl_lmk_13_9__dry_2_22__door",
+  "overlay": {
+   "base": "dry:2_22",
+   "art": "lmk:13_9",
+   "walk": true,
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
  }
 ]

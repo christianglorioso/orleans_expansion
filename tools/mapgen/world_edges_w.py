@@ -151,8 +151,8 @@ def route_10():
     # system: grass shore row 16 under the docks' feet, an upper walk (rows 17-18, x 0-11), the promenade (x 0-1, rows 17-24,
     # meeting Crescent's lakefront landing across the seam: Route 10 rows 19-22 = Crescent rows 17-20) and a lower walk
     # (rows 23-24) under both boathouses' doors
-    g.rect(0, 14, 13, 2, "~")
-    g.rect(0, 16, 13, 1, ".")
+    g.rect(0, 14, 13, 1, "~")
+    g.rect(0, 15, 13, 2, ".")        # the shore row matches Crescent's (its water ends at row 12 = Route 10 row 14)
     g.rect(0, 17, 12, 2, ":")
     g.rect(2, 19, 11, 6, ".")
     g.rect(0, 19, 2, 6, ":")

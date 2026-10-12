@@ -155,21 +155,21 @@
     },
     {
       "x": 4,
-      "y": 27,
+      "y": 26,
       "elevation": 3,
       "dest_map": "MAP_GRAND_OAK_HOUSE_SW1",
       "dest_warp_id": "0"
     },
     {
       "x": 10,
-      "y": 27,
+      "y": 26,
       "elevation": 3,
       "dest_map": "MAP_GRAND_OAK_HOUSE_SW2",
       "dest_warp_id": "0"
     },
     {
       "x": 33,
-      "y": 27,
+      "y": 26,
       "elevation": 3,
       "dest_map": "MAP_GRAND_OAK_HOUSE_SE",
       "dest_warp_id": "0"

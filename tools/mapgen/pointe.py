@@ -46,7 +46,7 @@ KEY, NAME, CONST = "pointe_rouge", "PointeRouge", "MAP_POINTE_ROUGE"
 CFG = "orleans_pointe"
 W, H = 66, 48
 SPEC = os.path.join(HERE, "maps", KEY + ".json")
-RIVER_EAST = 58  # first land column east of the river
+RIVER_EAST = 57  # first land column east of the river
 FERRY = "--no-ferry" not in sys.argv  # the ferry pier and Crescent's riverboat (pointe_tileset.py adds its art; --no-ferry leaves it out)
 
 
@@ -149,8 +149,8 @@ def terrain(t):
     S(39, 40, 9, 4)         # the gym's forecourt on the quay
     S(26, 44, 22, 2)        # the levee road along the south, out to the quay
     S(QUAY_X, 9, 1, 39)     # the quay's edge from the north bridge down off the map
-    S(58, 5, 8, 2)          # Route 23, east of the north bridge (north-east exit, rows 5-6)
-    S(58, 26, 8, 2)         # Route 23's second road, east of the south bridge (east exit, rows 26-27)
+    S(57, 5, 9, 2)          # Route 23, east of the north bridge (north-east exit, rows 5-6)
+    S(57, 26, 9, 2)         # Route 23's second road, east of the south bridge (east exit, rows 26-27)
     S(61, 7, 2, 19)         # the east-bank riverside walk between the bridges
     S(31, 15, 4, 2)         # Capitol plaza at the foot of the staircase
     S(26, 37, 6, 2)         # the south house's lane off the avenue ...
@@ -187,7 +187,7 @@ BUILDINGS = {  # room key -> top-left cell (prefabs come from town_plans.PLANS)
     "pointe_rouge_house_nw": (4, 2), "pointe_rouge_house_ne": (13, 2),
     "pointe_rouge_capitol_lobby": (28, 1),
     "pointe_rouge_pokecenter": (39, 3), "pointe_rouge_mart": (39, 11),
-    "pointe_rouge_refinery": (3, 26),
+    "pointe_rouge_refinery": (7, 26),
     "pointe_rouge_tackle_shop": (28, 21), "pointe_rouge_ice_plant": (35, 20),
     "pointe_rouge_house_s": (28, 32), "pointe_rouge_gym": (40, 34),
 }
@@ -234,9 +234,9 @@ def refinery_works(t):
     P = lambda *a: t.place(*a, ground=None)  # everything stands on the paved yard
     for x in (2, 6, 10, 14):
         P("tank", x, 22, "Crude tank")
-    P("column", 11, 26, "Distillation column")
-    P("column", 13, 26, "Distillation column")
-    P("flare", 17, 26, "Flare stack")
+    P("column", 14, 26, "Distillation column")
+    P("column", 16, 26, "Distillation column")
+    P("flare", 18, 26, "Flare stack")
     for x in range(2, 16):  # the pipe rack from the tank farm past the process house to the columns
         P("pipes", x, 25, "Pipe rack")
     P("pipes_end", 16, 25, "Pipe rack")
@@ -306,7 +306,8 @@ def bridges(t):
     cells at each end, which block."""
     for y0 in BRIDGE_ROWS.values():
         kind = "stone"  # both crossings are the balustraded stone arch bridge (the owner's pick)
-        x0 = min(river_west(y) for y in range(y0, y0 + 5)) - 1
+        x0 = min(river_west(y) for y in range(y0, y0 + 5)) - 2   # one column further west: the stone bridge needs an even span and the east end
+        # (RIVER_EAST 57) must stay west of the seam band (x >= 58)
         L = RIVER_EAST - x0 + 1
         rows = bridge_rows(kind, L)
         rows = [[("johto:1C1" if c == "1C1" else c) for c in row] for row in rows]  # the deck: paving as top-layer art

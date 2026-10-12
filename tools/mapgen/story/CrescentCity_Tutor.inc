@@ -9,13 +9,25 @@ CrescentCity_Tutor_EventScript_MoveTutor0::
 	lock
 	faceplayer
 	msgbox CrescentCity_Tutor_Text_TutorIntro, MSGBOX_DEFAULT
-	dynmultichoice 1, 1, FALSE, 5, 0, DYN_MULTICHOICE_CB_NONE, CrescentCity_Tutor_Text_MoveSubstitute, CrescentCity_Tutor_Text_MoveFirePunch, CrescentCity_Tutor_Text_MoveSwift, CrescentCity_Tutor_Text_MoveIcePunch, CrescentCity_Tutor_Text_Cancel
+	@ opens the Move Relearner's tutor and egg-move lists (summary screen too): every move the dex sheet gives a species that is not a TM; see tools/dex/tm_list.md
+	setflag FLAG_ORLEANS_TUTOR_RELEARNER
+	setflag FLAG_ORLEANS_EGG_RELEARNER
+	dynmultichoice 1, 1, FALSE, 6, 0, DYN_MULTICHOICE_CB_NONE, CrescentCity_Tutor_Text_MoveSubstitute, CrescentCity_Tutor_Text_MoveFirePunch, CrescentCity_Tutor_Text_MoveSwift, CrescentCity_Tutor_Text_MoveIcePunch, CrescentCity_Tutor_Text_MoveMore, CrescentCity_Tutor_Text_Cancel
 	switch VAR_RESULT
 	case 0, CrescentCity_Tutor_EventScript_TeachSubstitute
 	case 1, CrescentCity_Tutor_EventScript_TeachFirePunch
 	case 2, CrescentCity_Tutor_EventScript_TeachSwift
 	case 3, CrescentCity_Tutor_EventScript_TeachIcePunch
+	case 4, CrescentCity_Tutor_EventScript_MoreMoves
 	goto CrescentCity_Tutor_EventScript_TutorDeclined
+
+@ free: the relearner's own picker lists, for the chosen POKéMON, every tutor move it can learn
+CrescentCity_Tutor_EventScript_MoreMoves:
+	msgbox CrescentCity_Tutor_Text_MoreIntro, MSGBOX_DEFAULT
+	setmoverelearnerstate MOVE_RELEARNER_TUTOR_MOVES
+	bufferstring STR_VAR_3, MoveRelearner_Text_TutorMoveLWR
+	goto MoveRelearner_EventScript_TeachMove
+	end
 
 CrescentCity_Tutor_EventScript_TeachSubstitute:
 	setvar VAR_0x8009, MOVE_SUBSTITUTE
@@ -207,6 +219,13 @@ CrescentCity_Tutor_Text_MoveSwift:
 
 CrescentCity_Tutor_Text_MoveIcePunch:
 	.string "ICE PUNCH$"
+
+CrescentCity_Tutor_Text_MoveMore:
+	.string "OTHER MOVES$"
+
+CrescentCity_Tutor_Text_MoreIntro:
+	.string "TUTOR: Anything else a POKéMON\n"
+	.string "could learn from me? Pick one.$"
 
 CrescentCity_Tutor_Text_EvAdd:
 	.string "ADD 10 (¥1000)$"

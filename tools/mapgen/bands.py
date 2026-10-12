@@ -25,7 +25,9 @@ sys.path.insert(0, HERE)
 import world  # noqa: E402
 
 ROOT = world.ROOT
-DEPTH = {"N": 5, "S": 5, "W": 7, "E": 7}
+# the engine draws a 16 x 16 window and copies 7 rows (8 columns east) of the neighbour: cells past the 5 visible rows are drawn with the OLD
+# tileset when the player crosses and stay stale (black) until scrolled over (in-engine walk test: Pointe Rouge -> Route 4)
+DEPTH = {"N": 7, "S": 7, "W": 7, "E": 8}
 SIDE = {"right": "E", "left": "W", "down": "S", "up": "N"}
 OPP = {"E": "W", "W": "E", "N": "S", "S": "N"}
 _cache = {}

@@ -8,7 +8,15 @@ CrescentCity_Dept2f_EventScript_Clerk0::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
+	@ the Linking Cord (every trade evolution) and the Prism Scale (Feebas -> Milotic) join the stock at the third badge
+	goto_if_set FLAG_BADGE03_GET, CrescentCity_Dept2f_EventScript_Clerk01
 	pokemart CrescentCity_Dept2f_Pokemart_Clerk00
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Dept2f_EventScript_Clerk01:
+	pokemart CrescentCity_Dept2f_Pokemart_Clerk01
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -19,8 +27,18 @@ CrescentCity_Dept2f_Pokemart_Clerk00:
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_EVERSTONE
+	pokemartlistend
+
+	.align 2
+CrescentCity_Dept2f_Pokemart_Clerk01:
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
 	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_EVERSTONE
+	.2byte ITEM_PRISM_SCALE
 	pokemartlistend
 
 CrescentCity_Dept2f_EventScript_Clerk1::

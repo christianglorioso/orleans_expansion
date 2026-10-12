@@ -3071,5 +3071,12 @@
    "M": "ekat:marsh_inNE",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "lv_2038e2c9255a",
+  "pixels": "tools/mapgen/tilesets/levee/lv_2038e2c9255a.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
  }
 ]

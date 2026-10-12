@@ -46,7 +46,7 @@
     },
     {
       "prefab": "refinery",
-      "x": 3,
+      "x": 7,
       "y": 26,
       "label": "Refinery (pointe_rouge_refinery)",
       "interior": "MAP_POINTE_ROUGE_REFINERY"
@@ -143,19 +143,19 @@
     },
     {
       "prefab": "column",
-      "x": 11,
+      "x": 14,
       "y": 26,
       "label": "Distillation column"
     },
     {
       "prefab": "column",
-      "x": 13,
+      "x": 16,
       "y": 26,
       "label": "Distillation column"
     },
     {
       "prefab": "flare",
-      "x": 17,
+      "x": 18,
       "y": 26,
       "label": "Flare stack"
     },
@@ -1389,7 +1389,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 47,
+      "x": 46,
       "y": 4,
       "label": "Bridge",
       "rows": [
@@ -1600,7 +1600,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 49,
+      "x": 48,
       "y": 8,
       "label": "Bridge",
       "rows": [
@@ -1635,7 +1635,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 47,
+      "x": 46,
       "y": 8,
       "label": "Bridge abutment",
       "rows": [
@@ -1651,7 +1651,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 57,
+      "x": 56,
       "y": 8,
       "label": "Bridge abutment",
       "rows": [
@@ -1667,7 +1667,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 47,
+      "x": 46,
       "y": 25,
       "label": "Bridge",
       "rows": [
@@ -1878,7 +1878,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 49,
+      "x": 48,
       "y": 29,
       "label": "Bridge",
       "rows": [
@@ -1913,7 +1913,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 47,
+      "x": 46,
       "y": 29,
       "label": "Bridge abutment",
       "rows": [
@@ -1929,7 +1929,7 @@
     },
     {
       "prefab": "bridge",
-      "x": 57,
+      "x": 56,
       "y": 29,
       "label": "Bridge abutment",
       "rows": [
@@ -2266,30 +2266,6 @@
       "x": 64,
       "y": 21,
       "label": "Magnolia"
-    },
-    {
-      "prefab": "roses",
-      "x": 9,
-      "y": 29,
-      "label": "Roses"
-    },
-    {
-      "prefab": "roses",
-      "x": 10,
-      "y": 29,
-      "label": "Roses"
-    },
-    {
-      "prefab": "roses",
-      "x": 9,
-      "y": 30,
-      "label": "Roses"
-    },
-    {
-      "prefab": "roses",
-      "x": 10,
-      "y": 30,
-      "label": "Roses"
     },
     {
       "prefab": "roses",
@@ -2800,12 +2776,6 @@
       "x": 46,
       "y": 24,
       "label": "Crates"
-    },
-    {
-      "prefab": "barrels",
-      "x": 46,
-      "y": 25,
-      "label": "Barrels"
     },
     {
       "prefab": "crates",

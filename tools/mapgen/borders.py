@@ -99,7 +99,10 @@ def terrain_agrees(b, style, side, spans):
 
 
 ENABLED = True
-WATER_WALLS = False   # water borders: 2 cells of water laid over a land edge (grid edit, no art, nothing baked)
+NO_DRY_WALL = {"route_17"}   # shares Capital (Redfield), which has no tiles to spare
+DRY_WALLS = True     # dry scrub: a 2-cell wall (+ edge cells) along every unconnected edge of the dry maps: events / exits shorten it
+WATER_WALLS = False   # water borders: 2 cells of water laid over a land edge (grid edit, no art): off, it flooded reachable cells
+DRY_WALLS = True       # dry scrub: a 2-cell wall (+ edge cells) along every unconnected edge of the dry maps; events / exits shorten it
 NO_WATER_WALL = {"storms_edge"}   # its tileset (Port, with Route 2's art) is at 512 tiles: no room for the levee pieces a flooded edge needs
 WALLS = False     # inward walls (d >= 2) and baked edge cells over other ground: OFF for now. Over a whole map they covered 150+ cells,
                   # needed 8-25 baked cells per map (tile budgets of Port / Pointe / Capital have no room), took props out of the
@@ -136,6 +139,10 @@ def prepare(b, key):
         for dx, dy in ([] if not door else door if isinstance(door[0], list) else [door]):
             keep_open |= {(bd["x"] + dx, bd["y"] + dy), (bd["x"] + dx, bd["y"] + dy + 1)}
 
+    br = __import__("band_rules")
+    for bd in spec.get("buildings", []):     # a building or walkway is never under a wall: the wall gives way
+        if br.is_structure(b, bd):
+            keep_open |= {(x, y) for x, y, _ in br.prefab_cells(b, bd)}
     if style == "water" and (not (WALLS or WATER_WALLS) or key in NO_WATER_WALL):
         return
     if style == "water":
@@ -162,7 +169,7 @@ def prepare(b, key):
         if not sp[side]:
             continue
         d0 = min_depth(b, side)
-        depth[side] = d0 if (not WALLS or terrain_agrees(b, style, side, sp[side])) else d0 + 2
+        depth[side] = d0 + 2 if (WALLS and not terrain_agrees(b, style, side, sp[side])) or (style == "dry" and DRY_WALLS and key not in NO_DRY_WALL) else d0
     wall = set()
 
     def build_walls(depth):
@@ -174,21 +181,23 @@ def prepare(b, key):
                         out.add(cell_at(b, side, i, k))
         return out
     # an event on a wall shortens that side's wall until nothing stands on it
-    while True:
-        wall = build_walls(depth)
-        hit = [(s, c) for s in depth for c in [c for c in wall if c in keep_open]]
-        if not hit:
-            break
-        side = hit[0][0]
-        if depth[side] <= min_depth(b, side):
-            break
-        depth[side] -= 2
-        b.border_log.append(f"{side} wall shortened to {depth[side]}: something stands at {hit[0][1]}")
+    wall = build_walls(depth)
+    # something that must stay open (a door, an NPC, an item, an exit, a building) cuts a gap (3 positions wide) in the wall there
+    for side, d in depth.items():
+        if d <= min_depth(b, side):
+            continue
+        for lo, hi in sp[side]:
+            for i in range(lo, hi):
+                if any(cell_at(b, side, i, k) in keep_open for k in range(d + 1)):
+                    for j in range(i - 1, i + 2):
+                        for k in range(d):
+                            wall.discard(cell_at(b, side, j, k)) if 0 <= j < (b.w if side in "NS" else b.h) else None
+                    b.border_log.append(f"{side} wall opened at position {i}: something stands there")
     wall -= strict_all
     b.border_depth = depth
     # spec "walls": gate walls of canopy inside a seam band (the pieces are primary ones, so they are allowed there): e.g. Grand Oak's
     # tree wall along the Route 2 side, which gates the road. {"side", "depth", "lo", "hi", "gaps": [[lo, hi], ...]}
-    gap_cells = set()
+    gap_cells, extra_wall = set(), set()
     for w_ in spec.get("walls", []):
         side, d = w_["side"], w_["depth"]
         for i in range(w_["lo"], w_["hi"]):
@@ -199,6 +208,7 @@ def prepare(b, key):
                     gap_cells.add(c)
                 elif k < d:
                     wall.add(c)
+                    extra_wall.add(c)
     wall -= gap_cells
 
     def is_wall(x, y):
@@ -217,7 +227,7 @@ def prepare(b, key):
     for y in range(h):
         for x in range(w):
             if (x, y) in wall or (x, y) in gap_cells or ((x, y) in strict_all and not any(
-                    (x + dx, y + dy) in wall for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))):
+                    (x + dx, y + dy) in extra_wall for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))):
                 continue
             n, s, we, e = is_wall(x, y - 1), is_wall(x, y + 1), is_wall(x - 1, y), is_wall(x + 1, y)
             if not (n or s or we or e):
@@ -242,6 +252,12 @@ def prepare(b, key):
                 wall.add((x, y))      # squeezed between two walls: wall too
                 continue
             edge[(x, y)] = face
+    # the ground an edge cell stands on must be one the art exists for: swamp on marsh / water / grass, dry on dry earth. Encounter
+    # grass, crops, fields and the like on the outermost ring become plain ground there (a one-cell fringe, never a road or a door)
+    plainer = {"swamp": ("G", "."), "dry": ("GgqQweysrv", "d")}[style]
+    for (x, y) in edge:
+        if (x, y) not in keep_open and b.grid[y][x] in plainer[0]:
+            b.grid[y][x] = plainer[1]
     for c in list(edge):
         if c in wall or c in keep_open:
             edge.pop(c)

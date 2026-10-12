@@ -174,7 +174,7 @@ class Builder:
         and every diagonal, bend and mouth gets a matching piece. A tile with two or more corners in
         the patch takes the patch's elevation (e.g. surfable water); otherwise it stays land."""
         con, on = a["connects"], a["apply_on"]
-        if self.key == "route_17" and "p" in self.ts["terrain"] and "d" in con:
+        if self.key in ("route_16", "route_17") and "p" in self.ts["terrain"] and "d" in con:
             con += "p"   # the Johto road through the dry join (Route 17 / Redfield) is dry underfoot: no dry edge pieces beside it
         neutral = a.get("neutral", "")
         patch_elev = a["elev"]
@@ -370,7 +370,7 @@ class Builder:
 
     def path_tile(self, x, y, a):
         con = a["connects"]
-        if (x, y) in self.band and self.key == "route_17" and "C" in a and a is self.ts["autotile"].get("path_g"):
+        if (x, y) in self.band and self.key in ("route_16", "route_17") and "C" in a and a is self.ts["autotile"].get("path_g"):
             return hx(a["C"])  # the Johto path through a dry-country seam band: plain dirt, no green kerb pieces against the sand
         if not hasattr(self, "_decks"):  # a bridge's deck carries the road on: no kerb or rounded end against it
             self._decks = {(b["x"] + i, b["y"] + j) for b in self.spec.get("buildings", [])
