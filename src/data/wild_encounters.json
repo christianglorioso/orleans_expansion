@@ -174,12 +174,12 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 3,
@@ -1186,7 +1186,7 @@
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 17,
@@ -1201,22 +1201,22 @@
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_LOTAD"
+                "species": "SPECIES_POLIWAG"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_LOMBRE"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 16,
                 "max_level": 16,
-                "species": "SPECIES_LOMBRE"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 18,
                 "max_level": 18,
-                "species": "SPECIES_LOMBRE"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 17,
@@ -36602,7 +36602,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_SPEAROW"
+                "species": "SPECIES_SPEAROW_ORLEANIAN"
               },
               {
                 "min_level": 3,
@@ -36617,7 +36617,7 @@
               {
                 "min_level": 4,
                 "max_level": 6,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 4,
@@ -36627,7 +36627,7 @@
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_SPEAROW"
+                "species": "SPECIES_SPEAROW_ORLEANIAN"
               },
               {
                 "min_level": 5,
@@ -36667,37 +36667,37 @@
               {
                 "min_level": 10,
                 "max_level": 18,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 10,
                 "max_level": 18,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 20,
                 "max_level": 24,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               }
             ]
           }
@@ -36731,7 +36731,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_KOFFING"
+                "species": "SPECIES_KOFFING_ORLEANIAN"
               },
               {
                 "min_level": 3,
@@ -36741,12 +36741,12 @@
               {
                 "min_level": 4,
                 "max_level": 6,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 4,
                 "max_level": 6,
-                "species": "SPECIES_KOFFING"
+                "species": "SPECIES_KOFFING_ORLEANIAN"
               },
               {
                 "min_level": 5,
@@ -36756,12 +36756,12 @@
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 5,
                 "max_level": 6,
-                "species": "SPECIES_LITWICK"
+                "species": "SPECIES_LITWICK_ORLEANIAN"
               },
               {
                 "min_level": 5,
@@ -36780,7 +36780,7 @@
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
@@ -36800,7 +36800,7 @@
               {
                 "min_level": 17,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               }
             ]
           },
@@ -36825,27 +36825,27 @@
               {
                 "min_level": 10,
                 "max_level": 18,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 10,
                 "max_level": 18,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -36855,7 +36855,7 @@
               {
                 "min_level": 20,
                 "max_level": 24,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               }
             ]
           }
@@ -36879,7 +36879,7 @@
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 16,
@@ -36919,7 +36919,7 @@
               {
                 "min_level": 10,
                 "max_level": 18,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 15,
@@ -36934,7 +36934,7 @@
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -36944,7 +36944,7 @@
               {
                 "min_level": 20,
                 "max_level": 24,
-                "species": "SPECIES_CORPHISH"
+                "species": "SPECIES_CORPHISH_ORLEANIAN"
               }
             ]
           }
@@ -37162,12 +37162,12 @@
               {
                 "min_level": 11,
                 "max_level": 13,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 11,
                 "max_level": 13,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               }
             ]
           }
@@ -37201,7 +37201,7 @@
               {
                 "min_level": 17,
                 "max_level": 20,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               }
             ]
           },
@@ -37521,63 +37521,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 10,
-                "max_level": 13,
+                "min_level": 14,
+                "max_level": 17,
                 "species": "SPECIES_WHISMUR"
               },
               {
-                "min_level": 10,
-                "max_level": 13,
+                "min_level": 14,
+                "max_level": 17,
                 "species": "SPECIES_GASTLY"
               },
               {
-                "min_level": 10,
-                "max_level": 13,
-                "species": "SPECIES_BUDEW"
-              },
-              {
-                "min_level": 10,
-                "max_level": 13,
-                "species": "SPECIES_DROWZEE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 13,
-                "species": "SPECIES_PETILIL"
-              },
-              {
-                "min_level": 11,
-                "max_level": 14,
-                "species": "SPECIES_TANGELA"
-              },
-              {
-                "min_level": 11,
-                "max_level": 14,
-                "species": "SPECIES_WATTREL"
-              },
-              {
-                "min_level": 11,
-                "max_level": 14,
-                "species": "SPECIES_EEVEE"
-              },
-              {
-                "min_level": 12,
-                "max_level": 14,
-                "species": "SPECIES_SCYTHER"
-              },
-              {
-                "min_level": 12,
-                "max_level": 14,
-                "species": "SPECIES_FENNEKIN"
-              },
-              {
-                "min_level": 12,
-                "max_level": 14,
-                "species": "SPECIES_SMEARGLE"
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_BUDEW_ORLEANIAN"
               },
               {
                 "min_level": 14,
-                "max_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_DROWZEE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_PETILIL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_TANGELA_ORLEANIAN"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_WATTREL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_EEVEE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_FENNEKIN"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
                 "species": "SPECIES_EEVEE"
               }
             ]
@@ -37697,7 +37697,7 @@
               {
                 "min_level": 13,
                 "max_level": 16,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 13,
@@ -37717,7 +37717,7 @@
               {
                 "min_level": 15,
                 "max_level": 17,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 15,
@@ -37752,7 +37752,7 @@
               {
                 "min_level": 15,
                 "max_level": 20,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 16,
@@ -37836,7 +37836,7 @@
               {
                 "min_level": 13,
                 "max_level": 16,
-                "species": "SPECIES_KOFFING"
+                "species": "SPECIES_KOFFING_ORLEANIAN"
               },
               {
                 "min_level": 13,
@@ -37861,12 +37861,12 @@
               {
                 "min_level": 14,
                 "max_level": 17,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 14,
                 "max_level": 17,
-                "species": "SPECIES_KOFFING"
+                "species": "SPECIES_KOFFING_ORLEANIAN"
               },
               {
                 "min_level": 15,
@@ -38188,7 +38188,7 @@
               {
                 "min_level": 16,
                 "max_level": 19,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -38233,7 +38233,7 @@
               {
                 "min_level": 16,
                 "max_level": 20,
-                "species": "SPECIES_VOLTORB"
+                "species": "SPECIES_VOLTORB_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -38332,7 +38332,7 @@
               {
                 "min_level": 15,
                 "max_level": 18,
-                "species": "SPECIES_KOFFING"
+                "species": "SPECIES_KOFFING_ORLEANIAN"
               },
               {
                 "min_level": 16,
@@ -38386,7 +38386,7 @@
               {
                 "min_level": 17,
                 "max_level": 20,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -38416,7 +38416,7 @@
               {
                 "min_level": 19,
                 "max_level": 21,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 19,
@@ -38491,12 +38491,12 @@
               {
                 "min_level": 17,
                 "max_level": 21,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 20,
                 "max_level": 26,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 20,
@@ -38506,7 +38506,7 @@
               {
                 "min_level": 20,
                 "max_level": 26,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 20,
@@ -38550,7 +38550,7 @@
               {
                 "min_level": 17,
                 "max_level": 20,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -38600,7 +38600,7 @@
               {
                 "min_level": 17,
                 "max_level": 21,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 17,
@@ -38610,7 +38610,7 @@
               {
                 "min_level": 18,
                 "max_level": 21,
-                "species": "SPECIES_KRABBY"
+                "species": "SPECIES_KRABBY_ORLEANIAN"
               },
               {
                 "min_level": 19,
@@ -38679,12 +38679,12 @@
               {
                 "min_level": 21,
                 "max_level": 23,
-                "species": "SPECIES_BONSLY"
+                "species": "SPECIES_BONSLY_ORLEANIAN"
               },
               {
                 "min_level": 21,
                 "max_level": 23,
-                "species": "SPECIES_BONSLY"
+                "species": "SPECIES_BONSLY_ORLEANIAN"
               }
             ]
           },
@@ -39467,12 +39467,12 @@
               {
                 "min_level": 27,
                 "max_level": 29,
-                "species": "SPECIES_BUDEW"
+                "species": "SPECIES_BUDEW_ORLEANIAN"
               },
               {
                 "min_level": 27,
                 "max_level": 29,
-                "species": "SPECIES_BUDEW"
+                "species": "SPECIES_BUDEW_ORLEANIAN"
               }
             ]
           },
@@ -40412,7 +40412,7 @@
               {
                 "min_level": 37,
                 "max_level": 40,
-                "species": "SPECIES_WEEZING"
+                "species": "SPECIES_WEEZING_ORLEANIAN"
               },
               {
                 "min_level": 37,
@@ -40427,7 +40427,7 @@
               {
                 "min_level": 38,
                 "max_level": 41,
-                "species": "SPECIES_WEEZING"
+                "species": "SPECIES_WEEZING_ORLEANIAN"
               },
               {
                 "min_level": 38,
@@ -40516,12 +40516,12 @@
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               },
               {
                 "min_level": 41,
                 "max_level": 43,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               }
             ]
           }
@@ -40619,7 +40619,7 @@
               {
                 "min_level": 41,
                 "max_level": 44,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               },
               {
                 "min_level": 41,
@@ -40644,7 +40644,7 @@
               {
                 "min_level": 43,
                 "max_level": 45,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               },
               {
                 "min_level": 43,
@@ -40861,12 +40861,12 @@
               {
                 "min_level": 45,
                 "max_level": 47,
-                "species": "SPECIES_WEEZING"
+                "species": "SPECIES_WEEZING_ORLEANIAN"
               },
               {
                 "min_level": 45,
                 "max_level": 47,
-                "species": "SPECIES_WEEZING"
+                "species": "SPECIES_WEEZING_ORLEANIAN"
               }
             ]
           }
@@ -40920,12 +40920,12 @@
               {
                 "min_level": 46,
                 "max_level": 48,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               },
               {
                 "min_level": 46,
                 "max_level": 48,
-                "species": "SPECIES_EXEGGCUTE"
+                "species": "SPECIES_EXEGGCUTE_ORLEANIAN"
               },
               {
                 "min_level": 46,
@@ -41226,7 +41226,7 @@
               {
                 "min_level": 47,
                 "max_level": 50,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 47,
@@ -41256,7 +41256,7 @@
               {
                 "min_level": 48,
                 "max_level": 51,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 48,
@@ -41296,7 +41296,7 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 47,
@@ -41380,7 +41380,7 @@
               {
                 "min_level": 47,
                 "max_level": 50,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 47,
@@ -41405,7 +41405,7 @@
               {
                 "min_level": 47,
                 "max_level": 50,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 48,
@@ -41450,7 +41450,7 @@
               {
                 "min_level": 47,
                 "max_level": 51,
-                "species": "SPECIES_CRAWDAUNT"
+                "species": "SPECIES_CRAWDAUNT_ORLEANIAN"
               },
               {
                 "min_level": 47,

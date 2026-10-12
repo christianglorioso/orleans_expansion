@@ -874,6 +874,8 @@
 #define TRAINER_MAGNOLIA                            TRAINER_ROXANNE_1
 
 
+
+
 // --- orleans trainers (begin) ---
 #define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
 #define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1
@@ -892,6 +894,13 @@
 #define TRAINER_ORLEANS_JAYDEN_ROUTE3_FUECOCO            TRAINER_DUSTY_5
 #define TRAINER_ORLEANS_JAYDEN_ROUTE3_TOTODILE           TRAINER_GABBY_AND_TY_1
 #define TRAINER_ECLAIR                                   TRAINER_WATTSON_1
+#define TRAINER_ORLEANS_CRESCENT_GYM_HEX_MANIAC          TRAINER_GABBY_AND_TY_2
+#define TRAINER_ORLEANS_CRESCENT_GYM_MEDIUM              TRAINER_GABBY_AND_TY_3
+#define TRAINER_FIFOLET                                  TRAINER_BRAWLY_1
+#define TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_POISON       TRAINER_GABBY_AND_TY_4
+#define TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_DARK         TRAINER_GABBY_AND_TY_5
+#define TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER        TRAINER_GABBY_AND_TY_6
+#define TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT         TRAINER_LOLA_1
 // --- orleans trainers (end) ---
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

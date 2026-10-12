@@ -532,12 +532,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_HIDE_CRESCENT_LIEUTENANT      0x1DE // Orleans Ch3: the Drowned Ward lieutenant retreated and is gone for good
+#define FLAG_CARVING_FOUND                   0x1DF // Orleans Ch3: the Drowned Ward carving was found (story 17)
+#define FLAG_LAFAYETTE_REWARD_15             0x1E0 // Orleans Ch3: Lafayette's Bottle Cap (15 species) was given
+#define FLAG_CRESCENT_ROTOM_MOW              0x1E1 // Orleans Ch3: the lawn-mower Rotom (Mow) was beaten or caught
+#define FLAG_HIDE_CRESCENT_GYM_USHER         0x1E2 // Orleans Ch3: the usher in front of the gym, there until the market speech (story 15)
+#define FLAG_DUST_STORMS_LIFTED              0x1E3 // Orleans: Rayquaza has woken (story 38); the Route 23 dust storms lift (set by that beat; Ch8)
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -680,9 +680,9 @@
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
+#define FLAG_APARTMENT_UNLOCKED            0x26C // Orleans Ch3: 25 species contributed, the apartment is open
+#define FLAG_HIDE_CRESCENT_LAFAYETTE       0x26D // Orleans Ch3: Lafayette outside the conservation center, there only while story 13 (set by Crescent's OnTransition)
+#define FLAG_HIDE_CRESCENT_BASE_WREN       0x26E // Orleans Ch3: Wren inside the Drowned Ward base, there only while story 16 (set by the base's OnTransition)
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag
 #define FLAG_UNUSED_0x270  0x270 // Unused Flag
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
@@ -748,18 +748,18 @@
 #define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
 #define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
 #define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_CRESCENT_WREN            0x2B0 // Orleans Ch3: Wren at the Drowned Ward gate (hidden unless story 16; set by Crescent's OnTransition)
+#define FLAG_RECEIVED_TM_SHADOW_BALL       0x2B1 // Orleans Ch3: Fifolet's TM Shadow Ball was handed over
+#define FLAG_RECEIVED_LANTERN              0x2B2 // Orleans Ch3: the Lantern was handed over
+#define FLAG_RECEIVED_MIMIKYU              0x2B3 // Orleans Ch3: Fifolet's Mimikyu was handed over
+#define FLAG_RECEIVED_QUAXLY               0x2B4 // Orleans Ch3: the parade leader's Quaxly was handed over
+#define FLAG_CRESCENT_ROTOM_TV             0x2B5 // Orleans Ch3: the market TV Rotom is gone (caught, beaten or fled)
+#define FLAG_CRESCENT_ROTOM_BLENDER        0x2B6 // Orleans Ch3: the cafe blender Rotom is gone
+#define FLAG_CRESCENT_ROTOM_WASHER         0x2B7 // Orleans Ch3: the laundry washer Rotom is gone
+#define FLAG_CRESCENT_ROTOM_FREEZER        0x2B8 // Orleans Ch3: the ice-cream freezer Rotom is gone
+#define FLAG_CRESCENT_ROTOM_GENERATOR      0x2B9 // Orleans Ch3: the waterfront generator Rotom is gone
+#define FLAG_CARVING_SHOWN_TUPELO          0x2BA // Orleans Ch3: Tupelo has seen the damaged carving from the Drowned Ward
+#define FLAG_LAFAYETTE_REWARD_10           0x2BB // Orleans Ch3: Lafayette's first conservation reward (10 species) was given
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
