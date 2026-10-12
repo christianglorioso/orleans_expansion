@@ -90,4 +90,12 @@ tools/strip_manifest.md
 *.zip
 *.sav
 !data/*.gba
+tools/mapgen/edges_plan.md
 tools/playtest/out/
+# Pokedex implementation: planning docs, logs and the spreadsheet dump stay local
+tools/dex/commissioned_art_pending.md
+tools/dex/tm_list.md
+tools/dex/dex_progress.log.md
+tools/dex/src_dump/
+tools/dex/out/
+tools/flag_pool.md

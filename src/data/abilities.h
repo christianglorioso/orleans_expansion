@@ -2556,4 +2556,257 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Aura Guard"),
         .description = COMPOUND_STRING("Unimplemented."),
     },
+
+    [ABILITY_BLUR] =
+    {
+        .name = _("Blur"),
+        .description = COMPOUND_STRING("Technician; immune to Rock."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_BOILING_POINT] =
+    {
+        .name = _("Boiling Point"),
+        .description = COMPOUND_STRING("Water moves are also Fire."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_BOTTOM_FEEDER] =
+    {
+        .name = _("Bottom Feeder"),
+        .description = COMPOUND_STRING("Ups Attack if hit by Grass."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_BUOYANCY] =
+    {
+        .name = _("Buoyancy"),
+        .description = COMPOUND_STRING("Levitates; holds its ground."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_BURNING_SEASON] =
+    {
+        .name = _("Burning Season"),
+        .description = COMPOUND_STRING("Casts sun; Grass moves surge."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_CLINGING_MOSS] =
+    {
+        .name = _("Clinging Moss"),
+        .description = COMPOUND_STRING("Leech Seeds foes on contact."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_COTTONMOUTH] =
+    {
+        .name = _("Cottonmouth"),
+        .description = COMPOUND_STRING("Intimidate; contact poisons."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CROC_AND_ROLL] =
+    {
+        .name = _("Croc and Roll"),
+        .description = COMPOUND_STRING("Punk Rock plus Unaware."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_CYPRESS_KNEES] =
+    {
+        .name = _("Cypress Knees"),
+        .description = COMPOUND_STRING("Water heals; holds position."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_DEAD_ZONE] =
+    {
+        .name = _("Dead Zone"),
+        .description = COMPOUND_STRING("Foes can't restore HP."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_DEATH_ROLL] =
+    {
+        .name = _("Death Roll"),
+        .description = COMPOUND_STRING("Bites trap; Strong Jaw."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_FIELD_BURNER] =
+    {
+        .name = _("Field Burner"),
+        .description = COMPOUND_STRING("Grass moves surge in sun."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_FIREDAMP] =
+    {
+        .name = _("Firedamp"),
+        .description = COMPOUND_STRING("Levitate; burns the poisoned."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_FISH_HAWK] =
+    {
+        .name = _("Fish Hawk"),
+        .description = COMPOUND_STRING("Ups damage to Water-types."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_FLEUR_DE_LIS] =
+    {
+        .name = _("Fleur-de-Lis"),
+        .description = COMPOUND_STRING("Ups Grass/Fairy; stats safe."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_GRAVEYARD_MOSS] =
+    {
+        .name = _("Graveyard Moss"),
+        .description = COMPOUND_STRING("Seeds foes; heals when out."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_HEARTWOOD] =
+    {
+        .name = _("Heartwood"),
+        .description = COMPOUND_STRING("Stamina plus Cypress Knees."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_IRIS_BLOOM] =
+    {
+        .name = _("Iris Bloom"),
+        .description = COMPOUND_STRING("Sp.Atk up in rain or Grassy."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_LIVE_WIRE] =
+    {
+        .name = _("Live Wire"),
+        .description = COMPOUND_STRING("Adds Electric; Levitates."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_LOST_LIGHT] =
+    {
+        .name = _("Lost Light"),
+        .description = COMPOUND_STRING("Burns on hit; hurts burned."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_LURE_LIGHT] =
+    {
+        .name = _("Lure Light"),
+        .description = COMPOUND_STRING("Burned foes can't escape."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_NIGHT_GLOW] =
+    {
+        .name = _("Night Glow"),
+        .description = COMPOUND_STRING("Stronger and faster at night."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_PENDULUM] =
+    {
+        .name = _("Pendulum"),
+        .description = COMPOUND_STRING("Sleep moves: sure hit, +1."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_PEELER] =
+    {
+        .name = _("Peeler"),
+        .description = COMPOUND_STRING("Molts when hit: Atk, Spe up."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_PLUNGE_DIVE] =
+    {
+        .name = _("Plunge Dive"),
+        .description = COMPOUND_STRING("Turn 1: +1 priority, crits."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_REGAL_COIL] =
+    {
+        .name = _("Regal Coil"),
+        .description = COMPOUND_STRING("Contrary and Queenly Majesty."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_ROLLING_BOIL] =
+    {
+        .name = _("Rolling Boil"),
+        .description = COMPOUND_STRING("Water moves may burn foes."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_ROUGAROU] =
+    {
+        .name = _("Rougarou"),
+        .description = COMPOUND_STRING("No Guard and Infiltrator."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_SECOND_LINE] =
+    {
+        .name = _("Second Line"),
+        .description = COMPOUND_STRING("Boosts dances; copies dances."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_SKY_SCORCHER] =
+    {
+        .name = _("Sky Scorcher"),
+        .description = COMPOUND_STRING("Levitate plus Drought."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_SOFT_SHELL] =
+    {
+        .name = _("Soft Shell"),
+        .description = COMPOUND_STRING("Molts once below half HP."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_STORM_BEACON] =
+    {
+        .name = _("Storm Beacon"),
+        .description = COMPOUND_STRING("Sets rain & Electric Terrain."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_SWAMP_GAS] =
+    {
+        .name = _("Swamp Gas"),
+        .description = COMPOUND_STRING("Levitate; may poison or burn."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_TIMBER] =
+    {
+        .name = _("Timber"),
+        .description = COMPOUND_STRING("Sharpness; ignores Sturdy."),
+        .aiRating = 8,
+    },
+
+    [ABILITY_WEB_WEAVER] =
+    {
+        .name = _("Web Weaver"),
+        .description = COMPOUND_STRING("Sets Sticky Web on entry."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_ZYDECO] =
+    {
+        .name = _("Zydeco"),
+        .description = COMPOUND_STRING("Sound boost; hits Ghosts."),
+        .aiRating = 7,
+    },
+
 };

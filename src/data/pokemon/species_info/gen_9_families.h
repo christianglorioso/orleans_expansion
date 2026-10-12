@@ -265,7 +265,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_CROCALOR] =
     {
-        .baseHP        = 81,
+        .baseHP        = 85,
         .baseAttack    = 55,
         .baseDefense   = 78,
         .baseSpeed     = 49,
@@ -463,8 +463,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseAttack    = 85,
         .baseDefense   = 65,
         .baseSpeed     = 65,
-        .baseSpAttack  = 65,
-        .baseSpDefense = 60,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = 144,
@@ -588,7 +588,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_LECHONK
     [SPECIES_LECHONK] =
     {
-        .baseHP        = 54,
+        .baseHP        = 55,
         .baseAttack    = 45,
         .baseDefense   = 40,
         .baseSpeed     = 35,
@@ -658,7 +658,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .baseAttack    = 100,
         .baseDefense   = 75,
         .baseSpeed     = 65,
-        .baseSpAttack  = 59,
+        .baseSpAttack  = 60,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 100,
@@ -3268,8 +3268,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_CAPSAKID
     [SPECIES_CAPSAKID] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 62,
+        .baseHP        = 52,
+        .baseAttack    = 66,
         .baseDefense   = 40,
         .baseSpeed     = 50,
         .baseSpAttack  = 62,
@@ -3283,7 +3283,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_INSOMNIA, ABILITY_KLUTZ },
+        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_INSOMNIA, ABILITY_MOODY },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Capsakid"),
         .cryId = CRY_CAPSAKID,
@@ -3334,7 +3334,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_SCOVILLAIN] =
     {
         .baseHP        = 65,
-        .baseAttack    = 108,
+        .baseAttack    = 112,
         .baseDefense   = 65,
         .baseSpeed     = 75,
         .baseSpAttack  = 108,
@@ -3400,7 +3400,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_SCOVILLAIN_MEGA] =
     {
         .baseHP        = 65,
-        .baseAttack    = 138,
+        .baseAttack    = 142,
         .baseDefense   = 85,
         .baseSpeed     = 75,
         .baseSpAttack  = 138,
@@ -3414,7 +3414,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_SPICY_SPRAY, ABILITY_SPICY_SPRAY, ABILITY_SPICY_SPRAY },
+        .abilities = { ABILITY_SPICY_SPRAY, ABILITY_NONE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Scovillain"),
     #if P_MODIFIED_MEGA_CRIES

@@ -1877,7 +1877,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_CHEWTLE] =
     {
         .baseHP        = 50,
-        .baseAttack    = 64,
+        .baseAttack    = 65,
         .baseDefense   = 50,
         .baseSpeed     = 44,
         .baseSpAttack  = 38,
