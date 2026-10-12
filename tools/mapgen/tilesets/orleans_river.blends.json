@@ -780,5 +780,71 @@
   "base": "ekat:water_inNE",
   "attr_of": "ekat:water_inNE",
   "group": "levee"
+ },
+ {
+  "id": "ap_2884425f54e3",
+  "pixels": "tools/mapgen/tilesets/approach/ap_2884425f54e3.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_4aaae861c305",
+  "pixels": "tools/mapgen/tilesets/approach/ap_4aaae861c305.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_4b7257a6d756",
+  "pixels": "tools/mapgen/tilesets/approach/ap_4b7257a6d756.png",
+  "base": "johto:0E2",
+  "attr_of": "johto:0E2"
+ },
+ {
+  "id": "ap_5dc4036720bb",
+  "pixels": "tools/mapgen/tilesets/approach/ap_5dc4036720bb.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_66c7d692f944",
+  "pixels": "tools/mapgen/tilesets/approach/ap_66c7d692f944.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_7c9aad3095ff",
+  "pixels": "tools/mapgen/tilesets/approach/ap_7c9aad3095ff.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_a390498ad536",
+  "pixels": "tools/mapgen/tilesets/approach/ap_a390498ad536.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_c4e5a268c7a8",
+  "pixels": "tools/mapgen/tilesets/approach/ap_c4e5a268c7a8.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_c96828f971ca",
+  "pixels": "tools/mapgen/tilesets/approach/ap_c96828f971ca.png",
+  "base": "patch:path_iSE",
+  "attr_of": "patch:path_iSE"
+ },
+ {
+  "id": "ap_d06d14e5c218",
+  "pixels": "tools/mapgen/tilesets/approach/ap_d06d14e5c218.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_e069c13a7926",
+  "pixels": "tools/mapgen/tilesets/approach/ap_e069c13a7926.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
  }
 ]

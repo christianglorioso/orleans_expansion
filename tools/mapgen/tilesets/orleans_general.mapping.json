@@ -1,4 +1,1351 @@
 {
+"sig": null,
+"content": {
+"264b30a602e7f11cef31": [
+1,
+0,
+0,
+0
+],
+"2288376619e65a3f0121": [
+1,
+0,
+1,
+0
+],
+"d516a1ce92387607411c": [
+1,
+1,
+0,
+0
+],
+"b14f6c89a9544d9b482b": [
+1,
+1,
+1,
+0
+],
+"a56f01cbff3760b4a12e": [
+2,
+0,
+0,
+0
+],
+"bb1fcf11263422b5d90d": [
+2,
+0,
+1,
+0
+],
+"335aab1466cceb518dfd": [
+2,
+1,
+0,
+0
+],
+"3e16dba0fc9ce7921adf": [
+2,
+1,
+1,
+0
+],
+"c590f804dd5f0c12084f": [
+3,
+0,
+0,
+0
+],
+"e7d9fd3803a477cc91b3": [
+4,
+0,
+0,
+0
+],
+"b78cf42bd10fa2a90893": [
+4,
+0,
+1,
+0
+],
+"7dcaa6ff9d85899ef5c0": [
+4,
+1,
+0,
+0
+],
+"89860517c222f5d40cd1": [
+4,
+1,
+1,
+0
+],
+"054f5d2e2e23e1f2728e": [
+5,
+0,
+0,
+3
+],
+"286f607676a9909a4617": [
+5,
+0,
+1,
+3
+],
+"fb8ad22d543b3c84989d": [
+5,
+1,
+0,
+3
+],
+"3a194e2d20c57afa3bdf": [
+5,
+1,
+1,
+3
+],
+"099876d8013246911518": [
+6,
+0,
+0,
+3
+],
+"d81d457e9f0ed48dd2b6": [
+6,
+0,
+1,
+3
+],
+"bf12d1c768bfa857527f": [
+6,
+1,
+0,
+3
+],
+"46dd7d1dc3e692d5cbc5": [
+6,
+1,
+1,
+3
+],
+"efa448c0ac77c448d30c": [
+7,
+0,
+0,
+3
+],
+"5b4fb672045a4f0ff8ba": [
+7,
+0,
+1,
+3
+],
+"dc844db59b0639a16a2d": [
+7,
+1,
+0,
+3
+],
+"bca430528127eb0a1e7f": [
+7,
+1,
+1,
+3
+],
+"aae093fc88c5aa6f35e0": [
+8,
+0,
+0,
+3
+],
+"fabe2cfa53384f3091a4": [
+8,
+0,
+1,
+3
+],
+"373f68ecc697537dc7fd": [
+8,
+1,
+0,
+3
+],
+"0b9e72a680de331e0c5a": [
+8,
+1,
+1,
+3
+],
+"2ae83c79a26dac37239e": [
+9,
+0,
+0,
+0
+],
+"e4914dc469a811a20dd6": [
+9,
+0,
+1,
+0
+],
+"8b64176cb44a16a00525": [
+9,
+1,
+0,
+0
+],
+"f02d3a5d448b81ade133": [
+9,
+1,
+1,
+0
+],
+"8dcad055b32b3d789be2": [
+10,
+0,
+0,
+0
+],
+"64e36b9bf0b56529da32": [
+10,
+0,
+1,
+0
+],
+"dff331eefffd45c713f3": [
+10,
+1,
+0,
+0
+],
+"b247ffbfdf571460d0ad": [
+10,
+1,
+1,
+0
+],
+"440d108447424a6a9da8": [
+11,
+0,
+0,
+0
+],
+"63cff4f7557fe2d274b5": [
+11,
+0,
+1,
+0
+],
+"fcdb1e5b535bb6fae8dc": [
+11,
+1,
+0,
+0
+],
+"a2c7688030d265103b63": [
+11,
+1,
+1,
+0
+],
+"e37c8ae0f430f425bbb8": [
+12,
+0,
+0,
+0
+],
+"c77256f94cb4fea87c3c": [
+12,
+0,
+1,
+0
+],
+"eff9994453388e869753": [
+12,
+1,
+0,
+0
+],
+"76ef07dc951884cfd225": [
+12,
+1,
+1,
+0
+],
+"801fd9ad6fd5c99206a3": [
+13,
+0,
+0,
+0
+],
+"f48bba018950ef0a1374": [
+13,
+0,
+1,
+0
+],
+"c79beb44be69dee11551": [
+13,
+1,
+0,
+0
+],
+"39340fbe18382d32eff1": [
+13,
+1,
+1,
+0
+],
+"8e49fadb47cd909fe5fe": [
+14,
+0,
+0,
+0
+],
+"98304d7c8dc9f02e1cc5": [
+14,
+0,
+1,
+0
+],
+"2583ba9993da364283c9": [
+14,
+1,
+0,
+0
+],
+"2766e73c93bbdbccd653": [
+14,
+1,
+1,
+0
+],
+"7e4cf174582ae16310f3": [
+15,
+0,
+0,
+0
+],
+"8623b867e0b1f955fd2c": [
+15,
+0,
+1,
+0
+],
+"a1f8e3598f825915a9e3": [
+15,
+1,
+0,
+0
+],
+"d6993916149ea9fa9052": [
+15,
+1,
+1,
+0
+],
+"6d570096ebe320766cc2": [
+16,
+0,
+0,
+0
+],
+"54123b0b542baac148b3": [
+16,
+0,
+1,
+0
+],
+"8e098f4cd69f5a604689": [
+16,
+1,
+0,
+0
+],
+"bdf6aa4cb4afdba144e6": [
+16,
+1,
+1,
+0
+],
+"f2d3856f9d25986af7c8": [
+17,
+0,
+0,
+0
+],
+"e2bfbeb81000f3f18c08": [
+17,
+0,
+1,
+0
+],
+"cef86ce15d69c54b6f1d": [
+17,
+1,
+0,
+0
+],
+"a1b36211b80d1923a05f": [
+17,
+1,
+1,
+0
+],
+"dea3542bfd334990ebc4": [
+18,
+0,
+0,
+0
+],
+"f90c4260cc87e0bf5efa": [
+18,
+0,
+1,
+0
+],
+"35974c037d83830ee719": [
+18,
+1,
+0,
+0
+],
+"c6a301394fca2944bfe7": [
+18,
+1,
+1,
+0
+],
+"4a45f14dc58f0de89e5b": [
+19,
+0,
+0,
+0
+],
+"682c7751b0c30c194788": [
+19,
+0,
+1,
+0
+],
+"a88c93f7394773cd5c4c": [
+19,
+1,
+0,
+0
+],
+"4993828eaefe08324065": [
+19,
+1,
+1,
+0
+],
+"6eaa95dcb04dc3a2878b": [
+20,
+0,
+0,
+3
+],
+"0c87b83d0c3b707927b7": [
+20,
+0,
+1,
+3
+],
+"188bfefe0259a17cb557": [
+20,
+1,
+0,
+3
+],
+"88cc7e4fa0178886f6b4": [
+20,
+1,
+1,
+3
+],
+"f497f80f7d4a7c6eb30e": [
+21,
+0,
+0,
+3
+],
+"1a101bdd9497390375be": [
+21,
+1,
+0,
+3
+],
+"7e692850346599973a74": [
+22,
+0,
+0,
+3
+],
+"f9b4578d804ed0ca785b": [
+22,
+0,
+1,
+3
+],
+"ce6df09a6c8963490b84": [
+22,
+1,
+0,
+3
+],
+"c5a938c52d1264804f57": [
+22,
+1,
+1,
+3
+],
+"dd4057f59c91aa8a4af2": [
+23,
+0,
+0,
+3
+],
+"5f39a291108df2a396f1": [
+23,
+0,
+1,
+3
+],
+"78d87c2d39bef1f8ce77": [
+23,
+1,
+0,
+3
+],
+"fa7dd1daa578eaa6f6d7": [
+23,
+1,
+1,
+3
+],
+"2437eaba61ff6c6f93c3": [
+24,
+0,
+0,
+0
+],
+"d1176a8b3d1d21e5b8e5": [
+24,
+0,
+1,
+0
+],
+"9736d96e0869c49805f6": [
+24,
+1,
+0,
+0
+],
+"678436433cc0b584c5e5": [
+24,
+1,
+1,
+0
+],
+"c944c1a7feea888f7b21": [
+25,
+0,
+0,
+0
+],
+"32f4fc9a2c0af738e1a1": [
+25,
+0,
+1,
+0
+],
+"01618d83fe62a339a1a8": [
+25,
+1,
+0,
+0
+],
+"1fdecfcf6ed7b6172b63": [
+25,
+1,
+1,
+0
+],
+"c677cda7c3f08c2bb8a4": [
+26,
+0,
+0,
+0
+],
+"27d4a50fcc7af6c5a9fa": [
+26,
+0,
+1,
+0
+],
+"64306e048e42173786e6": [
+26,
+1,
+0,
+0
+],
+"86371119a29d9d28cca9": [
+26,
+1,
+1,
+0
+],
+"fa521e77ecea3a91b099": [
+27,
+0,
+0,
+0
+],
+"d4d7601209f3fc6c5d1c": [
+27,
+0,
+1,
+0
+],
+"c6793540091227231524": [
+27,
+1,
+0,
+0
+],
+"1a8af0676270c3fcccee": [
+27,
+1,
+1,
+0
+],
+"41828c4678342d1c8beb": [
+28,
+0,
+0,
+0
+],
+"302210b81f11c5c3bef5": [
+28,
+0,
+1,
+0
+],
+"46eabd94e2410f568e91": [
+28,
+1,
+0,
+0
+],
+"dcbf46515cad9e91ecb9": [
+28,
+1,
+1,
+0
+],
+"b251e05b575409e35685": [
+29,
+0,
+0,
+0
+],
+"3a68376f12e09edeca91": [
+29,
+0,
+1,
+0
+],
+"c0bef9cef81abdd2ce05": [
+30,
+0,
+0,
+0
+],
+"3787ff11d0b7cc05c3d9": [
+30,
+0,
+1,
+0
+],
+"73c9e34c8ba5c3f5e45d": [
+30,
+1,
+0,
+0
+],
+"23df4f74f1bee4b5aa8d": [
+30,
+1,
+1,
+0
+],
+"2e6716bd9aa4e34dba19": [
+31,
+0,
+0,
+0
+],
+"c8ffedeeb3cea961fe49": [
+31,
+0,
+1,
+0
+],
+"5c2d85779a5abb948bd6": [
+31,
+1,
+0,
+0
+],
+"19320b6a6bd90e6d58a3": [
+31,
+1,
+1,
+0
+],
+"051bf9f71fa6948d541f": [
+32,
+0,
+0,
+0
+],
+"50ea7c9128f58c7f3d84": [
+32,
+0,
+1,
+0
+],
+"5e4ce781c170ee0161fb": [
+32,
+1,
+0,
+0
+],
+"0a77ba65cf5615aa1055": [
+32,
+1,
+1,
+0
+],
+"f7b6dc672372c2025c34": [
+33,
+0,
+0,
+0
+],
+"70faf6af8e6306a04c3d": [
+33,
+0,
+1,
+0
+],
+"d707ace6fb4855b298e2": [
+33,
+1,
+0,
+0
+],
+"433b9ecfc84968bc1210": [
+33,
+1,
+1,
+0
+],
+"6bf5bed0a215bdbad720": [
+34,
+0,
+0,
+5
+],
+"e5606c7518936ca72696": [
+34,
+0,
+1,
+5
+],
+"3356aa4be82ecaeb6ee3": [
+34,
+1,
+0,
+5
+],
+"f9cac192ec48d27500d5": [
+34,
+1,
+1,
+5
+],
+"2c7ee283d0095c47c0c0": [
+35,
+0,
+0,
+5
+],
+"7b1e007607eaeae823be": [
+35,
+0,
+1,
+5
+],
+"29522b301be6631b2d1d": [
+36,
+0,
+0,
+5
+],
+"976ca7c1e2dd4018335a": [
+36,
+1,
+0,
+5
+],
+"8935c396a65590a00ad8": [
+37,
+0,
+0,
+5
+],
+"f48b7d23d1217b4ba5df": [
+38,
+0,
+0,
+5
+],
+"30c385f4c25d05eeb4cd": [
+38,
+0,
+1,
+5
+],
+"db8fcd247217f0c8192e": [
+39,
+0,
+0,
+5
+],
+"11d7a8b400af6862dc98": [
+39,
+0,
+1,
+5
+],
+"38d2587af6e37a6d199d": [
+39,
+1,
+0,
+5
+],
+"b0184d4132f5a606f97e": [
+39,
+1,
+1,
+5
+],
+"83a070efa9591b93a090": [
+40,
+0,
+0,
+5
+],
+"6cbaf0c53a5899b28ec5": [
+40,
+1,
+0,
+5
+],
+"fd8b004b7cd13c7b37aa": [
+41,
+0,
+0,
+3
+],
+"570890bbfd1e1977593d": [
+41,
+0,
+1,
+3
+],
+"4dc57f4e987041e4a1b7": [
+42,
+0,
+0,
+3
+],
+"047259b2d935f501259c": [
+42,
+0,
+1,
+3
+],
+"0adbf9988b3f2cc36c4d": [
+42,
+1,
+0,
+3
+],
+"647cc729dfd923d55b77": [
+42,
+1,
+1,
+3
+],
+"1437a6e3c33e4efafffb": [
+43,
+0,
+0,
+3
+],
+"cceadef381e1579e41a9": [
+43,
+0,
+1,
+3
+],
+"9c9ebb148ea0fbe1eed5": [
+44,
+0,
+0,
+3
+],
+"bd4ef2c6a93aabd2fd5e": [
+44,
+0,
+1,
+3
+],
+"2cb37e6bc354c90f7179": [
+44,
+1,
+0,
+3
+],
+"c26a5e1b4ee5023b83f3": [
+44,
+1,
+1,
+3
+],
+"af627a9eb82e09916c66": [
+45,
+0,
+0,
+3
+],
+"9c8bcb70e0b2da80b071": [
+45,
+0,
+1,
+3
+],
+"681443f45d6b0ac63b55": [
+46,
+0,
+0,
+3
+],
+"261e3c9340228bcd25e6": [
+46,
+0,
+1,
+3
+],
+"b0b057c9f4cbaf77dc2e": [
+46,
+1,
+0,
+3
+],
+"1d77e8108651e79f2be4": [
+46,
+1,
+1,
+3
+],
+"b136cd5d8c68b9038c9d": [
+47,
+0,
+0,
+3
+],
+"fe6aa3866db6afe1e1cd": [
+47,
+0,
+1,
+3
+],
+"08f1ae93c0ca7d912c01": [
+48,
+0,
+0,
+3
+],
+"565eb793fc9e3ea620ba": [
+48,
+0,
+1,
+3
+],
+"322ccf25fe5990418916": [
+48,
+1,
+0,
+3
+],
+"712eec1a8626cd4bccdf": [
+48,
+1,
+1,
+3
+],
+"f80ed0ce7429871a0000": [
+49,
+0,
+0,
+3
+],
+"cc9a5568094a5a764d77": [
+49,
+0,
+1,
+3
+],
+"5cee012db2625f4091fb": [
+50,
+0,
+0,
+4
+],
+"31ea5b54b76751ce17e0": [
+50,
+0,
+1,
+4
+],
+"876ae12172b094946893": [
+50,
+1,
+0,
+4
+],
+"9526e207a58053935926": [
+50,
+1,
+1,
+4
+],
+"a606a1a37dc841ddd9c2": [
+51,
+0,
+0,
+4
+],
+"0dbd863f56b7fb46842a": [
+51,
+0,
+1,
+4
+],
+"eebe78d2c87aa72298d9": [
+51,
+1,
+0,
+4
+],
+"bcccca6db0f6964a263d": [
+51,
+1,
+1,
+4
+],
+"0e7a26584e6e51611aa4": [
+52,
+0,
+0,
+4
+],
+"637b373d2cd3dfa08b08": [
+52,
+0,
+1,
+4
+],
+"3a73ee0d289897165389": [
+52,
+1,
+0,
+4
+],
+"b317df6138f734628be8": [
+52,
+1,
+1,
+4
+],
+"1d00cd858d383aefa9ad": [
+53,
+0,
+0,
+4
+],
+"f6bc4449a1c309b840b4": [
+53,
+0,
+1,
+4
+],
+"83feeb715ba45ffa3b1b": [
+53,
+1,
+0,
+4
+],
+"6a49ad2e263d702b524f": [
+53,
+1,
+1,
+4
+],
+"4645b630f490514f5cb4": [
+54,
+0,
+0,
+5
+],
+"208c8e43f6f284f805c7": [
+54,
+0,
+1,
+5
+],
+"6fa0699dcc4e39570f38": [
+54,
+1,
+0,
+5
+],
+"763463db4025151bb9e6": [
+54,
+1,
+1,
+5
+],
+"a1c1cf8906e87ca9b0d2": [
+55,
+0,
+0,
+5
+],
+"1de49566f0ef0301f8f1": [
+55,
+0,
+1,
+5
+],
+"3b6465d04be933ac99da": [
+55,
+1,
+0,
+5
+],
+"a22d62733ffb03d338e3": [
+55,
+1,
+1,
+5
+],
+"f1ddbdc7cbbdf8c1b268": [
+56,
+0,
+0,
+5
+],
+"6534b0d43bc4de3e4811": [
+56,
+0,
+1,
+5
+],
+"c3bb6e0e57719b256f22": [
+56,
+1,
+0,
+5
+],
+"b461cfc021be66d44718": [
+56,
+1,
+1,
+5
+],
+"fe356422d83e09f7c38d": [
+57,
+0,
+0,
+5
+],
+"73f1ebdac37aa854d94e": [
+57,
+0,
+1,
+5
+],
+"b802ca73e6f73082c4a5": [
+57,
+1,
+0,
+5
+],
+"30abd8234bcbae37b3dd": [
+57,
+1,
+1,
+5
+],
+"538d337af80168915f13": [
+58,
+0,
+0,
+5
+],
+"6f745e93df5373fa3c1c": [
+58,
+0,
+1,
+5
+],
+"6f6e676f01f0be73d348": [
+58,
+1,
+0,
+5
+],
+"9ce6e0c03643297fad29": [
+58,
+1,
+1,
+5
+],
+"e1282f5ac44ae6b72883": [
+59,
+0,
+0,
+5
+],
+"b77fc69d71b9a53f60be": [
+59,
+0,
+1,
+5
+],
+"b80dac01f1d133cada7e": [
+59,
+1,
+0,
+5
+],
+"ad86d8b5c13b3d1b3304": [
+59,
+1,
+1,
+5
+],
+"347a9e91c55646f159b5": [
+60,
+0,
+0,
+5
+],
+"9045348a2d702bd13d2f": [
+60,
+0,
+1,
+5
+],
+"5726521b49084e972103": [
+60,
+1,
+0,
+5
+],
+"ff578aacc510f079ca80": [
+60,
+1,
+1,
+5
+],
+"4eb7c94b5f0c139210ab": [
+61,
+0,
+0,
+5
+],
+"defed5c9e5b54aa51b21": [
+61,
+0,
+1,
+5
+],
+"383e5381fe45b54d066b": [
+61,
+1,
+0,
+5
+],
+"c0fb89578ddd330937ed": [
+61,
+1,
+1,
+5
+],
+"7335ad37dd86d774ea28": [
+62,
+0,
+0,
+5
+],
+"5711bc8cf6f9212ff575": [
+62,
+0,
+1,
+5
+],
+"8bcd33f066e98b214629": [
+62,
+1,
+0,
+5
+],
+"ae4dbbc0098d044f88fb": [
+62,
+1,
+1,
+5
+],
+"e5cd43344e989935b804": [
+63,
+0,
+0,
+5
+],
+"7b03893725610cc56e83": [
+63,
+0,
+1,
+5
+],
+"7ae5734e2ce47090ccbe": [
+63,
+1,
+0,
+5
+],
+"6a25ddf684080dba1c85": [
+63,
+1,
+1,
+5
+]
+},
 "tileset": "gTileset_OrleansGeneral",
 "kind": "primary",
 "backdrop": [
@@ -236,486 +1583,57 @@
 ],
 "metatile_offset": 0,
 "metatiles": {
-"johto:000": 0,
-"johto:001": 1,
-"johto:002": 2,
 "johto:003": 3,
 "johto:004": 4,
 "johto:005": 5,
-"johto:006": 6,
-"johto:007": 7,
-"johto:008": 8,
-"johto:009": 9,
-"johto:00A": 10,
-"johto:00B": 11,
-"johto:00C": 12,
-"johto:00D": 13,
 "johto:00E": 14,
-"johto:00F": 15,
-"johto:010": 16,
-"johto:011": 17,
-"johto:012": 18,
-"johto:013": 19,
-"johto:014": 20,
-"johto:015": 21,
-"johto:016": 22,
-"johto:017": 23,
-"johto:018": 24,
-"johto:019": 25,
-"johto:01A": 26,
-"johto:01B": 27,
-"johto:01C": 28,
-"johto:01D": 29,
-"johto:01E": 30,
-"johto:01F": 31,
-"johto:020": 32,
-"johto:021": 33,
-"johto:022": 34,
-"johto:023": 35,
-"johto:024": 36,
-"johto:025": 37,
-"johto:026": 38,
-"johto:027": 39,
-"johto:028": 40,
-"johto:029": 41,
 "johto:02A": 42,
-"johto:02B": 43,
-"johto:02C": 44,
-"johto:02D": 45,
-"johto:02E": 46,
-"johto:02F": 47,
-"johto:030": 48,
-"johto:031": 49,
-"johto:032": 50,
-"johto:033": 51,
-"johto:034": 52,
-"johto:035": 53,
-"johto:036": 54,
-"johto:037": 55,
-"johto:038": 56,
-"johto:039": 57,
 "johto:03A": 58,
-"johto:03B": 59,
-"johto:03C": 60,
-"johto:03D": 61,
-"johto:03E": 62,
-"johto:03F": 63,
-"johto:040": 64,
-"johto:041": 65,
-"johto:042": 66,
-"johto:043": 67,
-"johto:044": 68,
-"johto:045": 69,
-"johto:046": 70,
-"johto:047": 71,
-"johto:048": 72,
-"johto:049": 73,
-"johto:04A": 74,
-"johto:04B": 75,
-"johto:04C": 76,
-"johto:04D": 77,
-"johto:04E": 78,
-"johto:04F": 79,
-"johto:050": 80,
-"johto:051": 81,
-"johto:052": 82,
-"johto:053": 83,
-"johto:054": 84,
-"johto:055": 85,
-"johto:056": 86,
-"johto:057": 87,
-"johto:058": 88,
-"johto:059": 89,
-"johto:05A": 90,
-"johto:05B": 91,
-"johto:05C": 92,
-"johto:05D": 93,
-"johto:05E": 94,
-"johto:05F": 95,
-"johto:060": 96,
-"johto:061": 97,
-"johto:062": 98,
-"johto:063": 99,
-"johto:064": 100,
-"johto:065": 101,
-"johto:066": 102,
-"johto:067": 103,
-"johto:068": 104,
-"johto:069": 105,
-"johto:06A": 106,
-"johto:06B": 107,
-"johto:06C": 108,
-"johto:06D": 109,
-"johto:06E": 110,
-"johto:06F": 111,
-"johto:070": 112,
-"johto:071": 113,
-"johto:072": 114,
-"johto:073": 115,
-"johto:074": 116,
-"johto:075": 117,
-"johto:076": 118,
-"johto:077": 119,
-"johto:078": 120,
-"johto:079": 121,
-"johto:07A": 122,
-"johto:07B": 123,
-"johto:07C": 124,
-"johto:07D": 125,
-"johto:07E": 126,
-"johto:07F": 127,
-"johto:080": 128,
-"johto:081": 129,
-"johto:082": 130,
-"johto:083": 131,
-"johto:084": 132,
-"johto:085": 133,
-"johto:086": 134,
-"johto:087": 135,
-"johto:088": 136,
-"johto:089": 137,
-"johto:08A": 138,
-"johto:08B": 139,
-"johto:08C": 140,
-"johto:08D": 141,
-"johto:08E": 142,
-"johto:08F": 143,
-"johto:090": 144,
-"johto:091": 145,
-"johto:092": 146,
-"johto:093": 147,
-"johto:094": 148,
-"johto:095": 149,
-"johto:096": 150,
-"johto:097": 151,
-"johto:098": 152,
-"johto:099": 153,
-"johto:09A": 154,
-"johto:09B": 155,
-"johto:09C": 156,
-"johto:09D": 157,
-"johto:09E": 158,
-"johto:09F": 159,
-"johto:0A0": 160,
-"johto:0A1": 161,
-"johto:0A2": 162,
-"johto:0A3": 163,
-"johto:0A4": 164,
-"johto:0A5": 165,
-"johto:0A6": 166,
-"johto:0A7": 167,
-"johto:0A8": 168,
-"johto:0A9": 169,
-"johto:0AA": 170,
-"johto:0AB": 171,
-"johto:0AC": 172,
-"johto:0AD": 173,
-"johto:0AE": 174,
-"johto:0AF": 175,
-"johto:0B0": 176,
-"johto:0B1": 177,
-"johto:0B2": 178,
-"johto:0B3": 179,
-"johto:0B4": 180,
-"johto:0B5": 181,
-"johto:0B6": 182,
-"johto:0B7": 183,
-"johto:0B8": 184,
-"johto:0B9": 185,
-"johto:0BA": 186,
-"johto:0BB": 187,
-"johto:0BC": 188,
-"johto:0BD": 189,
-"johto:0BE": 190,
-"johto:0BF": 191,
-"johto:0C0": 192,
-"johto:0C1": 193,
-"johto:0C2": 194,
-"johto:0C3": 195,
-"johto:0C4": 196,
-"johto:0C5": 197,
-"johto:0C6": 198,
-"johto:0C7": 199,
-"johto:0C8": 200,
-"johto:0C9": 201,
-"johto:0CA": 202,
-"johto:0CB": 203,
-"johto:0CC": 204,
-"johto:0CD": 205,
-"johto:0CE": 206,
-"johto:0CF": 207,
 "johto:0D0": 208,
 "johto:0D1": 209,
 "johto:0D2": 210,
 "johto:0D3": 211,
 "johto:0D4": 212,
 "johto:0D5": 213,
-"johto:0D6": 214,
-"johto:0D7": 215,
 "johto:0D8": 216,
 "johto:0D9": 217,
 "johto:0DA": 218,
 "johto:0DB": 219,
 "johto:0DC": 220,
 "johto:0DD": 221,
-"johto:0DE": 222,
-"johto:0DF": 223,
 "johto:0E0": 224,
 "johto:0E1": 225,
 "johto:0E2": 226,
 "johto:0E3": 227,
 "johto:0E4": 228,
 "johto:0E5": 229,
-"johto:0E6": 230,
 "johto:0E7": 231,
-"johto:0E8": 232,
-"johto:0E9": 233,
-"johto:0EA": 234,
-"johto:0EB": 235,
 "johto:0EC": 236,
 "johto:0ED": 237,
 "johto:0EE": 238,
 "johto:0EF": 239,
-"johto:0F0": 240,
-"johto:0F1": 241,
-"johto:0F2": 242,
-"johto:0F3": 243,
 "johto:0F4": 244,
 "johto:0F5": 245,
 "johto:0F6": 246,
 "johto:0F7": 247,
-"johto:0F8": 248,
-"johto:0F9": 249,
-"johto:0FA": 250,
-"johto:0FB": 251,
 "johto:0FC": 252,
 "johto:0FD": 253,
-"johto:0FE": 254,
-"johto:0FF": 255,
-"johto:100": 256,
-"johto:101": 257,
-"johto:102": 258,
-"johto:103": 259,
-"johto:104": 260,
-"johto:105": 261,
-"johto:106": 262,
-"johto:107": 263,
-"johto:108": 264,
-"johto:109": 265,
-"johto:10A": 266,
-"johto:10B": 267,
-"johto:10C": 268,
-"johto:10D": 269,
-"johto:10E": 270,
-"johto:10F": 271,
-"johto:110": 272,
-"johto:111": 273,
-"johto:112": 274,
-"johto:113": 275,
-"johto:114": 276,
-"johto:115": 277,
-"johto:116": 278,
-"johto:117": 279,
-"johto:118": 280,
-"johto:119": 281,
-"johto:11A": 282,
-"johto:11B": 283,
-"johto:11C": 284,
-"johto:11D": 285,
-"johto:11E": 286,
-"johto:11F": 287,
-"johto:120": 288,
-"johto:121": 289,
-"johto:122": 290,
-"johto:123": 291,
-"johto:124": 292,
-"johto:125": 293,
-"johto:126": 294,
-"johto:127": 295,
-"johto:128": 296,
-"johto:129": 297,
-"johto:12A": 298,
 "johto:12B": 299,
-"johto:12C": 300,
-"johto:12D": 301,
-"johto:12E": 302,
-"johto:12F": 303,
-"johto:130": 304,
-"johto:131": 305,
-"johto:132": 306,
-"johto:133": 307,
-"johto:134": 308,
 "johto:135": 309,
 "johto:136": 310,
-"johto:137": 311,
-"johto:138": 312,
-"johto:139": 313,
-"johto:13A": 314,
-"johto:13B": 315,
-"johto:13C": 316,
-"johto:13D": 317,
-"johto:13E": 318,
-"johto:13F": 319,
-"johto:140": 320,
-"johto:141": 321,
-"johto:142": 322,
-"johto:143": 323,
-"johto:144": 324,
-"johto:145": 325,
-"johto:146": 326,
-"johto:147": 327,
-"johto:148": 328,
-"johto:149": 329,
-"johto:14A": 330,
-"johto:14B": 331,
-"johto:14C": 332,
-"johto:14D": 333,
-"johto:14E": 334,
-"johto:14F": 335,
-"johto:150": 336,
-"johto:151": 337,
-"johto:152": 338,
-"johto:153": 339,
-"johto:154": 340,
-"johto:155": 341,
-"johto:156": 342,
-"johto:157": 343,
-"johto:158": 344,
-"johto:159": 345,
-"johto:15A": 346,
-"johto:15B": 347,
-"johto:15C": 348,
-"johto:15D": 349,
-"johto:15E": 350,
-"johto:15F": 351,
-"johto:160": 352,
-"johto:161": 353,
-"johto:162": 354,
-"johto:163": 355,
-"johto:164": 356,
-"johto:165": 357,
-"johto:166": 358,
-"johto:167": 359,
-"johto:168": 360,
-"johto:169": 361,
-"johto:16A": 362,
-"johto:16B": 363,
-"johto:16C": 364,
-"johto:16D": 365,
-"johto:16E": 366,
-"johto:16F": 367,
-"johto:170": 368,
-"johto:171": 369,
-"johto:172": 370,
-"johto:173": 371,
-"johto:174": 372,
-"johto:175": 373,
-"johto:176": 374,
-"johto:177": 375,
-"johto:178": 376,
-"johto:179": 377,
-"johto:17A": 378,
-"johto:17B": 379,
-"johto:17C": 380,
-"johto:17D": 381,
-"johto:17E": 382,
-"johto:17F": 383,
-"johto:180": 384,
-"johto:181": 385,
-"johto:182": 386,
-"johto:183": 387,
-"johto:184": 388,
-"johto:185": 389,
-"johto:186": 390,
-"johto:187": 391,
-"johto:188": 392,
-"johto:189": 393,
-"johto:18A": 394,
-"johto:18B": 395,
-"johto:18C": 396,
-"johto:18D": 397,
-"johto:18E": 398,
-"johto:18F": 399,
-"johto:190": 400,
-"johto:191": 401,
-"johto:192": 402,
-"johto:193": 403,
-"johto:194": 404,
-"johto:195": 405,
-"johto:196": 406,
-"johto:197": 407,
-"johto:198": 408,
-"johto:199": 409,
-"johto:19A": 410,
-"johto:19B": 411,
-"johto:19C": 412,
-"johto:19D": 413,
-"johto:19E": 414,
-"johto:19F": 415,
-"johto:1A0": 416,
-"johto:1A1": 417,
-"johto:1A2": 418,
-"johto:1A3": 419,
-"johto:1A4": 420,
-"johto:1A5": 421,
-"johto:1A6": 422,
-"johto:1A7": 423,
-"johto:1A8": 424,
-"johto:1A9": 425,
-"johto:1AA": 426,
-"johto:1AB": 427,
-"johto:1AC": 428,
-"johto:1AD": 429,
-"johto:1AE": 430,
-"johto:1AF": 431,
-"johto:1B0": 432,
-"johto:1B1": 433,
-"johto:1B2": 434,
-"johto:1B3": 435,
-"johto:1B4": 436,
-"johto:1B5": 437,
-"johto:1B6": 438,
-"johto:1B7": 439,
 "johto:1B8": 440,
 "johto:1B9": 441,
 "johto:1BA": 442,
 "johto:1BB": 443,
 "johto:1BC": 444,
-"johto:1BD": 445,
-"johto:1BE": 446,
-"johto:1BF": 447,
 "johto:1C0": 448,
 "johto:1C1": 449,
 "johto:1C2": 450,
 "johto:1C3": 451,
 "johto:1C4": 452,
-"johto:1C5": 453,
-"johto:1C6": 454,
-"johto:1C7": 455,
 "johto:1C8": 456,
 "johto:1C9": 457,
-"johto:1CA": 458,
-"johto:1CB": 459,
-"johto:1CC": 460,
-"johto:1CD": 461,
-"johto:1CE": 462,
-"johto:1CF": 463,
-"johto:1D0": 464,
-"johto:1D1": 465,
-"johto:1D2": 466,
-"johto:1D3": 467,
-"johto:1D4": 468,
-"johto:1D5": 469,
-"johto:1D6": 470,
-"johto:1D7": 471,
-"johto:1D8": 472,
-"johto:1D9": 473,
-"johto:1DA": 474,
-"johto:1DB": 475,
-"johto:1DC": 476,
-"johto:1DD": 477,
-"johto:1DE": 478,
-"johto:1DF": 479
+"johto:1CA": 458
 },
 "palettes": [
 [
@@ -725,29 +1643,19 @@
 104
 ],
 [
-104,
-144,
+152,
+128,
 96
 ],
 [
-136,
-176,
-128
+128,
+104,
+80
 ],
 [
-232,
-240,
-240
-],
-[
-192,
-48,
-64
-],
-[
-56,
-112,
-216
+104,
+144,
+96
 ],
 [
 40,
@@ -755,14 +1663,44 @@
 40
 ],
 [
-248,
-192,
-112
+176,
+152,
+120
+],
+[
+72,
+96,
+64
+],
+[
+80,
+112,
+96
+],
+[
+88,
+80,
+64
 ],
 [
 136,
-184,
-248
+176,
+128
+],
+[
+192,
+48,
+64
+],
+[
+112,
+96,
+64
+],
+[
+104,
+80,
+64
 ],
 [
 232,
@@ -770,61 +1708,23 @@
 104
 ],
 [
-88,
-80,
-64
-],
-[
-176,
-208,
-248
-],
-[
-48,
-96,
-176
-],
-[
-112,
-96,
-96
-],
-[
-80,
-144,
-224
+248,
+192,
+112
 ]
 ],
+[],
+[],
 [
+[
+120,
+160,
+104
+],
 [
 120,
 120,
 128
-],
-[
-200,
-216,
-232
-],
-[
-216,
-104,
-96
-],
-[
-88,
-88,
-112
-],
-[
-144,
-160,
-176
-],
-[
-232,
-144,
-112
 ],
 [
 64,
@@ -832,61 +1732,19 @@
 104
 ],
 [
+88,
+88,
+112
+],
+[
+144,
+160,
+176
+],
+[
 240,
 240,
 248
-],
-[
-120,
-160,
-104
-],
-[
-168,
-184,
-200
-],
-[
-168,
-32,
-40
-],
-[
-200,
-80,
-72
-],
-[
-152,
-120,
-96
-],
-[
-248,
-200,
-136
-],
-[
-192,
-168,
-136
-]
-],
-[
-[
-120,
-72,
-72
-],
-[
-216,
-224,
-224
-],
-[
-88,
-56,
-64
 ],
 [
 216,
@@ -899,24 +1757,63 @@
 136
 ],
 [
-144,
-104,
-104
+88,
+56,
+64
 ],
+[
+232,
+208,
+192
+],
+[
+120,
+72,
+72
+],
+[
+200,
+216,
+232
+],
+[
+152,
+208,
+248
+],
+[
+168,
+184,
+200
+]
+],
+[
+[
+72,
+120,
+216
+],
+[
+72,
+144,
+216
+]
+],
+[
 [
 120,
 160,
 104
 ],
 [
+216,
+224,
+224
+],
+[
 168,
 184,
 200
-],
-[
-120,
-120,
-128
 ],
 [
 192,
@@ -930,127 +1827,8 @@
 ],
 [
 232,
-208,
-192
-],
-[
-88,
-184,
-136
-],
-[
-32,
-48,
-56
-],
-[
-88,
-88,
-112
-]
-],
-[
-[
-96,
-160,
-216
-],
-[
-200,
-216,
-232
-],
-[
-120,
-120,
-128
-],
-[
-112,
-184,
-240
-],
-[
-64,
-72,
-104
-],
-[
-168,
-184,
-200
-],
-[
-72,
-128,
-192
-],
-[
-152,
-208,
-248
-],
-[
-240,
-240,
-248
-],
-[
-48,
-96,
-160
-],
-[
-144,
-160,
-176
-],
-[
-88,
-88,
-112
-],
-[
-200,
-176,
-104
-]
-],
-[
-[
-232,
 224,
 136
-],
-[
-152,
-128,
-96
-],
-[
-128,
-104,
-80
-],
-[
-168,
-184,
-200
-],
-[
-120,
-160,
-104
-],
-[
-176,
-152,
-120
-],
-[
-120,
-120,
-128
 ],
 [
 184,
@@ -1058,101 +1836,14 @@
 160
 ],
 [
-104,
-80,
-64
-],
-[
-64,
-72,
-104
-],
-[
-88,
-88,
-112
-],
-[
 216,
 192,
 136
 ],
 [
-216,
-224,
-232
-],
-[
 208,
 184,
 104
-]
-],
-[
-[
-72,
-120,
-216
-],
-[
-72,
-144,
-216
-],
-[
-232,
-224,
-136
-],
-[
-136,
-160,
-248
-],
-[
-224,
-208,
-136
-],
-[
-200,
-216,
-232
-],
-[
-80,
-152,
-224
-],
-[
-88,
-88,
-112
-],
-[
-104,
-160,
-224
-],
-[
-120,
-120,
-128
-],
-[
-208,
-192,
-104
-],
-[
-168,
-184,
-200
-],
-[
-224,
-240,
-248
 ]
 ]
 ],
@@ -1169,7 +1860,7 @@
 0,
 0
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 19], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 1], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
 3,
 0,
 0,
@@ -1181,2843 +1872,389 @@
 0,
 0
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 1], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-3,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 304], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 364], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
 5,
 0,
 0,
-1
+3
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 305], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 365], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
 6,
 0,
 0,
-1
+3
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 320], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 380], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
 7,
 0,
 0,
-1
+3
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 321], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 381], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
 8,
 0,
 0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 364], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-9,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 365], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-10,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 380], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-11,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 381], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-12,
-0,
-0,
-2
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 508], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-13,
+9,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 509], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-14,
+10,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 510], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-15,
+11,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 511], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-16,
+12,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 494], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-17,
+13,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 495], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-18,
+14,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 492], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-19,
+15,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 493], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-20,
+16,
 0,
 0,
 0
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 581], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-21,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 597], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-22,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 557], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-23,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 558], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-24,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 573], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-25,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 574], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-26,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 468], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-27,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 469], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-28,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 589], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-29,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 470], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-30,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 471], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-31,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 472], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-32,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 473], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-33,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 68], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-34,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 69], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-35,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 84], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-36,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 85], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-37,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 19], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
+3,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 7], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-38,
+17,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 22], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-39,
+18,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 23], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-40,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 70], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-41,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 71], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-42,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 86], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-43,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 87], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-44,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 464], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-45,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 73], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-42,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 465], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-46,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 490], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-44,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 194], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-47,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 162], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-48,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 163], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-49,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 178], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-50,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 179], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-51,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 149], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-52,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 38], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-53,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 39], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-54,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 54], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-55,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 55], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-56,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 394], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-57,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 410], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-58,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 467], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-59,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 480], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-60,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 57], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-56,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 40], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-53,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 56], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-55,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 340], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-61,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 356], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-62,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 9], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-38,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 491], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-63,
+19,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 90], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-64,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 255], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-65,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 636], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-66,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 296], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-67,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 297], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-68,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 312], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-69,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 313], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-70,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 315], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-71,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 314], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-72,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 484], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-73,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 485], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-74,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 482], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-75,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 483], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-76,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 298], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-77,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 299], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-78,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 330], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-79,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 331], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-80,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 91], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-81,
+20,
 0,
 0,
 3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 92], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-82,
+21,
 0,
 0,
 3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 328], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-83,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 329], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-84,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 344], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-85,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 345], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-86,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 378], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-87,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 362], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-88,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 346], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-89,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 347], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-90,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 32], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-3,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 33], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-91,
-0,
-0,
-4
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 94], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-92,
+22,
 0,
 0,
 3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 399], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-93,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 343], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-94,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 617], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-95,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 580], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-96,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 552], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-97,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 596], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-98,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 568], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-99,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 200], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-100,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 201], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-101,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 216], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-102,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 217], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-103,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 582], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-104,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 598], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-105,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 192], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-106,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 193], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-107,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 195], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-108,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 197], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-109,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 198], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-110,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 213], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-111,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 214], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-112,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 199], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-113,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 215], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-114,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 230], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-115,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 271], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-116,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 416], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-117,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 417], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-118,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 418], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-118,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 419], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-118,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 430], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-119,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 416], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-118,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 431], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-119,
-1,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 417], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-120,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 262], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-121,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 287], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-122,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 208], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-123,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 209], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-124,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 224], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-125,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 229], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-126,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 245], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-127,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 246], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-128,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 231], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-129,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 247], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-130,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 278], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-131,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 418], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-132,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 432], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-119,
-0,
-1,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 419], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-133,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 433], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-119,
-1,
-1,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 210], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-134,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 261], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-135,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 263], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-136,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 292], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-137,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 293], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-138,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 277], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-139,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 279], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-140,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 233], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-141,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 395], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-142,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 411], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-4,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 97], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-143,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 112], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-144,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 113], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-145,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 98], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-146,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 99], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-147,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 114], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-148,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 115], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-149,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 100], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-150,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 101], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-151,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 116], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-152,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 117], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-153,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 130], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-154,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 131], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-155,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 146], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-156,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 147], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-157,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 104], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-158,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 105], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-159,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 223], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-160,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 128], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-161,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 129], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-162,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 144], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-163,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 145], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-164,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 132], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-165,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 133], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-166,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 148], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-167,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 317], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-168,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 333], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-169,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 160], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-170,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 161], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-171,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 176], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-172,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 177], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-173,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 164], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-174,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 165], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-175,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 180], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-50,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 181], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-176,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 119], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-177,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 135], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-178,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 409], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-179,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 122], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-180,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 138], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-181,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 168], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-182,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 169], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-183,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 294], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-184,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 295], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-185,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 151], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-186,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 167], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-187,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 154], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-188,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 170], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-189,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 240], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-190,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 241], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-191,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 242], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-192,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 243], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-193,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 120], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-194,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 121], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-195,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 136], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-196,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 137], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-197,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 302], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-198,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 318], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-199,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 152], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-200,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 153], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-201,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 108], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-202,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 109], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-203,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 124], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-152,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 125], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-204,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 110], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-48,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 111], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-205,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 126], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-206,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 127], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-207,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 171], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-208,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 186], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-209,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 187], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-210,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 134], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-211,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 139], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-212,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 2], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-213,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 3], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-214,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 18], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-215,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 48], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-216,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 49], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-216,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 16], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-216,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 20], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-217,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 36], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-218,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 384], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-219,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 256], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-220,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 212], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-221,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 372], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-222,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 385], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-223,
+23,
 0,
 0,
 3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 393], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-224,
+24,
+0,
+0,
+0
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 394], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
+25,
+0,
+0,
+0
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 409], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
+26,
+0,
+0,
+0
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 410], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
+27,
 0,
 0,
 0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 348], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-225,
+28,
 0,
 0,
-4
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 301], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-226,
+29,
 0,
 0,
-4
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 316], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-227,
+30,
 0,
 0,
-4
+0
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 317], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+31,
+0,
+0,
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 349], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-226,
+29,
 0,
 1,
-4
+0
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 333], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+32,
+0,
+0,
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 332], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-228,
+33,
 0,
 0,
-4
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 4], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-229,
+34,
 0,
 0,
-4
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 5], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-230,
+35,
 0,
 0,
-4
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 20], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+36,
+0,
+0,
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 32], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+37,
+0,
+0,
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 37], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-231,
+38,
 0,
 0,
-4
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 33], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+39,
+0,
+0,
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 36], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+40,
+0,
+0,
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 300], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
+28,
+0,
+1,
+0
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 308], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-232,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 324], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-233,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 46], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-234,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 62], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-235,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 14], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-236,
+41,
 0,
 0,
 3
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 300], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-225,
-0,
-1,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 357], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-237,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 324], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
+42,
 0,
 0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 63], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-238,
-0,
-0,
-2
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 325], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-239,
+43,
 0,
 0,
-1
+3
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 14], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
+44,
+0,
+0,
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 31], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-240,
+45,
 0,
 0,
-1
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 31], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-241,
+45,
 0,
 0,
 3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 341], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-242,
+46,
 0,
 0,
-1
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 15], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-243,
+47,
 0,
 0,
-1
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 30], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-244,
+48,
 0,
 0,
-1
+3
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 309], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-245,
+49,
 0,
 0,
-1
+3
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 34], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-246,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 416], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
+50,
 0,
 0,
 4
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 425], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-247,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 424], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-248,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 420], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-249,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 421], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-250,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 17], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-251,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 417], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
+51,
 0,
 0,
 4
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 142], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-252,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 418], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
+52,
 0,
 0,
-2
+4
 ],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 428], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-253,
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 419], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
+53,
 0,
 0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 427], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-254,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 426], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-255,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 156], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-256,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 159], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-257,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 422], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-258,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 423], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-259,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 157], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-260,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 141], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-261,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 158], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-262,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 140], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-263,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 143], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-264,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 429], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 4]]": [
-265,
-0,
-0,
-5
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 450], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-266,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 451], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-266,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 452], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-267,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 453], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-267,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 78], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-268,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 95], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-269,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 172], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-270,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 175], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-271,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 454], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-272,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 455], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-272,
-1,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 456], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-273,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 457], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-273,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 191], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-274,
-0,
-0,
-2
+4
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 14], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-275,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 458], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-276,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 459], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-276,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 460], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-277,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 461], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 6]]": [
-277,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 260], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-278,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 400], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-279,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 202], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-280,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 203], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-281,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 218], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-282,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 219], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-283,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 204], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-284,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 220], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-285,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 258], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-286,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 370], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-287,
+44,
 0,
 0,
 3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 273], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-288,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 291], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-289,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 371], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-290,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 259], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-291,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 275], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-292,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 272], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-293,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 211], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-294,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 288], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-295,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 289], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-296,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 276], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-297,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 234], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-298,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 235], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-299,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 236], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-300,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 227], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-301,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 274], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-302,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 290], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-303,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 373], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-304,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 250], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-305,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 251], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-306,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 266], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-307,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 267], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-308,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 196], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-309,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 264], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-310,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 265], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-311,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 205], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-312,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 270], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-313,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 221], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-314,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 206], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-315,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 222], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-316,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 252], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-317,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 268], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-318,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 26], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-319,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 42], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-320,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 282], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-321,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 283], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-322,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 280], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-323,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 281], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-324,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 622], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-325,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 286], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-326,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 237], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-327,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 253], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-328,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 269], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-329,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 285], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-330,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 284], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-331,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 350], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-332,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 351], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-333,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 366], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-334,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 367], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-335,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 336], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-336,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 337], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-337,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 512], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-338,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 513], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-339,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 528], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-340,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 529], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-341,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 514], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-342,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 530], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-343,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 515], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-344,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 531], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-345,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 306], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-346,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 307], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-347,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 322], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-348,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 323], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-349,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 339], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-350,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 382], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-351,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 383], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-352,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 352], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-353,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 353], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-354,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 368], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-355,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 369], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-356,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 544], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-340,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 545], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-341,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 546], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-343,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 547], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-345,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 338], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-357,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 228], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-358,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 244], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-359,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 412], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-360,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 560], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-361,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 561], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-362,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 562], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-363,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 563], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-364,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 354], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-346,
-0,
-1,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 355], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-365,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 386], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-366,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 387], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-367,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 192], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-368,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 193], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-369,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 208], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-370,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 209], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-371,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 194], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-372,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 210], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-373,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 224], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-374,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 240], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-375,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 241], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-376,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 256], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-377,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 257], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-378,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 401], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-379,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 402], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-380,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 403], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-381,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 388], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-382,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 389], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-383,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 243], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-384,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 228], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-385,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 242], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-386,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 258], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-387,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 259], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-388,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 275], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-389,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 405], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-390,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 404], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-391,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 390], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-392,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 391], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-393,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 225], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-394,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 595], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-395,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 226], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-396,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 406], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-397,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 407], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-398,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 612], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-399,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 613], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-400,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 628], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-401,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 629], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-402,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 343], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-3,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 611], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-403,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 627], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-404,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 614], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-405,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 630], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-404,
-1,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 15], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-406,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 30], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 3]]": [
-407,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 590], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-408,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 50], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-409,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 591], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-410,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 592], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-411,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 594], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-412,
-0,
-0,
-2
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 576], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-413,
+54,
 0,
 0,
-2
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 577], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-414,
+55,
 0,
 0,
-2
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 592], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
+56,
+0,
+0,
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 610], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-415,
+57,
 0,
 0,
-2
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 578], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-416,
+58,
 0,
 0,
-2
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 609], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-417,
+59,
 0,
 0,
-2
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 579], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-418,
+60,
 0,
 0,
-2
+5
+],
+"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 594], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
+61,
+0,
+0,
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 593], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-419,
+62,
 0,
 0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 633], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-420,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 52], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-421,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 635], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-422,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 632], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-423,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 51], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-424,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 631], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-425,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 634], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-426,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 625], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-427,
-0,
-0,
-4
+5
 ],
 "[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 608], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-428,
+63,
 0,
 0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 619], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-429,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 616], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-430,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 615], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-431,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 624], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-432,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 173], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-433,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 174], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-434,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 618], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 5]]": [
-435,
-0,
-0,
-4
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 189], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-436,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 190], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 2]]": [
-437,
-0,
-0,
-1
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 486], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-438,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 487], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 0]]": [
-439,
-0,
-0,
-0
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 311], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-440,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 413], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-441,
-0,
-0,
-2
-],
-"[[\"dir\", \"data/tilesets/primary/johto_general_hns\", 414], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]": [
-442,
-0,
-0,
-2
+5
 ]
 }
 }

@@ -528,5 +528,35 @@
    "base": "ekat:grass",
    "art": "lmk:15_11"
   }
+ },
+ {
+  "id": "ap_71db1b1d2390",
+  "pixels": "tools/mapgen/tilesets/approach/ap_71db1b1d2390.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_7820c634c2f0",
+  "pixels": "tools/mapgen/tilesets/approach/ap_7820c634c2f0.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_82bef3b02304",
+  "pixels": "tools/mapgen/tilesets/approach/ap_82bef3b02304.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_9fc8bda1765b",
+  "pixels": "tools/mapgen/tilesets/approach/ap_9fc8bda1765b.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_e4fa3625e33a",
+  "pixels": "tools/mapgen/tilesets/approach/ap_e4fa3625e33a.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
  }
 ]

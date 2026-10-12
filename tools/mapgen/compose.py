@@ -145,6 +145,8 @@ class Recolor:
 
 
 LOCAL_RECOLOR = {}  # source name -> Recolor applied only to that source's pixels
+SHEET_RECOLOR = {}  # image sheet path -> Recolor used instead of the recipe's (the primary's copy of a secondary's art must
+                    # recolour it exactly the way the secondaries do, or the shared pieces would not be identical)
 
 
 def rgb(tkey, pkey, recolor):
@@ -159,7 +161,8 @@ def rgb(tkey, pkey, recolor):
         pal = load_pal(pkey[1], pkey[2])
         return tuple(None if c == 0 else recolor(gba_color(pal[c])) for c in t)
     if kind == "img":
-        return tuple(None if c is None else recolor(c) for c in ImageSource.sheets[tkey[1]].tiles[tkey[2]])
+        rc = SHEET_RECOLOR.get(tkey[1], recolor)
+        return tuple(None if c is None else rc(c) for c in ImageSource.sheets[tkey[1]].tiles[tkey[2]])
     if kind == "px":  # finished pixels (a "pixels" patch, e.g. a levee cell drawn by build.py from composed art)
         return tkey[1]
     if kind == "inner":
@@ -895,7 +898,8 @@ def demand_only(r, picked, names):
     import glob
     ud = os.path.join(HERE, "tilesets", "uses", r["dir"])
     layouts = [l for l in json.load(open("data/layouts/layouts.json"))["layouts"]
-               if l and l.get("secondary_tileset") == r["symbol"]]
+               if l and l.get("secondary_tileset") == r["symbol"]
+               and l.get("width", 2) * l.get("height", 2) > 1]  # 1x1 stub layouts (stripped Hoenn rooms) place nothing
     have = {os.path.basename(f)[:-5]: f for f in glob.glob(os.path.join(ud, "*.json"))}
     missing = [l["id"] for l in layouts if l["id"] not in have]
     if not layouts or missing:
@@ -912,6 +916,112 @@ def demand_only(r, picked, names):
     return [picked[i] for i in keep], {n: remap[i] for n, i in names.items() if i in remap}
 
 
+
+# ---------------------------------------------------------------- shared pieces (primary <-> secondaries)
+def tile_hash(px):
+    import hashlib
+    return hashlib.sha1(repr(px).encode()).hexdigest()[:20]
+
+
+def piece_sig(p, recolor):
+    """What a metatile looks like (both layers' pixels after recolouring and flipping, and its attribute): two pieces
+    with the same signature are the same piece, wherever each tileset keeps its tiles."""
+    import hashlib
+    h = hashlib.sha1()
+    for tkey, pkey, hf, vf in p[0]:
+        px = rgb(tkey, pkey, recolor)
+        h.update(repr(None if all(c is None for c in px) else flip(px, hf, vf)).encode())
+    h.update(repr(p[1]).encode())
+    return h.hexdigest()[:20]
+
+
+def snake(sym):
+    import re
+    return re.sub(r"(?<!^)(?=[A-Z])", "_", sym.replace("gTileset_", "")).lower()
+
+
+def primary_counts(r, recipe_path):
+    """{name: placements} for the primary: every layout using it, each metatile id read through the primary's previous
+    mapping (ids < 512) or the layout's own secondary mapping (the shared terrain still lives there before the first
+    compose that moves it). Names the maps never place get 0; {} when nothing is known."""
+    tdir = os.path.join(os.path.dirname(recipe_path), "..")
+    if not os.path.exists("data/layouts/layouts.json"):
+        return {}
+    own = os.path.join(tdir, f"{r['dir']}.mapping.json")
+    inv_p = {v: k for k, v in json.load(open(own))["metatiles"].items()} if os.path.exists(own) else {}
+    cnt, maps, sec_inv = {}, 0, {}
+    for l in json.load(open("data/layouts/layouts.json"))["layouts"]:
+        if not l or l.get("primary_tileset") != r["symbol"] or not os.path.exists(l["blockdata_filepath"]):
+            continue
+        sp = os.path.join(tdir, snake(l["secondary_tileset"]) + ".mapping.json")
+        if sp not in sec_inv:
+            sec_inv[sp] = ({v: k for k, v in json.load(open(sp))["metatiles"].items()} if os.path.exists(sp) else {})
+        inv_s = sec_inv[sp]
+        maps += 1
+        b = open(l["blockdata_filepath"], "rb").read()
+        for v in struct.unpack(f"<{len(b) // 2}H", b):
+            mid = v & 0x3FF
+            n = inv_p.get(mid) if mid < MAX_METATILES else inv_s.get(mid)
+            if n:
+                cnt[n] = cnt.get(n, 0) + 1
+    if not maps:
+        return {}
+    for n in list(inv_p.values()) + [n for inv in sec_inv.values() for n in inv.values()]:
+        cnt.setdefault(n, 0)
+    return cnt
+
+
+def sparse_primary(r, recipe_path, picked, names):
+    """The primary keeps only what the maps use, at the SAME metatile ids as before: the HnS Johto metatiles named in the
+    keep file stay where they were (so hex ids in tileset configs, specs and generators keep working), every other Johto
+    slot is left empty, and the shared terrain (recipe "shared": name regexes) fills the freed slots first."""
+    import re
+    keep = json.load(open(os.path.join(os.path.dirname(recipe_path), "..", r["keep_file"])))
+    kept = {int(x, 16) for x in keep["johto"]}
+    n_slots = max(int(n.split(":")[1], 16) for n in names if n.startswith("johto:")) + 1
+    out = [None] * n_slots
+    new_names = {}
+    for n, i in names.items():
+        if n.startswith("johto:"):
+            j = int(n.split(":")[1], 16)
+            if j in kept and picked[i]:
+                out[j] = picked[i]
+                new_names[n] = j
+    holes = [j for j in range(n_slots) if out[j] is None]
+    pats = [re.compile(p) for p in r.get("shared", [])]
+    for n, i in names.items():
+        if n.startswith("johto:") or not picked[i] or not any(p.search(n) for p in pats):
+            continue
+        if holes:
+            j = holes.pop(0)
+            out[j] = picked[i]
+        else:
+            out.append(picked[i])
+            j = len(out) - 1
+        new_names[n] = j
+    missing = [x for x in keep["johto"] if f"johto:{x}" not in new_names]
+    if missing:
+        raise SystemExit(f"keep file names Johto metatiles that do not exist: {missing[:8]}")
+    print(f"  primary: {sum(1 for x in out if x)} metatiles kept ({len(kept)} Johto at their old ids, "
+          f"{len(new_names) - len(kept)} shared pieces), {len(holes)} free slots below id {n_slots}")
+    return out, new_names
+
+
+def drop_shared(picked, names, base, recolor):
+    """A secondary does not carry a piece the primary already has, if it is the same piece (same pixels, same attribute):
+    the maps reach it through the primary's mapping. A piece with the primary's name but another look stays here
+    (and shadows the primary's name for this tileset's maps)."""
+    sig, drop, differ = base.get("sig") or {}, set(), []
+    for n, i in names.items():
+        if n in sig and picked[i]:
+            (drop.add(i) if piece_sig(picked[i], recolor) == sig[n] else differ.append(n))
+    keep = [i for i in range(len(picked)) if i not in drop]
+    remap = {i: k for k, i in enumerate(keep)}
+    print(f"  shared with the primary: {len(drop)} pieces dropped" + (f"; {len(differ)} differ and stay: "
+          f"{', '.join(sorted(differ)[:5])}{'...' if len(differ) > 5 else ''}" if differ else ""))
+    return [picked[i] for i in keep], {n: remap[i] for n, i in names.items() if i in remap}
+
+
 # ---------------------------------------------------------------- compose
 def compose(recipe_path):
     r = json.load(open(recipe_path))
@@ -922,6 +1032,11 @@ def compose(recipe_path):
     if secondary:
         base = json.load(open(os.path.join(os.path.dirname(recipe_path), "..", r["primary_mapping"])))
     recolor = Recolor((base or {}).get("recolor", []) + r.get("recolor", []), r.get("recolor_tolerance", 0))
+    SHEET_RECOLOR.clear()
+    for s_ in r["sources"]:
+        if s_.get("own_recolor"):
+            o = s_["own_recolor"]
+            SHEET_RECOLOR[s_["image"]] = Recolor(r.get("recolor", []) + o["table"], o.get("tolerance", 0))
     KEEP_COLORS.clear()
     KEEP_COLORS.update(gba_color(tuple(c)) for c in (base or {}).get("keep_colors", []) + r.get("keep_colors", []))
 
@@ -1104,8 +1219,12 @@ def compose(recipe_path):
                        [entries[i] for i in (2, 3, 0, 1, 6, 7, 4, 5)]]
         names[f"patch:{pt['id']}"] = len(picked)
         picked.append((entries, attr))
+    if r.get("keep_file"):
+        picked, names = sparse_primary(r, recipe_path, picked, names)
     if r.get("demand"):
         picked, names = demand_only(r, picked, names)
+    if base and base.get("sig"):
+        picked, names = drop_shared(picked, names, base, recolor)
     if len(picked) > MAX_METATILES:
         raise SystemExit(f"{len(picked)} metatiles picked; the limit is {MAX_METATILES}")
 
@@ -1114,6 +1233,18 @@ def compose(recipe_path):
     if base:
         reuse = {tuplify(json.loads(k)): v for k, v in base["tiles"].items()}
         base_pals = [[tuple(c) for c in p] for p in base["palettes"]]
+        # the same pixels already in the primary (a shared piece's tiles under a prop, say) are never copied
+        content = base.get("content") or {}
+        for p in picked:
+            for tkey, pkey, _, _ in (p[0] if p else []):
+                if (tkey, pkey) in reuse:
+                    continue
+                px = rgb(tkey, pkey, recolor)
+                if all(c is None for c in px):
+                    continue
+                hit = content.get(tile_hash(px))
+                if hit:
+                    reuse[(tkey, pkey)] = tuple(hit)
     # "tile_palettes": every 8x8 tile is placed in a palette by its own colours (pack_tiles), rather than by
     # the source palette it came from - far fewer colours lost when a set mixes many sources
     tile_pal = bool(r.get("tile_palettes"))
@@ -1151,7 +1282,8 @@ def compose(recipe_path):
     v2_bottom, v2_bd = set(), None
     if v2:
         v2_bd = recolor(gba_color(tuple(r.get("backdrop") or (base or {}).get("backdrop") or (0, 0, 0))))
-        items = v2_items(picked, names, map_counts(r, recipe_path), reuse, recolor)
+        counts = primary_counts(r, recipe_path) if not secondary else map_counts(r, recipe_path)
+        items = v2_items(picked, names, counts, reuse, recolor)
         if not r.get("v2_backdrop"):
             # off by default: with OW_ENABLE_DNS the day/night tint (TimeMixPalettes) copies colour 0 through
             # untinted, so grass drawn as the backdrop would stay day-bright next to tinted grass after dark
@@ -1241,7 +1373,19 @@ def compose(recipe_path):
         with open(f"{out_dir}/palettes/{i:02d}.pal", "w", newline="\r\n") as f:
             f.write("JASC-PAL\n0100\n16\n" + "".join(f"{c[0]} {c[1]} {c[2]}\n" for c in p))
 
+    sig, content = {}, {}
+    if not secondary:
+        for n, i in names.items():
+            if not n.startswith("johto:") and picked[i]:
+                sig[n] = piece_sig(picked[i], recolor)
+        for (tkey, pkey), ((t, th, tv), slot) in tile_map.items():
+            px = rgb(tkey, pkey, recolor)
+            for h in (0, 1):
+                for v in (0, 1):
+                    content.setdefault(tile_hash(flip(px, h, v)), [t, th ^ h, tv ^ v, slot])
     mapping = {
+        "sig": sig or None,
+        "content": content or None,
         "tileset": r["symbol"],
         "kind": kind,
         "backdrop": list(bd),

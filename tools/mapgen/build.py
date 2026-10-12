@@ -26,8 +26,24 @@ WANTED = set()  # pieces it needs that its demand-driven tileset left out last t
 DEMAND = False
 
 
+PRIMARY_IDS = None  # metatile ids the (pruned) primary really holds: tilesets/orleans_general.mapping.json
+CHECK_PRIMARY = False  # set by Builder for maps on gTileset_OrleansGeneral
+
+
+def primary_ids():
+    global PRIMARY_IDS
+    if PRIMARY_IDS is None:
+        p = os.path.join(HERE, "tilesets", "orleans_general.mapping.json")
+        PRIMARY_IDS = {0} | set(json.load(open(p))["metatiles"].values()) if os.path.exists(p) else set()
+    return PRIMARY_IDS
+
+
 def hx(s):
-    """A metatile id: hex ("12B") or a named piece from a composed tileset ("ekat:water_C")."""
+    """A metatile id: hex ("12B") or a named piece from a composed tileset ("ekat:water_C"). A hex id below 512 is a piece of
+    the primary: the primary is pruned to what the maps use (primary_keep.py), so an id outside it would draw an empty cell."""
+    if CHECK_PRIMARY and ":" not in s and int(s, 16) < 512 and int(s, 16) not in primary_ids():
+        raise SystemExit(f"primary metatile {s} was pruned from gTileset_OrleansGeneral: add it to primary_keep.py "
+                         f"(EXTRA), write the keep file and recompose the primary")
     if ":" in s:
         USED.add(s)
         if s not in MAPPING:
@@ -60,7 +76,8 @@ class Builder:
         except ImportError:
             pass
         self.ts = json.load(open(os.path.join(HERE, "tilesets", self.spec["tileset"] + ".json")))
-        global DEMAND
+        global DEMAND, CHECK_PRIMARY
+        CHECK_PRIMARY = self.ts.get("primary") == "gTileset_OrleansGeneral"
         recipe = os.path.join(HERE, "tilesets", "recipes", self.spec["tileset"] + ".json")
         DEMAND = os.path.exists(recipe) and bool(json.load(open(recipe, encoding="utf-8")).get("demand"))
         for m in self.ts.get("mappings", []):

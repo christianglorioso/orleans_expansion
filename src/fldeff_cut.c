@@ -24,6 +24,36 @@
 #include "constants/songs.h"
 #include "constants/metatile_labels.h"
 
+// Orleans: this build has no Fortree/Lavaridge/Fallarbor tilesets, and their ids (0x2xx) are ids of Orleans SECONDARY
+// metatiles; a tall-grass cell that happened to carry one would be "cut" into something else. Make them unmatchable (a
+// metatile id is 10 bits, so MapGridGetMetatileIdAt never returns these).
+#undef METATILE_Fortree_LongGrass_Root
+#undef METATILE_Fortree_SecretBase_LongGrass_BottomLeft
+#undef METATILE_Fortree_SecretBase_LongGrass_BottomMid
+#undef METATILE_Fortree_SecretBase_LongGrass_BottomRight
+#undef METATILE_Fortree_SecretBase_LongGrass_TopLeft
+#undef METATILE_Fortree_SecretBase_LongGrass_TopMid
+#undef METATILE_Fortree_SecretBase_LongGrass_TopRight
+#undef METATILE_Lavaridge_NormalGrass
+#undef METATILE_Lavaridge_AshGrass
+#undef METATILE_Lavaridge_LavaField
+#undef METATILE_Fallarbor_NormalGrass
+#undef METATILE_Fallarbor_AshGrass
+#undef METATILE_Fallarbor_AshField
+#define METATILE_Fortree_LongGrass_Root                    0xF80
+#define METATILE_Fortree_SecretBase_LongGrass_BottomLeft   0xF81
+#define METATILE_Fortree_SecretBase_LongGrass_BottomMid    0xF82
+#define METATILE_Fortree_SecretBase_LongGrass_BottomRight  0xF83
+#define METATILE_Fortree_SecretBase_LongGrass_TopLeft      0xF84
+#define METATILE_Fortree_SecretBase_LongGrass_TopMid       0xF85
+#define METATILE_Fortree_SecretBase_LongGrass_TopRight     0xF86
+#define METATILE_Lavaridge_NormalGrass                     0xF87
+#define METATILE_Lavaridge_AshGrass                        0xF88
+#define METATILE_Lavaridge_LavaField                       0xF89
+#define METATILE_Fallarbor_NormalGrass                     0xF8A
+#define METATILE_Fallarbor_AshGrass                        0xF8B
+#define METATILE_Fallarbor_AshField                        0xF8C
+
 extern struct MapPosition gPlayerFacingPosition;
 
 extern const u8 FarawayIsland_Interior_EventScript_HideMewWhenGrassCut[];
@@ -371,6 +401,10 @@ static void SetCutGrassMetatile(s16 x, s16 y)
     case METATILE_General_LongGrass:
     case METATILE_General_TallGrass:
         MapGridSetMetatileIdAt(x, y, METATILE_General_Grass);
+        break;
+    case METATILE_General_TallGrass_Marsh:
+        // Orleans: tall grass on a marsh patch leaves marsh (the patch's own edge pieces stay as they are)
+        MapGridSetMetatileIdAt(x, y, METATILE_General_Marsh);
         break;
     case METATILE_General_TallGrass_TreeLeft:
         MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeLeft);

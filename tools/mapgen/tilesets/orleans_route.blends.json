@@ -1334,5 +1334,53 @@
    "M": "ekat:marsh_E",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "ap_0eac9c951826",
+  "pixels": "tools/mapgen/tilesets/approach/ap_0eac9c951826.png",
+  "base": "johto:0E1",
+  "attr_of": "johto:0E1"
+ },
+ {
+  "id": "ap_2965d9e38b1e",
+  "pixels": "tools/mapgen/tilesets/approach/ap_2965d9e38b1e.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_2f963a8b5e76",
+  "pixels": "tools/mapgen/tilesets/approach/ap_2f963a8b5e76.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_50cc065242e1",
+  "pixels": "tools/mapgen/tilesets/approach/ap_50cc065242e1.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_78d14c68a497",
+  "pixels": "tools/mapgen/tilesets/approach/ap_78d14c68a497.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_996bd7474ef6",
+  "pixels": "tools/mapgen/tilesets/approach/ap_996bd7474ef6.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_ca551ead488a",
+  "pixels": "tools/mapgen/tilesets/approach/ap_ca551ead488a.png",
+  "base": "patch:path_iSW",
+  "attr_of": "patch:path_iSW"
+ },
+ {
+  "id": "ap_d4b9e474aa40",
+  "pixels": "tools/mapgen/tilesets/approach/ap_d4b9e474aa40.png",
+  "base": "johto:0E1",
+  "attr_of": "johto:0E1"
  }
 ]
