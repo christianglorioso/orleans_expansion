@@ -49,7 +49,7 @@
 #define VAR_OBJ_GFX_ID_F           0x401F
 
 // general purpose vars
-#define VAR_RECYCLE_GOODS                                0x4020
+#define VAR_ORLEANS_POOL_000                            0x4020
 #define VAR_REPEL_STEP_COUNT                             0x4021
 #define VAR_ICE_STEP_COUNT                               0x4022
 #define VAR_STARTER_MON                                  0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
@@ -96,61 +96,61 @@
 #define VAR_CRUISE_STEP_COUNT                            0x404A
 #define VAR_POKELOT_RND1                                 0x404B // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_POKELOT_RND2                                 0x404C // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
-#define VAR_POKELOT_PRIZE_PLACE                          0x404D
+#define VAR_ORLEANS_POOL_001                            0x404D
 #define VAR_ORLEANS_STORY                                0x404E // Orleans main story progress (vertical-slice-script-plan.md)
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
-#define VAR_OLDALE_TOWN_STATE                            0x4051
-#define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
-#define VAR_LAVARIDGE_TOWN_STATE                         0x4053
+#define VAR_ORLEANS_POOL_002                            0x4051
+#define VAR_ORLEANS_POOL_003                            0x4052
+#define VAR_ORLEANS_POOL_004                            0x4053
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
-#define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
-#define VAR_PETALBURG_CITY_STATE                         0x4057
-#define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
-#define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
+#define VAR_ORLEANS_POOL_005                            0x4055
+#define VAR_ORLEANS_POOL_006                            0x4056
+#define VAR_ORLEANS_POOL_007                            0x4057
+#define VAR_ORLEANS_POOL_008                            0x4058
+#define VAR_ORLEANS_POOL_009                            0x4059
+#define VAR_ORLEANS_POOL_010                            0x405A
+#define VAR_ORLEANS_POOL_011                            0x405B
+#define VAR_ORLEANS_POOL_012                            0x405C
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
+#define VAR_ORLEANS_POOL_013                            0x405F
 #define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ROUTE102_STATE                               0x4061 // Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
-#define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
-#define VAR_ROUTE106_STATE                               0x4065 // Unused Var
-#define VAR_ROUTE107_STATE                               0x4066 // Unused Var
-#define VAR_ROUTE108_STATE                               0x4067 // Unused Var
-#define VAR_ROUTE109_STATE                               0x4068 // Unused Var
-#define VAR_ROUTE110_STATE                               0x4069
-#define VAR_ROUTE111_STATE                               0x406A // Unused Var
-#define VAR_ROUTE112_STATE                               0x406B // Unused Var
-#define VAR_ROUTE113_STATE                               0x406C // Unused Var
-#define VAR_ROUTE114_STATE                               0x406D // Unused Var
-#define VAR_ROUTE115_STATE                               0x406E // Unused Var
+#define VAR_ORLEANS_POOL_014                            0x4061
+#define VAR_ORLEANS_POOL_015                            0x4062
+#define VAR_ORLEANS_POOL_016                            0x4063
+#define VAR_ORLEANS_POOL_017                            0x4064
+#define VAR_ORLEANS_POOL_018                            0x4065
+#define VAR_ORLEANS_POOL_019                            0x4066
+#define VAR_ORLEANS_POOL_020                            0x4067
+#define VAR_ORLEANS_POOL_021                            0x4068
+#define VAR_ORLEANS_POOL_022                            0x4069
+#define VAR_ORLEANS_POOL_023                            0x406A
+#define VAR_ORLEANS_POOL_024                            0x406B
+#define VAR_ORLEANS_POOL_025                            0x406C
+#define VAR_ORLEANS_POOL_026                            0x406D
+#define VAR_ORLEANS_POOL_027                            0x406E
 #define VAR_ROUTE116_STATE                               0x406F
-#define VAR_ROUTE117_STATE                               0x4070 // Unused Var
-#define VAR_ROUTE118_STATE                               0x4071
-#define VAR_ROUTE119_STATE                               0x4072
-#define VAR_ROUTE120_STATE                               0x4073 // Unused Var
-#define VAR_ROUTE121_STATE                               0x4074
-#define VAR_ROUTE122_STATE                               0x4075 // Unused Var
-#define VAR_ROUTE123_STATE                               0x4076 // Unused Var
-#define VAR_ROUTE124_STATE                               0x4077 // Unused Var
-#define VAR_ROUTE125_STATE                               0x4078 // Unused Var
-#define VAR_ROUTE126_STATE                               0x4079 // Unused Var
-#define VAR_ROUTE127_STATE                               0x407A // Unused Var
-#define VAR_ROUTE128_STATE                               0x407B
-#define VAR_ROUTE129_STATE                               0x407C // Unused Var
-#define VAR_ROUTE130_STATE                               0x407D // Unused Var
-#define VAR_ROUTE131_STATE                               0x407E // Unused Var
-#define VAR_ROUTE132_STATE                               0x407F // Unused Var
-#define VAR_ROUTE133_STATE                               0x4080 // Unused Var
-#define VAR_ROUTE134_STATE                               0x4081 // Unused Var
+#define VAR_ORLEANS_POOL_028                            0x4070
+#define VAR_ORLEANS_POOL_029                            0x4071
+#define VAR_ORLEANS_POOL_030                            0x4072
+#define VAR_ORLEANS_POOL_031                            0x4073
+#define VAR_ORLEANS_POOL_032                            0x4074
+#define VAR_ORLEANS_POOL_033                            0x4075
+#define VAR_ORLEANS_POOL_034                            0x4076
+#define VAR_ORLEANS_POOL_035                            0x4077
+#define VAR_ORLEANS_POOL_036                            0x4078
+#define VAR_ORLEANS_POOL_037                            0x4079
+#define VAR_ORLEANS_POOL_038                            0x407A
+#define VAR_ORLEANS_POOL_039                            0x407B
+#define VAR_ORLEANS_POOL_040                            0x407C
+#define VAR_ORLEANS_POOL_041                            0x407D
+#define VAR_ORLEANS_POOL_042                            0x407E
+#define VAR_ORLEANS_POOL_043                            0x407F
+#define VAR_ORLEANS_POOL_044                            0x4080
+#define VAR_ORLEANS_POOL_045                            0x4081
 #define VAR_LITTLEROOT_HOUSES_STATE_MAY                  0x4082
-#define VAR_UNUSED_0x4083                                0x4083 // Unused Var
+#define VAR_ORLEANS_POOL_046                            0x4083
 #define VAR_BIRCH_LAB_STATE                              0x4084
 #define VAR_PETALBURG_GYM_STATE                          0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE                           0x4086
@@ -158,38 +158,38 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_ORLEANS_POOL_047                            0x408B
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
-#define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
-#define VAR_DEVON_CORP_3F_STATE                          0x408F
+#define VAR_ORLEANS_POOL_048                            0x408E
+#define VAR_ORLEANS_POOL_049                            0x408F
 #define VAR_BRINEY_HOUSE_STATE                           0x4090
-#define VAR_UNUSED_0x4091                                0x4091 // Unused Var
+#define VAR_ORLEANS_POOL_050                            0x4091
 #define VAR_LITTLEROOT_INTRO_STATE                       0x4092
-#define VAR_MAUVILLE_GYM_STATE                           0x4093
+#define VAR_ORLEANS_POOL_051                            0x4093
 #define VAR_LILYCOVE_MUSEUM_2F_STATE                     0x4094
 #define VAR_LILYCOVE_FAN_CLUB_STATE                      0x4095
 #define VAR_BRINEY_LOCATION                              0x4096
 #define VAR_INIT_SECRET_BASE                             0x4097
-#define VAR_PETALBURG_WOODS_STATE                        0x4098
+#define VAR_ORLEANS_POOL_052                            0x4098
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
-#define VAR_UNUSED_0x409B                                0x409B // Unused Var
+#define VAR_ORLEANS_POOL_053                            0x409B
 #define VAR_ELITE_4_STATE                                0x409C
-#define VAR_UNUSED_0x409D                                0x409D // Unused Var
-#define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E
+#define VAR_ORLEANS_POOL_054                            0x409D
+#define VAR_ORLEANS_POOL_055                            0x409E
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE                  0x409F
-#define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
-#define VAR_UNUSED_0x40A1                                0x40A1 // Unused var
-#define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
-#define VAR_CABLE_CAR_STATION_STATE                      0x40A3
+#define VAR_ORLEANS_POOL_056                            0x40A0
+#define VAR_ORLEANS_POOL_057                            0x40A1
+#define VAR_ORLEANS_POOL_058                            0x40A2
+#define VAR_ORLEANS_POOL_059                            0x40A3
 #define VAR_SAFARI_ZONE_STATE                            0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
-#define VAR_TRICK_HOUSE_BEING_WATCHED_STATE              0x40A5
-#define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER               0x40A6
-#define VAR_TRICK_HOUSE_ENTRANCE_STATE                   0x40A7
-#define VAR_UNUSED_0x40A8                                0x40A8 // Unused Var
+#define VAR_ORLEANS_POOL_060                            0x40A5
+#define VAR_ORLEANS_POOL_061                            0x40A6
+#define VAR_ORLEANS_POOL_062                            0x40A7
+#define VAR_ORLEANS_POOL_063                            0x40A8
 #define VAR_CYCLING_CHALLENGE_STATE                      0x40A9
-#define VAR_SLATEPORT_MUSEUM_1F_STATE                    0x40AA
+#define VAR_ORLEANS_POOL_064                            0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE                   0x40AB
 #define VAR_TRICK_HOUSE_PUZZLE_2_STATE                   0x40AC
 #define VAR_TRICK_HOUSE_PUZZLE_3_STATE                   0x40AD
@@ -200,27 +200,27 @@
 #define VAR_TRICK_HOUSE_PUZZLE_8_STATE                   0x40B2
 #define VAR_WEATHER_INSTITUTE_STATE                      0x40B3
 #define VAR_SS_TIDAL_STATE                               0x40B4
-#define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
-#define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
-#define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
-#define VAR_MT_PYRE_STATE                                0x40B9
-#define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
+#define VAR_ORLEANS_POOL_065                            0x40B5
+#define VAR_ORLEANS_POOL_066                            0x40B6
+#define VAR_ORLEANS_POOL_067                            0x40B7
+#define VAR_ORLEANS_POOL_068                            0x40B8
+#define VAR_ORLEANS_POOL_069                            0x40B9
+#define VAR_ORLEANS_POOL_070                            0x40BA
+#define VAR_ORLEANS_POOL_071                            0x40BB
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
-#define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
-#define VAR_GLASS_WORKSHOP_STATE                         0x40BE
-#define VAR_METEOR_FALLS_STATE                           0x40BF
-#define VAR_SOOTOPOLIS_MYSTERY_EVENTS_STATE              0x40C0
-#define VAR_TRICK_HOUSE_PRIZE_PICKUP                     0x40C1
+#define VAR_ORLEANS_POOL_072                            0x40BD
+#define VAR_ORLEANS_POOL_073                            0x40BE
+#define VAR_ORLEANS_POOL_074                            0x40BF
+#define VAR_ORLEANS_POOL_075                            0x40C0
+#define VAR_ORLEANS_POOL_076                            0x40C1
 #define VAR_PACIFIDLOG_TM_RECEIVED_DAY                   0x40C2
-#define VAR_VICTORY_ROAD_1F_STATE                        0x40C3
-#define VAR_FOSSIL_RESURRECTION_STATE                    0x40C4
-#define VAR_WHICH_FOSSIL_REVIVED                         0x40C5
+#define VAR_ORLEANS_POOL_077                            0x40C3
+#define VAR_ORLEANS_POOL_078                            0x40C4
+#define VAR_ORLEANS_POOL_079                            0x40C5
 #define VAR_STEVENS_HOUSE_STATE                          0x40C6
-#define VAR_OLDALE_RIVAL_STATE                           0x40C7
-#define VAR_JAGGED_PASS_STATE                            0x40C8
-#define VAR_SCOTT_PETALBURG_ENCOUNTER                    0x40C9
+#define VAR_ORLEANS_POOL_080                            0x40C7
+#define VAR_ORLEANS_POOL_081                            0x40C8
+#define VAR_ORLEANS_POOL_082                            0x40C9
 #define VAR_SKY_PILLAR_STATE                             0x40CA
 #define VAR_MIRAGE_TOWER_STATE                           0x40CB
 #define VAR_FOSSIL_MANIAC_STATE                          0x40CC
@@ -229,17 +229,17 @@
 #define VAR_FRONTIER_FACILITY                            0x40CF
 #define VAR_HAS_ENTERED_BATTLE_FRONTIER                  0x40D0 // Var is used like a flag.
 #define VAR_SCOTT_STATE                                  0x40D1
-#define VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE               0x40D2
+#define VAR_ORLEANS_POOL_083                            0x40D2
 #define VAR_DEX_UPGRADE_JOHTO_STARTER_STATE              0x40D3
-#define VAR_SS_TIDAL_SCOTT_STATE                         0x40D4 // Always equal to FLAG_MET_SCOTT_ON_SS_TIDAL
+#define VAR_ORLEANS_POOL_084                            0x40D4
 #define VAR_ROAMER_POKEMON                               0x40D5 // 0 = Latias, 1 = Latios
 #define VAR_TRAINER_HILL_IS_ACTIVE                       0x40D6
-#define VAR_SKY_PILLAR_RAYQUAZA_CRY_DONE                 0x40D7
-#define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
-#define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
+#define VAR_ORLEANS_POOL_085                            0x40D7
+#define VAR_ORLEANS_POOL_086                            0x40D8
+#define VAR_ORLEANS_POOL_087                            0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+#define VAR_ORLEANS_POOL_088                            0x40DB
+#define VAR_ORLEANS_POOL_089                            0x40DC
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
@@ -248,7 +248,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_ORLEANS_POOL_090                            0x40E5
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -266,15 +266,15 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
-#define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_ORLEANS_POOL_091                            0x40F7
+#define VAR_ORLEANS_POOL_092                            0x40F8
+#define VAR_ORLEANS_POOL_093                            0x40F9
+#define VAR_ORLEANS_POOL_094                            0x40FA
+#define VAR_ORLEANS_POOL_095                            0x40FB
+#define VAR_ORLEANS_POOL_096                            0x40FC
+#define VAR_ORLEANS_POOL_097                            0x40FD
+#define VAR_ORLEANS_POOL_098                            0x40FE
+#define VAR_ORLEANS_POOL_099                            0x40FF
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)

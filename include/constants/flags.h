@@ -51,6 +51,14 @@
 
 #else
 
+// ---------------------------------------------------------------------------------------------
+// Orleans flag pool. Flags the Hoenn strip left unreferenced are named FLAG_ORLEANS_POOL_nnn
+// (anywhere in this file). To use one, RENAME it in place (same id, never renumber), for example
+//     python tools/mapgen/flag_pool.py claim FLAG_MY_NEW_THING "what it means"
+// then use the new name. Ids >= FLAG_HIDDEN_ITEMS_START (0x1F4) can also be hidden-item flags
+// (claim --hidden). Item-ball flags come from the FLAG_UNUSED_0x270+ names (tools/mapgen/item_flags.json),
+// not from the pool. Same idea for vars: VAR_ORLEANS_POOL_nnn in vars.h. See tools/flag_pool.md.
+// ---------------------------------------------------------------------------------------------
 #define FLAG_ITEM_ISLE_MARAIS_POTION       0x20
 #define FLAG_ITEM_ISLE_MARAIS_POKE_BALL    0x21
 #define FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE  0x22
@@ -94,112 +102,112 @@
 #define FLAG_RECEIVED_TM_ECLAIR_SHOCK_WAVE      0x48 // Orleans Ch2: Eclair's TM Shock Wave was handed over
 #define FLAG_RESPAWN_GRAND_OAK_SET       0x49 // Orleans: the Grand Oak respawn point was set on the first arrival (later visits must not override a Center healed at elsewhere)
 #define FLAG_RESPAWN_STORMS_EDGE_SET     0x4A // Orleans: the Storm's Edge respawn point was set on the first arrival
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_ORLEANS_POOL_000                           0x4B
+#define FLAG_ORLEANS_POOL_001                           0x4C
+#define FLAG_ORLEANS_POOL_002                           0x4D
+#define FLAG_ORLEANS_POOL_003                           0x4E
+#define FLAG_ORLEANS_POOL_004                           0x4F
 
 // Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
+#define FLAG_ORLEANS_POOL_005                           0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_ORLEANS_POOL_006                           0x54
+#define FLAG_ORLEANS_POOL_007                           0x55
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
-#define FLAG_MET_RIVAL_MOM                   0x57
-#define FLAG_BIRCH_AIDE_MET                  0x58
-#define FLAG_DECLINED_BIKE                   0x59
+#define FLAG_ORLEANS_POOL_008                           0x57
+#define FLAG_ORLEANS_POOL_009                           0x58
+#define FLAG_ORLEANS_POOL_010                           0x59
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
-#define FLAG_RECEIVED_WAILMER_PAIL           0x5E
+#define FLAG_ORLEANS_POOL_011                           0x5E
 #define FLAG_RECEIVED_POKEBLOCK_CASE         0x5F
 #define FLAG_RECEIVED_SECRET_POWER           0x60
 #define FLAG_MET_TEAM_AQUA_HARBOR            0x61
-#define FLAG_TV_EXPLAINED                    0x62
-#define FLAG_MAUVILLE_GYM_BARRIERS_STATE     0x63
-#define FLAG_MOSSDEEP_GYM_SWITCH_1           0x64 // Leftover from the RS version of Mossdeep Gym, functionally unused
-#define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
-#define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
+#define FLAG_ORLEANS_POOL_012                           0x62
+#define FLAG_ORLEANS_POOL_013                           0x63
+#define FLAG_ORLEANS_POOL_014                           0x64
+#define FLAG_ORLEANS_POOL_015                           0x65
+#define FLAG_ORLEANS_POOL_016                           0x66
+#define FLAG_ORLEANS_POOL_017                           0x67
 
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
+#define FLAG_ORLEANS_POOL_018                           0x68
 
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
-#define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
+#define FLAG_ORLEANS_POOL_019                           0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
-#define FLAG_RECEIVED_HM_FLASH               0x6D
-#define FLAG_RECEIVED_HM_FLY                 0x6E
+#define FLAG_ORLEANS_POOL_020                           0x6D
+#define FLAG_ORLEANS_POOL_021                           0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
-#define FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE 0x71 // Unused Flag. Used in R/S to indicate whether player defeated or caught Groudon/Kyogre in Cave of Origin.
+#define FLAG_ORLEANS_POOL_022                           0x71
 #define FLAG_SCOTT_CALL_BATTLE_FRONTIER      0x72 // Used in order to activate a phone call from Scott, inviting the player to the SS Tidal.
-#define FLAG_RECEIVED_METEORITE              0x73
+#define FLAG_ORLEANS_POOL_023                           0x73
 #define FLAG_ADVENTURE_STARTED               0x74 // RECEIVED Pokédex.
 #define FLAG_DEFEATED_MAGMA_SPACE_CENTER     0x75 // Set when Team Magma is defeated at Mossdeep's Space Center.
-#define FLAG_MET_HIDDEN_POWER_GIVER          0x76
+#define FLAG_ORLEANS_POOL_024                           0x76
 
 #define FLAG_CANCEL_BATTLE_ROOM_CHALLENGE    0x77
 
 #define FLAG_LANDMARK_MIRAGE_TOWER           0x78
-#define FLAG_RECEIVED_TM_BRICK_BREAK         0x79
-#define FLAG_RECEIVED_HM_SURF                0x7A
-#define FLAG_RECEIVED_HM_DIVE                0x7B
-#define FLAG_REGISTER_RIVAL_POKENAV          0x7C
-#define FLAG_DEFEATED_RIVAL_ROUTE_104        0x7D
+#define FLAG_ORLEANS_POOL_025                           0x79
+#define FLAG_ORLEANS_POOL_026                           0x7A
+#define FLAG_ORLEANS_POOL_027                           0x7B
+#define FLAG_ORLEANS_POOL_028                           0x7C
+#define FLAG_ORLEANS_POOL_029                           0x7D
 #define FLAG_DEFEATED_WALLY_VICTORY_ROAD     0x7E
-#define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
+#define FLAG_ORLEANS_POOL_030                           0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
-#define FLAG_RECEIVED_POTION_OLDALE          0x84
+#define FLAG_ORLEANS_POOL_031                           0x82
+#define FLAG_ORLEANS_POOL_032                           0x83
+#define FLAG_ORLEANS_POOL_033                           0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
-#define FLAG_THANKED_FOR_PLAYING_WITH_WALLY  0x87
+#define FLAG_ORLEANS_POOL_034                           0x87
 #define FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL 0x88 // Set after defeating Wally outside Mauville Gym. Will activate a call later to register Wally.
-#define FLAG_RECEIVED_HM_CUT                 0x89
+#define FLAG_ORLEANS_POOL_035                           0x89
 #define FLAG_SCOTT_CALL_FORTREE_GYM          0x8A // Triggers call from Scott after defeating Winona
 #define FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY   0x8B
-#define FLAG_RECEIVED_6_SODA_POP             0x8C
-#define FLAG_DEFEATED_SEASHORE_HOUSE         0x8D
-#define FLAG_DEVON_GOODS_STOLEN              0x8E
-#define FLAG_RECOVERED_DEVON_GOODS           0x8F
-#define FLAG_RETURNED_DEVON_GOODS            0x90
+#define FLAG_ORLEANS_POOL_036                           0x8C
+#define FLAG_ORLEANS_POOL_037                           0x8D
+#define FLAG_ORLEANS_POOL_038                           0x8E
+#define FLAG_ORLEANS_POOL_039                           0x8F
+#define FLAG_ORLEANS_POOL_040                           0x90
 #define FLAG_CAUGHT_LUGIA                    0x91
 #define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_MR_BRINEY_SAILING_INTRO         0x93
-#define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
+#define FLAG_ORLEANS_POOL_041                           0x93
+#define FLAG_ORLEANS_POOL_042                           0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_ORLEANS_POOL_043                           0x96
 #define FLAG_RECEIVED_CASTFORM               0x97
-#define FLAG_RECEIVED_SUPER_ROD              0x98
-#define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
-#define FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED  0x9A
-#define FLAG_FORTREE_NPC_TRADE_COMPLETED     0x9B
+#define FLAG_ORLEANS_POOL_044                           0x98
+#define FLAG_ORLEANS_POOL_045                           0x99
+#define FLAG_ORLEANS_POOL_046                           0x9A
+#define FLAG_ORLEANS_POOL_047                           0x9B
 #define FLAG_BATTLE_FRONTIER_TRADE_DONE      0x9C
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
-#define FLAG_SOOTOPOLIS_ARCHIE_MAXIE_LEAVE   0x9E
-#define FLAG_INTERACTED_WITH_DEVON_EMPLOYEE_GOODS_STOLEN 0x9F
-#define FLAG_COOL_PAINTING_MADE              0xA0
-#define FLAG_BEAUTY_PAINTING_MADE            0xA1
-#define FLAG_CUTE_PAINTING_MADE              0xA2
-#define FLAG_SMART_PAINTING_MADE             0xA3
-#define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM_ROCK_TOMB           0xA5
-#define FLAG_RECEIVED_TM_BULK_UP             0xA6
-#define FLAG_RECEIVED_TM_SHOCK_WAVE          0xA7
-#define FLAG_RECEIVED_TM_OVERHEAT            0xA8
-#define FLAG_RECEIVED_TM_FACADE              0xA9
-#define FLAG_RECEIVED_TM_AERIAL_ACE          0xAA
-#define FLAG_RECEIVED_TM_CALM_MIND           0xAB
-#define FLAG_RECEIVED_TM_WATER_PULSE         0xAC
+#define FLAG_ORLEANS_POOL_048                           0x9E
+#define FLAG_ORLEANS_POOL_049                           0x9F
+#define FLAG_ORLEANS_POOL_050                           0xA0
+#define FLAG_ORLEANS_POOL_051                           0xA1
+#define FLAG_ORLEANS_POOL_052                           0xA2
+#define FLAG_ORLEANS_POOL_053                           0xA3
+#define FLAG_ORLEANS_POOL_054                           0xA4
+#define FLAG_ORLEANS_POOL_055                           0xA5
+#define FLAG_ORLEANS_POOL_056                           0xA6
+#define FLAG_ORLEANS_POOL_057                           0xA7
+#define FLAG_ORLEANS_POOL_058                           0xA8
+#define FLAG_ORLEANS_POOL_059                           0xA9
+#define FLAG_ORLEANS_POOL_060                           0xAA
+#define FLAG_ORLEANS_POOL_061                           0xAB
+#define FLAG_ORLEANS_POOL_062                           0xAC
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -217,134 +225,134 @@
 #define FLAG_DECORATION_14                   0xBB
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_DELIVERED_STEVEN_LETTER         0xBD
-#define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
-#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
-#define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
-#define FLAG_WALLY_SPEECH                    0xC1
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //
+#define FLAG_ORLEANS_POOL_063                           0xBE
+#define FLAG_ORLEANS_POOL_064                           0xBF
+#define FLAG_ORLEANS_POOL_065                           0xC0
+#define FLAG_ORLEANS_POOL_066                           0xC1
+#define FLAG_ORLEANS_POOL_067                           0xC2
+#define FLAG_ORLEANS_POOL_068                           0xC3
+#define FLAG_ORLEANS_POOL_069                           0xC4
+#define FLAG_ORLEANS_POOL_070                           0xC5
+#define FLAG_ORLEANS_POOL_071                           0xC6
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
-#define FLAG_RECEIVED_RED_SCARF              0xC8
-#define FLAG_RECEIVED_BLUE_SCARF             0xC9
-#define FLAG_RECEIVED_PINK_SCARF             0xCA
-#define FLAG_RECEIVED_GREEN_SCARF            0xCB
-#define FLAG_RECEIVED_YELLOW_SCARF           0xCC
-#define FLAG_INTERACTED_WITH_STEVEN_SPACE_CENTER    0xCD
-#define FLAG_ENCOUNTERED_LATIAS_OR_LATIOS    0xCE
+#define FLAG_ORLEANS_POOL_072                           0xC8
+#define FLAG_ORLEANS_POOL_073                           0xC9
+#define FLAG_ORLEANS_POOL_074                           0xCA
+#define FLAG_ORLEANS_POOL_075                           0xCB
+#define FLAG_ORLEANS_POOL_076                           0xCC
+#define FLAG_ORLEANS_POOL_077                           0xCD
+#define FLAG_ORLEANS_POOL_078                           0xCE
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
-#define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
-#define FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON 0xD1
-#define FLAG_FAN_CLUB_STRENGTH_SHARED        0xD2 // Set when you rate the strength of another trainer in Lilycove's Trainer Fan Club.
-#define FLAG_DEFEATED_RIVAL_RUSTBORO         0xD3
+#define FLAG_ORLEANS_POOL_079                           0xD0
+#define FLAG_ORLEANS_POOL_080                           0xD1
+#define FLAG_ORLEANS_POOL_081                           0xD2
+#define FLAG_ORLEANS_POOL_082                           0xD3
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
-#define FLAG_RECEIVED_PREMIER_BALL_RUSTBORO  0xD5
+#define FLAG_ORLEANS_POOL_083                           0xD5
 #define FLAG_ENABLE_WALLY_MATCH_CALL         0xD6
 #define FLAG_ENABLE_SCOTT_MATCH_CALL         0xD7
 #define FLAG_ENABLE_MOM_MATCH_CALL           0xD8
-#define FLAG_MET_DIVING_TREASURE_HUNTER      0xD9
-#define FLAG_MET_WAILMER_TRAINER             0xDA
-#define FLAG_EVIL_LEADER_PLEASE_STOP         0xDB
+#define FLAG_ORLEANS_POOL_084                           0xD9
+#define FLAG_ORLEANS_POOL_085                           0xDA
+#define FLAG_ORLEANS_POOL_086                           0xDB
 
 #define FLAG_NEVER_SET_0x0DC                 0xDC // This flag is read, but never written to
 
-#define FLAG_RECEIVED_GO_GOGGLES             0xDD
-#define FLAG_WINGULL_SENT_ON_ERRAND          0xDE
-#define FLAG_RECEIVED_MENTAL_HERB            0xDF
-#define FLAG_WINGULL_DELIVERED_MAIL          0xE0
-#define FLAG_RECEIVED_20_COINS               0xE1
-#define FLAG_RECEIVED_STARTER_DOLL           0xE2
-#define FLAG_RECEIVED_GOOD_ROD               0xE3
+#define FLAG_ORLEANS_POOL_087                           0xDD
+#define FLAG_ORLEANS_POOL_088                           0xDE
+#define FLAG_ORLEANS_POOL_089                           0xDF
+#define FLAG_ORLEANS_POOL_090                           0xE0
+#define FLAG_ORLEANS_POOL_091                           0xE1
+#define FLAG_ORLEANS_POOL_092                           0xE2
+#define FLAG_ORLEANS_POOL_093                           0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_RECEIVED_TM_RETURN              0xE5
-#define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
-#define FLAG_RECEIVED_TM_ROAR                0xE7
-#define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
+#define FLAG_ORLEANS_POOL_094                           0xE5
+#define FLAG_ORLEANS_POOL_095                           0xE6
+#define FLAG_ORLEANS_POOL_096                           0xE7
+#define FLAG_ORLEANS_POOL_097                           0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_ORLEANS_POOL_098                           0xE9
 
-#define FLAG_RECEIVED_TM_REST                0xEA
+#define FLAG_ORLEANS_POOL_099                           0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
-#define FLAG_RECEIVED_GLASS_ORNAMENT         0xEC
+#define FLAG_ORLEANS_POOL_100                           0xEC
 #define FLAG_RECEIVED_SILVER_SHIELD          0xED
 #define FLAG_RECEIVED_GOLD_SHIELD            0xEE
-#define FLAG_USED_STORAGE_KEY                0xEF
-#define FLAG_USED_ROOM_1_KEY                 0xF0
-#define FLAG_USED_ROOM_2_KEY                 0xF1
-#define FLAG_USED_ROOM_4_KEY                 0xF2
-#define FLAG_USED_ROOM_6_KEY                 0xF3
-#define FLAG_MET_PROF_COZMO                  0xF4
-#define FLAG_RECEIVED_WAILMER_DOLL           0xF5
-#define FLAG_RECEIVED_CHESTO_BERRY_ROUTE_104 0xF6
-#define FLAG_DEFEATED_SS_TIDAL_TRAINERS      0xF7
-#define FLAG_RECEIVED_SPELON_BERRY           0xF8
-#define FLAG_RECEIVED_PAMTRE_BERRY           0xF9
-#define FLAG_RECEIVED_WATMEL_BERRY           0xFA
-#define FLAG_RECEIVED_DURIN_BERRY            0xFB
-#define FLAG_RECEIVED_BELUE_BERRY            0xFC
+#define FLAG_ORLEANS_POOL_101                           0xEF
+#define FLAG_ORLEANS_POOL_102                           0xF0
+#define FLAG_ORLEANS_POOL_103                           0xF1
+#define FLAG_ORLEANS_POOL_104                           0xF2
+#define FLAG_ORLEANS_POOL_105                           0xF3
+#define FLAG_ORLEANS_POOL_106                           0xF4
+#define FLAG_ORLEANS_POOL_107                           0xF5
+#define FLAG_ORLEANS_POOL_108                           0xF6
+#define FLAG_ORLEANS_POOL_109                           0xF7
+#define FLAG_ORLEANS_POOL_110                           0xF8
+#define FLAG_ORLEANS_POOL_111                           0xF9
+#define FLAG_ORLEANS_POOL_112                           0xFA
+#define FLAG_ORLEANS_POOL_113                           0xFB
+#define FLAG_ORLEANS_POOL_114                           0xFC
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
-#define FLAG_RECEIVED_CHARCOAL               0xFE
+#define FLAG_ORLEANS_POOL_115                           0xFE
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF
-#define FLAG_RECEIVED_REPEAT_BALL            0x100
+#define FLAG_ORLEANS_POOL_116                           0x100
 #define FLAG_RECEIVED_OLD_ROD                0x101
-#define FLAG_RECEIVED_COIN_CASE              0x102
-#define FLAG_RETURNED_RED_OR_BLUE_ORB        0x103
-#define FLAG_RECEIVED_TM_SNATCH              0x104
-#define FLAG_RECEIVED_TM_DIG                 0x105
-#define FLAG_RECEIVED_TM_BULLET_SEED         0x106
-#define FLAG_ENTERED_ELITE_FOUR              0x107
-#define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
+#define FLAG_ORLEANS_POOL_117                           0x102
+#define FLAG_ORLEANS_POOL_118                           0x103
+#define FLAG_ORLEANS_POOL_119                           0x104
+#define FLAG_ORLEANS_POOL_120                           0x105
+#define FLAG_ORLEANS_POOL_121                           0x106
+#define FLAG_ORLEANS_POOL_122                           0x107
+#define FLAG_ORLEANS_POOL_123                           0x108
 #define FLAG_RECEIVED_TM_TORMENT             0x109
-#define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
-#define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
+#define FLAG_ORLEANS_POOL_124                           0x10A
+#define FLAG_ORLEANS_POOL_125                           0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
-#define FLAG_RECEIVED_TM_THIEF               0x10D
+#define FLAG_ORLEANS_POOL_126                           0x10D
 #define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
-#define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
+#define FLAG_ORLEANS_POOL_127                           0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
 #define FLAG_RECEIVED_RUNNING_SHOES          0x112
-#define FLAG_RECEIVED_QUICK_CLAW             0x113
-#define FLAG_RECEIVED_KINGS_ROCK             0x114
-#define FLAG_RECEIVED_MACHO_BRACE            0x115
-#define FLAG_RECEIVED_SOOTHE_BELL            0x116
-#define FLAG_RECEIVED_WHITE_HERB             0x117
-#define FLAG_RECEIVED_SOFT_SAND              0x118
+#define FLAG_ORLEANS_POOL_128                           0x113
+#define FLAG_ORLEANS_POOL_129                           0x114
+#define FLAG_ORLEANS_POOL_130                           0x115
+#define FLAG_ORLEANS_POOL_131                           0x116
+#define FLAG_ORLEANS_POOL_132                           0x117
+#define FLAG_ORLEANS_POOL_133                           0x118
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119
-#define FLAG_RECEIVED_CLEANSE_TAG            0x11A
-#define FLAG_RECEIVED_FOCUS_BAND             0x11B
-#define FLAG_DECLINED_WALLY_BATTLE_MAUVILLE  0x11C
-#define FLAG_RECEIVED_DEVON_SCOPE            0x11D
-#define FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE  0x11E
-#define FLAG_MET_DEVON_EMPLOYEE              0x11F
-#define FLAG_MET_RIVAL_RUSTBORO              0x120
-#define FLAG_RECEIVED_SILK_SCARF             0x121
-#define FLAG_NOT_READY_FOR_BATTLE_ROUTE_120  0x122
+#define FLAG_ORLEANS_POOL_134                           0x11A
+#define FLAG_ORLEANS_POOL_135                           0x11B
+#define FLAG_ORLEANS_POOL_136                           0x11C
+#define FLAG_ORLEANS_POOL_137                           0x11D
+#define FLAG_ORLEANS_POOL_138                           0x11E
+#define FLAG_ORLEANS_POOL_139                           0x11F
+#define FLAG_ORLEANS_POOL_140                           0x120
+#define FLAG_ORLEANS_POOL_141                           0x121
+#define FLAG_ORLEANS_POOL_142                           0x122
 #define FLAG_RECEIVED_SS_TICKET              0x123
-#define FLAG_MET_RIVAL_LILYCOVE              0x124
-#define FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE 0x125
-#define FLAG_EXCHANGED_SCANNER               0x126
-#define FLAG_KECLEON_FLED_FORTREE            0x127
+#define FLAG_ORLEANS_POOL_143                           0x124
+#define FLAG_ORLEANS_POOL_144                           0x125
+#define FLAG_ORLEANS_POOL_145                           0x126
+#define FLAG_ORLEANS_POOL_146                           0x127
 #define FLAG_PETALBURG_MART_EXPANDED_ITEMS   0x128
-#define FLAG_RECEIVED_MIRACLE_SEED           0x129
+#define FLAG_ORLEANS_POOL_147                           0x129
 #define FLAG_RECEIVED_BELDUM                 0x12A
-#define FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK   0x12B
-#define FLAG_MET_FANCLUB_YOUNGER_BROTHER     0x12C
-#define FLAG_RIVAL_LEFT_FOR_ROUTE103         0x12D
-#define FLAG_OMIT_DIVE_FROM_STEVEN_LETTER    0x12E
+#define FLAG_ORLEANS_POOL_148                           0x12B
+#define FLAG_ORLEANS_POOL_149                           0x12C
+#define FLAG_ORLEANS_POOL_150                           0x12D
+#define FLAG_ORLEANS_POOL_151                           0x12E
 #define FLAG_HAS_MATCH_CALL                  0x12F
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0x130
 #define FLAG_REGISTERED_STEVEN_POKENAV       0x131
 #define FLAG_ENABLE_NORMAN_MATCH_CALL        0x132
-#define FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN 0x133 // Set after you follow Steven to the entrance of the Cave of Origin.
-#define FLAG_MET_ARCHIE_SOOTOPOLIS           0x134
-#define FLAG_MET_MAXIE_SOOTOPOLIS            0x135
-#define FLAG_MET_SCOTT_RUSTBORO              0x136
-#define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
-#define FLAG_RECEIVED_HM_WATERFALL           0x138
-#define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
+#define FLAG_ORLEANS_POOL_152                           0x133
+#define FLAG_ORLEANS_POOL_153                           0x134
+#define FLAG_ORLEANS_POOL_154                           0x135
+#define FLAG_ORLEANS_POOL_155                           0x136
+#define FLAG_ORLEANS_POOL_156                           0x137
+#define FLAG_ORLEANS_POOL_157                           0x138
+#define FLAG_ORLEANS_POOL_158                           0x139
 #define FLAG_RECEIVED_AURORA_TICKET          0x13A
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
@@ -368,16 +376,16 @@
 #define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
-#define FLAG_CHOSE_ROOT_FOSSIL               0x14F
+#define FLAG_ORLEANS_POOL_159                           0x14F
 #define FLAG_CHOSE_CLAW_FOSSIL               0x150
-#define FLAG_RECEIVED_POWDER_JAR             0x151
+#define FLAG_ORLEANS_POOL_160                           0x151
 
 #define FLAG_CHOSEN_MULTI_BATTLE_NPC_PARTNER 0x152
 
 #define FLAG_MET_BATTLE_FRONTIER_BREEDER     0x153
 #define FLAG_MET_BATTLE_FRONTIER_MANIAC      0x154
 #define FLAG_ENTERED_CONTEST                 0x155
-#define FLAG_MET_SLATEPORT_FANCLUB_CHAIRMAN  0x156
+#define FLAG_ORLEANS_POOL_161                           0x156
 #define FLAG_MET_BATTLE_FRONTIER_GAMBLER     0x157
 #define FLAG_ENABLE_MR_STONE_POKENAV         0x158
 #define FLAG_NURSE_MENTIONS_GOLD_CARD        0x159
@@ -468,8 +476,8 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_ORLEANS_POOL_162                           0x1AA
+#define FLAG_ORLEANS_POOL_163                           0x1AB
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -486,27 +494,27 @@
 #define FLAG_MOVE_TUTOR_TAUGHT_DYNAMICPUNCH  0x1B8
 #define FLAG_MOVE_TUTOR_TAUGHT_DOUBLE_EDGE   0x1B9
 #define FLAG_MOVE_TUTOR_TAUGHT_EXPLOSION     0x1BA
-#define FLAG_DEFEATED_REGIROCK               0x1BB
-#define FLAG_DEFEATED_REGICE                 0x1BC
-#define FLAG_DEFEATED_REGISTEEL              0x1BD
+#define FLAG_ORLEANS_POOL_164                           0x1BB
+#define FLAG_ORLEANS_POOL_165                           0x1BC
+#define FLAG_ORLEANS_POOL_166                           0x1BD
 #define FLAG_DEFEATED_KYOGRE                 0x1BE
 #define FLAG_DEFEATED_GROUDON                0x1BF
-#define FLAG_DEFEATED_RAYQUAZA               0x1C0
-#define FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE 0x1C1
-#define FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE 0x1C2
-#define FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE 0x1C3
-#define FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT 0x1C4
-#define FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT 0x1C5
+#define FLAG_ORLEANS_POOL_167                           0x1C0
+#define FLAG_ORLEANS_POOL_168                           0x1C1
+#define FLAG_ORLEANS_POOL_169                           0x1C2
+#define FLAG_ORLEANS_POOL_170                           0x1C3
+#define FLAG_ORLEANS_POOL_171                           0x1C4
+#define FLAG_ORLEANS_POOL_172                           0x1C5
 #define FLAG_DEFEATED_SUDOWOODO              0x1C6
 #define FLAG_DEFEATED_MEW                    0x1C7
 #define FLAG_DEFEATED_LATIAS_OR_LATIOS       0x1C8
-#define FLAG_CAUGHT_LATIAS_OR_LATIOS         0x1C9
+#define FLAG_ORLEANS_POOL_173                           0x1C9
 #define FLAG_CAUGHT_MEW                      0x1CA
-#define FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE 0x1CB
+#define FLAG_ORLEANS_POOL_174                           0x1CB
 #define FLAG_MET_SCOTT_IN_VERDANTURF         0x1CC
 #define FLAG_MET_SCOTT_IN_FALLARBOR          0x1CD
-#define FLAG_MET_SCOTT_IN_LILYCOVE           0x1CE
-#define FLAG_MET_SCOTT_IN_EVERGRANDE         0x1CF
+#define FLAG_ORLEANS_POOL_175                           0x1CE
+#define FLAG_ORLEANS_POOL_176                           0x1CF
 #define FLAG_MET_SCOTT_ON_SS_TIDAL           0x1D0
 #define FLAG_SCOTT_GIVES_BATTLE_POINTS       0x1D1
 #define FLAG_COLLECTED_ALL_GOLD_SYMBOLS      0x1D2
@@ -518,7 +526,7 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_ORLEANS_POOL_177                           0x1DA
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
@@ -554,104 +562,104 @@
 #define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CARBOS               (FLAG_HIDDEN_ITEMS_START + 0x08)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD          (FLAG_HIDDEN_ITEMS_START + 0x09)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x0A)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x0B)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD           (FLAG_HIDDEN_ITEMS_START + 0x0C)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1        (FLAG_HIDDEN_ITEMS_START + 0x0D)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x0E)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL           (FLAG_HIDDEN_ITEMS_START + 0x0F)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST             (FLAG_HIDDEN_ITEMS_START + 0x10)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x11)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD         (FLAG_HIDDEN_ITEMS_START + 0x12)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON                 (FLAG_HIDDEN_ITEMS_START + 0x13)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL            (FLAG_HIDDEN_ITEMS_START + 0x14)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_STAR_PIECE           (FLAG_HIDDEN_ITEMS_START + 0x15)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP                (FLAG_HIDDEN_ITEMS_START + 0x16)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE          (FLAG_HIDDEN_ITEMS_START + 0x17)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_127_RED_SHARD            (FLAG_HIDDEN_ITEMS_START + 0x18)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PROTEIN              (FLAG_HIDDEN_ITEMS_START + 0x19)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_128_PEARL                (FLAG_HIDDEN_ITEMS_START + 0x1A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_HEART_SCALE           (FLAG_HIDDEN_ITEMS_START + 0x1B)
-#define FLAG_HIDDEN_ITEM_FALLARBOR_TOWN_NUGGET               (FLAG_HIDDEN_ITEMS_START + 0x1C)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL         (FLAG_HIDDEN_ITEMS_START + 0x1D)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM            (FLAG_HIDDEN_ITEMS_START + 0x1E)
+#define FLAG_ORLEANS_POOL_178                           (FLAG_HIDDEN_ITEMS_START + 0x03)
+#define FLAG_ORLEANS_POOL_179                           (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_ORLEANS_POOL_180                           (FLAG_HIDDEN_ITEMS_START + 0x05)
+#define FLAG_ORLEANS_POOL_181                           (FLAG_HIDDEN_ITEMS_START + 0x06)
+#define FLAG_ORLEANS_POOL_182                           (FLAG_HIDDEN_ITEMS_START + 0x07)
+#define FLAG_ORLEANS_POOL_183                           (FLAG_HIDDEN_ITEMS_START + 0x08)
+#define FLAG_ORLEANS_POOL_184                           (FLAG_HIDDEN_ITEMS_START + 0x09)
+#define FLAG_ORLEANS_POOL_185                           (FLAG_HIDDEN_ITEMS_START + 0x0A)
+#define FLAG_ORLEANS_POOL_186                           (FLAG_HIDDEN_ITEMS_START + 0x0B)
+#define FLAG_ORLEANS_POOL_187                           (FLAG_HIDDEN_ITEMS_START + 0x0C)
+#define FLAG_ORLEANS_POOL_188                           (FLAG_HIDDEN_ITEMS_START + 0x0D)
+#define FLAG_ORLEANS_POOL_189                           (FLAG_HIDDEN_ITEMS_START + 0x0E)
+#define FLAG_ORLEANS_POOL_190                           (FLAG_HIDDEN_ITEMS_START + 0x0F)
+#define FLAG_ORLEANS_POOL_191                           (FLAG_HIDDEN_ITEMS_START + 0x10)
+#define FLAG_ORLEANS_POOL_192                           (FLAG_HIDDEN_ITEMS_START + 0x11)
+#define FLAG_ORLEANS_POOL_193                           (FLAG_HIDDEN_ITEMS_START + 0x12)
+#define FLAG_ORLEANS_POOL_194                           (FLAG_HIDDEN_ITEMS_START + 0x13)
+#define FLAG_ORLEANS_POOL_195                           (FLAG_HIDDEN_ITEMS_START + 0x14)
+#define FLAG_ORLEANS_POOL_196                           (FLAG_HIDDEN_ITEMS_START + 0x15)
+#define FLAG_ORLEANS_POOL_197                           (FLAG_HIDDEN_ITEMS_START + 0x16)
+#define FLAG_ORLEANS_POOL_198                           (FLAG_HIDDEN_ITEMS_START + 0x17)
+#define FLAG_ORLEANS_POOL_199                           (FLAG_HIDDEN_ITEMS_START + 0x18)
+#define FLAG_ORLEANS_POOL_200                           (FLAG_HIDDEN_ITEMS_START + 0x19)
+#define FLAG_ORLEANS_POOL_201                           (FLAG_HIDDEN_ITEMS_START + 0x1A)
+#define FLAG_ORLEANS_POOL_202                           (FLAG_HIDDEN_ITEMS_START + 0x1B)
+#define FLAG_ORLEANS_POOL_203                           (FLAG_HIDDEN_ITEMS_START + 0x1C)
+#define FLAG_ORLEANS_POOL_204                           (FLAG_HIDDEN_ITEMS_START + 0x1D)
+#define FLAG_ORLEANS_POOL_205                           (FLAG_HIDDEN_ITEMS_START + 0x1E)
 #define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY             (FLAG_HIDDEN_ITEMS_START + 0x1F)
 #define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY             (FLAG_HIDDEN_ITEMS_START + 0x20)
 #define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY             (FLAG_HIDDEN_ITEMS_START + 0x21)
 #define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY             (FLAG_HIDDEN_ITEMS_START + 0x22)
-#define FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS       (FLAG_HIDDEN_ITEMS_START + 0x23)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_CALCIUM              (FLAG_HIDDEN_ITEMS_START + 0x24)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_POTION                    (FLAG_HIDDEN_ITEMS_START + 0x25)
-#define FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2        (FLAG_HIDDEN_ITEMS_START + 0x26)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP                     (FLAG_HIDDEN_ITEMS_START + 0x27)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET                    (FLAG_HIDDEN_ITEMS_START + 0x28)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x29)
-#define FLAG_HIDDEN_ITEM_ROUTE_114_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x2A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_PP_UP                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x2C)
-#define FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x2D)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x2E)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x2F)
-#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1        (FLAG_HIDDEN_ITEMS_START + 0x30)
-#define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2        (FLAG_HIDDEN_ITEMS_START + 0x31)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x32)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x33)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1             (FLAG_HIDDEN_ITEMS_START + 0x34)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x35)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x36)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x37)
+#define FLAG_ORLEANS_POOL_206                           (FLAG_HIDDEN_ITEMS_START + 0x23)
+#define FLAG_ORLEANS_POOL_207                           (FLAG_HIDDEN_ITEMS_START + 0x24)
+#define FLAG_ORLEANS_POOL_208                           (FLAG_HIDDEN_ITEMS_START + 0x25)
+#define FLAG_ORLEANS_POOL_209                           (FLAG_HIDDEN_ITEMS_START + 0x26)
+#define FLAG_ORLEANS_POOL_210                           (FLAG_HIDDEN_ITEMS_START + 0x27)
+#define FLAG_ORLEANS_POOL_211                           (FLAG_HIDDEN_ITEMS_START + 0x28)
+#define FLAG_ORLEANS_POOL_212                           (FLAG_HIDDEN_ITEMS_START + 0x29)
+#define FLAG_ORLEANS_POOL_213                           (FLAG_HIDDEN_ITEMS_START + 0x2A)
+#define FLAG_ORLEANS_POOL_214                           (FLAG_HIDDEN_ITEMS_START + 0x2B)
+#define FLAG_ORLEANS_POOL_215                           (FLAG_HIDDEN_ITEMS_START + 0x2C)
+#define FLAG_ORLEANS_POOL_216                           (FLAG_HIDDEN_ITEMS_START + 0x2D)
+#define FLAG_ORLEANS_POOL_217                           (FLAG_HIDDEN_ITEMS_START + 0x2E)
+#define FLAG_ORLEANS_POOL_218                           (FLAG_HIDDEN_ITEMS_START + 0x2F)
+#define FLAG_ORLEANS_POOL_219                           (FLAG_HIDDEN_ITEMS_START + 0x30)
+#define FLAG_ORLEANS_POOL_220                           (FLAG_HIDDEN_ITEMS_START + 0x31)
+#define FLAG_ORLEANS_POOL_221                           (FLAG_HIDDEN_ITEMS_START + 0x32)
+#define FLAG_ORLEANS_POOL_222                           (FLAG_HIDDEN_ITEMS_START + 0x33)
+#define FLAG_ORLEANS_POOL_223                           (FLAG_HIDDEN_ITEMS_START + 0x34)
+#define FLAG_ORLEANS_POOL_224                           (FLAG_HIDDEN_ITEMS_START + 0x35)
+#define FLAG_ORLEANS_POOL_225                           (FLAG_HIDDEN_ITEMS_START + 0x36)
+#define FLAG_ORLEANS_POOL_226                           (FLAG_HIDDEN_ITEMS_START + 0x37)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN                   (FLAG_HIDDEN_ITEMS_START + 0x38)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x39)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POTION              (FLAG_HIDDEN_ITEMS_START + 0x3A)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_1     (FLAG_HIDDEN_ITEMS_START + 0x3B)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_TINY_MUSHROOM_2     (FLAG_HIDDEN_ITEMS_START + 0x3C)
-#define FLAG_HIDDEN_ITEM_PETALBURG_WOODS_POKE_BALL           (FLAG_HIDDEN_ITEMS_START + 0x3D)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x3E)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x3F)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x40)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL                 (FLAG_HIDDEN_ITEMS_START + 0x41)
-#define FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x42)
-#define FLAG_HIDDEN_ITEM_ROUTE_118_IRON                      (FLAG_HIDDEN_ITEMS_START + 0x43)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x44)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_2              (FLAG_HIDDEN_ITEMS_START + 0x45)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_ZINC                      (FLAG_HIDDEN_ITEMS_START + 0x46)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_RARE_CANDY_1              (FLAG_HIDDEN_ITEMS_START + 0x47)
-#define FLAG_HIDDEN_ITEM_ROUTE_117_REPEL                     (FLAG_HIDDEN_ITEMS_START + 0x48)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL                 (FLAG_HIDDEN_ITEMS_START + 0x49)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_HYPER_POTION              (FLAG_HIDDEN_ITEMS_START + 0x4A)
-#define FLAG_HIDDEN_ITEM_LILYCOVE_CITY_POKE_BALL             (FLAG_HIDDEN_ITEMS_START + 0x4B)
-#define FLAG_HIDDEN_ITEM_JAGGED_PASS_GREAT_BALL              (FLAG_HIDDEN_ITEMS_START + 0x4C)
-#define FLAG_HIDDEN_ITEM_JAGGED_PASS_FULL_HEAL               (FLAG_HIDDEN_ITEMS_START + 0x4D)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER          (FLAG_HIDDEN_ITEMS_START + 0x4E)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_ZINC                 (FLAG_HIDDEN_ITEMS_START + 0x4F)
-#define FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY           (FLAG_HIDDEN_ITEMS_START + 0x50)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_1F_ULTRA_BALL          (FLAG_HIDDEN_ITEMS_START + 0x51)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_ELIXIR             (FLAG_HIDDEN_ITEMS_START + 0x52)
-#define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL          (FLAG_HIDDEN_ITEMS_START + 0x53)
-#define FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x54)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE                  (FLAG_HIDDEN_ITEMS_START + 0x55)
-#define FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x56)
-#define FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER                 (FLAG_HIDDEN_ITEMS_START + 0x57)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x58)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x59)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2             (FLAG_HIDDEN_ITEMS_START + 0x5A)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3             (FLAG_HIDDEN_ITEMS_START + 0x5B)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_1             (FLAG_HIDDEN_ITEMS_START + 0x5C)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_2             (FLAG_HIDDEN_ITEMS_START + 0x5D)
-#define FLAG_HIDDEN_ITEM_ROUTE_128_HEART_SCALE_3             (FLAG_HIDDEN_ITEMS_START + 0x5E)
-#define FLAG_HIDDEN_ITEM_PETALBURG_CITY_RARE_CANDY           (FLAG_HIDDEN_ITEMS_START + 0x5F)
+#define FLAG_ORLEANS_POOL_227                           (FLAG_HIDDEN_ITEMS_START + 0x3A)
+#define FLAG_ORLEANS_POOL_228                           (FLAG_HIDDEN_ITEMS_START + 0x3B)
+#define FLAG_ORLEANS_POOL_229                           (FLAG_HIDDEN_ITEMS_START + 0x3C)
+#define FLAG_ORLEANS_POOL_230                           (FLAG_HIDDEN_ITEMS_START + 0x3D)
+#define FLAG_ORLEANS_POOL_231                           (FLAG_HIDDEN_ITEMS_START + 0x3E)
+#define FLAG_ORLEANS_POOL_232                           (FLAG_HIDDEN_ITEMS_START + 0x3F)
+#define FLAG_ORLEANS_POOL_233                           (FLAG_HIDDEN_ITEMS_START + 0x40)
+#define FLAG_ORLEANS_POOL_234                           (FLAG_HIDDEN_ITEMS_START + 0x41)
+#define FLAG_ORLEANS_POOL_235                           (FLAG_HIDDEN_ITEMS_START + 0x42)
+#define FLAG_ORLEANS_POOL_236                           (FLAG_HIDDEN_ITEMS_START + 0x43)
+#define FLAG_ORLEANS_POOL_237                           (FLAG_HIDDEN_ITEMS_START + 0x44)
+#define FLAG_ORLEANS_POOL_238                           (FLAG_HIDDEN_ITEMS_START + 0x45)
+#define FLAG_ORLEANS_POOL_239                           (FLAG_HIDDEN_ITEMS_START + 0x46)
+#define FLAG_ORLEANS_POOL_240                           (FLAG_HIDDEN_ITEMS_START + 0x47)
+#define FLAG_ORLEANS_POOL_241                           (FLAG_HIDDEN_ITEMS_START + 0x48)
+#define FLAG_ORLEANS_POOL_242                           (FLAG_HIDDEN_ITEMS_START + 0x49)
+#define FLAG_ORLEANS_POOL_243                           (FLAG_HIDDEN_ITEMS_START + 0x4A)
+#define FLAG_ORLEANS_POOL_244                           (FLAG_HIDDEN_ITEMS_START + 0x4B)
+#define FLAG_ORLEANS_POOL_245                           (FLAG_HIDDEN_ITEMS_START + 0x4C)
+#define FLAG_ORLEANS_POOL_246                           (FLAG_HIDDEN_ITEMS_START + 0x4D)
+#define FLAG_ORLEANS_POOL_247                           (FLAG_HIDDEN_ITEMS_START + 0x4E)
+#define FLAG_ORLEANS_POOL_248                           (FLAG_HIDDEN_ITEMS_START + 0x4F)
+#define FLAG_ORLEANS_POOL_249                           (FLAG_HIDDEN_ITEMS_START + 0x50)
+#define FLAG_ORLEANS_POOL_250                           (FLAG_HIDDEN_ITEMS_START + 0x51)
+#define FLAG_ORLEANS_POOL_251                           (FLAG_HIDDEN_ITEMS_START + 0x52)
+#define FLAG_ORLEANS_POOL_252                           (FLAG_HIDDEN_ITEMS_START + 0x53)
+#define FLAG_ORLEANS_POOL_253                           (FLAG_HIDDEN_ITEMS_START + 0x54)
+#define FLAG_ORLEANS_POOL_254                           (FLAG_HIDDEN_ITEMS_START + 0x55)
+#define FLAG_ORLEANS_POOL_255                           (FLAG_HIDDEN_ITEMS_START + 0x56)
+#define FLAG_ORLEANS_POOL_256                           (FLAG_HIDDEN_ITEMS_START + 0x57)
+#define FLAG_ORLEANS_POOL_257                           (FLAG_HIDDEN_ITEMS_START + 0x58)
+#define FLAG_ORLEANS_POOL_258                           (FLAG_HIDDEN_ITEMS_START + 0x59)
+#define FLAG_ORLEANS_POOL_259                           (FLAG_HIDDEN_ITEMS_START + 0x5A)
+#define FLAG_ORLEANS_POOL_260                           (FLAG_HIDDEN_ITEMS_START + 0x5B)
+#define FLAG_ORLEANS_POOL_261                           (FLAG_HIDDEN_ITEMS_START + 0x5C)
+#define FLAG_ORLEANS_POOL_262                           (FLAG_HIDDEN_ITEMS_START + 0x5D)
+#define FLAG_ORLEANS_POOL_263                           (FLAG_HIDDEN_ITEMS_START + 0x5E)
+#define FLAG_ORLEANS_POOL_264                           (FLAG_HIDDEN_ITEMS_START + 0x5F)
 #define FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES             (FLAG_HIDDEN_ITEMS_START + 0x60)
-#define FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x61)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET                    (FLAG_HIDDEN_ITEMS_START + 0x62)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_PP_UP                     (FLAG_HIDDEN_ITEMS_START + 0x63)
-#define FLAG_HIDDEN_ITEM_ROUTE_121_MAX_REVIVE                (FLAG_HIDDEN_ITEMS_START + 0x64)
+#define FLAG_ORLEANS_POOL_265                           (FLAG_HIDDEN_ITEMS_START + 0x61)
+#define FLAG_ORLEANS_POOL_266                           (FLAG_HIDDEN_ITEMS_START + 0x62)
+#define FLAG_ORLEANS_POOL_267                           (FLAG_HIDDEN_ITEMS_START + 0x63)
+#define FLAG_ORLEANS_POOL_268                           (FLAG_HIDDEN_ITEMS_START + 0x64)
 #define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_CALCIUM            (FLAG_HIDDEN_ITEMS_START + 0x65)
 #define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_ZINC               (FLAG_HIDDEN_ITEMS_START + 0x66)
 #define FLAG_HIDDEN_ITEM_ARTISAN_CAVE_B1F_PROTEIN            (FLAG_HIDDEN_ITEMS_START + 0x67)
@@ -660,9 +668,9 @@
 #define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_RARE_CANDY   (FLAG_HIDDEN_ITEMS_START + 0x6A)
 #define FLAG_HIDDEN_ITEM_SAFARI_ZONE_NORTH_EAST_ZINC         (FLAG_HIDDEN_ITEMS_START + 0x6B)
 #define FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP        (FLAG_HIDDEN_ITEMS_START + 0x6C)
-#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH           (FLAG_HIDDEN_ITEMS_START + 0x6D)
-#define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_ORLEANS_POOL_269                           (FLAG_HIDDEN_ITEMS_START + 0x6D)
+#define FLAG_ORLEANS_POOL_270                           (FLAG_HIDDEN_ITEMS_START + 0x6E)
+#define FLAG_ORLEANS_POOL_271                           (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
 #define FLAG_HIDDEN_ITEM_ISLE_MARAIS_CHURCHYARD  (FLAG_HIDDEN_ITEMS_START + 0x70)
 #define FLAG_HIDDEN_ITEM_GRAND_OAK_GARDEN     (FLAG_HIDDEN_ITEMS_START + 0x71)
@@ -757,6 +765,14 @@
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
 #define FLAG_HIDE_APPRENTICE                                        0x2BD
 #define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN                0x2BE
+#define FLAG_ORLEANS_POOL_272                           0x2BF
+#define FLAG_ORLEANS_POOL_273                           0x2C0
+#define FLAG_ORLEANS_POOL_274                           0x2C1
+#define FLAG_ORLEANS_POOL_275                           0x2C2
+#define FLAG_ORLEANS_POOL_276                           0x2C3
+#define FLAG_ORLEANS_POOL_277                           0x2C4
+#define FLAG_ORLEANS_POOL_278                           0x2C5
+#define FLAG_ORLEANS_POOL_279                           0x2C6
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1               0x2C7
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2               0x2C8
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_3               0x2C9
@@ -765,26 +781,26 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6               0x2CC
 #define FLAG_HIDE_SAFARI_ZONE_SOUTH_CONSTRUCTION_WORKERS            0x2CD
 #define FLAG_HIDE_MEW                                               0x2CE
-#define FLAG_HIDE_ROUTE_104_RIVAL                                   0x2CF
+#define FLAG_ORLEANS_POOL_280                           0x2CF
 #define FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE                  0x2D0
 #define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH                  0x2D1
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM          0x2D2
-#define FLAG_HIDE_ROUTE_103_RIVAL                                   0x2D3
-#define FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE                    0x2D4
-#define FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT                        0x2D5
-#define FLAG_HIDE_PETALBURG_CITY_WALLY                              0x2D6
+#define FLAG_ORLEANS_POOL_281                           0x2D3
+#define FLAG_ORLEANS_POOL_282                           0x2D4
+#define FLAG_ORLEANS_POOL_283                           0x2D5
+#define FLAG_ORLEANS_POOL_284                           0x2D6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
+#define FLAG_ORLEANS_POOL_285                           0x2D8
 
 #define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
-#define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
-#define FLAG_HIDE_RUSTBORO_CITY_DEVON_EMPLOYEE_1                    0x2DC
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP              0x2DD
+#define FLAG_ORLEANS_POOL_286                           0x2DB
+#define FLAG_ORLEANS_POOL_287                           0x2DC
+#define FLAG_ORLEANS_POOL_288                           0x2DD
 #define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0x2DE
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING      0x2DF
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING          0x2E0
+#define FLAG_ORLEANS_POOL_289                           0x2DF
+#define FLAG_ORLEANS_POOL_290                           0x2E0
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE             0x2E1
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0x2E2
 #define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0x2E3
@@ -793,432 +809,432 @@
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                          0x2E6
 #define FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN                       0x2E7
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT                          0x2E8
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_BRENDAN            0x2E9
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MAY                    0x2EA
+#define FLAG_ORLEANS_POOL_291                           0x2E9
+#define FLAG_ORLEANS_POOL_292                           0x2EA
 #define FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION                  0x2EB
-#define FLAG_HIDE_LILYCOVE_HARBOR_EVENT_TICKET_TAKER                0x2EC
-#define FLAG_HIDE_SLATEPORT_CITY_SCOTT                              0x2ED
-#define FLAG_HIDE_ROUTE_101_ZIGZAGOON                               0x2EE
+#define FLAG_ORLEANS_POOL_293                           0x2EC
+#define FLAG_ORLEANS_POOL_294                           0x2ED
+#define FLAG_ORLEANS_POOL_295                           0x2EE
 #define FLAG_HIDE_VICTORY_ROAD_EXIT_WALLY                           0x2EF
-#define FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE                       0x2F0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN              0x2F1
+#define FLAG_ORLEANS_POOL_296                           0x2F0
+#define FLAG_ORLEANS_POOL_297                           0x2F1
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1          0x2F2
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4
-#define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0x2F5
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM                0x2F6
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM                    0x2F7
+#define FLAG_ORLEANS_POOL_298                           0x2F5
+#define FLAG_ORLEANS_POOL_299                           0x2F6
+#define FLAG_ORLEANS_POOL_300                           0x2F7
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM      0x2F8
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0x2F9
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0x2FA
-#define FLAG_HIDE_DEOXYS                                            0x2FB
-#define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0x2FC
-#define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0x2FD
+#define FLAG_ORLEANS_POOL_301                           0x2F9
+#define FLAG_ORLEANS_POOL_302                           0x2FA
+#define FLAG_ORLEANS_POOL_303                           0x2FB
+#define FLAG_ORLEANS_POOL_304                           0x2FC
+#define FLAG_ORLEANS_POOL_305                           0x2FD
 #define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0x2FE
 #define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT                  0x2FF
 #define FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE                        0x300
 #define FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE                      0x301
 #define FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE                          0x302
 #define FLAG_HIDE_ROUTE_111_VICKY_WINSTRATE                         0x303
-#define FLAG_HIDE_PETALBURG_GYM_NORMAN                              0x304
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA                           0x305
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_1         0x306
+#define FLAG_ORLEANS_POOL_306                           0x304
+#define FLAG_ORLEANS_POOL_307                           0x305
+#define FLAG_ORLEANS_POOL_308                           0x306
 #define FLAG_HIDE_LILYCOVE_MUSEUM_CURATOR                           0x307
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_1                          0x308
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_2                          0x309
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_3                          0x30A
-#define FLAG_HIDE_LILYCOVE_MUSEUM_PATRON_4                          0x30B
-#define FLAG_HIDE_LILYCOVE_MUSEUM_TOURISTS                          0x30C
+#define FLAG_ORLEANS_POOL_309                           0x308
+#define FLAG_ORLEANS_POOL_310                           0x309
+#define FLAG_ORLEANS_POOL_311                           0x30A
+#define FLAG_ORLEANS_POOL_312                           0x30B
+#define FLAG_ORLEANS_POOL_313                           0x30C
 #define FLAG_HIDE_PETALBURG_GYM_GREETER                             0x30D
-#define FLAG_HIDE_MARINE_CAVE_KYOGRE                                0x30E
-#define FLAG_HIDE_TERRA_CAVE_GROUDON                                0x30F
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM          0x310
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM              0x311
-#define FLAG_HIDE_ROUTE_119_SCOTT                                   0x312
-#define FLAG_HIDE_LILYCOVE_MOTEL_SCOTT                              0x313
+#define FLAG_ORLEANS_POOL_314                           0x30E
+#define FLAG_ORLEANS_POOL_315                           0x30F
+#define FLAG_ORLEANS_POOL_316                           0x310
+#define FLAG_ORLEANS_POOL_317                           0x311
+#define FLAG_ORLEANS_POOL_318                           0x312
+#define FLAG_ORLEANS_POOL_319                           0x313
 #define FLAG_HIDE_MOSSDEEP_CITY_SCOTT                               0x314
 #define FLAG_HIDE_FANCLUB_OLD_LADY                                  0x315
 #define FLAG_HIDE_FANCLUB_BOY                                       0x316
 #define FLAG_HIDE_FANCLUB_LITTLE_BOY                                0x317
 #define FLAG_HIDE_FANCLUB_LADY                                      0x318
-#define FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT               0x319
-#define FLAG_HIDE_LITTLEROOT_TOWN_RIVAL                             0x31A
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCH                             0x31B
+#define FLAG_ORLEANS_POOL_320                           0x319
+#define FLAG_ORLEANS_POOL_321                           0x31A
+#define FLAG_ORLEANS_POOL_322                           0x31B
 #define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_1                          0x31C
 #define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_1                          0x31D
 #define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_1                          0x31E
 #define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_2                          0x31F
-#define FLAG_HIDE_LUGIA                                             0x320
-#define FLAG_HIDE_HO_OH                                             0x321
+#define FLAG_ORLEANS_POOL_323                           0x320
+#define FLAG_ORLEANS_POOL_324                           0x321
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_REPORTER                    0x322
-#define FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER                   0x323
+#define FLAG_ORLEANS_POOL_325                           0x323
 #define FLAG_HIDE_MAUVILLE_CITY_WALLY                               0x324
-#define FLAG_HIDE_MAUVILLE_CITY_WALLYS_UNCLE                        0x325
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY                0x326
-#define FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND                   0x327
+#define FLAG_ORLEANS_POOL_326                           0x325
+#define FLAG_ORLEANS_POOL_327                           0x326
+#define FLAG_ORLEANS_POOL_328                           0x327
 #define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDAS_BOYFRIEND     0x328
-#define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE         0x329
-#define FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT                           0x32A
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL     0x32B
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE      0x32C
-#define FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN                     0x32D
-#define FLAG_HIDE_RUSTBORO_CITY_RIVAL                               0x32E
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_SWABLU_DOLL     0x32F
-#define FLAG_HIDE_SOOTOPOLIS_CITY_WALLACE                           0x330
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL       0x331
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL           0x332
-#define FLAG_HIDE_ROUTE_112_TEAM_MAGMA                              0x333
-#define FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE                        0x334
-#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE         0x335
-#define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
+#define FLAG_ORLEANS_POOL_329                           0x329
+#define FLAG_ORLEANS_POOL_330                           0x32A
+#define FLAG_ORLEANS_POOL_331                           0x32B
+#define FLAG_ORLEANS_POOL_332                           0x32C
+#define FLAG_ORLEANS_POOL_333                           0x32D
+#define FLAG_ORLEANS_POOL_334                           0x32E
+#define FLAG_ORLEANS_POOL_335                           0x32F
+#define FLAG_ORLEANS_POOL_336                           0x330
+#define FLAG_ORLEANS_POOL_337                           0x331
+#define FLAG_ORLEANS_POOL_338                           0x332
+#define FLAG_ORLEANS_POOL_339                           0x333
+#define FLAG_ORLEANS_POOL_340                           0x334
+#define FLAG_ORLEANS_POOL_341                           0x335
+#define FLAG_ORLEANS_POOL_342                           0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
-#define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
-#define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
-#define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAXIE                      0x33D
-#define FLAG_HIDE_PETALBURG_CITY_WALLYS_DAD                         0x33E
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_MAGMA_GRUNTS               0x33F
+#define FLAG_ORLEANS_POOL_343                           0x338
+#define FLAG_ORLEANS_POOL_344                           0x339
+#define FLAG_ORLEANS_POOL_345                           0x33A
+#define FLAG_ORLEANS_POOL_346                           0x33B
+#define FLAG_ORLEANS_POOL_347                           0x33C
+#define FLAG_ORLEANS_POOL_348                           0x33D
+#define FLAG_ORLEANS_POOL_349                           0x33E
+#define FLAG_ORLEANS_POOL_350                           0x33F
 #define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER                0x340
-#define FLAG_HIDE_GRANITE_CAVE_STEVEN                               0x341
-#define FLAG_HIDE_ROUTE_128_STEVEN                                  0x342
-#define FLAG_HIDE_SLATEPORT_CITY_GABBY_AND_TY                       0x343
+#define FLAG_ORLEANS_POOL_351                           0x341
+#define FLAG_ORLEANS_POOL_352                           0x342
+#define FLAG_ORLEANS_POOL_353                           0x343
 #define FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT              0x344
-#define FLAG_HIDE_ROUTE_110_BIRCH                                   0x345
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA     0x346
-#define FLAG_HIDE_SOOTOPOLIS_CITY_MAN_1                             0x347
-#define FLAG_HIDE_SLATEPORT_CITY_CAPTAIN_STERN                      0x348
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN               0x349
+#define FLAG_ORLEANS_POOL_354                           0x345
+#define FLAG_ORLEANS_POOL_355                           0x346
+#define FLAG_ORLEANS_POOL_356                           0x347
+#define FLAG_ORLEANS_POOL_357                           0x348
+#define FLAG_ORLEANS_POOL_358                           0x349
 #define FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO                         0x34A
 #define FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY                      0x34B
-#define FLAG_HIDE_RUSTBORO_CITY_SCIENTIST                           0x34C
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT                  0x34D
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE                      0x34E
-#define FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD                           0x34F
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW            0x350
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL          0x351
-#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP                   0x352
-#define FLAG_HIDE_ROUTE_119_RIVAL                                   0x353
-#define FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS                         0x354
-#define FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON                          0x355
-#define FLAG_HIDE_SOOTOPOLIS_CITY_RESIDENTS                         0x356
-#define FLAG_HIDE_SKY_PILLAR_WALLACE                                0x357
-#define FLAG_HIDE_MT_PYRE_SUMMIT_MAXIE                              0x358
-#define FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS                              0x359
+#define FLAG_ORLEANS_POOL_359                           0x34C
+#define FLAG_ORLEANS_POOL_360                           0x34D
+#define FLAG_ORLEANS_POOL_361                           0x34E
+#define FLAG_ORLEANS_POOL_362                           0x34F
+#define FLAG_ORLEANS_POOL_363                           0x350
+#define FLAG_ORLEANS_POOL_364                           0x351
+#define FLAG_ORLEANS_POOL_365                           0x352
+#define FLAG_ORLEANS_POOL_366                           0x353
+#define FLAG_ORLEANS_POOL_367                           0x354
+#define FLAG_ORLEANS_POOL_368                           0x355
+#define FLAG_ORLEANS_POOL_369                           0x356
+#define FLAG_ORLEANS_POOL_370                           0x357
+#define FLAG_ORLEANS_POOL_371                           0x358
+#define FLAG_ORLEANS_POOL_372                           0x359
 #define FLAG_HIDE_VICTORY_ROAD_ENTRANCE_WALLY                       0x35A
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE                     0x35B
+#define FLAG_ORLEANS_POOL_373                           0x35B
 #define FLAG_HIDE_SLATEPORT_CITY_HARBOR_SS_TIDAL                    0x35C
 #define FLAG_HIDE_LILYCOVE_HARBOR_SSTIDAL                           0x35D
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_TEAM_MAGMA          0x35E
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_2F_STEVEN              0x35F
+#define FLAG_ORLEANS_POOL_374                           0x35F
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
-#define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
-#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
-#define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
+#define FLAG_ORLEANS_POOL_375                           0x362
+#define FLAG_ORLEANS_POOL_376                           0x363
+#define FLAG_ORLEANS_POOL_377                           0x364
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
-#define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0x366
-#define FLAG_HIDE_FALLARBOR_POKEMON_CENTER_LANETTE                  0x367
-#define FLAG_HIDE_TRICK_HOUSE_ENTRANCE_MAN                          0x368
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER_REPLACEMENT    0x369
+#define FLAG_ORLEANS_POOL_378                           0x366
+#define FLAG_ORLEANS_POOL_379                           0x367
+#define FLAG_ORLEANS_POOL_380                           0x368
+#define FLAG_ORLEANS_POOL_381                           0x369
 #define FLAG_HIDE_DESERT_UNDERPASS_FOSSIL                           0x36A
 #define FLAG_HIDE_ROUTE_111_PLAYER_DESCENT                          0x36B
 #define FLAG_HIDE_ROUTE_111_DESERT_FOSSIL                           0x36C
-#define FLAG_HIDE_MT_CHIMNEY_TRAINERS                               0x36D
-#define FLAG_HIDE_RUSTURF_TUNNEL_AQUA_GRUNT                         0x36E
-#define FLAG_HIDE_RUSTURF_TUNNEL_BRINEY                             0x36F
-#define FLAG_HIDE_RUSTURF_TUNNEL_PEEKO                              0x370
+#define FLAG_ORLEANS_POOL_382                           0x36D
+#define FLAG_ORLEANS_POOL_383                           0x36E
+#define FLAG_ORLEANS_POOL_384                           0x36F
+#define FLAG_ORLEANS_POOL_385                           0x370
 #define FLAG_HIDE_BRINEYS_HOUSE_PEEKO                               0x371
-#define FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA                          0x372
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS         0x373
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_1     0x374
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_AQUA_GRUNT_2     0x375
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_ARCHIE           0x376
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN    0x377
+#define FLAG_ORLEANS_POOL_386                           0x372
+#define FLAG_ORLEANS_POOL_387                           0x373
+#define FLAG_ORLEANS_POOL_388                           0x374
+#define FLAG_ORLEANS_POOL_389                           0x375
+#define FLAG_ORLEANS_POOL_390                           0x376
+#define FLAG_ORLEANS_POOL_391                           0x377
 #define FLAG_HIDE_BATTLE_TOWER_OPPONENT                             0x378
-#define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL                  0x379
-#define FLAG_HIDE_ROUTE_119_TEAM_AQUA                               0x37A
+#define FLAG_ORLEANS_POOL_392                           0x379
+#define FLAG_ORLEANS_POOL_393                           0x37A
 #define FLAG_HIDE_ROUTE_116_MR_BRINEY                               0x37B
-#define FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS                      0x37C
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS                      0x37D
-#define FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND                        0x37E
-#define FLAG_HIDE_LILYCOVE_CONTEST_HALL_CONTEST_ATTENDANT_2         0x37F
+#define FLAG_ORLEANS_POOL_394                           0x37C
+#define FLAG_ORLEANS_POOL_395                           0x37D
+#define FLAG_ORLEANS_POOL_396                           0x37E
+#define FLAG_ORLEANS_POOL_397                           0x37F
 #define FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380          0x380
 #define FLAG_HIDE_ROUTE_101_BIRCH                                   0x381
 #define FLAG_HIDE_ROUTE_103_BIRCH                                   0x382
-#define FLAG_HIDE_TRICK_HOUSE_END_MAN                               0x383
-#define FLAG_HIDE_ROUTE_110_TEAM_AQUA                               0x384
+#define FLAG_ORLEANS_POOL_398                           0x383
+#define FLAG_ORLEANS_POOL_399                           0x384
 #define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_2                          0x385
 #define FLAG_HIDE_ROUTE_120_GABBY_AND_TY_2                          0x386
 #define FLAG_HIDE_ROUTE_111_GABBY_AND_TY_3                          0x387
 #define FLAG_HIDE_ROUTE_118_GABBY_AND_TY_3                          0x388
-#define FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS                     0x389
-#define FLAG_HIDE_ROUTE_104_WHITE_HERB_FLORIST                      0x38A
-#define FLAG_HIDE_FALLARBOR_AZURILL                                 0x38B
-#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_ATTENDANT                   0x38C
-#define FLAG_HIDE_LILYCOVE_HARBOR_FERRY_SAILOR                      0x38D
-#define FLAG_HIDE_SOUTHERN_ISLAND_EON_STONE                         0x38E
-#define FLAG_HIDE_SOUTHERN_ISLAND_UNCHOSEN_EON_DUO_MON              0x38F
-#define FLAG_HIDE_MAUVILLE_CITY_WATTSON                             0x390
-#define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
-#define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
-#define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
-#define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
-#define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
+#define FLAG_ORLEANS_POOL_400                           0x389
+#define FLAG_ORLEANS_POOL_401                           0x38A
+#define FLAG_ORLEANS_POOL_402                           0x38B
+#define FLAG_ORLEANS_POOL_403                           0x38C
+#define FLAG_ORLEANS_POOL_404                           0x38D
+#define FLAG_ORLEANS_POOL_405                           0x38E
+#define FLAG_ORLEANS_POOL_406                           0x38F
+#define FLAG_ORLEANS_POOL_407                           0x390
+#define FLAG_ORLEANS_POOL_408                           0x391
+#define FLAG_ORLEANS_POOL_409                           0x392
+#define FLAG_ORLEANS_POOL_410                           0x393
+#define FLAG_ORLEANS_POOL_411                           0x394
+#define FLAG_ORLEANS_POOL_412                           0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
-#define FLAG_HIDE_ROUTE_110_RIVAL                                   0x397
-#define FLAG_HIDE_CHAMPIONS_ROOM_RIVAL                              0x398
-#define FLAG_HIDE_CHAMPIONS_ROOM_BIRCH                              0x399
-#define FLAG_HIDE_ROUTE_110_RIVAL_ON_BIKE                           0x39A
-#define FLAG_HIDE_ROUTE_119_RIVAL_ON_BIKE                           0x39B
-#define FLAG_HIDE_AQUA_HIDEOUT_GRUNTS                               0x39C
+#define FLAG_ORLEANS_POOL_413                           0x397
+#define FLAG_ORLEANS_POOL_414                           0x398
+#define FLAG_ORLEANS_POOL_415                           0x399
+#define FLAG_ORLEANS_POOL_416                           0x39A
+#define FLAG_ORLEANS_POOL_417                           0x39B
+#define FLAG_ORLEANS_POOL_418                           0x39C
 #define FLAG_HIDE_LILYCOVE_MOTEL_GAME_DESIGNERS                     0x39D
-#define FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA                              0x39E
-#define FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA                             0x39F
-#define FLAG_HIDE_FALLARBOR_HOUSE_PROF_COZMO                        0x3A0
-#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL                              0x3A1
-#define FLAG_HIDE_LAVARIDGE_TOWN_RIVAL_ON_BIKE                      0x3A2
+#define FLAG_ORLEANS_POOL_419                           0x39E
+#define FLAG_ORLEANS_POOL_420                           0x39F
+#define FLAG_ORLEANS_POOL_421                           0x3A0
+#define FLAG_ORLEANS_POOL_422                           0x3A1
+#define FLAG_ORLEANS_POOL_423                           0x3A2
 #define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1                             0x3A3
 #define FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2                             0x3A4
-#define FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL                      0x3A5
-#define FLAG_HIDE_MOSSDEEP_CITY_HOUSE_2_WINGULL                     0x3A6
-#define FLAG_HIDE_REGIROCK                                          0x3A7
-#define FLAG_HIDE_REGICE                                            0x3A8
-#define FLAG_HIDE_REGISTEEL                                         0x3A9
-#define FLAG_HIDE_METEOR_FALLS_TEAM_AQUA                            0x3AA
-#define FLAG_HIDE_METEOR_FALLS_TEAM_MAGMA                           0x3AB
-#define FLAG_HIDE_DEWFORD_HALL_SLUDGE_BOMB_MAN                      0x3AC
-#define FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT               0x3AD
-#define FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO                          0x3AE
-#define FLAG_HIDE_AQUA_HIDEOUT_B2F_SUBMARINE_SHADOW                 0x3AF
-#define FLAG_HIDE_ROUTE_128_ARCHIE                                  0x3B0
-#define FLAG_HIDE_ROUTE_128_MAXIE                                   0x3B1
-#define FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS                       0x3B2
-#define FLAG_HIDE_ROUTE_116_DEVON_EMPLOYEE                          0x3B3
+#define FLAG_ORLEANS_POOL_424                           0x3A5
+#define FLAG_ORLEANS_POOL_425                           0x3A6
+#define FLAG_ORLEANS_POOL_426                           0x3A7
+#define FLAG_ORLEANS_POOL_427                           0x3A8
+#define FLAG_ORLEANS_POOL_428                           0x3A9
+#define FLAG_ORLEANS_POOL_429                           0x3AA
+#define FLAG_ORLEANS_POOL_430                           0x3AB
+#define FLAG_ORLEANS_POOL_431                           0x3AC
+#define FLAG_ORLEANS_POOL_432                           0x3AD
+#define FLAG_ORLEANS_POOL_433                           0x3AE
+#define FLAG_ORLEANS_POOL_434                           0x3AF
+#define FLAG_ORLEANS_POOL_435                           0x3B0
+#define FLAG_ORLEANS_POOL_436                           0x3B1
+#define FLAG_ORLEANS_POOL_437                           0x3B2
+#define FLAG_ORLEANS_POOL_438                           0x3B3
 #define FLAG_HIDE_SLATEPORT_CITY_TM_SALESMAN                        0x3B4
-#define FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE              0x3B5
+#define FLAG_ORLEANS_POOL_439                           0x3B5
 #define FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY                       0x3B6
-#define FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER                       0x3B7
-#define FLAG_RECEIVED_SHOAL_SALT_1                                  0x3B8
-#define FLAG_RECEIVED_SHOAL_SALT_2                                  0x3B9
-#define FLAG_RECEIVED_SHOAL_SALT_3                                  0x3BA
-#define FLAG_RECEIVED_SHOAL_SALT_4                                  0x3BB
-#define FLAG_RECEIVED_SHOAL_SHELL_1                                 0x3BC
-#define FLAG_RECEIVED_SHOAL_SHELL_2                                 0x3BD
-#define FLAG_RECEIVED_SHOAL_SHELL_3                                 0x3BE
-#define FLAG_RECEIVED_SHOAL_SHELL_4                                 0x3BF
+#define FLAG_ORLEANS_POOL_440                           0x3B7
+#define FLAG_ORLEANS_POOL_441                           0x3B8
+#define FLAG_ORLEANS_POOL_442                           0x3B9
+#define FLAG_ORLEANS_POOL_443                           0x3BA
+#define FLAG_ORLEANS_POOL_444                           0x3BB
+#define FLAG_ORLEANS_POOL_445                           0x3BC
+#define FLAG_ORLEANS_POOL_446                           0x3BD
+#define FLAG_ORLEANS_POOL_447                           0x3BE
+#define FLAG_ORLEANS_POOL_448                           0x3BF
 #define FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN                        0x3C0
-#define FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION                       0x3C1
-#define FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN      0x3C2
-#define FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL                          0x3C3
-#define FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL                          0x3C4
-#define FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT 0x3C5
-#define FLAG_HIDE_ROUTE_118_STEVEN                                  0x3C6
+#define FLAG_ORLEANS_POOL_449                           0x3C1
+#define FLAG_ORLEANS_POOL_450                           0x3C2
+#define FLAG_ORLEANS_POOL_451                           0x3C3
+#define FLAG_ORLEANS_POOL_452                           0x3C4
+#define FLAG_ORLEANS_POOL_453                           0x3C5
+#define FLAG_ORLEANS_POOL_454                           0x3C6
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_STEVEN                0x3C7
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_BELDUM_POKEBALL       0x3C8
-#define FLAG_HIDE_FORTREE_CITY_KECLEON                              0x3C9
-#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE                          0x3CA
+#define FLAG_ORLEANS_POOL_455                           0x3C9
+#define FLAG_ORLEANS_POOL_456                           0x3CA
 #define FLAG_HIDE_LILYCOVE_CITY_RIVAL                               0x3CB
-#define FLAG_HIDE_ROUTE_120_STEVEN                                  0x3CC
-#define FLAG_HIDE_SOOTOPOLIS_CITY_STEVEN                            0x3CD
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1                            0x3CE
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2                            0x3CF
-#define FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3                            0x3D0
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1                      0x3D1
-#define FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2                      0x3D2
-#define FLAG_HIDE_OLDALE_TOWN_RIVAL                                 0x3D3
-#define FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE      0x3D4
-#define FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW                   0x3D5
-#define FLAG_HIDE_ROUTE_120_KECLEON_1                               0x3D6
-#define FLAG_HIDE_RUSTURF_TUNNEL_WANDA                              0x3D7
+#define FLAG_ORLEANS_POOL_457                           0x3CC
+#define FLAG_ORLEANS_POOL_458                           0x3CD
+#define FLAG_ORLEANS_POOL_459                           0x3CE
+#define FLAG_ORLEANS_POOL_460                           0x3CF
+#define FLAG_ORLEANS_POOL_461                           0x3D0
+#define FLAG_ORLEANS_POOL_462                           0x3D1
+#define FLAG_ORLEANS_POOL_463                           0x3D2
+#define FLAG_ORLEANS_POOL_464                           0x3D3
+#define FLAG_ORLEANS_POOL_465                           0x3D4
+#define FLAG_ORLEANS_POOL_466                           0x3D5
+#define FLAG_ORLEANS_POOL_467                           0x3D6
+#define FLAG_ORLEANS_POOL_468                           0x3D7
 #define FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WANDA                0x3D8
-#define FLAG_HIDE_ROUTE_120_KECLEON_2                               0x3D9
-#define FLAG_HIDE_ROUTE_120_KECLEON_3                               0x3DA
-#define FLAG_HIDE_ROUTE_120_KECLEON_4                               0x3DB
-#define FLAG_HIDE_ROUTE_120_KECLEON_5                               0x3DC
-#define FLAG_HIDE_ROUTE_119_KECLEON_1                               0x3DD
-#define FLAG_HIDE_ROUTE_119_KECLEON_2                               0x3DE
-#define FLAG_HIDE_ROUTE_101_BOY                                     0x3DF
-#define FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M                 0x3E0
-#define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
-#define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
-#define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3
+#define FLAG_ORLEANS_POOL_469                           0x3D9
+#define FLAG_ORLEANS_POOL_470                           0x3DA
+#define FLAG_ORLEANS_POOL_471                           0x3DB
+#define FLAG_ORLEANS_POOL_472                           0x3DC
+#define FLAG_ORLEANS_POOL_473                           0x3DD
+#define FLAG_ORLEANS_POOL_474                           0x3DE
+#define FLAG_ORLEANS_POOL_475                           0x3DF
+#define FLAG_ORLEANS_POOL_476                           0x3E0
+#define FLAG_ORLEANS_POOL_477                           0x3E1
+#define FLAG_ORLEANS_POOL_478                           0x3E2
+#define FLAG_ORLEANS_POOL_479                           0x3E3
 #define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
-#define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
-#define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
-#define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
+#define FLAG_ORLEANS_POOL_480                           0x3E5
+#define FLAG_ORLEANS_POOL_481                           0x3E6
+#define FLAG_ORLEANS_POOL_482                           0x3E7
 
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
-#define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
-#define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
-#define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
+#define FLAG_UNUSED_0x3E9                               0x3E9
+#define FLAG_UNUSED_0x3EA                               0x3EA
+#define FLAG_UNUSED_0x3EB                               0x3EB
+#define FLAG_UNUSED_0x3EC                               0x3EC
+#define FLAG_UNUSED_0x3ED                               0x3ED
+#define FLAG_UNUSED_0x3EE                               0x3EE
+#define FLAG_UNUSED_0x3EF                               0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
 #define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
 #define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
-#define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
-#define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
-#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
-#define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
-#define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
-#define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
-#define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9
-#define FLAG_ITEM_ROUTE_115_IRON                                    0x3FA
-#define FLAG_ITEM_ROUTE_116_ETHER                                   0x3FB
-#define FLAG_ITEM_ROUTE_116_REPEL                                   0x3FC
-#define FLAG_ITEM_ROUTE_116_HP_UP                                   0x3FD
-#define FLAG_ITEM_ROUTE_117_GREAT_BALL                              0x3FE
-#define FLAG_ITEM_ROUTE_117_REVIVE                                  0x3FF
-#define FLAG_ITEM_ROUTE_119_SUPER_REPEL                             0x400
-#define FLAG_ITEM_ROUTE_119_ZINC                                    0x401
-#define FLAG_ITEM_ROUTE_119_ELIXIR_1                                0x402
-#define FLAG_ITEM_ROUTE_119_LEAF_STONE                              0x403
-#define FLAG_ITEM_ROUTE_119_RARE_CANDY                              0x404
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
-#define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
-#define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
-#define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
-#define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
-#define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
-#define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
-#define FLAG_ITEM_ROUTE_133_BIG_PEARL                               0x40D
-#define FLAG_ITEM_ROUTE_133_STAR_PIECE                              0x40E
-#define FLAG_ITEM_PETALBURG_CITY_MAX_REVIVE                         0x40F
-#define FLAG_ITEM_PETALBURG_CITY_ETHER                              0x410
-#define FLAG_ITEM_RUSTBORO_CITY_X_DEFEND                            0x411
-#define FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL                           0x412
-#define FLAG_ITEM_MOSSDEEP_CITY_NET_BALL                            0x413
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_TM_IRON_TAIL                   0x414
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL                      0x415
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE                     0x416
-#define FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP                          0x417
-#define FLAG_ITEM_RUSTURF_TUNNEL_POKE_BALL                          0x418
-#define FLAG_ITEM_RUSTURF_TUNNEL_MAX_ETHER                          0x419
-#define FLAG_ITEM_GRANITE_CAVE_1F_ESCAPE_ROPE                       0x41A
-#define FLAG_ITEM_GRANITE_CAVE_B1F_POKE_BALL                        0x41B
-#define FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE                            0x41C
-#define FLAG_ITEM_GRANITE_CAVE_B2F_REPEL                            0x41D
-#define FLAG_ITEM_GRANITE_CAVE_B2F_RARE_CANDY                       0x41E
-#define FLAG_ITEM_PETALBURG_WOODS_X_ATTACK                          0x41F
-#define FLAG_ITEM_PETALBURG_WOODS_GREAT_BALL                        0x420
-#define FLAG_ITEM_ROUTE_104_POKE_BALL                               0x421
-#define FLAG_ITEM_PETALBURG_WOODS_ETHER                             0x422
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_3R_ECAPE_ROPE                    0x423
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_1_ORANGE_MAIL                  0x424
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_HARBOR_MAIL                  0x425
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_2_WAVE_MAIL                    0x426
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_SHADOW_MAIL                  0x427
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_3_WOOD_MAIL                    0x428
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_4_MECH_MAIL                    0x429
-#define FLAG_ITEM_ROUTE_124_YELLOW_SHARD                            0x42A
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_6_GLITTER_MAIL                 0x42B
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_7_TROPIC_MAIL                  0x42C
-#define FLAG_ITEM_TRICK_HOUSE_PUZZLE_8_BEAD_MAIL                    0x42D
-#define FLAG_ITEM_JAGGED_PASS_BURN_HEAL                             0x42E
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MAX_ELIXIR                       0x42F
-#define FLAG_ITEM_AQUA_HIDEOUT_B2F_NEST_BALL                        0x430
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION                       0x431
-#define FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP                    0x432
-#define FLAG_ITEM_NEW_MAUVILLE_ULTRA_BALL                           0x433
-#define FLAG_ITEM_NEW_MAUVILLE_ESCAPE_ROPE                          0x434
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_6_LUXURY_BALL    0x435
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_2_SCANNER        0x436
-#define FLAG_ITEM_SCORCHED_SLAB_TM_SUNNY_DAY                        0x437
-#define FLAG_ITEM_METEOR_FALLS_B1F_2R_TM_DRAGON_CLAW                0x438
-#define FLAG_ITEM_SHOAL_CAVE_ENTRANCE_BIG_PEARL                     0x439
-#define FLAG_ITEM_SHOAL_CAVE_INNER_ROOM_RARE_CANDY                  0x43A
-#define FLAG_ITEM_SHOAL_CAVE_STAIRS_ROOM_ICE_HEAL                   0x43B
-#define FLAG_ITEM_VICTORY_ROAD_1F_MAX_ELIXIR                        0x43C
-#define FLAG_ITEM_VICTORY_ROAD_1F_PP_UP                             0x43D
-#define FLAG_ITEM_VICTORY_ROAD_B1F_TM_PSYCHIC                       0x43E
-#define FLAG_ITEM_VICTORY_ROAD_B1F_FULL_RESTORE                     0x43F
-#define FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL                        0x440
-#define FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL                         0x441
-#define FLAG_ITEM_SEAFLOOR_CAVERN_ROOM_9_TM_EARTHQUAKE              0x442
-#define FLAG_ITEM_FIERY_PATH_TM_TOXIC                               0x443
-#define FLAG_ITEM_ROUTE_124_RED_SHARD                               0x444
-#define FLAG_ITEM_ROUTE_124_BLUE_SHARD                              0x445
+#define FLAG_UNUSED_0x3F3                               0x3F3
+#define FLAG_UNUSED_0x3F4                               0x3F4
+#define FLAG_UNUSED_0x3F5                               0x3F5
+#define FLAG_UNUSED_0x3F6                               0x3F6
+#define FLAG_UNUSED_0x3F7                               0x3F7
+#define FLAG_UNUSED_0x3F8                               0x3F8
+#define FLAG_UNUSED_0x3F9                               0x3F9
+#define FLAG_UNUSED_0x3FA                               0x3FA
+#define FLAG_UNUSED_0x3FB                               0x3FB
+#define FLAG_UNUSED_0x3FC                               0x3FC
+#define FLAG_UNUSED_0x3FD                               0x3FD
+#define FLAG_UNUSED_0x3FE                               0x3FE
+#define FLAG_UNUSED_0x3FF                               0x3FF
+#define FLAG_UNUSED_0x400                               0x400
+#define FLAG_UNUSED_0x401                               0x401
+#define FLAG_UNUSED_0x402                               0x402
+#define FLAG_UNUSED_0x403                               0x403
+#define FLAG_UNUSED_0x404                               0x404
+#define FLAG_UNUSED_0x405                               0x405
+#define FLAG_UNUSED_0x406                               0x406
+#define FLAG_UNUSED_0x407                               0x407
+#define FLAG_UNUSED_0x408                               0x408
+#define FLAG_UNUSED_0x409                               0x409
+#define FLAG_UNUSED_0x40A                               0x40A
+#define FLAG_UNUSED_0x40B                               0x40B
+#define FLAG_UNUSED_0x40C                               0x40C
+#define FLAG_UNUSED_0x40D                               0x40D
+#define FLAG_UNUSED_0x40E                               0x40E
+#define FLAG_UNUSED_0x40F                               0x40F
+#define FLAG_UNUSED_0x410                               0x410
+#define FLAG_UNUSED_0x411                               0x411
+#define FLAG_UNUSED_0x412                               0x412
+#define FLAG_UNUSED_0x413                               0x413
+#define FLAG_UNUSED_0x414                               0x414
+#define FLAG_UNUSED_0x415                               0x415
+#define FLAG_UNUSED_0x416                               0x416
+#define FLAG_UNUSED_0x417                               0x417
+#define FLAG_UNUSED_0x418                               0x418
+#define FLAG_UNUSED_0x419                               0x419
+#define FLAG_UNUSED_0x41A                               0x41A
+#define FLAG_UNUSED_0x41B                               0x41B
+#define FLAG_UNUSED_0x41C                               0x41C
+#define FLAG_UNUSED_0x41D                               0x41D
+#define FLAG_UNUSED_0x41E                               0x41E
+#define FLAG_UNUSED_0x41F                               0x41F
+#define FLAG_UNUSED_0x420                               0x420
+#define FLAG_UNUSED_0x421                               0x421
+#define FLAG_UNUSED_0x422                               0x422
+#define FLAG_UNUSED_0x423                               0x423
+#define FLAG_UNUSED_0x424                               0x424
+#define FLAG_UNUSED_0x425                               0x425
+#define FLAG_UNUSED_0x426                               0x426
+#define FLAG_UNUSED_0x427                               0x427
+#define FLAG_UNUSED_0x428                               0x428
+#define FLAG_UNUSED_0x429                               0x429
+#define FLAG_UNUSED_0x42A                               0x42A
+#define FLAG_UNUSED_0x42B                               0x42B
+#define FLAG_UNUSED_0x42C                               0x42C
+#define FLAG_UNUSED_0x42D                               0x42D
+#define FLAG_UNUSED_0x42E                               0x42E
+#define FLAG_UNUSED_0x42F                               0x42F
+#define FLAG_UNUSED_0x430                               0x430
+#define FLAG_UNUSED_0x431                               0x431
+#define FLAG_UNUSED_0x432                               0x432
+#define FLAG_UNUSED_0x433                               0x433
+#define FLAG_UNUSED_0x434                               0x434
+#define FLAG_UNUSED_0x435                               0x435
+#define FLAG_UNUSED_0x436                               0x436
+#define FLAG_UNUSED_0x437                               0x437
+#define FLAG_UNUSED_0x438                               0x438
+#define FLAG_UNUSED_0x439                               0x439
+#define FLAG_UNUSED_0x43A                               0x43A
+#define FLAG_UNUSED_0x43B                               0x43B
+#define FLAG_UNUSED_0x43C                               0x43C
+#define FLAG_UNUSED_0x43D                               0x43D
+#define FLAG_UNUSED_0x43E                               0x43E
+#define FLAG_UNUSED_0x43F                               0x43F
+#define FLAG_UNUSED_0x440                               0x440
+#define FLAG_UNUSED_0x441                               0x441
+#define FLAG_UNUSED_0x442                               0x442
+#define FLAG_UNUSED_0x443                               0x443
+#define FLAG_UNUSED_0x444                               0x444
+#define FLAG_UNUSED_0x445                               0x445
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_WEST_TM_SOLAR_BEAM              0x446
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_1F_HARBOR_MAIL               0x447
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_ESCAPE_ROPE              0x448
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_B1F_DIVE_BALL              0x449
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_B1F_TM_ICE_BEAM              0x44A
-#define FLAG_ITEM_ABANDONED_SHIP_ROOMS_2_1F_REVIVE                  0x44B
+#define FLAG_UNUSED_0x447                               0x447
+#define FLAG_UNUSED_0x448                               0x448
+#define FLAG_UNUSED_0x449                               0x449
+#define FLAG_UNUSED_0x44A                               0x44A
+#define FLAG_UNUSED_0x44B                               0x44B
 #define FLAG_ITEM_ABANDONED_SHIP_CAPTAINS_OFFICE_STORAGE_KEY        0x44C
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_3_WATER_STONE    0x44D
-#define FLAG_ITEM_ABANDONED_SHIP_HIDDEN_FLOOR_ROOM_1_TM_RAIN_DANCE  0x44E
-#define FLAG_ITEM_ROUTE_121_CARBOS                                  0x44F
-#define FLAG_ITEM_ROUTE_123_ULTRA_BALL                              0x450
-#define FLAG_ITEM_ROUTE_126_GREEN_SHARD                             0x451
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_2                          0x452
-#define FLAG_ITEM_ROUTE_120_HYPER_POTION                            0x453
-#define FLAG_ITEM_ROUTE_120_NEST_BALL                               0x454
-#define FLAG_ITEM_ROUTE_123_ELIXIR                                  0x455
-#define FLAG_ITEM_NEW_MAUVILLE_THUNDER_STONE                        0x456
-#define FLAG_ITEM_FIERY_PATH_FIRE_STONE                             0x457
-#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_TM_HAIL                       0x458
-#define FLAG_ITEM_SHOAL_CAVE_ICE_ROOM_NEVER_MELT_ICE                0x459
-#define FLAG_ITEM_ROUTE_103_GUARD_SPEC                              0x45A
-#define FLAG_ITEM_ROUTE_104_X_ACCURACY                              0x45B
-#define FLAG_ITEM_MAUVILLE_CITY_X_SPEED                             0x45C
-#define FLAG_ITEM_PETALBURG_WOODS_PARALYZE_HEAL                     0x45D
-#define FLAG_ITEM_ROUTE_115_GREAT_BALL                              0x45E
+#define FLAG_UNUSED_0x44D                               0x44D
+#define FLAG_UNUSED_0x44E                               0x44E
+#define FLAG_UNUSED_0x44F                               0x44F
+#define FLAG_UNUSED_0x450                               0x450
+#define FLAG_UNUSED_0x451                               0x451
+#define FLAG_UNUSED_0x452                               0x452
+#define FLAG_UNUSED_0x453                               0x453
+#define FLAG_UNUSED_0x454                               0x454
+#define FLAG_UNUSED_0x455                               0x455
+#define FLAG_UNUSED_0x456                               0x456
+#define FLAG_UNUSED_0x457                               0x457
+#define FLAG_UNUSED_0x458                               0x458
+#define FLAG_UNUSED_0x459                               0x459
+#define FLAG_UNUSED_0x45A                               0x45A
+#define FLAG_UNUSED_0x45B                               0x45B
+#define FLAG_UNUSED_0x45C                               0x45C
+#define FLAG_UNUSED_0x45D                               0x45D
+#define FLAG_UNUSED_0x45E                               0x45E
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM                         0x45F
-#define FLAG_ITEM_MT_PYRE_3F_SUPER_REPEL                            0x460
-#define FLAG_ITEM_ROUTE_118_HYPER_POTION                            0x461
-#define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
-#define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
-#define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
+#define FLAG_UNUSED_0x460                               0x460
+#define FLAG_UNUSED_0x461                               0x461
+#define FLAG_UNUSED_0x462                               0x462
+#define FLAG_UNUSED_0x463                               0x463
+#define FLAG_UNUSED_0x464                               0x464
+#define FLAG_UNUSED_0x465                               0x465
+#define FLAG_UNUSED_0x466                               0x466
+#define FLAG_UNUSED_0x467                               0x467
 #define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
-#define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
-#define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
+#define FLAG_UNUSED_0x469                               0x469
+#define FLAG_UNUSED_0x46A                               0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
-#define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
-#define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
+#define FLAG_UNUSED_0x46D                               0x46D
+#define FLAG_UNUSED_0x46E                               0x46E
+#define FLAG_UNUSED_0x46F                               0x46F
 #define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
-#define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
+#define FLAG_UNUSED_0x471                               0x471
 #define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
-#define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
-#define FLAG_ITEM_ROUTE_109_POTION                                  0x474
-#define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
+#define FLAG_UNUSED_0x473                               0x473
+#define FLAG_UNUSED_0x474                               0x474
+#define FLAG_UNUSED_0x475                               0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
-#define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
-#define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
+#define FLAG_UNUSED_0x477                               0x477
+#define FLAG_UNUSED_0x478                               0x478
 #define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
-#define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
-#define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
-#define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
-#define FLAG_ITEM_ROUTE_121_REVIVE                                  0x47D
-#define FLAG_ITEM_ROUTE_121_ZINC                                    0x47E
-#define FLAG_ITEM_MAGMA_HIDEOUT_1F_RARE_CANDY                       0x47F
-#define FLAG_ITEM_ROUTE_123_PP_UP                                   0x480
-#define FLAG_ITEM_ROUTE_123_REVIVAL_HERB                            0x481
-#define FLAG_ITEM_ROUTE_125_BIG_PEARL                               0x482
-#define FLAG_ITEM_ROUTE_127_RARE_CANDY                              0x483
-#define FLAG_ITEM_ROUTE_132_PROTEIN                                 0x484
-#define FLAG_ITEM_ROUTE_133_MAX_REVIVE                              0x485
-#define FLAG_ITEM_ROUTE_134_CARBOS                                  0x486
-#define FLAG_ITEM_ROUTE_134_STAR_PIECE                              0x487
-#define FLAG_ITEM_ROUTE_114_ENERGY_POWDER                           0x488
-#define FLAG_ITEM_ROUTE_115_PP_UP                                   0x489
+#define FLAG_UNUSED_0x47A                               0x47A
+#define FLAG_UNUSED_0x47B                               0x47B
+#define FLAG_UNUSED_0x47C                               0x47C
+#define FLAG_UNUSED_0x47D                               0x47D
+#define FLAG_UNUSED_0x47E                               0x47E
+#define FLAG_UNUSED_0x47F                               0x47F
+#define FLAG_UNUSED_0x480                               0x480
+#define FLAG_UNUSED_0x481                               0x481
+#define FLAG_UNUSED_0x482                               0x482
+#define FLAG_UNUSED_0x483                               0x483
+#define FLAG_UNUSED_0x484                               0x484
+#define FLAG_UNUSED_0x485                               0x485
+#define FLAG_UNUSED_0x486                               0x486
+#define FLAG_UNUSED_0x487                               0x487
+#define FLAG_UNUSED_0x488                               0x488
+#define FLAG_UNUSED_0x489                               0x489
 #define FLAG_ITEM_ARTISAN_CAVE_B1F_HP_UP                            0x48A
 #define FLAG_ITEM_ARTISAN_CAVE_1F_CARBOS                            0x48B
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_MAX_ELIXIR                    0x48C
-#define FLAG_ITEM_MAGMA_HIDEOUT_2F_2R_FULL_RESTORE                  0x48D
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_1R_NUGGET                        0x48E
-#define FLAG_ITEM_MAGMA_HIDEOUT_3F_2R_PP_MAX                        0x48F
-#define FLAG_ITEM_MAGMA_HIDEOUT_4F_MAX_REVIVE                       0x490
+#define FLAG_UNUSED_0x48C                               0x48C
+#define FLAG_UNUSED_0x48D                               0x48D
+#define FLAG_UNUSED_0x48E                               0x48E
+#define FLAG_UNUSED_0x48F                               0x48F
+#define FLAG_UNUSED_0x490                               0x490
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
@@ -1318,10 +1334,10 @@
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
-#define FLAG_DEFEATED_MAUVILLE_GYM                                  0x4F2
+#define FLAG_ORLEANS_POOL_483                           0x4F2
 #define FLAG_DEFEATED_LAVARIDGE_GYM                                 0x4F3
 #define FLAG_DEFEATED_PETALBURG_GYM                                 0x4F4
-#define FLAG_DEFEATED_FORTREE_GYM                                   0x4F5
+#define FLAG_ORLEANS_POOL_484                           0x4F5
 #define FLAG_DEFEATED_MOSSDEEP_GYM                                  0x4F6
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
@@ -1350,7 +1366,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_ORLEANS_POOL_485                           (SYSTEM_FLAGS + 0x3)
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1387,13 +1403,13 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_ORLEANS_POOL_486                           (SYSTEM_FLAGS + 0x21)
+#define FLAG_ORLEANS_POOL_487                           (SYSTEM_FLAGS + 0x22)
+#define FLAG_ORLEANS_POOL_488                           (SYSTEM_FLAGS + 0x23)
+#define FLAG_ORLEANS_POOL_489                           (SYSTEM_FLAGS + 0x24)
+#define FLAG_ORLEANS_POOL_490                           (SYSTEM_FLAGS + 0x25)
+#define FLAG_ORLEANS_POOL_491                           (SYSTEM_FLAGS + 0x26)
+#define FLAG_ORLEANS_POOL_492                           (SYSTEM_FLAGS + 0x27)
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)
@@ -1403,8 +1419,8 @@
 #define FLAG_SYS_SAFARI_MODE                        (SYSTEM_FLAGS + 0x2C)
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
-#define FLAG_UNUSED_0x88E                           (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
+#define FLAG_ORLEANS_POOL_493                           (SYSTEM_FLAGS + 0x2E)
+#define FLAG_ORLEANS_POOL_494                           (SYSTEM_FLAGS + 0x2F)
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)
@@ -1503,68 +1519,68 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_ORLEANS_POOL_495                           (SYSTEM_FLAGS + 0x83)
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
-#define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
-#define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
-#define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag
-#define FLAG_UNUSED_0x8F1                           (SYSTEM_FLAGS + 0x91) // Unused Flag
-#define FLAG_UNUSED_0x8F2                           (SYSTEM_FLAGS + 0x92) // Unused Flag
-#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) // Unused Flag
-#define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
-#define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
-#define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
-#define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
-#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
-#define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
-#define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
-#define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
-#define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
-#define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
-#define FLAG_UNUSED_0x91E                           (SYSTEM_FLAGS + 0xBE) // Unused Flag
+#define FLAG_ORLEANS_POOL_496                           (SYSTEM_FLAGS + 0x85)
+#define FLAG_ORLEANS_POOL_497                           (SYSTEM_FLAGS + 0x86)
+#define FLAG_ORLEANS_POOL_498                           (SYSTEM_FLAGS + 0x87)
+#define FLAG_ORLEANS_POOL_499                           (SYSTEM_FLAGS + 0x88)
+#define FLAG_ORLEANS_POOL_500                           (SYSTEM_FLAGS + 0x89)
+#define FLAG_ORLEANS_POOL_501                           (SYSTEM_FLAGS + 0x8A)
+#define FLAG_ORLEANS_POOL_502                           (SYSTEM_FLAGS + 0x8B)
+#define FLAG_ORLEANS_POOL_503                           (SYSTEM_FLAGS + 0x8C)
+#define FLAG_ORLEANS_POOL_504                           (SYSTEM_FLAGS + 0x8D)
+#define FLAG_ORLEANS_POOL_505                           (SYSTEM_FLAGS + 0x8E)
+#define FLAG_ORLEANS_POOL_506                           (SYSTEM_FLAGS + 0x8F)
+#define FLAG_ORLEANS_POOL_507                           (SYSTEM_FLAGS + 0x90)
+#define FLAG_ORLEANS_POOL_508                           (SYSTEM_FLAGS + 0x91)
+#define FLAG_ORLEANS_POOL_509                           (SYSTEM_FLAGS + 0x92)
+#define FLAG_ORLEANS_POOL_510                           (SYSTEM_FLAGS + 0x93)
+#define FLAG_ORLEANS_POOL_511                           (SYSTEM_FLAGS + 0x94)
+#define FLAG_ORLEANS_POOL_512                           (SYSTEM_FLAGS + 0x95)
+#define FLAG_ORLEANS_POOL_513                           (SYSTEM_FLAGS + 0x96)
+#define FLAG_ORLEANS_POOL_514                           (SYSTEM_FLAGS + 0x97)
+#define FLAG_ORLEANS_POOL_515                           (SYSTEM_FLAGS + 0x98)
+#define FLAG_ORLEANS_POOL_516                           (SYSTEM_FLAGS + 0x99)
+#define FLAG_ORLEANS_POOL_517                           (SYSTEM_FLAGS + 0x9A)
+#define FLAG_ORLEANS_POOL_518                           (SYSTEM_FLAGS + 0x9B)
+#define FLAG_ORLEANS_POOL_519                           (SYSTEM_FLAGS + 0x9C)
+#define FLAG_ORLEANS_POOL_520                           (SYSTEM_FLAGS + 0x9D)
+#define FLAG_ORLEANS_POOL_521                           (SYSTEM_FLAGS + 0x9E)
+#define FLAG_ORLEANS_POOL_522                           (SYSTEM_FLAGS + 0x9F)
+#define FLAG_ORLEANS_POOL_523                           (SYSTEM_FLAGS + 0xA0)
+#define FLAG_ORLEANS_POOL_524                           (SYSTEM_FLAGS + 0xA1)
+#define FLAG_ORLEANS_POOL_525                           (SYSTEM_FLAGS + 0xA2)
+#define FLAG_ORLEANS_POOL_526                           (SYSTEM_FLAGS + 0xA3)
+#define FLAG_ORLEANS_POOL_527                           (SYSTEM_FLAGS + 0xA4)
+#define FLAG_ORLEANS_POOL_528                           (SYSTEM_FLAGS + 0xA5)
+#define FLAG_ORLEANS_POOL_529                           (SYSTEM_FLAGS + 0xA6)
+#define FLAG_ORLEANS_POOL_530                           (SYSTEM_FLAGS + 0xA7)
+#define FLAG_ORLEANS_POOL_531                           (SYSTEM_FLAGS + 0xA8)
+#define FLAG_ORLEANS_POOL_532                           (SYSTEM_FLAGS + 0xA9)
+#define FLAG_ORLEANS_POOL_533                           (SYSTEM_FLAGS + 0xAA)
+#define FLAG_ORLEANS_POOL_534                           (SYSTEM_FLAGS + 0xAB)
+#define FLAG_ORLEANS_POOL_535                           (SYSTEM_FLAGS + 0xAC)
+#define FLAG_ORLEANS_POOL_536                           (SYSTEM_FLAGS + 0xAD)
+#define FLAG_ORLEANS_POOL_537                           (SYSTEM_FLAGS + 0xAE)
+#define FLAG_ORLEANS_POOL_538                           (SYSTEM_FLAGS + 0xAF)
+#define FLAG_ORLEANS_POOL_539                           (SYSTEM_FLAGS + 0xB0)
+#define FLAG_ORLEANS_POOL_540                           (SYSTEM_FLAGS + 0xB1)
+#define FLAG_ORLEANS_POOL_541                           (SYSTEM_FLAGS + 0xB2)
+#define FLAG_ORLEANS_POOL_542                           (SYSTEM_FLAGS + 0xB3)
+#define FLAG_ORLEANS_POOL_543                           (SYSTEM_FLAGS + 0xB4)
+#define FLAG_ORLEANS_POOL_544                           (SYSTEM_FLAGS + 0xB5)
+#define FLAG_ORLEANS_POOL_545                           (SYSTEM_FLAGS + 0xB6)
+#define FLAG_ORLEANS_POOL_546                           (SYSTEM_FLAGS + 0xB7)
+#define FLAG_ORLEANS_POOL_547                           (SYSTEM_FLAGS + 0xB8)
+#define FLAG_ORLEANS_POOL_548                           (SYSTEM_FLAGS + 0xB9)
+#define FLAG_ORLEANS_POOL_549                           (SYSTEM_FLAGS + 0xBA)
+#define FLAG_ORLEANS_POOL_550                           (SYSTEM_FLAGS + 0xBB)
+#define FLAG_ORLEANS_POOL_551                           (SYSTEM_FLAGS + 0xBC)
+#define FLAG_ORLEANS_POOL_552                           (SYSTEM_FLAGS + 0xBD)
+#define FLAG_ORLEANS_POOL_553                           (SYSTEM_FLAGS + 0xBE)
 #define FLAG_UNUSED_0x91F                           (SYSTEM_FLAGS + 0xBF) // Unused Flag
 
 // Daily Flags
