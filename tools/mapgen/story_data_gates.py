@@ -46,7 +46,7 @@ GFX = "OBJ_EVENT_GFX_CUTTABLE_TREE"
 def overlay_for(gate, width, height):
     """(triggers, add_objects) for one gate; width/height are the map's size in cells"""
     cells = [(gate["at"], i) for i in range(height)] if gate["axis"] == "x" else [(i, gate["at"]) for i in range(width)]
-    trig = [{"x": x, "y": y, "elevation": 0, "var": gate["flag"], "value": 0, "script": gate["script"]} for x, y in cells]
+    trig = [{"x": x, "y": y, "elevation": 0, "var": gate["flag"], "value": 0, "script": gate["script"], "gate": True} for x, y in cells]
     mapu = gate["map"].upper()
     objs = []
     for n, (x, y) in enumerate(gate["objects"], gate["first"]):

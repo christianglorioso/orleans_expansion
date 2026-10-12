@@ -177,7 +177,7 @@ def nudge(b, bd, strict, others):
                 sides.add(side)
     busy = {(x, y) for o in others + b.spec.get("buildings", []) if o is not bd for x, y, _ in prefab_cells(b, o)}
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
-        busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, [])}
+        busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, []) if not o.get("gate")}  # (verse-gate trigger lines do not shape props)
     for ex in b.spec.get("exits", []):
         busy |= {tuple(c) for c in ex["cells"]}
     cand = sorted(((dx, dy) for dx in range(-12, 13) for dy in range(-12, 13) if (dx, dy) != (0, 0)), key=lambda d: (abs(d[0]) + abs(d[1]), d))
@@ -207,7 +207,7 @@ def relocate(b, bd, strict, others):
     cells = prefab_cells(b, bd)
     busy = {(x, y) for o in others if o is not bd for x, y, _ in prefab_cells(b, o)}
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
-        busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, []) if (o["x"], o["y"]) not in {(x, y) for x, y, _ in cells}}
+        busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, []) if not o.get("gate") and (o["x"], o["y"]) not in {(x, y) for x, y, _ in cells}}
     for ex in b.spec.get("exits", []):
         busy |= {tuple(c) for c in ex["cells"]}
     grounds = [b.grid[y][x] for x, y, _ in cells]

@@ -195,7 +195,7 @@
 #define FLAG_FORCE_MIRAGE_TOWER_VISIBLE      0x9D
 #define FLAG_ROUTE10_ITEM_CRUNCH                         0x9E // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_ROUTE11_ITEM_LIQUIDATION                    0x9F // Orleans Ch6: item balls (TMs) placed by the story pass
-#define FLAG_ORLEANS_POOL_050                           0xA0
+#define FLAG_RECEIVED_QUAQUAVALITE                       0xA0 // Orleans Ch6/7: the parade leader's Quaquavalite (after badge 6)
 #define FLAG_ORLEANS_POOL_051                           0xA1
 #define FLAG_ORLEANS_POOL_052                           0xA2
 #define FLAG_ORLEANS_POOL_053                           0xA3

@@ -58,6 +58,7 @@ def run(b, t):
     t.check("Jayden battle 4 and the song: story 28, both leave", b.var("VAR_ORLEANS_STORY") == 28 and b.flag("FLAG_HIDE_HOLLOW_JAYDEN") and b.flag("FLAG_HIDE_HOLLOW_WREN"),
             "story=%d" % b.var("VAR_ORLEANS_STORY"))
     b.shot("jayden_done")
+    t.check("the gym pupil leaves the door with the scene", b.flag("FLAG_HIDE_HOLLOW_GYM_USHER"))
 
     # ---------------------------------------------------------------- 6.4 the trial: pools, a false Lutin, the real one
     b.warp("LutinsHollow_Gym", 5, 8)

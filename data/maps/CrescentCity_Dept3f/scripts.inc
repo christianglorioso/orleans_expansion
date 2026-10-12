@@ -11,8 +11,8 @@ CrescentCity_Dept3f_EventScript_Clerk0::
 	release
 	end
 
-@ Chapter 6: with the cypress charm (story 30) the vendor sells the Mega Stones that have no place in the world (28 of them, 12000 each;
-@ the placed ones, Gengarite, Scizorite, Raichunite Y, Fearowite, Kleavorite, Delphoxite, Exploudite and the later reward stones are not sold).
+@ Chapter 6: with the cypress charm (story 30) the vendor sells the Mega Stones that have no place in the world (21 of them, 12000 each;
+@ every stone the plan places or rewards is NOT sold: Gengarite, Scizorite, Raichunite X/Y, Fearowite, Kleavorite, Delphoxite, Exploudite, Quaquavalite, Chandelurite, Scovillainite, Swampertite, Lycanrocite, Dragoninite, Weezingite, Crabominite, Charizardite Y, Gyaradosite).
 CrescentCity_Dept3f_EventScript_VendorOpen:
 	message gText_HowMayIServeYou
 	waitmessage
@@ -24,21 +24,16 @@ CrescentCity_Dept3f_EventScript_VendorOpen:
 	.align 2
 CrescentCity_Dept3f_Pokemart_Vendor:
 	.2byte ITEM_VENUSAURITE
-	.2byte ITEM_SWAMPERTITE
 	.2byte ITEM_VICTREEBELITE
-	.2byte ITEM_DRAGONINITE
 	.2byte ITEM_MEGANIUMITE
 	.2byte ITEM_FERALIGITE
-	.2byte ITEM_CHANDELURITE
 	.2byte ITEM_STARAPTITE
-	.2byte ITEM_SCOVILLAINITE
 	.2byte ITEM_METAGROSSITE
 	.2byte ITEM_MALAMARITE
 	.2byte ITEM_BARBARACITE
 	.2byte ITEM_SHARPEDONITE
 	.2byte ITEM_EXCADRITE
 	.2byte ITEM_DRAGALGITE
-	.2byte ITEM_RAICHUNITE_X
 	.2byte ITEM_SKELEDIRGITE
 	.2byte ITEM_ROSERADITE
 	.2byte ITEM_ELECTRODITE
@@ -48,9 +43,7 @@ CrescentCity_Dept3f_Pokemart_Vendor:
 	.2byte ITEM_TANGROWTHITE
 	.2byte ITEM_SUDOWOODITE
 	.2byte ITEM_EXEGGUTORITE
-	.2byte ITEM_QUAQUAVALITE
 	.2byte ITEM_SERPERITE
-	.2byte ITEM_LYCANROCITE
 	pokemartlistend
 
 CrescentCity_Dept3f_EventScript_Clerk1::

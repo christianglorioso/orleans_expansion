@@ -103,7 +103,7 @@ def _patch(m):
 
 ROUTE10 = {
     "patch_objects": _patch("Route10"),
-    "add_items": [{"x": 8, "y": 20, "item": "ITEM_TM_CRUNCH", "flag": "FLAG_ROUTE10_ITEM_CRUNCH", "_comment": "TM093 (Routes 7-12)"}],
+    "add_items": [{"x": 9, "y": 16, "item": "ITEM_TM_CRUNCH", "flag": "FLAG_ROUTE10_ITEM_CRUNCH", "_comment": "TM093 (Routes 7-12)"}],
 }
 ROUTE11 = {
     "patch_objects": _patch("Route11"),

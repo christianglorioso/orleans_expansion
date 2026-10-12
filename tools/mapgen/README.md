@@ -404,3 +404,11 @@ join of `world.WORLD` from the built map.bin (plus the severity world_stitch giv
   (old look vs new, per cell) and `render_diff.py` are the review tools.
 - **Borders** (`borders.py`, art `sources/orleans_custom/make_borders.py`): per-map border block (`border.bin`), inward walls and edge cells
   along the UNCONNECTED stretches of every edge; spec `"walls"` adds gate walls inside a band (Grand Oak's tree walls).
+
+## Reproducibility (repro_check.py)
+
+`python tools/mapgen/repro_check.py` rebuilds every outdoor map's terrain in memory (one fresh process per map) and fails if it differs from the
+committed `data/layouts/<Map>/map.bin`. Run it after adding an item, object or trigger to a route: the edges generators (`borders.py`,
+`band_rules.py`) keep event cells open and nudge props away from them, so an event on a prop or border wall silently changes the terrain on the next
+build. Verse-gate trigger lines carry `"gate": true` and are ignored by those generators. If a map drifts: move the event, regenerate, commit the bin.
+

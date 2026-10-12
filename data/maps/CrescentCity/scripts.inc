@@ -96,7 +96,7 @@ CrescentCity_EventScript_MarketSpeech:
 CrescentCity_EventScript_ParadeLeader::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_QUAXLY, CrescentCity_EventScript_ParadeAfter
+	goto_if_set FLAG_RECEIVED_QUAXLY, CrescentCity_EventScript_ParadeAfterQuaxly
 	goto_if_unset FLAG_BADGE03_GET, CrescentCity_EventScript_ParadeBefore
 	msgbox CrescentCity_Text_ParadeGift, MSGBOX_DEFAULT
 	givemon SPECIES_QUAXLY, 18
@@ -104,6 +104,17 @@ CrescentCity_EventScript_ParadeLeader::
 	setflag FLAG_RECEIVED_QUAXLY
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, CrescentCity_EventScript_ParadeToPC
 	msgbox CrescentCity_Text_ParadeReceived, MSGBOX_DEFAULT
+	release
+	end
+
+@ after gym 6 (plan 3.8): the leader hands over Quaquavalite, Quaquaval's Mega Stone (once; bag-full safe)
+CrescentCity_EventScript_ParadeAfterQuaxly:
+	goto_if_unset FLAG_BADGE06_GET, CrescentCity_EventScript_ParadeAfter
+	goto_if_set FLAG_RECEIVED_QUAQUAVALITE, CrescentCity_EventScript_ParadeAfter
+	msgbox CrescentCity_Text_ParadeStone, MSGBOX_DEFAULT
+	giveitem ITEM_QUAQUAVALITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_QUAQUAVALITE
 	release
 	end
 
@@ -356,6 +367,11 @@ CrescentCity_Text_WardGuard:
 CrescentCity_Text_GymUsher:
 	.string "USHER: The gym is closed to anyone\nwho hasn't met LAFAYETTE yet.\p"
 	.string "He's at the conservation center, on\nthe waterfront. Check in first.$"
+
+CrescentCity_Text_ParadeStone:
+	.string "PARADE LEADER: Six verses! The whole\nparade felt that one. The little\p"
+	.string "QUAXLY you took is grown. Here, a\nstone for the big finish.\p"
+	.string "QUAQUAVALITE. Dance it out.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

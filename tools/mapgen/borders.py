@@ -130,7 +130,7 @@ def prepare(b, key):
     # cells that hold something that must stay open
     keep_open = set()
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
-        keep_open |= {(o["x"], o["y"]) for o in spec.get(coll, [])}
+        keep_open |= {(o["x"], o["y"]) for o in spec.get(coll, []) if not o.get("gate")}  # a verse-gate trigger line (story_data_gates.py) is written across the whole route and must not shape the terrain
     for ex in spec.get("exits", []):
         keep_open |= {tuple(c) for c in ex["cells"]}
     for bd in spec.get("buildings", []):

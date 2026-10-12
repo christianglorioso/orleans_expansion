@@ -92,6 +92,9 @@ LutinsHollow_EventScript_Singers:
 
 LutinsHollow_EventScript_SetStory28:
 	setvar VAR_ORLEANS_STORY, 28
+	@ the pupil leaves the gym door with the scene (not only on the next map load)
+	setflag FLAG_HIDE_HOLLOW_GYM_USHER
+	removeobject LOCALID_LUTINS_HOLLOW_GYM_USHER
 	return
 
 @ a variant per starter (like Route 3 and the refinery); a blackout between the song and the end of the battle skips what is done
@@ -115,7 +118,16 @@ LutinsHollow_EventScript_JaydenDone:
 
 @ ---------------------------------------------------------------- the gym door's pupil (until story 28)
 LutinsHollow_EventScript_GymUsher::
-	msgbox LutinsHollow_Text_GymUsher, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_ge VAR_ORLEANS_STORY, 28, LutinsHollow_EventScript_GymUsherOpen
+	msgbox LutinsHollow_Text_GymUsher, MSGBOX_DEFAULT
+	release
+	end
+
+LutinsHollow_EventScript_GymUsherOpen:
+	msgbox LutinsHollow_Text_GymUsherOpen, MSGBOX_DEFAULT
+	release
 	end
 
 @ ---------------------------------------------------------------- text
@@ -179,6 +191,9 @@ LutinsHollow_Text_GymUsher:
 	.string "who hasn't heard the singers at\p"
 	.string "the south pools. Listen first.\n"
 	.string "The hollow likes to be listened to.$"
+
+LutinsHollow_Text_GymUsherOpen:
+	.string "PUPIL: The hollow has been listened\nto. The gym is open. Mind the moss.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
