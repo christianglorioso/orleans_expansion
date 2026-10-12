@@ -243,6 +243,36 @@ int main(int argc, char **argv) {
             }
             printf("OK %s pc=%08x lr=%08x r0=%08x r1=%08x sp=%08x\n", hit ? "HIT" : "MISS", (uint32_t) c->gprs[15], c->gprs[14], c->gprs[0], c->gprs[1], c->gprs[13]);
         }
+        else if (!strcmp(cmd, "trace") && a1) {
+            /* per-instruction run for N frames with a ring buffer of the last 4096 pcs/sps; stops at a wild pc or the reset vector.
+               prints the trail (oldest first) to the file in a2 (or stdout summary) */
+            uint64_t maxf = strtoull(a1, 0, 0); struct ARMCore *c = core->cpu; static uint32_t rp[4096], rs[4096], rl[4096];
+            unsigned idx = 0; unsigned long n = 0; uint32_t startFc = core->frameCounter(core); int stop = 0; core->setKeys(core, keys_held);
+            while (core->frameCounter(core) - startFc < maxf && !stop) {
+                core->step(core); n++;
+                uint32_t pc = (uint32_t) c->gprs[15] - (c->cpsr.t ? 4 : 8);
+                rp[idx & 4095] = pc; rs[idx & 4095] = c->gprs[13]; rl[idx & 4095] = c->gprs[14]; idx++;
+                int ok = (pc >= 0x08000100 && pc < 0x0A000000) || (pc >= 0x01fffff0 && pc < 0x02040010) || (pc >= 0x02fffff0 && pc < 0x03008010) || pc < 0x4000;
+                if (!ok || (pc >= 0x08000000 && pc < 0x08000100)) stop = 1;
+            }
+            total_frames += core->frameCounter(core) - startFc;
+            FILE *f = a2 ? fopen(a2, "w") : NULL;
+            unsigned cnt = idx < 4096 ? idx : 4096;
+            if (f) { for (unsigned i = 0; i < cnt; i++) { unsigned k = (idx - cnt + i) & 4095; fprintf(f, "%08x sp=%08x lr=%08x\n", rp[k], rs[k], rl[k]); } fclose(f); }
+            printf("OK %s steps=%lu pc=%08x sp=%08x lr=%08x\n", stop ? "STOP" : "DONE", n, (uint32_t) c->gprs[15], c->gprs[13], c->gprs[14]);
+        }
+        else if (!strcmp(cmd, "watchw") && a1 && a2) {
+            /* per-instruction watch of one 32-bit word for N frames: prints each change (pc of the writer, lr, sp) up to 40 */
+            uint32_t wa = strtoul(a1, 0, 0); uint64_t maxf = strtoull(a2, 0, 0); struct ARMCore *c = core->cpu; int nn = 0; static char wb[8192]; wb[0] = 0;
+            uint32_t startFc = core->frameCounter(core); uint32_t old = core->busRead32(core, wa); core->setKeys(core, keys_held);
+            while (core->frameCounter(core) - startFc < maxf && nn < 40) {
+                core->step(core);
+                uint32_t v = core->busRead32(core, wa);
+                if (v != old) { printf("CHG %08x -> %08x pc=%08x lr=%08x sp=%08x fr=%u\n", old, v, (uint32_t) c->gprs[15], c->gprs[14], c->gprs[13], core->frameCounter(core) - startFc); old = v; nn++; }
+            }
+            total_frames += core->frameCounter(core) - startFc;
+            printf("OK done %d\n", nn);
+        }
         else if (!strcmp(cmd, "safepoint") && a1) { safePoint = strtoul(a1, 0, 0) & ~1u; printf("OK\n"); }
         else if (!strcmp(cmd, "call") && a1) {
             uint32_t ret = 0;

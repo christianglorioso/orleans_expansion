@@ -1,7 +1,7 @@
 """Chapter 2: Jayden on the Route 3 bridge (story 11 -> 12). The five trigger rows at x 42: 0, 1, 8, 11, 12.
 
-KNOWN CRASH (first run, ROM 8fdc7853): after winning the battle the game resets while printing the post-battle
-message (Route3_Text_BridgeJaydenAfter). Shows up here as a CRASH result with screenshots."""
+Regression for the post-battle reset: Route 3's Auguste used OBJ_EVENT_GFX_COOLTRAINER_M, whose graphics info was compiled out
+(FRLG-only), so after the battle's map reload his sprite was garbage and the game jumped through a wild animation pointer."""
 
 ROWS = (11, 12, 8, 1, 0)
 

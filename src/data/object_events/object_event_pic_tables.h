@@ -1355,6 +1355,19 @@ static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
 };
 
+// Orleans: used by Orleans maps (Eclair, line workers, Route 3 Auguste), so not FRLG-only.
+static const struct SpriteFrameImage sPicTable_WorkerM[] = {
+    overworld_ascending_frames(gObjectEventPic_WorkerM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_WorkerF[] = {
+    overworld_ascending_frames(gObjectEventPic_WorkerF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CooltrainerM[] = {
+    overworld_ascending_frames(gObjectEventPic_CooltrainerM, 2, 4),
+};
+
 #if IS_FRLG
 
 static const struct SpriteFrameImage sPicTable_RedNormal[] = {
@@ -1529,14 +1542,6 @@ static const struct SpriteFrameImage sPicTable_OldMan1[] = {
     overworld_ascending_frames(gObjectEventPic_OldMan1, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_WorkerM[] = {
-    overworld_ascending_frames(gObjectEventPic_WorkerM, 2, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_WorkerF[] = {
-    overworld_ascending_frames(gObjectEventPic_WorkerF, 2, 4),
-};
-
 static const struct SpriteFrameImage sPicTable_BeautyFrlg[] = {
     overworld_ascending_frames(gObjectEventPic_BeautyFrlg, 2, 4),
 };
@@ -1580,10 +1585,6 @@ static const struct SpriteFrameImage sPicTable_CamperFrlg[] = {
 
 static const struct SpriteFrameImage sPicTable_PicnickerFrlg[] = {
     overworld_ascending_frames(gObjectEventPic_PicnickerFrlg, 2, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_CooltrainerM[] = {
-    overworld_ascending_frames(gObjectEventPic_CooltrainerM, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_CooltrainerF[] = {

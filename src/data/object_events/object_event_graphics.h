@@ -466,6 +466,10 @@ const u32 gObjectEventPic_ApricornTree[] = INCGFX_U32("graphics/object_events/pi
 
 const u32 gFieldEffectObjectPic_ShinySparkle[] = INCGFX_U32("graphics/field_effects/pics/shiny_sparkle.png", ".4bpp", "-mwidth 2 -mheight 4");
 
+// Orleans: used by Orleans maps (Eclair, line workers, Route 3 Auguste), so not FRLG-only.
+const u16 gObjectEventPic_WorkerM[] = INCGFX_U16("graphics/object_events/pics/people/worker_m.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPic_WorkerF[] = INCGFX_U16("graphics/object_events/pics/people/worker_f.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPic_CooltrainerM[] = INCGFX_U16("graphics/object_events/pics/people/cooltrainer_m.png", ".4bpp", "-mwidth 2 -mheight 4");
 #if IS_FRLG
 
 const u16 gObjectEventPic_RedNormal[] = INCGFX_U16("graphics/object_events/pics/people/red/red_normal.png", ".4bpp", "-mwidth 2 -mheight 4");
@@ -521,15 +525,12 @@ const u16 gObjectEventPic_BaldingMan[] = INCGFX_U16("graphics/object_events/pics
 const u16 gObjectEventPic_Woman2Frlg[] = INCGFX_U16("graphics/object_events/pics/people/woman_2_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_OldMan1[] = INCGFX_U16("graphics/object_events/pics/people/old_man_1.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_OldManLyingDown[] = INCGFX_U16("graphics/object_events/pics/people/old_man_lying_down.png", ".4bpp");
-const u16 gObjectEventPic_WorkerM[] = INCGFX_U16("graphics/object_events/pics/people/worker_m.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u16 gObjectEventPic_WorkerF[] = INCGFX_U16("graphics/object_events/pics/people/worker_f.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_BeautyFrlg[] = INCGFX_U16("graphics/object_events/pics/people/beauty_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_Chef[] = INCGFX_U16("graphics/object_events/pics/people/chef.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_OldMan2[] = INCGFX_U16("graphics/object_events/pics/people/old_man_2.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_OldWomanFrlg[] = INCGFX_U16("graphics/object_events/pics/people/old_woman_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_CamperFrlg[] = INCGFX_U16("graphics/object_events/pics/people/camper_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_PicnickerFrlg[] = INCGFX_U16("graphics/object_events/pics/people/picnicker_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
-const u16 gObjectEventPic_CooltrainerM[] = INCGFX_U16("graphics/object_events/pics/people/cooltrainer_m.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_CooltrainerF[] = INCGFX_U16("graphics/object_events/pics/people/cooltrainer_f.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_PokeManiacFrlg[] = INCGFX_U16("graphics/object_events/pics/people/poke_maniac_frlg.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPic_Channeler[] = INCGFX_U16("graphics/object_events/pics/people/channeler.png", ".4bpp", "-mwidth 2 -mheight 4");

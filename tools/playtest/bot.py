@@ -692,6 +692,7 @@ Bot.goto = _bot_goto
 # --------------------------------------------------------------------------- boot helpers
 def _boot_flow(b, shot_every=0):
     """Title -> New Game -> intro speech -> default name -> overworld. Returns True when the player has control."""
+    b.truck_seen = False
     b.frames(1500)                       # logos + intro movie
     b.shot("title")
     for _ in range(4):
@@ -708,11 +709,9 @@ def _boot_flow(b, shot_every=0):
             naming_done = True
             continue
         if b.in_overworld():
-            # the vanilla moving-truck rumble still plays at game start (~10 s, input locked): wait it out
-            for _ in range(60):
-                if "Task_HandleTruckSequence" not in b.active_tasks():
-                    break
-                b.frames(30)
+            # Orleans has no moving-truck intro (CB2_NewGame fades in); flag it if the vanilla truck task ever runs
+            if "Task_HandleTruckSequence" in b.active_tasks():
+                b.truck_seen = True
             b.settle()
             if b.player_idle() and b.script_status() == 2:
                 return True

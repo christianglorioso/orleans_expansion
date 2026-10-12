@@ -1938,10 +1938,8 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    if (IS_FRLG)
-        gFieldCallback = FieldCB_WarpExitFadeFromBlack;
-    else
-        gFieldCallback = ExecuteTruckSequence;
+    // Orleans: no moving-truck intro; the game starts in the Isle Marais shelter with a plain fade-in.
+    gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
