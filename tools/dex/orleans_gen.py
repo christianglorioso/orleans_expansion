@@ -105,3 +105,15 @@ def include_in_species_info(rel):
     assert anchor in t
     t = t.replace(anchor, inc + "\n" + anchor, 1)
     SPECIES_INFO_H.write_text(t, encoding="utf-8", newline="\n")
+
+
+def replace_field(block, field, value):
+    """replace a (possibly multi-line) `.field = ...,` in place, or insert before the first learnset field if missing"""
+    m = re.search(r"^        \." + field + r"\b[^\n]*\n", block, re.M)
+    if not m:
+        return set_or_insert_field(block, field, value, before=("formSpeciesIdTable", "formChangeTable", "levelUpLearnset"))
+    i = m.start()
+    cut = remove_field(block, field)
+    # remove_field removed [i, j); recompute j as the length difference
+    removed = len(block) - len(cut)
+    return block[:i] + f"        .{field} = {value},\n" + block[i + removed:]
