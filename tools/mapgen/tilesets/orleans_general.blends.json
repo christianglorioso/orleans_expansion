@@ -328,6 +328,26 @@
   }
  },
  {
+  "id": "bdg_swamp_in_NE_542aa1ca",
+  "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_in_NE_542aa1ca.png",
+  "attr_of": "ekat:grass"
+ },
+ {
+  "id": "bdg_swamp_in_NW_542aa1ca",
+  "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_in_NW_542aa1ca.png",
+  "attr_of": "ekat:grass"
+ },
+ {
+  "id": "bdg_swamp_in_SE_542aa1ca",
+  "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_in_SE_542aa1ca.png",
+  "attr_of": "ekat:grass"
+ },
+ {
+  "id": "bdg_swamp_in_SW_542aa1ca",
+  "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_in_SW_542aa1ca.png",
+  "attr_of": "ekat:grass"
+ },
+ {
   "id": "bdg_swamp_E0_542aa1ca",
   "pixels": "tools/mapgen/tilesets/borders/bdg_swamp_E0_542aa1ca.png",
   "attr_of": "ekat:grass"

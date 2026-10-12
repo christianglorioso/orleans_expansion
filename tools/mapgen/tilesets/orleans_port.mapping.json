@@ -277,11 +277,7 @@
 "patch:ovl_lmk_9_4__ekat_grass": 774,
 "patch:ovl_lmk_9_5__ekat_grass": 775,
 "patch:ovl_lmk_9_6__ekat_grass": 776,
-"patch:ovl_lmk_9_7__ekat_grass": 777,
-"patch:bk_swamp_E0_5de71585": 778,
-"patch:bk_swamp_E0_7167a350": 779,
-"patch:bk_swamp_E1_7167a350": 780,
-"patch:bk_swamp_E1_8c018226": 781
+"patch:ovl_lmk_9_7__ekat_grass": 777
 },
 "palettes": null,
 "tiles": {}

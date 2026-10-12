@@ -1,4 +1,8 @@
 [
+"bd:swamp_E_marsh_0",
+"bd:swamp_E_marsh_1",
+"bd:swamp_W_marsh_0",
+"bd:swamp_W_marsh_1",
 "ekat:grass",
 "ekat:marsh_C",
 "ekat:marsh_E",
@@ -43,6 +47,8 @@
 "ekat:waterlog_0",
 "ekat:waterlog_1",
 "ekat:waterstump",
+"patch:bdg_swamp_W0_542aa1ca",
+"patch:bdg_swamp_W1_542aa1ca",
 "patch:blend_marsh_E_inNE",
 "patch:blend_marsh_E_inSE",
 "patch:blend_marsh_W_inNW",

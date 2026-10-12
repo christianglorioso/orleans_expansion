@@ -98,7 +98,13 @@ def terrain_agrees(b, style, side, spans):
     return True
 
 
-ENABLED = False   # decision 3 is switched on once the walls leave the maps' seams and gates alone (see edges_progress.log.md)
+ENABLED = True
+WATER_WALLS = False   # water borders: 2 cells of water laid over a land edge (grid edit, no art, nothing baked)
+NO_WATER_WALL = {"storms_edge"}   # its tileset (Port, with Route 2's art) is at 512 tiles: no room for the levee pieces a flooded edge needs
+WALLS = False     # inward walls (d >= 2) and baked edge cells over other ground: OFF for now. Over a whole map they covered 150+ cells,
+                  # needed 8-25 baked cells per map (tile budgets of Port / Pointe / Capital have no room), took props out of the
+                  # maps and added canopy-vs-terrain seams. With WALLS off a map gets its border block (border.bin) and the
+                  # canonical edge cells (swamp on marsh/water, dry on dry earth) at depth 0 / 1 only   # decision 3 is switched on once the walls leave the maps' seams and gates alone (see edges_progress.log.md)
 
 
 def prepare(b, key):
@@ -128,6 +134,8 @@ def prepare(b, key):
         for dx, dy in ([] if not door else door if isinstance(door[0], list) else [door]):
             keep_open |= {(bd["x"] + dx, bd["y"] + dy), (bd["x"] + dx, bd["y"] + dy + 1)}
 
+    if style == "water" and (not (WALLS or WATER_WALLS) or key in NO_WATER_WALL):
+        return
     if style == "water":
         changed = 0
         for side in "NSWE":
@@ -152,7 +160,7 @@ def prepare(b, key):
         if not sp[side]:
             continue
         d0 = min_depth(b, side)
-        depth[side] = d0 if terrain_agrees(b, style, side, sp[side]) else d0 + 2
+        depth[side] = d0 if (not WALLS or terrain_agrees(b, style, side, sp[side])) else d0 + 2
     wall = set()
 
     def build_walls(depth):
@@ -236,8 +244,12 @@ def prepare(b, key):
         if c in wall or c in keep_open:
             edge.pop(c)
             b.border_conflicts.append(f"edge cell {c} holds an event/exit: left plain")
+    if not WALLS:   # no inward walls: nothing is taken out; an edge cell never replaces a prefab's cell (a tree there already blocks)
+        taken = {(x, y) for bd in spec.get("buildings", []) for x, y, _ in __import__("band_rules").prefab_cells(b, bd)}
+        for c in [c for c in edge if c in taken]:
+            edge.pop(c)
     # props under the wall and the edge cells go; structures are a conflict
-    zone = wall | set(edge)
+    zone = wall | (set(edge) if WALLS else set())
     keep, dropped = [], []
     for bd in spec.get("buildings", []):
         cells = {(x, y) for x, y, _ in __import__("band_rules").prefab_cells(b, bd)}
@@ -313,6 +325,8 @@ def apply(b):
             nm = f"bd:swamp_{face}_{terr}{suffix}"
         elif terr == "dry" and style == "dry":
             nm = f"bd:dry_{face}_dry{suffix}"
+        elif not WALLS and not (terr == "grass" and style == "swamp"):
+            continue            # not a canonical ground: no overhang here (the border block meets it)
         else:
             nm = bake(b, build, inv, style, face, par, x, y, terr, under)
             if nm is None:

@@ -94,6 +94,17 @@ def prepare(b, key):
     if dropped:
         gone = {(x, y) for bd in dropped for x, y, _ in prefab_cells(b, bd)}
         spec["buildings"] = keep
+        # a tree / fence / bed that BLOCKED the way keeps blocking (a gate may rest on it): its cells stay impassable ("block")
+        blocking = []
+        for bd in dropped:
+            if GATE_PROPS.search(bd["prefab"]):
+                p = b.ts["prefabs"][bd["prefab"]]
+                pas = {tuple(c) for c in bd.get("passable", p.get("passable", []))}
+                blocking += [[bd["x"] + i, bd["y"] + j] for j, row in enumerate(bd.get("rows") or p["rows"])
+                             for i, c in enumerate(row) if c is not None and (i, j) not in pas]
+        if blocking:
+            spec["block"] = list(spec.get("block", [])) + blocking
+            b.band_log.append(f"{len(blocking)} cells of removed trees/fences stay impassable")
         by = {}
         for bd in dropped:
             by.setdefault(bd["prefab"], []).append((bd["x"], bd["y"]))
@@ -182,6 +193,7 @@ def violations(b):
             if (b.blocks[y][x] & 0x3FF) >= 512]
 
 
+GATE_PROPS = re.compile(r"magnolia|tree|fence|flower|bed|hedge|wall|cypress|boulder|rock", re.I)
 DRY_CHARS = set("dGgqQweysrv")
 DRY_MAPS = {"redfield", "route_15", "route_16", "route_17", "route_23", "route_24"}
 
