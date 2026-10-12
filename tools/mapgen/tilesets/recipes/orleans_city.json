@@ -1,0 +1,21 @@
+{
+ "_comment": "Crescent City secondary from Ekat99's Brick City (pokeemerald import by Kumatora, Team Aqua's Asset Repo). Triple-layer source flattened to two layers. Credits: Ekat, Vurtax, Heartlessdragoon, Alistar, Slimshady; Kumatora for the import.",
+ "kind": "secondary",
+ "dir": "orleans_city",
+ "symbol": "gTileset_OrleansCity",
+ "primary_mapping": "orleans_general.mapping.json",
+ "sources": [
+  {
+   "name": "brick",
+   "primary": "general",
+   "secondary": "tools/mapgen/sources/brick_city",
+   "layers": 3,
+   "ranges": [
+    [
+     "200",
+     "376"
+    ]
+   ]
+  }
+ ]
+}

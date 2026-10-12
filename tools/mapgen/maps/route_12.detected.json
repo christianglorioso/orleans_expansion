@@ -1,0 +1,85 @@
+{
+ "source": "..\\orleans_maps\\r12_route_12.png",
+ "frame": [
+  0,
+  140,
+  1007,
+  1795
+ ],
+ "pitch": 36.0,
+ "width": 28,
+ "height": 46,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 13,
+   "y": 8,
+   "w": 2,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 8,
+   "y": 36,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "hidden_item",
+   "x": 10,
+   "y": 6
+  },
+  {
+   "kind": "trainer",
+   "x": 13,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 11,
+   "y": 18
+  },
+  {
+   "kind": "item",
+   "x": 5,
+   "y": 24
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 26
+  },
+  {
+   "kind": "item",
+   "x": 19,
+   "y": 30
+  },
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 35
+  },
+  {
+   "kind": "mega_stone",
+   "x": 8,
+   "y": 36
+  },
+  {
+   "kind": "fishing",
+   "x": 5,
+   "y": 42
+  }
+ ],
+ "exits": [
+  {
+   "side": "N",
+   "pos": 13
+  },
+  {
+   "side": "S",
+   "pos": 13
+  }
+ ]
+}

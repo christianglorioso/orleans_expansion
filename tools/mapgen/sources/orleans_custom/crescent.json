@@ -1,0 +1,1252 @@
+{
+ "_comment": "written by make_crescent_art.py: piece -> sheet (crescent_<sheet>.png) and cell rectangle",
+ "pieces": {
+  "gym": {
+   "x": 0,
+   "y": 0,
+   "w": 7,
+   "h": 6,
+   "doors": [
+    [
+     3,
+     4
+    ]
+   ],
+   "passable": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     5
+    ]
+   ],
+   "empty": [
+    [
+     1,
+     0
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "comment": "Fifolet gym: marble temple-mausoleum (own art), 7x6, door (3,4), steps walkable.",
+   "sheet": "stone"
+  },
+  "crypt": {
+   "x": 7,
+   "y": 0,
+   "w": 3,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "The oldest crypt: society tomb with columns and urns (own art), 3x3.",
+   "sheet": "stone"
+  },
+  "fountain": {
+   "x": 10,
+   "y": 0,
+   "w": 3,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Tiered stone fountain (own art), 3x3.",
+   "sheet": "stone"
+  },
+  "vault": {
+   "x": 13,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wall of oven vaults (own art), 3x2.",
+   "sheet": "stone"
+  },
+  "stall_top": {
+   "x": 13,
+   "y": 2,
+   "w": 3,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Market stall awning (own art).",
+   "sheet": "stone"
+  },
+  "tomb": {
+   "x": 7,
+   "y": 3,
+   "w": 2,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Whitewashed family tomb (own art), 2x2.",
+   "sheet": "stone"
+  },
+  "tomb_box": {
+   "x": 9,
+   "y": 3,
+   "w": 2,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Low box tomb (own art), 2x1.",
+   "sheet": "stone"
+  },
+  "obelisk": {
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Stone obelisk (own art), 1x3.",
+   "sheet": "stone"
+  },
+  "bal_l": {
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Iron balcony railing (own art), over a brick wall.",
+   "sheet": "stone"
+  },
+  "bal_m": {
+   "x": 13,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Iron balcony railing (own art), over a brick wall.",
+   "sheet": "stone"
+  },
+  "bal_r": {
+   "x": 14,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Iron balcony railing (own art), over a brick wall.",
+   "sheet": "stone"
+  },
+  "bal_fern": {
+   "x": 15,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Iron balcony railing (own art), over a brick wall.",
+   "sheet": "stone"
+  },
+  "mailbox": {
+   "x": 9,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Mailbox (own art).",
+   "sheet": "stone"
+  },
+  "bin": {
+   "x": 10,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Litter bin (own art).",
+   "sheet": "stone"
+  },
+  "gazebo": {
+   "x": 12,
+   "y": 4,
+   "w": 4,
+   "h": 4,
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "comment": "Park bandstand: white gazebo, verdigris roof (own art), 4x4.",
+   "sheet": "stone"
+  },
+  "wh_roof9": {
+   "x": 0,
+   "y": 6,
+   "w": 9,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse tin roof (own art).",
+   "sheet": "stone"
+  },
+  "wh_wall9b": {
+   "x": 0,
+   "y": 8,
+   "w": 9,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse of corrugated metal with a sliding door (own art); the tin roof goes on top.",
+   "sheet": "stone"
+  },
+  "wh_roof6": {
+   "x": 9,
+   "y": 8,
+   "w": 6,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse tin roof (own art).",
+   "sheet": "stone"
+  },
+  "wh_wall6b": {
+   "x": 9,
+   "y": 10,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse of corrugated metal with a sliding door (own art); the tin roof goes on top.",
+   "sheet": "stone"
+  },
+  "fac_tower": {
+   "x": 0,
+   "y": 11,
+   "w": 5,
+   "h": 5,
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "comment": "Battle Tower (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_dome": {
+   "x": 5,
+   "y": 13,
+   "w": 5,
+   "h": 4,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Battle Dome (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_palace": {
+   "x": 10,
+   "y": 13,
+   "w": 5,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Battle Palace (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_arena": {
+   "x": 0,
+   "y": 16,
+   "w": 5,
+   "h": 4,
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "comment": "Battle Arena (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_factory": {
+   "x": 10,
+   "y": 16,
+   "w": 5,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Battle Factory (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_pike": {
+   "x": 5,
+   "y": 17,
+   "w": 5,
+   "h": 4,
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "comment": "Battle Pike (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "fac_pyramid": {
+   "x": 10,
+   "y": 19,
+   "w": 5,
+   "h": 4,
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "comment": "Battle Pyramid (own art): the Frontier's shared hall, its own crown.",
+   "sheet": "stone"
+  },
+  "block_dept": {
+   "x": 0,
+   "y": 21,
+   "w": 7,
+   "h": 5,
+   "doors": [
+    [
+     3,
+     4
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Department Store (own art), 7x5, door (3,4): ashlar, cornice, DEPT STORE band, awning, glass doors.",
+   "sheet": "stone"
+  },
+  "block_hall": {
+   "x": 7,
+   "y": 23,
+   "w": 9,
+   "h": 5,
+   "doors": [
+    [
+     4,
+     4
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Conservation Center (own art), 9x5, door (4,4): teal roof, pediment with a trilobite, portico.",
+   "sheet": "stone"
+  },
+  "trough": {
+   "x": 9,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Drinking fountain: a stone post and basin (own art), 2x2.",
+   "sheet": "stone"
+  },
+  "steamboat_ns": {
+   "x": 0,
+   "y": 26,
+   "w": 3,
+   "h": 7,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "The riverboat moored north-south (own art), 3x7.",
+   "sheet": "stone"
+  },
+  "steamboat": {
+   "x": 3,
+   "y": 28,
+   "w": 7,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "The riverboat: white sternwheeler (own art), 7x3, moored in water.",
+   "sheet": "stone"
+  },
+  "generator": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Old generator cabinet (own art): Rotom's pier.",
+   "sheet": "stone"
+  },
+  "fence_W": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_E": {
+   "x": 11,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_EW": {
+   "x": 9,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_S": {
+   "x": 10,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_SW": {
+   "x": 11,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_SE": {
+   "x": 15,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_SEW": {
+   "x": 15,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_N": {
+   "x": 15,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NW": {
+   "x": 5,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NE": {
+   "x": 6,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NEW": {
+   "x": 7,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NS": {
+   "x": 8,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NSW": {
+   "x": 15,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NSE": {
+   "x": 5,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "fence_NSEW": {
+   "x": 6,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wrought-iron fence piece (own art).",
+   "sheet": "stone"
+  },
+  "ruin_a": {
+   "x": 0,
+   "y": 0,
+   "w": 4,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Drowned Ward ruin: roofless brick shell (own art), 4x3.",
+   "sheet": "brick"
+  },
+  "ruin_door": {
+   "x": 4,
+   "y": 0,
+   "w": 4,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Drowned Ward ruin with a barred cellar door (own art), 4x3, door (1,2).",
+   "sheet": "brick"
+  },
+  "ruin_b": {
+   "x": 8,
+   "y": 0,
+   "w": 3,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Drowned Ward ruin: broken gable end and chimney (own art), 3x3.",
+   "sheet": "brick"
+  },
+  "stall_base": {
+   "x": 0,
+   "y": 0,
+   "w": 3,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Market stall counter (own art).",
+   "sheet": "wood"
+  },
+  "wh_wall9": {
+   "x": 3,
+   "y": 0,
+   "w": 9,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse board siding with cargo doors (own art).",
+   "sheet": "wood"
+  },
+  "wh_wall6": {
+   "x": 0,
+   "y": 3,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Warehouse board siding with cargo doors (own art).",
+   "sheet": "wood"
+  },
+  "flower_cart": {
+   "x": 12,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Flower seller's cart (own art), 2x1.",
+   "sheet": "wood"
+  },
+  "barrel": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Barrel (own art).",
+   "sheet": "wood"
+  },
+  "easel": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Painter's easel (own art).",
+   "sheet": "wood"
+  },
+  "sign": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Wooden notice board (own art).",
+   "sheet": "wood"
+  },
+  "hedge_l": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Clipped box hedge (own art).",
+   "sheet": "leaf"
+  },
+  "hedge_m": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Clipped box hedge (own art).",
+   "sheet": "leaf"
+  },
+  "hedge_r": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Clipped box hedge (own art).",
+   "sheet": "leaf"
+  },
+  "pgrass": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Park tall grass (own art), wild encounters.",
+   "sheet": "leaf"
+  },
+  "pgrass_rim": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Park tall grass, the patch's soft edge.",
+   "sheet": "leaf"
+  },
+  "pot_sand": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Terracotta flower pot (own art).",
+   "sheet": "leaf"
+  },
+  "shrub_pot": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "Potted box shrub (own art); shares the pot's tile.",
+   "sheet": "leaf"
+  },
+  "creole_cafe": {
+   "x": 0,
+   "y": 0,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, pink stucco, iron gallery, a cafe board (own art).",
+   "sheet": "creole"
+  },
+  "creole_salon": {
+   "x": 6,
+   "y": 0,
+   "w": 5,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, blue stucco, iron gallery, a salon board (own art).",
+   "sheet": "creole"
+  },
+  "creole_laundry": {
+   "x": 0,
+   "y": 3,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, yellow stucco, iron gallery, a laundry board (own art).",
+   "sheet": "creole"
+  },
+  "creole_apartment": {
+   "x": 11,
+   "y": 0,
+   "w": 4,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, green stucco, iron gallery, a apts board (own art).",
+   "sheet": "creole"
+  },
+  "creole_trades": {
+   "x": 6,
+   "y": 3,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, pink stucco, iron gallery, a trades board (own art).",
+   "sheet": "creole"
+  },
+  "creole_gamecorner": {
+   "x": 0,
+   "y": 6,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, yellow stucco, iron gallery, a coins board (own art).",
+   "sheet": "creole"
+  },
+  "creole_icecream": {
+   "x": 6,
+   "y": 6,
+   "w": 6,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, green stucco, iron gallery, a icecream board (own art).",
+   "sheet": "creole"
+  },
+  "creole_daycare": {
+   "x": 0,
+   "y": 9,
+   "w": 5,
+   "h": 3,
+   "doors": [
+    [
+     2,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, blue stucco, iron gallery, a egg board (own art).",
+   "sheet": "creole"
+  },
+  "creole_namerater": {
+   "x": 12,
+   "y": 3,
+   "w": 3,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, pink stucco, iron gallery, a quill board (own art).",
+   "sheet": "creole"
+  },
+  "creole_tutor": {
+   "x": 12,
+   "y": 6,
+   "w": 3,
+   "h": 3,
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "comment": "Creole townhouse facade, blue stucco, iron gallery, a book board (own art).",
+   "sheet": "creole"
+  },
+  "rwalk_l": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Railed boardwalk (own art).",
+   "sheet": "wood_raw"
+  },
+  "rwalk_m": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Railed boardwalk (own art).",
+   "sheet": "wood_raw"
+  },
+  "rwalk_r": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Railed boardwalk (own art).",
+   "sheet": "wood_raw"
+  },
+  "walk_vl": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "walk_vm": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "walk_vr": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "walk_ht": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "walk_hm": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "walk_hb": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Boardwalk planks (own art), walkable over water.",
+   "sheet": "wood_raw"
+  },
+  "flowerbed": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "Formal flower bed (own art), walkable.",
+   "sheet": "leaf_raw"
+  },
+  "fbridge_l": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "White railed footbridge (own art).",
+   "sheet": "stone_raw"
+  },
+  "fbridge_r": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "comment": "White railed footbridge (own art).",
+   "sheet": "stone_raw"
+  }
+ },
+ "combos": {
+  "stall": [
+   "stall_top",
+   "stall_base"
+  ],
+  "warehouse9": [
+   "wh_roof9",
+   "wh_wall9"
+  ],
+  "warehouse6": [
+   "wh_roof6",
+   "wh_wall6"
+  ],
+  "warehouse9b": [
+   "wh_roof9",
+   "wh_wall9b"
+  ],
+  "warehouse6b": [
+   "wh_roof6",
+   "wh_wall6b"
+  ]
+ }
+}

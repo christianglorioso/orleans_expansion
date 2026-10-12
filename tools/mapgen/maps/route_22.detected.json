@@ -1,0 +1,61 @@
+{
+ "source": "..\\orleans_maps\\r22_route_22.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1219
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 30,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 36,
+   "y": 16,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 6,
+   "y": 20,
+   "w": 8,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 39,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 27,
+   "y": 13
+  },
+  {
+   "kind": "trainer",
+   "x": 15,
+   "y": 15
+  },
+  {
+   "kind": "hidden_item",
+   "x": 36,
+   "y": 16
+  },
+  {
+   "kind": "item",
+   "x": 43,
+   "y": 20
+  }
+ ],
+ "exits": [
+  {
+   "side": "E",
+   "pos": 3
+  }
+ ]
+}

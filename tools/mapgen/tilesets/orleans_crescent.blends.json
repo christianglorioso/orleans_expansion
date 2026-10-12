@@ -1,0 +1,2513 @@
+[
+ {
+  "id": "lv_2170732c1451",
+  "pixels": "tools/mapgen/tilesets/levee/lv_2170732c1451.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_3e3d0a1cc208",
+  "pixels": "tools/mapgen/tilesets/levee/lv_3e3d0a1cc208.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4a45fe7b92e4",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4a45fe7b92e4.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_508760f517df",
+  "pixels": "tools/mapgen/tilesets/levee/lv_508760f517df.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_676a7d035c44",
+  "pixels": "tools/mapgen/tilesets/levee/lv_676a7d035c44.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_71a1e3e67158",
+  "pixels": "tools/mapgen/tilesets/levee/lv_71a1e3e67158.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_abe75571c50a",
+  "pixels": "tools/mapgen/tilesets/levee/lv_abe75571c50a.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_bd925de37cf0",
+  "pixels": "tools/mapgen/tilesets/levee/lv_bd925de37cf0.png",
+  "base": "ekat:water_S",
+  "attr_of": "ekat:water_S",
+  "group": "levee"
+ },
+ {
+  "id": "lv_c4c65425cd24",
+  "pixels": "tools/mapgen/tilesets/levee/lv_c4c65425cd24.png",
+  "base": "ekat:water_inSW",
+  "attr_of": "ekat:water_inSW",
+  "group": "levee"
+ },
+ {
+  "id": "lv_e5428efa3432",
+  "pixels": "tools/mapgen/tilesets/levee/lv_e5428efa3432.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_f114be0d17cf",
+  "pixels": "tools/mapgen/tilesets/levee/lv_f114be0d17cf.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "ovl_ccb_ruin_a_00__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_00"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_01__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_01"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_02__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_02"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_02__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccb:ruin_a_02"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_10__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_10"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_11__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_11"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_12__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_12"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_20__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_20"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_21__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_21"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_22__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_22"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_30__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_30"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_30__ekat_water_inNE",
+  "overlay": {
+   "base": "ekat:water_inNE",
+   "art": "ccb:ruin_a_30"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_31__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_31"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_32__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_a_32"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_a_32__ekat_water_inSE",
+  "overlay": {
+   "base": "ekat:water_inSE",
+   "art": "ccb:ruin_a_32"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_door_11__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_door_11"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_door_12__ekat_water_S__door",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccb:ruin_door_12",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_door_21__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccb:ruin_door_21"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_door_22__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccb:ruin_door_22"
+  }
+ },
+ {
+  "id": "ovl_ccb_ruin_door_32__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccb:ruin_door_32"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_apartment_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_apartment_00"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_apartment_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_apartment_02"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_apartment_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_apartment_11"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_apartment_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_apartment_30"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_apartment_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_apartment_32"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_00"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_01"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_02"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_10"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_11"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_12"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_20"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_22__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_22",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_50__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_50"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_51__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_51"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_cafe_52__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_cafe_52"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_daycare_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_daycare_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_gamecorner_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_gamecorner_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_icecream_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_icecream_11"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_icecream_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_icecream_20"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_00"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_02"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_20"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_50__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_50"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_laundry_52__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_laundry_52"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_namerater_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_namerater_11"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_00"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_02"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_20"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_40"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_salon_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_salon_42"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_trades_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_trades_21"
+  }
+ },
+ {
+  "id": "ovl_ccc_creole_tutor_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccc:creole_tutor_11"
+  }
+ },
+ {
+  "id": "ovl_ccl_pgrass_00__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccl:pgrass_00",
+   "behavior": "MB_TALL_GRASS"
+  }
+ },
+ {
+  "id": "ovl_ccl_pgrass_rim_00__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccl:pgrass_rim_00",
+   "behavior": "MB_TALL_GRASS"
+  }
+ },
+ {
+  "id": "ovl_ccl_shrub_pot_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccl:shrub_pot_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_03"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_04__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_04"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_14__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_14"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_41__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_41"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_43__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_43"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_44__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_44"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_60__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_60"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_61__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_61"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_63__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_63"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_dept_64__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_dept_64"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_24__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_24"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_34__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_34"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_41__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_41"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_42"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_50__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_50"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_51__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_51"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_52__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_52"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_53__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_53"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_54__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_54"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_60__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_60"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_61__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_61"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_62__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_62"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_63__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_63"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_64__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_64"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_71__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_71"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_72__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_72"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_81__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_81"
+  }
+ },
+ {
+  "id": "ovl_ccs_block_hall_82__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:block_hall_82"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_crypt_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:crypt_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_arena_41__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_arena_41"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_41__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_41"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_dome_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_dome_42"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_factory_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_factory_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_palace_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_palace_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pike_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pike_42"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_03"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_42"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_pyramid_43__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_pyramid_43"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_03"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_04__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_04"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_14__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_14"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_24__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_24"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_34__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_34"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_43__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_43"
+  }
+ },
+ {
+  "id": "ovl_ccs_fac_tower_44__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fac_tower_44"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_EW_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_EW_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_E_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_E_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_NS_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_NS_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_N_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_N_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_SE_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_SE_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_SW_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_SW_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_S_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_S_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fence_W_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fence_W_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_fountain_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:fountain_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_03"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_gazebo_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gazebo_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_generator_00__ccwr_walk_ht_00",
+  "overlay": {
+   "base": "ccwr:walk_ht_00",
+   "art": "ccs:generator_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_03"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_04__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_04"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_05__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_05"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_14__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_14"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_15__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_15"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_23"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_24__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_24"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_25__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_25"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_30__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_30"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_33__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_33"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_34__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_34",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_40__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_40"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_41__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_41"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_42__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_42"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_43__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_43"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_44__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_44"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_51__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_51"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_52__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_52"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_53__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_53"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_54__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_54"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_55__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_55"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_61__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_61"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_62__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_62"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_63__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_63"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_64__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_64"
+  }
+ },
+ {
+  "id": "ovl_ccs_gym_65__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:gym_65"
+  }
+ },
+ {
+  "id": "ovl_ccs_stall_top_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:stall_top_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_stall_top_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:stall_top_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_stall_top_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:stall_top_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_00__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_01__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_02__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_05__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_05"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_06__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_06"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_10__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_11__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_12__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_12"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_13__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_13"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_14__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_14"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_15__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_15"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_16__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_16"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_20__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_20"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_21__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_21"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_22__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_25__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_25"
+  }
+ },
+ {
+  "id": "ovl_ccs_steamboat_ns_26__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccs:steamboat_ns_26"
+  }
+ },
+ {
+  "id": "ovl_ccs_tomb_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:tomb_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_tomb_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:tomb_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_tomb_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:tomb_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_tomb_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:tomb_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_01"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_80__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_80"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_roof9_81__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_roof9_81"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_00"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_02"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_10"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_11"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_12__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_12",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_22"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_31"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_32"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_80__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_80"
+  }
+ },
+ {
+  "id": "ovl_ccs_wh_wall9b_82__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccs:wh_wall9b_82"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_l_00__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccsr:fbridge_l_00",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_l_00__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccsr:fbridge_l_00",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_l_00__ekat_water_N__normal",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "ccsr:fbridge_l_00",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_l_00__ekat_water_S__normal",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccsr:fbridge_l_00",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_r_00__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccsr:fbridge_r_00",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_r_00__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "ccsr:fbridge_r_00",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_r_00__ekat_water_N__normal",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "ccsr:fbridge_r_00",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_ccsr_fbridge_r_00__ekat_water_S__normal",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "ccsr:fbridge_r_00",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_ccw_barrel_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:barrel_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_barrel_00__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "ccw:barrel_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_barrel_00__johto_1C9",
+  "overlay": {
+   "base": "johto:1C9",
+   "art": "ccw:barrel_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_easel_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:easel_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_flower_cart_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:flower_cart_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_flower_cart_00__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ccw:flower_cart_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_flower_cart_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:flower_cart_10"
+  }
+ },
+ {
+  "id": "ovl_ccw_flower_cart_10__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ccw:flower_cart_10"
+  }
+ },
+ {
+  "id": "ovl_ccw_sign_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:sign_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_stall_base_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:stall_base_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_stall_base_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:stall_base_10"
+  }
+ },
+ {
+  "id": "ovl_ccw_stall_base_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:stall_base_20"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_02"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_10"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_11"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_12__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_12",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_20"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_22"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_31__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_31"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_32__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_32"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_70__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_70"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_80__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_80"
+  }
+ },
+ {
+  "id": "ovl_ccw_wh_wall9_82__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "ccw:wh_wall9_82"
+  }
+ },
+ {
+  "id": "ovl_mag_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:01"
+  }
+ },
+ {
+  "id": "ovl_mag_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:02"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:11"
+  }
+ },
+ {
+  "id": "ovl_mag_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:12"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_top"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "props:lamp_top"
+  }
+ }
+]

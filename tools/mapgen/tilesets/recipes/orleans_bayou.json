@@ -1,0 +1,2573 @@
+{
+ "_comment": "Orleans bayou-town secondary. Ekat99 swamp tiles; Route 40 (Olivine) pier, Route 38 (Moomoo Farm) barn (HnS); Brick City church and sailboat (Ekat99 / Kumatora); Shady Forest houses (Yumekua / Rahtak, recoloured off teal); Soul House headstones (HnS) recoloured grey. See tools/mapgen/CREDITS.md.",
+ "kind": "secondary",
+ "dir": "orleans_bayou",
+ "symbol": "gTileset_OrleansBayou",
+ "primary_mapping": "orleans_general.mapping.json",
+ "sources": [
+  {
+   "name": "ekat",
+   "type": "image",
+   "image": "tools/mapgen/sources/ekat_swamp/swamp_tiles.png",
+   "transparent": [
+    [
+     255,
+     255,
+     255
+    ],
+    [
+     255,
+     0,
+     0
+    ]
+   ],
+   "metatiles": [
+    {
+     "id": "grass",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "marsh",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "marsh_N",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "marsh_S",
+     "bottom": [
+      2,
+      6
+     ]
+    },
+    {
+     "id": "marsh_W",
+     "bottom": [
+      0,
+      4
+     ]
+    },
+    {
+     "id": "marsh_E",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "marsh_inNW",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "marsh_inNE",
+     "bottom": [
+      3,
+      3
+     ]
+    },
+    {
+     "id": "marsh_inSW",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "marsh_inSE",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "marsh_C",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "marsh_landSE",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "marsh_landSW",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "marsh_landNE",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "marsh_landNW",
+     "bottom": [
+      3,
+      6
+     ]
+    },
+    {
+     "id": "marsh_landSE2",
+     "bottom": [
+      0,
+      3
+     ]
+    },
+    {
+     "id": "marsh_landSW2",
+     "bottom": [
+      4,
+      3
+     ]
+    },
+    {
+     "id": "marsh_landNE2",
+     "bottom": [
+      0,
+      5
+     ]
+    },
+    {
+     "id": "marsh_landNW2",
+     "bottom": [
+      4,
+      5
+     ]
+    },
+    {
+     "id": "marsh_plants1",
+     "bottom": [
+      1,
+      4
+     ]
+    },
+    {
+     "id": "marsh_plants3",
+     "bottom": [
+      3,
+      4
+     ]
+    },
+    {
+     "id": "mud_N",
+     "bottom": [
+      2,
+      7
+     ]
+    },
+    {
+     "id": "mud_S",
+     "bottom": [
+      2,
+      11
+     ]
+    },
+    {
+     "id": "mud_W",
+     "bottom": [
+      0,
+      9
+     ]
+    },
+    {
+     "id": "mud_E",
+     "bottom": [
+      4,
+      9
+     ]
+    },
+    {
+     "id": "mud_inNW",
+     "bottom": [
+      1,
+      8
+     ]
+    },
+    {
+     "id": "mud_inNE",
+     "bottom": [
+      3,
+      8
+     ]
+    },
+    {
+     "id": "mud_inSW",
+     "bottom": [
+      1,
+      10
+     ]
+    },
+    {
+     "id": "mud_inSE",
+     "bottom": [
+      3,
+      10
+     ]
+    },
+    {
+     "id": "mud_C",
+     "bottom": [
+      2,
+      10
+     ]
+    },
+    {
+     "id": "mud_landSE",
+     "bottom": [
+      1,
+      7
+     ]
+    },
+    {
+     "id": "mud_landSW",
+     "bottom": [
+      3,
+      7
+     ]
+    },
+    {
+     "id": "mud_landNE",
+     "bottom": [
+      1,
+      11
+     ]
+    },
+    {
+     "id": "mud_landNW",
+     "bottom": [
+      3,
+      11
+     ]
+    },
+    {
+     "id": "mud_landSE2",
+     "bottom": [
+      0,
+      8
+     ]
+    },
+    {
+     "id": "mud_landSW2",
+     "bottom": [
+      4,
+      8
+     ]
+    },
+    {
+     "id": "mud_landNE2",
+     "bottom": [
+      0,
+      10
+     ]
+    },
+    {
+     "id": "mud_landNW2",
+     "bottom": [
+      4,
+      10
+     ]
+    },
+    {
+     "id": "mud_plants3",
+     "bottom": [
+      3,
+      9
+     ]
+    },
+    {
+     "id": "water_N",
+     "bottom": [
+      2,
+      12
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_S",
+     "bottom": [
+      2,
+      16
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_W",
+     "bottom": [
+      0,
+      14
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_E",
+     "bottom": [
+      4,
+      14
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_inNW",
+     "bottom": [
+      1,
+      13
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_inNE",
+     "bottom": [
+      3,
+      13
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_inSW",
+     "bottom": [
+      1,
+      15
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_inSE",
+     "bottom": [
+      3,
+      15
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_C",
+     "bottom": [
+      2,
+      15
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_landSE",
+     "bottom": [
+      1,
+      12
+     ]
+    },
+    {
+     "id": "water_landSW",
+     "bottom": [
+      3,
+      12
+     ]
+    },
+    {
+     "id": "water_landNE",
+     "bottom": [
+      1,
+      16
+     ]
+    },
+    {
+     "id": "water_landNW",
+     "bottom": [
+      3,
+      16
+     ]
+    },
+    {
+     "id": "water_landSE2",
+     "bottom": [
+      0,
+      13
+     ]
+    },
+    {
+     "id": "water_landSW2",
+     "bottom": [
+      4,
+      13
+     ]
+    },
+    {
+     "id": "water_landNE2",
+     "bottom": [
+      0,
+      15
+     ]
+    },
+    {
+     "id": "water_landNW2",
+     "bottom": [
+      4,
+      15
+     ]
+    },
+    {
+     "id": "water_weeds1",
+     "bottom": [
+      1,
+      14
+     ]
+    },
+    {
+     "id": "water_weeds2",
+     "bottom": [
+      2,
+      14
+     ]
+    },
+    {
+     "id": "water_lily",
+     "bottom": [
+      3,
+      14
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "cypress_00",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "cypress_10",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "cypress_20",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "cypress_01",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      3
+     ]
+    },
+    {
+     "id": "cypress_11",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      3
+     ]
+    },
+    {
+     "id": "cypress_21",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "cypress_02",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "cypress_12",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "cypress_22",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "cypress_small_00",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_10",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_01",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_11",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_02",
+     "bottom": [
+      5,
+      7
+     ]
+    },
+    {
+     "id": "cypress_small_12",
+     "bottom": [
+      6,
+      7
+     ]
+    },
+    {
+     "id": "knees_00",
+     "bottom": [
+      5,
+      12
+     ]
+    },
+    {
+     "id": "knees_10",
+     "bottom": [
+      6,
+      12
+     ]
+    },
+    {
+     "id": "knees_20",
+     "bottom": [
+      7,
+      12
+     ]
+    },
+    {
+     "id": "knees_01",
+     "bottom": [
+      5,
+      13
+     ]
+    },
+    {
+     "id": "knees_11",
+     "bottom": [
+      6,
+      13
+     ]
+    },
+    {
+     "id": "waterlog_0",
+     "bottom": [
+      5,
+      14
+     ]
+    },
+    {
+     "id": "waterlog_1",
+     "bottom": [
+      6,
+      14
+     ]
+    },
+    {
+     "id": "waterstump",
+     "bottom": [
+      7,
+      14
+     ]
+    },
+    {
+     "id": "water_sTLBR",
+     "quads": [
+      [
+       1,
+       13,
+       0
+      ],
+      [
+       2,
+       15,
+       1
+      ],
+      [
+       2,
+       15,
+       2
+      ],
+      [
+       3,
+       15,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "water_sTRBL",
+     "quads": [
+      [
+       2,
+       15,
+       0
+      ],
+      [
+       3,
+       13,
+       1
+      ],
+      [
+       1,
+       15,
+       2
+      ],
+      [
+       2,
+       15,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marsh_sTLBR",
+     "quads": [
+      [
+       1,
+       3,
+       0
+      ],
+      [
+       2,
+       5,
+       1
+      ],
+      [
+       2,
+       5,
+       2
+      ],
+      [
+       3,
+       5,
+       3
+      ]
+     ]
+    },
+    {
+     "id": "marsh_sTRBL",
+     "quads": [
+      [
+       2,
+       5,
+       0
+      ],
+      [
+       3,
+       3,
+       1
+      ],
+      [
+       1,
+       5,
+       2
+      ],
+      [
+       2,
+       5,
+       3
+      ]
+     ]
+    },
+    {
+     "id": "mud_sTLBR",
+     "quads": [
+      [
+       1,
+       8,
+       0
+      ],
+      [
+       2,
+       10,
+       1
+      ],
+      [
+       2,
+       10,
+       2
+      ],
+      [
+       3,
+       10,
+       3
+      ]
+     ]
+    },
+    {
+     "id": "mud_sTRBL",
+     "quads": [
+      [
+       2,
+       10,
+       0
+      ],
+      [
+       3,
+       8,
+       1
+      ],
+      [
+       1,
+       10,
+       2
+      ],
+      [
+       2,
+       10,
+       3
+      ]
+     ]
+    },
+    {
+     "id": "mudwater_N",
+     "bottom": [
+      2,
+      22
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_S",
+     "bottom": [
+      2,
+      26
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_W",
+     "bottom": [
+      0,
+      24
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_E",
+     "bottom": [
+      4,
+      24
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_inNW",
+     "bottom": [
+      1,
+      23
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_inNE",
+     "bottom": [
+      3,
+      23
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_inSW",
+     "bottom": [
+      1,
+      25
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_inSE",
+     "bottom": [
+      3,
+      25
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_landSE",
+     "bottom": [
+      1,
+      22
+     ]
+    },
+    {
+     "id": "mudwater_landSW",
+     "bottom": [
+      3,
+      22
+     ]
+    },
+    {
+     "id": "mudwater_landNE",
+     "bottom": [
+      1,
+      26
+     ]
+    },
+    {
+     "id": "mudwater_landNW",
+     "bottom": [
+      3,
+      26
+     ]
+    },
+    {
+     "id": "mudwater_sTLBR",
+     "quads": [
+      [
+       1,
+       23,
+       0
+      ],
+      [
+       2,
+       15,
+       1
+      ],
+      [
+       2,
+       15,
+       2
+      ],
+      [
+       3,
+       25,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "mudwater_sTRBL",
+     "quads": [
+      [
+       2,
+       15,
+       0
+      ],
+      [
+       3,
+       23,
+       1
+      ],
+      [
+       1,
+       25,
+       2
+      ],
+      [
+       2,
+       15,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_N",
+     "bottom": [
+      2,
+      17
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_S",
+     "bottom": [
+      2,
+      21
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_W",
+     "bottom": [
+      0,
+      19
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_E",
+     "bottom": [
+      4,
+      19
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inNW",
+     "bottom": [
+      1,
+      18
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inNE",
+     "bottom": [
+      3,
+      18
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inSW",
+     "bottom": [
+      1,
+      20
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inSE",
+     "bottom": [
+      3,
+      20
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_landSE",
+     "bottom": [
+      1,
+      17
+     ]
+    },
+    {
+     "id": "marshwater_landSW",
+     "bottom": [
+      3,
+      17
+     ]
+    },
+    {
+     "id": "marshwater_landNE",
+     "bottom": [
+      1,
+      21
+     ]
+    },
+    {
+     "id": "marshwater_landNW",
+     "bottom": [
+      3,
+      21
+     ]
+    },
+    {
+     "id": "marshwater_sTLBR",
+     "quads": [
+      [
+       1,
+       18,
+       0
+      ],
+      [
+       2,
+       15,
+       1
+      ],
+      [
+       2,
+       15,
+       2
+      ],
+      [
+       3,
+       20,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_sTRBL",
+     "quads": [
+      [
+       2,
+       15,
+       0
+      ],
+      [
+       3,
+       18,
+       1
+      ],
+      [
+       1,
+       20,
+       2
+      ],
+      [
+       2,
+       15,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "reeds_top",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "reeds",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "snag_top_water",
+     "bottom": [
+      [
+       2,
+       15
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "behavior": "MB_NORMAL"
+    }
+   ]
+  },
+  {
+   "name": "brick",
+   "primary": "general",
+   "secondary": "tools/mapgen/sources/brick_city",
+   "layers": 3,
+   "ids": [
+    "319",
+    "31A",
+    "321",
+    "318",
+    "31B",
+    "322",
+    "314",
+    "2B0",
+    "2B8",
+    "338",
+    "339",
+    "23A",
+    "33A",
+    "332",
+    "224",
+    "227",
+    "343",
+    "248",
+    "362",
+    "243"
+   ],
+   "rebase_ground": {
+    "base": "ekat:grass",
+    "colors": [
+     [
+      120,
+      160,
+      104
+     ],
+     [
+      104,
+      144,
+      96
+     ],
+     [
+      110,
+      146,
+      100
+     ],
+     [
+      136,
+      176,
+      128
+     ],
+     [
+      140,
+      178,
+      131
+     ]
+    ]
+   }
+  },
+  {
+   "name": "barn",
+   "primary": "johto_general_hns",
+   "secondary": "route38_farmland_hns",
+   "layout": "frlg",
+   "ids": [
+    "280",
+    "281",
+    "282",
+    "283",
+    "284",
+    "285",
+    "288",
+    "289",
+    "28A",
+    "28B",
+    "28C",
+    "28D",
+    "290",
+    "291",
+    "292",
+    "293",
+    "294",
+    "295",
+    "298",
+    "299",
+    "29A",
+    "29B",
+    "29C",
+    "29D",
+    "2A0",
+    "2A2",
+    "2A3",
+    "2A4",
+    "2A5"
+   ],
+   "rebase_ground": {
+    "base": "ekat:grass",
+    "colors": [
+     [
+      120,
+      160,
+      104
+     ],
+     [
+      104,
+      144,
+      96
+     ],
+     [
+      110,
+      146,
+      100
+     ],
+     [
+      136,
+      176,
+      128
+     ],
+     [
+      140,
+      178,
+      131
+     ]
+    ]
+   }
+  },
+  {
+   "name": "shady",
+   "primary": "general",
+   "secondary": "tools/mapgen/sources/shady_forest",
+   "layers": 3,
+   "ids": [
+    "24B",
+    "24C",
+    "24D",
+    "24E",
+    "24F",
+    "253",
+    "254",
+    "255",
+    "256",
+    "257",
+    "25B",
+    "25C",
+    "25D",
+    "25E",
+    "25F",
+    "263",
+    "265",
+    "266",
+    "267",
+    "26E",
+    "26F"
+   ],
+   "rebase_ground": {
+    "base": "ekat:grass",
+    "colors": [
+     [
+      120,
+      160,
+      104
+     ],
+     [
+      104,
+      144,
+      96
+     ],
+     [
+      110,
+      146,
+      100
+     ],
+     [
+      136,
+      176,
+      128
+     ],
+     [
+      140,
+      178,
+      131
+     ]
+    ]
+   }
+  },
+  {
+   "name": "r40",
+   "primary": "johto_general_hns",
+   "secondary": "route_40_hns",
+   "layout": "frlg",
+   "pick_only_for_patches": true
+  },
+  {
+   "name": "johto",
+   "primary": "johto_general_hns",
+   "secondary": "azalea_town_hns",
+   "layout": "frlg",
+   "pick_only_for_patches": true
+  },
+  {
+   "name": "soul",
+   "primary": "johto_general_hns",
+   "secondary": "soul_house_hns",
+   "layout": "frlg",
+   "pick_only_for_patches": true
+  }
+ ],
+ "recolor": [
+  [
+   [
+    136,
+    112,
+    184
+   ],
+   [
+    136,
+    136,
+    144
+   ]
+  ],
+  [
+   [
+    104,
+    80,
+    152
+   ],
+   [
+    104,
+    104,
+    112
+   ]
+  ],
+  [
+   [
+    208,
+    184,
+    248
+   ],
+   [
+    184,
+    184,
+    192
+   ]
+  ],
+  [
+   [
+    32,
+    96,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ]
+  ],
+  [
+   [
+    56,
+    96,
+    104
+   ],
+   [
+    110,
+    146,
+    100
+   ]
+  ],
+  [
+   [
+    32,
+    88,
+    88
+   ],
+   [
+    110,
+    146,
+    100
+   ]
+  ],
+  [
+   [
+    48,
+    128,
+    128
+   ],
+   [
+    140,
+    178,
+    131
+   ]
+  ],
+  [
+   [
+    16,
+    64,
+    64
+   ],
+   [
+    96,
+    128,
+    88
+   ]
+  ],
+  [
+   [
+    88,
+    128,
+    128
+   ],
+   [
+    140,
+    178,
+    131
+   ]
+  ],
+  [
+   [
+    88,
+    184,
+    136
+   ],
+   [
+    110,
+    146,
+    100
+   ]
+  ]
+ ],
+ "patches": [
+  {
+   "id": "church_door",
+   "lower": "brick:367",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  },
+  {
+   "id": "church_31E",
+   "lower": "ekat:grass",
+   "upper": "brick:31E"
+  },
+  {
+   "id": "church_31F",
+   "lower": "ekat:grass",
+   "upper": "brick:31F"
+  },
+  {
+   "id": "church_30B",
+   "lower": "ekat:grass",
+   "upper": "brick:30B"
+  },
+  {
+   "id": "church_30C",
+   "lower": "ekat:grass",
+   "upper": "brick:30C"
+  },
+  {
+   "id": "church_320",
+   "lower": "ekat:grass",
+   "upper": "brick:320"
+  },
+  {
+   "id": "church_323",
+   "lower": "ekat:grass",
+   "upper": "brick:323"
+  },
+  {
+   "id": "church_330",
+   "lower": "ekat:grass",
+   "upper": "brick:330"
+  },
+  {
+   "id": "church_333",
+   "lower": "ekat:grass",
+   "upper": "brick:333"
+  },
+  {
+   "id": "boat_373",
+   "lower": "ekat:water_C",
+   "upper": "brick:373",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_352",
+   "lower": "ekat:water_C",
+   "upper": "brick:352",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_353",
+   "lower": "ekat:water_C",
+   "upper": "brick:353",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_354",
+   "lower": "ekat:water_C",
+   "upper": "brick:354",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_355",
+   "lower": "ekat:water_C",
+   "upper": "brick:355",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_2DF",
+   "lower": "ekat:water_C",
+   "upper": "brick:2DF",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_35B",
+   "lower": "ekat:water_C",
+   "upper": "brick:35B",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_35C",
+   "lower": "ekat:water_C",
+   "upper": "brick:35C",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "boat_35D",
+   "lower": "ekat:water_C",
+   "upper": "brick:35D",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "grave_mud",
+   "lower": "ekat:mud_C",
+   "upper": "soul:291",
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "grave_grass",
+   "lower": "ekat:grass",
+   "upper": "soul:291",
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "barn_door",
+   "lower": "barn:2A1",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  },
+  {
+   "id": "shady_door",
+   "lower": "shady:264",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  },
+  {
+   "id": "barn_cap_r",
+   "lower": "barn:280",
+   "hflip": true
+  },
+  {
+   "id": "pier_3E3_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3E3_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3E3_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3EB_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3EB_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3EB_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3F3_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3F3_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3F3_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3E0_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E0_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E0_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E1_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E1_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E1_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E2_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E2_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E2_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E8_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E8_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E8_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E9_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3E9_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3E9_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3EA_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3EA_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3EA_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3F0_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F0_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F0_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F1_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F1_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F1_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F2_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F2_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F2_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F8_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F8_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F8_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F9",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F9",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F9"
+  },
+  {
+   "id": "pier_3FA_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3FA",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3FA_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3FA",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3FA_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3FA"
+  },
+  {
+   "id": "cypress_00_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_00"
+  },
+  {
+   "id": "cypress_10_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_10"
+  },
+  {
+   "id": "cypress_20_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_20"
+  },
+  {
+   "id": "cypress_01_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_01"
+  },
+  {
+   "id": "cypress_11_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_11"
+  },
+  {
+   "id": "cypress_21_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_21"
+  },
+  {
+   "id": "cypress_small_00_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_small_00"
+  },
+  {
+   "id": "cypress_small_10_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_small_10"
+  },
+  {
+   "id": "cypress_small_01_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_small_01"
+  },
+  {
+   "id": "cypress_small_11_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekat:cypress_small_11"
+  },
+  {
+   "id": "cypress_02_marsh",
+   "reseat": "ekat:cypress_02",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_12_marsh",
+   "reseat": "ekat:cypress_12",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_22_marsh",
+   "reseat": "ekat:cypress_22",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_02_marsh",
+   "reseat": "ekat:cypress_small_02",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_12_marsh",
+   "reseat": "ekat:cypress_small_12",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "barn_r1",
+   "lower": "barn:288",
+   "hflip": true
+  },
+  {
+   "id": "barn_r2",
+   "lower": "barn:290",
+   "hflip": true
+  },
+  {
+   "id": "path_iNW",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0D1",
+    "B": "johto:0D8",
+    "q": 0,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iNE",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0D1",
+    "B": "johto:0DA",
+    "q": 1,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iSW",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0E1",
+    "B": "johto:0D8",
+    "q": 2,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iSE",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0E1",
+    "B": "johto:0DA",
+    "q": 3,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "cypress_00_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_00",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_10_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_10",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_20_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_20",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_01_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_01",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_11_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_11",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_21_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_21",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_00_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_small_00",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_10_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_small_10",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_01_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_small_01",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_11_water",
+   "lower": "ekat:water_C",
+   "upper": "ekat:cypress_small_11",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_02_water",
+   "reseat": "ekat:cypress_02",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_12_water",
+   "reseat": "ekat:cypress_12",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_22_water",
+   "reseat": "ekat:cypress_22",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_02_water",
+   "reseat": "ekat:cypress_small_02",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_12_water",
+   "reseat": "ekat:cypress_small_12",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "reeds_top_marsh",
+   "reseat": "ekat:reeds_top",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "reeds_marsh",
+   "reseat": "ekat:reeds",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "shrine_stone",
+   "lower": "ekat:marsh_C",
+   "upper": "soul:291",
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  }
+ ],
+ "recolor_tolerance": 6,
+ "_recolor_tolerance": "Colours within this distance of a recolour key are swapped too, which catches each HnS town's slightly different mint grass.",
+ "keep_colors": [
+  [
+   136,
+   136,
+   144
+  ],
+  [
+   104,
+   104,
+   112
+  ],
+  [
+   184,
+   184,
+   192
+  ],
+  [
+   248,
+   248,
+   248
+  ],
+  [
+   80,
+   80,
+   104
+  ]
+ ],
+ "_keep_colors": "Headstone greys: kept exact so palette reduction can't pull them toward the locked grass green.",
+ "blends_file": "orleans_bayou.blends.json",
+ "demand": true,
+ "palette": "v2"
+}

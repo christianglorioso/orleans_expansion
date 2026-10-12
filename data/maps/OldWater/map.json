@@ -1,0 +1,148 @@
+{
+  "id": "MAP_OLD_WATER",
+  "name": "OldWater",
+  "layout": "LAYOUT_OLD_WATER",
+  "music": "MUS_RG_FUCHSIA",
+  "region_map_section": "MAPSEC_OLD_WATER",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE1",
+      "offset": 15,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_OLD_WATER_TUPELO",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 23,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldWater_EventScript_Tupelo",
+      "flag": "FLAG_HIDE_OLD_WATER_TUPELO"
+    },
+    {
+      "local_id": "LOCALID_OLD_WATER_WREN",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 40,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldWater_EventScript_Wren",
+      "flag": "FLAG_HIDE_OLD_WATER_WREN"
+    },
+    {
+      "local_id": "LOCALID_OLD_WATER_CARVER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 7,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OldWater_EventScript_Carver",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 6,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_WATER_NET_BALL"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 16,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_HEALER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_SONG_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_TRADER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 19,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_CARVER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_TUPELOS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_REST_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 31,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_WRENS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 34,
+      "elevation": 3,
+      "dest_map": "MAP_OLD_WATER_CANOE_DOCKS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 42,
+      "y": 4,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OldWater_EventScript_UxieShrine"
+    }
+  ]
+}

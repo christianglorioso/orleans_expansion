@@ -1,0 +1,64 @@
+{
+  "id": "MAP_POINTE_ROUGE_CAPITOL_LOBBY",
+  "name": "PointeRouge_CapitolLobby",
+  "layout": "LAYOUT_POINTE_ROUGE_CAPITOL_LOBBY",
+  "music": "MUS_RG_SILPH",
+  "region_map_section": "MAPSEC_POINTE_ROUGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_POINTE_ROUGE_CAPITOL_LOBBY_RECEPTIONIST0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 8,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PointeRouge_CapitolLobby_EventScript_Receptionist0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_POINTE_ROUGE_CAPITOL_LOBBY_TOUR_GUIDE1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 3,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PointeRouge_CapitolLobby_EventScript_TourGuide1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_POINTE_ROUGE",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 14,
+      "y": 2,
+      "elevation": 3,
+      "dest_map": "MAP_POINTE_ROUGE_CAPITOL_DECK",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

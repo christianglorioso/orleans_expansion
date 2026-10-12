@@ -1,0 +1,80 @@
+{
+ "source": "..\\orleans_maps\\r20_route_20.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1075
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 26,
+ "buildings": [
+  {
+   "kind": "K",
+   "x": 28,
+   "y": 11,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "kind": "H",
+   "x": 24,
+   "y": 15,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "item",
+   "x": 29,
+   "y": 4
+  },
+  {
+   "kind": "item",
+   "x": 7,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 9,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 21,
+   "y": 11
+  },
+  {
+   "kind": "trainer",
+   "x": 29,
+   "y": 11
+  },
+  {
+   "kind": "trainer",
+   "x": 41,
+   "y": 13
+  },
+  {
+   "kind": "mega_stone",
+   "x": 24,
+   "y": 15
+  },
+  {
+   "kind": "hidden_item",
+   "x": 40,
+   "y": 20
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 11
+  },
+  {
+   "side": "E",
+   "pos": 12
+  }
+ ]
+}

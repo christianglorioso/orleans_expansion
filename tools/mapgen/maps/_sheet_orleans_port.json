@@ -1,0 +1,52 @@
+{
+ "map": "Sheet",
+ "map_const": "MAP_SHEET",
+ "layout": "LAYOUT_SHEET",
+ "layout_dir": "data/layouts/Sheet",
+ "tileset": "orleans_port",
+ "grid": "_sheet_orleans_port.grid.txt",
+ "edits": [],
+ "buildings": [
+  {
+   "prefab": "cabin",
+   "x": 1,
+   "y": 1,
+   "label": "cabin"
+  },
+  {
+   "prefab": "pokecenter",
+   "x": 6,
+   "y": 1,
+   "label": "pokecenter"
+  },
+  {
+   "prefab": "mart",
+   "x": 12,
+   "y": 1,
+   "label": "mart"
+  },
+  {
+   "prefab": "brick_shop",
+   "x": 18,
+   "y": 1,
+   "label": "brick_shop"
+  },
+  {
+   "prefab": "brick_hall",
+   "x": 1,
+   "y": 8,
+   "label": "brick_hall"
+  },
+  {
+   "prefab": "lighthouse",
+   "x": 13,
+   "y": 8,
+   "label": "lighthouse"
+  }
+ ],
+ "objects": [],
+ "items": [],
+ "hidden_items": [],
+ "signs": [],
+ "exits": []
+}

@@ -30,6 +30,316 @@ const struct Tileset *const gTilesetPointer_SecretBaseRedCave = &gTileset_Secret
 
 #if !IS_FRLG
 
+// --- mapgen: composed tilesets (begin) ---
+const struct Tileset gTileset_OrleansBuilding =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_OrleansBuilding,
+    .palettes = gTilesetPalettes_OrleansBuilding,
+    .metatiles = gMetatiles_OrleansBuilding,
+    .metatileAttributes = gMetatileAttributes_OrleansBuilding,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansGeneral =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_OrleansGeneral,
+    .palettes = gTilesetPalettes_OrleansGeneral,
+    .metatiles = gMetatiles_OrleansGeneral,
+    .metatileAttributes = gMetatileAttributes_OrleansGeneral,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansBayou =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansBayou,
+    .palettes = gTilesetPalettes_OrleansBayou,
+    .metatiles = gMetatiles_OrleansBayou,
+    .metatileAttributes = gMetatileAttributes_OrleansBayou,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansBriney =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansBriney,
+    .palettes = gTilesetPalettes_OrleansBriney,
+    .metatiles = gMetatiles_OrleansBriney,
+    .metatileAttributes = gMetatileAttributes_OrleansBriney,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansCamp =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansCamp,
+    .palettes = gTilesetPalettes_OrleansCamp,
+    .metatiles = gMetatiles_OrleansCamp,
+    .metatileAttributes = gMetatileAttributes_OrleansCamp,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansCapital =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansCapital,
+    .palettes = gTilesetPalettes_OrleansCapital,
+    .metatiles = gMetatiles_OrleansCapital,
+    .metatileAttributes = gMetatileAttributes_OrleansCapital,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansCity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansCity,
+    .palettes = gTilesetPalettes_OrleansCity,
+    .metatiles = gMetatiles_OrleansCity,
+    .metatileAttributes = gMetatileAttributes_OrleansCity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansCoast =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansCoast,
+    .palettes = gTilesetPalettes_OrleansCoast,
+    .metatiles = gMetatiles_OrleansCoast,
+    .metatileAttributes = gMetatileAttributes_OrleansCoast,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansConservatory =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansConservatory,
+    .palettes = gTilesetPalettes_OrleansConservatory,
+    .metatiles = gMetatiles_OrleansConservatory,
+    .metatileAttributes = gMetatileAttributes_OrleansConservatory,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansCrescent =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansCrescent,
+    .palettes = gTilesetPalettes_OrleansCrescent,
+    .metatiles = gMetatiles_OrleansCrescent,
+    .metatileAttributes = gMetatileAttributes_OrleansCrescent,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansGulf =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansGulf,
+    .palettes = gTilesetPalettes_OrleansGulf,
+    .metatiles = gMetatiles_OrleansGulf,
+    .metatileAttributes = gMetatileAttributes_OrleansGulf,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansHall =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansHall,
+    .palettes = gTilesetPalettes_OrleansHall,
+    .metatiles = gMetatiles_OrleansHall,
+    .metatileAttributes = gMetatileAttributes_OrleansHall,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansHarbor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansHarbor,
+    .palettes = gTilesetPalettes_OrleansHarbor,
+    .metatiles = gMetatiles_OrleansHarbor,
+    .metatileAttributes = gMetatileAttributes_OrleansHarbor,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansHollow =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansHollow,
+    .palettes = gTilesetPalettes_OrleansHollow,
+    .metatiles = gMetatiles_OrleansHollow,
+    .metatileAttributes = gMetatileAttributes_OrleansHollow,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansHome =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansHome,
+    .palettes = gTilesetPalettes_OrleansHome,
+    .metatiles = gMetatiles_OrleansHome,
+    .metatileAttributes = gMetatileAttributes_OrleansHome,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansInterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansInterior,
+    .palettes = gTilesetPalettes_OrleansInterior,
+    .metatiles = gMetatiles_OrleansInterior,
+    .metatileAttributes = gMetatileAttributes_OrleansInterior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansOffshore =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansOffshore,
+    .palettes = gTilesetPalettes_OrleansOffshore,
+    .metatiles = gMetatiles_OrleansOffshore,
+    .metatileAttributes = gMetatileAttributes_OrleansOffshore,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansPointe =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansPointe,
+    .palettes = gTilesetPalettes_OrleansPointe,
+    .metatiles = gMetatiles_OrleansPointe,
+    .metatileAttributes = gMetatileAttributes_OrleansPointe,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansPort =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansPort,
+    .palettes = gTilesetPalettes_OrleansPort,
+    .metatiles = gMetatiles_OrleansPort,
+    .metatileAttributes = gMetatileAttributes_OrleansPort,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRiver =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRiver,
+    .palettes = gTilesetPalettes_OrleansRiver,
+    .metatiles = gMetatiles_OrleansRiver,
+    .metatileAttributes = gMetatileAttributes_OrleansRiver,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRootkinIn =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRootkinIn,
+    .palettes = gTilesetPalettes_OrleansRootkinIn,
+    .metatiles = gMetatiles_OrleansRootkinIn,
+    .metatileAttributes = gMetatileAttributes_OrleansRootkinIn,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRoute =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRoute,
+    .palettes = gTilesetPalettes_OrleansRoute,
+    .metatiles = gMetatiles_OrleansRoute,
+    .metatileAttributes = gMetatileAttributes_OrleansRoute,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRouteB =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRouteB,
+    .palettes = gTilesetPalettes_OrleansRouteB,
+    .metatiles = gMetatiles_OrleansRouteB,
+    .metatileAttributes = gMetatileAttributes_OrleansRouteB,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRouteDry =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRouteDry,
+    .palettes = gTilesetPalettes_OrleansRouteDry,
+    .metatiles = gMetatiles_OrleansRouteDry,
+    .metatileAttributes = gMetatileAttributes_OrleansRouteDry,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansRouteFarm =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansRouteFarm,
+    .palettes = gTilesetPalettes_OrleansRouteFarm,
+    .metatiles = gMetatiles_OrleansRouteFarm,
+    .metatileAttributes = gMetatileAttributes_OrleansRouteFarm,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansServices =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansServices,
+    .palettes = gTilesetPalettes_OrleansServices,
+    .metatiles = gMetatiles_OrleansServices,
+    .metatileAttributes = gMetatileAttributes_OrleansServices,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansTown,
+    .palettes = gTilesetPalettes_OrleansTown,
+    .metatiles = gMetatiles_OrleansTown,
+    .metatileAttributes = gMetatileAttributes_OrleansTown,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansVillage =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansVillage,
+    .palettes = gTilesetPalettes_OrleansVillage,
+    .metatiles = gMetatiles_OrleansVillage,
+    .metatileAttributes = gMetatileAttributes_OrleansVillage,
+    .callback = NULL,
+};
+
+// --- mapgen: composed tilesets (end) ---
 const struct Tileset gTileset_General =
 {
     .isCompressed = TRUE,
@@ -1541,3 +1851,14 @@ const struct Tileset gTileset_HallOfFame =
 };
 
 #endif // IS_FRLG
+
+const struct Tileset gTileset_test =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_test,
+    .palettes = gTilesetPalettes_test,
+    .metatiles = gMetatiles_test,
+    .metatileAttributes = gMetatileAttributes_test,
+    .callback = NULL,
+};

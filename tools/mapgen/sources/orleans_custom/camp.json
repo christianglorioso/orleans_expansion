@@ -1,0 +1,3115 @@
+{
+ "_comment": "Camp Cocodrie own art index (make_camp_art.py): piece -> sheet cell and size.",
+ "pieces": {
+  "bw_h_cccc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 0
+  },
+  "bw_h_ccco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 0
+  },
+  "bw_h_cccs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 0
+  },
+  "bw_h_ccoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 0
+  },
+  "bw_h_ccoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 0
+  },
+  "bw_h_ccoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 0
+  },
+  "bw_h_ccos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 0
+  },
+  "bw_h_ccsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 0
+  },
+  "bw_h_ccso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 0
+  },
+  "bw_h_ccss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 0
+  },
+  "bw_h_cocc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 0
+  },
+  "bw_h_coco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 0
+  },
+  "bw_h_cocs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 0
+  },
+  "bw_h_cooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 0
+  },
+  "bw_h_cooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 0
+  },
+  "bw_h_cooo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 0
+  },
+  "bw_h_coos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 0
+  },
+  "bw_h_cosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 0
+  },
+  "bw_h_coso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 0
+  },
+  "bw_h_coss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 0
+  },
+  "bw_h_cscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 1
+  },
+  "bw_h_csco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 1
+  },
+  "bw_h_cscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 1
+  },
+  "bw_h_csoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 1
+  },
+  "bw_h_csoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 1
+  },
+  "bw_h_csoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 1
+  },
+  "bw_h_csos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 1
+  },
+  "bw_h_cssc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 1
+  },
+  "bw_h_csso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 1
+  },
+  "bw_h_csss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 1
+  },
+  "bw_h_occc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 1
+  },
+  "bw_h_occo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 1
+  },
+  "bw_h_occs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 1
+  },
+  "bw_h_ococ": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 1
+  },
+  "bw_h_ocoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 1
+  },
+  "bw_h_ocoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 1
+  },
+  "bw_h_ocos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 1
+  },
+  "bw_h_ocsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 1
+  },
+  "bw_h_ocso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 1
+  },
+  "bw_h_ocss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 1
+  },
+  "bw_h_oocc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 2
+  },
+  "bw_h_ooco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 2
+  },
+  "bw_h_oocs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 2
+  },
+  "bw_h_oooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 2
+  },
+  "bw_h_oooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 2
+  },
+  "bw_h_oooo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 2
+  },
+  "bw_h_ooos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 2
+  },
+  "bw_h_oosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 2
+  },
+  "bw_h_ooso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 2
+  },
+  "bw_h_ooss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 2
+  },
+  "bw_h_oscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 2
+  },
+  "bw_h_osco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 2
+  },
+  "bw_h_oscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 2
+  },
+  "bw_h_osoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 2
+  },
+  "bw_h_osoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 2
+  },
+  "bw_h_osoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 2
+  },
+  "bw_h_osos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 2
+  },
+  "bw_h_ossc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 2
+  },
+  "bw_h_osso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 2
+  },
+  "bw_h_osss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 2
+  },
+  "bw_h_sccc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 3
+  },
+  "bw_h_scco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 3
+  },
+  "bw_h_sccs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 3
+  },
+  "bw_h_scoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 3
+  },
+  "bw_h_scoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 3
+  },
+  "bw_h_scoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 3
+  },
+  "bw_h_scos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 3
+  },
+  "bw_h_scsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 3
+  },
+  "bw_h_scso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 3
+  },
+  "bw_h_scss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 3
+  },
+  "bw_h_socc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 3
+  },
+  "bw_h_soco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 3
+  },
+  "bw_h_socs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 3
+  },
+  "bw_h_sooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 3
+  },
+  "bw_h_sooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 3
+  },
+  "bw_h_sooo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 3
+  },
+  "bw_h_soos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 3
+  },
+  "bw_h_sosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 3
+  },
+  "bw_h_soso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 3
+  },
+  "bw_h_soss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 3
+  },
+  "bw_h_sscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 4
+  },
+  "bw_h_ssco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 4
+  },
+  "bw_h_sscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 4
+  },
+  "bw_h_ssoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 4
+  },
+  "bw_h_ssoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 4
+  },
+  "bw_h_ssoo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 4
+  },
+  "bw_h_ssos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 4
+  },
+  "bw_h_sssc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 4
+  },
+  "bw_h_ssso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 4
+  },
+  "bw_h_ssss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 4
+  },
+  "bw_v_cccc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 4
+  },
+  "bw_v_ccco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 4
+  },
+  "bw_v_cccs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 4
+  },
+  "bw_v_ccoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 4
+  },
+  "bw_v_ccoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 4
+  },
+  "bw_v_ccos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 4
+  },
+  "bw_v_ccsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 4
+  },
+  "bw_v_ccso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 4
+  },
+  "bw_v_ccss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 4
+  },
+  "bw_v_cocc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 4
+  },
+  "bw_v_coco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 5
+  },
+  "bw_v_cocs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 5
+  },
+  "bw_v_cooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 5
+  },
+  "bw_v_cooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 5
+  },
+  "bw_v_coos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 5
+  },
+  "bw_v_cosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 5
+  },
+  "bw_v_coso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 5
+  },
+  "bw_v_coss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 5
+  },
+  "bw_v_cscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 5
+  },
+  "bw_v_csco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 5
+  },
+  "bw_v_cscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 5
+  },
+  "bw_v_csoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 5
+  },
+  "bw_v_csoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 5
+  },
+  "bw_v_csos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 5
+  },
+  "bw_v_cssc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 5
+  },
+  "bw_v_csso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 5
+  },
+  "bw_v_csss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 5
+  },
+  "bw_v_occc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 5
+  },
+  "bw_v_occo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 5
+  },
+  "bw_v_occs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 5
+  },
+  "bw_v_ococ": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 6
+  },
+  "bw_v_ocoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 6
+  },
+  "bw_v_ocos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 6
+  },
+  "bw_v_ocsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 6
+  },
+  "bw_v_ocso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 6
+  },
+  "bw_v_ocss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 6
+  },
+  "bw_v_oocc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 6
+  },
+  "bw_v_oocc_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 6
+  },
+  "bw_v_ooco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 6
+  },
+  "bw_v_ooco_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 6
+  },
+  "bw_v_oocs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 6
+  },
+  "bw_v_oocs_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 6
+  },
+  "bw_v_oooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 6
+  },
+  "bw_v_oooc_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 6
+  },
+  "bw_v_oooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 6
+  },
+  "bw_v_oooo_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 6
+  },
+  "bw_v_ooos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 6
+  },
+  "bw_v_ooos_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 6
+  },
+  "bw_v_oosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 6
+  },
+  "bw_v_oosc_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 6
+  },
+  "bw_v_ooso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 7
+  },
+  "bw_v_ooso_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 7
+  },
+  "bw_v_ooss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 7
+  },
+  "bw_v_ooss_1": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell, second grain.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 7
+  },
+  "bw_v_oscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 7
+  },
+  "bw_v_osco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 7
+  },
+  "bw_v_oscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 7
+  },
+  "bw_v_osoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 7
+  },
+  "bw_v_osoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 7
+  },
+  "bw_v_osos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 7
+  },
+  "bw_v_ossc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 7
+  },
+  "bw_v_osso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 7
+  },
+  "bw_v_osss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 7
+  },
+  "bw_v_sccc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 7
+  },
+  "bw_v_scco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 7
+  },
+  "bw_v_sccs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 7
+  },
+  "bw_v_scoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 7
+  },
+  "bw_v_scoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 7
+  },
+  "bw_v_scos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 7
+  },
+  "bw_v_scsc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 7
+  },
+  "bw_v_scso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 8
+  },
+  "bw_v_scss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 1,
+   "y": 8
+  },
+  "bw_v_socc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 2,
+   "y": 8
+  },
+  "bw_v_soco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 3,
+   "y": 8
+  },
+  "bw_v_socs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 8
+  },
+  "bw_v_sooc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 8
+  },
+  "bw_v_sooo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 6,
+   "y": 8
+  },
+  "bw_v_soos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 7,
+   "y": 8
+  },
+  "bw_v_sosc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 8,
+   "y": 8
+  },
+  "bw_v_soso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 8
+  },
+  "bw_v_soss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 8
+  },
+  "bw_v_sscc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 8
+  },
+  "bw_v_ssco": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 8
+  },
+  "bw_v_sscs": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 8
+  },
+  "bw_v_ssoc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 14,
+   "y": 8
+  },
+  "bw_v_ssoo": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 15,
+   "y": 8
+  },
+  "bw_v_ssos": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 8
+  },
+  "bw_v_sssc": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 8
+  },
+  "bw_v_ssso": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 8
+  },
+  "bw_v_ssss": {
+   "w": 1,
+   "h": 1,
+   "comment": "Camp boardwalk cell (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 8
+  },
+  "bait": {
+   "w": 5,
+   "h": 5,
+   "comment": "The Bait Shack (camp Mart) on stilts, 5x5.",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     1,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 9
+  },
+  "cabin_a": {
+   "w": 4,
+   "h": 5,
+   "comment": "Stilt cabin A (rust tin, grey clapboard) on pilings, 4x5.",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     1,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 5,
+   "y": 9
+  },
+  "cabin_a_m": {
+   "w": 4,
+   "h": 5,
+   "comment": "Stilt cabin A mirrored, 4x5.",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     2,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 9
+  },
+  "cabin_b": {
+   "w": 4,
+   "h": 5,
+   "comment": "Stilt cabin B (cedar shakes, stained boards) on pilings, 4x5.",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     1,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 9
+  },
+  "cabin_b_m": {
+   "w": 4,
+   "h": 5,
+   "comment": "Stilt cabin B mirrored, 4x5.",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     2,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 14
+  },
+  "nurse": {
+   "w": 5,
+   "h": 5,
+   "comment": "The Nurse Cabin (camp Pokemon Center) on stilts, 5x5.",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     2,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 4,
+   "y": 14
+  },
+  "porch": {
+   "w": 7,
+   "h": 5,
+   "comment": "The Dance Porch (red hall, open porch, lanterns) on stilts, 7x5.",
+   "doors": [
+    [
+     3,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     3,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 9,
+   "y": 14
+  },
+  "smokehouse": {
+   "w": 4,
+   "h": 5,
+   "comment": "The smokehouse on stilts, 4x5.",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [
+    [
+     1,
+     4
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 14
+  },
+  "chimney": {
+   "w": 1,
+   "h": 2,
+   "comment": "Stovepipe and smoke for the cookhouse roof, 1x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 19
+  },
+  "fishrack": {
+   "w": 2,
+   "h": 2,
+   "comment": "Fish drying rack, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 1,
+   "y": 19
+  },
+  "netrack": {
+   "w": 2,
+   "h": 2,
+   "comment": "Net drying rack, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 3,
+   "y": 19
+  },
+  "pot": {
+   "w": 2,
+   "h": 2,
+   "comment": "Cast-iron gumbo pot on a fire, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 5,
+   "y": 19
+  },
+  "bollard": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mooring bollard with rope, in the water, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 19
+  },
+  "buoy": {
+   "w": 1,
+   "h": 1,
+   "comment": "A lone float buoy, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 8,
+   "y": 19
+  },
+  "gator": {
+   "w": 2,
+   "h": 1,
+   "comment": "Gator half sunk in the mud, jaw open, 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 9,
+   "y": 19
+  },
+  "gator_b": {
+   "w": 2,
+   "h": 1,
+   "comment": "Gator half sunk in the mud, facing west (gator mirrored), 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 11,
+   "y": 19
+  },
+  "gator_eyes": {
+   "w": 1,
+   "h": 1,
+   "comment": "A gator's eyes and nostrils above the mud, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 13,
+   "y": 19
+  },
+  "lantern": {
+   "w": 1,
+   "h": 1,
+   "comment": "Lantern on a post, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 14,
+   "y": 19
+  },
+  "mooring_post": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mooring post in the water (the bollard's art), 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 15,
+   "y": 19
+  },
+  "okra": {
+   "w": 1,
+   "h": 1,
+   "comment": "Okra bed (tiles both ways), with a flower.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 16,
+   "y": 19
+  },
+  "okra_b": {
+   "w": 1,
+   "h": 1,
+   "comment": "Okra bed (tiles both ways), pods.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 17,
+   "y": 19
+  },
+  "pen_gate": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen gate.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 18,
+   "y": 19
+  },
+  "pen_h": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (h), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 19,
+   "y": 19
+  },
+  "pen_ne": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (ne), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 21
+  },
+  "pen_nw": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (nw), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 1,
+   "y": 21
+  },
+  "pen_se": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (se), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 2,
+   "y": 21
+  },
+  "pen_sw": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (sw), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 3,
+   "y": 21
+  },
+  "pen_v": {
+   "w": 1,
+   "h": 1,
+   "comment": "Gator pen fence (v), weathered wood.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 4,
+   "y": 21
+  },
+  "pirogue": {
+   "w": 2,
+   "h": 1,
+   "comment": "Pirogue (dugout), 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 5,
+   "y": 21
+  },
+  "skiff": {
+   "w": 3,
+   "h": 1,
+   "comment": "Jonboat with outboard, rope off the bow (west), 3x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 21
+  },
+  "trapline_end": {
+   "w": 1,
+   "h": 1,
+   "comment": "Trap line end: end buoy and a crab trap, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 10,
+   "y": 21
+  },
+  "trapline_h": {
+   "w": 1,
+   "h": 1,
+   "comment": "Trap line: rope with floats, tiles east-west, 1x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 11,
+   "y": 21
+  },
+  "woodpile": {
+   "w": 2,
+   "h": 1,
+   "comment": "Stacked split wood, 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 12,
+   "y": 21
+  }
+ }
+}

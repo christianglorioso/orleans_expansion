@@ -1,0 +1,422 @@
+{
+ "_comment": "Lutin's Hollow own art (make_hollow_art.py): piece -> sheet cell [x, y] and size w x h in 16 px cells; overlays, magenta = clear; doors and passable are cells within the piece; empty = cells with nothing drawn.",
+ "png": "hollow.png",
+ "pieces": {
+  "hollow_tree": {
+   "w": 7,
+   "h": 6,
+   "comment": "The Pokemon Center: a vast hollow live oak, arched lit door under a red hood, Poke Ball plaque (7x6).",
+   "doors": [
+    [
+     3,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     3
+    ],
+    [
+     6,
+     3
+    ]
+   ],
+   "x": 0,
+   "y": 0
+  },
+  "gym_arbour": {
+   "w": 7,
+   "h": 5,
+   "comment": "Lutin's gym: a glade pavilion behind curtains of Spanish moss, parted at the glowing door (7x5).",
+   "doors": [
+    [
+     3,
+     4
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 0
+  },
+  "herbalist": {
+   "w": 6,
+   "h": 4,
+   "comment": "The Herbalist (shop): the cottages' roof and walls, a blue sign, herbs drying all along the eave, a crate of cuttings (6x4).",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 14,
+   "y": 0
+  },
+  "cottage_a": {
+   "w": 5,
+   "h": 4,
+   "comment": "Moss cottage A: cushioned moss roof, round plank door, round lit windows, herbs under the eave, chimney east (5x4).",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 6
+  },
+  "cottage_b": {
+   "w": 5,
+   "h": 4,
+   "comment": "Moss cottage B: green round door, chimney west, a climbing rose, toadstools in the roof moss (5x4).",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 5,
+   "y": 6
+  },
+  "fairy_ring": {
+   "w": 3,
+   "h": 3,
+   "comment": "A fairy ring of pale toadstools on darker grass (3x3, all walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 6
+  },
+  "tree_a": {
+   "w": 3,
+   "h": 3,
+   "comment": "Ring tree A: a moss-hung live oak, round crown (3x3, blocking; opaque crown).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 13,
+   "y": 6
+  },
+  "tree_b": {
+   "w": 3,
+   "h": 3,
+   "comment": "Ring tree B: broad two-humped crown (3x3, blocking; lower half = tree_a's tiles).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 16,
+   "y": 6
+  },
+  "tree_c": {
+   "w": 3,
+   "h": 3,
+   "comment": "Ring tree C: tall crown in pink bloom (3x3, blocking; lower half = tree_a's tiles).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 19,
+   "y": 6
+  },
+  "pepper_bed": {
+   "w": 3,
+   "h": 2,
+   "comment": "A raised bed of red peppers (3x2, blocking); tiles east-west (half posts at the ends).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 10
+  },
+  "pool": {
+   "w": 2,
+   "h": 2,
+   "comment": "A still reflecting pool in a ring of mossy stones (2x2, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 3,
+   "y": 10
+  },
+  "tree_s": {
+   "w": 2,
+   "h": 2,
+   "comment": "Small ring tree: a young moss-hung oak (2x2, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 5,
+   "y": 10
+  },
+  "riddle_stone": {
+   "w": 1,
+   "h": 2,
+   "comment": "The riddle stone: a mossy standing stone, a glowing carved flame-tail (1x2, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 10
+  },
+  "mossy_log": {
+   "w": 2,
+   "h": 1,
+   "comment": "Fallen log furred with moss, toadstools, bracket fungus (2x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 8,
+   "y": 10
+  },
+  "bloom_gold": {
+   "w": 1,
+   "h": 1,
+   "comment": "A drift of gold wildflowers (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 10,
+   "y": 10
+  },
+  "bloom_pink": {
+   "w": 1,
+   "h": 1,
+   "comment": "A drift of pink wildflowers (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 11,
+   "y": 10
+  },
+  "bloom_violet": {
+   "w": 1,
+   "h": 1,
+   "comment": "A drift of violet wildflowers (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 12,
+   "y": 10
+  },
+  "bloom_white": {
+   "w": 1,
+   "h": 1,
+   "comment": "A drift of white wildflowers (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 13,
+   "y": 10
+  },
+  "bush_a": {
+   "w": 1,
+   "h": 1,
+   "comment": "Understory shrub in white blossom (1x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 14,
+   "y": 10
+  },
+  "bush_b": {
+   "w": 1,
+   "h": 1,
+   "comment": "Yaupon shrub with red berries (1x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 15,
+   "y": 10
+  },
+  "fern_a": {
+   "w": 1,
+   "h": 1,
+   "comment": "A clump of arching ferns (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 10
+  },
+  "fern_b": {
+   "w": 1,
+   "h": 1,
+   "comment": "A clump of arching ferns (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 17,
+   "y": 10
+  },
+  "fern_c": {
+   "w": 1,
+   "h": 1,
+   "comment": "A clump of arching ferns (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 18,
+   "y": 10
+  },
+  "glowbell": {
+   "w": 1,
+   "h": 1,
+   "comment": "Glow-bells: pale cyan bells lit from within (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 19,
+   "y": 10
+  },
+  "moss_mound": {
+   "w": 1,
+   "h": 1,
+   "comment": "A low cushion of moss and a fern sprig (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 20,
+   "y": 10
+  },
+  "thicket_a": {
+   "w": 1,
+   "h": 1,
+   "comment": "Thicket: dense dark leaves for the cracks between trunks (1x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 21,
+   "y": 10
+  },
+  "thicket_b": {
+   "w": 1,
+   "h": 1,
+   "comment": "Thicket, second shape (1x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 22,
+   "y": 10
+  },
+  "toadstool_pale": {
+   "w": 1,
+   "h": 1,
+   "comment": "Pale toadstools glowing faintly (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 23,
+   "y": 10
+  },
+  "toadstool_red": {
+   "w": 1,
+   "h": 1,
+   "comment": "Red toadstools with white spots (1x1, walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 0,
+   "y": 12
+  }
+ }
+}

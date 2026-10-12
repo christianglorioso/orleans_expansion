@@ -1,0 +1,251 @@
+{
+  "id": "MAP_ISLE_MARAIS",
+  "name": "IsleMarais",
+  "layout": "LAYOUT_ISLE_MARAIS",
+  "music": "MUS_RG_PALLET",
+  "region_map_section": "MAPSEC_ISLE_MARAIS",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE1",
+      "offset": 5,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_RECRUITER_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 20,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_EventScript_Recruiter1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_RECRUITER_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 24,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_EventScript_Recruiter2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_LEVEE_WATCHER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 28,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_EventScript_LeveeWatcher",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 11,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_EventScript_Fisherman",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ISLE_MARAIS_POTION"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ISLE_MARAIS_POKE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 31,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SWAMPERTITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_SHELTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 5,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_HOUSE_NE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_HOUSE_W",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_HOUSE_E",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_HOUSE_EASTMOST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_PLAYERS_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_CHURCH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS_CHURCH",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 5,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 6,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "2",
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_ISLE_MARAIS_CHURCHYARD"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 18,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "IsleMarais_EventScript_BoardedDoor"
+    }
+  ]
+}

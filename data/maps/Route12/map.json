@@ -1,0 +1,139 @@
+{
+  "id": "MAP_ORLEANS_ROUTE12",
+  "name": "Route12",
+  "layout": "LAYOUT_ORLEANS_ROUTE12",
+  "music": "MUS_RG_ROUTE24",
+  "region_map_section": "MAPSEC_ROUTE_12",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE11",
+      "offset": -22,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ORLEANS_ROUTE13",
+      "offset": -1,
+      "direction": "up"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE12_TRAINER_1",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 13,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route12_EventScript_Trainer1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE12_TRAINER_2",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 11,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route12_EventScript_Trainer2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE12_TRAINER_4",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 14,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route12_EventScript_Trainer4",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE12_TRAINER_6",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 12,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route12_EventScript_Trainer6",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_UNUSED_0x27E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 19,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_UNUSED_0x27F"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_ELIXIR",
+      "flag": "FLAG_UNUSED_0x29A"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 22,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route12_EventScript_RouteSign1"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 34,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route12_EventScript_RouteSign2"
+    }
+  ]
+}

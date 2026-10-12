@@ -1630,6 +1630,50 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_ISLE_MARAIS",
+      "name": "ISLE MARAIS"
+    },
+    {
+      "id": "MAPSEC_GRAND_OAK",
+      "name": "GRAND OAK"
+    },
+    {
+      "id": "MAPSEC_OLD_WATER",
+      "name": "THE OLD WATER"
+    },
+    {
+      "id": "MAPSEC_STORMS_EDGE",
+      "name": "STORM'S EDGE"
+    },
+    {
+      "id": "MAPSEC_CRESCENT_CITY",
+      "name": "CRESCENT CITY"
+    },
+    {
+      "id": "MAPSEC_POINTE_ROUGE",
+      "name": "POINTE ROUGE"
+    },
+    {
+      "id": "MAPSEC_CAMP_COCODRIE",
+      "name": "CAMP COCODRIE"
+    },
+    {
+      "id": "MAPSEC_LUTINS_HOLLOW",
+      "name": "LUTIN'S HOLLOW"
+    },
+    {
+      "id": "MAPSEC_REDFIELD",
+      "name": "REDFIELD"
+    },
+    {
+      "id": "MAPSEC_LANDS_END",
+      "name": "LAND'S END"
+    },
+    {
+      "id": "MAPSEC_OLDEST_SHRINE",
+      "name": "OLDEST SHRINE"
     }
   ]
 }

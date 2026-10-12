@@ -1,0 +1,3244 @@
+{
+ "_comment": "Route landmarks own art (make_route_landmarks.py, art_requests/route_landmarks.md): piece -> sheet cell [x, y] and size w x h in 16 px cells; overlays, magenta = clear; doors and passable are cells within the piece; empty = cells with nothing drawn; tilesets = the route tilesets its routes use; over = cells best drawn over the player. 'source' + 'prefabs' are the same pieces ready for a route recipe/config (source name 'lmk'), or feed 'pieces' to redfield_tileset.add_pieces(r, c, 'lmk', 'route_landmarks.png', doc, ...).",
+ "png": "route_landmarks.png",
+ "pieces": {
+  "offshore_platform": {
+   "w": 6,
+   "h": 6,
+   "comment": "Abandoned offshore platform on water, 6x6 (the two stacked 6x3 rects the generator reserves, as one picture; or place offshore_platform_n over offshore_platform_s): a rusted steel deck with a railing (one stretch bent down), the snapped stub of the derrick in the middle, oil drums, rust stains; four great legs braced in an X (blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 0
+  },
+  "chimney": {
+   "w": 1,
+   "h": 5,
+   "comment": "Tall brick sugar-mill chimney: corbelled crown, soot stain from the mouth, iron bands, stone plinth (1x5, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_dry"
+   ],
+   "over": [],
+   "x": 6,
+   "y": 0
+  },
+  "temple_gate": {
+   "w": 5,
+   "h": 4,
+   "comment": "Half-flooded Rootkin temple doorway: stepped crest, a lintel of spirals, carved pillars, a corbelled doorway sealed by a slab with a faintly glowing spiral seal, steps down into the water (5x4, door (2,3) = the dive entrance).",
+   "doors": [
+    [
+     2,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 7,
+   "y": 0
+  },
+  "great_oak": {
+   "w": 4,
+   "h": 4,
+   "comment": "The great live oak on marsh: a vast crown, a limb sweeping low to the ground each side, Spanish moss, a massive trunk, roots coiling like serpents (4x4, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 12,
+   "y": 0
+  },
+  "lookout": {
+   "w": 3,
+   "h": 4,
+   "comment": "Shore lookout: a board-and-batten hut on short stilts, a railed roof deck with a brass spyglass on a tripod, a ladder up the east side, a life ring; the door (shut) at the bottom centre with steps up to it (3x4, door (1,3)).",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 7,
+   "y": 4
+  },
+  "power_tower": {
+   "w": 2,
+   "h": 4,
+   "comment": "Steel lattice transmission pylon, two crossarms with glass insulator strings, concrete footings, rust at the joints (2x4, blocking). The wires leave its top cell's sides 8 and 12 px down (wire_span_l / wire_span_r meet them).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 10,
+   "y": 4
+  },
+  "bird_platform": {
+   "w": 6,
+   "h": 3,
+   "comment": "Heron roost on water: a weathered plank platform on pilings, forked dead-branch perches, two stick nests, droppings (6x3, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     1,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 6
+  },
+  "shrine_steps": {
+   "w": 6,
+   "h": 3,
+   "comment": "Worn stone steps rising out of the water to the shrine island between two carved cheek walls (6x3; the flight, columns 1-4, walkable; the walls block).",
+   "doors": [],
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 6,
+   "y": 8
+  },
+  "shipwreck": {
+   "w": 4,
+   "h": 3,
+   "comment": "Half-sunk wooden hull on water, listing: bow reared up west, stern under east, ribs showing through the stove-in planking, a broken leaning mast and yard, weed and foam at the waterline (4x3, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [
+    [
+     3,
+     0
+    ]
+   ],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 12,
+   "y": 4
+  },
+  "mine_mouth": {
+   "w": 3,
+   "h": 3,
+   "comment": "Timbered mine tunnel mouth in a rock face: timber set, a second set deep in the dark, rusty rails running out, a lit lantern on a hook (3x3, door (1,2)).",
+   "doors": [
+    [
+     1,
+     2
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_dry"
+   ],
+   "over": [],
+   "x": 12,
+   "y": 7
+  },
+  "scorched_cypress": {
+   "w": 3,
+   "h": 3,
+   "comment": "Lightning-split bald cypress on marsh: two charred halves leaning apart, pale heartwood along the split, black snags, two live tufts, knees and roots (3x3, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 9
+  },
+  "nav_beacon": {
+   "w": 2,
+   "h": 3,
+   "comment": "Navigation beacon on stilts on water: braced timber piles, a railed platform, a post with a green lantern and a red day-mark, a ladder (2x3, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 3,
+   "y": 9
+  },
+  "levee_gate": {
+   "w": 4,
+   "h": 2,
+   "comment": "Levee gate: two heavy concrete posts, each with a red-and-white swing bar folded back (pointing north along the road), hinge, counterweight, hazard chevrons; the middle two columns are open road (4x2, columns 1-2 walkable and empty).",
+   "doors": [],
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "empty": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 12,
+   "y": 10
+  },
+  "oyster_bed": {
+   "w": 3,
+   "h": 2,
+   "comment": "A heap of oyster shells and stones: grey shells piled low, a few open showing nacre, wet at the foot (3x2, blocking). For the islets: on mud or sand.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 5,
+   "y": 11
+  },
+  "rail_car": {
+   "w": 3,
+   "h": 2,
+   "comment": "A sun-faded red boxcar standing on the east-west track; its bottom row carries the track (rail_h) under the wheels, so it drops into a rail_h run (3x2, blocking; the track row is y of the rail).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_dry"
+   ],
+   "over": [],
+   "x": 8,
+   "y": 11
+  },
+  "sunken_ruin_l": {
+   "w": 2,
+   "h": 2,
+   "comment": "Larger ruin in water: a pillar stump and a toppled carved capital half-sunk at a tilt (2x2, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 12
+  },
+  "channel_buoy": {
+   "w": 1,
+   "h": 2,
+   "comment": "Red-and-white channel buoy on water: striped float, little red tower, a lit lamp; lap line and ripples (1x2, blocking). Also the tournament float.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route",
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 6,
+   "y": 5
+  },
+  "sunken_piling": {
+   "w": 1,
+   "h": 2,
+   "comment": "Barnacled piling in water: an old round timber pile, cut top, a frayed rope, a crust of barnacles and weed (1x2, blocking). Route 20's pilings (placed as sunken_ruin today).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 15,
+   "y": 7
+  },
+  "sunken_ruin": {
+   "w": 1,
+   "h": 2,
+   "comment": "A broken carved Rootkin pillar standing in water: ragged break, spiral carvings, moss from the waterline (1x2, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route",
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 5,
+   "y": 9
+  },
+  "felled_log": {
+   "w": 3,
+   "h": 1,
+   "comment": "Felled trunk on grass: furrowed bark, a sawn end with rings, a broken end, a branch stub, moss (3x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 2,
+   "y": 12
+  },
+  "fallen_line": {
+   "w": 2,
+   "h": 1,
+   "comment": "A snapped power cable lying on dry ground, its bare end sparking blue-white over a scorch (2x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 11,
+   "y": 12
+  },
+  "fallen_line_b": {
+   "w": 2,
+   "h": 1,
+   "comment": "Fallen cable, second variant: a loose coil, a broken insulator, the sparking end west (2x1, blocking).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 13,
+   "y": 12
+  },
+  "cut_stump": {
+   "w": 1,
+   "h": 1,
+   "comment": "A cut stump on grass, rings on its axe-cut top, a notch (1x1, blocking; the Kleavorite spot).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [],
+   "x": 6,
+   "y": 7
+  },
+  "rail_h": {
+   "w": 1,
+   "h": 1,
+   "comment": "Railway track running east-west (1x1, walkable, seamless, any ground).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_dry"
+   ],
+   "over": [],
+   "x": 15,
+   "y": 9
+  },
+  "rail_v": {
+   "w": 1,
+   "h": 1,
+   "comment": "Railway track running north-south: two rails on timber ties every 8 px, no ballast (1x1, walkable, seamless along a run, any ground).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_river"
+   ],
+   "over": [],
+   "x": 11,
+   "y": 11
+  },
+  "wire_span": {
+   "w": 1,
+   "h": 1,
+   "comment": "Overhead wires mid-span, hanging level (1x1, walkable, over the player); repeat it between wire_span_l and wire_span_r.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [
+    [
+     0,
+     0
+    ]
+   ],
+   "x": 15,
+   "y": 12
+  },
+  "wire_span_l": {
+   "w": 1,
+   "h": 1,
+   "comment": "Overhead wires, the cell east of a tower: leaving the crossarms and sagging 2 px (1x1, walkable; drawn over the player).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [
+    [
+     0,
+     0
+    ]
+   ],
+   "x": 2,
+   "y": 13
+  },
+  "wire_span_r": {
+   "w": 1,
+   "h": 1,
+   "comment": "Overhead wires, the cell west of a tower: rising to the crossarms (1x1, walkable, over the player; wire_span_l mirrored).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "tilesets": [
+    "orleans_route"
+   ],
+   "over": [
+    [
+     0,
+     0
+    ]
+   ],
+   "x": 3,
+   "y": 13
+  },
+  "offshore_platform_n": {
+   "w": 6,
+   "h": 3,
+   "comment": "Offshore platform, north half (6x3): place over offshore_platform_s.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 0
+  },
+  "offshore_platform_s": {
+   "w": 6,
+   "h": 3,
+   "comment": "Offshore platform, south half (6x3): the legs in the water.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "tilesets": [
+    "orleans_route_b"
+   ],
+   "over": [],
+   "x": 0,
+   "y": 3
+  }
+ },
+ "source": {
+  "name": "lmk",
+  "type": "image",
+  "image": "tools/mapgen/sources/orleans_custom/route_landmarks.png",
+  "transparent": [
+   [
+    255,
+    0,
+    255
+   ]
+  ],
+  "overlay_only": true,
+  "_comment": "Route landmarks (own art, make_route_landmarks.py), overlays on any ground.",
+  "metatiles": [
+   {
+    "id": "0_0",
+    "bottom": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "1_0",
+    "bottom": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "2_0",
+    "bottom": [
+     2,
+     0
+    ]
+   },
+   {
+    "id": "3_0",
+    "bottom": [
+     3,
+     0
+    ]
+   },
+   {
+    "id": "4_0",
+    "bottom": [
+     4,
+     0
+    ]
+   },
+   {
+    "id": "5_0",
+    "bottom": [
+     5,
+     0
+    ]
+   },
+   {
+    "id": "6_0",
+    "bottom": [
+     6,
+     0
+    ]
+   },
+   {
+    "id": "7_0",
+    "bottom": [
+     7,
+     0
+    ]
+   },
+   {
+    "id": "8_0",
+    "bottom": [
+     8,
+     0
+    ]
+   },
+   {
+    "id": "9_0",
+    "bottom": [
+     9,
+     0
+    ]
+   },
+   {
+    "id": "10_0",
+    "bottom": [
+     10,
+     0
+    ]
+   },
+   {
+    "id": "11_0",
+    "bottom": [
+     11,
+     0
+    ]
+   },
+   {
+    "id": "12_0",
+    "bottom": [
+     12,
+     0
+    ]
+   },
+   {
+    "id": "13_0",
+    "bottom": [
+     13,
+     0
+    ]
+   },
+   {
+    "id": "14_0",
+    "bottom": [
+     14,
+     0
+    ]
+   },
+   {
+    "id": "15_0",
+    "bottom": [
+     15,
+     0
+    ]
+   },
+   {
+    "id": "0_1",
+    "bottom": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "1_1",
+    "bottom": [
+     1,
+     1
+    ]
+   },
+   {
+    "id": "2_1",
+    "bottom": [
+     2,
+     1
+    ]
+   },
+   {
+    "id": "3_1",
+    "bottom": [
+     3,
+     1
+    ]
+   },
+   {
+    "id": "4_1",
+    "bottom": [
+     4,
+     1
+    ]
+   },
+   {
+    "id": "5_1",
+    "bottom": [
+     5,
+     1
+    ]
+   },
+   {
+    "id": "6_1",
+    "bottom": [
+     6,
+     1
+    ]
+   },
+   {
+    "id": "7_1",
+    "bottom": [
+     7,
+     1
+    ]
+   },
+   {
+    "id": "8_1",
+    "bottom": [
+     8,
+     1
+    ]
+   },
+   {
+    "id": "9_1",
+    "bottom": [
+     9,
+     1
+    ]
+   },
+   {
+    "id": "10_1",
+    "bottom": [
+     10,
+     1
+    ]
+   },
+   {
+    "id": "11_1",
+    "bottom": [
+     11,
+     1
+    ]
+   },
+   {
+    "id": "12_1",
+    "bottom": [
+     12,
+     1
+    ]
+   },
+   {
+    "id": "13_1",
+    "bottom": [
+     13,
+     1
+    ]
+   },
+   {
+    "id": "14_1",
+    "bottom": [
+     14,
+     1
+    ]
+   },
+   {
+    "id": "15_1",
+    "bottom": [
+     15,
+     1
+    ]
+   },
+   {
+    "id": "0_2",
+    "bottom": [
+     0,
+     2
+    ]
+   },
+   {
+    "id": "1_2",
+    "bottom": [
+     1,
+     2
+    ]
+   },
+   {
+    "id": "2_2",
+    "bottom": [
+     2,
+     2
+    ]
+   },
+   {
+    "id": "3_2",
+    "bottom": [
+     3,
+     2
+    ]
+   },
+   {
+    "id": "4_2",
+    "bottom": [
+     4,
+     2
+    ]
+   },
+   {
+    "id": "5_2",
+    "bottom": [
+     5,
+     2
+    ]
+   },
+   {
+    "id": "6_2",
+    "bottom": [
+     6,
+     2
+    ]
+   },
+   {
+    "id": "7_2",
+    "bottom": [
+     7,
+     2
+    ]
+   },
+   {
+    "id": "8_2",
+    "bottom": [
+     8,
+     2
+    ]
+   },
+   {
+    "id": "9_2",
+    "bottom": [
+     9,
+     2
+    ]
+   },
+   {
+    "id": "10_2",
+    "bottom": [
+     10,
+     2
+    ]
+   },
+   {
+    "id": "11_2",
+    "bottom": [
+     11,
+     2
+    ]
+   },
+   {
+    "id": "12_2",
+    "bottom": [
+     12,
+     2
+    ]
+   },
+   {
+    "id": "13_2",
+    "bottom": [
+     13,
+     2
+    ]
+   },
+   {
+    "id": "14_2",
+    "bottom": [
+     14,
+     2
+    ]
+   },
+   {
+    "id": "15_2",
+    "bottom": [
+     15,
+     2
+    ]
+   },
+   {
+    "id": "0_3",
+    "bottom": [
+     0,
+     3
+    ]
+   },
+   {
+    "id": "1_3",
+    "bottom": [
+     1,
+     3
+    ]
+   },
+   {
+    "id": "2_3",
+    "bottom": [
+     2,
+     3
+    ]
+   },
+   {
+    "id": "3_3",
+    "bottom": [
+     3,
+     3
+    ]
+   },
+   {
+    "id": "4_3",
+    "bottom": [
+     4,
+     3
+    ]
+   },
+   {
+    "id": "5_3",
+    "bottom": [
+     5,
+     3
+    ]
+   },
+   {
+    "id": "6_3",
+    "bottom": [
+     6,
+     3
+    ]
+   },
+   {
+    "id": "7_3",
+    "bottom": [
+     7,
+     3
+    ]
+   },
+   {
+    "id": "8_3",
+    "bottom": [
+     8,
+     3
+    ]
+   },
+   {
+    "id": "9_3",
+    "bottom": [
+     9,
+     3
+    ]
+   },
+   {
+    "id": "10_3",
+    "bottom": [
+     10,
+     3
+    ]
+   },
+   {
+    "id": "11_3",
+    "bottom": [
+     11,
+     3
+    ]
+   },
+   {
+    "id": "12_3",
+    "bottom": [
+     12,
+     3
+    ]
+   },
+   {
+    "id": "13_3",
+    "bottom": [
+     13,
+     3
+    ]
+   },
+   {
+    "id": "14_3",
+    "bottom": [
+     14,
+     3
+    ]
+   },
+   {
+    "id": "15_3",
+    "bottom": [
+     15,
+     3
+    ]
+   },
+   {
+    "id": "0_4",
+    "bottom": [
+     0,
+     4
+    ]
+   },
+   {
+    "id": "1_4",
+    "bottom": [
+     1,
+     4
+    ]
+   },
+   {
+    "id": "2_4",
+    "bottom": [
+     2,
+     4
+    ]
+   },
+   {
+    "id": "3_4",
+    "bottom": [
+     3,
+     4
+    ]
+   },
+   {
+    "id": "4_4",
+    "bottom": [
+     4,
+     4
+    ]
+   },
+   {
+    "id": "5_4",
+    "bottom": [
+     5,
+     4
+    ]
+   },
+   {
+    "id": "6_4",
+    "bottom": [
+     6,
+     4
+    ]
+   },
+   {
+    "id": "7_4",
+    "bottom": [
+     7,
+     4
+    ]
+   },
+   {
+    "id": "8_4",
+    "bottom": [
+     8,
+     4
+    ]
+   },
+   {
+    "id": "9_4",
+    "bottom": [
+     9,
+     4
+    ]
+   },
+   {
+    "id": "10_4",
+    "bottom": [
+     10,
+     4
+    ]
+   },
+   {
+    "id": "11_4",
+    "bottom": [
+     11,
+     4
+    ]
+   },
+   {
+    "id": "12_4",
+    "bottom": [
+     12,
+     4
+    ]
+   },
+   {
+    "id": "13_4",
+    "bottom": [
+     13,
+     4
+    ]
+   },
+   {
+    "id": "14_4",
+    "bottom": [
+     14,
+     4
+    ]
+   },
+   {
+    "id": "0_5",
+    "bottom": [
+     0,
+     5
+    ]
+   },
+   {
+    "id": "1_5",
+    "bottom": [
+     1,
+     5
+    ]
+   },
+   {
+    "id": "2_5",
+    "bottom": [
+     2,
+     5
+    ]
+   },
+   {
+    "id": "3_5",
+    "bottom": [
+     3,
+     5
+    ]
+   },
+   {
+    "id": "4_5",
+    "bottom": [
+     4,
+     5
+    ]
+   },
+   {
+    "id": "5_5",
+    "bottom": [
+     5,
+     5
+    ]
+   },
+   {
+    "id": "6_5",
+    "bottom": [
+     6,
+     5
+    ]
+   },
+   {
+    "id": "7_5",
+    "bottom": [
+     7,
+     5
+    ]
+   },
+   {
+    "id": "8_5",
+    "bottom": [
+     8,
+     5
+    ]
+   },
+   {
+    "id": "9_5",
+    "bottom": [
+     9,
+     5
+    ]
+   },
+   {
+    "id": "10_5",
+    "bottom": [
+     10,
+     5
+    ]
+   },
+   {
+    "id": "11_5",
+    "bottom": [
+     11,
+     5
+    ]
+   },
+   {
+    "id": "12_5",
+    "bottom": [
+     12,
+     5
+    ]
+   },
+   {
+    "id": "13_5",
+    "bottom": [
+     13,
+     5
+    ]
+   },
+   {
+    "id": "14_5",
+    "bottom": [
+     14,
+     5
+    ]
+   },
+   {
+    "id": "15_5",
+    "bottom": [
+     15,
+     5
+    ]
+   },
+   {
+    "id": "0_6",
+    "bottom": [
+     0,
+     6
+    ]
+   },
+   {
+    "id": "1_6",
+    "bottom": [
+     1,
+     6
+    ]
+   },
+   {
+    "id": "2_6",
+    "bottom": [
+     2,
+     6
+    ]
+   },
+   {
+    "id": "3_6",
+    "bottom": [
+     3,
+     6
+    ]
+   },
+   {
+    "id": "4_6",
+    "bottom": [
+     4,
+     6
+    ]
+   },
+   {
+    "id": "5_6",
+    "bottom": [
+     5,
+     6
+    ]
+   },
+   {
+    "id": "6_6",
+    "bottom": [
+     6,
+     6
+    ]
+   },
+   {
+    "id": "7_6",
+    "bottom": [
+     7,
+     6
+    ]
+   },
+   {
+    "id": "8_6",
+    "bottom": [
+     8,
+     6
+    ]
+   },
+   {
+    "id": "9_6",
+    "bottom": [
+     9,
+     6
+    ]
+   },
+   {
+    "id": "10_6",
+    "bottom": [
+     10,
+     6
+    ]
+   },
+   {
+    "id": "11_6",
+    "bottom": [
+     11,
+     6
+    ]
+   },
+   {
+    "id": "12_6",
+    "bottom": [
+     12,
+     6
+    ]
+   },
+   {
+    "id": "13_6",
+    "bottom": [
+     13,
+     6
+    ]
+   },
+   {
+    "id": "14_6",
+    "bottom": [
+     14,
+     6
+    ]
+   },
+   {
+    "id": "15_6",
+    "bottom": [
+     15,
+     6
+    ]
+   },
+   {
+    "id": "0_7",
+    "bottom": [
+     0,
+     7
+    ]
+   },
+   {
+    "id": "1_7",
+    "bottom": [
+     1,
+     7
+    ]
+   },
+   {
+    "id": "2_7",
+    "bottom": [
+     2,
+     7
+    ]
+   },
+   {
+    "id": "3_7",
+    "bottom": [
+     3,
+     7
+    ]
+   },
+   {
+    "id": "4_7",
+    "bottom": [
+     4,
+     7
+    ]
+   },
+   {
+    "id": "5_7",
+    "bottom": [
+     5,
+     7
+    ]
+   },
+   {
+    "id": "6_7",
+    "bottom": [
+     6,
+     7
+    ]
+   },
+   {
+    "id": "7_7",
+    "bottom": [
+     7,
+     7
+    ]
+   },
+   {
+    "id": "8_7",
+    "bottom": [
+     8,
+     7
+    ]
+   },
+   {
+    "id": "9_7",
+    "bottom": [
+     9,
+     7
+    ]
+   },
+   {
+    "id": "10_7",
+    "bottom": [
+     10,
+     7
+    ]
+   },
+   {
+    "id": "11_7",
+    "bottom": [
+     11,
+     7
+    ]
+   },
+   {
+    "id": "12_7",
+    "bottom": [
+     12,
+     7
+    ]
+   },
+   {
+    "id": "13_7",
+    "bottom": [
+     13,
+     7
+    ]
+   },
+   {
+    "id": "14_7",
+    "bottom": [
+     14,
+     7
+    ]
+   },
+   {
+    "id": "15_7",
+    "bottom": [
+     15,
+     7
+    ]
+   },
+   {
+    "id": "0_8",
+    "bottom": [
+     0,
+     8
+    ]
+   },
+   {
+    "id": "2_8",
+    "bottom": [
+     2,
+     8
+    ]
+   },
+   {
+    "id": "3_8",
+    "bottom": [
+     3,
+     8
+    ]
+   },
+   {
+    "id": "5_8",
+    "bottom": [
+     5,
+     8
+    ]
+   },
+   {
+    "id": "6_8",
+    "bottom": [
+     6,
+     8
+    ]
+   },
+   {
+    "id": "7_8",
+    "bottom": [
+     7,
+     8
+    ]
+   },
+   {
+    "id": "8_8",
+    "bottom": [
+     8,
+     8
+    ]
+   },
+   {
+    "id": "9_8",
+    "bottom": [
+     9,
+     8
+    ]
+   },
+   {
+    "id": "10_8",
+    "bottom": [
+     10,
+     8
+    ]
+   },
+   {
+    "id": "11_8",
+    "bottom": [
+     11,
+     8
+    ]
+   },
+   {
+    "id": "12_8",
+    "bottom": [
+     12,
+     8
+    ]
+   },
+   {
+    "id": "13_8",
+    "bottom": [
+     13,
+     8
+    ]
+   },
+   {
+    "id": "14_8",
+    "bottom": [
+     14,
+     8
+    ]
+   },
+   {
+    "id": "15_8",
+    "bottom": [
+     15,
+     8
+    ]
+   },
+   {
+    "id": "0_9",
+    "bottom": [
+     0,
+     9
+    ]
+   },
+   {
+    "id": "1_9",
+    "bottom": [
+     1,
+     9
+    ]
+   },
+   {
+    "id": "2_9",
+    "bottom": [
+     2,
+     9
+    ]
+   },
+   {
+    "id": "3_9",
+    "bottom": [
+     3,
+     9
+    ]
+   },
+   {
+    "id": "4_9",
+    "bottom": [
+     4,
+     9
+    ]
+   },
+   {
+    "id": "5_9",
+    "bottom": [
+     5,
+     9
+    ]
+   },
+   {
+    "id": "6_9",
+    "bottom": [
+     6,
+     9
+    ]
+   },
+   {
+    "id": "7_9",
+    "bottom": [
+     7,
+     9
+    ]
+   },
+   {
+    "id": "8_9",
+    "bottom": [
+     8,
+     9
+    ]
+   },
+   {
+    "id": "9_9",
+    "bottom": [
+     9,
+     9
+    ]
+   },
+   {
+    "id": "10_9",
+    "bottom": [
+     10,
+     9
+    ]
+   },
+   {
+    "id": "11_9",
+    "bottom": [
+     11,
+     9
+    ]
+   },
+   {
+    "id": "12_9",
+    "bottom": [
+     12,
+     9
+    ]
+   },
+   {
+    "id": "13_9",
+    "bottom": [
+     13,
+     9
+    ]
+   },
+   {
+    "id": "14_9",
+    "bottom": [
+     14,
+     9
+    ]
+   },
+   {
+    "id": "15_9",
+    "bottom": [
+     15,
+     9
+    ]
+   },
+   {
+    "id": "0_10",
+    "bottom": [
+     0,
+     10
+    ]
+   },
+   {
+    "id": "1_10",
+    "bottom": [
+     1,
+     10
+    ]
+   },
+   {
+    "id": "2_10",
+    "bottom": [
+     2,
+     10
+    ]
+   },
+   {
+    "id": "3_10",
+    "bottom": [
+     3,
+     10
+    ]
+   },
+   {
+    "id": "4_10",
+    "bottom": [
+     4,
+     10
+    ]
+   },
+   {
+    "id": "5_10",
+    "bottom": [
+     5,
+     10
+    ]
+   },
+   {
+    "id": "6_10",
+    "bottom": [
+     6,
+     10
+    ]
+   },
+   {
+    "id": "7_10",
+    "bottom": [
+     7,
+     10
+    ]
+   },
+   {
+    "id": "8_10",
+    "bottom": [
+     8,
+     10
+    ]
+   },
+   {
+    "id": "9_10",
+    "bottom": [
+     9,
+     10
+    ]
+   },
+   {
+    "id": "10_10",
+    "bottom": [
+     10,
+     10
+    ]
+   },
+   {
+    "id": "11_10",
+    "bottom": [
+     11,
+     10
+    ]
+   },
+   {
+    "id": "12_10",
+    "bottom": [
+     12,
+     10
+    ]
+   },
+   {
+    "id": "15_10",
+    "bottom": [
+     15,
+     10
+    ]
+   },
+   {
+    "id": "0_11",
+    "bottom": [
+     0,
+     11
+    ]
+   },
+   {
+    "id": "1_11",
+    "bottom": [
+     1,
+     11
+    ]
+   },
+   {
+    "id": "2_11",
+    "bottom": [
+     2,
+     11
+    ]
+   },
+   {
+    "id": "3_11",
+    "bottom": [
+     3,
+     11
+    ]
+   },
+   {
+    "id": "4_11",
+    "bottom": [
+     4,
+     11
+    ]
+   },
+   {
+    "id": "5_11",
+    "bottom": [
+     5,
+     11
+    ]
+   },
+   {
+    "id": "6_11",
+    "bottom": [
+     6,
+     11
+    ]
+   },
+   {
+    "id": "7_11",
+    "bottom": [
+     7,
+     11
+    ]
+   },
+   {
+    "id": "8_11",
+    "bottom": [
+     8,
+     11
+    ]
+   },
+   {
+    "id": "9_11",
+    "bottom": [
+     9,
+     11
+    ]
+   },
+   {
+    "id": "10_11",
+    "bottom": [
+     10,
+     11
+    ]
+   },
+   {
+    "id": "11_11",
+    "bottom": [
+     11,
+     11
+    ]
+   },
+   {
+    "id": "12_11",
+    "bottom": [
+     12,
+     11
+    ]
+   },
+   {
+    "id": "15_11",
+    "bottom": [
+     15,
+     11
+    ]
+   },
+   {
+    "id": "0_12",
+    "bottom": [
+     0,
+     12
+    ]
+   },
+   {
+    "id": "1_12",
+    "bottom": [
+     1,
+     12
+    ]
+   },
+   {
+    "id": "2_12",
+    "bottom": [
+     2,
+     12
+    ]
+   },
+   {
+    "id": "3_12",
+    "bottom": [
+     3,
+     12
+    ]
+   },
+   {
+    "id": "4_12",
+    "bottom": [
+     4,
+     12
+    ]
+   },
+   {
+    "id": "5_12",
+    "bottom": [
+     5,
+     12
+    ]
+   },
+   {
+    "id": "6_12",
+    "bottom": [
+     6,
+     12
+    ]
+   },
+   {
+    "id": "7_12",
+    "bottom": [
+     7,
+     12
+    ]
+   },
+   {
+    "id": "8_12",
+    "bottom": [
+     8,
+     12
+    ]
+   },
+   {
+    "id": "9_12",
+    "bottom": [
+     9,
+     12
+    ]
+   },
+   {
+    "id": "10_12",
+    "bottom": [
+     10,
+     12
+    ]
+   },
+   {
+    "id": "11_12",
+    "bottom": [
+     11,
+     12
+    ]
+   },
+   {
+    "id": "12_12",
+    "bottom": [
+     12,
+     12
+    ]
+   },
+   {
+    "id": "13_12",
+    "bottom": [
+     13,
+     12
+    ]
+   },
+   {
+    "id": "14_12",
+    "bottom": [
+     14,
+     12
+    ]
+   },
+   {
+    "id": "15_12",
+    "bottom": [
+     15,
+     12
+    ]
+   },
+   {
+    "id": "0_13",
+    "bottom": [
+     0,
+     13
+    ]
+   },
+   {
+    "id": "1_13",
+    "bottom": [
+     1,
+     13
+    ]
+   },
+   {
+    "id": "2_13",
+    "bottom": [
+     2,
+     13
+    ]
+   },
+   {
+    "id": "3_13",
+    "bottom": [
+     3,
+     13
+    ]
+   }
+  ]
+ },
+ "prefabs": {
+  "offshore_platform": {
+   "_comment": "Abandoned offshore platform on water, 6x6 (the two stacked 6x3 rects the generator reserves, as one picture; or place offshore_platform_n over offshore_platform_s): a rusted steel deck with a railing (one stretch bent down), the snapped stub of the derrick in the middle, oil drums, rust stains; four great legs braced in an X (blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_0"
+     },
+     {
+      "overlay": "lmk:1_0"
+     },
+     {
+      "overlay": "lmk:2_0"
+     },
+     {
+      "overlay": "lmk:3_0"
+     },
+     {
+      "overlay": "lmk:4_0"
+     },
+     {
+      "overlay": "lmk:5_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_1"
+     },
+     {
+      "overlay": "lmk:1_1"
+     },
+     {
+      "overlay": "lmk:2_1"
+     },
+     {
+      "overlay": "lmk:3_1"
+     },
+     {
+      "overlay": "lmk:4_1"
+     },
+     {
+      "overlay": "lmk:5_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_2"
+     },
+     {
+      "overlay": "lmk:1_2"
+     },
+     {
+      "overlay": "lmk:2_2"
+     },
+     {
+      "overlay": "lmk:3_2"
+     },
+     {
+      "overlay": "lmk:4_2"
+     },
+     {
+      "overlay": "lmk:5_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_3"
+     },
+     {
+      "overlay": "lmk:1_3"
+     },
+     {
+      "overlay": "lmk:2_3"
+     },
+     {
+      "overlay": "lmk:3_3"
+     },
+     {
+      "overlay": "lmk:4_3"
+     },
+     {
+      "overlay": "lmk:5_3"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_4"
+     },
+     {
+      "overlay": "lmk:1_4"
+     },
+     {
+      "overlay": "lmk:2_4"
+     },
+     {
+      "overlay": "lmk:3_4"
+     },
+     {
+      "overlay": "lmk:4_4"
+     },
+     {
+      "overlay": "lmk:5_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_5"
+     },
+     {
+      "overlay": "lmk:1_5"
+     },
+     {
+      "overlay": "lmk:2_5"
+     },
+     {
+      "overlay": "lmk:3_5"
+     },
+     {
+      "overlay": "lmk:4_5"
+     },
+     {
+      "overlay": "lmk:5_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "chimney": {
+   "_comment": "Tall brick sugar-mill chimney: corbelled crown, soot stain from the mouth, iron bands, stone plinth (1x5, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_3"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_4"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "temple_gate": {
+   "_comment": "Half-flooded Rootkin temple doorway: stepped crest, a lintel of spirals, carved pillars, a corbelled doorway sealed by a slab with a faintly glowing spiral seal, steps down into the water (5x4, door (2,3) = the dive entrance).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:7_0"
+     },
+     {
+      "overlay": "lmk:8_0"
+     },
+     {
+      "overlay": "lmk:9_0"
+     },
+     {
+      "overlay": "lmk:10_0"
+     },
+     {
+      "overlay": "lmk:11_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_1"
+     },
+     {
+      "overlay": "lmk:8_1"
+     },
+     {
+      "overlay": "lmk:9_1"
+     },
+     {
+      "overlay": "lmk:10_1"
+     },
+     {
+      "overlay": "lmk:11_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_2"
+     },
+     {
+      "overlay": "lmk:8_2"
+     },
+     {
+      "overlay": "lmk:9_2"
+     },
+     {
+      "overlay": "lmk:10_2"
+     },
+     {
+      "overlay": "lmk:11_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_3"
+     },
+     {
+      "overlay": "lmk:8_3"
+     },
+     {
+      "overlay": "lmk:9_3",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_3"
+     },
+     {
+      "overlay": "lmk:11_3"
+     }
+    ]
+   ],
+   "door": [
+    2,
+    3
+   ],
+   "passable": []
+  },
+  "great_oak": {
+   "_comment": "The great live oak on marsh: a vast crown, a limb sweeping low to the ground each side, Spanish moss, a massive trunk, roots coiling like serpents (4x4, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_0"
+     },
+     {
+      "overlay": "lmk:13_0"
+     },
+     {
+      "overlay": "lmk:14_0"
+     },
+     {
+      "overlay": "lmk:15_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_1"
+     },
+     {
+      "overlay": "lmk:13_1"
+     },
+     {
+      "overlay": "lmk:14_1"
+     },
+     {
+      "overlay": "lmk:15_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_2"
+     },
+     {
+      "overlay": "lmk:13_2"
+     },
+     {
+      "overlay": "lmk:14_2"
+     },
+     {
+      "overlay": "lmk:15_2"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_3"
+     },
+     {
+      "overlay": "lmk:13_3"
+     },
+     {
+      "overlay": "lmk:14_3"
+     },
+     {
+      "overlay": "lmk:15_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "lookout": {
+   "_comment": "Shore lookout: a board-and-batten hut on short stilts, a railed roof deck with a brass spyglass on a tripod, a ladder up the east side, a life ring; the door (shut) at the bottom centre with steps up to it (3x4, door (1,3)).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:7_4"
+     },
+     {
+      "overlay": "lmk:8_4"
+     },
+     {
+      "overlay": "lmk:9_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_5"
+     },
+     {
+      "overlay": "lmk:8_5"
+     },
+     {
+      "overlay": "lmk:9_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_6"
+     },
+     {
+      "overlay": "lmk:8_6"
+     },
+     {
+      "overlay": "lmk:9_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:7_7"
+     },
+     {
+      "overlay": "lmk:8_7",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_7"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ],
+   "passable": []
+  },
+  "power_tower": {
+   "_comment": "Steel lattice transmission pylon, two crossarms with glass insulator strings, concrete footings, rust at the joints (2x4, blocking). The wires leave its top cell's sides 8 and 12 px down (wire_span_l / wire_span_r meet them).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:10_4"
+     },
+     {
+      "overlay": "lmk:11_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_5"
+     },
+     {
+      "overlay": "lmk:11_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_6"
+     },
+     {
+      "overlay": "lmk:11_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:10_7"
+     },
+     {
+      "overlay": "lmk:11_7"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "bird_platform": {
+   "_comment": "Heron roost on water: a weathered plank platform on pilings, forked dead-branch perches, two stick nests, droppings (6x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_6"
+     },
+     {
+      "overlay": "lmk:1_6"
+     },
+     {
+      "overlay": "lmk:2_6"
+     },
+     {
+      "overlay": "lmk:3_6"
+     },
+     {
+      "overlay": "lmk:4_6"
+     },
+     {
+      "overlay": "lmk:5_6"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_7"
+     },
+     {
+      "overlay": "lmk:1_7"
+     },
+     {
+      "overlay": "lmk:2_7"
+     },
+     {
+      "overlay": "lmk:3_7"
+     },
+     {
+      "overlay": "lmk:4_7"
+     },
+     {
+      "overlay": "lmk:5_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_8"
+     },
+     null,
+     {
+      "overlay": "lmk:2_8"
+     },
+     {
+      "overlay": "lmk:3_8"
+     },
+     null,
+     {
+      "overlay": "lmk:5_8"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "shrine_steps": {
+   "_comment": "Worn stone steps rising out of the water to the shrine island between two carved cheek walls (6x3; the flight, columns 1-4, walkable; the walls block).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_8"
+     },
+     {
+      "overlay": "lmk:7_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_8",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_8"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_9"
+     },
+     {
+      "overlay": "lmk:7_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_9",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_10"
+     },
+     {
+      "overlay": "lmk:7_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:8_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:9_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:10_10",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:11_10"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ]
+  },
+  "shipwreck": {
+   "_comment": "Half-sunk wooden hull on water, listing: bow reared up west, stern under east, ribs showing through the stove-in planking, a broken leaning mast and yard, weed and foam at the waterline (4x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_4"
+     },
+     {
+      "overlay": "lmk:13_4"
+     },
+     {
+      "overlay": "lmk:14_4"
+     },
+     null
+    ],
+    [
+     {
+      "overlay": "lmk:12_5"
+     },
+     {
+      "overlay": "lmk:13_5"
+     },
+     {
+      "overlay": "lmk:14_5"
+     },
+     {
+      "overlay": "lmk:15_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_6"
+     },
+     {
+      "overlay": "lmk:13_6"
+     },
+     {
+      "overlay": "lmk:14_6"
+     },
+     {
+      "overlay": "lmk:15_6"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "mine_mouth": {
+   "_comment": "Timbered mine tunnel mouth in a rock face: timber set, a second set deep in the dark, rusty rails running out, a lit lantern on a hook (3x3, door (1,2)).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_7"
+     },
+     {
+      "overlay": "lmk:13_7"
+     },
+     {
+      "overlay": "lmk:14_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_8"
+     },
+     {
+      "overlay": "lmk:13_8"
+     },
+     {
+      "overlay": "lmk:14_8"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_9"
+     },
+     {
+      "overlay": "lmk:13_9",
+      "behavior": "MB_NON_ANIMATED_DOOR",
+      "walk": true
+     },
+     {
+      "overlay": "lmk:14_9"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    2
+   ],
+   "passable": []
+  },
+  "scorched_cypress": {
+   "_comment": "Lightning-split bald cypress on marsh: two charred halves leaning apart, pale heartwood along the split, black snags, two live tufts, knees and roots (3x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_9"
+     },
+     {
+      "overlay": "lmk:1_9"
+     },
+     {
+      "overlay": "lmk:2_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_10"
+     },
+     {
+      "overlay": "lmk:1_10"
+     },
+     {
+      "overlay": "lmk:2_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_11"
+     },
+     {
+      "overlay": "lmk:1_11"
+     },
+     {
+      "overlay": "lmk:2_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "nav_beacon": {
+   "_comment": "Navigation beacon on stilts on water: braced timber piles, a railed platform, a post with a green lantern and a red day-mark, a ladder (2x3, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:3_9"
+     },
+     {
+      "overlay": "lmk:4_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:3_10"
+     },
+     {
+      "overlay": "lmk:4_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:3_11"
+     },
+     {
+      "overlay": "lmk:4_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "levee_gate": {
+   "_comment": "Levee gate: two heavy concrete posts, each with a red-and-white swing bar folded back (pointing north along the road), hinge, counterweight, hazard chevrons; the middle two columns are open road (4x2, columns 1-2 walkable and empty).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:12_10"
+     },
+     null,
+     null,
+     {
+      "overlay": "lmk:15_10"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:12_11"
+     },
+     null,
+     null,
+     {
+      "overlay": "lmk:15_11"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ]
+  },
+  "oyster_bed": {
+   "_comment": "A heap of oyster shells and stones: grey shells piled low, a few open showing nacre, wet at the foot (3x2, blocking). For the islets: on mud or sand.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:5_11"
+     },
+     {
+      "overlay": "lmk:6_11"
+     },
+     {
+      "overlay": "lmk:7_11"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:5_12"
+     },
+     {
+      "overlay": "lmk:6_12"
+     },
+     {
+      "overlay": "lmk:7_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "rail_car": {
+   "_comment": "A sun-faded red boxcar standing on the east-west track; its bottom row carries the track (rail_h) under the wheels, so it drops into a rail_h run (3x2, blocking; the track row is y of the rail).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:8_11"
+     },
+     {
+      "overlay": "lmk:9_11"
+     },
+     {
+      "overlay": "lmk:10_11"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:8_12"
+     },
+     {
+      "overlay": "lmk:9_12"
+     },
+     {
+      "overlay": "lmk:10_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "sunken_ruin_l": {
+   "_comment": "Larger ruin in water: a pillar stump and a toppled carved capital half-sunk at a tilt (2x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_12"
+     },
+     {
+      "overlay": "lmk:1_12"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_13"
+     },
+     {
+      "overlay": "lmk:1_13"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "channel_buoy": {
+   "_comment": "Red-and-white channel buoy on water: striped float, little red tower, a lit lamp; lap line and ripples (1x2, blocking). Also the tournament float.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_5"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:6_6"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "sunken_piling": {
+   "_comment": "Barnacled piling in water: an old round timber pile, cut top, a frayed rope, a crust of barnacles and weed (1x2, blocking). Route 20's pilings (placed as sunken_ruin today).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_7"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:15_8"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "sunken_ruin": {
+   "_comment": "A broken carved Rootkin pillar standing in water: ragged break, spiral carvings, moss from the waterline (1x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:5_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:5_10"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "felled_log": {
+   "_comment": "Felled trunk on grass: furrowed bark, a sawn end with rings, a broken end, a branch stub, moss (3x1, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:2_12"
+     },
+     {
+      "overlay": "lmk:3_12"
+     },
+     {
+      "overlay": "lmk:4_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "fallen_line": {
+   "_comment": "A snapped power cable lying on dry ground, its bare end sparking blue-white over a scorch (2x1, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:11_12"
+     },
+     {
+      "overlay": "lmk:12_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "fallen_line_b": {
+   "_comment": "Fallen cable, second variant: a loose coil, a broken insulator, the sparking end west (2x1, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:13_12"
+     },
+     {
+      "overlay": "lmk:14_12"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "cut_stump": {
+   "_comment": "A cut stump on grass, rings on its axe-cut top, a notch (1x1, blocking; the Kleavorite spot).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:6_7"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "rail_h": {
+   "_comment": "Railway track running east-west (1x1, walkable, seamless, any ground).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_9",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "rail_v": {
+   "_comment": "Railway track running north-south: two rails on timber ties every 8 px, no ballast (1x1, walkable, seamless along a run, any ground).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:11_11",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "wire_span": {
+   "_comment": "Overhead wires mid-span, hanging level (1x1, walkable, over the player); repeat it between wire_span_l and wire_span_r.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:15_12",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "wire_span_l": {
+   "_comment": "Overhead wires, the cell east of a tower: leaving the crossarms and sagging 2 px (1x1, walkable; drawn over the player).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:2_13",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "wire_span_r": {
+   "_comment": "Overhead wires, the cell west of a tower: rising to the crossarms (1x1, walkable, over the player; wire_span_l mirrored).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:3_13",
+      "walk": true
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "offshore_platform_n": {
+   "_comment": "Offshore platform, north half (6x3): place over offshore_platform_s.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_0"
+     },
+     {
+      "overlay": "lmk:1_0"
+     },
+     {
+      "overlay": "lmk:2_0"
+     },
+     {
+      "overlay": "lmk:3_0"
+     },
+     {
+      "overlay": "lmk:4_0"
+     },
+     {
+      "overlay": "lmk:5_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_1"
+     },
+     {
+      "overlay": "lmk:1_1"
+     },
+     {
+      "overlay": "lmk:2_1"
+     },
+     {
+      "overlay": "lmk:3_1"
+     },
+     {
+      "overlay": "lmk:4_1"
+     },
+     {
+      "overlay": "lmk:5_1"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_2"
+     },
+     {
+      "overlay": "lmk:1_2"
+     },
+     {
+      "overlay": "lmk:2_2"
+     },
+     {
+      "overlay": "lmk:3_2"
+     },
+     {
+      "overlay": "lmk:4_2"
+     },
+     {
+      "overlay": "lmk:5_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "offshore_platform_s": {
+   "_comment": "Offshore platform, south half (6x3): the legs in the water.",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_3"
+     },
+     {
+      "overlay": "lmk:1_3"
+     },
+     {
+      "overlay": "lmk:2_3"
+     },
+     {
+      "overlay": "lmk:3_3"
+     },
+     {
+      "overlay": "lmk:4_3"
+     },
+     {
+      "overlay": "lmk:5_3"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_4"
+     },
+     {
+      "overlay": "lmk:1_4"
+     },
+     {
+      "overlay": "lmk:2_4"
+     },
+     {
+      "overlay": "lmk:3_4"
+     },
+     {
+      "overlay": "lmk:4_4"
+     },
+     {
+      "overlay": "lmk:5_4"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_5"
+     },
+     {
+      "overlay": "lmk:1_5"
+     },
+     {
+      "overlay": "lmk:2_5"
+     },
+     {
+      "overlay": "lmk:3_5"
+     },
+     {
+      "overlay": "lmk:4_5"
+     },
+     {
+      "overlay": "lmk:5_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  }
+ }
+}

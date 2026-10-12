@@ -1,0 +1,260 @@
+{
+  "id": "MAP_GRAND_OAK",
+  "name": "GrandOak",
+  "layout": "LAYOUT_GRAND_OAK",
+  "music": "MUS_RG_CELADON",
+  "region_map_section": "MAPSEC_GRAND_OAK",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE1",
+      "offset": 5,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ORLEANS_ROUTE2",
+      "offset": 5,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_GRAND_OAK_FLOETTE_GARDENER",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 25,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_FloetteGardener",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_RECRUITER_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 35,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_Recruiter1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_RECRUITER_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 37,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_Recruiter2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_STORM_HEDGE_1",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 39,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_StormHedge1",
+      "flag": "FLAG_CUT_STORM_HEDGE"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_STORM_HEDGE_2",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 39,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_StormHedge2",
+      "flag": "FLAG_CUT_STORM_HEDGE"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_WREN",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 32,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_Wren",
+      "flag": "FLAG_HIDE_GRAND_OAK_WREN"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_STORM_HEDGE_3",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 39,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_EventScript_StormHedge3",
+      "flag": "FLAG_CUT_STORM_HEDGE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 11,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_NURSERY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_HOUSE_SW1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_HOUSE_SW2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 27,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK_HOUSE_SE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 7,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 8,
+      "elevation": 3,
+      "var": "VAR_ORLEANS_STORY",
+      "var_value": "7",
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 21,
+      "elevation": 3,
+      "item": "ITEM_MIRACLE_SEED",
+      "flag": "FLAG_HIDDEN_ITEM_GRAND_OAK_GARDEN"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 27,
+      "elevation": 3,
+      "item": "ITEM_SUPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_GRAND_OAK_HOUSES"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 32,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GrandOak_EventScript_TownSign"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+ "source": "..\\orleans_maps\\13_oldest_shrine.png",
+ "frame": [
+  0,
+  140,
+  1295,
+  1291
+ ],
+ "pitch": 36.0,
+ "width": 36,
+ "height": 32,
+ "buildings": [
+  {
+   "kind": "P",
+   "x": 17,
+   "y": 11,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "kind": "H",
+   "x": 14,
+   "y": 12,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 21,
+   "y": 12,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 17,
+   "y": 14,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "npc",
+   "x": 14,
+   "y": 12
+  },
+  {
+   "kind": "npc",
+   "x": 21,
+   "y": 12
+  },
+  {
+   "kind": "event",
+   "x": 15,
+   "y": 18
+  },
+  {
+   "kind": "mega_stone",
+   "x": 20,
+   "y": 21
+  },
+  {
+   "kind": "hidden_item",
+   "x": 15,
+   "y": 22
+  }
+ ],
+ "exits": [
+  {
+   "side": "S",
+   "pos": 17
+  }
+ ]
+}

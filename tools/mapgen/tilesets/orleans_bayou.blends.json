@@ -1,0 +1,65 @@
+[
+ {
+  "id": "blend_marsh_N_inNW",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:marshwater_N",
+   "M": "ekat:marsh_inNW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_mud_E_inNE",
+  "blend": {
+   "A": "ekat:water_E",
+   "B": "ekat:mudwater_E",
+   "M": "ekat:mud_inNE",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_N_inNE",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:mudwater_N",
+   "M": "ekat:mud_inNE",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_N_inNW",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:mudwater_N",
+   "M": "ekat:mud_inNW",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSE_N",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:mudwater_landSE",
+   "M": "ekat:mud_N",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSW_N",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:mudwater_landSW",
+   "M": "ekat:mud_N",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSE_inNE",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:mudwater_landSE",
+   "M": "ekat:mud_inNE",
+   "land": "ekat:mud_C"
+  }
+ }
+]

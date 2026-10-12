@@ -1,0 +1,84 @@
+{
+ "source": "..\\orleans_maps\\r11_route_11.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1219
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 30,
+ "buildings": [
+  {
+   "kind": "K",
+   "x": 38,
+   "y": 8,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 24,
+   "y": 13,
+   "w": 2,
+   "h": 2
+  },
+  {
+   "kind": "H",
+   "x": 26,
+   "y": 14,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 10,
+   "y": 22,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 43,
+   "y": 5
+  },
+  {
+   "kind": "trainer",
+   "x": 30,
+   "y": 11
+  },
+  {
+   "kind": "hidden_item",
+   "x": 26,
+   "y": 14
+  },
+  {
+   "kind": "mega_stone",
+   "x": 22,
+   "y": 16
+  },
+  {
+   "kind": "trainer",
+   "x": 15,
+   "y": 19
+  },
+  {
+   "kind": "item",
+   "x": 13,
+   "y": 26
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 25
+  },
+  {
+   "side": "E",
+   "pos": 2
+  }
+ ]
+}

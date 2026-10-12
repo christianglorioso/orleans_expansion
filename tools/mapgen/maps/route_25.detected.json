@@ -1,0 +1,64 @@
+{
+ "source": "..\\orleans_maps\\r25_route_25.png",
+ "frame": [
+  0,
+  140,
+  1079,
+  1795
+ ],
+ "pitch": 36.0,
+ "width": 30,
+ "height": 46,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 15,
+   "y": 8,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "hidden_item",
+   "x": 17,
+   "y": 6
+  },
+  {
+   "kind": "trainer",
+   "x": 16,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 13,
+   "y": 14
+  },
+  {
+   "kind": "item",
+   "x": 5,
+   "y": 18
+  },
+  {
+   "kind": "trainer",
+   "x": 11,
+   "y": 25
+  },
+  {
+   "kind": "fishing",
+   "x": 19,
+   "y": 30
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 37
+  }
+ ],
+ "exits": [
+  {
+   "side": "S",
+   "pos": 14
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "source": "..\\orleans_maps\\r18_route_18.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1075
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 26,
+ "buildings": [
+  {
+   "kind": "K",
+   "x": 22,
+   "y": 10,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 34,
+   "y": 12,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 46,
+   "y": 14,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 8,
+   "y": 15,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "I",
+   "x": 16,
+   "y": 18,
+   "w": 4,
+   "h": 2
+  }
+ ],
+ "markers": [
+  {
+   "kind": "item",
+   "x": 41,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 9,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 35,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 19,
+   "y": 13
+  },
+  {
+   "kind": "mega_stone",
+   "x": 30,
+   "y": 15
+  },
+  {
+   "kind": "fishing",
+   "x": 5,
+   "y": 17
+  },
+  {
+   "kind": "hidden_item",
+   "x": 27,
+   "y": 17
+  },
+  {
+   "kind": "trainer",
+   "x": 17,
+   "y": 19
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 11
+  },
+  {
+   "side": "E",
+   "pos": 12
+  }
+ ]
+}

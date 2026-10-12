@@ -121,7 +121,7 @@ static void BuildAreaGlowTilemap(void);
 static void SetAreaHasMon(u16, u16);
 static void SetSpecialMapHasMon(u16, u16);
 static mapsec_u16_t GetRegionMapSectionId(u8, u8);
-static bool8 MapHasSpecies(const struct WildEncounterTypes *, u32, enum Species);
+static bool8 MapHasSpecies(const struct WildPokemonHeader *, u32, enum Species);
 static bool8 MonListHasSpecies(const struct WildPokemonInfo *, enum Species, u16);
 static void DoAreaGlow(void);
 static void Task_ShowPokedexAreaScreen(u8 taskId);
@@ -340,7 +340,7 @@ static void FindMapsWithMon(enum Species species)
         if (GetRegionMapType(headerSectionId) != currentRegionMapType)
             continue;
 
-        if (MapHasSpecies(&gWildMonHeaders[i].encounterTypes[gAreaTimeOfDay], headerSectionId, species))
+        if (MapHasSpecies(&gWildMonHeaders[i], headerSectionId, species))
         {
             switch (gWildMonHeaders[i].mapGroup)
             {
@@ -429,8 +429,10 @@ static mapsec_u16_t GetRegionMapSectionId(u8 mapGroup, u8 mapNum)
     return Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum)->regionMapSectionId;
 }
 
-static bool8 MapHasSpecies(const struct WildEncounterTypes *info, u32 headerSectionId, enum Species species)
+static bool8 MapHasSpecies(const struct WildPokemonHeader *header, u32 headerSectionId, enum Species species)
 {
+    enum TimeOfDay timeOfDay = gAreaTimeOfDay;
+
     // If this is a header for Altering Cave, skip it if it's not the current Altering Cave encounter set
     if (headerSectionId == MAPSEC_ALTERING_CAVE)
     {
@@ -439,19 +441,19 @@ static bool8 MapHasSpecies(const struct WildEncounterTypes *info, u32 headerSect
             return FALSE;
     }
 
-    if (MonListHasSpecies(info->landMonsInfo, species, NUM_LAND_MONS_ENCOUNTER_SLOTS))
+    if (MonListHasSpecies(GetWildMonInfoForTimeOfDay(header, timeOfDay, WILD_AREA_LAND), species, NUM_LAND_MONS_ENCOUNTER_SLOTS))
         return TRUE;
-    if (MonListHasSpecies(info->waterMonsInfo, species, NUM_WATER_MONS_ENCOUNTER_SLOTS))
+    if (MonListHasSpecies(GetWildMonInfoForTimeOfDay(header, timeOfDay, WILD_AREA_WATER), species, NUM_WATER_MONS_ENCOUNTER_SLOTS))
         return TRUE;
 // When searching the fishing encounters, this incorrectly uses the size of the land encounters.
 // As a result it's reading out of bounds of the fishing encounters tables.
 #ifdef BUGFIX
-    if (MonListHasSpecies(info->fishingMonsInfo, species, NUM_FISHING_MONS_ENCOUNTER_SLOTS))
+    if (MonListHasSpecies(GetWildMonInfoForTimeOfDay(header, timeOfDay, WILD_AREA_FISHING), species, NUM_FISHING_MONS_ENCOUNTER_SLOTS))
 #else
-    if (MonListHasSpecies(info->fishingMonsInfo, species, NUM_LAND_MONS_ENCOUNTER_SLOTS))
+    if (MonListHasSpecies(GetWildMonInfoForTimeOfDay(header, timeOfDay, WILD_AREA_FISHING), species, NUM_LAND_MONS_ENCOUNTER_SLOTS))
 #endif
         return TRUE;
-    if (MonListHasSpecies(info->rockSmashMonsInfo, species, NUM_ROCK_SMASH_MONS_ENCOUNTER_SLOTS))
+    if (MonListHasSpecies(GetWildMonInfoForTimeOfDay(header, timeOfDay, WILD_AREA_ROCKS), species, NUM_ROCK_SMASH_MONS_ENCOUNTER_SLOTS))
         return TRUE;
     return FALSE;
 }

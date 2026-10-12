@@ -1,0 +1,1228 @@
+[
+ {
+  "id": "ap_223d64f0da70",
+  "pixels": "tools/mapgen/tilesets/approach/ap_223d64f0da70.png",
+  "base": "patch:path_iNE",
+  "attr_of": "patch:path_iNE"
+ },
+ {
+  "id": "ap_2d6e0c42597c",
+  "pixels": "tools/mapgen/tilesets/approach/ap_2d6e0c42597c.png",
+  "base": "patch:path_iNW",
+  "attr_of": "patch:path_iNW"
+ },
+ {
+  "id": "ap_9d3cab48073d",
+  "pixels": "tools/mapgen/tilesets/approach/ap_9d3cab48073d.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "lv_03d740fff749",
+  "pixels": "tools/mapgen/tilesets/levee/lv_03d740fff749.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_20b4fb972610",
+  "pixels": "tools/mapgen/tilesets/levee/lv_20b4fb972610.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_4f9faae01147",
+  "pixels": "tools/mapgen/tilesets/levee/lv_4f9faae01147.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_55cd40c6e40a",
+  "pixels": "tools/mapgen/tilesets/levee/lv_55cd40c6e40a.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_5a19738e5e85",
+  "pixels": "tools/mapgen/tilesets/levee/lv_5a19738e5e85.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_657493bcddd9",
+  "pixels": "tools/mapgen/tilesets/levee/lv_657493bcddd9.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_749b02c58524",
+  "pixels": "tools/mapgen/tilesets/levee/lv_749b02c58524.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_7fac8be627c2",
+  "pixels": "tools/mapgen/tilesets/levee/lv_7fac8be627c2.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8348c2766104",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8348c2766104.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8a0d0b6440aa",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8a0d0b6440aa.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_8b61f98e5509",
+  "pixels": "tools/mapgen/tilesets/levee/lv_8b61f98e5509.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_b3b1c09592e4",
+  "pixels": "tools/mapgen/tilesets/levee/lv_b3b1c09592e4.png",
+  "base": "ekat:grass",
+  "attr_of": "ekat:grass",
+  "group": "levee"
+ },
+ {
+  "id": "lv_e674dacf63c0",
+  "pixels": "tools/mapgen/tilesets/levee/lv_e674dacf63c0.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "lv_eb951a1ca8b3",
+  "pixels": "tools/mapgen/tilesets/levee/lv_eb951a1ca8b3.png",
+  "base": "ekat:water_W",
+  "attr_of": "ekat:water_W",
+  "group": "levee"
+ },
+ {
+  "id": "ovl_brg_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:00"
+  }
+ },
+ {
+  "id": "ovl_brg_01__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:01",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_02__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:02",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:03"
+  }
+ },
+ {
+  "id": "ovl_brg_10__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "brg:10",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_10__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "brg:10"
+  }
+ },
+ {
+  "id": "ovl_brg_11__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "brg:11",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_11__ekat_water_W__normal",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "brg:11",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_12__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "brg:12",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_12__ekat_water_W__normal",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "brg:12",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_13__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "brg:13"
+  }
+ },
+ {
+  "id": "ovl_brg_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:20"
+  }
+ },
+ {
+  "id": "ovl_brg_21__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:21",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_22__ekat_grass__normal",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:22",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_props_barrel__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:barrel"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_water_landSE",
+  "overlay": {
+   "base": "ekat:water_landSE",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_water_landSE",
+  "overlay": {
+   "base": "ekat:water_landSE",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_water_landSW",
+  "overlay": {
+   "base": "ekat:water_landSW",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_trap__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:trap"
+  }
+ },
+ {
+  "id": "ovl_sbr_0_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:0_0"
+  }
+ },
+ {
+  "id": "ovl_sbr_0_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:0_1"
+  }
+ },
+ {
+  "id": "ovl_sbr_0_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:0_2"
+  }
+ },
+ {
+  "id": "ovl_sbr_0_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:0_3"
+  }
+ },
+ {
+  "id": "ovl_sbr_1_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:1_0"
+  }
+ },
+ {
+  "id": "ovl_sbr_1_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:1_1"
+  }
+ },
+ {
+  "id": "ovl_sbr_1_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:1_2"
+  }
+ },
+ {
+  "id": "ovl_sbr_1_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sbr:1_3"
+  }
+ },
+ {
+  "id": "ovl_sbr_2_0__ekat_water_W__normal",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "sbr:2_0",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_sbr_2_1__ekat_water_W__normal",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "sbr:2_1",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_sbr_3_0__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "sbr:3_0",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_sbr_3_1__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "sbr:3_1",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_seq_0_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:0_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_0_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:0_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_0_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:0_3"
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:1_1",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:1_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:1_3"
+  }
+ },
+ {
+  "id": "ovl_seq_1_3__ekat_water_inSE",
+  "overlay": {
+   "base": "ekat:water_inSE",
+   "art": "seq:1_3"
+  }
+ },
+ {
+  "id": "ovl_seq_2_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:2_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_2_0__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "seq:2_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_2_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:2_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_2_2__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "seq:2_2",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_2_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:2_3"
+  }
+ },
+ {
+  "id": "ovl_seq_2_3__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "seq:2_3"
+  }
+ },
+ {
+  "id": "ovl_seq_3_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:3_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_3_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:3_1",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_3_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:3_2"
+  }
+ },
+ {
+  "id": "ovl_seq_4_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:4_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_4_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:4_1",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_4_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:4_2"
+  }
+ },
+ {
+  "id": "ovl_seq_5_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:5_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_5_1__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:5_1",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_5_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "seq:5_2"
+  }
+ },
+ {
+  "id": "ovl_smi_0_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "smi:0_0"
+  }
+ },
+ {
+  "id": "ovl_smi_1_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "smi:1_0"
+  }
+ },
+ {
+  "id": "ovl_smi_2_0__brick_23A",
+  "overlay": {
+   "base": "brick:23A",
+   "art": "smi:2_0"
+  }
+ },
+ {
+  "id": "ovl_spl_0_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_10"
+  }
+ },
+ {
+  "id": "ovl_spl_0_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_11"
+  }
+ },
+ {
+  "id": "ovl_spl_0_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_2"
+  }
+ },
+ {
+  "id": "ovl_spl_0_3__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_3"
+  }
+ },
+ {
+  "id": "ovl_spl_0_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_4"
+  }
+ },
+ {
+  "id": "ovl_spl_0_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_5"
+  }
+ },
+ {
+  "id": "ovl_spl_0_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_6"
+  }
+ },
+ {
+  "id": "ovl_spl_0_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_7"
+  }
+ },
+ {
+  "id": "ovl_spl_0_9__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:0_9"
+  }
+ },
+ {
+  "id": "ovl_spl_1_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_0"
+  }
+ },
+ {
+  "id": "ovl_spl_1_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_10"
+  }
+ },
+ {
+  "id": "ovl_spl_1_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_11"
+  }
+ },
+ {
+  "id": "ovl_spl_1_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_1"
+  }
+ },
+ {
+  "id": "ovl_spl_1_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_2"
+  }
+ },
+ {
+  "id": "ovl_spl_1_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_5"
+  }
+ },
+ {
+  "id": "ovl_spl_1_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_6"
+  }
+ },
+ {
+  "id": "ovl_spl_1_7__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_7"
+  }
+ },
+ {
+  "id": "ovl_spl_1_9__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:1_9"
+  }
+ },
+ {
+  "id": "ovl_spl_2_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_0"
+  }
+ },
+ {
+  "id": "ovl_spl_2_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_10"
+  }
+ },
+ {
+  "id": "ovl_spl_2_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_11"
+  }
+ },
+ {
+  "id": "ovl_spl_2_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_1"
+  }
+ },
+ {
+  "id": "ovl_spl_2_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_2"
+  }
+ },
+ {
+  "id": "ovl_spl_2_3__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_3"
+  }
+ },
+ {
+  "id": "ovl_spl_2_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_4"
+  }
+ },
+ {
+  "id": "ovl_spl_2_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_5"
+  }
+ },
+ {
+  "id": "ovl_spl_2_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_6"
+  }
+ },
+ {
+  "id": "ovl_spl_2_9__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "spl:2_9"
+  }
+ },
+ {
+  "id": "ovl_ssb_0_0__johto_1B8",
+  "overlay": {
+   "base": "johto:1B8",
+   "art": "ssb:0_0"
+  }
+ },
+ {
+  "id": "ovl_ssb_0_1__johto_1C0",
+  "overlay": {
+   "base": "johto:1C0",
+   "art": "ssb:0_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_0_2__johto_1C0",
+  "overlay": {
+   "base": "johto:1C0",
+   "art": "ssb:0_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_0_3__johto_0ED",
+  "overlay": {
+   "base": "johto:0ED",
+   "art": "ssb:0_3"
+  }
+ },
+ {
+  "id": "ovl_ssb_1_1__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:1_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_1_2__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:1_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_2_1__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:2_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_2_2__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:2_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_3_0__johto_1C0",
+  "overlay": {
+   "base": "johto:1C0",
+   "art": "ssb:3_0"
+  }
+ },
+ {
+  "id": "ovl_ssb_3_1__johto_1C0",
+  "overlay": {
+   "base": "johto:1C0",
+   "art": "ssb:3_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_3_2__johto_0FD",
+  "overlay": {
+   "base": "johto:0FD",
+   "art": "ssb:3_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_4_0__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "ssb:4_0"
+  }
+ },
+ {
+  "id": "ovl_ssb_4_1__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "ssb:4_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_5_1__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:5_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_5_2__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:5_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_6_1__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:6_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_6_2__johto_1C1",
+  "overlay": {
+   "base": "johto:1C1",
+   "art": "ssb:6_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_7_0__johto_1BA",
+  "overlay": {
+   "base": "johto:1BA",
+   "art": "ssb:7_0"
+  }
+ },
+ {
+  "id": "ovl_ssb_7_1__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "ssb:7_1"
+  }
+ },
+ {
+  "id": "ovl_ssb_7_2__johto_1C2",
+  "overlay": {
+   "base": "johto:1C2",
+   "art": "ssb:7_2"
+  }
+ },
+ {
+  "id": "ovl_ssb_7_3__johto_0ED",
+  "overlay": {
+   "base": "johto:0ED",
+   "art": "ssb:7_3"
+  }
+ },
+ {
+  "id": "ovl_sst_0_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sst:0_0"
+  }
+ },
+ {
+  "id": "ovl_sst_1_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sst:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_sst_2_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "sst:2_0"
+  }
+ },
+ {
+  "id": "lv_2201c8934e77",
+  "pixels": "tools/mapgen/tilesets/levee/lv_2201c8934e77.png",
+  "base": "ekat:water_E",
+  "attr_of": "ekat:water_E",
+  "group": "levee"
+ },
+ {
+  "id": "lv_68748e938021",
+  "pixels": "tools/mapgen/tilesets/levee/lv_68748e938021.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_9a4709f8f910",
+  "pixels": "tools/mapgen/tilesets/levee/lv_9a4709f8f910.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_9d62b5061c01",
+  "pixels": "tools/mapgen/tilesets/levee/lv_9d62b5061c01.png",
+  "base": "ekat:water_E",
+  "attr_of": "ekat:water_E",
+  "group": "levee"
+ },
+ {
+  "id": "lv_bd2c4843cd98",
+  "pixels": "tools/mapgen/tilesets/levee/lv_bd2c4843cd98.png",
+  "base": "ekat:water_E",
+  "attr_of": "ekat:water_E",
+  "group": "levee"
+ },
+ {
+  "id": "lv_c517b075f405",
+  "pixels": "tools/mapgen/tilesets/levee/lv_c517b075f405.png",
+  "base": "ekat:water_C",
+  "attr_of": "ekat:water_C",
+  "group": "levee"
+ },
+ {
+  "id": "lv_cd3a9914331e",
+  "pixels": "tools/mapgen/tilesets/levee/lv_cd3a9914331e.png",
+  "base": "ekat:water_E",
+  "attr_of": "ekat:water_E",
+  "group": "levee"
+ },
+ {
+  "id": "ovl_brg_10__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:10",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_11__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:11",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_12__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:12",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_13__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:13",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_13__ekat_water_E__normal",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "brg:13",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "brg:23"
+  }
+ },
+ {
+  "id": "ovl_lh_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:00"
+  }
+ },
+ {
+  "id": "ovl_lh_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:01"
+  }
+ },
+ {
+  "id": "ovl_lh_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:02"
+  }
+ },
+ {
+  "id": "ovl_lh_03__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:03"
+  }
+ },
+ {
+  "id": "ovl_lh_04__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:04"
+  }
+ },
+ {
+  "id": "ovl_lh_05__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:05"
+  }
+ },
+ {
+  "id": "ovl_lh_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:10"
+  }
+ },
+ {
+  "id": "ovl_lh_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:11"
+  }
+ },
+ {
+  "id": "ovl_lh_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:12"
+  }
+ },
+ {
+  "id": "ovl_lh_13__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:13"
+  }
+ },
+ {
+  "id": "ovl_lh_14__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:14"
+  }
+ },
+ {
+  "id": "ovl_lh_15__ekat_grass__door",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:15",
+   "behavior": "MB_NON_ANIMATED_DOOR"
+  }
+ },
+ {
+  "id": "ovl_lh_20__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:20"
+  }
+ },
+ {
+  "id": "ovl_lh_21__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:21"
+  }
+ },
+ {
+  "id": "ovl_lh_22__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:22"
+  }
+ },
+ {
+  "id": "ovl_lh_23__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:23"
+  }
+ },
+ {
+  "id": "ovl_lh_24__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:24"
+  }
+ },
+ {
+  "id": "ovl_lh_25__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lh:25"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "ovl_props_crates__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:crates"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_post__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_post"
+  }
+ },
+ {
+  "id": "ovl_props_lamp_top__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:lamp_top"
+  }
+ },
+ {
+  "id": "ovl_seq_0_0__johto_0E0",
+  "overlay": {
+   "base": "johto:0E0",
+   "art": "seq:0_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_water_inNE",
+  "overlay": {
+   "base": "ekat:water_inNE",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__ekat_water_inNW",
+  "overlay": {
+   "base": "ekat:water_inNW",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__johto_0E0",
+  "overlay": {
+   "base": "johto:0E0",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__johto_0E1",
+  "overlay": {
+   "base": "johto:0E1",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_seq_1_0__johto_0E2",
+  "overlay": {
+   "base": "johto:0E2",
+   "art": "seq:1_0",
+   "walk": true
+  }
+ }
+]

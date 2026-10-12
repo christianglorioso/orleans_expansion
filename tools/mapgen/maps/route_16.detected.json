@@ -1,0 +1,82 @@
+{
+ "source": "..\\orleans_maps\\r16_route_16.png",
+ "frame": [
+  0,
+  140,
+  1655,
+  1147
+ ],
+ "pitch": 36.0,
+ "width": 46,
+ "height": 28,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 8,
+   "y": 4,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "H",
+   "x": 40,
+   "y": 6,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "H",
+   "x": 26,
+   "y": 18,
+   "w": 4,
+   "h": 3
+  }
+ ],
+ "markers": [
+  {
+   "kind": "hidden_item",
+   "x": 43,
+   "y": 4
+  },
+  {
+   "kind": "trainer",
+   "x": 29,
+   "y": 6
+  },
+  {
+   "kind": "trainer",
+   "x": 18,
+   "y": 7
+  },
+  {
+   "kind": "trainer",
+   "x": 9,
+   "y": 14
+  },
+  {
+   "kind": "trainer",
+   "x": 37,
+   "y": 14
+  },
+  {
+   "kind": "trainer",
+   "x": 36,
+   "y": 15
+  },
+  {
+   "kind": "item",
+   "x": 5,
+   "y": 24
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 13
+  },
+  {
+   "side": "E",
+   "pos": 17
+  }
+ ]
+}

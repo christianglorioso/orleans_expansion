@@ -1,0 +1,390 @@
+{
+  "map": "IsleMarais",
+  "map_const": "MAP_ISLE_MARAIS",
+  "layout": "LAYOUT_ISLE_MARAIS",
+  "layout_dir": "data/layouts/IsleMarais",
+  "tileset": "orleans_bayou",
+  "mockup": "../orleans_maps/01_isle_marais.png",
+  "grid": "isle_marais.grid.txt",
+  "_edits": "No edits: the grid is final (isle_marais_gen.py wrote it from the original in isle_marais.base.*).",
+  "edits": [],
+  "_buildings": "prefab, x, y (top-left), label. Door warps are generated at each prefab's door.",
+  "buildings": [
+    {
+      "prefab": "barn",
+      "x": 21,
+      "y": 0,
+      "label": "Fais do-do dance hall (shelter)",
+      "interior": "MAP_ISLE_MARAIS_SHELTER"
+    },
+    {
+      "prefab": "house_a",
+      "x": 28,
+      "y": 1,
+      "label": "House (tarped roof)",
+      "interior": "MAP_ISLE_MARAIS_HOUSE_NE"
+    },
+    {
+      "prefab": "cabin",
+      "x": 5,
+      "y": 8,
+      "label": "House (west)",
+      "interior": "MAP_ISLE_MARAIS_HOUSE_W"
+    },
+    {
+      "prefab": "cabin",
+      "x": 25,
+      "y": 8,
+      "label": "House (east)",
+      "interior": "MAP_ISLE_MARAIS_HOUSE_E"
+    },
+    {
+      "prefab": "cabin",
+      "x": 29,
+      "y": 8,
+      "label": "House (tilted)",
+      "interior": "MAP_ISLE_MARAIS_HOUSE_EASTMOST"
+    },
+    {
+      "prefab": "house_b",
+      "x": 13,
+      "y": 14,
+      "label": "Player's house (damaged)",
+      "interior": "MAP_ISLE_MARAIS_PLAYERS_HOUSE"
+    },
+    {
+      "prefab": "church",
+      "x": 7,
+      "y": 0,
+      "label": "Church",
+      "interior": "MAP_ISLE_MARAIS_CHURCH"
+    },
+    {
+      "prefab": "pier",
+      "x": 23,
+      "y": 19,
+      "label": "Pier"
+    },
+    {
+      "prefab": "boat",
+      "x": 8,
+      "y": 22,
+      "label": "Shrimp boat (fishing spot 11)"
+    },
+    {
+      "prefab": "boat",
+      "x": 19,
+      "y": 24,
+      "label": "Shrimp boat (stranded)"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 1,
+      "y": 0,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 2,
+      "y": 4,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 35,
+      "y": 0,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 35,
+      "y": 5,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 1,
+      "y": 18,
+      "label": "Cypress grove (south-west)"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 14,
+      "y": 1,
+      "label": "Cypress grove (north)"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 35,
+      "y": 19,
+      "label": "Cypress grove (south-east)"
+    },
+    {
+      "prefab": "cypress_water",
+      "x": 0,
+      "y": 24,
+      "label": "Cypress in the gulf"
+    },
+    {
+      "prefab": "cypress_small_water",
+      "x": 14,
+      "y": 26,
+      "label": "Cypress in the gulf"
+    },
+    {
+      "prefab": "cypress_water",
+      "x": 28,
+      "y": 25,
+      "label": "Cypress in the gulf"
+    },
+    {
+      "prefab": "cypress_small_water",
+      "x": 35,
+      "y": 25,
+      "label": "Cypress in the gulf"
+    },
+    {
+      "prefab": "waterlog",
+      "x": 9,
+      "y": 27,
+      "label": "Floating log"
+    },
+    {
+      "prefab": "waterlog",
+      "x": 33,
+      "y": 29,
+      "label": "Floating log"
+    },
+    {
+      "prefab": "snag_water",
+      "x": 17,
+      "y": 24,
+      "label": "Snag"
+    },
+    {
+      "prefab": "snag_water",
+      "x": 12,
+      "y": 28,
+      "label": "Snag"
+    },
+    {
+      "prefab": "snag_water",
+      "x": 37,
+      "y": 24,
+      "label": "Snag"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 0,
+      "y": 6,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 36,
+      "y": 15,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 35,
+      "y": 17,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 3,
+      "y": 18,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 33,
+      "y": 8,
+      "label": "Cypress grove (east)"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 36,
+      "y": 8,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 37,
+      "y": 10,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 36,
+      "y": 3,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 14,
+      "y": 4,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 16,
+      "y": 4,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 21,
+      "y": 9,
+      "label": "Reeds"
+    },
+    {
+      "prefab": "reeds_marsh",
+      "x": 22,
+      "y": 9,
+      "label": "Reeds"
+    }
+  ],
+  "objects": [
+    {
+      "id": "LOCALID_ISLE_MARAIS_RECRUITER_1",
+      "gfx": "OBJ_EVENT_GFX_MAN_1",
+      "x": 20,
+      "y": 5,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "Rita's crew is recruiting\\nhands for the cleanup.",
+      "_note": "3. Rita's recruiters (story event placeholder)"
+    },
+    {
+      "id": "LOCALID_ISLE_MARAIS_RECRUITER_2",
+      "gfx": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 24,
+      "y": 5,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "Rita says every pair of\\nhands counts after the storm.",
+      "_note": "3. Rita's recruiters (story event placeholder)"
+    },
+    {
+      "id": "LOCALID_ISLE_MARAIS_LEVEE_WATCHER",
+      "gfx": "OBJ_EVENT_GFX_MAN_1",
+      "x": 28,
+      "y": 16,
+      "move": "MOVEMENT_TYPE_LOOK_AROUND",
+      "text": "...Same water.\\nDifferent storm.",
+      "_note": "Andrew as an unnamed cameo staring at the levee breach (decided 2026-10-10); post-game he joins the levee crew"
+    },
+    {
+      "id": "LOCALID_ISLE_MARAIS_FISHERMAN",
+      "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 11,
+      "y": 21,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "The shrimp boat's stuck, but the\\nMAGIKARP are still biting.",
+      "_note": "11. Old Rod fishing spot by the stranded boat"
+    }
+  ],
+  "items": [
+    {
+      "item": "ITEM_POTION",
+      "x": 12,
+      "y": 20,
+      "flag": "FLAG_ITEM_ISLE_MARAIS_POTION",
+      "_note": "8. Potion"
+    },
+    {
+      "item": "ITEM_POKE_BALL",
+      "x": 28,
+      "y": 11,
+      "flag": "FLAG_ITEM_ISLE_MARAIS_POKE_BALL",
+      "_note": "9. Poke Ball"
+    },
+    {
+      "item": "ITEM_SWAMPERTITE",
+      "x": 31,
+      "y": 18,
+      "flag": "FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE",
+      "_note": "6. Swampertite (levee breach, after gym 6; gating not scripted yet)"
+    }
+  ],
+  "hidden_items": [
+    {
+      "item": "ITEM_POTION",
+      "x": 13,
+      "y": 9,
+      "flag": "FLAG_HIDDEN_ITEM_ISLE_MARAIS_CHURCHYARD",
+      "_note": "10. Churchyard (item not specified in mockup; placeholder)"
+    }
+  ],
+  "exits": [
+    {
+      "name": "Route 1 (north)",
+      "cells": [
+        [
+          18,
+          0
+        ],
+        [
+          19,
+          0
+        ]
+      ]
+    }
+  ],
+  "_exits": "Map exits the walk test must reach.",
+  "signs": [
+    {
+      "id": "BoardedDoor",
+      "x": 16,
+      "y": 18,
+      "text": "The door's boarded up.\\nMOM says it isn't safe yet.",
+      "custom": true,
+      "_note": "the player's house stays boarded until gym 1 (IsleMarais_OnLoad); the hand-written script checks FLAG_BADGE01_GET"
+    }
+  ],
+  "triggers": [
+    {
+      "x": 22,
+      "y": 5,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "x": 21,
+      "y": 5,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "x": 23,
+      "y": 5,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "x": 21,
+      "y": 6,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "x": 22,
+      "y": 6,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    },
+    {
+      "x": 23,
+      "y": 6,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "IsleMarais_EventScript_DisplacedWingull"
+    }
+  ],
+  "_comment": "Isle Marais, polished by isle_marais_gen.py (edit that, not this file)."
+}

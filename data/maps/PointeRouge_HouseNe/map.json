@@ -1,0 +1,28 @@
+{
+  "id": "MAP_POINTE_ROUGE_HOUSE_NE",
+  "name": "PointeRouge_HouseNe",
+  "layout": "LAYOUT_POINTE_ROUGE_HOUSE_NE",
+  "music": "MUS_RG_SILPH",
+  "region_map_section": "MAPSEC_POINTE_ROUGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 8,
+      "elevation": 3,
+      "dest_map": "MAP_POINTE_ROUGE",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

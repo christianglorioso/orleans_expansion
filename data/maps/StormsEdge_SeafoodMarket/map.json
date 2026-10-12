@@ -1,0 +1,57 @@
+{
+  "id": "MAP_STORMS_EDGE_SEAFOOD_MARKET",
+  "name": "StormsEdge_SeafoodMarket",
+  "layout": "LAYOUT_STORMS_EDGE_SEAFOOD_MARKET",
+  "music": "MUS_RG_VERMILLION",
+  "region_map_section": "MAPSEC_STORMS_EDGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_STORMS_EDGE_SEAFOOD_MARKET_CLERK0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 2,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StormsEdge_SeafoodMarket_EventScript_Clerk0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_STORMS_EDGE_SEAFOOD_MARKET_SHRIMPER1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StormsEdge_SeafoodMarket_EventScript_Shrimper1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 8,
+      "elevation": 3,
+      "dest_map": "MAP_STORMS_EDGE",
+      "dest_warp_id": "5"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

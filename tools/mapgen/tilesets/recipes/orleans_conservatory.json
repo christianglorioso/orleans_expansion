@@ -1,0 +1,103 @@
+{
+  "_comment": "Magnolia's glass conservatory gym: own glass walls and dais (cv), and the HnS Celadon gym's hedges, grass, flowers, sand path and statues (cg, from the soulgold project).",
+  "kind": "secondary",
+  "dir": "orleans_conservatory",
+  "symbol": "gTileset_OrleansConservatory",
+  "primary_mapping": "orleans_building.mapping.json",
+  "sources": [
+    {
+      "name": "cv",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/conservatory.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "pavers",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "glass_0",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "glass_1",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "glass_side",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "dais_L",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "dais_M",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "dais_R",
+          "bottom": [
+            6,
+            0
+          ]
+        },
+        {
+          "id": "exitmat",
+          "bottom": [
+            0,
+            0
+          ],
+          "behavior": "MB_SOUTH_ARROW_WARP"
+        }
+      ]
+    },
+    {
+      "name": "cg",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/azalea_town_gym",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "405",
+                "40D",
+        "415",
+        "41D",
+        "425",
+        "430",
+        "431",
+        "432",
+        "436",
+        "437",
+        "438",
+        "439",
+        "46E"
+      ]
+    }
+  ]
+}

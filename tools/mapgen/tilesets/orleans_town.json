@@ -1,0 +1,781 @@
+{
+  "_comment": "Orleans towns: gTileset_OrleansGeneral + gTileset_OrleansTown (terrain, houses, PC, Mart, gym, trees).",
+  "primary": "gTileset_OrleansGeneral",
+  "secondary": "gTileset_OrleansTown",
+  "primary_dir": "data/tilesets/primary/orleans_general",
+  "secondary_dir": "data/tilesets/secondary/orleans_town",
+  "mappings": [
+    "orleans_general.mapping.json",
+    "orleans_town.mapping.json"
+  ],
+  "border": [
+    "ekat:grass",
+    "ekat:grass",
+    "ekat:grass",
+    "ekat:grass"
+  ],
+  "terrain": {
+    ".": {
+      "name": "ground",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    ":": {
+      "name": "road",
+      "tile": "0D9",
+      "elev": 3,
+      "autotile": "path"
+    },
+    "=": {
+      "name": "street",
+      "tile": "0D9",
+      "elev": 3,
+      "autotile": "path"
+    },
+    "I": {
+      "name": "boat water",
+      "tile": "ekat:water_C",
+      "elev": 1
+    },
+    "S": {
+      "name": "plaza / yard",
+      "tile": "0D9",
+      "elev": 3,
+      "autotile": "path"
+    },
+    "H": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "K": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "P": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "M": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "T": {
+      "name": "tree marker (trees are placed as prefabs)",
+      "tile": "ekat:grass",
+      "elev": 3
+    }
+  },
+  "autotile": {
+    "path": {
+      "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
+      "connects": ":=S",
+      "NW": "0D0",
+      "N": "0D1",
+      "NE": "0D2",
+      "W": "0D8",
+      "C": "0D9",
+      "E": "0DA",
+      "SW": "0E0",
+      "S": "0E1",
+      "SE": "0E2",
+      "iNW": "patch:path_iNW",
+      "iNE": "patch:path_iNE",
+      "iSW": "patch:path_iSW",
+      "iSE": "patch:path_iSE"
+    }
+  },
+  "prefabs": {
+    "house_a": {
+      "_comment": "Shady Forest house: flat-roofed front with an ivy gable to the right.",
+      "rows": [
+        [
+          null,
+          null,
+          null,
+          "shady:24E",
+          "shady:24F"
+        ],
+        [
+          "shady:24B",
+          "shady:24C",
+          "shady:24D",
+          "shady:256",
+          "shady:257"
+        ],
+        [
+          "shady:253",
+          "shady:254",
+          "shady:255",
+          "shady:25E",
+          "shady:25F"
+        ],
+        [
+          "shady:25B",
+          "shady:25C",
+          "shady:25D",
+          "shady:266",
+          "shady:267"
+        ],
+        [
+          "shady:263",
+          "patch:shady_door",
+          "shady:265",
+          "shady:26E",
+          "shady:26F"
+        ]
+      ],
+      "door": [
+        1,
+        4
+      ]
+    },
+    "house_b": {
+      "_comment": "Shady Forest house: ivy gable on the left, flat-roofed front to the right.",
+      "rows": [
+        [
+          "shady:24E",
+          "shady:24F",
+          null,
+          null,
+          null
+        ],
+        [
+          "shady:256",
+          "shady:257",
+          "shady:24B",
+          "shady:24C",
+          "shady:24D"
+        ],
+        [
+          "shady:25E",
+          "shady:25F",
+          "shady:253",
+          "shady:254",
+          "shady:255"
+        ],
+        [
+          "shady:266",
+          "shady:267",
+          "shady:25B",
+          "shady:25C",
+          "shady:25D"
+        ],
+        [
+          "shady:26E",
+          "shady:26F",
+          "shady:263",
+          "patch:shady_door",
+          "shady:265"
+        ]
+      ],
+      "door": [
+        3,
+        4
+      ]
+    },
+    "cabin": {
+      "_comment": "Shady Forest flat-fronted cabin (3x4): the small stilt-house plots.",
+      "rows": [
+        [
+          "shady:24B",
+          "shady:24C",
+          "shady:24D"
+        ],
+        [
+          "shady:253",
+          "shady:254",
+          "shady:255"
+        ],
+        [
+          "shady:25B",
+          "shady:25C",
+          "shady:25D"
+        ],
+        [
+          "shady:263",
+          "patch:shady_door",
+          "shady:265"
+        ]
+      ],
+      "door": [
+        1,
+        3
+      ]
+    },
+    "pokecenter": {
+      "_comment": "Vanilla Emerald Pokemon Center (4x4).",
+      "rows": [
+        [
+          "vgen:048",
+          "vgen:049",
+          "vgen:04A",
+          "vgen:04B"
+        ],
+        [
+          "vgen:050",
+          "vgen:051",
+          "vgen:052",
+          "vgen:053"
+        ],
+        [
+          "vgen:058",
+          "vgen:059",
+          "vgen:05A",
+          "vgen:05B"
+        ],
+        [
+          "vgen:060",
+          "patch:pc_door",
+          "vgen:062",
+          "vgen:063"
+        ]
+      ],
+      "door": [
+        1,
+        3
+      ]
+    },
+    "mart": {
+      "_comment": "Vanilla Emerald Poke Mart (4x4): the top row repeats roof tile 029 (vanilla 02A is empty); the bottom-left corner is the PC's.",
+      "rows": [
+        [
+          "vgen:028",
+          "vgen:029",
+          "vgen:029",
+          "vgen:02B"
+        ],
+        [
+          "vgen:030",
+          "vgen:031",
+          "vgen:032",
+          "vgen:033"
+        ],
+        [
+          "vgen:038",
+          "vgen:039",
+          "vgen:03A",
+          "vgen:03B"
+        ],
+        [
+          "vgen:060",
+          "patch:mart_door",
+          "vgen:042",
+          "vgen:043"
+        ]
+      ],
+      "door": [
+        1,
+        3
+      ]
+    },
+    "cane": {
+      "_comment": "Sugarcane bed (decorative, no encounters).",
+      "rows": [
+        [
+          "patch:cane",
+          "patch:cane",
+          "patch:cane"
+        ],
+        [
+          "patch:cane",
+          "patch:cane",
+          "patch:cane"
+        ]
+      ]
+    },
+    "peppers": {
+      "_comment": "Pepper rows (red-flower placeholder).",
+      "rows": [
+        [
+          "patch:peppers",
+          "patch:peppers",
+          "patch:peppers"
+        ],
+        [
+          "patch:peppers",
+          "patch:peppers",
+          "patch:peppers"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "greenhouse": {
+      "_comment": "Glass-conservatory gym (own art), 10x7, overlaid on grass.",
+      "rows": [
+        [
+          {
+            "overlay": "gh:00"
+          },
+          {
+            "overlay": "gh:10"
+          },
+          {
+            "overlay": "gh:20"
+          },
+          {
+            "overlay": "gh:30"
+          },
+          {
+            "overlay": "gh:40"
+          },
+          {
+            "overlay": "gh:50"
+          },
+          {
+            "overlay": "gh:60"
+          },
+          {
+            "overlay": "gh:70"
+          },
+          {
+            "overlay": "gh:80"
+          },
+          {
+            "overlay": "gh:90"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:01"
+          },
+          {
+            "overlay": "gh:11"
+          },
+          {
+            "overlay": "gh:21"
+          },
+          {
+            "overlay": "gh:31"
+          },
+          {
+            "overlay": "gh:41"
+          },
+          {
+            "overlay": "gh:51"
+          },
+          {
+            "overlay": "gh:61"
+          },
+          {
+            "overlay": "gh:71"
+          },
+          {
+            "overlay": "gh:81"
+          },
+          {
+            "overlay": "gh:91"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:02"
+          },
+          {
+            "overlay": "gh:12"
+          },
+          {
+            "overlay": "gh:22"
+          },
+          {
+            "overlay": "gh:32"
+          },
+          {
+            "overlay": "gh:42"
+          },
+          {
+            "overlay": "gh:52"
+          },
+          {
+            "overlay": "gh:62"
+          },
+          {
+            "overlay": "gh:72"
+          },
+          {
+            "overlay": "gh:82"
+          },
+          {
+            "overlay": "gh:92"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:03"
+          },
+          {
+            "overlay": "gh:13"
+          },
+          {
+            "overlay": "gh:23"
+          },
+          {
+            "overlay": "gh:33"
+          },
+          {
+            "overlay": "gh:43"
+          },
+          {
+            "overlay": "gh:53"
+          },
+          {
+            "overlay": "gh:63"
+          },
+          {
+            "overlay": "gh:73"
+          },
+          {
+            "overlay": "gh:83"
+          },
+          {
+            "overlay": "gh:93"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:04"
+          },
+          {
+            "overlay": "gh:14"
+          },
+          {
+            "overlay": "gh:24"
+          },
+          {
+            "overlay": "gh:34"
+          },
+          {
+            "overlay": "gh:44"
+          },
+          {
+            "overlay": "gh:54"
+          },
+          {
+            "overlay": "gh:64"
+          },
+          {
+            "overlay": "gh:74"
+          },
+          {
+            "overlay": "gh:84"
+          },
+          {
+            "overlay": "gh:94"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:05"
+          },
+          {
+            "overlay": "gh:15"
+          },
+          {
+            "overlay": "gh:25"
+          },
+          {
+            "overlay": "gh:35"
+          },
+          {
+            "overlay": "gh:45"
+          },
+          {
+            "overlay": "gh:55"
+          },
+          {
+            "overlay": "gh:65"
+          },
+          {
+            "overlay": "gh:75"
+          },
+          {
+            "overlay": "gh:85"
+          },
+          {
+            "overlay": "gh:95"
+          }
+        ],
+        [
+          {
+            "overlay": "gh:06"
+          },
+          {
+            "overlay": "gh:16"
+          },
+          {
+            "overlay": "gh:26"
+          },
+          {
+            "overlay": "gh:36"
+          },
+          {
+            "overlay": "gh:46"
+          },
+          {
+            "overlay": "gh:56",
+            "behavior": "MB_NON_ANIMATED_DOOR"
+          },
+          {
+            "overlay": "gh:66"
+          },
+          {
+            "overlay": "gh:76"
+          },
+          {
+            "overlay": "gh:86"
+          },
+          {
+            "overlay": "gh:96"
+          }
+        ]
+      ],
+      "door": [
+        5,
+        6
+      ]
+    },
+    "planter": {
+      "_comment": "Brick flower planter, each flower its own colour (own art from HnS National Park), 3x3; the top row is the flower tips (walk-behind).",
+      "rows": [
+        [
+          {
+            "overlay": "pl:00"
+          },
+          {
+            "overlay": "pl:10"
+          },
+          {
+            "overlay": "pl:20"
+          }
+        ],
+        [
+          {
+            "overlay": "pl:01"
+          },
+          {
+            "overlay": "pl:11"
+          },
+          {
+            "overlay": "pl:21"
+          }
+        ],
+        [
+          {
+            "overlay": "pl:02"
+          },
+          {
+            "overlay": "pl:12"
+          },
+          {
+            "overlay": "pl:22"
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "fountain": {
+      "_comment": "Round fountain (HnS National Park), 2x3.",
+      "rows": [
+        [
+          "patch:fnt_fl_l",
+          "patch:fnt_fl_r"
+        ],
+        [
+          "np:2A8",
+          "np:2A9"
+        ],
+        [
+          "np:2B0",
+          "np:2B1"
+        ]
+      ]
+    },
+    "lamp": {
+      "_comment": "Lamp post (HnS National Park), 1x3; only the base blocks.",
+      "rows": [
+        [
+          "np:2DA"
+        ],
+        [
+          "np:2E2"
+        ],
+        [
+          "np:2EA"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "flowers": {
+      "_comment": "Red flowers on grass (walkable).",
+      "rows": [
+        [
+          "patch:peppers"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "magnolia": {
+      "_comment": "Southern magnolia (own art, from vanilla Emerald's round tree), 2x3.",
+      "rows": [
+        [
+          {
+            "overlay": "mag:00"
+          },
+          {
+            "overlay": "mag:10"
+          }
+        ],
+        [
+          {
+            "overlay": "mag:01"
+          },
+          {
+            "overlay": "mag:11"
+          }
+        ],
+        [
+          {
+            "overlay": "mag:02"
+          },
+          {
+            "overlay": "mag:12"
+          }
+        ]
+      ]
+    },
+    "sign": {
+      "_comment": "Wooden signpost (primary 003), blocking.",
+      "rows": [
+        [
+          "003"
+        ]
+      ]
+    },
+    "bloom_pink": {
+      "_comment": "The red flower in pink (same tile, recoloured), 1x1, walkable.",
+      "rows": [
+        [
+          "patch:fl_pink"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "bloom_violet": {
+      "_comment": "The red flower in violet (same tile, recoloured), 1x1, walkable.",
+      "rows": [
+        [
+          "patch:fl_violet"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "bloom_blue": {
+      "_comment": "The red flower in blue (same tile, recoloured), 1x1, walkable.",
+      "rows": [
+        [
+          "patch:fl_blue"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "bloom_white": {
+      "_comment": "The red flower in white (same tile, recoloured), 1x1, walkable.",
+      "rows": [
+        [
+          "patch:fl_white"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "bloom_yellow": {
+      "_comment": "The red flower in yellow (same tile, recoloured), 1x1, walkable.",
+      "rows": [
+        [
+          "patch:fl_yellow"
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "blends_file": "orleans_town.blends.json"
+}

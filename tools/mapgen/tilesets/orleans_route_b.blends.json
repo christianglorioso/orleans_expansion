@@ -1,0 +1,532 @@
+[
+ {
+  "id": "blend_marsh_S_inSE",
+  "blend": {
+   "A": "ekat:water_S",
+   "B": "ekat:marshwater_S",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSE_inNE",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:marshwater_landSE",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSW_E",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:marshwater_landSW",
+   "M": "ekat:marsh_E",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSW_inNW",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:marshwater_landSW",
+   "M": "ekat:marsh_inNW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ap_1cc13949b7ca",
+  "pixels": "tools/mapgen/tilesets/approach/ap_1cc13949b7ca.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_7ec8a3064473",
+  "pixels": "tools/mapgen/tilesets/approach/ap_7ec8a3064473.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_b8adb781eee5",
+  "pixels": "tools/mapgen/tilesets/approach/ap_b8adb781eee5.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_ceae2c3c27a5",
+  "pixels": "tools/mapgen/tilesets/approach/ap_ceae2c3c27a5.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "ap_da5cde087f10",
+  "pixels": "tools/mapgen/tilesets/approach/ap_da5cde087f10.png",
+  "base": "johto:0D8",
+  "attr_of": "johto:0D8"
+ },
+ {
+  "id": "ap_e92209672e3d",
+  "pixels": "tools/mapgen/tilesets/approach/ap_e92209672e3d.png",
+  "base": "johto:0DA",
+  "attr_of": "johto:0DA"
+ },
+ {
+  "id": "blend_marsh_landNE_inNW",
+  "blend": {
+   "A": "ekat:water_landNE",
+   "B": "ekat:marshwater_landNE",
+   "M": "ekat:marsh_inNW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landNW_inNE",
+  "blend": {
+   "A": "ekat:water_landNW",
+   "B": "ekat:marshwater_landNW",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSE_inSW",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:marshwater_landSE",
+   "M": "ekat:marsh_inSW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSW_inSE",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:marshwater_landSW",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ovl_props_bench_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_0"
+  }
+ },
+ {
+  "id": "ovl_props_bench_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "props:bench_1"
+  }
+ },
+ {
+  "id": "blend_marsh_N_inNE",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:marshwater_N",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_N_inNW",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:marshwater_N",
+   "M": "ekat:marsh_inNW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_S_inSW",
+  "blend": {
+   "A": "ekat:water_S",
+   "B": "ekat:marshwater_S",
+   "M": "ekat:marsh_inSW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landNE_inSE",
+  "blend": {
+   "A": "ekat:water_landNE",
+   "B": "ekat:marshwater_landNE",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_mud_E_inNE",
+  "blend": {
+   "A": "ekat:water_E",
+   "B": "ekat:mudwater_E",
+   "M": "ekat:mud_inNE",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landNE_W",
+  "blend": {
+   "A": "ekat:water_landNE",
+   "B": "ekat:mudwater_landNE",
+   "M": "ekat:mud_W",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_N_inNW",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:mudwater_N",
+   "M": "ekat:mud_inNW",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_S_inSE",
+  "blend": {
+   "A": "ekat:water_S",
+   "B": "ekat:mudwater_S",
+   "M": "ekat:mud_inSE",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_S_inSW",
+  "blend": {
+   "A": "ekat:water_S",
+   "B": "ekat:mudwater_S",
+   "M": "ekat:mud_inSW",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSW_E",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:mudwater_landSW",
+   "M": "ekat:mud_E",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "ovl_brg_30__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:30",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_31__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:31",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_32__ekat_water_S__normal",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "brg:32",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_40__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:40",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_41__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:41",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_42__ekat_water_S__normal",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "brg:42",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_50__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:50",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_51__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:51",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_52__ekat_water_S__normal",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "brg:52",
+   "layer": "normal",
+   "behavior": "MB_BRIDGE_OVER_POND_LOW"
+  }
+ },
+ {
+  "id": "ovl_brg_60__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:60",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_61__ekat_water_C__normal",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "brg:61",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "ovl_brg_62__ekat_mudwater_S__normal",
+  "overlay": {
+   "base": "ekat:mudwater_S",
+   "art": "brg:62",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "blend_marsh_landNW_inSW",
+  "blend": {
+   "A": "ekat:water_landNW",
+   "B": "ekat:marshwater_landNW",
+   "M": "ekat:marsh_inSW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ap_09ee860fcf38",
+  "pixels": "tools/mapgen/tilesets/approach/ap_09ee860fcf38.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_14a824a70c0f",
+  "pixels": "tools/mapgen/tilesets/approach/ap_14a824a70c0f.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_401443a7ec85",
+  "pixels": "tools/mapgen/tilesets/approach/ap_401443a7ec85.png",
+  "base": "johto:0E0",
+  "attr_of": "johto:0E0"
+ },
+ {
+  "id": "ap_577f0ef26305",
+  "pixels": "tools/mapgen/tilesets/approach/ap_577f0ef26305.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_7069b28da59e",
+  "pixels": "tools/mapgen/tilesets/approach/ap_7069b28da59e.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_7ae42ac8d122",
+  "pixels": "tools/mapgen/tilesets/approach/ap_7ae42ac8d122.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_8c127a86eb18",
+  "pixels": "tools/mapgen/tilesets/approach/ap_8c127a86eb18.png",
+  "base": "johto:0E1",
+  "attr_of": "johto:0E1"
+ },
+ {
+  "id": "ap_8cba6692ea13",
+  "pixels": "tools/mapgen/tilesets/approach/ap_8cba6692ea13.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_97e597e0688c",
+  "pixels": "tools/mapgen/tilesets/approach/ap_97e597e0688c.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ap_9a772c88f324",
+  "pixels": "tools/mapgen/tilesets/approach/ap_9a772c88f324.png",
+  "base": "patch:path_iSE",
+  "attr_of": "patch:path_iSE"
+ },
+ {
+  "id": "ap_9be98298f91f",
+  "pixels": "tools/mapgen/tilesets/approach/ap_9be98298f91f.png",
+  "base": "johto:0E0",
+  "attr_of": "johto:0E0"
+ },
+ {
+  "id": "ap_d113f783a9dd",
+  "pixels": "tools/mapgen/tilesets/approach/ap_d113f783a9dd.png",
+  "base": "johto:0D9",
+  "attr_of": "johto:0D9"
+ },
+ {
+  "id": "ap_d6bc98e53153",
+  "pixels": "tools/mapgen/tilesets/approach/ap_d6bc98e53153.png",
+  "base": "johto:0E1",
+  "attr_of": "johto:0E1"
+ },
+ {
+  "id": "ap_ecd13d88f0d5",
+  "pixels": "tools/mapgen/tilesets/approach/ap_ecd13d88f0d5.png",
+  "base": "johto:0D1",
+  "attr_of": "johto:0D1"
+ },
+ {
+  "id": "ovl_mag_00__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:00"
+  }
+ },
+ {
+  "id": "ovl_mag_01__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:01"
+  }
+ },
+ {
+  "id": "ovl_mag_02__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:02"
+  }
+ },
+ {
+  "id": "ovl_mag_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:10"
+  }
+ },
+ {
+  "id": "ovl_mag_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:11"
+  }
+ },
+ {
+  "id": "ovl_mag_12__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "mag:12"
+  }
+ },
+ {
+  "id": "blend_marsh_E_inNE",
+  "blend": {
+   "A": "ekat:water_E",
+   "B": "ekat:marshwater_E",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_E_inSE",
+  "blend": {
+   "A": "ekat:water_E",
+   "B": "ekat:marshwater_E",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_W_inNW",
+  "blend": {
+   "A": "ekat:water_W",
+   "B": "ekat:marshwater_W",
+   "M": "ekat:marsh_inNW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_W_inSW",
+  "blend": {
+   "A": "ekat:water_W",
+   "B": "ekat:marshwater_W",
+   "M": "ekat:marsh_inSW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ovl_brg_62__blend_mud_S_inSW__normal",
+  "overlay": {
+   "base": "patch:blend_mud_S_inSW",
+   "art": "brg:62",
+   "layer": "normal"
+  }
+ },
+ {
+  "id": "blend_marsh_landSE_N",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:marshwater_landSE",
+   "M": "ekat:marsh_N",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ovl_lmk_12_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:12_10"
+  }
+ },
+ {
+  "id": "ovl_lmk_12_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:12_11"
+  }
+ },
+ {
+  "id": "ovl_lmk_15_10__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:15_10"
+  }
+ },
+ {
+  "id": "ovl_lmk_15_11__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "lmk:15_11"
+  }
+ }
+]

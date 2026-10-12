@@ -1,0 +1,714 @@
+{
+  "_comment": "Dance hall and church (HnS Ecruteak theater, Soul House), from the soulgold project.",
+  "kind": "secondary",
+  "dir": "orleans_hall",
+  "symbol": "gTileset_OrleansHall",
+  "primary_mapping": "orleans_building.mapping.json",
+  "sources": [
+    {
+      "name": "th",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/ecruteak_theater",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "441",
+        "442",
+        "443",
+        "444",
+        "445",
+        "446",
+        "449",
+        "44A",
+        "44B",
+        "44C",
+        "44D",
+        "44E",
+        "452",
+        "453",
+        "454",
+        "455",
+        "459",
+        "45D",
+        "460",
+        "461",
+        "462",
+        "4A2",
+        "4A3",
+        "4A4",
+        "4A5",
+        "4E0",
+        "53F"
+      ]
+    },
+    {
+      "name": "sp",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/shelter.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "cot_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cot_1",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "stage",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "stage_lip",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "stage_L",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "stage_R",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "stage_lip_L",
+          "bottom": [
+            6,
+            0
+          ]
+        },
+        {
+          "id": "stage_lip_R",
+          "bottom": [
+            7,
+            0
+          ]
+        },
+        {
+          "id": "supply_00",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "supply_10",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "supply_20",
+          "bottom": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": "supply_01",
+          "bottom": [
+            3,
+            1
+          ]
+        },
+        {
+          "id": "supply_11",
+          "bottom": [
+            4,
+            1
+          ]
+        },
+        {
+          "id": "supply_21",
+          "bottom": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": "ct_L_water",
+          "bottom": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "ct_M_cans",
+          "bottom": [
+            7,
+            1
+          ]
+        },
+        {
+          "id": "ct_M_bread",
+          "bottom": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "ct_M_water",
+          "bottom": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": "ct_R_aid",
+          "bottom": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "ct_L_aid",
+          "bottom": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "ct_L_papers",
+          "bottom": [
+            5,
+            2
+          ]
+        },
+        {
+          "id": "ct_M_papers",
+          "bottom": [
+            6,
+            2
+          ]
+        },
+        {
+          "id": "ct_R_papers",
+          "bottom": [
+            7,
+            2
+          ]
+        },
+        {
+          "id": "ct_L_pot",
+          "bottom": [
+            0,
+            3
+          ]
+        },
+        {
+          "id": "ct_R_bowls",
+          "bottom": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "ct_M_aid",
+          "bottom": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "labkit_0",
+          "bottom": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "labkit_1",
+          "bottom": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "labkit_2",
+          "bottom": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "labkit_3",
+          "bottom": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "accordion",
+          "bottom": [
+            7,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "cw",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/church.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "floor",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "wall_0",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "wall_1",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "win_0",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "win_1",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "side",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "candles",
+          "bottom": [
+            6,
+            0
+          ]
+        },
+        {
+          "id": "rope_0",
+          "bottom": [
+            7,
+            0
+          ]
+        },
+        {
+          "id": "rope_1",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "mat_L",
+          "bottom": [
+            1,
+            1
+          ],
+          "behavior": "MB_SOUTH_ARROW_WARP"
+        },
+        {
+          "id": "mat_C",
+          "bottom": [
+            2,
+            1
+          ],
+          "behavior": "MB_SOUTH_ARROW_WARP"
+        },
+        {
+          "id": "mat_R",
+          "bottom": [
+            3,
+            1
+          ],
+          "behavior": "MB_SOUTH_ARROW_WARP"
+        },
+        {
+          "id": "pew_L",
+          "bottom": [
+            4,
+            1
+          ]
+        },
+        {
+          "id": "pew_M",
+          "bottom": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": "pew_R",
+          "bottom": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "altar_L0",
+          "bottom": [
+            7,
+            1
+          ]
+        },
+        {
+          "id": "altar_M0",
+          "bottom": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "altar_R0",
+          "bottom": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": "altar_L1",
+          "bottom": [
+            2,
+            2
+          ]
+        },
+        {
+          "id": "altar_M1",
+          "bottom": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "altar_R1",
+          "bottom": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "run_TL",
+          "bottom": [
+            5,
+            2
+          ]
+        },
+        {
+          "id": "run_TC",
+          "bottom": [
+            6,
+            2
+          ]
+        },
+        {
+          "id": "run_TR",
+          "bottom": [
+            7,
+            2
+          ]
+        },
+        {
+          "id": "run_ML",
+          "bottom": [
+            0,
+            3
+          ]
+        },
+        {
+          "id": "run_MC",
+          "bottom": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "run_MR",
+          "bottom": [
+            2,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "patches": [
+    {
+      "id": "cot_0",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:cot_0"
+      }
+    },
+    {
+      "id": "cot_1",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:cot_1"
+      }
+    },
+    {
+      "id": "stage",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage"
+      }
+    },
+    {
+      "id": "stage_lip",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage_lip"
+      }
+    },
+    {
+      "id": "stage_L",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage_L"
+      }
+    },
+    {
+      "id": "stage_R",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage_R"
+      }
+    },
+    {
+      "id": "stage_lip_L",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage_lip_L"
+      }
+    },
+    {
+      "id": "stage_lip_R",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:stage_lip_R"
+      }
+    },
+    {
+      "id": "supply_00",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_00"
+      }
+    },
+    {
+      "id": "supply_10",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_10"
+      }
+    },
+    {
+      "id": "supply_20",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_20"
+      }
+    },
+    {
+      "id": "supply_01",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_01"
+      }
+    },
+    {
+      "id": "supply_11",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_11"
+      }
+    },
+    {
+      "id": "supply_21",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:supply_21"
+      }
+    },
+    {
+      "id": "ct_L_water",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_L_water",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_M_cans",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_M_cans",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_M_bread",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_M_bread",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_M_water",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_M_water",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_R_aid",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_R_aid",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_L_aid",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_L_aid",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_L_papers",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_L_papers",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_M_papers",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_M_papers",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_R_papers",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_R_papers",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_L_pot",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_L_pot",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_R_bowls",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_R_bowls",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "ct_M_aid",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:ct_M_aid",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "labkit_0",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:labkit_0"
+      }
+    },
+    {
+      "id": "labkit_1",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:labkit_1"
+      }
+    },
+    {
+      "id": "labkit_2",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:labkit_2"
+      }
+    },
+    {
+      "id": "labkit_3",
+      "overlay": {
+        "base": "th:459",
+        "art": "sp:labkit_3"
+      }
+    },
+    {
+      "id": "accordion",
+      "overlay": {
+        "base": "th:44E",
+        "art": "sp:accordion"
+      }
+    }
+  ]
+}

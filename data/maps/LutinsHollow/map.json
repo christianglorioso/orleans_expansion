@@ -1,0 +1,219 @@
+{
+  "id": "MAP_LUTINS_HOLLOW",
+  "name": "LutinsHollow",
+  "layout": "LAYOUT_LUTINS_HOLLOW",
+  "music": "MUS_RG_LAVENDER",
+  "region_map_section": "MAPSEC_LUTINS_HOLLOW",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE13",
+      "offset": 28,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_LUTIN",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 27,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_Lutin",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FLOETTE_SEED",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 43,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FloetteSeed",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_JAYDEN",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "x": 12,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_Jayden",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_WREN",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_2",
+      "x": 13,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_Wren",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FALSE_LUTIN_1",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 17,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FalseLutin1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FALSE_LUTIN_2",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 25,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FalseLutin2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FALSE_LUTIN_3",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 31,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FalseLutin3",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FALSE_LUTIN_4",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 30,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FalseLutin4",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_LUTINS_HOLLOW_FALSE_LUTIN_5",
+      "graphics_id": "OBJ_EVENT_GFX_ARTIST",
+      "x": 21,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LutinsHollow_EventScript_FalseLutin5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 31,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DELPHOXITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_UNUSED_0x290"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 25,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_LUTINS_HOLLOW_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 9,
+      "elevation": 3,
+      "dest_map": "MAP_LUTINS_HOLLOW_MOSS_HOUSE_N",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_LUTINS_HOLLOW_POKECENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 26,
+      "elevation": 3,
+      "dest_map": "MAP_LUTINS_HOLLOW_HERBALIST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 25,
+      "elevation": 3,
+      "dest_map": "MAP_LUTINS_HOLLOW_MOSS_HOUSE_S",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 28,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LutinsHollow_EventScript_SignHollow"
+    },
+    {
+      "type": "sign",
+      "x": 36,
+      "y": 28,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LutinsHollow_EventScript_SignHerbalist"
+    }
+  ]
+}

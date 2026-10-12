@@ -1,0 +1,60 @@
+{
+ "source": "..\\orleans_maps\\r06_route_6.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1075
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 26,
+ "buildings": [],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 29,
+   "y": 10
+  },
+  {
+   "kind": "hidden_item",
+   "x": 37,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 11,
+   "y": 11
+  },
+  {
+   "kind": "item",
+   "x": 41,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 17,
+   "y": 14
+  },
+  {
+   "kind": "fishing",
+   "x": 5,
+   "y": 17
+  },
+  {
+   "kind": "trainer",
+   "x": 25,
+   "y": 18
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 11
+  },
+  {
+   "side": "E",
+   "pos": 12
+  }
+ ]
+}

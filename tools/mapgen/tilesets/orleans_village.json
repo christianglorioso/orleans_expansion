@@ -1,0 +1,3428 @@
+{
+  "_comment": "The Old Water: gTileset_OrleansGeneral + gTileset_OrleansVillage.",
+  "primary": "gTileset_OrleansGeneral",
+  "secondary": "gTileset_OrleansVillage",
+  "primary_dir": "data/tilesets/primary/orleans_general",
+  "secondary_dir": "data/tilesets/secondary/orleans_village",
+  "mappings": [
+    "orleans_general.mapping.json",
+    "orleans_village.mapping.json"
+  ],
+  "border": [
+    "ekat:water_C",
+    "ekat:water_C",
+    "ekat:water_C",
+    "ekat:water_C"
+  ],
+  "terrain": {
+    ".": {
+      "name": "ground",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "\"": {
+      "name": "marsh",
+      "tile": "ekat:marsh_C",
+      "elev": 3
+    },
+    "~": {
+      "name": "water",
+      "tile": "ekat:water_C",
+      "elev": 1,
+      "decor": {
+        "tiles": [
+          "ekat:water_lily",
+          "ekat:water_weeds1"
+        ],
+        "rate": 0.07,
+        "collision": 1,
+        "min_open": 2,
+        "_comment": "Only single-tile objects that are complete in one cell. Multi-tile ones (logs, snags, knees) are placed as prefabs."
+      }
+    },
+    ":": {
+      "name": "road",
+      "tile": "0D9",
+      "elev": 3,
+      "autotile": "path"
+    },
+    "=": {
+      "name": "street",
+      "tile": "0D9",
+      "elev": 3,
+      "autotile": "path"
+    },
+    "L": {
+      "name": "levee",
+      "tile": "ekat:mud_C",
+      "elev": 3
+    },
+    "#": {
+      "name": "(old pier cell)",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "I": {
+      "name": "boat water",
+      "tile": "ekat:water_C",
+      "elev": 1
+    },
+    "S": {
+      "name": "churchyard",
+      "tile": "ekat:mud_C",
+      "elev": 3,
+      "autotile": "churchyard"
+    },
+    "H": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "K": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "P": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "M": {
+      "name": "building",
+      "tile": "ekat:grass",
+      "elev": 3
+    },
+    "T": {
+      "name": "tree marker (trees are placed as prefabs)",
+      "tile": "ekat:grass",
+      "elev": 3
+    }
+  },
+  "autotile": {
+    "path": {
+      "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
+      "connects": ":=",
+      "NW": "0D0",
+      "N": "0D1",
+      "NE": "0D2",
+      "W": "0D8",
+      "C": "0D9",
+      "E": "0DA",
+      "SW": "0E0",
+      "S": "0E1",
+      "SE": "0E2",
+      "iNW": "patch:path_iNW",
+      "iNE": "patch:path_iNE",
+      "iSW": "patch:path_iSW",
+      "iSE": "patch:path_iSE"
+    },
+    "marsh": {
+      "kind": "corners",
+      "connects": "\"",
+      "apply_on": "\".",
+      "elev": 3,
+      "N": "ekat:marsh_N",
+      "S": "ekat:marsh_S",
+      "W": "ekat:marsh_W",
+      "E": "ekat:marsh_E",
+      "inNW": "ekat:marsh_inNW",
+      "inNE": "ekat:marsh_inNE",
+      "inSW": "ekat:marsh_inSW",
+      "inSE": "ekat:marsh_inSE",
+      "landSE": "ekat:marsh_landSE",
+      "landSW": "ekat:marsh_landSW",
+      "landNE": "ekat:marsh_landNE",
+      "landNW": "ekat:marsh_landNW",
+      "sTLBR": "ekat:marsh_sTLBR",
+      "sTRBL": "ekat:marsh_sTRBL",
+      "C": [
+        "ekat:marsh_C",
+        "ekat:marsh_plants1",
+        "ekat:marsh_plants3"
+      ],
+      "smooth": "\""
+    },
+    "mud": {
+      "kind": "corners",
+      "connects": "L",
+      "apply_on": "L.",
+      "elev": 3,
+      "N": "ekat:mud_N",
+      "S": "ekat:mud_S",
+      "W": "ekat:mud_W",
+      "E": "ekat:mud_E",
+      "inNW": "ekat:mud_inNW",
+      "inNE": "ekat:mud_inNE",
+      "inSW": "ekat:mud_inSW",
+      "inSE": "ekat:mud_inSE",
+      "landSE": "ekat:mud_landSE",
+      "landSW": "ekat:mud_landSW",
+      "landNE": "ekat:mud_landNE",
+      "landNW": "ekat:mud_landNW",
+      "sTLBR": "ekat:mud_sTLBR",
+      "sTRBL": "ekat:mud_sTRBL",
+      "C": [
+        "ekat:mud_C",
+        "ekat:mud_plants3"
+      ]
+    },
+    "water": {
+      "kind": "corners",
+      "connects": "~",
+      "apply_on": "~.\"L",
+      "elev": 1,
+      "N": "ekat:water_N",
+      "S": "ekat:water_S",
+      "W": "ekat:water_W",
+      "E": "ekat:water_E",
+      "inNW": "ekat:water_inNW",
+      "inNE": "ekat:water_inNE",
+      "inSW": "ekat:water_inSW",
+      "inSE": "ekat:water_inSE",
+      "landSE": "ekat:water_landSE",
+      "landSW": "ekat:water_landSW",
+      "landNE": "ekat:water_landNE",
+      "landNW": "ekat:water_landNW",
+      "sTLBR": "ekat:water_sTLBR",
+      "sTRBL": "ekat:water_sTRBL",
+      "C": [
+        "ekat:water_C",
+        "ekat:water_lily"
+      ],
+      "smooth": "~",
+      "neutral": "#I",
+      "alt_land": [
+        {
+          "chars": "L",
+          "tiles": {
+            "N": "ekat:mudwater_N",
+            "S": "ekat:mudwater_S",
+            "W": "ekat:mudwater_W",
+            "E": "ekat:mudwater_E",
+            "inNW": "ekat:mudwater_inNW",
+            "inNE": "ekat:mudwater_inNE",
+            "inSW": "ekat:mudwater_inSW",
+            "inSE": "ekat:mudwater_inSE",
+            "landSE": "ekat:mudwater_landSE",
+            "landSW": "ekat:mudwater_landSW",
+            "landNE": "ekat:mudwater_landNE",
+            "landNW": "ekat:mudwater_landNW",
+            "sTLBR": "ekat:mudwater_sTLBR",
+            "sTRBL": "ekat:mudwater_sTRBL"
+          },
+          "blend": {
+            "name": "mud",
+            "land": "ekat:mud_C",
+            "patch": {
+              "N": "ekat:mud_N",
+              "S": "ekat:mud_S",
+              "W": "ekat:mud_W",
+              "E": "ekat:mud_E",
+              "inNW": "ekat:mud_inNW",
+              "inNE": "ekat:mud_inNE",
+              "inSW": "ekat:mud_inSW",
+              "inSE": "ekat:mud_inSE",
+              "landSE": "ekat:mud_landSE",
+              "landSW": "ekat:mud_landSW",
+              "landNE": "ekat:mud_landNE",
+              "landNW": "ekat:mud_landNW",
+              "sTLBR": "ekat:mud_sTLBR",
+              "sTRBL": "ekat:mud_sTRBL",
+              "C": [
+                "ekat:mud_C",
+                "ekat:mud_plants3"
+              ]
+            }
+          }
+        },
+        {
+          "chars": "\"",
+          "tiles": {
+            "N": "ekat:marshwater_N",
+            "S": "ekat:marshwater_S",
+            "W": "ekat:marshwater_W",
+            "E": "ekat:marshwater_E",
+            "inNW": "ekat:marshwater_inNW",
+            "inNE": "ekat:marshwater_inNE",
+            "inSW": "ekat:marshwater_inSW",
+            "inSE": "ekat:marshwater_inSE",
+            "landSE": "ekat:marshwater_landSE",
+            "landSW": "ekat:marshwater_landSW",
+            "landNE": "ekat:marshwater_landNE",
+            "landNW": "ekat:marshwater_landNW",
+            "sTLBR": "ekat:marshwater_sTLBR",
+            "sTRBL": "ekat:marshwater_sTRBL"
+          },
+          "blend": {
+            "name": "marsh",
+            "land": "ekat:marsh_C",
+            "patch": {
+              "N": "ekat:marsh_N",
+              "S": "ekat:marsh_S",
+              "W": "ekat:marsh_W",
+              "E": "ekat:marsh_E",
+              "inNW": "ekat:marsh_inNW",
+              "inNE": "ekat:marsh_inNE",
+              "inSW": "ekat:marsh_inSW",
+              "inSE": "ekat:marsh_inSE",
+              "landSE": "ekat:marsh_landSE",
+              "landSW": "ekat:marsh_landSW",
+              "landNE": "ekat:marsh_landNE",
+              "landNW": "ekat:marsh_landNW",
+              "sTLBR": "ekat:marsh_sTLBR",
+              "sTRBL": "ekat:marsh_sTRBL",
+              "C": [
+                "ekat:marsh_C",
+                "ekat:marsh_plants1",
+                "ekat:marsh_plants3"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "prefabs": {
+    "cypress": {
+      "_comment": "Ekat bald cypress: canopy drawn over the player, roots at the base.",
+      "rows": [
+        [
+          "ekat:cypress_00",
+          "ekat:cypress_10",
+          "ekat:cypress_20"
+        ],
+        [
+          "ekat:cypress_01",
+          "ekat:cypress_11",
+          "ekat:cypress_21"
+        ],
+        [
+          "ekat:cypress_02",
+          "ekat:cypress_12",
+          "ekat:cypress_22"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    "cypress_small": {
+      "rows": [
+        [
+          "ekat:cypress_small_00",
+          "ekat:cypress_small_10"
+        ],
+        [
+          "ekat:cypress_small_01",
+          "ekat:cypress_small_11"
+        ],
+        [
+          "ekat:cypress_small_02",
+          "ekat:cypress_small_12"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    "knees": {
+      "_comment": "Cypress knees: one clean row (Ekat's second row doesn't line up).",
+      "rows": [
+        [
+          "ekat:knees_00",
+          "ekat:knees_10",
+          "ekat:knees_20"
+        ]
+      ],
+      "door": null,
+      "elev": 1
+    },
+    "log": {
+      "rows": [
+        [
+          "ekat:log_0",
+          "ekat:log_1"
+        ]
+      ],
+      "door": null
+    },
+    "stump": {
+      "rows": [
+        [
+          "ekat:stump_top"
+        ],
+        [
+          "ekat:stump"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "boat": {
+      "_comment": "Brick City sailboat set on swamp water; stands in for the stranded shrimp boats.",
+      "rows": [
+        [
+          null,
+          null,
+          "patch:boat_373",
+          null
+        ],
+        [
+          "patch:boat_352",
+          "patch:boat_353",
+          "patch:boat_354",
+          "patch:boat_355"
+        ],
+        [
+          "patch:boat_2DF",
+          "patch:boat_35B",
+          "patch:boat_35C",
+          "patch:boat_35D"
+        ]
+      ],
+      "door": null,
+      "elev": 1
+    },
+    "pier": {
+      "_comment": "Route 40 (Olivine) plank dock, 3 wide: capped where it meets the street, plank rows, then an end on posts. Each plank is drawn over whatever is beneath it.",
+      "rows": [
+        [
+          {
+            "var": "pier_3E0"
+          },
+          {
+            "var": "pier_3E1"
+          },
+          {
+            "var": "pier_3E2"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3E8"
+          },
+          {
+            "var": "pier_3E9"
+          },
+          {
+            "var": "pier_3EA"
+          }
+        ],
+        [
+          {
+            "var": "pier_3F0"
+          },
+          {
+            "var": "pier_3F1"
+          },
+          {
+            "var": "pier_3F2"
+          }
+        ],
+        [
+          {
+            "var": "pier_3F8"
+          },
+          {
+            "var": "pier_3F9"
+          },
+          {
+            "var": "pier_3FA"
+          }
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ]
+      ]
+    },
+    "cypress_marsh": {
+      "_comment": "Ekat bald cypress standing in marsh.",
+      "rows": [
+        [
+          "patch:cypress_00_marsh",
+          "patch:cypress_10_marsh",
+          "patch:cypress_20_marsh"
+        ],
+        [
+          "patch:cypress_01_marsh",
+          "patch:cypress_11_marsh",
+          "patch:cypress_21_marsh"
+        ],
+        [
+          "patch:cypress_02_marsh",
+          "patch:cypress_12_marsh",
+          "patch:cypress_22_marsh"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "on_patch": "\""
+    },
+    "cypress_small_marsh": {
+      "rows": [
+        [
+          "patch:cypress_small_00_marsh",
+          "patch:cypress_small_10_marsh"
+        ],
+        [
+          "patch:cypress_small_01_marsh",
+          "patch:cypress_small_11_marsh"
+        ],
+        [
+          "patch:cypress_small_02_marsh",
+          "patch:cypress_small_12_marsh"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "on_patch": "\""
+    },
+    "cypress_water": {
+      "_comment": "Ekat bald cypress standing in open water; blocks surfing.",
+      "rows": [
+        [
+          "patch:cypress_00_water",
+          "patch:cypress_10_water",
+          "patch:cypress_20_water"
+        ],
+        [
+          "patch:cypress_01_water",
+          "patch:cypress_11_water",
+          "patch:cypress_21_water"
+        ],
+        [
+          "patch:cypress_02_water",
+          "patch:cypress_12_water",
+          "patch:cypress_22_water"
+        ]
+      ],
+      "door": null,
+      "elev": 1,
+      "on_patch": "~"
+    },
+    "cypress_small_water": {
+      "rows": [
+        [
+          "patch:cypress_small_00_water",
+          "patch:cypress_small_10_water"
+        ],
+        [
+          "patch:cypress_small_01_water",
+          "patch:cypress_small_11_water"
+        ],
+        [
+          "patch:cypress_small_02_water",
+          "patch:cypress_small_12_water"
+        ]
+      ],
+      "door": null,
+      "elev": 1,
+      "on_patch": "~"
+    },
+    "waterlog": {
+      "_comment": "Floating log.",
+      "rows": [
+        [
+          "ekat:waterlog_0",
+          "ekat:waterlog_1"
+        ]
+      ],
+      "door": null,
+      "elev": 1,
+      "on_patch": "~"
+    },
+    "snag_water": {
+      "_comment": "Dead snag in water, top piece from Ekat's grass stump.",
+      "rows": [
+        [
+          "ekat:snag_top_water"
+        ],
+        [
+          "ekat:waterstump"
+        ]
+      ],
+      "door": null,
+      "elev": 1,
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ],
+      "on_patch": "~"
+    },
+    "reeds_marsh": {
+      "_comment": "Tall reeds standing in marsh (2 tall). Place on fully interior marsh tiles.",
+      "rows": [
+        [
+          "patch:reeds_top_marsh"
+        ],
+        [
+          "patch:reeds_marsh"
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ]
+      ],
+      "on_patch": "\""
+    },
+    "dock_h": {
+      "_comment": "Olivine/Route 40 plank dock laid east-west (boat landing): top edge, bottom edge, posts over water. The last post is left out so the shore bank shows under the dock end.",
+      "rows": [
+        [
+          {
+            "var": "pier_3E0"
+          },
+          {
+            "var": "pier_3E1"
+          },
+          {
+            "var": "pier_3E1"
+          },
+          {
+            "var": "pier_3E1"
+          },
+          {
+            "var": "pier_3E1"
+          },
+          {
+            "var": "pier_3E2"
+          }
+        ],
+        [
+          {
+            "var": "pier_3F0"
+          },
+          {
+            "var": "pier_3F1"
+          },
+          {
+            "var": "pier_3F1"
+          },
+          {
+            "var": "pier_3F1"
+          },
+          {
+            "var": "pier_3F1"
+          },
+          {
+            "var": "pier_3F2"
+          }
+        ],
+        [
+          {
+            "var": "pier_3F8"
+          },
+          {
+            "var": "pier_3F9"
+          },
+          {
+            "var": "pier_3F9"
+          },
+          {
+            "var": "pier_3F9"
+          },
+          {
+            "var": "pier_3F9"
+          },
+          null
+        ]
+      ],
+      "door": null,
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    "shrine": {
+      "_comment": "Rootkin shrine marker: a weathered stone standing in marsh.",
+      "rows": [
+        [
+          "patch:shrine_stone"
+        ]
+      ],
+      "door": null,
+      "on_patch": "\""
+    },
+    "hut": {
+      "_comment": "Rootkin stilt hut (own art), 3x4; the door is the ladder.",
+      "rows": [
+        [
+          {
+            "overlay": "rk_hut:00"
+          },
+          {
+            "overlay": "rk_hut:10"
+          },
+          {
+            "overlay": "rk_hut:20"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_hut:01"
+          },
+          {
+            "overlay": "rk_hut:11"
+          },
+          {
+            "overlay": "rk_hut:21"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_hut:02"
+          },
+          {
+            "overlay": "rk_hut:12"
+          },
+          {
+            "overlay": "rk_hut:22"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_hut:03"
+          },
+          {
+            "overlay": "rk_hut:13",
+            "behavior": "MB_NON_ANIMATED_DOOR"
+          },
+          {
+            "overlay": "rk_hut:23"
+          }
+        ]
+      ],
+      "door": [
+        1,
+        3
+      ]
+    },
+    "songhouse": {
+      "_comment": "Rootkin song house (own art), 5x5; the door is the top of the steps.",
+      "rows": [
+        [
+          {
+            "overlay": "rk_song:00"
+          },
+          {
+            "overlay": "rk_song:10"
+          },
+          {
+            "overlay": "rk_song:20"
+          },
+          {
+            "overlay": "rk_song:30"
+          },
+          {
+            "overlay": "rk_song:40"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_song:01"
+          },
+          {
+            "overlay": "rk_song:11"
+          },
+          {
+            "overlay": "rk_song:21"
+          },
+          {
+            "overlay": "rk_song:31"
+          },
+          {
+            "overlay": "rk_song:41"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_song:02"
+          },
+          {
+            "overlay": "rk_song:12"
+          },
+          {
+            "overlay": "rk_song:22"
+          },
+          {
+            "overlay": "rk_song:32"
+          },
+          {
+            "overlay": "rk_song:42"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_song:03"
+          },
+          {
+            "overlay": "rk_song:13"
+          },
+          {
+            "overlay": "rk_song:23"
+          },
+          {
+            "overlay": "rk_song:33"
+          },
+          {
+            "overlay": "rk_song:43"
+          }
+        ],
+        [
+          {
+            "overlay": "rk_song:04"
+          },
+          {
+            "overlay": "rk_song:14"
+          },
+          {
+            "overlay": "rk_song:24",
+            "behavior": "MB_NON_ANIMATED_DOOR"
+          },
+          {
+            "overlay": "rk_song:34"
+          },
+          {
+            "overlay": "rk_song:44"
+          }
+        ]
+      ],
+      "door": [
+        2,
+        4
+      ]
+    },
+    "walk_v2": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "walk_h2": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "walk_v3": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    "walk_h3": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "walk_v4": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "walk_h4": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    "walk_v5": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    "walk_h5": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ]
+      ]
+    },
+    "walk_v6": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ]
+    },
+    "walk_h6": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ]
+      ]
+    },
+    "walk_v7": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ]
+    },
+    "walk_h7": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    "walk_v8": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ]
+      ]
+    },
+    "walk_h8": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ]
+      ]
+    },
+    "walk_v9": {
+      "_comment": "Rootkin rope walkway, vertical, 3 wide (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wv:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wv:20",
+            "walk": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ]
+      ]
+    },
+    "walk_h9": {
+      "_comment": "Rootkin rope walkway, horizontal: two deck rows over pilings (own art).",
+      "rows": [
+        [
+          {
+            "overlay": "rk_wh:00",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:10",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:20",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:01",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:11",
+            "walk": true
+          },
+          {
+            "overlay": "rk_wh:21",
+            "walk": true
+          }
+        ],
+        [
+          {
+            "overlay": "rk_wh:02",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:12",
+            "walk": false,
+            "only_water": true
+          },
+          {
+            "overlay": "rk_wh:22",
+            "walk": false,
+            "only_water": true
+          }
+        ]
+      ],
+      "passable": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ]
+    }
+  },
+  "variants": {
+    "pier_3E3": {
+      "ekat:grass": "patch:pier_3E3_grass",
+      "ekat:water_C": "patch:pier_3E3_water_C",
+      "ekat:water_N": "patch:pier_3E3_water_N",
+      "land": "patch:pier_3E3_grass",
+      "water": "patch:pier_3E3_water_C"
+    },
+    "pier_3EB": {
+      "ekat:grass": "patch:pier_3EB_grass",
+      "ekat:water_C": "patch:pier_3EB_water_C",
+      "ekat:water_N": "patch:pier_3EB_water_N",
+      "land": "patch:pier_3EB_grass",
+      "water": "patch:pier_3EB_water_C"
+    },
+    "pier_3F3": {
+      "ekat:grass": "patch:pier_3F3_grass",
+      "ekat:water_C": "patch:pier_3F3_water_C",
+      "ekat:water_N": "patch:pier_3F3_water_N",
+      "land": "patch:pier_3F3_grass",
+      "water": "patch:pier_3F3_water_C"
+    },
+    "pier_3E0": {
+      "ekat:grass": "patch:pier_3E0_grass",
+      "ekat:water_C": "patch:pier_3E0_water_C",
+      "ekat:water_N": "patch:pier_3E0_water_N",
+      "land": "patch:pier_3E0_grass",
+      "water": "patch:pier_3E0_water_C"
+    },
+    "pier_3E1": {
+      "ekat:grass": "patch:pier_3E1_grass",
+      "ekat:water_C": "patch:pier_3E1_water_C",
+      "ekat:water_N": "patch:pier_3E1_water_N",
+      "land": "patch:pier_3E1_grass",
+      "water": "patch:pier_3E1_water_C"
+    },
+    "pier_3E2": {
+      "ekat:grass": "patch:pier_3E2_grass",
+      "ekat:water_C": "patch:pier_3E2_water_C",
+      "ekat:water_N": "patch:pier_3E2_water_N",
+      "land": "patch:pier_3E2_grass",
+      "water": "patch:pier_3E2_water_C"
+    },
+    "pier_3E8": {
+      "ekat:grass": "patch:pier_3E8_grass",
+      "ekat:water_C": "patch:pier_3E8_water_C",
+      "ekat:water_N": "patch:pier_3E8_water_N",
+      "land": "patch:pier_3E8_grass",
+      "water": "patch:pier_3E8_water_C"
+    },
+    "pier_3E9": {
+      "ekat:grass": "patch:pier_3E9_grass",
+      "ekat:water_C": "patch:pier_3E9_water_C",
+      "ekat:water_N": "patch:pier_3E9_water_N",
+      "land": "patch:pier_3E9_grass",
+      "water": "patch:pier_3E9_water_C"
+    },
+    "pier_3EA": {
+      "ekat:grass": "patch:pier_3EA_grass",
+      "ekat:water_C": "patch:pier_3EA_water_C",
+      "ekat:water_N": "patch:pier_3EA_water_N",
+      "land": "patch:pier_3EA_grass",
+      "water": "patch:pier_3EA_water_C"
+    },
+    "pier_3F0": {
+      "ekat:grass": "patch:pier_3F0_grass",
+      "ekat:water_C": "patch:pier_3F0_water_C",
+      "ekat:water_N": "patch:pier_3F0_water_N",
+      "land": "patch:pier_3F0_grass",
+      "water": "patch:pier_3F0_water_C"
+    },
+    "pier_3F1": {
+      "ekat:grass": "patch:pier_3F1_grass",
+      "ekat:water_C": "patch:pier_3F1_water_C",
+      "ekat:water_N": "patch:pier_3F1_water_N",
+      "land": "patch:pier_3F1_grass",
+      "water": "patch:pier_3F1_water_C"
+    },
+    "pier_3F2": {
+      "ekat:grass": "patch:pier_3F2_grass",
+      "ekat:water_C": "patch:pier_3F2_water_C",
+      "ekat:water_N": "patch:pier_3F2_water_N",
+      "land": "patch:pier_3F2_grass",
+      "water": "patch:pier_3F2_water_C"
+    },
+    "pier_3F8": {
+      "ekat:grass": "patch:pier_3F8_grass",
+      "ekat:water_C": "patch:pier_3F8_water_C",
+      "ekat:water_N": "patch:pier_3F8_water_N",
+      "land": "patch:pier_3F8_grass",
+      "water": "patch:pier_3F8_water_C"
+    },
+    "pier_3F9": {
+      "ekat:grass": "patch:pier_3F9_grass",
+      "ekat:water_C": "patch:pier_3F9_water_C",
+      "ekat:water_N": "patch:pier_3F9_water_N",
+      "land": "patch:pier_3F9_grass",
+      "water": "patch:pier_3F9_water_C"
+    },
+    "pier_3FA": {
+      "ekat:grass": "patch:pier_3FA_grass",
+      "ekat:water_C": "patch:pier_3FA_water_C",
+      "ekat:water_N": "patch:pier_3FA_water_N",
+      "land": "patch:pier_3FA_grass",
+      "water": "patch:pier_3FA_water_C"
+    }
+  },
+  "blends_file": "orleans_village.blends.json"
+}

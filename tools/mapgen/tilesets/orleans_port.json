@@ -1,0 +1,2098 @@
+{
+ "_comment": "Orleans harbour towns (first-pass towns): gTileset_OrleansGeneral + gTileset_OrleansHarbor (route terrain, Shady houses, Emerald Pokemon Center and Mart, the barn).",
+ "primary": "gTileset_OrleansGeneral",
+ "secondary": "gTileset_OrleansPort",
+ "primary_dir": "data/tilesets/primary/orleans_general",
+ "secondary_dir": "data/tilesets/secondary/orleans_port",
+ "mappings": [
+  "orleans_general.mapping.json",
+  "orleans_port.mapping.json"
+ ],
+ "border": [
+  "ekat:water_C",
+  "ekat:water_C",
+  "ekat:water_C",
+  "ekat:water_C"
+ ],
+ "terrain": {
+  ".": {
+   "name": "ground",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "\"": {
+   "name": "marsh",
+   "tile": "ekat:marsh_C",
+   "elev": 3
+  },
+  "~": {
+   "name": "water",
+   "tile": "ekat:water_C",
+   "elev": 1,
+   "decor": {
+    "tiles": [
+     "ekat:water_lily",
+     "ekat:water_weeds1"
+    ],
+    "rate": 0.035,
+    "collision": 1,
+    "min_open": 2,
+    "_comment": "Only single-tile objects that are complete in one cell. Multi-tile ones (logs, snags, knees) are placed as prefabs."
+   }
+  },
+  ":": {
+   "name": "road",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path"
+  },
+  "=": {
+   "name": "street",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path"
+  },
+  "L": {
+   "name": "levee",
+   "tile": "ekat:mud_C",
+   "elev": 3
+  },
+  "#": {
+   "name": "(old pier cell)",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "I": {
+   "name": "boat water",
+   "tile": "ekat:water_C",
+   "elev": 1
+  },
+  "S": {
+   "name": "churchyard",
+   "tile": "ekat:mud_C",
+   "elev": 3,
+   "autotile": "churchyard"
+  },
+  "H": {
+   "name": "building",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "K": {
+   "name": "building",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "P": {
+   "name": "building",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "M": {
+   "name": "building",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "G": {
+   "name": "tall grass (wild encounters)",
+   "tile": "ekat:tallgrass",
+   "elev": 3,
+   "_comment": "Tall grass on plain grass. Marsh and water borders are drawn into G cells where they meet."
+  },
+  "T": {
+   "name": "tree marker (trees are placed as prefabs)",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "B": {
+   "name": "levee ground (river channels; levee.py draws the embankment)",
+   "tile": "ekat:grass",
+   "elev": 3
+  },
+  "%": {
+   "name": "the substation yard's paving (Johto flagstone, primary)",
+   "tile": "1C1",
+   "elev": 3,
+   "autotile": "paved"
+  },
+  "&": {
+   "name": "paving breaking up into the dirt road (approach.py draws the paving over it)",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path"
+  },
+  "w": {
+   "name": "harbour water (no lily pads)",
+   "tile": "ekat:water_C",
+   "elev": 1
+  }
+ },
+ "autotile": {
+  "path": {
+   "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
+   "connects": ":=&%",
+   "NW": "0D0",
+   "N": "0D1",
+   "NE": "0D2",
+   "W": "0D8",
+   "C": "0D9",
+   "E": "0DA",
+   "SW": "0E0",
+   "S": "0E1",
+   "SE": "0E2",
+   "iNW": "patch:path_iNW",
+   "iNE": "patch:path_iNE",
+   "iSW": "patch:path_iSW",
+   "iSE": "patch:path_iSE"
+  },
+  "marsh": {
+   "kind": "corners",
+   "connects": "\"",
+   "apply_on": "\".GB%&",
+   "elev": 3,
+   "N": "ekat:marsh_N",
+   "S": "ekat:marsh_S",
+   "W": "ekat:marsh_W",
+   "E": "ekat:marsh_E",
+   "inNW": "ekat:marsh_inNW",
+   "inNE": "ekat:marsh_inNE",
+   "inSW": "ekat:marsh_inSW",
+   "inSE": "ekat:marsh_inSE",
+   "landSE": "ekat:marsh_landSE",
+   "landSW": "ekat:marsh_landSW",
+   "landNE": "ekat:marsh_landNE",
+   "landNW": "ekat:marsh_landNW",
+   "sTLBR": "ekat:marsh_sTLBR",
+   "sTRBL": "ekat:marsh_sTRBL",
+   "C": [
+    "ekat:marsh_C",
+    "ekat:marsh_plants1",
+    "ekat:marsh_plants3"
+   ],
+   "smooth": "\""
+  },
+  "mud": {
+   "kind": "corners",
+   "connects": "L",
+   "apply_on": "L.B%&",
+   "elev": 3,
+   "N": "ekat:mud_N",
+   "S": "ekat:mud_S",
+   "W": "ekat:mud_W",
+   "E": "ekat:mud_E",
+   "inNW": "ekat:mud_inNW",
+   "inNE": "ekat:mud_inNE",
+   "inSW": "ekat:mud_inSW",
+   "inSE": "ekat:mud_inSE",
+   "landSE": "ekat:mud_landSE",
+   "landSW": "ekat:mud_landSW",
+   "landNE": "ekat:mud_landNE",
+   "landNW": "ekat:mud_landNW",
+   "sTLBR": "ekat:mud_sTLBR",
+   "sTRBL": "ekat:mud_sTRBL",
+   "C": [
+    "ekat:mud_C",
+    "ekat:mud_plants3"
+   ]
+  },
+  "water": {
+   "kind": "corners",
+   "connects": "~w",
+   "apply_on": "~.\"LGBw%&",
+   "elev": 1,
+   "N": "ekat:water_N",
+   "S": "ekat:water_S",
+   "W": "ekat:water_W",
+   "E": "ekat:water_E",
+   "inNW": "ekat:water_inNW",
+   "inNE": "ekat:water_inNE",
+   "inSW": "ekat:water_inSW",
+   "inSE": "ekat:water_inSE",
+   "landSE": "ekat:water_landSE",
+   "landSW": "ekat:water_landSW",
+   "landNE": "ekat:water_landNE",
+   "landNW": "ekat:water_landNW",
+   "sTLBR": "ekat:water_sTLBR",
+   "sTRBL": "ekat:water_sTRBL",
+   "C": [
+    "ekat:water_C",
+    "ekat:water_lily"
+   ],
+   "smooth": "~w",
+   "neutral": "#I",
+   "alt_land": [
+    {
+     "chars": "L",
+     "tiles": {
+      "N": "ekat:mudwater_N",
+      "S": "ekat:mudwater_S",
+      "W": "ekat:mudwater_W",
+      "E": "ekat:mudwater_E",
+      "inNW": "ekat:mudwater_inNW",
+      "inNE": "ekat:mudwater_inNE",
+      "inSW": "ekat:mudwater_inSW",
+      "inSE": "ekat:mudwater_inSE",
+      "landSE": "ekat:mudwater_landSE",
+      "landSW": "ekat:mudwater_landSW",
+      "landNE": "ekat:mudwater_landNE",
+      "landNW": "ekat:mudwater_landNW",
+      "sTLBR": "ekat:mudwater_sTLBR",
+      "sTRBL": "ekat:mudwater_sTRBL"
+     },
+     "blend": {
+      "name": "mud",
+      "land": "ekat:mud_C",
+      "patch": {
+       "N": "ekat:mud_N",
+       "S": "ekat:mud_S",
+       "W": "ekat:mud_W",
+       "E": "ekat:mud_E",
+       "inNW": "ekat:mud_inNW",
+       "inNE": "ekat:mud_inNE",
+       "inSW": "ekat:mud_inSW",
+       "inSE": "ekat:mud_inSE",
+       "landSE": "ekat:mud_landSE",
+       "landSW": "ekat:mud_landSW",
+       "landNE": "ekat:mud_landNE",
+       "landNW": "ekat:mud_landNW",
+       "sTLBR": "ekat:mud_sTLBR",
+       "sTRBL": "ekat:mud_sTRBL",
+       "C": [
+        "ekat:mud_C",
+        "ekat:mud_plants3"
+       ]
+      }
+     }
+    },
+    {
+     "chars": "\"",
+     "tiles": {
+      "N": "ekat:marshwater_N",
+      "S": "ekat:marshwater_S",
+      "W": "ekat:marshwater_W",
+      "E": "ekat:marshwater_E",
+      "inNW": "ekat:marshwater_inNW",
+      "inNE": "ekat:marshwater_inNE",
+      "inSW": "ekat:marshwater_inSW",
+      "inSE": "ekat:marshwater_inSE",
+      "landSE": "ekat:marshwater_landSE",
+      "landSW": "ekat:marshwater_landSW",
+      "landNE": "ekat:marshwater_landNE",
+      "landNW": "ekat:marshwater_landNW",
+      "sTLBR": "ekat:marshwater_sTLBR",
+      "sTRBL": "ekat:marshwater_sTRBL"
+     },
+     "blend": {
+      "name": "marsh",
+      "land": "ekat:marsh_C",
+      "patch": {
+       "N": "ekat:marsh_N",
+       "S": "ekat:marsh_S",
+       "W": "ekat:marsh_W",
+       "E": "ekat:marsh_E",
+       "inNW": "ekat:marsh_inNW",
+       "inNE": "ekat:marsh_inNE",
+       "inSW": "ekat:marsh_inSW",
+       "inSE": "ekat:marsh_inSE",
+       "landSE": "ekat:marsh_landSE",
+       "landSW": "ekat:marsh_landSW",
+       "landNE": "ekat:marsh_landNE",
+       "landNW": "ekat:marsh_landNW",
+       "sTLBR": "ekat:marsh_sTLBR",
+       "sTRBL": "ekat:marsh_sTRBL",
+       "C": [
+        "ekat:marsh_C",
+        "ekat:marsh_plants1",
+        "ekat:marsh_plants3"
+       ]
+      }
+     }
+    }
+   ]
+  },
+  "paved": {
+   "_comment": "Johto flagstone paving on grass (primary 1B8-1CA): the substation yard.",
+   "connects": "%&",
+   "NW": "1B8",
+   "N": "1B9",
+   "NE": "1BA",
+   "W": "1C0",
+   "C": "1C1",
+   "E": "1C2",
+   "SW": "1C8",
+   "S": "1C9",
+   "SE": "1CA",
+   "iNW": "1BB",
+   "iNE": "1BC",
+   "iSW": "1C3",
+   "iSE": "1C4"
+  }
+ },
+ "prefabs": {
+  "cypress": {
+   "_comment": "Ekat bald cypress: canopy drawn over the player, roots at the base.",
+   "rows": [
+    [
+     "ekat:cypress_00",
+     "ekat:cypress_10",
+     "ekat:cypress_20"
+    ],
+    [
+     "ekat:cypress_01",
+     "ekat:cypress_11",
+     "ekat:cypress_21"
+    ],
+    [
+     "ekat:cypress_02",
+     "ekat:cypress_12",
+     "ekat:cypress_22"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  "cypress_small": {
+   "rows": [
+    [
+     "ekat:cypress_small_00",
+     "ekat:cypress_small_10"
+    ],
+    [
+     "ekat:cypress_small_01",
+     "ekat:cypress_small_11"
+    ],
+    [
+     "ekat:cypress_small_02",
+     "ekat:cypress_small_12"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ]
+  },
+  "log": {
+   "rows": [
+    [
+     "ekat:log_0",
+     "ekat:log_1"
+    ]
+   ],
+   "door": null
+  },
+  "stump": {
+   "rows": [
+    [
+     "ekat:stump_top"
+    ],
+    [
+     "ekat:stump"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "pier": {
+   "_comment": "Route 40 (Olivine) plank dock, 3 wide: capped where it meets the street, plank rows, then an end on posts. Each plank is drawn over whatever is beneath it.",
+   "rows": [
+    [
+     {
+      "var": "pier_3E0"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F0"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F8"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     {
+      "var": "pier_3FA"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ]
+   ]
+  },
+  "cypress_marsh": {
+   "_comment": "Ekat bald cypress standing in marsh.",
+   "rows": [
+    [
+     "patch:cypress_00_marsh",
+     "patch:cypress_10_marsh",
+     "patch:cypress_20_marsh"
+    ],
+    [
+     "patch:cypress_01_marsh",
+     "patch:cypress_11_marsh",
+     "patch:cypress_21_marsh"
+    ],
+    [
+     "patch:cypress_02_marsh",
+     "patch:cypress_12_marsh",
+     "patch:cypress_22_marsh"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "on_patch": "\""
+  },
+  "cypress_small_marsh": {
+   "rows": [
+    [
+     "patch:cypress_small_00_marsh",
+     "patch:cypress_small_10_marsh"
+    ],
+    [
+     "patch:cypress_small_01_marsh",
+     "patch:cypress_small_11_marsh"
+    ],
+    [
+     "patch:cypress_small_02_marsh",
+     "patch:cypress_small_12_marsh"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "on_patch": "\""
+  },
+  "cypress_water": {
+   "_comment": "Ekat bald cypress standing in open water; blocks surfing.",
+   "rows": [
+    [
+     "patch:cypress_00_water",
+     "patch:cypress_10_water",
+     "patch:cypress_20_water"
+    ],
+    [
+     "patch:cypress_01_water",
+     "patch:cypress_11_water",
+     "patch:cypress_21_water"
+    ],
+    [
+     "patch:cypress_02_water",
+     "patch:cypress_12_water",
+     "patch:cypress_22_water"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "on_patch": "~w"
+  },
+  "cypress_small_water": {
+   "rows": [
+    [
+     "patch:cypress_small_00_water",
+     "patch:cypress_small_10_water"
+    ],
+    [
+     "patch:cypress_small_01_water",
+     "patch:cypress_small_11_water"
+    ],
+    [
+     "patch:cypress_small_02_water",
+     "patch:cypress_small_12_water"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "on_patch": "~"
+  },
+  "waterlog": {
+   "_comment": "Floating log.",
+   "rows": [
+    [
+     "ekat:waterlog_0",
+     "ekat:waterlog_1"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "on_patch": "~w"
+  },
+  "snag_water": {
+   "_comment": "Dead snag in water, top piece from Ekat's grass stump.",
+   "rows": [
+    [
+     "ekat:snag_top_water"
+    ],
+    [
+     "ekat:waterstump"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "on_patch": "~w"
+  },
+  "reeds_marsh": {
+   "_comment": "Tall reeds standing in marsh (2 tall). Place on fully interior marsh tiles.",
+   "rows": [
+    [
+     "patch:reeds_top_marsh"
+    ],
+    [
+     "patch:reeds_marsh"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "on_patch": "\""
+  },
+  "dock_h": {
+   "_comment": "Olivine/Route 40 plank dock laid east-west (boat landing): top edge, bottom edge, posts over water. The last post is left out so the shore bank shows under the dock end.",
+   "rows": [
+    [
+     {
+      "var": "pier_3E0"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F0"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F8"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     null
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ]
+   ]
+  },
+  "shrine": {
+   "_comment": "Rootkin shrine marker: a weathered stone standing in marsh.",
+   "rows": [
+    [
+     "patch:shrine_stone"
+    ]
+   ],
+   "door": null,
+   "on_patch": "\""
+  },
+  "cabin": {
+   "_comment": "Shady Forest flat-fronted cabin (3x4): the small stilt-house plots.",
+   "rows": [
+    [
+     "shady:24B",
+     "shady:24C",
+     "shady:24D"
+    ],
+    [
+     "shady:253",
+     "shady:254",
+     "shady:255"
+    ],
+    [
+     "shady:25B",
+     "shady:25C",
+     "shady:25D"
+    ],
+    [
+     "shady:263",
+     "patch:shady_door",
+     "shady:265"
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ]
+  },
+  "pokecenter": {
+   "_comment": "Vanilla Emerald Pokemon Center (4x4).",
+   "rows": [
+    [
+     "vgen:048",
+     "vgen:049",
+     "vgen:04A",
+     "vgen:04B"
+    ],
+    [
+     "vgen:050",
+     "vgen:051",
+     "vgen:052",
+     "vgen:053"
+    ],
+    [
+     "vgen:058",
+     "vgen:059",
+     "vgen:05A",
+     "vgen:05B"
+    ],
+    [
+     "vgen:060",
+     "patch:pc_door",
+     "vgen:062",
+     "vgen:063"
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ]
+  },
+  "mart": {
+   "_comment": "Vanilla Emerald Poke Mart (4x4): the top row repeats roof tile 029 (vanilla 02A is empty); the bottom-left corner is the PC's.",
+   "rows": [
+    [
+     "vgen:028",
+     "vgen:029",
+     "vgen:029",
+     "vgen:02B"
+    ],
+    [
+     "vgen:030",
+     "vgen:031",
+     "vgen:032",
+     "vgen:033"
+    ],
+    [
+     "vgen:038",
+     "vgen:039",
+     "vgen:03A",
+     "vgen:03B"
+    ],
+    [
+     "vgen:060",
+     "patch:mart_door",
+     "vgen:042",
+     "vgen:043"
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ]
+  },
+  "brick_shop": {
+   "_comment": "Brick City shopfront, 6x5: a display window right of the door.",
+   "door": [
+    1,
+    4
+   ],
+   "rows": [
+    [
+     "brick:220",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:223"
+    ],
+    [
+     "brick:228",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:237"
+    ],
+    [
+     "brick:22A",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:233"
+    ],
+    [
+     "brick:232",
+     "brick:227",
+     "brick:23C",
+     "brick:204",
+     "brick:206",
+     "brick:217"
+    ],
+    [
+     "brick:248",
+     "patch:brick_door",
+     "brick:244",
+     "brick:20C",
+     "brick:20E",
+     "brick:21F"
+    ]
+   ]
+  },
+  "brick_hall": {
+   "_comment": "Brick City hall, 10x9: arched porch entrance with steps.",
+   "door": [
+    4,
+    7
+   ],
+   "rows": [
+    [
+     "brick:220",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:223"
+    ],
+    [
+     "brick:228",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:237"
+    ],
+    [
+     "brick:22A",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:233"
+    ],
+    [
+     "brick:238",
+     "brick:293",
+     "brick:294",
+     "brick:23A",
+     "brick:293",
+     "brick:294",
+     "brick:23A",
+     "brick:293",
+     "brick:294",
+     "brick:216"
+    ],
+    [
+     "brick:238",
+     "brick:29B",
+     "brick:29C",
+     "brick:23A",
+     "brick:29B",
+     "brick:29C",
+     "brick:23A",
+     "brick:29B",
+     "brick:29C",
+     "brick:216"
+    ],
+    [
+     "brick:238",
+     "brick:246",
+     "brick:247",
+     "brick:23A",
+     "brick:246",
+     "brick:247",
+     "brick:23A",
+     "brick:246",
+     "brick:247",
+     "brick:216"
+    ],
+    [
+     "brick:280",
+     "brick:284",
+     "brick:260",
+     "brick:2AC",
+     "brick:2AD",
+     "brick:2AE",
+     "brick:203",
+     "brick:207",
+     "brick:202",
+     "brick:216"
+    ],
+    [
+     "brick:281",
+     "brick:28A",
+     "brick:2A6",
+     "brick:2B4",
+     "patch:hall_door",
+     "brick:2B6",
+     "brick:20B",
+     "brick:20F",
+     "brick:20A",
+     "brick:243"
+    ],
+    [
+     null,
+     null,
+     null,
+     "patch:hall_step_l",
+     "patch:hall_step",
+     "patch:hall_step_r",
+     null,
+     null,
+     null,
+     null
+    ]
+   ],
+   "passable": [
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ]
+   ]
+  },
+  "lighthouse": {
+   "_comment": "Storm's Edge lighthouse (own art), 3x6, overlaid on the ground.",
+   "rows": [
+    [
+     {
+      "overlay": "lh:00"
+     },
+     {
+      "overlay": "lh:10"
+     },
+     {
+      "overlay": "lh:20"
+     }
+    ],
+    [
+     {
+      "overlay": "lh:01"
+     },
+     {
+      "overlay": "lh:11"
+     },
+     {
+      "overlay": "lh:21"
+     }
+    ],
+    [
+     {
+      "overlay": "lh:02"
+     },
+     {
+      "overlay": "lh:12"
+     },
+     {
+      "overlay": "lh:22"
+     }
+    ],
+    [
+     {
+      "overlay": "lh:03"
+     },
+     {
+      "overlay": "lh:13"
+     },
+     {
+      "overlay": "lh:23"
+     }
+    ],
+    [
+     {
+      "overlay": "lh:04"
+     },
+     {
+      "overlay": "lh:14"
+     },
+     {
+      "overlay": "lh:24"
+     }
+    ],
+    [
+     {
+      "overlay": "lh:05"
+     },
+     {
+      "overlay": "lh:15",
+      "behavior": "MB_NON_ANIMATED_DOOR"
+     },
+     {
+      "overlay": "lh:25"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    5
+   ]
+  },
+  "bench": {
+   "_comment": "Wooden bench (own art), 2x1.",
+   "rows": [
+    [
+     {
+      "overlay": "props:bench_0"
+     },
+     {
+      "overlay": "props:bench_1"
+     }
+    ]
+   ]
+  },
+  "lamp": {
+   "_comment": "Gas lamp (own art), 1x2.",
+   "rows": [
+    [
+     {
+      "overlay": "props:lamp_top"
+     }
+    ],
+    [
+     {
+      "overlay": "props:lamp_post"
+     }
+    ]
+   ]
+  },
+  "crates": {
+   "_comment": "Fish crates (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "props:crates"
+     }
+    ]
+   ]
+  },
+  "trawler": {
+   "_comment": "Shrimp trawler (own art), 4x2, moored in open water.",
+   "rows": [
+    [
+     {
+      "overlay": "boats:00"
+     },
+     {
+      "overlay": "boats:10"
+     },
+     {
+      "overlay": "boats:20"
+     },
+     {
+      "overlay": "boats:30"
+     }
+    ],
+    [
+     {
+      "overlay": "boats:01"
+     },
+     {
+      "overlay": "boats:11"
+     },
+     {
+      "overlay": "boats:21"
+     },
+     {
+      "overlay": "boats:31"
+     }
+    ]
+   ]
+  },
+  "quay": {
+   "_comment": "Dark plank boardwalk (own art): rows and passable cells come from the spec.",
+   "rows": [
+    [
+     {
+      "overlay": "seq:0_0"
+     },
+     {
+      "overlay": "seq:1_0"
+     },
+     {
+      "overlay": "seq:2_0"
+     }
+    ],
+    [
+     {
+      "overlay": "seq:0_1"
+     },
+     {
+      "overlay": "seq:1_1"
+     },
+     {
+      "overlay": "seq:2_1"
+     }
+    ],
+    [
+     {
+      "overlay": "seq:0_2"
+     },
+     {
+      "overlay": "seq:1_2"
+     },
+     {
+      "overlay": "seq:2_2"
+     }
+    ],
+    [
+     {
+      "overlay": "seq:0_3"
+     },
+     {
+      "overlay": "seq:1_3"
+     },
+     {
+      "overlay": "seq:2_3"
+     }
+    ]
+   ]
+  },
+  "substation": {
+   "_comment": "Storm's Edge gym, the substation hall (Brick City hall made symmetric), 9x9.",
+   "rows": [
+    [
+     "brick:220",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:221",
+     "brick:223"
+    ],
+    [
+     "brick:228",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:229",
+     "brick:237"
+    ],
+    [
+     "brick:22A",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:22B",
+     "brick:233"
+    ],
+    [
+     "brick:238",
+     "brick:293",
+     "brick:294",
+     "brick:23A",
+     "brick:23A",
+     "brick:23A",
+     "brick:293",
+     "brick:294",
+     "brick:216"
+    ],
+    [
+     "brick:238",
+     "brick:29B",
+     "brick:29C",
+     "brick:23A",
+     "brick:23A",
+     "brick:23A",
+     "brick:29B",
+     "brick:29C",
+     "brick:216"
+    ],
+    [
+     "brick:238",
+     "brick:246",
+     "brick:247",
+     "brick:23A",
+     "brick:23A",
+     "brick:23A",
+     "brick:246",
+     "brick:247",
+     "brick:216"
+    ],
+    [
+     "brick:280",
+     "brick:284",
+     "brick:260",
+     "brick:2AC",
+     "brick:2AD",
+     "brick:2AE",
+     "patch:se_h260",
+     "patch:se_h284",
+     "patch:se_h280"
+    ],
+    [
+     "brick:281",
+     "brick:28A",
+     "brick:2A6",
+     "brick:2B4",
+     "patch:hall_door",
+     "brick:2B6",
+     "patch:se_h2A6",
+     "patch:se_h28A",
+     "patch:se_h281"
+    ],
+    [
+     null,
+     null,
+     null,
+     "patch:se_step_l",
+     "patch:se_step",
+     "patch:se_step_r",
+     null,
+     null,
+     null
+    ]
+   ],
+   "door": [
+    4,
+    7
+   ],
+   "passable": [
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ]
+   ]
+  },
+  "stilt_house": {
+   "_comment": "Stilt house: the Shady cabin over a stilt row (own art) standing in the water; steps down from the door to the quay.",
+   "rows": [
+    [
+     "shady:24B",
+     "shady:24C",
+     "shady:24D"
+    ],
+    [
+     "shady:253",
+     "shady:254",
+     "shady:255"
+    ],
+    [
+     "shady:25B",
+     "shady:25C",
+     "shady:25D"
+    ],
+    [
+     "shady:263",
+     "patch:shady_door",
+     "shady:265"
+    ],
+    [
+     {
+      "overlay": "sst:0_0"
+     },
+     {
+      "overlay": "sst:1_0",
+      "walk": true
+     },
+     {
+      "overlay": "sst:2_0"
+     }
+    ]
+   ],
+   "door": [
+    1,
+    3
+   ],
+   "passable": [
+    [
+     1,
+     4
+    ]
+   ]
+  },
+  "gantry_l": {
+   "_comment": "Lattice gantry with insulator strings (own art), 1x3.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:0_0"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:0_1"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:0_2"
+     }
+    ]
+   ]
+  },
+  "transformer_l": {
+   "_comment": "Transformer with porcelain bushings (own art), 2x2.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:1_1"
+     },
+     {
+      "overlay": "ssb:2_1"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:1_2"
+     },
+     {
+      "overlay": "ssb:2_2"
+     }
+    ]
+   ]
+  },
+  "cabinet_l": {
+   "_comment": "Switch cabinet (own art), 1x2.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:3_0"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:3_1"
+     }
+    ]
+   ]
+  },
+  "fence_wires_l": {
+   "_comment": "The incoming line's wires over the top fence (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:0_3"
+     }
+    ]
+   ]
+  },
+  "gantry_r": {
+   "_comment": "Lattice gantry with insulator strings (own art), 1x3.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:7_0"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:7_1"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:7_2"
+     }
+    ]
+   ]
+  },
+  "transformer_r": {
+   "_comment": "Transformer with porcelain bushings (own art), 2x2.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:5_1"
+     },
+     {
+      "overlay": "ssb:6_1"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:5_2"
+     },
+     {
+      "overlay": "ssb:6_2"
+     }
+    ]
+   ]
+  },
+  "cabinet_r": {
+   "_comment": "Switch cabinet (own art), 1x2.",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:4_0"
+     }
+    ],
+    [
+     {
+      "overlay": "ssb:4_1"
+     }
+    ]
+   ]
+  },
+  "fence_wires_r": {
+   "_comment": "The incoming line's wires over the top fence (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:7_3"
+     }
+    ]
+   ]
+  },
+  "fence_sign": {
+   "_comment": "Danger sign on a fence panel (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "ssb:3_2"
+     }
+    ]
+   ]
+  },
+  "downed_line": {
+   "_comment": "The downed line (own art), 3x12: empty cells are cut by storms_edge.py.",
+   "rows": [
+    [
+     {
+      "overlay": "spl:0_0"
+     },
+     {
+      "overlay": "spl:1_0"
+     },
+     {
+      "overlay": "spl:2_0"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_1"
+     },
+     {
+      "overlay": "spl:1_1"
+     },
+     {
+      "overlay": "spl:2_1"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_2"
+     },
+     {
+      "overlay": "spl:1_2"
+     },
+     {
+      "overlay": "spl:2_2"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_3"
+     },
+     {
+      "overlay": "spl:1_3"
+     },
+     {
+      "overlay": "spl:2_3"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_4"
+     },
+     {
+      "overlay": "spl:1_4"
+     },
+     {
+      "overlay": "spl:2_4"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_5"
+     },
+     {
+      "overlay": "spl:1_5"
+     },
+     {
+      "overlay": "spl:2_5"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_6"
+     },
+     {
+      "overlay": "spl:1_6"
+     },
+     {
+      "overlay": "spl:2_6"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_7"
+     },
+     {
+      "overlay": "spl:1_7"
+     },
+     {
+      "overlay": "spl:2_7"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_8"
+     },
+     {
+      "overlay": "spl:1_8"
+     },
+     {
+      "overlay": "spl:2_8"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_9"
+     },
+     {
+      "overlay": "spl:1_9"
+     },
+     {
+      "overlay": "spl:2_9"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_10"
+     },
+     {
+      "overlay": "spl:1_10"
+     },
+     {
+      "overlay": "spl:2_10"
+     }
+    ],
+    [
+     {
+      "overlay": "spl:0_11"
+     },
+     {
+      "overlay": "spl:1_11"
+     },
+     {
+      "overlay": "spl:2_11"
+     }
+    ]
+   ]
+  },
+  "bridge_raised": {
+   "_comment": "Drawbridge raised (own art): leaves 1x4 (x 0 west, 1 east), barriers 1x2 over the deck (x 2 west, 3 east). Swapped in by the map script (spec states).",
+   "rows": [
+    [
+     {
+      "overlay": "sbr:0_0"
+     },
+     {
+      "overlay": "sbr:1_0"
+     },
+     {
+      "overlay": "sbr:2_0"
+     },
+     {
+      "overlay": "sbr:3_0"
+     }
+    ],
+    [
+     {
+      "overlay": "sbr:0_1"
+     },
+     {
+      "overlay": "sbr:1_1"
+     },
+     {
+      "overlay": "sbr:2_1"
+     },
+     {
+      "overlay": "sbr:3_1"
+     }
+    ],
+    [
+     {
+      "overlay": "sbr:0_2"
+     },
+     {
+      "overlay": "sbr:1_2"
+     },
+     {
+      "overlay": "sbr:2_2"
+     },
+     {
+      "overlay": "sbr:3_2"
+     }
+    ],
+    [
+     {
+      "overlay": "sbr:0_3"
+     },
+     {
+      "overlay": "sbr:1_3"
+     },
+     {
+      "overlay": "sbr:2_3"
+     },
+     {
+      "overlay": "sbr:3_3"
+     }
+    ]
+   ]
+  },
+  "emblem": {
+   "_comment": "The gym's bolt emblem (own art), placed over the hall's brick after the hall.",
+   "rows": [
+    [
+     {
+      "overlay": "smi:2_0"
+     }
+    ]
+   ]
+  },
+  "generator": {
+   "_comment": "The Pokemon Center's generator (own art), 2x1.",
+   "rows": [
+    [
+     {
+      "overlay": "smi:0_0"
+     },
+     {
+      "overlay": "smi:1_0"
+     }
+    ]
+   ]
+  },
+  "fence": {
+   "_comment": "Grey post-and-rail fence piece (primary 0EC-0FD, 136): rows come from the spec.",
+   "rows": [
+    [
+     "0ED"
+    ]
+   ]
+  },
+  "sign": {
+   "_comment": "Wooden signpost (primary 003).",
+   "rows": [
+    [
+     "003"
+    ]
+   ]
+  },
+  "barrel": {
+   "_comment": "Barrel (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "props:barrel"
+     }
+    ]
+   ]
+  },
+  "trap": {
+   "_comment": "Crab trap (own art).",
+   "rows": [
+    [
+     {
+      "overlay": "props:trap"
+     }
+    ]
+   ]
+  }
+ },
+ "variants": {
+  "pier_3E3": {
+   "ekat:grass": "patch:pier_3E3_grass",
+   "ekat:water_C": "patch:pier_3E3_water_C",
+   "ekat:water_N": "patch:pier_3E3_water_N",
+   "land": "patch:pier_3E3_grass",
+   "water": "patch:pier_3E3_water_C"
+  },
+  "pier_3EB": {
+   "ekat:grass": "patch:pier_3EB_grass",
+   "ekat:water_C": "patch:pier_3EB_water_C",
+   "ekat:water_N": "patch:pier_3EB_water_N",
+   "land": "patch:pier_3EB_grass",
+   "water": "patch:pier_3EB_water_C"
+  },
+  "pier_3F3": {
+   "ekat:grass": "patch:pier_3F3_grass",
+   "ekat:water_C": "patch:pier_3F3_water_C",
+   "ekat:water_N": "patch:pier_3F3_water_N",
+   "land": "patch:pier_3F3_grass",
+   "water": "patch:pier_3F3_water_C"
+  },
+  "pier_3E0": {
+   "ekat:grass": "patch:pier_3E0_grass",
+   "ekat:water_C": "patch:pier_3E0_water_C",
+   "ekat:water_N": "patch:pier_3E0_water_N",
+   "land": "patch:pier_3E0_grass",
+   "water": "patch:pier_3E0_water_C"
+  },
+  "pier_3E1": {
+   "ekat:grass": "patch:pier_3E1_grass",
+   "ekat:water_C": "patch:pier_3E1_water_C",
+   "ekat:water_N": "patch:pier_3E1_water_N",
+   "land": "patch:pier_3E1_grass",
+   "water": "patch:pier_3E1_water_C"
+  },
+  "pier_3E2": {
+   "ekat:grass": "patch:pier_3E2_grass",
+   "ekat:water_C": "patch:pier_3E2_water_C",
+   "ekat:water_N": "patch:pier_3E2_water_N",
+   "land": "patch:pier_3E2_grass",
+   "water": "patch:pier_3E2_water_C"
+  },
+  "pier_3E8": {
+   "ekat:grass": "patch:pier_3E8_grass",
+   "ekat:water_C": "patch:pier_3E8_water_C",
+   "ekat:water_N": "patch:pier_3E8_water_N",
+   "land": "patch:pier_3E8_grass",
+   "water": "patch:pier_3E8_water_C"
+  },
+  "pier_3E9": {
+   "ekat:grass": "patch:pier_3E9_grass",
+   "ekat:water_C": "patch:pier_3E9_water_C",
+   "ekat:water_N": "patch:pier_3E9_water_N",
+   "land": "patch:pier_3E9_grass",
+   "water": "patch:pier_3E9_water_C"
+  },
+  "pier_3EA": {
+   "ekat:grass": "patch:pier_3EA_grass",
+   "ekat:water_C": "patch:pier_3EA_water_C",
+   "ekat:water_N": "patch:pier_3EA_water_N",
+   "land": "patch:pier_3EA_grass",
+   "water": "patch:pier_3EA_water_C"
+  },
+  "pier_3F0": {
+   "ekat:grass": "patch:pier_3F0_grass",
+   "ekat:water_C": "patch:pier_3F0_water_C",
+   "ekat:water_N": "patch:pier_3F0_water_N",
+   "land": "patch:pier_3F0_grass",
+   "water": "patch:pier_3F0_water_C"
+  },
+  "pier_3F1": {
+   "ekat:grass": "patch:pier_3F1_grass",
+   "ekat:water_C": "patch:pier_3F1_water_C",
+   "ekat:water_N": "patch:pier_3F1_water_N",
+   "land": "patch:pier_3F1_grass",
+   "water": "patch:pier_3F1_water_C"
+  },
+  "pier_3F2": {
+   "ekat:grass": "patch:pier_3F2_grass",
+   "ekat:water_C": "patch:pier_3F2_water_C",
+   "ekat:water_N": "patch:pier_3F2_water_N",
+   "land": "patch:pier_3F2_grass",
+   "water": "patch:pier_3F2_water_C"
+  },
+  "pier_3F8": {
+   "ekat:grass": "patch:pier_3F8_grass",
+   "ekat:water_C": "patch:pier_3F8_water_C",
+   "ekat:water_N": "patch:pier_3F8_water_N",
+   "land": "patch:pier_3F8_grass",
+   "water": "patch:pier_3F8_water_C"
+  },
+  "pier_3F9": {
+   "ekat:grass": "patch:pier_3F9_grass",
+   "ekat:water_C": "patch:pier_3F9_water_C",
+   "ekat:water_N": "patch:pier_3F9_water_N",
+   "land": "patch:pier_3F9_grass",
+   "water": "patch:pier_3F9_water_C"
+  },
+  "pier_3FA": {
+   "ekat:grass": "patch:pier_3FA_grass",
+   "ekat:water_C": "patch:pier_3FA_water_C",
+   "ekat:water_N": "patch:pier_3FA_water_N",
+   "land": "patch:pier_3FA_grass",
+   "water": "patch:pier_3FA_water_C"
+  }
+ },
+ "blends_file": "orleans_port.blends.json"
+}

@@ -1,0 +1,355 @@
+=== TRAINER_ORLEANS_ROUTE2_YOUNGSTER ===
+Name: THIBAULT
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Rattata
+Level: 13
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Pikipek
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE2_CAMPER ===
+Name: NOE
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Ekans
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Zubat
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE2_PICNICKER ===
+Name: JOSETTE
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Pichu
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Pikachu
+Level: 15
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE2_BIRD_KEEPER ===
+Name: ALCEE
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Hoothoot
+Level: 14
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Pikipek
+Level: 15
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Wingull
+Level: 15
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE2_GUITARIST ===
+Name: REMI
+Class: Guitarist
+Pic: Guitarist
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+
+Voltorb
+Level: 15
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+Pikachu
+Level: 16
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_FISHERMAN ===
+Name: LAZARE
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer
+
+Barboach
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Wooper
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Psyduck
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_SAILOR ===
+Name: ARMAND
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Wingull
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Tentacool
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_BUG_MANIAC ===
+Name: DUPRE
+Class: Bug Maniac
+Pic: Bug Maniac
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Paras
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Dewpider
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Surskit
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_BREEDER ===
+Name: ROSALIE
+Class: Pkmn Breeder
+Pic: Pokemon Breeder F
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Hoothoot
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Swinub
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_PARASOL_LADY ===
+Name: CELESTINE
+Class: Parasol Lady
+Pic: Parasol Lady
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Basic Trainer
+
+Oddish
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Bellsprout
+Level: 19
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Ducklett
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_ROUTE3_COOLTRAINER ===
+Name: AUGUSTE
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+
+Voltorb
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Joltik
+Level: 20
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Pikipek
+Level: 22
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_STORMS_EDGE_GYM_LINEWORKER ===
+Name: BERTRAND
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Hiker
+Double Battle: No
+AI: Basic Trainer
+
+Magnemite
+Level: 16
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Voltorb
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_STORMS_EDGE_GYM_ELECTRICIAN ===
+Name: CHLOE
+Class: Guitarist
+Pic: Guitarist
+Gender: Female
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+
+Joltik
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Elekid
+Level: 17
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+
+=== TRAINER_ORLEANS_JAYDEN_ROUTE3_CHIKORITA ===
+Name: JAYDEN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Zubat
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Ekans
+Level: 21
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Bayleef
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+=== TRAINER_ORLEANS_JAYDEN_ROUTE3_FUECOCO ===
+Name: JAYDEN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Zubat
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Ekans
+Level: 21
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Crocalor
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+=== TRAINER_ORLEANS_JAYDEN_ROUTE3_TOTODILE ===
+Name: JAYDEN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Zubat
+Level: 20
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Ekans
+Level: 21
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Croconaw
+Level: 23
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+=== TRAINER_ECLAIR ===
+Name: ÉCLAIR
+Class: Leader
+Pic: Salon Maiden Anabel
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Items: Super Potion / Super Potion
+Starting Status: Electric Terrain Temporary
+
+Voltorb
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Electro Ball
+- Spark
+- Thunder Wave
+- Screech
+
+Joltik
+Level: 19
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Bug Bite
+- Electroweb
+- Thunder Wave
+- Charge Beam
+
+Wattrel @ Oran Berry
+Level: 21
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Spark
+- Quick Attack
+- Peck
+- Thunder Wave
+

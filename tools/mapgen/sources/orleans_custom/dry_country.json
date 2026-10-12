@@ -1,0 +1,602 @@
+{
+ "_comment": "The shared dry-country set (make_dry_country.py). Terrain cells are opaque, pieces are overlays (magenta = clear); cells are [x, y] in 16 px units. dry: plain first, then variations. N..sTRBL: dry ground on Ekat's grass, the dual grid of Ekat's marsh set. road_*: the cell-based road on dry ground (build.py path_tile keys). cane = encounter grass. salt / salt_dry: Route 24's salt crust. v2: dry_grass is tall dry grass (encounter grass) ringed by dry[0]'s pixels; four dual-grid sets on dry ground (patch inside, dry[0] outside), each <prefix> (its C fill: a cell or a list, plain first) + <prefix>_N ... <prefix>_sTRBL with Ekat's corner keys: cane_wall (blocking cane-field backdrop, its stalk face on the south), salt (C = the salt crust cell), red_earth, gully (an eroded gully, its wall face on the north side). v3: rock_wall (+ rock_wall_N ... sTRBL), a blocking bedrock wall with a 14 px cliff face on its south side (its own geometry: the edge 15 px from an in-corner); dry_grass is now a continuous tall-grass fill and dry_grass_N ... sTRBL its ragged border on dry ground. rock_wall_face / _face_l / _face_r / _face_il / _face_ir: the face-extension cells under the wall's south edge (make_dry_country.face_cells gives the rule). rock_wall is a list like dry: the plain fill, then crack, slab and weathered variations.",
+ "png": "dry_country.png",
+ "terrain": {
+  "dry": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    0
+   ],
+   [
+    2,
+    0
+   ],
+   [
+    3,
+    0
+   ]
+  ],
+  "dry_grass": [
+   4,
+   0
+  ],
+  "cane": [
+   5,
+   0
+  ],
+  "pepper": [
+   6,
+   0
+  ],
+  "salt": [
+   7,
+   0
+  ],
+  "salt_dry": [
+   8,
+   0
+  ],
+  "N": [
+   0,
+   1
+  ],
+  "S": [
+   1,
+   1
+  ],
+  "W": [
+   2,
+   1
+  ],
+  "E": [
+   3,
+   1
+  ],
+  "inNW": [
+   4,
+   1
+  ],
+  "inNE": [
+   5,
+   1
+  ],
+  "inSW": [
+   6,
+   1
+  ],
+  "inSE": [
+   0,
+   2
+  ],
+  "landSE": [
+   1,
+   2
+  ],
+  "landSW": [
+   2,
+   2
+  ],
+  "landNE": [
+   3,
+   2
+  ],
+  "landNW": [
+   4,
+   2
+  ],
+  "sTLBR": [
+   5,
+   2
+  ],
+  "sTRBL": [
+   6,
+   2
+  ],
+  "road_C": [
+   0,
+   3
+  ],
+  "road_N": [
+   1,
+   3
+  ],
+  "road_S": [
+   2,
+   3
+  ],
+  "road_W": [
+   3,
+   3
+  ],
+  "road_E": [
+   4,
+   3
+  ],
+  "road_NW": [
+   5,
+   3
+  ],
+  "road_NE": [
+   6,
+   3
+  ],
+  "road_SW": [
+   7,
+   3
+  ],
+  "road_SE": [
+   8,
+   3
+  ],
+  "road_iNW": [
+   0,
+   4
+  ],
+  "road_iNE": [
+   1,
+   4
+  ],
+  "road_iSW": [
+   2,
+   4
+  ],
+  "road_iSE": [
+   3,
+   4
+  ],
+  "cane_wall": [
+   0,
+   10
+  ],
+  "cane_wall_N": [
+   1,
+   10
+  ],
+  "cane_wall_S": [
+   2,
+   10
+  ],
+  "cane_wall_W": [
+   3,
+   10
+  ],
+  "cane_wall_E": [
+   4,
+   10
+  ],
+  "cane_wall_inNW": [
+   5,
+   10
+  ],
+  "cane_wall_inNE": [
+   6,
+   10
+  ],
+  "cane_wall_inSW": [
+   7,
+   10
+  ],
+  "cane_wall_inSE": [
+   8,
+   10
+  ],
+  "cane_wall_landSE": [
+   0,
+   11
+  ],
+  "cane_wall_landSW": [
+   1,
+   11
+  ],
+  "cane_wall_landNE": [
+   2,
+   11
+  ],
+  "cane_wall_landNW": [
+   3,
+   11
+  ],
+  "cane_wall_sTLBR": [
+   4,
+   11
+  ],
+  "cane_wall_sTRBL": [
+   5,
+   11
+  ],
+  "salt_N": [
+   0,
+   12
+  ],
+  "salt_S": [
+   1,
+   12
+  ],
+  "salt_W": [
+   2,
+   12
+  ],
+  "salt_E": [
+   3,
+   12
+  ],
+  "salt_inNW": [
+   4,
+   12
+  ],
+  "salt_inNE": [
+   5,
+   12
+  ],
+  "salt_inSW": [
+   6,
+   12
+  ],
+  "salt_inSE": [
+   7,
+   12
+  ],
+  "salt_landSE": [
+   8,
+   12
+  ],
+  "salt_landSW": [
+   0,
+   13
+  ],
+  "salt_landNE": [
+   1,
+   13
+  ],
+  "salt_landNW": [
+   2,
+   13
+  ],
+  "salt_sTLBR": [
+   3,
+   13
+  ],
+  "salt_sTRBL": [
+   4,
+   13
+  ],
+  "red_earth": [
+   [
+    0,
+    14
+   ],
+   [
+    1,
+    14
+   ],
+   [
+    2,
+    14
+   ]
+  ],
+  "red_earth_N": [
+   3,
+   14
+  ],
+  "red_earth_S": [
+   4,
+   14
+  ],
+  "red_earth_W": [
+   5,
+   14
+  ],
+  "red_earth_E": [
+   6,
+   14
+  ],
+  "red_earth_inNW": [
+   7,
+   14
+  ],
+  "red_earth_inNE": [
+   8,
+   14
+  ],
+  "red_earth_inSW": [
+   0,
+   15
+  ],
+  "red_earth_inSE": [
+   1,
+   15
+  ],
+  "red_earth_landSE": [
+   2,
+   15
+  ],
+  "red_earth_landSW": [
+   3,
+   15
+  ],
+  "red_earth_landNE": [
+   4,
+   15
+  ],
+  "red_earth_landNW": [
+   5,
+   15
+  ],
+  "red_earth_sTLBR": [
+   6,
+   15
+  ],
+  "red_earth_sTRBL": [
+   7,
+   15
+  ],
+  "gully": [
+   0,
+   16
+  ],
+  "gully_N": [
+   1,
+   16
+  ],
+  "gully_S": [
+   2,
+   16
+  ],
+  "gully_W": [
+   3,
+   16
+  ],
+  "gully_E": [
+   4,
+   16
+  ],
+  "gully_inNW": [
+   5,
+   16
+  ],
+  "gully_inNE": [
+   6,
+   16
+  ],
+  "gully_inSW": [
+   7,
+   16
+  ],
+  "gully_inSE": [
+   8,
+   16
+  ],
+  "gully_landSE": [
+   0,
+   17
+  ],
+  "gully_landSW": [
+   1,
+   17
+  ],
+  "gully_landNE": [
+   2,
+   17
+  ],
+  "gully_landNW": [
+   3,
+   17
+  ],
+  "gully_sTLBR": [
+   4,
+   17
+  ],
+  "gully_sTRBL": [
+   5,
+   17
+  ],
+  "rock_wall": [
+   [
+    0,
+    18
+   ],
+   [
+    0,
+    23
+   ],
+   [
+    1,
+    23
+   ],
+   [
+    2,
+    23
+   ]
+  ],
+  "rock_wall_N": [
+   1,
+   18
+  ],
+  "rock_wall_S": [
+   2,
+   18
+  ],
+  "rock_wall_W": [
+   3,
+   18
+  ],
+  "rock_wall_E": [
+   4,
+   18
+  ],
+  "rock_wall_inNW": [
+   5,
+   18
+  ],
+  "rock_wall_inNE": [
+   6,
+   18
+  ],
+  "rock_wall_inSW": [
+   7,
+   18
+  ],
+  "rock_wall_inSE": [
+   8,
+   18
+  ],
+  "rock_wall_landSE": [
+   0,
+   19
+  ],
+  "rock_wall_landSW": [
+   1,
+   19
+  ],
+  "rock_wall_landNE": [
+   2,
+   19
+  ],
+  "rock_wall_landNW": [
+   3,
+   19
+  ],
+  "rock_wall_sTLBR": [
+   4,
+   19
+  ],
+  "rock_wall_sTRBL": [
+   5,
+   19
+  ],
+  "dry_grass_N": [
+   0,
+   20
+  ],
+  "dry_grass_S": [
+   1,
+   20
+  ],
+  "dry_grass_W": [
+   2,
+   20
+  ],
+  "dry_grass_E": [
+   3,
+   20
+  ],
+  "dry_grass_inNW": [
+   4,
+   20
+  ],
+  "dry_grass_inNE": [
+   5,
+   20
+  ],
+  "dry_grass_inSW": [
+   6,
+   20
+  ],
+  "dry_grass_inSE": [
+   7,
+   20
+  ],
+  "dry_grass_landSE": [
+   8,
+   20
+  ],
+  "dry_grass_landSW": [
+   0,
+   21
+  ],
+  "dry_grass_landNE": [
+   1,
+   21
+  ],
+  "dry_grass_landNW": [
+   2,
+   21
+  ],
+  "dry_grass_sTLBR": [
+   3,
+   21
+  ],
+  "dry_grass_sTRBL": [
+   4,
+   21
+  ],
+  "rock_wall_face": [
+   0,
+   22
+  ],
+  "rock_wall_face_l": [
+   1,
+   22
+  ],
+  "rock_wall_face_r": [
+   2,
+   22
+  ],
+  "rock_wall_face_il": [
+   3,
+   22
+  ],
+  "rock_wall_face_ir": [
+   4,
+   22
+  ],
+  "rock_wall_face_ilr": [
+   5,
+   22
+  ],
+  "rock_wall_face_l_ir": [
+   6,
+   22
+  ],
+  "rock_wall_face_r_il": [
+   7,
+   22
+  ]
+ },
+ "pieces": {
+  "field_tree": {
+   "x": 0,
+   "y": 5,
+   "w": 2,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "A pecan at a field's edge (2x3, blocking)."
+  },
+  "field_tree_l": {
+   "x": 2,
+   "y": 5,
+   "w": 3,
+   "h": 3,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "A spreading live oak (3x3, blocking)."
+  },
+  "rock": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "A stone (1x1, blocking)."
+  },
+  "rock_l": {
+   "x": 6,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "comment": "A boulder (2x2, blocking)."
+  }
+ }
+}

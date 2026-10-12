@@ -1,0 +1,99 @@
+{
+ "source": "..\\orleans_maps\\r23_route_23.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1147
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 28,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 9,
+   "y": 9,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 41,
+   "y": 21,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 43,
+   "y": 21,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 45,
+   "y": 21,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "shrine",
+   "x": 25,
+   "y": 3
+  },
+  {
+   "kind": "hidden_item",
+   "x": 37,
+   "y": 4
+  },
+  {
+   "kind": "item",
+   "x": 9,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 31,
+   "y": 10
+  },
+  {
+   "kind": "event",
+   "x": 3,
+   "y": 11
+  },
+  {
+   "kind": "trainer",
+   "x": 41,
+   "y": 11
+  },
+  {
+   "kind": "trainer",
+   "x": 7,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 19,
+   "y": 13
+  },
+  {
+   "kind": "item",
+   "x": 29,
+   "y": 19
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 13
+  },
+  {
+   "side": "E",
+   "pos": 11
+  }
+ ]
+}

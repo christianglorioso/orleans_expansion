@@ -1,0 +1,90 @@
+{
+  "_comment": "Terrain and prefab vocabulary for gTileset_General + gTileset_Fortree. Metatile ids are hex strings. Collision 0 = passable, 1 = blocked.",
+  "primary": "gTileset_General",
+  "secondary": "gTileset_Fortree",
+  "primary_dir": "data/tilesets/primary/general",
+  "secondary_dir": "data/tilesets/secondary/fortree",
+  "border": ["170", "170", "170", "170"],
+
+  "terrain": {
+    ".": {"name": "ground",    "tile": "001", "elev": 3},
+    "\"": {"name": "marsh",    "tile": "00D", "elev": 3},
+    "~": {"name": "water",     "tile": "170", "elev": 1, "autotile": "shore"},
+    ":": {"name": "road",      "tile": "121", "elev": 3, "autotile": "path"},
+    "=": {"name": "street",    "tile": "121", "elev": 3, "autotile": "path"},
+    "L": {"name": "levee",     "tile": "124", "elev": 3},
+    "#": {"name": "boardwalk", "tile": "220", "elev": 3, "autotile": "boardwalk"},
+    "I": {"name": "boat",      "tile": "220", "elev": 3, "autotile": "boardwalk"},
+    "S": {"name": "tombs",     "tile": "19E", "elev": 3, "autotile": "tombs"},
+    "H": {"name": "building",  "tile": "001", "elev": 3},
+    "K": {"name": "building",  "tile": "001", "elev": 3},
+    "P": {"name": "building",  "tile": "001", "elev": 3},
+    "M": {"name": "building",  "tile": "001", "elev": 3}
+  },
+
+  "autotile": {
+    "path": {
+      "_comment": "Sand patch on grass. Picks the edge piece from which sides border non-path terrain.",
+      "connects": ":=#IHKPM",
+      "NW": "118", "N": "119", "NE": "11A",
+      "W": "120",  "C": "121", "E": "122",
+      "SW": "128", "S": "129", "SE": "12A"
+    },
+    "shore": {
+      "_comment": "Water with a sand fringe on the land side. No tile exists for land to the south only.",
+      "connects": "~#I",
+      "land_N": "12C", "land_W": "11D", "land_E": "11B",
+      "land_NW": "146", "land_NE": "145",
+      "diag_NW": "12D", "diag_NE": "12B"
+    },
+    "boardwalk": {
+      "_comment": "Fortree log walkway. Vertical runs use horizontal logs (2 wide), horizontal runs use vertical logs.",
+      "connects": "#I",
+      "vertical": [["220", "221"], ["228", "229"]],
+      "horizontal": [["211", "212"], ["219", "21A"]]
+    },
+    "tombs": {
+      "_comment": "Flooded churchyard: shallow water with grave-like boulders on alternate tiles.",
+      "floor": "19E",
+      "stone": "18C",
+      "stone_collision": 1
+    }
+  },
+
+  "prefabs": {
+    "house": {
+      "rows": [["008", "009", "009", "00A"],
+               ["010", "011", "011", "012"],
+               ["018", "019", "00B", "01A"],
+               ["020", "021", "013", "022"]],
+      "door": [1, 3]
+    },
+    "church": {
+      "_comment": "Placeholder: General house widened to 5. Needs real church tiles.",
+      "rows": [["008", "009", "009", "009", "00A"],
+               ["010", "011", "011", "011", "012"],
+               ["018", "019", "00B", "00B", "01A"],
+               ["020", "021", "013", "013", "022"]],
+      "door": [1, 3]
+    },
+    "hall": {
+      "_comment": "Placeholder: General gym shell widened to 9. Needs a dance-hall facade.",
+      "rows": [["1AA", "1AB", "1AB", "1AB", "1AB", "1AB", "1AB", "1AB", "1AC"],
+               ["1B2", "1B3", "1B3", "1B3", "1B3", "1B3", "1B3", "1B3", "1B4"],
+               ["1B8", "1B9", "1B9", "1B9", "1B9", "1BA", "1B3", "1BB", "1BC"],
+               ["1C0", "1C1", "1C1", "1C1", "1C1", "1C2", "1C5", "1C3", "1C4"],
+               ["1C8", "1C9", "1C9", "1C9", "1C9", "1CA", "1CD", "1CB", "1CC"]],
+      "door": [6, 4]
+    },
+    "stilt_house": {
+      "_comment": "Fortree treehouse without the surrounding trees: roof, walls, door, platform, ladder.",
+      "rows": [["224", "225", "226"],
+               ["22C", "22D", "22E"],
+               ["234", "235", "236"],
+               ["23C", "23D", "23E"],
+               [null,  "245", null ]],
+      "door": [1, 2],
+      "passable": [[0, 3], [1, 3], [2, 3], [1, 4]]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+ "source": "..\\orleans_maps\\r14_route_14.png",
+ "frame": [
+  0,
+  140,
+  1007,
+  1795
+ ],
+ "pitch": 36.0,
+ "width": 28,
+ "height": 46,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 16,
+   "y": 2,
+   "w": 1,
+   "h": 2
+  },
+  {
+   "kind": "K",
+   "x": 13,
+   "y": 22,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 3
+  },
+  {
+   "kind": "event",
+   "x": 16,
+   "y": 3
+  },
+  {
+   "kind": "mega_stone",
+   "x": 16,
+   "y": 9
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 11
+  },
+  {
+   "kind": "item",
+   "x": 10,
+   "y": 15
+  },
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 19
+  },
+  {
+   "kind": "hidden_item",
+   "x": 10,
+   "y": 22
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 26
+  },
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 33
+  },
+  {
+   "kind": "mega_stone",
+   "x": 16,
+   "y": 34
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 37
+  }
+ ],
+ "exits": [
+  {
+   "side": "N",
+   "pos": 13
+  },
+  {
+   "side": "S",
+   "pos": 13
+  }
+ ]
+}

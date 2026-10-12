@@ -860,11 +860,45 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
+// Orleans vertical slice (the 9 free trainer slots)
+#define TRAINER_ORLEANS_JAYDEN_ROUTE1_CHIKORITA     855
+#define TRAINER_ORLEANS_JAYDEN_ROUTE1_FUECOCO       856
+#define TRAINER_ORLEANS_JAYDEN_ROUTE1_TOTODILE      857
+#define TRAINER_ORLEANS_ROUTE1_FISHERMAN            858
+#define TRAINER_ORLEANS_ROUTE1_BUG_CATCHER          859
+#define TRAINER_ORLEANS_ROUTE1_LASS                 860
+#define TRAINER_ORLEANS_ROUTE1_YOUNGSTER            861
+#define TRAINER_ORLEANS_GRAND_OAK_GYM_RANGER        862
+#define TRAINER_ORLEANS_GRAND_OAK_GYM_AROMA_LADY    863
+// Magnolia, gym 1, takes over Roxanne's slot (vanilla's first gym leader too)
+#define TRAINER_MAGNOLIA                            TRAINER_ROXANNE_1
+
+
+// --- orleans trainers (begin) ---
+#define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
+#define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1
+#define TRAINER_ORLEANS_ROUTE2_PICNICKER                 TRAINER_FELIX
+#define TRAINER_ORLEANS_ROUTE2_BIRD_KEEPER               TRAINER_VIOLET
+#define TRAINER_ORLEANS_ROUTE2_GUITARIST                 TRAINER_ROSE_2
+#define TRAINER_ORLEANS_ROUTE3_FISHERMAN                 TRAINER_ROSE_3
+#define TRAINER_ORLEANS_ROUTE3_SAILOR                    TRAINER_ROSE_4
+#define TRAINER_ORLEANS_ROUTE3_BUG_MANIAC                TRAINER_ROSE_5
+#define TRAINER_ORLEANS_ROUTE3_BREEDER                   TRAINER_DUSTY_1
+#define TRAINER_ORLEANS_ROUTE3_PARASOL_LADY              TRAINER_CHIP
+#define TRAINER_ORLEANS_ROUTE3_COOLTRAINER               TRAINER_FOSTER
+#define TRAINER_ORLEANS_STORMS_EDGE_GYM_LINEWORKER       TRAINER_DUSTY_2
+#define TRAINER_ORLEANS_STORMS_EDGE_GYM_ELECTRICIAN      TRAINER_DUSTY_3
+#define TRAINER_ORLEANS_JAYDEN_ROUTE3_CHIKORITA          TRAINER_DUSTY_4
+#define TRAINER_ORLEANS_JAYDEN_ROUTE3_FUECOCO            TRAINER_DUSTY_5
+#define TRAINER_ORLEANS_JAYDEN_ROUTE3_TOTODILE           TRAINER_GABBY_AND_TY_1
+#define TRAINER_ECLAIR                                   TRAINER_WATTSON_1
+// --- orleans trainers (end) ---
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     855
+#define TRAINERS_COUNT_EMERALD     864
 #define MAX_TRAINERS_COUNT_EMERALD 864
 
 #if IS_FRLG

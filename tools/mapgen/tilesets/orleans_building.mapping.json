@@ -1,0 +1,1615 @@
+{
+"tileset": "gTileset_OrleansBuilding",
+"kind": "primary",
+"backdrop": [
+0,
+0,
+0
+],
+"recolor": [],
+"keep_colors": [],
+"metatile_offset": 0,
+"metatiles": {
+"jb:000": 0,
+"jb:008": 1,
+"jb:01A": 2,
+"jb:01B": 3,
+"jb:01C": 4,
+"jb:035": 5,
+"jb:062": 6,
+"jb:090": 7,
+"jb:091": 8,
+"jb:092": 9,
+"jb:0A8": 10,
+"jb:0A9": 11,
+"jb:0AA": 12,
+"jb:0AB": 13,
+"jb:0AC": 14,
+"jb:0AD": 15,
+"jb:0AF": 16,
+"jb:0B0": 17,
+"jb:0B1": 18,
+"jb:0B3": 19,
+"jb:0B4": 20,
+"jb:0B5": 21,
+"jb:0B7": 22,
+"jb:0B8": 23,
+"jb:0BA": 24,
+"jb:0BB": 25,
+"jb:0BC": 26,
+"jb:0BD": 27,
+"jb:0BF": 28,
+"jb:0C0": 29,
+"jb:0C2": 30,
+"jb:0C3": 31,
+"jb:0C4": 32,
+"jb:0C5": 33,
+"jb:0C6": 34,
+"jb:0C7": 35,
+"jb:0C8": 36,
+"jb:0C9": 37,
+"jb:0CA": 38,
+"jb:0CB": 39,
+"jb:0CC": 40,
+"jb:0CD": 41,
+"jb:0D0": 42,
+"jb:0D1": 43,
+"jb:0D2": 44,
+"jb:0D3": 45,
+"jb:0D4": 46,
+"jb:0D5": 47,
+"jb:0D7": 48,
+"jb:0D8": 49,
+"jb:0D9": 50,
+"jb:0DA": 51,
+"jb:0DB": 52,
+"jb:0DC": 53,
+"jb:0DD": 54,
+"jb:0DE": 55,
+"jb:0DF": 56,
+"jb:0E0": 57,
+"jb:0E1": 58,
+"jb:0E2": 59,
+"jb:0E3": 60,
+"jb:0E4": 61,
+"jb:0E5": 62,
+"jb:0E6": 63,
+"jb:0E7": 64,
+"jb:0E8": 65,
+"jb:0E9": 66,
+"jb:0EA": 67,
+"jb:0EB": 68,
+"jb:0EC": 69,
+"jb:0ED": 70,
+"jb:0EE": 71,
+"jb:0EF": 72,
+"jb:0F0": 73,
+"jb:0F1": 74,
+"jb:0F2": 75,
+"jb:0F3": 76,
+"jb:0F4": 77,
+"jb:0F5": 78,
+"jb:0F6": 79,
+"jb:0F8": 80,
+"jb:0F9": 81,
+"jb:0FA": 82,
+"jb:0FB": 83,
+"jb:0FC": 84,
+"jb:0FD": 85,
+"jb:0FE": 86,
+"jb:108": 87,
+"jb:109": 88,
+"jb:10A": 89,
+"jb:10F": 90,
+"jb:110": 91,
+"jb:111": 92,
+"jb:113": 93,
+"jb:117": 94,
+"jb:118": 95,
+"jb:11A": 96,
+"jb:11B": 97,
+"jb:11F": 98,
+"jb:120": 99,
+"jb:123": 100,
+"jb:124": 101,
+"jb:125": 102,
+"jb:126": 103,
+"jb:127": 104,
+"jb:128": 105,
+"jb:129": 106,
+"jb:12B": 107,
+"jb:12D": 108,
+"jb:130": 109,
+"jb:131": 110,
+"jb:133": 111,
+"jb:134": 112,
+"jb:135": 113,
+"jb:13D": 114,
+"jb:13E": 115,
+"jb:13F": 116,
+"jb:145": 117,
+"jb:146": 118,
+"jb:147": 119,
+"jb:14D": 120,
+"jb:14E": 121,
+"jb:14F": 122,
+"jb:150": 123,
+"jb:151": 124,
+"jb:155": 125,
+"jb:156": 126,
+"jb:158": 127,
+"jb:159": 128,
+"jb:15D": 129,
+"jb:15E": 130,
+"jb:160": 131,
+"jb:168": 132,
+"jb:27B": 133
+},
+"palettes": [
+[
+[
+104,
+112,
+144
+],
+[
+0,
+0,
+0
+],
+[
+160,
+176,
+184
+],
+[
+192,
+184,
+136
+],
+[
+168,
+152,
+112
+],
+[
+208,
+208,
+144
+],
+[
+120,
+120,
+120
+],
+[
+144,
+120,
+88
+],
+[
+248,
+248,
+248
+],
+[
+80,
+80,
+104
+],
+[
+168,
+168,
+160
+],
+[
+136,
+112,
+72
+],
+[
+248,
+240,
+128
+],
+[
+216,
+208,
+128
+],
+[
+208,
+216,
+216
+]
+],
+[
+[
+80,
+80,
+104
+],
+[
+120,
+120,
+120
+],
+[
+120,
+184,
+248
+],
+[
+176,
+176,
+160
+],
+[
+208,
+176,
+104
+],
+[
+128,
+184,
+112
+],
+[
+200,
+184,
+144
+],
+[
+72,
+136,
+104
+],
+[
+224,
+96,
+80
+],
+[
+192,
+160,
+64
+],
+[
+232,
+248,
+248
+],
+[
+216,
+224,
+224
+],
+[
+48,
+112,
+192
+],
+[
+248,
+120,
+96
+],
+[
+144,
+144,
+136
+]
+],
+[
+[
+80,
+80,
+104
+],
+[
+248,
+248,
+248
+],
+[
+192,
+208,
+184
+],
+[
+216,
+200,
+104
+],
+[
+120,
+120,
+120
+],
+[
+136,
+176,
+216
+],
+[
+176,
+176,
+160
+],
+[
+184,
+224,
+248
+],
+[
+216,
+208,
+224
+],
+[
+240,
+232,
+144
+],
+[
+128,
+112,
+88
+]
+],
+[
+[
+248,
+248,
+248
+],
+[
+240,
+232,
+144
+],
+[
+184,
+192,
+208
+],
+[
+0,
+0,
+0
+],
+[
+80,
+80,
+104
+],
+[
+136,
+128,
+144
+],
+[
+168,
+160,
+64
+],
+[
+136,
+120,
+24
+],
+[
+224,
+160,
+96
+],
+[
+176,
+168,
+176
+],
+[
+192,
+192,
+144
+]
+],
+[
+[
+168,
+192,
+176
+],
+[
+200,
+184,
+128
+],
+[
+232,
+176,
+112
+],
+[
+240,
+232,
+152
+],
+[
+184,
+160,
+120
+],
+[
+88,
+184,
+168
+],
+[
+144,
+128,
+104
+],
+[
+224,
+232,
+240
+],
+[
+120,
+120,
+120
+],
+[
+80,
+80,
+104
+],
+[
+168,
+168,
+160
+],
+[
+192,
+216,
+200
+],
+[
+104,
+104,
+104
+],
+[
+208,
+216,
+224
+]
+],
+[
+[
+224,
+136,
+96
+],
+[
+184,
+96,
+72
+],
+[
+80,
+80,
+104
+],
+[
+88,
+88,
+112
+],
+[
+120,
+120,
+120
+],
+[
+192,
+184,
+208
+],
+[
+248,
+200,
+88
+]
+]
+],
+"tiles": {
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 16], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]]": [
+1,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 16], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+1,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 47], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+2,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 95], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+3,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+4,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 18], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+5,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 87], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+6,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 88], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+7,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 103], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+8,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 104], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+9,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 33], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 8]]": [
+10,
+0,
+0,
+3
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 2], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 8]]": [
+11,
+0,
+0,
+3
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 49], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 8]]": [
+12,
+0,
+0,
+3
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 18], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 8]]": [
+13,
+0,
+0,
+3
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 333], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+14,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 334], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+15,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 349], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+16,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 350], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+17,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 566], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+18,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 582], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+19,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 599], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+20,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 600], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+21,
+0,
+0,
+4
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 566], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+18,
+0,
+0,
+4
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 582], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+19,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 71], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+22,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 72], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+23,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 68], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+24,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 69], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+25,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 598], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+19,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 614], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+26,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 111], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+27,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 70], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+28,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 426], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+29,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 427], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+30,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 615], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+31,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 616], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+32,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 77], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+33,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 78], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+33,
+1,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 93], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+34,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 94], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+35,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 103], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+36,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 104], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+37,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 119], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+38,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 120], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+39,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 48], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+40,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 442], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+41,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 443], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+42,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 428], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+43,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 429], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+44,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 13], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+45,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 14], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+46,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 119], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+47,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 120], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+48,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 109], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+49,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 110], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+50,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 135], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+51,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/secondary/house_lab\", 136], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+52,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 64], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+53,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 444], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+54,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 445], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+55,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 29], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+56,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 30], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 1]]": [
+57,
+0,
+0,
+2
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 96], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+58,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 97], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+59,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 584], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+60,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 567], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+61,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 568], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+62,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 583], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]": [
+63,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 133], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+64,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 132], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+65,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 149], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+66,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 148], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+67,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 564], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+68,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 565], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+69,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 580], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+70,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 581], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+60,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 112], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+71,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 113], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+72,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 98], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+73,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 99], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+73,
+1,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 596], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+74,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 597], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+75,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 612], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+76,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 613], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+77,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 114], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+78,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 115], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+78,
+1,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 42], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+1,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 40], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+79,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 41], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+80,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 59], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+81,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 53], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+82,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 38], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+83,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 39], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+84,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 54], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+85,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 125], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+86,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 126], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+87,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 141], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+88,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 73], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+89,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 74], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+90,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 75], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+90,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 76], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+91,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 15], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+92,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 31], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+93,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 128], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+94,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 129], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+95,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 144], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+96,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 145], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+97,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 130], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+98,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 131], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+99,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 146], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+100,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 147], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+101,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 56], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+102,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 57], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+103,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 44], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+104,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 46], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+105,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 60], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+106,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 62], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+107,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 55], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+108,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 45], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+109,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 61], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+110,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 143], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+111,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 142], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 2]]": [
+112,
+0,
+0,
+5
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 89], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+113,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 90], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+114,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 105], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+115,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 106], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+116,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 91], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+114,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 92], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+117,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 107], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+118,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 108], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+119,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 63], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+120,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 79], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+121,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 160], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+122,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 161], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+123,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 162], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+124,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 163], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+125,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 43], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+126,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 33], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+127,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 34], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+128,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 49], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+129,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 50], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+85,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 121], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+130,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 122], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+131,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 123], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+132,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 124], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+133,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 422], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+134,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 423], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+135,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 424], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+136,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 425], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+137,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 51], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+138,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 65], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+139,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 80], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+140,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 81], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+141,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 52], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+142,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 37], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+143,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 66], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+144,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 67], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+145,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 82], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+146,
+0,
+0,
+1
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 599], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+20,
+0,
+0,
+4
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 600], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+21,
+0,
+0,
+4
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 615], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+31,
+0,
+0,
+4
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 616], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 4]]]": [
+32,
+0,
+0,
+4
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 438], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+147,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 439], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+148,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 440], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+149,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 441], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+150,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 35], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+151,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 36], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+152,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 58], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0]]": [
+153,
+0,
+0,
+1
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 569], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+154,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 585], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+155,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 594], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+156,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 601], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+155,
+0,
+1,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 617], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+157,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 595], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]": [
+158,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 587], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 3]]": [
+19,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 570], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 3]]": [
+159,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 571], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 3]]": [
+160,
+0,
+0,
+0
+],
+"[[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 586], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 3]]": [
+161,
+0,
+0,
+0
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 594], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]]": [
+156,
+0,
+0,
+0
+],
+"[[\"comp\", [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], 0, 0], [[\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 595], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5], 0, 0]], [\"comp\", [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 0], [\"dir\", \"C:/Users/chris/soulgold/data/tilesets/primary/johto_building\", 5]]]": [
+158,
+0,
+0,
+0
+]
+}
+}

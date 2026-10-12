@@ -51,49 +51,49 @@
 
 #else
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
+#define FLAG_ITEM_ISLE_MARAIS_POTION       0x20
+#define FLAG_ITEM_ISLE_MARAIS_POKE_BALL    0x21
+#define FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE  0x22
+#define FLAG_ITEM_ROUTE1_POTION          0x23
+#define FLAG_ITEM_ROUTE1_POKE_BALL       0x24
+#define FLAG_ITEM_ROUTE1_ORAN_BERRY      0x25
+#define FLAG_ITEM_OLD_WATER_NET_BALL     0x26
+#define FLAG_ORLEANS_GAME_STARTED    0x27 // set once the new game is initialised in the shelter
+#define FLAG_HIDE_SHELTER_TOTODILE       0x28 // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_CHIKORITA      0x29 // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_FUECOCO        0x2A // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_JAYDEN         0x2B // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_WREN           0x2C // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_LAFAYETTE      0x2D // Orleans vertical slice
+#define FLAG_HIDE_SHELTER_MOM            0x2E // Orleans vertical slice
+#define FLAG_HIDE_PLAYERS_HOUSE_MOM      0x2F // Orleans vertical slice
+#define FLAG_HIDE_ROUTE1_LAFAYETTE       0x30 // Orleans vertical slice
+#define FLAG_HIDE_ROUTE1_JAYDEN          0x31 // Orleans vertical slice
+#define FLAG_HIDE_ROUTE1_WREN            0x32 // Orleans vertical slice
+#define FLAG_HIDE_OLD_WATER_TUPELO       0x33 // Orleans vertical slice
+#define FLAG_HIDE_OLD_WATER_WREN         0x34 // Orleans vertical slice
+#define FLAG_HIDE_WRENS_HOUSE_WREN       0x35 // Orleans vertical slice
+#define FLAG_HIDE_GRAND_OAK_WREN         0x36 // Orleans vertical slice
+#define FLAG_CUT_STORM_HEDGE             0x37 // Orleans vertical slice
+#define FLAG_RECEIVED_GARDEN_SHEARS      0x38 // Orleans vertical slice
+#define FLAG_STORMS_EDGE_GRID_RESTORED   0x39 // Orleans: Storm's Edge power grid restored (gym 2): the drawbridge is lowered
+#define FLAG_HIDE_STORMS_EDGE_ECLAIR     0x3A // Orleans Ch2: Eclair outside the substation, hidden once the grid is back (she's in the gym)
+#define FLAG_HIDE_ROUTE3_JAYDEN          0x3B // Orleans Ch2: Jayden on the Route 3 bridge, hidden after battle 2
+#define FLAG_RECEIVED_PRY_BAR            0x3C // Orleans Ch2: the gym 2 rewards (TM Shock Wave, Pry Bar) were handed over
+#define FLAG_STORMS_EDGE_DESK_POWERED    0x3D // Orleans Ch2: the substation puzzle is solved, Eclair's desk is live
+#define FLAG_STORMS_EDGE_JUNCTION_1      0x3E // Orleans Ch2: gym 2 junction 1 is lit
+#define FLAG_STORMS_EDGE_JUNCTION_2      0x3F // Orleans Ch2: gym 2 junction 2 is lit
+#define FLAG_STORMS_EDGE_JUNCTION_3      0x40 // Orleans Ch2: gym 2 junction 3 is lit
+#define FLAG_STORMS_EDGE_JUNCTION_4      0x41 // Orleans Ch2: gym 2 junction 4 is lit
+#define FLAG_STORMS_EDGE_JUNCTION_5      0x42 // Orleans Ch2: gym 2 junction 5 is lit
+#define FLAG_STORMS_EDGE_JUNCTION_6      0x43 // Orleans Ch2: gym 2 junction 6 is lit
+#define FLAG_STORMS_EDGE_PUZZLE_STARTED  0x44 // Orleans Ch2: the junctions have been set to their starting pattern
+#define FLAG_HIDE_STORMS_EDGE_VOLTORB_1  0x45 // Orleans Ch2: buoy Voltorb 1 in the gym, hidden once beaten
+#define FLAG_HIDE_STORMS_EDGE_VOLTORB_2  0x46 // Orleans Ch2: buoy Voltorb 2 in the gym, hidden once beaten
+#define FLAG_RECEIVED_TM_TRAILBLAZE      0x47 // Orleans: Magnolia's TM Trailblaze was handed over (separate from the Shears so a full bag never duplicates it)
+#define FLAG_RECEIVED_TM_ECLAIR_SHOCK_WAVE      0x48 // Orleans Ch2: Eclair's TM Shock Wave was handed over
+#define FLAG_RESPAWN_GRAND_OAK_SET       0x49 // Orleans: the Grand Oak respawn point was set on the first arrival (later visits must not override a Center healed at elsewhere)
+#define FLAG_RESPAWN_STORMS_EDGE_SET     0x4A // Orleans: the Storm's Edge respawn point was set on the first arrival
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag
 #define FLAG_UNUSED_0x04D    0x4D // Unused Flag
@@ -664,10 +664,10 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ISLE_MARAIS_CHURCHYARD  (FLAG_HIDDEN_ITEMS_START + 0x70)
+#define FLAG_HIDDEN_ITEM_GRAND_OAK_GARDEN     (FLAG_HIDDEN_ITEMS_START + 0x71)
+#define FLAG_HIDDEN_ITEM_GRAND_OAK_HOUSES     (FLAG_HIDDEN_ITEMS_START + 0x72)
+#define FLAG_HIDDEN_ITEM_STORMS_EDGE_PIER     (FLAG_HIDDEN_ITEMS_START + 0x73)
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag

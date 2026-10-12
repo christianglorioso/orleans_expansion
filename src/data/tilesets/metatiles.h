@@ -210,6 +210,92 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
 
+// --- mapgen: composed tilesets (begin) ---
+const u16 gMetatiles_OrleansBuilding[] = INCBIN_U16("data/tilesets/primary/orleans_building/metatiles.bin");
+const u16 gMetatileAttributes_OrleansBuilding[] = INCBIN_U16("data/tilesets/primary/orleans_building/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansGeneral[] = INCBIN_U16("data/tilesets/primary/orleans_general/metatiles.bin");
+const u16 gMetatileAttributes_OrleansGeneral[] = INCBIN_U16("data/tilesets/primary/orleans_general/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansBayou[] = INCBIN_U16("data/tilesets/secondary/orleans_bayou/metatiles.bin");
+const u16 gMetatileAttributes_OrleansBayou[] = INCBIN_U16("data/tilesets/secondary/orleans_bayou/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansBriney[] = INCBIN_U16("data/tilesets/secondary/orleans_briney/metatiles.bin");
+const u16 gMetatileAttributes_OrleansBriney[] = INCBIN_U16("data/tilesets/secondary/orleans_briney/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansCamp[] = INCBIN_U16("data/tilesets/secondary/orleans_camp/metatiles.bin");
+const u16 gMetatileAttributes_OrleansCamp[] = INCBIN_U16("data/tilesets/secondary/orleans_camp/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansCapital[] = INCBIN_U16("data/tilesets/secondary/orleans_capital/metatiles.bin");
+const u16 gMetatileAttributes_OrleansCapital[] = INCBIN_U16("data/tilesets/secondary/orleans_capital/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansCity[] = INCBIN_U16("data/tilesets/secondary/orleans_city/metatiles.bin");
+const u16 gMetatileAttributes_OrleansCity[] = INCBIN_U16("data/tilesets/secondary/orleans_city/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansCoast[] = INCBIN_U16("data/tilesets/secondary/orleans_coast/metatiles.bin");
+const u16 gMetatileAttributes_OrleansCoast[] = INCBIN_U16("data/tilesets/secondary/orleans_coast/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansConservatory[] = INCBIN_U16("data/tilesets/secondary/orleans_conservatory/metatiles.bin");
+const u16 gMetatileAttributes_OrleansConservatory[] = INCBIN_U16("data/tilesets/secondary/orleans_conservatory/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansCrescent[] = INCBIN_U16("data/tilesets/secondary/orleans_crescent/metatiles.bin");
+const u16 gMetatileAttributes_OrleansCrescent[] = INCBIN_U16("data/tilesets/secondary/orleans_crescent/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansGulf[] = INCBIN_U16("data/tilesets/secondary/orleans_gulf/metatiles.bin");
+const u16 gMetatileAttributes_OrleansGulf[] = INCBIN_U16("data/tilesets/secondary/orleans_gulf/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansHall[] = INCBIN_U16("data/tilesets/secondary/orleans_hall/metatiles.bin");
+const u16 gMetatileAttributes_OrleansHall[] = INCBIN_U16("data/tilesets/secondary/orleans_hall/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansHarbor[] = INCBIN_U16("data/tilesets/secondary/orleans_harbor/metatiles.bin");
+const u16 gMetatileAttributes_OrleansHarbor[] = INCBIN_U16("data/tilesets/secondary/orleans_harbor/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansHollow[] = INCBIN_U16("data/tilesets/secondary/orleans_hollow/metatiles.bin");
+const u16 gMetatileAttributes_OrleansHollow[] = INCBIN_U16("data/tilesets/secondary/orleans_hollow/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansHome[] = INCBIN_U16("data/tilesets/secondary/orleans_home/metatiles.bin");
+const u16 gMetatileAttributes_OrleansHome[] = INCBIN_U16("data/tilesets/secondary/orleans_home/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatiles.bin");
+const u16 gMetatileAttributes_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansOffshore[] = INCBIN_U16("data/tilesets/secondary/orleans_offshore/metatiles.bin");
+const u16 gMetatileAttributes_OrleansOffshore[] = INCBIN_U16("data/tilesets/secondary/orleans_offshore/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansPointe[] = INCBIN_U16("data/tilesets/secondary/orleans_pointe/metatiles.bin");
+const u16 gMetatileAttributes_OrleansPointe[] = INCBIN_U16("data/tilesets/secondary/orleans_pointe/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansPort[] = INCBIN_U16("data/tilesets/secondary/orleans_port/metatiles.bin");
+const u16 gMetatileAttributes_OrleansPort[] = INCBIN_U16("data/tilesets/secondary/orleans_port/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRiver[] = INCBIN_U16("data/tilesets/secondary/orleans_river/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRiver[] = INCBIN_U16("data/tilesets/secondary/orleans_river/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRootkinIn[] = INCBIN_U16("data/tilesets/secondary/orleans_rootkin_in/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRootkinIn[] = INCBIN_U16("data/tilesets/secondary/orleans_rootkin_in/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRoute[] = INCBIN_U16("data/tilesets/secondary/orleans_route/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRoute[] = INCBIN_U16("data/tilesets/secondary/orleans_route/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRouteB[] = INCBIN_U16("data/tilesets/secondary/orleans_route_b/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRouteB[] = INCBIN_U16("data/tilesets/secondary/orleans_route_b/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRouteDry[] = INCBIN_U16("data/tilesets/secondary/orleans_route_dry/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRouteDry[] = INCBIN_U16("data/tilesets/secondary/orleans_route_dry/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansRouteFarm[] = INCBIN_U16("data/tilesets/secondary/orleans_route_farm/metatiles.bin");
+const u16 gMetatileAttributes_OrleansRouteFarm[] = INCBIN_U16("data/tilesets/secondary/orleans_route_farm/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansServices[] = INCBIN_U16("data/tilesets/secondary/orleans_services/metatiles.bin");
+const u16 gMetatileAttributes_OrleansServices[] = INCBIN_U16("data/tilesets/secondary/orleans_services/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansTown[] = INCBIN_U16("data/tilesets/secondary/orleans_town/metatiles.bin");
+const u16 gMetatileAttributes_OrleansTown[] = INCBIN_U16("data/tilesets/secondary/orleans_town/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansVillage[] = INCBIN_U16("data/tilesets/secondary/orleans_village/metatiles.bin");
+const u16 gMetatileAttributes_OrleansVillage[] = INCBIN_U16("data/tilesets/secondary/orleans_village/metatile_attributes.bin");
+
+// --- mapgen: composed tilesets (end) ---
 #else
 
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
@@ -408,3 +494,6 @@ const u16 gMetatiles_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_
 const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary/hall_of_fame_frlg/metatile_attributes.bin");
 
 #endif // IS_FRLG
+
+const u16 gMetatiles_test[] = INCBIN_U16("data/tilesets/primary/test/metatiles.bin");
+const u16 gMetatileAttributes_test[] = INCBIN_U16("data/tilesets/primary/test/metatile_attributes.bin");

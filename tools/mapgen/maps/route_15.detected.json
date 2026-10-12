@@ -1,0 +1,60 @@
+{
+ "source": "..\\orleans_maps\\r15_route_15.png",
+ "frame": [
+  0,
+  140,
+  1655,
+  1147
+ ],
+ "pitch": 36.0,
+ "width": 46,
+ "height": 28,
+ "buildings": [],
+ "markers": [
+  {
+   "kind": "item",
+   "x": 29,
+   "y": 4
+  },
+  {
+   "kind": "trainer",
+   "x": 10,
+   "y": 7
+  },
+  {
+   "kind": "trainer",
+   "x": 35,
+   "y": 13
+  },
+  {
+   "kind": "trainer",
+   "x": 17,
+   "y": 14
+  },
+  {
+   "kind": "trainer",
+   "x": 23,
+   "y": 18
+  },
+  {
+   "kind": "trainer",
+   "x": 33,
+   "y": 22
+  },
+  {
+   "kind": "hidden_item",
+   "x": 3,
+   "y": 23
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 3
+  },
+  {
+   "side": "E",
+   "pos": 9
+  }
+ ]
+}

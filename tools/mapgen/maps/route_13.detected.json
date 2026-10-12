@@ -1,0 +1,73 @@
+{
+ "source": "..\\orleans_maps\\r13_route_13.png",
+ "frame": [
+  0,
+  140,
+  1007,
+  1795
+ ],
+ "pitch": 36.0,
+ "width": 28,
+ "height": 46,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 5,
+   "y": 17,
+   "w": 1,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 17,
+   "y": 6
+  },
+  {
+   "kind": "item",
+   "x": 16,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 13,
+   "y": 16
+  },
+  {
+   "kind": "shrine",
+   "x": 8,
+   "y": 21
+  },
+  {
+   "kind": "hidden_item",
+   "x": 9,
+   "y": 24
+  },
+  {
+   "kind": "trainer",
+   "x": 11,
+   "y": 29
+  },
+  {
+   "kind": "item",
+   "x": 7,
+   "y": 33
+  },
+  {
+   "kind": "trainer",
+   "x": 14,
+   "y": 39
+  }
+ ],
+ "exits": [
+  {
+   "side": "S",
+   "pos": 13
+  },
+  {
+   "side": "E",
+   "pos": 1
+  }
+ ]
+}

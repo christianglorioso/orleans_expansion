@@ -1,0 +1,977 @@
+{
+  "map": "GrandOak",
+  "map_const": "MAP_GRAND_OAK",
+  "layout": "LAYOUT_GRAND_OAK",
+  "layout_dir": "data/layouts/GrandOak",
+  "tileset": "orleans_town",
+  "mockup": "../orleans_maps/02_grand_oak.png",
+  "grid": "grand_oak.grid.txt",
+  "edits": [],
+  "buildings": [
+    {
+      "prefab": "pokecenter",
+      "x": 5,
+      "y": 8,
+      "label": "Pokemon Center",
+      "interior": "MAP_GRAND_OAK_POKEMON_CENTER"
+    },
+    {
+      "prefab": "mart",
+      "x": 11,
+      "y": 8,
+      "label": "Poke Mart",
+      "interior": "MAP_GRAND_OAK_MART"
+    },
+    {
+      "prefab": "greenhouse",
+      "x": 25,
+      "y": 0,
+      "label": "Gym: glass conservatory",
+      "interior": "MAP_GRAND_OAK_GYM"
+    },
+    {
+      "prefab": "fountain",
+      "x": 29,
+      "y": 9,
+      "label": "Fountain"
+    },
+    {
+      "prefab": "planter",
+      "x": 22,
+      "y": 9,
+      "label": "Flower planter"
+    },
+    {
+      "prefab": "planter",
+      "x": 35,
+      "y": 9,
+      "label": "Flower planter"
+    },
+    {
+      "prefab": "cane",
+      "x": 22,
+      "y": 1,
+      "label": "Sugarcane bed"
+    },
+    {
+      "prefab": "peppers",
+      "x": 22,
+      "y": 4,
+      "label": "Pepper rows"
+    },
+    {
+      "prefab": "cane",
+      "x": 35,
+      "y": 1,
+      "label": "Sugarcane bed"
+    },
+    {
+      "prefab": "peppers",
+      "x": 35,
+      "y": 4,
+      "label": "Pepper rows"
+    },
+    {
+      "prefab": "house_b",
+      "x": 23,
+      "y": 16,
+      "label": "Garden nursery (Berries)",
+      "interior": "MAP_GRAND_OAK_NURSERY"
+    },
+    {
+      "prefab": "cabin",
+      "x": 3,
+      "y": 24,
+      "label": "House (south-west)",
+      "interior": "MAP_GRAND_OAK_HOUSE_SW1"
+    },
+    {
+      "prefab": "cabin",
+      "x": 9,
+      "y": 24,
+      "label": "House (south-centre)",
+      "interior": "MAP_GRAND_OAK_HOUSE_SW2"
+    },
+    {
+      "prefab": "cabin",
+      "x": 32,
+      "y": 24,
+      "label": "House (south-east)",
+      "interior": "MAP_GRAND_OAK_HOUSE_SE"
+    },
+    {
+      "prefab": "planter",
+      "x": 23,
+      "y": 24,
+      "label": "Flower planter"
+    },
+    {
+      "prefab": "planter",
+      "x": 27,
+      "y": 24,
+      "label": "Flower planter"
+    },
+    {
+      "prefab": "lamp",
+      "x": 24,
+      "y": 6,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 35,
+      "y": 6,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 3,
+      "y": 9,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 16,
+      "y": 10,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 22,
+      "y": 18,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 16,
+      "y": 22,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 30,
+      "y": 16,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "lamp",
+      "x": 23,
+      "y": 31,
+      "label": "Lamp"
+    },
+    {
+      "prefab": "sign",
+      "x": 18,
+      "y": 32,
+      "label": "Town sign"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 0,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 2,
+      "y": 1,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 3,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 4,
+      "y": 0,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 5,
+      "y": 3,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 7,
+      "y": 1,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 9,
+      "y": 4,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 11,
+      "y": 1,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 13,
+      "y": 0,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 15,
+      "y": 2,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 18,
+      "y": 0,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 17,
+      "y": 4,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 19,
+      "y": 3,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 20,
+      "y": 8,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 18,
+      "y": 7,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 7,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 1,
+      "y": 10,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 14,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 17,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 21,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 24,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 28,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 3,
+      "y": 16,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 5,
+      "y": 18,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 2,
+      "y": 19,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 7,
+      "y": 18,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 9,
+      "y": 19,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 7,
+      "y": 21,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 12,
+      "y": 18,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 14,
+      "y": 18,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 13,
+      "y": 21,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 0,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 7,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 9,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 11,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 14,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 24,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 26,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 29,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 37,
+      "y": 31,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 36,
+      "y": 28,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 28,
+      "y": 18,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 31,
+      "y": 19,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 34,
+      "y": 17,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 36,
+      "y": 20,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 4,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 7,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 10,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 16,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 19,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 22,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 25,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "magnolia",
+      "x": 38,
+      "y": 28,
+      "label": "Magnolia"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 22,
+      "y": 6,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 23,
+      "y": 6,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 36,
+      "y": 6,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 37,
+      "y": 6,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 22,
+      "y": 7,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 23,
+      "y": 7,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 36,
+      "y": 7,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 37,
+      "y": 7,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 22,
+      "y": 8,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 23,
+      "y": 8,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 36,
+      "y": 8,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 37,
+      "y": 8,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 4,
+      "y": 9,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 9,
+      "y": 9,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 10,
+      "y": 9,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 15,
+      "y": 9,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 4,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 9,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 10,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 15,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 28,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 31,
+      "y": 10,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 4,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 9,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 10,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 15,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 28,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 31,
+      "y": 11,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 17,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 18,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 19,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 20,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 21,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 22,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 23,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 29,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 30,
+      "y": 12,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 2,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 6,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 8,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 12,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 31,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 35,
+      "y": 26,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 2,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 6,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 8,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 12,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 23,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_blue",
+      "x": 24,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 25,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_white",
+      "x": 27,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_pink",
+      "x": 28,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_yellow",
+      "x": 29,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "flowers",
+      "x": 31,
+      "y": 27,
+      "label": "Flowers"
+    },
+    {
+      "prefab": "bloom_violet",
+      "x": 35,
+      "y": 27,
+      "label": "Flowers"
+    }
+  ],
+  "objects": [
+    {
+      "id": "LOCALID_GRAND_OAK_FLOETTE_GARDENER",
+      "gfx": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 25,
+      "y": 7,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "The magnolias are late this year.\\nCome back after the storms.",
+      "_note": "5. Floette seed (post-game)"
+    },
+    {
+      "id": "LOCALID_GRAND_OAK_RECRUITER_1",
+      "gfx": "OBJ_EVENT_GFX_MAN_1",
+      "x": 35,
+      "y": 13,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "Rita's paying good money for\\nstrong hands. Rebuild with us!",
+      "_note": "2. Rita's recruiters by the gate"
+    },
+    {
+      "id": "LOCALID_GRAND_OAK_RECRUITER_2",
+      "gfx": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 37,
+      "y": 13,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "Sign up today. The bayou\\nwon't fix itself.",
+      "_note": "2. Rita's recruiters by the gate"
+    },
+    {
+      "id": "LOCALID_GRAND_OAK_STORM_HEDGE_1",
+      "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 39,
+      "y": 14,
+      "move": "MOVEMENT_TYPE_NONE",
+      "text": "A storm-tangled hedge blocks the road.\\nGarden Shears could cut it.",
+      "_note": "3. Storm hedge (Garden Shears)",
+      "custom": true,
+      "flag": "FLAG_CUT_STORM_HEDGE"
+    },
+    {
+      "id": "LOCALID_GRAND_OAK_STORM_HEDGE_2",
+      "gfx": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 39,
+      "y": 15,
+      "move": "MOVEMENT_TYPE_NONE",
+      "text": "A storm-tangled hedge blocks the road.\\nGarden Shears could cut it.",
+      "_note": "3. Storm hedge (Garden Shears)",
+      "custom": true,
+      "flag": "FLAG_CUT_STORM_HEDGE"
+    },
+    {
+      "id": "LOCALID_GRAND_OAK_WREN",
+      "gfx": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 32,
+      "y": 7,
+      "move": "MOVEMENT_TYPE_FACE_LEFT",
+      "text": "",
+      "custom": true,
+      "flag": "FLAG_HIDE_GRAND_OAK_WREN",
+      "_note": "epilogue: Wren waits outside the gym after the badge"
+    }
+  ],
+  "items": [],
+  "hidden_items": [
+    {
+      "item": "ITEM_MIRACLE_SEED",
+      "x": 11,
+      "y": 21,
+      "flag": "FLAG_HIDDEN_ITEM_GRAND_OAK_GARDEN",
+      "_note": "6. magnolia grove"
+    },
+    {
+      "item": "ITEM_SUPER_POTION",
+      "x": 26,
+      "y": 27,
+      "flag": "FLAG_HIDDEN_ITEM_GRAND_OAK_HOUSES",
+      "_note": "by the south-east planters"
+    }
+  ],
+  "signs": [
+    {
+      "id": "TownSign",
+      "x": 18,
+      "y": 32,
+      "text": "GRAND OAK\\nWhere the old oaks keep the town."
+    }
+  ],
+  "exits": [
+    {
+      "name": "Route 1 (south)",
+      "cells": [
+        [
+          19,
+          33
+        ],
+        [
+          20,
+          33
+        ]
+      ]
+    },
+    {
+      "name": "Route 2 (east)",
+      "cells": [
+        [
+          39,
+          14
+        ],
+        [
+          39,
+          15
+        ]
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "x": 30,
+      "y": 7,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "x": 29,
+      "y": 7,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "x": 31,
+      "y": 7,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "x": 29,
+      "y": 8,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "x": 30,
+      "y": 8,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    },
+    {
+      "x": 31,
+      "y": 8,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 7,
+      "script": "GrandOak_EventScript_WrenEpilogue"
+    }
+  ],
+  "_comment": "Grand Oak, handmade: generated by grand_oak.py (edit that, not this file)."
+}

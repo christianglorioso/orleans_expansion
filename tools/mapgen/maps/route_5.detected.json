@@ -1,0 +1,79 @@
+{
+ "source": "..\\orleans_maps\\r05_route_5.png",
+ "frame": [
+  0,
+  140,
+  1655,
+  1147
+ ],
+ "pitch": 36.0,
+ "width": 46,
+ "height": 28,
+ "buildings": [
+  {
+   "kind": "K",
+   "x": 36,
+   "y": 5,
+   "w": 4,
+   "h": 3
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 17,
+   "y": 3
+  },
+  {
+   "kind": "trainer",
+   "x": 9,
+   "y": 4
+  },
+  {
+   "kind": "npc",
+   "x": 36,
+   "y": 9
+  },
+  {
+   "kind": "item",
+   "x": 29,
+   "y": 11
+  },
+  {
+   "kind": "event",
+   "x": 21,
+   "y": 14
+  },
+  {
+   "kind": "trainer",
+   "x": 5,
+   "y": 15
+  },
+  {
+   "kind": "fishing",
+   "x": 32,
+   "y": 19
+  },
+  {
+   "kind": "hidden_item",
+   "x": 35,
+   "y": 21
+  },
+  {
+   "kind": "trainer",
+   "x": 39,
+   "y": 21
+  },
+  {
+   "kind": "trainer",
+   "x": 25,
+   "y": 24
+  }
+ ],
+ "exits": [
+  {
+   "side": "E",
+   "pos": 3
+  }
+ ]
+}

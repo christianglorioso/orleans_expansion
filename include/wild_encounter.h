@@ -44,6 +44,38 @@ struct WildPokemonHeader
     const struct WildEncounterTypes encounterTypes[TIMES_OF_DAY_COUNT];
 };
 
+static inline const struct WildPokemonInfo *GetWildMonInfoForArea(const struct WildEncounterTypes *encounterTypes, enum WildPokemonArea area)
+{
+    switch (area)
+    {
+    default:
+    case WILD_AREA_LAND:
+        return encounterTypes->landMonsInfo;
+    case WILD_AREA_WATER:
+        return encounterTypes->waterMonsInfo;
+    case WILD_AREA_ROCKS:
+        return encounterTypes->rockSmashMonsInfo;
+    case WILD_AREA_FISHING:
+        return encounterTypes->fishingMonsInfo;
+    case WILD_AREA_HIDDEN:
+        return encounterTypes->hiddenMonsInfo;
+    }
+}
+
+// Returns a header's table for the given time and area, applying the same fallback rules as GetTimeOfDayForEncounters.
+static inline const struct WildPokemonInfo *GetWildMonInfoForTimeOfDay(const struct WildPokemonHeader *header, enum TimeOfDay timeOfDay, enum WildPokemonArea area)
+{
+    const struct WildPokemonInfo *wildMonInfo;
+
+    if (!OW_TIME_OF_DAY_ENCOUNTERS || timeOfDay >= TIMES_OF_DAY_COUNT)
+        timeOfDay = TIME_OF_DAY_DEFAULT;
+
+    wildMonInfo = GetWildMonInfoForArea(&header->encounterTypes[timeOfDay], area);
+    if (wildMonInfo == NULL && OW_TIME_OF_DAY_ENCOUNTERS && !OW_TIME_OF_DAY_DISABLE_FALLBACK)
+        wildMonInfo = GetWildMonInfoForArea(&header->encounterTypes[OW_TIME_OF_DAY_FALLBACK], area);
+    return wildMonInfo;
+}
+
 
 extern const struct WildPokemonHeader gWildMonHeaders[];
 extern const struct WildPokemonHeader gBattlePikeWildMonHeaders[];

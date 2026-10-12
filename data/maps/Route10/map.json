@@ -1,0 +1,105 @@
+{
+  "id": "MAP_ORLEANS_ROUTE10",
+  "name": "Route10",
+  "layout": "LAYOUT_ORLEANS_ROUTE10",
+  "music": "MUS_SURF",
+  "region_map_section": "MAPSEC_ROUTE_10",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_CRESCENT_CITY",
+      "offset": 2,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ORLEANS_ROUTE11",
+      "offset": -22,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE10_TRAINER_0",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 34,
+      "y": 6,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route10_EventScript_Trainer0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE10_TRAINER_2",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 5,
+      "y": 10,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route10_EventScript_Trainer2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE10_TRAINER_3",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 24,
+      "y": 10,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route10_EventScript_Trainer3",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE10_TRAINER_6",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 11,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route10_EventScript_Trainer6",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_UNUSED_0x298"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route10_EventScript_RouteSign1"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "MAP_GRAND_OAK_GYM",
+  "name": "GrandOak_Gym",
+  "layout": "LAYOUT_GRAND_OAK_GYM",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_GRAND_OAK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_GRAND_OAK_GYM_GUIDE0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 13,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_Gym_EventScript_Guide0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_GYM_GARDENER1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 13,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "GrandOak_Gym_EventScript_Gardener1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_GYM_AROMA_LADY2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 12,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "GrandOak_Gym_EventScript_AromaLady2",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_GRAND_OAK_GYM_MAGNOLIA3",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 10,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GrandOak_Gym_EventScript_Magnolia3",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 25,
+      "elevation": 3,
+      "dest_map": "MAP_GRAND_OAK",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

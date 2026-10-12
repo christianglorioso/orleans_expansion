@@ -1,0 +1,49 @@
+{
+  "map": "IsleMarais",
+  "map_const": "MAP_ISLE_MARAIS",
+  "layout": "LAYOUT_ISLE_MARAIS",
+  "layout_dir": "data/layouts/IsleMarais",
+  "tileset": "general_fortree",
+  "mockup": "../orleans_maps/01_isle_marais.png",
+  "grid": "isle_marais.grid.txt",
+
+  "_edits": "Terrain fixes applied on top of the extracted grid: [char, x, y, w, h]. Cleans up cells that labels/markers covered.",
+  "edits": [
+    [".", 24, 1, 1, 1],
+    [":", 18, 3, 2, 1],
+    ["S", 10, 8, 1, 1],
+    [".", 30, 19, 1, 1],
+    [".", 12, 20, 1, 1],
+    ["#", 23, 21, 1, 1],
+    ["I", 11, 23, 1, 1]
+  ],
+
+  "_buildings": "prefab, x, y (top-left), label. Door warps are generated at each prefab's door.",
+  "buildings": [
+    {"prefab": "church",      "x": 7,  "y": 3,  "label": "Church"},
+    {"prefab": "hall",        "x": 17, "y": 4,  "label": "Fais do-do dance hall (shelter)"},
+    {"prefab": "house",       "x": 30, "y": 3,  "label": "House (tarped roof)"},
+    {"prefab": "stilt_house", "x": 6,  "y": 7,  "label": "Stilt house (west)"},
+    {"prefab": "stilt_house", "x": 13, "y": 7,  "label": "Stilt house (centre)"},
+    {"prefab": "stilt_house", "x": 27, "y": 7,  "label": "Stilt house (east)"},
+    {"prefab": "stilt_house", "x": 30, "y": 7,  "label": "Stilt house (tilted)"},
+    {"prefab": "house",       "x": 14, "y": 14, "label": "Player's house (damaged)"}
+  ],
+
+  "objects": [
+    {"id": "LOCALID_ISLE_MARAIS_RECRUITER_1", "gfx": "OBJ_EVENT_GFX_MAN_1",   "x": 23, "y": 1,  "move": "MOVEMENT_TYPE_FACE_DOWN",  "text": "Rita's crew is recruiting\\nhands for the cleanup.", "_note": "3. Rita's recruiters (story event placeholder)"},
+    {"id": "LOCALID_ISLE_MARAIS_RECRUITER_2", "gfx": "OBJ_EVENT_GFX_WOMAN_1", "x": 25, "y": 1,  "move": "MOVEMENT_TYPE_FACE_DOWN",  "text": "Rita says every pair of\\nhands counts after the storm.", "_note": "3. Rita's recruiters (story event placeholder)"},
+    {"id": "LOCALID_ISLE_MARAIS_ANDREW",      "gfx": "OBJ_EVENT_GFX_MAN_1",   "x": 29, "y": 18, "move": "MOVEMENT_TYPE_LOOK_AROUND", "text": "ANDREW: The levee won't patch\\nitself. Post-game crew, reporting.", "_note": "7. Post-game: Andrew on the levee crew"},
+    {"id": "LOCALID_ISLE_MARAIS_FISHERMAN",   "gfx": "OBJ_EVENT_GFX_FISHERMAN","x": 10, "y": 21, "move": "MOVEMENT_TYPE_FACE_DOWN", "text": "The shrimp boat's stuck, but the\\nMAGIKARP are still biting.", "_note": "11. Old Rod fishing spot by the stranded boat"}
+  ],
+
+  "items": [
+    {"item": "ITEM_POTION",     "x": 12, "y": 20, "flag": "FLAG_ITEM_ISLE_MARAIS_POTION",     "_note": "8. Potion"},
+    {"item": "ITEM_POKE_BALL",  "x": 26, "y": 11, "flag": "FLAG_ITEM_ISLE_MARAIS_POKE_BALL",  "_note": "9. Poke Ball"},
+    {"item": "ITEM_SWAMPERTITE","x": 32, "y": 15, "flag": "FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE","_note": "6. Swampertite (levee breach, after gym 6; gating not scripted yet)"}
+  ],
+
+  "hidden_items": [
+    {"item": "ITEM_POTION", "x": 5, "y": 8, "flag": "FLAG_HIDDEN_ITEM_ISLE_MARAIS_CHURCHYARD", "_note": "10. Churchyard (item not specified in mockup; placeholder)"}
+  ]
+}

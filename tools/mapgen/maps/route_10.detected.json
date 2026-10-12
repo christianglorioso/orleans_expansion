@@ -1,0 +1,103 @@
+{
+ "source": "..\\orleans_maps\\r10_route_10.png",
+ "frame": [
+  0,
+  140,
+  1727,
+  1075
+ ],
+ "pitch": 36.0,
+ "width": 48,
+ "height": 26,
+ "buildings": [
+  {
+   "kind": "K",
+   "x": 40,
+   "y": 6,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 30,
+   "y": 9,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "K",
+   "x": 20,
+   "y": 12,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "H",
+   "x": 1,
+   "y": 18,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "H",
+   "x": 6,
+   "y": 19,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "H",
+   "x": 2,
+   "y": 23,
+   "w": 9,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 34,
+   "y": 6
+  },
+  {
+   "kind": "hidden_item",
+   "x": 29,
+   "y": 7
+  },
+  {
+   "kind": "trainer",
+   "x": 5,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 24,
+   "y": 10
+  },
+  {
+   "kind": "fishing",
+   "x": 9,
+   "y": 12
+  },
+  {
+   "kind": "item",
+   "x": 33,
+   "y": 14
+  },
+  {
+   "kind": "trainer",
+   "x": 11,
+   "y": 17
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 23
+  },
+  {
+   "side": "E",
+   "pos": 3
+  }
+ ]
+}

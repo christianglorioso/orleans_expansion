@@ -1,0 +1,64 @@
+{
+ "map": "Sheet",
+ "map_const": "MAP_SHEET",
+ "layout": "LAYOUT_SHEET",
+ "layout_dir": "data/layouts/Sheet",
+ "tileset": "orleans_crescent",
+ "grid": "_sheet_orleans_crescent.grid.txt",
+ "edits": [],
+ "buildings": [
+  {
+   "prefab": "brick_house",
+   "x": 1,
+   "y": 1,
+   "label": "brick_house"
+  },
+  {
+   "prefab": "brick_shop",
+   "x": 8,
+   "y": 1,
+   "label": "brick_shop"
+  },
+  {
+   "prefab": "brick_gable",
+   "x": 16,
+   "y": 1,
+   "label": "brick_gable"
+  },
+  {
+   "prefab": "brick_round",
+   "x": 22,
+   "y": 1,
+   "label": "brick_round"
+  },
+  {
+   "prefab": "brick_hall",
+   "x": 1,
+   "y": 10,
+   "label": "brick_hall"
+  },
+  {
+   "prefab": "brick_row",
+   "x": 13,
+   "y": 10,
+   "label": "brick_row"
+  },
+  {
+   "prefab": "church",
+   "x": 24,
+   "y": 10,
+   "label": "church"
+  },
+  {
+   "prefab": "pokecenter",
+   "x": 1,
+   "y": 21,
+   "label": "pokecenter"
+  }
+ ],
+ "objects": [],
+ "items": [],
+ "hidden_items": [],
+ "signs": [],
+ "exits": []
+}

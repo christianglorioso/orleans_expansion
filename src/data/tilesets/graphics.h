@@ -1625,6 +1625,624 @@ const u16 gTilesetPalettes_UnionRoom[][16] =
 
 const u32 gTilesetTiles_UnionRoom[] = INCGFX_U32("data/tilesets/secondary/union_room/tiles.png", ".4bpp.fastSmol");
 
+// --- mapgen: composed tilesets (begin) ---
+const u32 gTilesetTiles_OrleansBuilding[] = INCGFX_U32("data/tilesets/primary/orleans_building/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansBuilding[][16] =
+{
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_building/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansGeneral[] = INCGFX_U32("data/tilesets/primary/orleans_general/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansGeneral[][16] =
+{
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/primary/orleans_general/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansBayou[] = INCGFX_U32("data/tilesets/secondary/orleans_bayou/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansBayou[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_bayou/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansBriney[] = INCGFX_U32("data/tilesets/secondary/orleans_briney/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansBriney[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_briney/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansCamp[] = INCGFX_U32("data/tilesets/secondary/orleans_camp/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansCamp[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_camp/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansCapital[] = INCGFX_U32("data/tilesets/secondary/orleans_capital/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansCapital[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_capital/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansCity[] = INCGFX_U32("data/tilesets/secondary/orleans_city/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansCity[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_city/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansCoast[] = INCGFX_U32("data/tilesets/secondary/orleans_coast/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansCoast[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_coast/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansConservatory[] = INCGFX_U32("data/tilesets/secondary/orleans_conservatory/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansConservatory[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_conservatory/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansCrescent[] = INCGFX_U32("data/tilesets/secondary/orleans_crescent/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansCrescent[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_crescent/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansGulf[] = INCGFX_U32("data/tilesets/secondary/orleans_gulf/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansGulf[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_gulf/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansHall[] = INCGFX_U32("data/tilesets/secondary/orleans_hall/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansHall[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hall/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansHarbor[] = INCGFX_U32("data/tilesets/secondary/orleans_harbor/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansHarbor[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_harbor/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansHollow[] = INCGFX_U32("data/tilesets/secondary/orleans_hollow/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansHollow[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_hollow/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansHome[] = INCGFX_U32("data/tilesets/secondary/orleans_home/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansHome[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_home/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansInterior[] = INCGFX_U32("data/tilesets/secondary/orleans_interior/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansInterior[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansOffshore[] = INCGFX_U32("data/tilesets/secondary/orleans_offshore/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansOffshore[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_offshore/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansPointe[] = INCGFX_U32("data/tilesets/secondary/orleans_pointe/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansPointe[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_pointe/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansPort[] = INCGFX_U32("data/tilesets/secondary/orleans_port/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansPort[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_port/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRiver[] = INCGFX_U32("data/tilesets/secondary/orleans_river/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRiver[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_river/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRootkinIn[] = INCGFX_U32("data/tilesets/secondary/orleans_rootkin_in/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRootkinIn[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_rootkin_in/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRoute[] = INCGFX_U32("data/tilesets/secondary/orleans_route/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRoute[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRouteB[] = INCGFX_U32("data/tilesets/secondary/orleans_route_b/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRouteB[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_b/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRouteDry[] = INCGFX_U32("data/tilesets/secondary/orleans_route_dry/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRouteDry[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_dry/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansRouteFarm[] = INCGFX_U32("data/tilesets/secondary/orleans_route_farm/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansRouteFarm[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansServices[] = INCGFX_U32("data/tilesets/secondary/orleans_services/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansServices[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansTown[] = INCGFX_U32("data/tilesets/secondary/orleans_town/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansTown[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_town/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansVillage[] = INCGFX_U32("data/tilesets/secondary/orleans_village/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansVillage[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_village/palettes/15.pal", ".gbapal"),
+};
+
+// --- mapgen: composed tilesets (end) ---
 #else
 
 const u32 gTilesetTiles_Building_Frlg[] = INCGFX_U32("data/tilesets/primary/building_frlg/tiles.png", ".4bpp.smol");
@@ -3038,3 +3656,22 @@ const u16 ALIGNED(4) gTilesetPalettes_General_Frlg[][16] =
 const u32 gTilesetTiles_General_Frlg[] = INCGFX_U32("data/tilesets/primary/general_frlg/tiles.png", ".4bpp.smol");
 
 #endif // IS_FRLG
+
+const u16 gTilesetPalettes_test[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/test/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/test/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_test[] = INCBIN_U32("data/tilesets/primary/test/tiles.4bpp.lz");

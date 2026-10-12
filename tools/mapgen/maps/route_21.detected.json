@@ -1,0 +1,60 @@
+{
+ "source": "..\\orleans_maps\\r21_route_21.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1219
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 30,
+ "buildings": [],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 33,
+   "y": 9
+  },
+  {
+   "kind": "mega_stone",
+   "x": 23,
+   "y": 13
+  },
+  {
+   "kind": "hidden_item",
+   "x": 26,
+   "y": 13
+  },
+  {
+   "kind": "item",
+   "x": 11,
+   "y": 15
+  },
+  {
+   "kind": "trainer",
+   "x": 23,
+   "y": 15
+  },
+  {
+   "kind": "trainer",
+   "x": 19,
+   "y": 18
+  },
+  {
+   "kind": "trainer",
+   "x": 7,
+   "y": 22
+  }
+ ],
+ "exits": [
+  {
+   "side": "N",
+   "pos": 44
+  },
+  {
+   "side": "W",
+   "pos": 24
+  }
+ ]
+}

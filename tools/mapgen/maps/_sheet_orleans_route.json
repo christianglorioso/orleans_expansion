@@ -1,0 +1,34 @@
+{
+ "map": "Sheet",
+ "map_const": "MAP_SHEET",
+ "layout": "LAYOUT_SHEET",
+ "layout_dir": "data/layouts/Sheet",
+ "tileset": "orleans_route",
+ "grid": "_sheet_orleans_route.grid.txt",
+ "edits": [],
+ "buildings": [
+  {
+   "prefab": "boulder",
+   "x": 1,
+   "y": 1,
+   "label": "boulder"
+  },
+  {
+   "prefab": "boulder_pile",
+   "x": 6,
+   "y": 1,
+   "label": "boulder_pile"
+  },
+  {
+   "prefab": "cave_mouth",
+   "x": 11,
+   "y": 1,
+   "label": "cave_mouth"
+  }
+ ],
+ "objects": [],
+ "items": [],
+ "hidden_items": [],
+ "signs": [],
+ "exits": []
+}

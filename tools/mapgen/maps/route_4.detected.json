@@ -1,0 +1,99 @@
+{
+ "source": "..\\orleans_maps\\r04_route_4.png",
+ "frame": [
+  0,
+  140,
+  1007,
+  1795
+ ],
+ "pitch": 36.0,
+ "width": 28,
+ "height": 46,
+ "buildings": [
+  {
+   "kind": "I",
+   "x": 9,
+   "y": 10,
+   "w": 3,
+   "h": 3
+  },
+  {
+   "kind": "I",
+   "x": 13,
+   "y": 11,
+   "w": 3,
+   "h": 4
+  },
+  {
+   "kind": "I",
+   "x": 9,
+   "y": 28,
+   "w": 5,
+   "h": 3
+  },
+  {
+   "kind": "K",
+   "x": 21,
+   "y": 39,
+   "w": 4,
+   "h": 2
+  }
+ ],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 16,
+   "y": 5
+  },
+  {
+   "kind": "trainer",
+   "x": 18,
+   "y": 15
+  },
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 19
+  },
+  {
+   "kind": "item",
+   "x": 2,
+   "y": 20
+  },
+  {
+   "kind": "trainer",
+   "x": 16,
+   "y": 23
+  },
+  {
+   "kind": "item",
+   "x": 10,
+   "y": 25
+  },
+  {
+   "kind": "trainer",
+   "x": 18,
+   "y": 29
+  },
+  {
+   "kind": "item",
+   "x": 13,
+   "y": 34
+  },
+  {
+   "kind": "trainer",
+   "x": 16,
+   "y": 37
+  }
+ ],
+ "exits": [
+  {
+   "side": "N",
+   "pos": 17
+  },
+  {
+   "side": "S",
+   "pos": 17
+  }
+ ]
+}

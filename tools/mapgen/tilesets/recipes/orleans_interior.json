@@ -1,0 +1,156 @@
+{
+  "_comment": "Generic interior pieces for first-pass rooms (interior_rooms_world.py): HnS Pokemon Center counters and seats, Johto Mart shelves, players-house bed and TV, Celadon gym hedges/grass/flowers/statues/sand, our glass and dais, Ekat water.",
+  "kind": "secondary",
+  "dir": "orleans_interior",
+  "symbol": "gTileset_OrleansInterior",
+  "primary_mapping": "orleans_building.mapping.json",
+  "sources": [
+    {
+      "name": "pc",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/kanto_pokemon_center",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "439",
+        "43C",
+        "43D",
+        "401",
+        "475"
+      ]
+    },
+    {
+      "name": "mt",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/johto_mart",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "457",
+        "458",
+        "453",
+        "454",
+        "456",
+        "455",
+        "463"
+      ]
+    },
+    {
+      "name": "ph",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/players_house",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "404",
+        "414",
+        "40E"
+      ]
+    },
+    {
+      "name": "cg",
+      "primary": "C:/Users/chris/soulgold/data/tilesets/primary/johto_building",
+      "secondary": "C:/Users/chris/soulgold/data/tilesets/secondary/azalea_town_gym",
+      "layout": "sg",
+      "layers": 3,
+      "primary_layers": 3,
+      "ids": [
+        "40D",
+        "415",
+        "46E",
+        "436",
+        "437",
+        "438",
+        "439",
+        "425"
+      ]
+    },
+    {
+      "name": "cv",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/conservatory.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "glass_0",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "glass_1",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "glass_side",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "dais_L",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "dais_M",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "dais_R",
+          "bottom": [
+            6,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ekat",
+      "type": "image",
+      "image": "tools/mapgen/sources/ekat_swamp/swamp_tiles.png",
+      "transparent": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "water_C",
+          "bottom": [
+            2,
+            15
+          ],
+          "behavior": "MB_POND_WATER"
+        }
+      ]
+    }
+  ],
+  "patches": []
+}

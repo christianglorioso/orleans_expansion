@@ -1,0 +1,541 @@
+{
+ "_comment": "Redfield own art index (make_redfield_art.py): piece -> sheet cell and size; magenta = clear. See tools/mapgen/art_requests/redfield.md.",
+ "pieces": {
+  "sugar_mill": {
+   "w": 7,
+   "h": 8,
+   "comment": "Cayenne's gym: the sugar mill (brick stack, tin boiling house, crushing house), 7x8.",
+   "doors": [
+    [
+     3,
+     7
+    ]
+   ],
+   "passable": [],
+   "empty": [
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "x": 0,
+   "y": 0
+  },
+  "ritas_office": {
+   "w": 5,
+   "h": 4,
+   "comment": "Rita's office in the mill yard (whitewash, red tin, ledger sign), 5x4.",
+   "doors": [
+    [
+     1,
+     3
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 12,
+   "y": 8
+  },
+  "shotgun_a": {
+   "w": 3,
+   "h": 6,
+   "comment": "Shotgun house (blue clapboard, shared roof and porch), 3x6.",
+   "doors": [
+    [
+     1,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 8
+  },
+  "shotgun_b": {
+   "w": 3,
+   "h": 6,
+   "comment": "Shotgun house (mint clapboard, shared roof and porch), 3x6.",
+   "doors": [
+    [
+     1,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 3,
+   "y": 8
+  },
+  "shotgun_c": {
+   "w": 3,
+   "h": 6,
+   "comment": "Shotgun house (ochre clapboard, shared roof and porch), 3x6.",
+   "doors": [
+    [
+     1,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 6,
+   "y": 8
+  },
+  "shotgun_d": {
+   "w": 3,
+   "h": 6,
+   "comment": "Shotgun house (rose clapboard, shared roof and porch), 3x6.",
+   "doors": [
+    [
+     1,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [],
+   "x": 9,
+   "y": 8
+  },
+  "bottling_works": {
+   "w": 9,
+   "h": 6,
+   "comment": "Pepper-Sauce Bottling Works (brick, saw-tooth roof, bottle sign), 9x6.",
+   "doors": [
+    [
+     2,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ]
+   ],
+   "x": 7,
+   "y": 0
+  },
+  "great_sundial": {
+   "w": 8,
+   "h": 6,
+   "comment": "The great sundial on its octagonal flagstone plaza, 8x6.",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     7,
+     5
+    ]
+   ],
+   "empty": [],
+   "x": 16,
+   "y": 0
+  },
+  "yard_h": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (h): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 14,
+   "y": 14
+  },
+  "yard_v": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (v): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 15,
+   "y": 14
+  },
+  "yard_nw": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (nw): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 16,
+   "y": 14
+  },
+  "yard_ne": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (ne): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 17,
+   "y": 14
+  },
+  "yard_sw": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (sw): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 18,
+   "y": 14
+  },
+  "yard_se": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard fence (se): plank-and-post, cane-knife top rail.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 19,
+   "y": 14
+  },
+  "yard_gate_l": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard gate post, west of the opening (leaf folded back).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 20,
+   "y": 14
+  },
+  "yard_gate_r": {
+   "w": 1,
+   "h": 1,
+   "comment": "Mill yard gate post, east of the opening (leaf folded back).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 21,
+   "y": 14
+  },
+  "sundial": {
+   "w": 2,
+   "h": 2,
+   "comment": "Yard sundial: stone pedestal, brass dial, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 14
+  },
+  "mirror_se": {
+   "w": 1,
+   "h": 2,
+   "comment": "Brass mirror on a post, glass facing south-east, 1x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 6,
+   "y": 14
+  },
+  "mirror_sw": {
+   "w": 1,
+   "h": 2,
+   "comment": "Brass mirror on a post, glass facing south-west, 1x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 14
+  },
+  "mirror_ne": {
+   "w": 1,
+   "h": 2,
+   "comment": "Brass mirror on a post, glass facing north-east (back to us), 1x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 8,
+   "y": 14
+  },
+  "mirror_nw": {
+   "w": 1,
+   "h": 2,
+   "comment": "Brass mirror on a post, glass facing north-west (back to us), 1x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 9,
+   "y": 14
+  },
+  "cane_pile": {
+   "w": 2,
+   "h": 2,
+   "comment": "Stacked bundles of cut cane, tied, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 2,
+   "y": 14
+  },
+  "cane_pile_b": {
+   "w": 2,
+   "h": 1,
+   "comment": "A low heap of cut cane, 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 10,
+   "y": 14
+  },
+  "rail_h": {
+   "w": 1,
+   "h": 1,
+   "comment": "Cane railway track, east-west (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 22,
+   "y": 14
+  },
+  "rail_cross": {
+   "w": 1,
+   "h": 1,
+   "comment": "Cane railway level crossing: planks between the rails (walkable).",
+   "doors": [],
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "empty": [],
+   "x": 23,
+   "y": 14
+  },
+  "rail_end": {
+   "w": 1,
+   "h": 1,
+   "comment": "Cane railway buffer stop (east end).",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 0,
+   "y": 16
+  },
+  "cane_truck": {
+   "w": 3,
+   "h": 2,
+   "comment": "Cane truck loaded with cut cane, on its track, 3x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 17,
+   "y": 8
+  },
+  "sauce_vat": {
+   "w": 2,
+   "h": 2,
+   "comment": "Wooden fermenting vat of red pepper mash, 2x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 4,
+   "y": 14
+  },
+  "bottle_crates": {
+   "w": 2,
+   "h": 1,
+   "comment": "Crates of red-capped sauce bottles, 2x1.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 12,
+   "y": 14
+  },
+  "ferry": {
+   "w": 3,
+   "h": 2,
+   "comment": "Route 18 river launch moored by the dock (overlay on water), 3x2.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 20,
+   "y": 8
+  }
+ }
+}

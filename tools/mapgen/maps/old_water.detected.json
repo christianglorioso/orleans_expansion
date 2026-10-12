@@ -1,0 +1,401 @@
+{
+ "source": "../orleans_maps/10_old_water.png",
+ "frame": [
+  0,
+  140,
+  1439,
+  1291
+ ],
+ "pitch": 36.0,
+ "width": 40,
+ "height": 32,
+ "buildings": [
+  {
+   "kind": "P",
+   "x": 17,
+   "y": 2,
+   "w": 6,
+   "h": 5
+  },
+  {
+   "kind": "P",
+   "x": 11,
+   "y": 4,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "kind": "M",
+   "x": 25,
+   "y": 4,
+   "w": 4,
+   "h": 2
+  },
+  {
+   "kind": "P",
+   "x": 5,
+   "y": 7,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "P",
+   "x": 30,
+   "y": 7,
+   "w": 4,
+   "h": 3
+  },
+  {
+   "kind": "H",
+   "x": 6,
+   "y": 11,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "P",
+   "x": 36,
+   "y": 11,
+   "w": 3,
+   "h": 2
+  },
+  {
+   "kind": "H",
+   "x": 16,
+   "y": 12,
+   "w": 1,
+   "h": 1
+  },
+  {
+   "kind": "P",
+   "x": 32,
+   "y": 20,
+   "w": 3,
+   "h": 3
+  },
+  {
+   "kind": "P",
+   "x": 17,
+   "y": 26,
+   "w": 6,
+   "h": 4
+  }
+ ],
+ "markers": [
+  {
+   "kind": "shrine",
+   "x": 17,
+   "y": 2
+  },
+  {
+   "kind": "shrine",
+   "x": 22,
+   "y": 2
+  },
+  {
+   "kind": "shrine",
+   "x": 33,
+   "y": 2
+  },
+  {
+   "kind": "shrine",
+   "x": 16,
+   "y": 4
+  },
+  {
+   "kind": "shrine",
+   "x": 23,
+   "y": 4
+  },
+  {
+   "kind": "shrine",
+   "x": 14,
+   "y": 5
+  },
+  {
+   "kind": "shrine",
+   "x": 15,
+   "y": 5
+  },
+  {
+   "kind": "shrine",
+   "x": 17,
+   "y": 5
+  },
+  {
+   "kind": "shrine",
+   "x": 22,
+   "y": 5
+  },
+  {
+   "kind": "shrine",
+   "x": 11,
+   "y": 6
+  },
+  {
+   "kind": "npc",
+   "x": 19,
+   "y": 6
+  },
+  {
+   "kind": "shrine",
+   "x": 27,
+   "y": 6
+  },
+  {
+   "kind": "shrine",
+   "x": 5,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 8,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 9,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 12,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 29,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 30,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 33,
+   "y": 7
+  },
+  {
+   "kind": "shrine",
+   "x": 9,
+   "y": 8
+  },
+  {
+   "kind": "shrine",
+   "x": 10,
+   "y": 8
+  },
+  {
+   "kind": "shrine",
+   "x": 30,
+   "y": 8
+  },
+  {
+   "kind": "shrine",
+   "x": 5,
+   "y": 9
+  },
+  {
+   "kind": "shrine",
+   "x": 8,
+   "y": 9
+  },
+  {
+   "kind": "shrine",
+   "x": 6,
+   "y": 10
+  },
+  {
+   "kind": "shrine",
+   "x": 7,
+   "y": 10
+  },
+  {
+   "kind": "shrine",
+   "x": 36,
+   "y": 10
+  },
+  {
+   "kind": "shrine",
+   "x": 39,
+   "y": 10
+  },
+  {
+   "kind": "npc",
+   "x": 5,
+   "y": 11
+  },
+  {
+   "kind": "shrine",
+   "x": 36,
+   "y": 12
+  },
+  {
+   "kind": "shrine",
+   "x": 39,
+   "y": 12
+  },
+  {
+   "kind": "shrine",
+   "x": 31,
+   "y": 20
+  },
+  {
+   "kind": "shrine",
+   "x": 33,
+   "y": 20
+  },
+  {
+   "kind": "shrine",
+   "x": 34,
+   "y": 20
+  },
+  {
+   "kind": "shrine",
+   "x": 7,
+   "y": 21
+  },
+  {
+   "kind": "shrine",
+   "x": 31,
+   "y": 21
+  },
+  {
+   "kind": "shrine",
+   "x": 29,
+   "y": 22
+  },
+  {
+   "kind": "shrine",
+   "x": 31,
+   "y": 22
+  },
+  {
+   "kind": "shrine",
+   "x": 34,
+   "y": 22
+  },
+  {
+   "kind": "shrine",
+   "x": 8,
+   "y": 23
+  },
+  {
+   "kind": "shrine",
+   "x": 27,
+   "y": 23
+  },
+  {
+   "kind": "shrine",
+   "x": 28,
+   "y": 23
+  },
+  {
+   "kind": "shrine",
+   "x": 30,
+   "y": 23
+  },
+  {
+   "kind": "shrine",
+   "x": 10,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 11,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 14,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 24,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 27,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 28,
+   "y": 24
+  },
+  {
+   "kind": "shrine",
+   "x": 16,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 17,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 18,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 21,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 22,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 23,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 24,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 25,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 26,
+   "y": 25
+  },
+  {
+   "kind": "shrine",
+   "x": 17,
+   "y": 26
+  },
+  {
+   "kind": "shrine",
+   "x": 22,
+   "y": 26
+  },
+  {
+   "kind": "shrine",
+   "x": 23,
+   "y": 26
+  },
+  {
+   "kind": "event",
+   "x": 34,
+   "y": 26
+  },
+  {
+   "kind": "fishing",
+   "x": 19,
+   "y": 30
+  }
+ ]
+}

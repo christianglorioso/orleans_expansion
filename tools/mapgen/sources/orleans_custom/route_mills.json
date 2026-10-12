@@ -1,0 +1,39 @@
+{
+ "_comment": "Dry-route mills and drying sheds (make_route_mills_art.py): piece -> sheet cell and size; magenta = clear. Same format as redfield.json.",
+ "pieces": {
+  "route_mill": {
+   "w": 7,
+   "h": 6,
+   "comment": "Route 17 sugar mill (Redfield's mill without chimney or sign), 7x6.",
+   "doors": [
+    [
+     3,
+     5
+    ]
+   ],
+   "passable": [],
+   "empty": [
+    [
+     0,
+     0
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "x": 0,
+   "y": 0
+  },
+  "drying_shed": {
+   "w": 4,
+   "h": 3,
+   "comment": "Route 16 pepper drying shed (open timber shed, tin roof, pepper strings), 4x3.",
+   "doors": [],
+   "passable": [],
+   "empty": [],
+   "x": 7,
+   "y": 0
+  }
+ }
+}

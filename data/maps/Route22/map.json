@@ -1,0 +1,86 @@
+{
+  "id": "MAP_ORLEANS_ROUTE22",
+  "name": "Route22",
+  "layout": "LAYOUT_ORLEANS_ROUTE22",
+  "music": "MUS_SURF",
+  "region_map_section": "MAPSEC_ROUTE_22",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ORLEANS_ROUTE21",
+      "offset": -21,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE22_TRAINER_0",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 39,
+      "y": 10,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route22_EventScript_Trainer0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE22_TRAINER_1",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 27,
+      "y": 13,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route22_EventScript_Trainer1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ORLEANS_ROUTE22_TRAINER_2",
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
+      "x": 15,
+      "y": 15,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route22_EventScript_Trainer2",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_UNUSED_0x2A4"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 23,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route22_EventScript_RouteSign1"
+    }
+  ]
+}

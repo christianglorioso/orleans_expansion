@@ -1,0 +1,1407 @@
+{
+  "map": "Route1",
+  "map_const": "MAP_ORLEANS_ROUTE1",
+  "layout": "LAYOUT_ORLEANS_ROUTE1",
+  "layout_dir": "data/layouts/Route1",
+  "tileset": "orleans_route",
+  "mockup": "../orleans_maps/r01_route_1.png",
+  "grid": "route_1.grid.txt",
+  "_edits": "Terrain fixes on top of the extracted grid, applied in order (later wins).",
+  "edits": [
+    [
+      ".",
+      12,
+      0,
+      5,
+      22
+    ],
+    [
+      "\"",
+      11,
+      22,
+      6,
+      12
+    ],
+    [
+      "~",
+      11,
+      36,
+      6,
+      12
+    ],
+    [
+      ".",
+      11,
+      34,
+      6,
+      2
+    ],
+    [
+      ":",
+      14,
+      0,
+      2,
+      23
+    ],
+    [
+      ":",
+      13,
+      22,
+      3,
+      2
+    ],
+    [
+      ":",
+      13,
+      24,
+      2,
+      24
+    ],
+    [
+      ".",
+      12,
+      22,
+      1,
+      26
+    ],
+    [
+      ".",
+      15,
+      24,
+      1,
+      24
+    ],
+    [
+      ".",
+      16,
+      22,
+      1,
+      2
+    ],
+    [
+      "~",
+      20,
+      23,
+      1,
+      1
+    ],
+    [
+      ".",
+      11,
+      41,
+      2,
+      2
+    ],
+    [
+      "G",
+      3,
+      40,
+      8,
+      1
+    ],
+    [
+      ".",
+      20,
+      0,
+      8,
+      17
+    ],
+    [
+      "\"",
+      22,
+      1,
+      6,
+      9
+    ],
+    [
+      "\"",
+      21,
+      10,
+      7,
+      6
+    ],
+    [
+      ".",
+      0,
+      0,
+      8,
+      6
+    ],
+    [
+      "\"",
+      0,
+      0,
+      7,
+      5
+    ],
+    [
+      "~",
+      18,
+      40,
+      7,
+      4
+    ],
+    [
+      "G",
+      21,
+      38,
+      4,
+      6
+    ],
+    [
+      ".",
+      15,
+      38,
+      6,
+      3
+    ],
+    [
+      "~",
+      16,
+      41,
+      5,
+      3
+    ],
+    [
+      "~",
+      0,
+      6,
+      14,
+      8
+    ],
+    [
+      "\"",
+      2,
+      8,
+      4,
+      4
+    ],
+    [
+      "G",
+      7,
+      0,
+      6,
+      1
+    ],
+    [
+      "G",
+      17,
+      0,
+      11,
+      1
+    ],
+    [
+      "G",
+      7,
+      1,
+      6,
+      1
+    ],
+    [
+      "G",
+      17,
+      1,
+      5,
+      1
+    ],
+    [
+      "G",
+      7,
+      2,
+      6,
+      1
+    ],
+    [
+      "G",
+      17,
+      2,
+      5,
+      1
+    ],
+    [
+      "G",
+      7,
+      3,
+      6,
+      1
+    ],
+    [
+      "G",
+      17,
+      3,
+      5,
+      1
+    ],
+    [
+      "G",
+      7,
+      4,
+      6,
+      1
+    ],
+    [
+      "G",
+      17,
+      4,
+      5,
+      1
+    ],
+    [
+      "G",
+      0,
+      5,
+      13,
+      1
+    ],
+    [
+      "G",
+      17,
+      5,
+      5,
+      1
+    ],
+    [
+      "G",
+      17,
+      6,
+      5,
+      1
+    ],
+    [
+      "G",
+      17,
+      7,
+      5,
+      1
+    ],
+    [
+      "G",
+      17,
+      8,
+      5,
+      1
+    ],
+    [
+      "G",
+      17,
+      9,
+      5,
+      1
+    ],
+    [
+      "G",
+      17,
+      10,
+      4,
+      1
+    ],
+    [
+      "G",
+      17,
+      11,
+      4,
+      1
+    ],
+    [
+      "G",
+      17,
+      12,
+      4,
+      1
+    ],
+    [
+      "G",
+      17,
+      13,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      14,
+      3,
+      1
+    ],
+    [
+      "G",
+      10,
+      14,
+      3,
+      1
+    ],
+    [
+      "G",
+      17,
+      14,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      15,
+      3,
+      1
+    ],
+    [
+      "G",
+      10,
+      15,
+      3,
+      1
+    ],
+    [
+      "G",
+      17,
+      15,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      16,
+      3,
+      1
+    ],
+    [
+      "G",
+      10,
+      16,
+      3,
+      1
+    ],
+    [
+      "G",
+      17,
+      16,
+      11,
+      1
+    ],
+    [
+      "G",
+      0,
+      17,
+      3,
+      1
+    ],
+    [
+      "G",
+      10,
+      17,
+      3,
+      1
+    ],
+    [
+      "G",
+      17,
+      17,
+      11,
+      1
+    ],
+    [
+      "G",
+      0,
+      18,
+      3,
+      1
+    ],
+    [
+      "G",
+      10,
+      18,
+      3,
+      1
+    ],
+    [
+      "G",
+      17,
+      18,
+      1,
+      1
+    ],
+    [
+      "G",
+      25,
+      18,
+      3,
+      1
+    ],
+    [
+      "G",
+      0,
+      19,
+      13,
+      1
+    ],
+    [
+      "G",
+      17,
+      19,
+      1,
+      1
+    ],
+    [
+      "G",
+      25,
+      19,
+      3,
+      1
+    ],
+    [
+      "G",
+      0,
+      20,
+      13,
+      1
+    ],
+    [
+      "G",
+      17,
+      20,
+      1,
+      1
+    ],
+    [
+      "G",
+      25,
+      20,
+      3,
+      1
+    ],
+    [
+      "G",
+      0,
+      21,
+      13,
+      1
+    ],
+    [
+      "G",
+      17,
+      21,
+      1,
+      1
+    ],
+    [
+      "G",
+      25,
+      21,
+      3,
+      1
+    ],
+    [
+      "G",
+      0,
+      22,
+      12,
+      1
+    ],
+    [
+      "G",
+      17,
+      22,
+      1,
+      1
+    ],
+    [
+      "G",
+      25,
+      22,
+      3,
+      1
+    ],
+    [
+      "G",
+      0,
+      23,
+      12,
+      1
+    ],
+    [
+      "G",
+      17,
+      23,
+      1,
+      1
+    ],
+    [
+      "G",
+      22,
+      23,
+      6,
+      1
+    ],
+    [
+      "G",
+      0,
+      24,
+      3,
+      1
+    ],
+    [
+      "G",
+      9,
+      24,
+      3,
+      1
+    ],
+    [
+      "G",
+      16,
+      24,
+      1,
+      1
+    ],
+    [
+      "G",
+      23,
+      24,
+      5,
+      1
+    ],
+    [
+      "G",
+      0,
+      25,
+      3,
+      1
+    ],
+    [
+      "G",
+      9,
+      25,
+      3,
+      1
+    ],
+    [
+      "G",
+      16,
+      25,
+      1,
+      1
+    ],
+    [
+      "G",
+      24,
+      25,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      26,
+      3,
+      1
+    ],
+    [
+      "G",
+      9,
+      26,
+      3,
+      1
+    ],
+    [
+      "G",
+      16,
+      26,
+      1,
+      1
+    ],
+    [
+      "G",
+      24,
+      26,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      27,
+      2,
+      1
+    ],
+    [
+      "G",
+      10,
+      27,
+      2,
+      1
+    ],
+    [
+      "G",
+      16,
+      27,
+      1,
+      1
+    ],
+    [
+      "G",
+      24,
+      27,
+      4,
+      1
+    ],
+    [
+      "G",
+      0,
+      28,
+      2,
+      1
+    ],
+    [
+      "G",
+      10,
+      28,
+      2,
+      1
+    ],
+    [
+      "G",
+      16,
+      28,
+      3,
+      1
+    ],
+    [
+      "G",
+      22,
+      28,
+      6,
+      1
+    ],
+    [
+      "G",
+      0,
+      29,
+      4,
+      1
+    ],
+    [
+      "G",
+      9,
+      29,
+      3,
+      1
+    ],
+    [
+      "G",
+      16,
+      29,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      30,
+      5,
+      1
+    ],
+    [
+      "G",
+      7,
+      30,
+      5,
+      1
+    ],
+    [
+      "G",
+      16,
+      30,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      31,
+      12,
+      1
+    ],
+    [
+      "G",
+      16,
+      31,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      32,
+      12,
+      1
+    ],
+    [
+      "G",
+      16,
+      32,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      33,
+      12,
+      1
+    ],
+    [
+      "G",
+      16,
+      33,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      34,
+      8,
+      1
+    ],
+    [
+      "G",
+      11,
+      34,
+      1,
+      1
+    ],
+    [
+      "G",
+      16,
+      34,
+      12,
+      1
+    ],
+    [
+      "G",
+      0,
+      35,
+      3,
+      1
+    ],
+    [
+      "G",
+      11,
+      35,
+      1,
+      1
+    ],
+    [
+      "G",
+      16,
+      35,
+      12,
+      1
+    ],
+    [
+      "G",
+      17,
+      36,
+      9,
+      1
+    ],
+    [
+      "G",
+      17,
+      37,
+      4,
+      1
+    ],
+    [
+      ".",
+      16,
+      22,
+      2,
+      3
+    ],
+    [
+      "G",
+      17,
+      22,
+      1,
+      2
+    ],
+    [
+      "G",
+      16,
+      36,
+      10,
+      2
+    ],
+    [
+      "L",
+      17,
+      44,
+      3,
+      1
+    ],
+    [
+      "L",
+      17,
+      45,
+      6,
+      2
+    ],
+    [
+      "\"",
+      7,
+      0,
+      4,
+      5
+    ],
+    [
+      "\"",
+      17,
+      3,
+      4,
+      5
+    ],
+    [
+      "\"",
+      0,
+      15,
+      7,
+      5
+    ],
+    [
+      "\"",
+      8,
+      18,
+      4,
+      4
+    ],
+    [
+      "\"",
+      24,
+      16,
+      4,
+      4
+    ],
+    [
+      "\"",
+      0,
+      30,
+      5,
+      4
+    ],
+    [
+      "\"",
+      23,
+      29,
+      5,
+      5
+    ]
+  ],
+  "buildings": [
+    {
+      "prefab": "shrine",
+      "x": 3,
+      "y": 9,
+      "label": "Mesprit shrine (post-game)"
+    },
+    {
+      "prefab": "dock_h",
+      "x": 8,
+      "y": 8,
+      "label": "Boat landing"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 1,
+      "y": 0,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 4,
+      "y": 1,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 23,
+      "y": 2,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 26,
+      "y": 4,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 23,
+      "y": 6,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 25,
+      "y": 7,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 22,
+      "y": 11,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 25,
+      "y": 12,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "pirogue",
+      "x": 17,
+      "y": 44,
+      "label": "Stranded pirogue"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 8,
+      "y": 1,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 18,
+      "y": 4,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 1,
+      "y": 15,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 4,
+      "y": 16,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 8,
+      "y": 18,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 24,
+      "y": 16,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_small_marsh",
+      "x": 1,
+      "y": 30,
+      "label": "Cypress"
+    },
+    {
+      "prefab": "cypress_marsh",
+      "x": 24,
+      "y": 29,
+      "label": "Cypress"
+    }
+  ],
+  "objects": [
+    {
+      "id": "LOCALID_ROUTE1_LAFAYETTE",
+      "gfx": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 16,
+      "y": 39,
+      "move": "MOVEMENT_TYPE_FACE_DOWN",
+      "text": "LAFAYETTE: Every species out here\\nneeds counting before the water\\pmoves them. Take this POKéDEX.",
+      "_note": "1. Lafayette gives the Pokédex (placeholder; script later)",
+      "custom": true,
+      "flag": "FLAG_HIDE_ROUTE1_LAFAYETTE"
+    },
+    {
+      "id": "LOCALID_ROUTE1_JAYDEN",
+      "gfx": "OBJ_EVENT_GFX_BOY_1",
+      "x": 11,
+      "y": 8,
+      "move": "MOVEMENT_TYPE_FACE_LEFT",
+      "text": "JAYDEN: ...You again.",
+      "_note": "2. Trust event: Jayden battle 1 (placeholder)",
+      "custom": true,
+      "flag": "FLAG_HIDE_ROUTE1_JAYDEN"
+    },
+    {
+      "id": "LOCALID_ROUTE1_WREN",
+      "gfx": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 9,
+      "y": 8,
+      "move": "MOVEMENT_TYPE_FACE_RIGHT",
+      "text": "WREN: The channel only opens\\nfor people the water trusts.",
+      "_note": "2. Trust event: help Wren (placeholder)",
+      "custom": true,
+      "flag": "FLAG_HIDE_ROUTE1_WREN"
+    },
+    {
+      "id": "LOCALID_ROUTE1_TRAINER_1",
+      "gfx": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 16,
+      "y": 9,
+      "move": "MOVEMENT_TYPE_FACE_LEFT",
+      "text": "(Trainer battle to be scripted.)",
+      "_note": "Trainer by the boat landing",
+      "custom": true,
+      "sight": 3
+    },
+    {
+      "id": "LOCALID_ROUTE1_TRAINER_2",
+      "gfx": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 12,
+      "y": 16,
+      "move": "MOVEMENT_TYPE_LOOK_AROUND",
+      "text": "(Trainer battle to be scripted.)",
+      "_note": "Trainer by the west tall grass",
+      "custom": true,
+      "sight": 3
+    },
+    {
+      "id": "LOCALID_ROUTE1_TRAINER_3",
+      "gfx": "OBJ_EVENT_GFX_LASS",
+      "x": 15,
+      "y": 27,
+      "move": "MOVEMENT_TYPE_FACE_LEFT",
+      "text": "(Trainer battle to be scripted.)",
+      "_note": "Trainer on the drowned road",
+      "custom": true,
+      "sight": 3
+    },
+    {
+      "id": "LOCALID_ROUTE1_TRAINER_4",
+      "gfx": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 12,
+      "y": 36,
+      "move": "MOVEMENT_TYPE_FACE_RIGHT",
+      "text": "(Trainer battle to be scripted.)",
+      "_note": "Trainer on the flooded road",
+      "custom": true,
+      "sight": 3
+    }
+  ],
+  "items": [
+    {
+      "item": "ITEM_POTION",
+      "x": 4,
+      "y": 41,
+      "flag": "FLAG_ITEM_ROUTE1_POTION",
+      "_note": "4. Potion"
+    },
+    {
+      "item": "ITEM_POKE_BALL",
+      "x": 24,
+      "y": 24,
+      "flag": "FLAG_ITEM_ROUTE1_POKE_BALL",
+      "_note": "5. Poké Ball (moved from the pond to its shore)"
+    },
+    {
+      "item": "ITEM_ORAN_BERRY",
+      "x": 21,
+      "y": 16,
+      "flag": "FLAG_ITEM_ROUTE1_ORAN_BERRY",
+      "_note": "6. Oran Berry"
+    }
+  ],
+  "hidden_items": [],
+  "signs": [
+    {
+      "id": "MespritShrine",
+      "x": 3,
+      "y": 9,
+      "text": "A weathered stone. Someone has\nleft fresh flowers on it."
+    }
+  ],
+  "exits": [
+    {
+      "name": "Grand Oak (north)",
+      "cells": [
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "Isle Marais (south)",
+      "cells": [
+        [
+          13,
+          47
+        ],
+        [
+          14,
+          47
+        ]
+      ]
+    }
+  ],
+  "surf_only": [
+    [
+      2,
+      8
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      2,
+      10
+    ],
+    [
+      2,
+      11
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      3,
+      9
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      3,
+      11
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      4,
+      10
+    ],
+    [
+      4,
+      11
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      5,
+      10
+    ],
+    [
+      5,
+      11
+    ]
+  ],
+  "_surf_only": "Event cells reached by Surf later (post-game shrine); the walk test skips them.",
+  "triggers": [
+    {
+      "x": 12,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 0,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 12,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 1,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 12,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 12,
+      "y": 44,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 3,
+      "script": "Route1_EventScript_LafayetteCallsOver"
+    },
+    {
+      "x": 13,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 0,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 13,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 1,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 13,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 13,
+      "y": 44,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 3,
+      "script": "Route1_EventScript_LafayetteCallsOver"
+    },
+    {
+      "x": 14,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 0,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 14,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 1,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 14,
+      "y": 46,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 2,
+      "script": "Route1_EventScript_TooDangerous"
+    },
+    {
+      "x": 14,
+      "y": 44,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 3,
+      "script": "Route1_EventScript_LafayetteCallsOver"
+    },
+    {
+      "x": 14,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 15,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 16,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 17,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 18,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 19,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 20,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 21,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 22,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 23,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 24,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 25,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 26,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    },
+    {
+      "x": 27,
+      "y": 11,
+      "var": "VAR_ORLEANS_STORY",
+      "value": 4,
+      "script": "Route1_EventScript_LandingStandoff"
+    }
+  ]
+}

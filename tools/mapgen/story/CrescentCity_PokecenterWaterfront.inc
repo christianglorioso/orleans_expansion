@@ -1,0 +1,8 @@
+CrescentCity_PokecenterWaterfront_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CrescentCity_PokecenterWaterfront_OnTransition
+	.byte 0
+
+@ Walking in sets the respawn point
+CrescentCity_PokecenterWaterfront_OnTransition:
+	setrespawn HEAL_LOCATION_CRESCENT_CITY_WATERFRONT
+	end

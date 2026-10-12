@@ -1,0 +1,83 @@
+{
+ "source": "..\\orleans_maps\\r03_route_3.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1003
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 24,
+ "buildings": [
+  {
+   "kind": "H",
+   "x": 24,
+   "y": 7,
+   "w": 2,
+   "h": 1
+  }
+ ],
+ "markers": [
+  {
+   "kind": "fishing",
+   "x": 9,
+   "y": 4
+  },
+  {
+   "kind": "trainer",
+   "x": 5,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 19,
+   "y": 10
+  },
+  {
+   "kind": "item",
+   "x": 25,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 34,
+   "y": 10
+  },
+  {
+   "kind": "event",
+   "x": 43,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 12,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 28,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 38,
+   "y": 12
+  },
+  {
+   "kind": "hidden_item",
+   "x": 44,
+   "y": 18
+  }
+ ],
+ "exits": [
+  {
+   "side": "W",
+   "pos": 11
+  },
+  {
+   "side": "E",
+   "pos": 11
+  }
+ ]
+}

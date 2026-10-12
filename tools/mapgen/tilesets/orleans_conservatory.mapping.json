@@ -1,0 +1,37 @@
+{
+"tileset": "gTileset_OrleansConservatory",
+"kind": "secondary",
+"backdrop": [
+0,
+0,
+0
+],
+"recolor": null,
+"keep_colors": null,
+"metatile_offset": 512,
+"metatiles": {
+"cv:pavers": 512,
+"cv:glass_0": 513,
+"cv:glass_1": 514,
+"cv:glass_side": 515,
+"cv:dais_L": 516,
+"cv:dais_M": 517,
+"cv:dais_R": 518,
+"cv:exitmat": 519,
+"cg:405": 520,
+"cg:40D": 521,
+"cg:415": 522,
+"cg:41D": 523,
+"cg:425": 524,
+"cg:430": 525,
+"cg:431": 526,
+"cg:432": 527,
+"cg:436": 528,
+"cg:437": 529,
+"cg:438": 530,
+"cg:439": 531,
+"cg:46E": 532
+},
+"palettes": null,
+"tiles": {}
+}

@@ -1,0 +1,1873 @@
+{
+  "_comment": "Orleans town secondary (Grand Oak): Ekat99 grass; Shady Forest houses (Yumekua / Rahtak); vanilla Emerald Pokemon Center and Mart (Game Freak, pokeemerald); HnS National Park fountain, planters and lamps; HnS Johto gym sign; own art (greenhouse gym, magnolia tree, multicolour flower planter). See tools/mapgen/CREDITS.md.",
+  "kind": "secondary",
+  "dir": "orleans_town",
+  "symbol": "gTileset_OrleansTown",
+  "primary_mapping": "orleans_general.mapping.json",
+  "sources": [
+    {
+      "name": "ekat",
+      "type": "image",
+      "image": "tools/mapgen/sources/ekat_swamp/swamp_tiles.png",
+      "transparent": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "grass",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cane",
+          "bottom": [
+            0,
+            1
+          ],
+          "behavior": "MB_NORMAL"
+        }
+      ]
+    },
+    {
+      "name": "shady",
+      "primary": "general",
+      "secondary": "tools/mapgen/sources/shady_forest",
+      "layers": 3,
+      "ids": [
+        "24B",
+        "24C",
+        "24D",
+        "24E",
+        "24F",
+        "253",
+        "254",
+        "255",
+        "256",
+        "257",
+        "25B",
+        "25C",
+        "25D",
+        "25E",
+        "25F",
+        "263",
+        "265",
+        "266",
+        "267",
+        "26E",
+        "26F"
+      ],
+      "rebase_ground": {
+        "base": "ekat:grass",
+        "colors": [
+          [
+            120,
+            160,
+            104
+          ],
+          [
+            104,
+            144,
+            96
+          ],
+          [
+            110,
+            146,
+            100
+          ],
+          [
+            136,
+            176,
+            128
+          ],
+          [
+            140,
+            178,
+            131
+          ]
+        ]
+      }
+    },
+    {
+      "name": "vgen",
+      "primary": "general",
+      "secondary": "data/tilesets/secondary/petalburg",
+      "ids": [
+        "028",
+        "029",
+        "02A",
+        "02B",
+        "030",
+        "031",
+        "032",
+        "033",
+        "038",
+        "039",
+        "03A",
+        "03B",
+        "040",
+        "041",
+        "042",
+        "043",
+        "048",
+        "049",
+        "04A",
+        "04B",
+        "050",
+        "051",
+        "052",
+        "053",
+        "058",
+        "059",
+        "05A",
+        "05B",
+        "060",
+        "061",
+        "062",
+        "063",
+        "060"
+      ],
+      "rebase_ground": {
+        "base": "ekat:grass",
+        "colors": [
+          [
+            115,
+            197,
+            164
+          ],
+          [
+            164,
+            213,
+            197
+          ],
+          [
+            65,
+            180,
+            131
+          ]
+        ]
+      }
+    },
+    {
+      "name": "johto",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true
+    },
+    {
+      "name": "np",
+      "primary": "johto_general_hns",
+      "secondary": "national_park_hns",
+      "layout": "frlg",
+      "ids": [
+        "2A0",
+        "2A1",
+        "2A8",
+        "2A9",
+        "2B0",
+        "2B1",
+        "2DA",
+        "2E2",
+        "2EA"
+      ],
+      "rebase_ground": {
+        "base": "ekat:grass",
+        "colors": [
+          [
+            222,
+            230,
+            230
+          ],
+          [
+            197,
+            205,
+            213
+          ],
+          [
+            172,
+            189,
+            205
+          ]
+        ]
+      },
+      "recolor": [
+        [
+          [
+            96,
+            200,
+            136
+          ],
+          [
+            120,
+            160,
+            104
+          ]
+        ],
+        [
+          [
+            72,
+            152,
+            88
+          ],
+          [
+            96,
+            128,
+            88
+          ]
+        ],
+        [
+          [
+            148,
+            238,
+            74
+          ],
+          [
+            140,
+            178,
+            131
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "gh",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/greenhouse.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "00",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "10",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "20",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "30",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "40",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "50",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "60",
+          "bottom": [
+            6,
+            0
+          ]
+        },
+        {
+          "id": "70",
+          "bottom": [
+            7,
+            0
+          ]
+        },
+        {
+          "id": "80",
+          "bottom": [
+            8,
+            0
+          ]
+        },
+        {
+          "id": "90",
+          "bottom": [
+            9,
+            0
+          ]
+        },
+        {
+          "id": "01",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "11",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "21",
+          "bottom": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": "31",
+          "bottom": [
+            3,
+            1
+          ]
+        },
+        {
+          "id": "41",
+          "bottom": [
+            4,
+            1
+          ]
+        },
+        {
+          "id": "51",
+          "bottom": [
+            5,
+            1
+          ]
+        },
+        {
+          "id": "61",
+          "bottom": [
+            6,
+            1
+          ]
+        },
+        {
+          "id": "71",
+          "bottom": [
+            7,
+            1
+          ]
+        },
+        {
+          "id": "81",
+          "bottom": [
+            8,
+            1
+          ]
+        },
+        {
+          "id": "91",
+          "bottom": [
+            9,
+            1
+          ]
+        },
+        {
+          "id": "02",
+          "bottom": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "12",
+          "bottom": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": "22",
+          "bottom": [
+            2,
+            2
+          ]
+        },
+        {
+          "id": "32",
+          "bottom": [
+            3,
+            2
+          ]
+        },
+        {
+          "id": "42",
+          "bottom": [
+            4,
+            2
+          ]
+        },
+        {
+          "id": "52",
+          "bottom": [
+            5,
+            2
+          ]
+        },
+        {
+          "id": "62",
+          "bottom": [
+            6,
+            2
+          ]
+        },
+        {
+          "id": "72",
+          "bottom": [
+            7,
+            2
+          ]
+        },
+        {
+          "id": "82",
+          "bottom": [
+            8,
+            2
+          ]
+        },
+        {
+          "id": "92",
+          "bottom": [
+            9,
+            2
+          ]
+        },
+        {
+          "id": "03",
+          "bottom": [
+            0,
+            3
+          ]
+        },
+        {
+          "id": "13",
+          "bottom": [
+            1,
+            3
+          ]
+        },
+        {
+          "id": "23",
+          "bottom": [
+            2,
+            3
+          ]
+        },
+        {
+          "id": "33",
+          "bottom": [
+            3,
+            3
+          ]
+        },
+        {
+          "id": "43",
+          "bottom": [
+            4,
+            3
+          ]
+        },
+        {
+          "id": "53",
+          "bottom": [
+            5,
+            3
+          ]
+        },
+        {
+          "id": "63",
+          "bottom": [
+            6,
+            3
+          ]
+        },
+        {
+          "id": "73",
+          "bottom": [
+            7,
+            3
+          ]
+        },
+        {
+          "id": "83",
+          "bottom": [
+            8,
+            3
+          ]
+        },
+        {
+          "id": "93",
+          "bottom": [
+            9,
+            3
+          ]
+        },
+        {
+          "id": "04",
+          "bottom": [
+            0,
+            4
+          ]
+        },
+        {
+          "id": "14",
+          "bottom": [
+            1,
+            4
+          ]
+        },
+        {
+          "id": "24",
+          "bottom": [
+            2,
+            4
+          ]
+        },
+        {
+          "id": "34",
+          "bottom": [
+            3,
+            4
+          ]
+        },
+        {
+          "id": "44",
+          "bottom": [
+            4,
+            4
+          ]
+        },
+        {
+          "id": "54",
+          "bottom": [
+            5,
+            4
+          ]
+        },
+        {
+          "id": "64",
+          "bottom": [
+            6,
+            4
+          ]
+        },
+        {
+          "id": "74",
+          "bottom": [
+            7,
+            4
+          ]
+        },
+        {
+          "id": "84",
+          "bottom": [
+            8,
+            4
+          ]
+        },
+        {
+          "id": "94",
+          "bottom": [
+            9,
+            4
+          ]
+        },
+        {
+          "id": "05",
+          "bottom": [
+            0,
+            5
+          ]
+        },
+        {
+          "id": "15",
+          "bottom": [
+            1,
+            5
+          ]
+        },
+        {
+          "id": "25",
+          "bottom": [
+            2,
+            5
+          ]
+        },
+        {
+          "id": "35",
+          "bottom": [
+            3,
+            5
+          ]
+        },
+        {
+          "id": "45",
+          "bottom": [
+            4,
+            5
+          ]
+        },
+        {
+          "id": "55",
+          "bottom": [
+            5,
+            5
+          ]
+        },
+        {
+          "id": "65",
+          "bottom": [
+            6,
+            5
+          ]
+        },
+        {
+          "id": "75",
+          "bottom": [
+            7,
+            5
+          ]
+        },
+        {
+          "id": "85",
+          "bottom": [
+            8,
+            5
+          ]
+        },
+        {
+          "id": "95",
+          "bottom": [
+            9,
+            5
+          ]
+        },
+        {
+          "id": "06",
+          "bottom": [
+            0,
+            6
+          ]
+        },
+        {
+          "id": "16",
+          "bottom": [
+            1,
+            6
+          ]
+        },
+        {
+          "id": "26",
+          "bottom": [
+            2,
+            6
+          ]
+        },
+        {
+          "id": "36",
+          "bottom": [
+            3,
+            6
+          ]
+        },
+        {
+          "id": "46",
+          "bottom": [
+            4,
+            6
+          ]
+        },
+        {
+          "id": "56",
+          "bottom": [
+            5,
+            6
+          ]
+        },
+        {
+          "id": "66",
+          "bottom": [
+            6,
+            6
+          ]
+        },
+        {
+          "id": "76",
+          "bottom": [
+            7,
+            6
+          ]
+        },
+        {
+          "id": "86",
+          "bottom": [
+            8,
+            6
+          ]
+        },
+        {
+          "id": "96",
+          "bottom": [
+            9,
+            6
+          ]
+        }
+      ],
+      "overlay_only": true
+    },
+    {
+      "name": "mag",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/magnolia.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "00",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "10",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "01",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "11",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "02",
+          "bottom": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "12",
+          "bottom": [
+            1,
+            2
+          ]
+        }
+      ],
+      "overlay_only": true
+    },
+    {
+      "name": "pl",
+      "type": "image",
+      "image": "tools/mapgen/sources/orleans_custom/planter.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "metatiles": [
+        {
+          "id": "00",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "10",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "20",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "01",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "11",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "21",
+          "bottom": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": "02",
+          "bottom": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": "12",
+          "bottom": [
+            1,
+            2
+          ]
+        },
+        {
+          "id": "22",
+          "bottom": [
+            2,
+            2
+          ]
+        }
+      ],
+      "overlay_only": true
+    },
+    {
+      "name": "jfl_pink",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true,
+      "recolor": [
+        [
+          [
+            192,
+            48,
+            64
+          ],
+          [
+            208,
+            80,
+            136
+          ]
+        ],
+        [
+          [
+            200,
+            56,
+            72
+          ],
+          [
+            224,
+            96,
+            152
+          ]
+        ],
+        [
+          [
+            232,
+            128,
+            104
+          ],
+          [
+            248,
+            176,
+            208
+          ]
+        ],
+        [
+          [
+            232,
+            136,
+            104
+          ],
+          [
+            248,
+            176,
+            208
+          ]
+        ],
+        [
+          [
+            248,
+            192,
+            112
+          ],
+          [
+            248,
+            192,
+            112
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "jfl_violet",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true,
+      "recolor": [
+        [
+          [
+            192,
+            48,
+            64
+          ],
+          [
+            96,
+            64,
+            160
+          ]
+        ],
+        [
+          [
+            200,
+            56,
+            72
+          ],
+          [
+            112,
+            80,
+            176
+          ]
+        ],
+        [
+          [
+            232,
+            128,
+            104
+          ],
+          [
+            176,
+            152,
+            232
+          ]
+        ],
+        [
+          [
+            232,
+            136,
+            104
+          ],
+          [
+            176,
+            152,
+            232
+          ]
+        ],
+        [
+          [
+            248,
+            192,
+            112
+          ],
+          [
+            248,
+            216,
+            120
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "jfl_blue",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true,
+      "recolor": [
+        [
+          [
+            192,
+            48,
+            64
+          ],
+          [
+            48,
+            88,
+            184
+          ]
+        ],
+        [
+          [
+            200,
+            56,
+            72
+          ],
+          [
+            64,
+            104,
+            200
+          ]
+        ],
+        [
+          [
+            232,
+            128,
+            104
+          ],
+          [
+            136,
+            184,
+            248
+          ]
+        ],
+        [
+          [
+            232,
+            136,
+            104
+          ],
+          [
+            136,
+            184,
+            248
+          ]
+        ],
+        [
+          [
+            248,
+            192,
+            112
+          ],
+          [
+            248,
+            200,
+            112
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "jfl_white",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true,
+      "recolor": [
+        [
+          [
+            192,
+            48,
+            64
+          ],
+          [
+            208,
+            208,
+            200
+          ]
+        ],
+        [
+          [
+            200,
+            56,
+            72
+          ],
+          [
+            232,
+            232,
+            224
+          ]
+        ],
+        [
+          [
+            232,
+            128,
+            104
+          ],
+          [
+            248,
+            248,
+            240
+          ]
+        ],
+        [
+          [
+            232,
+            136,
+            104
+          ],
+          [
+            248,
+            248,
+            240
+          ]
+        ],
+        [
+          [
+            248,
+            192,
+            112
+          ],
+          [
+            232,
+            160,
+            56
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "jfl_yellow",
+      "primary": "johto_general_hns",
+      "secondary": "azalea_town_hns",
+      "layout": "frlg",
+      "pick_only_for_patches": true,
+      "recolor": [
+        [
+          [
+            192,
+            48,
+            64
+          ],
+          [
+            216,
+            152,
+            24
+          ]
+        ],
+        [
+          [
+            200,
+            56,
+            72
+          ],
+          [
+            240,
+            184,
+            40
+          ]
+        ],
+        [
+          [
+            232,
+            128,
+            104
+          ],
+          [
+            248,
+            232,
+            136
+          ]
+        ],
+        [
+          [
+            232,
+            136,
+            104
+          ],
+          [
+            248,
+            232,
+            136
+          ]
+        ],
+        [
+          [
+            248,
+            192,
+            112
+          ],
+          [
+            232,
+            112,
+            40
+          ]
+        ]
+      ]
+    }
+  ],
+  "recolor": [
+    [
+      [
+        136,
+        112,
+        184
+      ],
+      [
+        136,
+        136,
+        144
+      ]
+    ],
+    [
+      [
+        104,
+        80,
+        152
+      ],
+      [
+        104,
+        104,
+        112
+      ]
+    ],
+    [
+      [
+        208,
+        184,
+        248
+      ],
+      [
+        184,
+        184,
+        192
+      ]
+    ],
+    [
+      [
+        32,
+        96,
+        96
+      ],
+      [
+        120,
+        160,
+        104
+      ]
+    ],
+    [
+      [
+        56,
+        96,
+        104
+      ],
+      [
+        110,
+        146,
+        100
+      ]
+    ],
+    [
+      [
+        32,
+        88,
+        88
+      ],
+      [
+        110,
+        146,
+        100
+      ]
+    ],
+    [
+      [
+        48,
+        128,
+        128
+      ],
+      [
+        140,
+        178,
+        131
+      ]
+    ],
+    [
+      [
+        16,
+        64,
+        64
+      ],
+      [
+        96,
+        128,
+        88
+      ]
+    ],
+    [
+      [
+        88,
+        128,
+        128
+      ],
+      [
+        140,
+        178,
+        131
+      ]
+    ],
+    [
+      [
+        88,
+        184,
+        136
+      ],
+      [
+        110,
+        146,
+        100
+      ]
+    ]
+  ],
+  "patches": [
+    {
+      "id": "path_iNW",
+      "inner": {
+        "C": "johto:0D9",
+        "A": "johto:0D1",
+        "B": "johto:0D8",
+        "q": 0,
+        "grass": "johto:001"
+      }
+    },
+    {
+      "id": "path_iNE",
+      "inner": {
+        "C": "johto:0D9",
+        "A": "johto:0D1",
+        "B": "johto:0DA",
+        "q": 1,
+        "grass": "johto:001"
+      }
+    },
+    {
+      "id": "path_iSW",
+      "inner": {
+        "C": "johto:0D9",
+        "A": "johto:0E1",
+        "B": "johto:0D8",
+        "q": 2,
+        "grass": "johto:001"
+      }
+    },
+    {
+      "id": "path_iSE",
+      "inner": {
+        "C": "johto:0D9",
+        "A": "johto:0E1",
+        "B": "johto:0DA",
+        "q": 3,
+        "grass": "johto:001"
+      }
+    },
+    {
+      "id": "shady_door",
+      "lower": "shady:264",
+      "behavior": "MB_NON_ANIMATED_DOOR"
+    },
+    {
+      "id": "mart_door",
+      "lower": "vgen:041",
+      "behavior": "MB_NON_ANIMATED_DOOR"
+    },
+    {
+      "id": "pc_door",
+      "lower": "vgen:061",
+      "behavior": "MB_NON_ANIMATED_DOOR"
+    },
+    {
+      "id": "peppers",
+      "reseat": "johto:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "cane",
+      "reseat": "ekat:cane",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fl_pink",
+      "reseat": "jfl_pink:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fl_violet",
+      "reseat": "jfl_violet:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fl_blue",
+      "reseat": "jfl_blue:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fl_white",
+      "reseat": "jfl_white:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fl_yellow",
+      "reseat": "jfl_yellow:004",
+      "base": "ekat:grass",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "behavior": "MB_NORMAL"
+    },
+    {
+      "id": "fnt_fl_l",
+      "reseat": "np:2A0",
+      "base": "patch:peppers",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "merge_base": true
+    },
+    {
+      "id": "fnt_fl_r",
+      "reseat": "np:2A1",
+      "base": "patch:fl_violet",
+      "colors": [
+        [
+          120,
+          160,
+          104
+        ],
+        [
+          104,
+          144,
+          96
+        ],
+        [
+          110,
+          146,
+          100
+        ],
+        [
+          136,
+          176,
+          128
+        ],
+        [
+          140,
+          178,
+          131
+        ],
+        [
+          122,
+          172,
+          130
+        ],
+        [
+          149,
+          190,
+          157
+        ],
+        [
+          96,
+          128,
+          88
+        ]
+      ],
+      "merge_base": true
+    }
+  ],
+  "recolor_tolerance": 6,
+  "_recolor_tolerance": "Colours within this distance of a recolour key are swapped too, which catches each HnS town's slightly different mint grass.",
+  "keep_colors": [
+    [
+      136,
+      136,
+      144
+    ],
+    [
+      104,
+      104,
+      112
+    ],
+    [
+      184,
+      184,
+      192
+    ],
+    [
+      248,
+      248,
+      248
+    ],
+    [
+      80,
+      80,
+      104
+    ]
+  ],
+  "_keep_colors": "Headstone greys: kept exact so palette reduction can't pull them toward the locked grass green.",
+  "blends_file": "orleans_town.blends.json",
+  "demand": true,
+  "palette": "v2"
+}

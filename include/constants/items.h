@@ -1051,6 +1051,8 @@ enum __attribute__((packed)) Item
     ITEM_BAXCALIBRITE = 871,
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
+    ITEM_GARDEN_SHEARS = 874,  // Orleans: Magnolia's gift, clears storm hedges (the Cut replacement)
+    ITEM_PRY_BAR = 875,        // Orleans: Eclair's lineworkers' gift, smashes cracked rock (the Rock Smash replacement)
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

@@ -14485,6 +14485,38 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_DevonScope,
     },
 
+    [ITEM_GARDEN_SHEARS] =
+    {
+        .name = ITEM_NAME("Garden Shears"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Magnolia's shears.\n"
+            "Clears hedges the\n"
+            "storm tangled."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_WailmerPail,
+        .iconPalette = gItemIconPalette_WailmerPail,
+    },
+
+    [ITEM_PRY_BAR] =
+    {
+        .name = ITEM_NAME("Pry Bar"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A lineworker's\n"
+            "pry bar. Breaks\n"
+            "open cracked rock."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_WailmerPail,
+        .iconPalette = gItemIconPalette_WailmerPail,
+    },
+
     [ITEM_BASEMENT_KEY] =
     {
         .name = ITEM_NAME("Basement Key"),

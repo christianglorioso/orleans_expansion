@@ -1,0 +1,69 @@
+{
+ "source": "..\\orleans_maps\\r08_route_8.png",
+ "frame": [
+  0,
+  140,
+  1799,
+  1219
+ ],
+ "pitch": 36.0,
+ "width": 50,
+ "height": 30,
+ "buildings": [],
+ "markers": [
+  {
+   "kind": "trainer",
+   "x": 9,
+   "y": 10
+  },
+  {
+   "kind": "hidden_item",
+   "x": 35,
+   "y": 10
+  },
+  {
+   "kind": "trainer",
+   "x": 15,
+   "y": 12
+  },
+  {
+   "kind": "trainer",
+   "x": 29,
+   "y": 15
+  },
+  {
+   "kind": "item",
+   "x": 22,
+   "y": 18
+  },
+  {
+   "kind": "fishing",
+   "x": 44,
+   "y": 18
+  },
+  {
+   "kind": "trainer",
+   "x": 21,
+   "y": 22
+  },
+  {
+   "kind": "trainer",
+   "x": 39,
+   "y": 22
+  }
+ ],
+ "exits": [
+  {
+   "side": "N",
+   "pos": 23
+  },
+  {
+   "side": "W",
+   "pos": 14
+  },
+  {
+   "side": "E",
+   "pos": 14
+  }
+ ]
+}

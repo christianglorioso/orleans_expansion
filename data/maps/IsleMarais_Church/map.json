@@ -1,0 +1,85 @@
+{
+  "id": "MAP_ISLE_MARAIS_CHURCH",
+  "name": "IsleMarais_Church",
+  "layout": "LAYOUT_ISLE_MARAIS_CHURCH",
+  "music": "MUS_RG_PALLET",
+  "region_map_section": "MAPSEC_ISLE_MARAIS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_CHURCH_PRIEST0",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 7,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_Church_EventScript_Priest0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_CHURCH_RINGER1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 12,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_Church_EventScript_Ringer1",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ISLE_MARAIS_CHURCH_PARISHIONER2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 3,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IsleMarais_Church_EventScript_Parishioner2",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 13,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 7,
+      "y": 13,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 8,
+      "y": 13,
+      "elevation": 3,
+      "dest_map": "MAP_ISLE_MARAIS",
+      "dest_warp_id": "6"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -36577,6 +36577,6138 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE1",
+          "base_label": "gRoute1_Orleans",
+          "land_mons": {
+            "encounter_rate": 21,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_STARLY"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 4,
+                "max_level": 6,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 4,
+                "max_level": 6,
+                "species": "SPECIES_STARLY"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_SPEAROW"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_BULBASAUR"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_CORPHISH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE1",
+          "base_label": "gRoute1_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 21,
+            "mons": [
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 4,
+                "max_level": 6,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 4,
+                "max_level": 6,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_LITWICK"
+              },
+              {
+                "min_level": 5,
+                "max_level": 6,
+                "species": "SPECIES_MUDKIP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ISLE_MARAIS",
+          "base_label": "gIsleMarais_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_CORPHISH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLD_WATER",
+          "base_label": "gOldWater_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_BIDOOF"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_CORPHISH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE2",
+          "base_label": "gRoute2_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_PIKIPEK"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_PIKIPEK"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_PICHU"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_PIKACHU"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_PICHU"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_PIKACHU"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_JOLTIK"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_JOLTIK"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_TENTACOOL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE2",
+          "base_label": "gRoute2_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 9,
+                "max_level": 12,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_RATTATA"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_PIKACHU"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_PIKACHU"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 11,
+                "max_level": 13,
+                "species": "SPECIES_VOLTORB"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_STORMS_EDGE",
+          "base_label": "gStormsEdge_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_VOLTORB"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_TENTACOOL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE3",
+          "base_label": "gRoute3_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_DEWPIDER"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_DITTO"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_DITTO"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_DEWPIDER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_BARBOACH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE3",
+          "base_label": "gRoute3_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 12,
+                "max_level": 15,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_CRESCENT_CITY",
+          "base_label": "gCrescentCity_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_WHISMUR"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_BUDEW"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_DROWZEE"
+              },
+              {
+                "min_level": 10,
+                "max_level": 13,
+                "species": "SPECIES_PETILIL"
+              },
+              {
+                "min_level": 11,
+                "max_level": 14,
+                "species": "SPECIES_TANGELA"
+              },
+              {
+                "min_level": 11,
+                "max_level": 14,
+                "species": "SPECIES_WATTREL"
+              },
+              {
+                "min_level": 11,
+                "max_level": 14,
+                "species": "SPECIES_EEVEE"
+              },
+              {
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_FENNEKIN"
+              },
+              {
+                "min_level": 12,
+                "max_level": 14,
+                "species": "SPECIES_SMEARGLE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_EEVEE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_BARBOACH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE4",
+          "base_label": "gRoute4_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_ROOKIDEE"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_ROOKIDEE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_FERROSEED"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_FERROSEED"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE4",
+          "base_label": "gRoute4_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 13,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_SANDSHREW"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_MAGNEMITE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE5",
+          "base_label": "gRoute5_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_ROOKIDEE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_ROOKIDEE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE5",
+          "base_label": "gRoute5_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 14,
+                "max_level": 17,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_CRAMORANT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_CRAMORANT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_CRAMORANT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_POINTE_ROUGE",
+          "base_label": "gPointeRouge_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_ROOKIDEE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 19,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 19,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_DODUO"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_CRAMORANT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_CRAMORANT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 16,
+                "max_level": 20,
+                "species": "SPECIES_VOLTORB"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_CRAMORANT"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 10,
+                "max_level": 18,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 17,
+                "max_level": 22,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 24,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_POINTE_ROUGE",
+          "base_label": "gPointeRouge_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 15,
+                "max_level": 18,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 16,
+                "max_level": 19,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 16,
+                "max_level": 19,
+                "species": "SPECIES_MAGNEMITE"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_CRAMORANT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_CRAMORANT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE6",
+          "base_label": "gRoute6_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_DEWPIDER"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_DEWPIDER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_DEWPIDER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 12,
+                "max_level": 17,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 12,
+                "max_level": 17,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 20,
+                "max_level": 26,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 20,
+                "max_level": 26,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 20,
+                "max_level": 26,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 20,
+                "max_level": 26,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_WHISCASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE6",
+          "base_label": "gRoute6_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 17,
+                "max_level": 20,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_TRUBBISH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_TRUBBISH"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 17,
+                "max_level": 21,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 18,
+                "max_level": 21,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 19,
+                "max_level": 21,
+                "species": "SPECIES_PSYDUCK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE7",
+          "base_label": "gRoute7_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_BONSLY"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_BONSLY"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 19,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 14,
+                "max_level": 19,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 23,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 28,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 28,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 30,
+                "species": "SPECIES_WHISCASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE7",
+          "base_label": "gRoute7_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_ODDISH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_BELLSPROUT"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_PARAS"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_SEVIPER"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_SEVIPER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE8",
+          "base_label": "gRoute8_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_CRABRAWLER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_CRABRAWLER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 16,
+                "max_level": 21,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 30,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 30,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 30,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 30,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_INKAY"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE8",
+          "base_label": "gRoute8_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_INKAY"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_INKAY"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 25,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 25,
+                "species": "SPECIES_INKAY"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE9",
+          "base_label": "gRoute9_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_GLOOM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_WEEPINBELL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_CROCONAW"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_CROCONAW"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 18,
+                "max_level": 23,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 18,
+                "max_level": 23,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 29,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE9",
+          "base_label": "gRoute9_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 23,
+                "max_level": 26,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_SANDILE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_FOONGUS"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_CROAGUNK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_BRELOOM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 27,
+                "species": "SPECIES_BRELOOM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_CAMP_COCODRIE",
+          "base_label": "gCampCocodrie_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 28,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 24,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 24,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_WOOPER"
+              },
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 24,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 33,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 33,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_WHISCASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE10",
+          "base_label": "gRoute10_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_BUDEW"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_BUDEW"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_PELIPPER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 34,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 34,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 34,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 34,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_POLIWHIRL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE10",
+          "base_label": "gRoute10_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 25,
+                "max_level": 29,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_PSYDUCK"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_BUIZEL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE11",
+          "base_label": "gRoute11_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 29,
+                "max_level": 32,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 32,
+                "species": "SPECIES_DREDNAW"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 23,
+                "max_level": 28,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 23,
+                "max_level": 28,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 31,
+                "max_level": 37,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 31,
+                "max_level": 37,
+                "species": "SPECIES_INKAY"
+              },
+              {
+                "min_level": 31,
+                "max_level": 37,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 31,
+                "max_level": 37,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_INKAY"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE11",
+          "base_label": "gRoute11_Orleans_Night",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_FRILLISH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_INKAY"
+              },
+              {
+                "min_level": 29,
+                "max_level": 32,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 30,
+                "max_level": 32,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE12",
+          "base_label": "gRoute12_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_TOUCANNON"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_PARASECT"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_LEDIAN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_TOUCANNON"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_BAYLEEF"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_BAYLEEF"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 31,
+                "max_level": 35,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 31,
+                "max_level": 35,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 26,
+                "max_level": 31,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 26,
+                "max_level": 31,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 31,
+                "max_level": 35,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 31,
+                "max_level": 35,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 31,
+                "max_level": 35,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 34,
+                "max_level": 40,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 34,
+                "max_level": 40,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 34,
+                "max_level": 40,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 34,
+                "max_level": 40,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE12",
+          "base_label": "gRoute12_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 31,
+                "max_level": 34,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_ILLUMISE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE13",
+          "base_label": "gRoute13_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_FLABEBE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_MORGREM"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_LEDIAN"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_FLABEBE"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_MORGREM"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_RIBOMBEE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_SERVINE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_SERVINE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE13",
+          "base_label": "gRoute13_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_MORGREM"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 33,
+                "max_level": 36,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_SHIINOTIC"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_MORGREM"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_MISDREAVUS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_LUTINS_HOLLOW",
+          "base_label": "gLutinsHollow_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 34,
+                "max_level": 37,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 28,
+                "max_level": 33,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 28,
+                "max_level": 33,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 33,
+                "max_level": 37,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 36,
+                "max_level": 42,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 36,
+                "max_level": 42,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 36,
+                "max_level": 42,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 36,
+                "max_level": 42,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE14",
+          "base_label": "gRoute14_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_STARAPTOR"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 38,
+                "max_level": 41,
+                "species": "SPECIES_STARAPTOR"
+              },
+              {
+                "min_level": 38,
+                "max_level": 41,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_STARAPTOR"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_STANTLER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 38,
+                "max_level": 41,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_QUAGSIRE"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 32,
+                "max_level": 37,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 32,
+                "max_level": 37,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 37,
+                "max_level": 41,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 40,
+                "max_level": 46,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 40,
+                "max_level": 46,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 46,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 40,
+                "max_level": 46,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE14",
+          "base_label": "gRoute14_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_WEEZING"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 38,
+                "max_level": 41,
+                "species": "SPECIES_WEEZING"
+              },
+              {
+                "min_level": 38,
+                "max_level": 41,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 39,
+                "max_level": 41,
+                "species": "SPECIES_SANDSLASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE15",
+          "base_label": "gRoute15_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_LEDIAN"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 40,
+                "max_level": 43,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 40,
+                "max_level": 43,
+                "species": "SPECIES_LEDIAN"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_EXEGGCUTE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_EXEGGCUTE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE15",
+          "base_label": "gRoute15_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 39,
+                "max_level": 42,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 40,
+                "max_level": 43,
+                "species": "SPECIES_ILLUMISE"
+              },
+              {
+                "min_level": 40,
+                "max_level": 43,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_VOLBEAT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE16",
+          "base_label": "gRoute16_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_EXEGGCUTE"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_EXEGGCUTE"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CHARMELEON"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CHARMELEON"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE16",
+          "base_label": "gRoute16_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 41,
+                "max_level": 44,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CROCALOR"
+              },
+              {
+                "min_level": 43,
+                "max_level": 45,
+                "species": "SPECIES_CROCALOR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE17",
+          "base_label": "gRoute17_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_FERROTHORN"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_RATICATE"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_FERROTHORN"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_COALOSSAL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_COALOSSAL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE17",
+          "base_label": "gRoute17_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 43,
+                "max_level": 46,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_WEEZING"
+              },
+              {
+                "min_level": 45,
+                "max_level": 47,
+                "species": "SPECIES_WEEZING"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_REDFIELD",
+          "base_label": "gRedfield_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_SUNKERN"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_DODRIO"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_OINKOLOGNE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_EXEGGCUTE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_EXEGGCUTE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_VULPIX"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 39,
+                "max_level": 44,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 39,
+                "max_level": 44,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 44,
+                "max_level": 48,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 53,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 53,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 50,
+                "max_level": 53,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_REDFIELD",
+          "base_label": "gRedfield_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_ARBOK"
+              },
+              {
+                "min_level": 44,
+                "max_level": 47,
+                "species": "SPECIES_VULPIX"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_CAPSAKID"
+              },
+              {
+                "min_level": 45,
+                "max_level": 48,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_VOLBEAT"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_VOLBEAT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE18",
+          "base_label": "gRoute18_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 49,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 48,
+                "max_level": 54,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 48,
+                "max_level": 54,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 48,
+                "max_level": 54,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 48,
+                "max_level": 54,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 51,
+                "max_level": 54,
+                "species": "SPECIES_WHISCASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE18",
+          "base_label": "gRoute18_Orleans_Night",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_FLOATZEL"
+              },
+              {
+                "min_level": 45,
+                "max_level": 49,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 49,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_SHARPEDO"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE19",
+          "base_label": "gRoute19_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_SWANNA"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_SWANNA"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SHELLDER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_SWANNA"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SHELLDER"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 42,
+                "max_level": 47,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 42,
+                "max_level": 47,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 50,
+                "max_level": 56,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 50,
+                "max_level": 56,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 50,
+                "max_level": 56,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 50,
+                "max_level": 56,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_WHISCASH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE19",
+          "base_label": "gRoute19_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_GOLDUCK"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 47,
+                "max_level": 51,
+                "species": "SPECIES_ARAQUANID"
+              },
+              {
+                "min_level": 48,
+                "max_level": 51,
+                "species": "SPECIES_SKRELP"
+              },
+              {
+                "min_level": 49,
+                "max_level": 51,
+                "species": "SPECIES_SKRELP"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE20",
+          "base_label": "gRoute20_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 50,
+                "max_level": 53,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_FLAMIGO"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 49,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 44,
+                "max_level": 49,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE20",
+          "base_label": "gRoute20_Orleans_Night",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 50,
+                "max_level": 53,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_JELLICENT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_LANDS_END",
+          "base_label": "gLandsEnd_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 50,
+                "max_level": 53,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 44,
+                "max_level": 49,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 44,
+                "max_level": 49,
+                "species": "SPECIES_POLIWAG"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 49,
+                "max_level": 53,
+                "species": "SPECIES_POLIWHIRL"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 52,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE21",
+          "base_label": "gRoute21_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 52,
+                "max_level": 55,
+                "species": "SPECIES_DRAGALGE"
+              },
+              {
+                "min_level": 53,
+                "max_level": 55,
+                "species": "SPECIES_WAILORD"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 46,
+                "max_level": 51,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 46,
+                "max_level": 51,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 54,
+                "max_level": 60,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 54,
+                "max_level": 60,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 54,
+                "max_level": 60,
+                "species": "SPECIES_GYARADOS"
+              },
+              {
+                "min_level": 54,
+                "max_level": 60,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_GYARADOS"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE21",
+          "base_label": "gRoute21_Orleans_Night",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 51,
+                "max_level": 55,
+                "species": "SPECIES_DRAGALGE"
+              },
+              {
+                "min_level": 52,
+                "max_level": 55,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 53,
+                "max_level": 55,
+                "species": "SPECIES_KILOWATTREL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE22",
+          "base_label": "gRoute22_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_DREDNAW"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_DREDNAW"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_DREDNAW"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_CURSOLA"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_CURSOLA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_BARBARACLE"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_CURSOLA"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 48,
+                "max_level": 53,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 48,
+                "max_level": 53,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 56,
+                "max_level": 62,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 56,
+                "max_level": 62,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 56,
+                "max_level": 62,
+                "species": "SPECIES_MALAMAR"
+              },
+              {
+                "min_level": 56,
+                "max_level": 62,
+                "species": "SPECIES_CRABRAWLER"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_CRABRAWLER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE22",
+          "base_label": "gRoute22_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 53,
+                "max_level": 56,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_DHELMISE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 53,
+                "max_level": 57,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 54,
+                "max_level": 57,
+                "species": "SPECIES_GIMMIGHOUL"
+              },
+              {
+                "min_level": 55,
+                "max_level": 57,
+                "species": "SPECIES_DHELMISE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE23",
+          "base_label": "gRoute23_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_NUZLEAF"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_STARAPTOR"
+              },
+              {
+                "min_level": 56,
+                "max_level": 59,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 56,
+                "max_level": 59,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_STARAPTOR"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_FLYGON"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_FLYGON"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE23",
+          "base_label": "gRoute23_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 55,
+                "max_level": 58,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 56,
+                "max_level": 59,
+                "species": "SPECIES_KROOKODILE"
+              },
+              {
+                "min_level": 56,
+                "max_level": 59,
+                "species": "SPECIES_URSARING"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_NOCTOWL"
+              },
+              {
+                "min_level": 57,
+                "max_level": 59,
+                "species": "SPECIES_NOCTOWL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE24",
+          "base_label": "gRoute24_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_COALOSSAL"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_FLYGON"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 58,
+                "max_level": 61,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 58,
+                "max_level": 61,
+                "species": "SPECIES_COALOSSAL"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_FLYGON"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_EXCADRILL"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_EXCADRILL"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE24",
+          "base_label": "gRoute24_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_GOLBAT"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_CROBAT"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_COALOSSAL"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 57,
+                "max_level": 60,
+                "species": "SPECIES_MAGNETON"
+              },
+              {
+                "min_level": 58,
+                "max_level": 61,
+                "species": "SPECIES_NOIVERN"
+              },
+              {
+                "min_level": 58,
+                "max_level": 61,
+                "species": "SPECIES_BOLDORE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_SANDSLASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_NOIVERN"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_GIGALITH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 61,
+                "species": "SPECIES_GIGALITH"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE25",
+          "base_label": "gRoute25_Orleans",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_AMOONGUSS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAGONAIR"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 54,
+                "max_level": 59,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 54,
+                "max_level": 59,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_DRAGONAIR"
+              },
+              {
+                "min_level": 65,
+                "max_level": 68,
+                "species": "SPECIES_DRAGONAIR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_ORLEANS_ROUTE25",
+          "base_label": "gRoute25_Orleans_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_SLIGGOO"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 62,
+                "species": "SPECIES_SLIGGOO"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_SLIGGOO"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAKLOAK"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAKLOAK"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_SLIGGOO"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAKLOAK"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLDEST_SHRINE",
+          "base_label": "gOldestShrine_Orleans",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_SEISMITOAD"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAGONAIR"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 54,
+                "max_level": 59,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 54,
+                "max_level": 59,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 62,
+                "max_level": 68,
+                "species": "SPECIES_DRAGONAIR"
+              },
+              {
+                "min_level": 65,
+                "max_level": 68,
+                "species": "SPECIES_DRAGONAIR"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLDEST_SHRINE",
+          "base_label": "gOldestShrine_Orleans_Night",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_QUAGSIRE"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_JELLICENT"
+              },
+              {
+                "min_level": 59,
+                "max_level": 63,
+                "species": "SPECIES_SLIGGOO"
+              },
+              {
+                "min_level": 60,
+                "max_level": 63,
+                "species": "SPECIES_MISDREAVUS"
+              },
+              {
+                "min_level": 61,
+                "max_level": 63,
+                "species": "SPECIES_DRAKLOAK"
+              }
+            ]
+          }
         }
       ]
     },
