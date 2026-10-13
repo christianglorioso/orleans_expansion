@@ -1,0 +1,1140 @@
+{
+ "sections": [
+  {
+   "id": "MAPSEC_ISLE_MARAIS",
+   "name": "ISLE MARAIS",
+   "cells": [
+    [
+     4,
+     13
+    ]
+   ],
+   "x": 4,
+   "y": 13,
+   "width": 1,
+   "height": 1,
+   "kind": "town_small"
+  },
+  {
+   "id": "MAPSEC_OLD_WATER",
+   "name": "THE OLD WATER",
+   "cells": [
+    [
+     2,
+     10
+    ]
+   ],
+   "x": 2,
+   "y": 10,
+   "width": 1,
+   "height": 1,
+   "kind": "town_small"
+  },
+  {
+   "id": "MAPSEC_GRAND_OAK",
+   "name": "GRAND OAK",
+   "cells": [
+    [
+     4,
+     9
+    ]
+   ],
+   "x": 4,
+   "y": 9,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_STORMS_EDGE",
+   "name": "STORM'S EDGE",
+   "cells": [
+    [
+     10,
+     12
+    ]
+   ],
+   "x": 10,
+   "y": 12,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_CRESCENT_CITY",
+   "name": "CRESCENT CITY",
+   "cells": [
+    [
+     16,
+     9
+    ],
+    [
+     17,
+     9
+    ]
+   ],
+   "x": 16,
+   "y": 9,
+   "width": 2,
+   "height": 1,
+   "kind": "city"
+  },
+  {
+   "id": "MAPSEC_POINTE_ROUGE",
+   "name": "POINTE ROUGE",
+   "cells": [
+    [
+     12,
+     2
+    ],
+    [
+     13,
+     2
+    ]
+   ],
+   "x": 12,
+   "y": 2,
+   "width": 2,
+   "height": 1,
+   "kind": "city"
+  },
+  {
+   "id": "MAPSEC_CAMP_COCODRIE",
+   "name": "CAMP COCODRIE",
+   "cells": [
+    [
+     6,
+     6
+    ]
+   ],
+   "x": 6,
+   "y": 6,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_LUTINS_HOLLOW",
+   "name": "LUTIN'S HOLLOW",
+   "cells": [
+    [
+     25,
+     3
+    ]
+   ],
+   "x": 25,
+   "y": 3,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_REDFIELD",
+   "name": "REDFIELD",
+   "cells": [
+    [
+     20,
+     11
+    ]
+   ],
+   "x": 20,
+   "y": 11,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_LANDS_END",
+   "name": "LAND'S END",
+   "cells": [
+    [
+     26,
+     12
+    ]
+   ],
+   "x": 26,
+   "y": 12,
+   "width": 1,
+   "height": 1,
+   "kind": "town"
+  },
+  {
+   "id": "MAPSEC_OLDEST_SHRINE",
+   "name": "OLDEST SHRINE",
+   "cells": [
+    [
+     8,
+     4
+    ]
+   ],
+   "x": 8,
+   "y": 4,
+   "width": 1,
+   "height": 1,
+   "kind": "site"
+  },
+  {
+   "id": "MAPSEC_SALT_DOME",
+   "name": "SALT DOME",
+   "cells": [
+    [
+     18,
+     1
+    ]
+   ],
+   "x": 18,
+   "y": 1,
+   "width": 1,
+   "height": 1,
+   "kind": "site"
+  },
+  {
+   "id": "MAPSEC_DROWNED_TEMPLE",
+   "name": "DROWNED TEMPLE",
+   "cells": [
+    [
+     21,
+     13
+    ]
+   ],
+   "x": 21,
+   "y": 13,
+   "width": 1,
+   "height": 1,
+   "kind": "site"
+  },
+  {
+   "id": "MAPSEC_BATTLE_FRONTIER",
+   "name": "BATTLE FRONTIER",
+   "cells": [
+    [
+     15,
+     10
+    ]
+   ],
+   "x": 15,
+   "y": 10,
+   "width": 1,
+   "height": 1,
+   "kind": "frontier"
+  },
+  {
+   "id": "MAPSEC_ROUTE_1",
+   "name": "ROUTE 1",
+   "cells": [
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     4,
+     12
+    ]
+   ],
+   "x": 4,
+   "y": 10,
+   "width": 1,
+   "height": 3,
+   "kind": "route_foot",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     4,
+     10
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     4,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_2",
+   "name": "ROUTE 2",
+   "cells": [
+    [
+     5,
+     9
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     9,
+     12
+    ]
+   ],
+   "x": 5,
+   "y": 9,
+   "width": 5,
+   "height": 4,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     5,
+     9
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     9,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_3",
+   "name": "ROUTE 3",
+   "cells": [
+    [
+     14,
+     9
+    ],
+    [
+     15,
+     9
+    ],
+    [
+     13,
+     10
+    ],
+    [
+     14,
+     10
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     12,
+     11
+    ],
+    [
+     13,
+     11
+    ],
+    [
+     11,
+     12
+    ]
+   ],
+   "x": 11,
+   "y": 9,
+   "width": 5,
+   "height": 4,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     11,
+     12
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     12,
+     11
+    ],
+    [
+     13,
+     11
+    ],
+    [
+     13,
+     10
+    ],
+    [
+     14,
+     10
+    ],
+    [
+     14,
+     9
+    ],
+    [
+     15,
+     9
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_4",
+   "name": "ROUTE 4",
+   "cells": [
+    [
+     12,
+     3
+    ],
+    [
+     12,
+     4
+    ]
+   ],
+   "x": 12,
+   "y": 3,
+   "width": 1,
+   "height": 2,
+   "kind": "route_foot",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     12,
+     3
+    ],
+    [
+     12,
+     4
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_5",
+   "name": "ROUTE 5",
+   "cells": [
+    [
+     10,
+     2
+    ],
+    [
+     11,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     10,
+     3
+    ]
+   ],
+   "x": 9,
+   "y": 2,
+   "width": 3,
+   "height": 2,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     9,
+     3
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     11,
+     2
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_6",
+   "name": "ROUTE 6",
+   "cells": [
+    [
+     13,
+     8
+    ],
+    [
+     14,
+     8
+    ],
+    [
+     15,
+     8
+    ]
+   ],
+   "x": 13,
+   "y": 8,
+   "width": 3,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     13,
+     8
+    ],
+    [
+     14,
+     8
+    ],
+    [
+     15,
+     8
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_7",
+   "name": "ROUTE 7",
+   "cells": [
+    [
+     10,
+     7
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     12,
+     8
+    ]
+   ],
+   "x": 10,
+   "y": 7,
+   "width": 3,
+   "height": 2,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     10,
+     7
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     12,
+     7
+    ],
+    [
+     12,
+     8
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_8",
+   "name": "ROUTE 8",
+   "cells": [
+    [
+     8,
+     6
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ]
+   ],
+   "x": 8,
+   "y": 6,
+   "width": 2,
+   "height": 2,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     8,
+     6
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_9",
+   "name": "ROUTE 9",
+   "cells": [
+    [
+     7,
+     6
+    ]
+   ],
+   "x": 7,
+   "y": 6,
+   "width": 1,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     7,
+     6
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_10",
+   "name": "ROUTE 10",
+   "cells": [
+    [
+     18,
+     8
+    ]
+   ],
+   "x": 18,
+   "y": 8,
+   "width": 1,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     18,
+     8
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_11",
+   "name": "ROUTE 11",
+   "cells": [
+    [
+     21,
+     6
+    ],
+    [
+     22,
+     6
+    ],
+    [
+     19,
+     7
+    ],
+    [
+     20,
+     7
+    ],
+    [
+     21,
+     7
+    ],
+    [
+     19,
+     8
+    ]
+   ],
+   "x": 19,
+   "y": 6,
+   "width": 4,
+   "height": 3,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     19,
+     8
+    ],
+    [
+     19,
+     7
+    ],
+    [
+     20,
+     7
+    ],
+    [
+     21,
+     7
+    ],
+    [
+     21,
+     6
+    ],
+    [
+     22,
+     6
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_12",
+   "name": "ROUTE 12",
+   "cells": [
+    [
+     23,
+     4
+    ],
+    [
+     23,
+     5
+    ],
+    [
+     23,
+     6
+    ]
+   ],
+   "x": 23,
+   "y": 4,
+   "width": 1,
+   "height": 3,
+   "kind": "route_foot",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     23,
+     4
+    ],
+    [
+     23,
+     5
+    ],
+    [
+     23,
+     6
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_13",
+   "name": "ROUTE 13",
+   "cells": [
+    [
+     24,
+     3
+    ]
+   ],
+   "x": 24,
+   "y": 3,
+   "width": 1,
+   "height": 1,
+   "kind": "route_foot",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     24,
+     3
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_14",
+   "name": "ROUTE 14",
+   "cells": [
+    [
+     16,
+     10
+    ]
+   ],
+   "x": 16,
+   "y": 10,
+   "width": 1,
+   "height": 1,
+   "kind": "route_foot",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     16,
+     10
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_15",
+   "name": "ROUTE 15",
+   "cells": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     12
+    ]
+   ],
+   "x": 16,
+   "y": 11,
+   "width": 1,
+   "height": 2,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     16,
+     11
+    ],
+    [
+     16,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_16",
+   "name": "ROUTE 16",
+   "cells": [
+    [
+     17,
+     12
+    ],
+    [
+     18,
+     12
+    ]
+   ],
+   "x": 17,
+   "y": 12,
+   "width": 2,
+   "height": 1,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     17,
+     12
+    ],
+    [
+     18,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_17",
+   "name": "ROUTE 17",
+   "cells": [
+    [
+     19,
+     12
+    ]
+   ],
+   "x": 19,
+   "y": 12,
+   "width": 1,
+   "height": 1,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     19,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_18",
+   "name": "ROUTE 18",
+   "cells": [
+    [
+     21,
+     11
+    ],
+    [
+     22,
+     11
+    ]
+   ],
+   "x": 21,
+   "y": 11,
+   "width": 2,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     21,
+     11
+    ],
+    [
+     22,
+     11
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_19",
+   "name": "ROUTE 19",
+   "cells": [
+    [
+     23,
+     11
+    ],
+    [
+     23,
+     12
+    ],
+    [
+     24,
+     12
+    ]
+   ],
+   "x": 23,
+   "y": 11,
+   "width": 2,
+   "height": 2,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     23,
+     11
+    ],
+    [
+     23,
+     12
+    ],
+    [
+     24,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_20",
+   "name": "ROUTE 20",
+   "cells": [
+    [
+     25,
+     12
+    ]
+   ],
+   "x": 25,
+   "y": 12,
+   "width": 1,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     25,
+     12
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_21",
+   "name": "ROUTE 21",
+   "cells": [
+    [
+     25,
+     13
+    ],
+    [
+     26,
+     13
+    ]
+   ],
+   "x": 25,
+   "y": 13,
+   "width": 2,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     25,
+     13
+    ],
+    [
+     26,
+     13
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_22",
+   "name": "ROUTE 22",
+   "cells": [
+    [
+     22,
+     13
+    ],
+    [
+     23,
+     13
+    ],
+    [
+     24,
+     13
+    ]
+   ],
+   "x": 22,
+   "y": 13,
+   "width": 3,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     22,
+     13
+    ],
+    [
+     23,
+     13
+    ],
+    [
+     24,
+     13
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_23",
+   "name": "ROUTE 23",
+   "cells": [
+    [
+     14,
+     1
+    ],
+    [
+     15,
+     1
+    ],
+    [
+     14,
+     2
+    ]
+   ],
+   "x": 14,
+   "y": 1,
+   "width": 2,
+   "height": 2,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     14,
+     2
+    ],
+    [
+     14,
+     1
+    ],
+    [
+     15,
+     1
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_24",
+   "name": "ROUTE 24",
+   "cells": [
+    [
+     16,
+     1
+    ],
+    [
+     17,
+     1
+    ]
+   ],
+   "x": 16,
+   "y": 1,
+   "width": 2,
+   "height": 1,
+   "kind": "route_foot",
+   "icon_axis": "x",
+   "icon_path": [
+    [
+     16,
+     1
+    ],
+    [
+     17,
+     1
+    ]
+   ]
+  },
+  {
+   "id": "MAPSEC_ROUTE_25",
+   "name": "ROUTE 25",
+   "cells": [
+    [
+     8,
+     5
+    ]
+   ],
+   "x": 8,
+   "y": 5,
+   "width": 1,
+   "height": 1,
+   "kind": "route_boat",
+   "icon_axis": "y",
+   "icon_path": [
+    [
+     8,
+     5
+    ]
+   ]
+  }
+ ],
+ "tiles": 232,
+ "raw_unique_tiles": 309,
+ "tile_merges": 77,
+ "colours": 37
+}
