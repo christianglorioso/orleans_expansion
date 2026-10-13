@@ -1,0 +1,473 @@
+{
+ "_comment": "Levee end caps (make_levee_caps.py): RGBA overlays over `under`, offset (dx, dy) from the levee's head cell on the canal side (west levee x 23, east levee x 29 on Storm's Edge), head row = dy 0, the lake north. jet 1: the levee reaches one cell past the meadow's shore; jet 0: flush with it.",
+ "cells": {
+  "cap_E_j1_p0_m1": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    -1
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    29,
+    2
+   ]
+  },
+  "cap_E_j1_p0_p0": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    0
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    3
+   ]
+  },
+  "cap_E_j1_p0_p1": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    4
+   ]
+  },
+  "cap_E_j1_p0_p2": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    5
+   ]
+  },
+  "cap_E_j1_p1_m1": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    1,
+    -1
+   ],
+   "under": "ekat:water_inSW",
+   "storms_edge_cell": [
+    30,
+    2
+   ]
+  },
+  "cap_E_j1_p1_p0": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    1,
+    0
+   ],
+   "under": "ekat:water_landNE",
+   "storms_edge_cell": [
+    30,
+    3
+   ]
+  },
+  "cap_E_j1_p1_p1": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    1,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    30,
+    4
+   ]
+  },
+  "cap_E_j1_p1_p2": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    1,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    30,
+    5
+   ]
+  },
+  "cap_E_j1_p2_m1": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    2,
+    -1
+   ],
+   "under": "ekat:waterlog_0",
+   "storms_edge_cell": [
+    31,
+    2
+   ]
+  },
+  "cap_E_j1_p2_p0": {
+   "side": "E",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    2,
+    0
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    31,
+    3
+   ]
+  },
+  "cap_W_j1_m2_m1": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -2,
+    -1
+   ],
+   "under": "ekat:water_inSE",
+   "storms_edge_cell": [
+    21,
+    2
+   ]
+  },
+  "cap_W_j1_m2_p0": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -2,
+    0
+   ],
+   "under": "ekat:water_landNW",
+   "storms_edge_cell": [
+    21,
+    3
+   ]
+  },
+  "cap_W_j1_m1_m1": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -1,
+    -1
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    22,
+    2
+   ]
+  },
+  "cap_W_j1_m1_p0": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -1,
+    0
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    3
+   ]
+  },
+  "cap_W_j1_m1_p1": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -1,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    4
+   ]
+  },
+  "cap_W_j1_m1_p2": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    -1,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    5
+   ]
+  },
+  "cap_W_j1_p0_m1": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    -1
+   ],
+   "under": "ekat:water_inSW",
+   "storms_edge_cell": [
+    23,
+    2
+   ]
+  },
+  "cap_W_j1_p0_p0": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    0
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    3
+   ]
+  },
+  "cap_W_j1_p0_p1": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    1
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    4
+   ]
+  },
+  "cap_W_j1_p0_p2": {
+   "side": "W",
+   "jet": 1,
+   "offset_from_canal_side_head": [
+    0,
+    2
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    5
+   ]
+  },
+  "cap_E_j0_p0_m1": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    -1
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    29,
+    2
+   ]
+  },
+  "cap_E_j0_p0_p0": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    0
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    3
+   ]
+  },
+  "cap_E_j0_p0_p1": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    4
+   ]
+  },
+  "cap_E_j0_p0_p2": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    29,
+    5
+   ]
+  },
+  "cap_E_j0_p1_m1": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    1,
+    -1
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    30,
+    2
+   ]
+  },
+  "cap_E_j0_p1_p0": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    1,
+    0
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    30,
+    3
+   ]
+  },
+  "cap_E_j0_p1_p1": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    1,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    30,
+    4
+   ]
+  },
+  "cap_E_j0_p1_p2": {
+   "side": "E",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    1,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    30,
+    5
+   ]
+  },
+  "cap_W_j0_m1_m1": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    -1,
+    -1
+   ],
+   "under": "ekat:water_S",
+   "storms_edge_cell": [
+    22,
+    2
+   ]
+  },
+  "cap_W_j0_m1_p0": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    -1,
+    0
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    3
+   ]
+  },
+  "cap_W_j0_m1_p1": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    -1,
+    1
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    4
+   ]
+  },
+  "cap_W_j0_m1_p2": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    -1,
+    2
+   ],
+   "under": "ekat:grass",
+   "storms_edge_cell": [
+    22,
+    5
+   ]
+  },
+  "cap_W_j0_p0_m1": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    -1
+   ],
+   "under": "ekat:water_inSW",
+   "storms_edge_cell": [
+    23,
+    2
+   ]
+  },
+  "cap_W_j0_p0_p0": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    0
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    3
+   ]
+  },
+  "cap_W_j0_p0_p1": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    1
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    4
+   ]
+  },
+  "cap_W_j0_p0_p2": {
+   "side": "W",
+   "jet": 0,
+   "offset_from_canal_side_head": [
+    0,
+    2
+   ],
+   "under": "ekat:water_W",
+   "storms_edge_cell": [
+    23,
+    5
+   ]
+  }
+ }
+}

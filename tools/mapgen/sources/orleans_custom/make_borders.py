@@ -136,7 +136,7 @@ SPECIES = {   # crest, light, mid, dark, deep, outline
 
 
 # ---------------------------------------------------------------- ground cells
-EKAT_CELLS = ("grass", "marsh_C", "water_C", "marsh_N", "marsh_S", "marsh_W", "marsh_E", "marsh_inNW", "marsh_inNE",
+EKAT_CELLS = ("grass", "marsh_C", "water_C", "mud_C", "marsh_N", "marsh_S", "marsh_W", "marsh_E", "marsh_inNW", "marsh_inNE",
               "marsh_inSW", "marsh_inSE", "marshwater_N", "marshwater_S", "marshwater_W", "marshwater_E")
 
 
@@ -183,7 +183,10 @@ def shade_map(style):
                 (120, 160, 104): (96, 128, 88), (104, 144, 96): (72, 96, 64), (96, 128, 88): (72, 96, 64),
                 (104, 152, 120): (80, 112, 96), (80, 112, 96): (64, 96, 64), (72, 96, 64): (64, 96, 64),
                 (64, 96, 64): S_OUT, (96, 136, 136): (72, 112, 112), (72, 112, 112): (80, 80, 80),
-                (72, 112, 104): (80, 80, 80), (80, 80, 80): S_OUT, S_OUT: S_OUT}
+                (72, 112, 104): (80, 80, 80), (80, 80, 80): S_OUT, S_OUT: S_OUT,
+                # Ekat mud (mud_C and its rims; 2026-10-13, canopy on mud): light -> mid -> dark -> the rim's darkest
+                (160, 128, 120): (144, 104, 96), (144, 104, 96): (112, 80, 80), (112, 80, 80): (96, 64, 64),
+                (96, 64, 64): (88, 72, 64), (88, 72, 64): (88, 72, 64)}
     return {DH: D1, D1: D2, D2: D3, D3: K0, ST: ST_D, ST_D: D3, (240, 216, 120): ST, K0: K0}
 
 

@@ -1,0 +1,101 @@
+{
+ "_comment": "Swamp canopy faces / inner / outer corners baked over ekat:mud_C (make_border_mud.py); names as borders.bake() gives them.",
+ "cells": {
+  "bk_swamp_S0_834ef142": {
+   "style": "swamp",
+   "face": "S",
+   "parity": 0,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_S1_834ef142": {
+   "style": "swamp",
+   "face": "S",
+   "parity": 1,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_N0_834ef142": {
+   "style": "swamp",
+   "face": "N",
+   "parity": 0,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_N1_834ef142": {
+   "style": "swamp",
+   "face": "N",
+   "parity": 1,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_E0_834ef142": {
+   "style": "swamp",
+   "face": "E",
+   "parity": 0,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_E1_834ef142": {
+   "style": "swamp",
+   "face": "E",
+   "parity": 1,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_W0_834ef142": {
+   "style": "swamp",
+   "face": "W",
+   "parity": 0,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_W1_834ef142": {
+   "style": "swamp",
+   "face": "W",
+   "parity": 1,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_in_NW_834ef142": {
+   "style": "swamp",
+   "face": "in_NW",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_in_NE_834ef142": {
+   "style": "swamp",
+   "face": "in_NE",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_in_SW_834ef142": {
+   "style": "swamp",
+   "face": "in_SW",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_in_SE_834ef142": {
+   "style": "swamp",
+   "face": "in_SE",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_out_NW_834ef142": {
+   "style": "swamp",
+   "face": "out_NW",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_out_NE_834ef142": {
+   "style": "swamp",
+   "face": "out_NE",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_out_SW_834ef142": {
+   "style": "swamp",
+   "face": "out_SW",
+   "parity": null,
+   "under": "ekat:mud_C"
+  },
+  "bk_swamp_out_SE_834ef142": {
+   "style": "swamp",
+   "face": "out_SE",
+   "parity": null,
+   "under": "ekat:mud_C"
+  }
+ }
+}
