@@ -1,0 +1,31 @@
+{
+ "_comment": "Append to the 'sources' of tools/mapgen/tilesets/recipes/orleans_interior.json (own art, make_furniture.py; drawn in primary palette 1). Art only: the metatiles are the overlay patches in orleans_interior.patches.json.",
+ "name": "gc_blue",
+ "type": "image",
+ "image": "tools/game_corner_art/furniture/gc_blue.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "group_rule": "fewest",
+ "overlay_only": true,
+ "metatiles": [
+  {
+   "id": "gacha_great_0",
+   "bottom": [
+    0,
+    0
+   ]
+  },
+  {
+   "id": "gacha_great_1",
+   "bottom": [
+    0,
+    1
+   ]
+  }
+ ]
+}

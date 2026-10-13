@@ -1,0 +1,359 @@
+{
+ "_comment": "Game Corner furniture: piece -> sheet, size in cells, cells [x, y, metatile name once composed into gTileset_OrleansInterior, sheet cell]. Every cell is an overlay patch: the hall carpet (jb:0CC) below, the art above, layer covered (under sprites). Suggested places in CrescentCity_GameCorner (21x14): gacha machines at x 2/4/6/8, y 2-3 (basic, great, ultra, master); Blackjack table x 8-11, y 7-8; Derby window x 12-15, y 2-3 (the attendant at (13,2) stands in front of the odds board); prize case x 17-19, y 3; coin counter x 2-4, y 8. All cells block; the signs stay where they are.",
+ "pieces": {
+  "gacha_basic": {
+   "sheet": "gc_red",
+   "w": 1,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_gacha_basic_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_gacha_basic_1",
+     [
+      0,
+      1
+     ]
+    ]
+   ]
+  },
+  "gacha_great": {
+   "sheet": "gc_blue",
+   "w": 1,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_gacha_great_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_gacha_great_1",
+     [
+      0,
+      1
+     ]
+    ]
+   ]
+  },
+  "gacha_ultra": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_gacha_ultra_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_gacha_ultra_1",
+     [
+      0,
+      1
+     ]
+    ]
+   ]
+  },
+  "counter_L": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_counter_L",
+     [
+      1,
+      0
+     ]
+    ]
+   ]
+  },
+  "case_L": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_case_L",
+     [
+      2,
+      0
+     ]
+    ]
+   ]
+  },
+  "counter_M": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_counter_M",
+     [
+      3,
+      0
+     ]
+    ]
+   ]
+  },
+  "case_M": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_case_M",
+     [
+      4,
+      0
+     ]
+    ]
+   ]
+  },
+  "counter_R": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_counter_R",
+     [
+      5,
+      0
+     ]
+    ]
+   ]
+  },
+  "case_R": {
+   "sheet": "gc_gold",
+   "w": 1,
+   "h": 1,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_case_R",
+     [
+      6,
+      0
+     ]
+    ]
+   ]
+  },
+  "gacha_master": {
+   "sheet": "gc_purple",
+   "w": 1,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_gacha_master_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_gacha_master_1",
+     [
+      0,
+      1
+     ]
+    ]
+   ]
+  },
+  "bj": {
+   "sheet": "gc_table",
+   "w": 4,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_bj_0_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     1,
+     0,
+     "patch:gc_bj_1_0",
+     [
+      1,
+      0
+     ]
+    ],
+    [
+     2,
+     0,
+     "patch:gc_bj_2_0",
+     [
+      2,
+      0
+     ]
+    ],
+    [
+     3,
+     0,
+     "patch:gc_bj_3_0",
+     [
+      3,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_bj_0_1",
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     1,
+     1,
+     "patch:gc_bj_1_1",
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     2,
+     1,
+     "patch:gc_bj_2_1",
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     3,
+     1,
+     "patch:gc_bj_3_1",
+     [
+      3,
+      1
+     ]
+    ]
+   ]
+  },
+  "derby": {
+   "sheet": "gc_derby",
+   "w": 4,
+   "h": 2,
+   "cells": [
+    [
+     0,
+     0,
+     "patch:gc_derby_0_0",
+     [
+      0,
+      0
+     ]
+    ],
+    [
+     1,
+     0,
+     "patch:gc_derby_1_0",
+     [
+      1,
+      0
+     ]
+    ],
+    [
+     2,
+     0,
+     "patch:gc_derby_2_0",
+     [
+      2,
+      0
+     ]
+    ],
+    [
+     3,
+     0,
+     "patch:gc_derby_3_0",
+     [
+      3,
+      0
+     ]
+    ],
+    [
+     0,
+     1,
+     "patch:gc_derby_0_1",
+     [
+      0,
+      1
+     ]
+    ],
+    [
+     1,
+     1,
+     "patch:gc_derby_1_1",
+     [
+      1,
+      1
+     ]
+    ],
+    [
+     2,
+     1,
+     "patch:gc_derby_2_1",
+     [
+      2,
+      1
+     ]
+    ],
+    [
+     3,
+     1,
+     "patch:gc_derby_3_1",
+     [
+      3,
+      1
+     ]
+    ]
+   ]
+  }
+ }
+}

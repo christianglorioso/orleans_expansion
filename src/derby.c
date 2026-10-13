@@ -216,10 +216,6 @@ static const u16 Derby_Race_Pal[] = INCGFX_U16("graphics/derby/racetrack_bg.pal"
 // Betting Menu Pokemon Sprites and Palettes
 
 static const u32 DoduoGFX[] = INCGFX_U32("graphics/pokemon/doduo/anim_front.png", ".4bpp.smol");
-static const u16 HorsePlaceholderNormalPAL[] = INCGFX_U16("graphics/pokemon/ponyta/normal.pal", ".gbapal");
-static const u16 HorsePlaceholderShinyPAL[] = INCGFX_U16("graphics/pokemon/ponyta/shiny.pal", ".gbapal");
-static const u16 HorsePlaceholder2NormalPAL[] = INCGFX_U16("graphics/pokemon/rapidash/normal.pal", ".gbapal");
-static const u16 HorsePlaceholder2ShinyPAL[] = INCGFX_U16("graphics/pokemon/rapidash/shiny.pal", ".gbapal");
 static const u16 DoduoNormalPAL[] = INCGFX_U16("graphics/pokemon/doduo/normal.pal", ".gbapal");
 static const u16 DoduoShinyPAL[] = INCGFX_U16("graphics/pokemon/doduo/shiny.pal", ".gbapal");
 
@@ -448,33 +444,11 @@ static const struct SpritePalette sSpritePalettes[] =
     {}
 };
 
-static const struct SpritePalette sSpritePalettesRace[] =
-{
-    { .data = Derby_BG_Bet_Pal,      .tag = PAL_BG_BETTING },
-    { .data = HorsePlaceholderNormalPAL,         .tag = PAL_DODUO },
-    { .data = HorsePlaceholderShinyPAL,         .tag = PAL_DODUO_SHINY },
-    { .data = HorsePlaceholder2NormalPAL,     .tag = PAL_DODRIO },
-    { .data = HorsePlaceholder2ShinyPAL,         .tag = PAL_DODRIO_SHINY },
-    { .data = RattataNormalPAL,         .tag = PAL_RATTATA },
-    { .data = RattataShinyPAL,         .tag = PAL_RATTATA_SHINY },
-    { .data = FeebasNormalPAL,         .tag = PAL_FEEBAS },
-    { .data = FeebasShinyPAL,         .tag = PAL_FEEBAS_SHINY },
-    { .data = TextPAL,                 .tag = PAL_BET_MENU_TEXT },
-    { .data = ConditionPAL,             .tag = PAL_CONDITION },
-    { .data = BetMenuUIPAL,             .tag = PAL_UI },
-    { .data = Credit_Icon_PAL,         .tag = PAL_CREDIT_ICON },
-    { .data = Digits_Pal,             .tag = PAL_DIGITS },
-    { .data = Cursor_PAL,             .tag = PAL_CURSOR },
-    { .data = Countdown_PAL,         .tag = PAL_COUNTDOWN },
-    {}
-};
-
-// The bet slip and the racetrack load different palette tables under the same tags (the race sprites are placeholders: see sSpritePalettesRace)
-static bool8 sOnRacetrack = FALSE;
-
+// The bet slip and the racetrack share one palette table: the Doduo and Dodrio race sprites are drawn to the
+// species' own palettes (tools/game_corner_art/make_racers.py)
 static const struct SpritePalette *GetPalTable(void)
 {
-    return sOnRacetrack ? sSpritePalettesRace : sSpritePalettes;
+    return sSpritePalettes;
 }
 
 static const struct SpritePalette sSpritePalettes2[] =
@@ -3063,7 +3037,6 @@ static void InitRacetrack(void)
     LoadPalette(Derby_Race_Pal, 0, sizeof(Derby_Race_Pal));
     ResetSpriteData();
     FreeAllSpritePalettes();
-    sOnRacetrack = TRUE;
     LoadSpritePalettes(GetPalTable());
     
     CreateRacers();
@@ -3549,7 +3522,6 @@ static void InitDerbyScreen(void)
     LoadPalette(Derby_BG_Bet_Pal, 0, sizeof(Derby_BG_Bet_Pal));
     ResetSpriteData();
     FreeAllSpritePalettes();
-    sOnRacetrack = FALSE;
 
     if (!FlagGet(DERBY_FLAG_RESET))
     {

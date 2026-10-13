@@ -1,0 +1,73 @@
+{
+ "_comment": "Append to the 'sources' of tools/mapgen/tilesets/recipes/orleans_interior.json (own art, make_furniture.py; drawn in interior palette 10 (+ white)). Art only: the metatiles are the overlay patches in orleans_interior.patches.json.",
+ "name": "gc_table",
+ "type": "image",
+ "image": "tools/game_corner_art/furniture/gc_table.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "group_rule": "fewest",
+ "overlay_only": true,
+ "metatiles": [
+  {
+   "id": "bj_0_0",
+   "bottom": [
+    0,
+    0
+   ]
+  },
+  {
+   "id": "bj_1_0",
+   "bottom": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "bj_2_0",
+   "bottom": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "bj_3_0",
+   "bottom": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "bj_0_1",
+   "bottom": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "bj_1_1",
+   "bottom": [
+    1,
+    1
+   ]
+  },
+  {
+   "id": "bj_2_1",
+   "bottom": [
+    2,
+    1
+   ]
+  },
+  {
+   "id": "bj_3_1",
+   "bottom": [
+    3,
+    1
+   ]
+  }
+ ]
+}

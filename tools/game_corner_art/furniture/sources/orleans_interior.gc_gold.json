@@ -1,0 +1,73 @@
+{
+ "_comment": "Append to the 'sources' of tools/mapgen/tilesets/recipes/orleans_interior.json (own art, make_furniture.py; drawn in interior palette 8). Art only: the metatiles are the overlay patches in orleans_interior.patches.json.",
+ "name": "gc_gold",
+ "type": "image",
+ "image": "tools/game_corner_art/furniture/gc_gold.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "group_rule": "fewest",
+ "overlay_only": true,
+ "metatiles": [
+  {
+   "id": "gacha_ultra_0",
+   "bottom": [
+    0,
+    0
+   ]
+  },
+  {
+   "id": "gacha_ultra_1",
+   "bottom": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "counter_L",
+   "bottom": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "case_L",
+   "bottom": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "counter_M",
+   "bottom": [
+    3,
+    0
+   ]
+  },
+  {
+   "id": "case_M",
+   "bottom": [
+    4,
+    0
+   ]
+  },
+  {
+   "id": "counter_R",
+   "bottom": [
+    5,
+    0
+   ]
+  },
+  {
+   "id": "case_R",
+   "bottom": [
+    6,
+    0
+   ]
+  }
+ ]
+}

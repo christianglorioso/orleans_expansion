@@ -1,0 +1,212 @@
+[
+ {
+  "id": "gc_gacha_basic_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_red:gacha_basic_0"
+  }
+ },
+ {
+  "id": "gc_gacha_basic_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_red:gacha_basic_1"
+  }
+ },
+ {
+  "id": "gc_gacha_great_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_blue:gacha_great_0"
+  }
+ },
+ {
+  "id": "gc_gacha_great_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_blue:gacha_great_1"
+  }
+ },
+ {
+  "id": "gc_gacha_ultra_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:gacha_ultra_0"
+  }
+ },
+ {
+  "id": "gc_gacha_ultra_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:gacha_ultra_1"
+  }
+ },
+ {
+  "id": "gc_counter_L",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:counter_L"
+  }
+ },
+ {
+  "id": "gc_case_L",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:case_L"
+  }
+ },
+ {
+  "id": "gc_counter_M",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:counter_M"
+  }
+ },
+ {
+  "id": "gc_case_M",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:case_M"
+  }
+ },
+ {
+  "id": "gc_counter_R",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:counter_R"
+  }
+ },
+ {
+  "id": "gc_case_R",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_gold:case_R"
+  }
+ },
+ {
+  "id": "gc_gacha_master_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_purple:gacha_master_0"
+  }
+ },
+ {
+  "id": "gc_gacha_master_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_purple:gacha_master_1"
+  }
+ },
+ {
+  "id": "gc_bj_0_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_0_0"
+  }
+ },
+ {
+  "id": "gc_bj_1_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_1_0"
+  }
+ },
+ {
+  "id": "gc_bj_2_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_2_0"
+  }
+ },
+ {
+  "id": "gc_bj_3_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_3_0"
+  }
+ },
+ {
+  "id": "gc_bj_0_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_0_1"
+  }
+ },
+ {
+  "id": "gc_bj_1_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_1_1"
+  }
+ },
+ {
+  "id": "gc_bj_2_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_2_1"
+  }
+ },
+ {
+  "id": "gc_bj_3_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_table:bj_3_1"
+  }
+ },
+ {
+  "id": "gc_derby_0_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_0_0"
+  }
+ },
+ {
+  "id": "gc_derby_1_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_1_0"
+  }
+ },
+ {
+  "id": "gc_derby_2_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_2_0"
+  }
+ },
+ {
+  "id": "gc_derby_3_0",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_3_0"
+  }
+ },
+ {
+  "id": "gc_derby_0_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_0_1"
+  }
+ },
+ {
+  "id": "gc_derby_1_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_1_1"
+  }
+ },
+ {
+  "id": "gc_derby_2_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_2_1"
+  }
+ },
+ {
+  "id": "gc_derby_3_1",
+  "overlay": {
+   "base": "pc:0CC",
+   "art": "gc_derby:derby_3_1"
+  }
+ }
+]
