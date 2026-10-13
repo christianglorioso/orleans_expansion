@@ -53,6 +53,14 @@ HEADER = {
     "Route25": "WEATHER_RAIN_THUNDERSTORM",   # until Rayquaza is calmed (story 43), then clear
     "OldestShrine": "WEATHER_RAIN_THUNDERSTORM",
     "LandsEnd_DrownedTemple": "WEATHER_UNDERWATER_BUBBLES",
+    # the legendary lairs (user-approved 2026-10-13, story_data_lairs.py): the weather starts in their battles like any overworld weather
+    "Route14_RougarouHollow": "WEATHER_FOG_HORIZONTAL",    # battle: Misty Terrain (B_OVERWORLD_FOG >= GEN_8)
+    "Route23_BloodmoonArroyo": "WEATHER_SANDSTORM",        # battle: sandstorm (Bloodmoon Ursaluna is Normal/Ground: immune)
+    "Route7_CelebiGlade": "WEATHER_SUNNY",                 # a bright day, no battle weather
+    "Route11_SuicuneIsle": "WEATHER_RAIN",                 # battle: rain
+    "Route2_RaikouClearing": "WEATHER_RAIN_THUNDERSTORM",  # battle: rain + Electric Terrain (B_THUNDERSTORM_TERRAIN)
+    "Route16_EnteiField": "WEATHER_DROUGHT",               # battle: harsh sun
+    "PointeRouge_IcePlant": "WEATHER_SNOW",                # battle: snow (B_OVERWORLD_SNOW >= GEN_9)
 }
 
 # map -> (condition script text, weather it switches to); documentation and the bot test read this

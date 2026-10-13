@@ -5,7 +5,7 @@
   "music": "MUS_SURF",
   "region_map_section": "MAPSEC_ROUTE_11",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_RAIN",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,

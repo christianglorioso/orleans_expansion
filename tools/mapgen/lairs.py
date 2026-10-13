@@ -30,6 +30,7 @@ for p in (HERE, LAIRS_ART):
 
 import story_data_ch10 as C10  # noqa: E402
 import story_data_lairs as D  # noqa: E402
+import weather_plan  # noqa: E402
 
 GROUP = "gMapGroup_Routes"
 # cells that walk although the mock does not: Suicune stands on the island two cells from the causeway head (10, 9) with a gap of broken blocks and
@@ -138,7 +139,7 @@ def map_json(key):
     coords = [{"type": "trigger", "x": x, "y": y, "elevation": ELEV, "var": D.TRIG, "var_value": "1", "script": f"{name}_EventScript_Exit"}
               for (x, y) in D.EXITS]
     return {"id": const, "name": name, "layout": layout_of(name), "music": lair["music"], "region_map_section": lair["mapsec"],
-            "requires_flash": False, "weather": "WEATHER_NONE", "map_type": "MAP_TYPE_ROUTE", "allow_cycling": False, "allow_escaping": False,
+            "requires_flash": False, "weather": weather_plan.header(name) or "WEATHER_NONE", "map_type": "MAP_TYPE_ROUTE", "allow_cycling": False, "allow_escaping": False,
             "allow_running": True, "show_map_name": False, "battle_scene": "MAP_BATTLE_SCENE_NORMAL", "connections": None,
             "object_events": objs, "warp_events": [], "coord_events": coords, "bg_events": []}
 

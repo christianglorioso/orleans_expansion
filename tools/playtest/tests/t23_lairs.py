@@ -19,6 +19,51 @@ from bot import map_data, ROOT
 
 sys.path.insert(0, str(Path(ROOT) / "tools" / "mapgen"))
 import story_data_lairs as D  # noqa: E402
+import weather_plan  # noqa: E402
+
+ORDER = ["NONE", "SUNNY_CLOUDS", "SUNNY", "RAIN", "SNOW", "RAIN_THUNDERSTORM", "FOG_HORIZONTAL", "VOLCANIC_ASH", "SANDSTORM", "FOG_DIAGONAL",
+         "UNDERWATER", "SHADE", "DROUGHT", "DOWNPOUR", "UNDERWATER_BUBBLES"]     # include/constants/weather.h
+# the lair's weather (weather_plan.HEADER, user-approved) and what it starts in battle: (gBattleWeather flag name or None, terrain or None)
+# fog = Misty Terrain (B_OVERWORLD_FOG >= GEN_8), thunderstorm = rain + Electric Terrain (B_THUNDERSTORM_TERRAIN), snow = snow (B_OVERWORLD_SNOW >= GEN_9)
+BATTLE = {"rougarou": ("WEATHER_FOG_HORIZONTAL", None, 2), "ursaluna": ("WEATHER_SANDSTORM", "B_WEATHER_SANDSTORM", None),
+          "celebi": ("WEATHER_SUNNY", None, None), "suicune": ("WEATHER_RAIN", "B_WEATHER_RAIN", None),
+          "raikou": ("WEATHER_RAIN_THUNDERSTORM", "B_WEATHER_RAIN", 3), "entei": ("WEATHER_DROUGHT", "B_WEATHER_SUN", None),
+          "articuno": ("WEATHER_SNOW", "B_WEATHER_SNOW", None)}
+MASK = {"B_WEATHER_RAIN": 0xE, "B_WEATHER_SUN": 0x30, "B_WEATHER_SANDSTORM": 0x40, "B_WEATHER_HAIL": 0x80, "B_WEATHER_SNOW": 0x100, "B_WEATHER_FOG": 0x200}   # include/constants/battle.h
+ANY = ("B_WEATHER_RAIN", "B_WEATHER_SUN", "B_WEATHER_SANDSTORM", "B_WEATHER_SNOW", "B_WEATHER_HAIL", "B_WEATHER_FOG")
+
+
+def weather_now(b):
+    return "WEATHER_" + ORDER[b.call("GetCurrentWeather") & 0xFF]
+
+
+def start_battle(b):
+    """A is pressed; wait for the battle to reach the first turn menu, return (gBattleWeather, terrain) there; None if no battle started"""
+    for _ in range(400):
+        if b.in_battle():
+            break
+        b.press("A", 4, 26)
+    else:
+        return None
+    main_func = b.sym("gBattleMainFunc")
+    for _ in range(900):
+        if (b.r32(main_func) & ~1) == b.sym("HandleTurnActionSelectionState"):
+            break
+        b.press("A", 4, 26)
+    got = (b.r16(b.sym("gBattleWeather")), b.r8(b.sym("gFieldTimers") + 5))
+    b.fight()
+    b.frames(30)
+    b.advance_text(60)
+    return got
+
+
+def check_battle_weather(b, t, key, got):
+    ow, flag, terrain = BATTLE[key]
+    w, ter = got
+    bits = {n: bool(w & MASK[n]) for n in ANY}
+    want = {n: n == flag for n in ANY}
+    t.check("%s: the battle weather is %s%s (gBattleWeather %#x, terrain %s)" % (key, flag or "none", " + terrain %d" % terrain if terrain else "", w, ter),
+            bits == want and (ter == (terrain or 0)), "%s terrain %s" % ([n for n, v in bits.items() if v], ter))
 
 SHOTS = Path(ROOT).parent / "tile_review" / "set_pieces" / "lairs"
 DAY, NIGHT = 12, 22
@@ -131,10 +176,13 @@ def run(b, t):
         b.warp(route, ax, ay)
         b.frames(30)
         b.shot("%s_open" % key)
+        route_weather = weather_now(b)
         b.walk(steps)
         b.frames(90)
         b.settle()
         t.check("%s: OPEN: the same walk ends in %s on the arrival cell (10, 13)" % (key, name), b.map_name() == name and b.pos() == D.ARRIVE, b.where())
+        t.check("%s: the overworld weather in the lair is %s" % (key, BATTLE[key][0]), weather_now(b) == BATTLE[key][0] == weather_plan.HEADER[name],
+                weather_now(b))
         # -- the encounter's conditions
         if night:
             set_time(b, DAY)
@@ -169,12 +217,24 @@ def run(b, t):
         b.frames(20)
         save_shot(b, key, "%s_in_front" % key)
         b.press("A", 4, 20)
-        t.check("%s: a battle starts" % key, battle_through(b))
+        got = start_battle(b)
+        t.check("%s: a battle starts" % key, got is not None)
+        if got is not None:
+            check_battle_weather(b, t, key, got)
         t.check("%s: a KO (not a catch) leaves it standing: not retired" % key,
                 not b.flag(enc_flag) and not b.flag("FLAG_PG_URSALUNA_DONE") and not b.flag("FLAG_ROUTE14_ROUGAROU_DONE") and not b.flag("FLAG_RECEIVED_LYCANROCITE"))
         b.face(sface)
         b.press("A", 4, 20)
         t.check("%s: it fights again" % key, battle_through(b))
+        # -- the weather picture (the night ones at night: the dark tint and the weather layers together)
+        if night:
+            set_time(b, NIGHT)
+            other_map(b)
+            b.warp(name, sx, sy)
+            b.face(sface)
+        b.frames(120)
+        png = b.shot("%s_weather" % key)
+        shutil.copyfile(png, SHOTS / ("weather_%s.png" % key))
         # -- walking out
         set_time(b, DAY)
         b.warp(name, 10, 13)
@@ -184,6 +244,9 @@ def run(b, t):
         b.settle()
         t.check("%s: walking out (south) returns to %s %s facing %s" % (key, route, (bx, by), face), b.map_name() == route and b.pos() == (bx, by), b.where())
         b.shot("%s_back_on_route" % key)
+        b.frames(60)
+        t.check("%s: the lair's weather does not leak onto %s (%s on arrival, %s when it was entered)" % (key, route, weather_now(b), route_weather),
+                weather_now(b) == route_weather, weather_now(b))
         b.set_flag(enc_flag, False)
 
     # ---------------------------------------------------------------- Articuno: the ice plant (the door exists; the legend from story 45)
@@ -220,8 +283,15 @@ def run(b, t):
     b.face(sface)
     b.frames(20)
     save_shot(b, "articuno", "articuno_in_front")
+    b.frames(60)
+    t.check("articuno: the overworld weather in the ice plant is WEATHER_SNOW", weather_now(b) == "WEATHER_SNOW" == weather_plan.HEADER["PointeRouge_IcePlant"], weather_now(b))
+    png = b.shot("articuno_weather")
+    shutil.copyfile(png, SHOTS / "weather_articuno.png")
     b.press("A", 4, 20)
-    t.check("articuno: a battle starts", battle_through(b))
+    got = start_battle(b)
+    t.check("articuno: a battle starts", got is not None)
+    if got is not None:
+        check_battle_weather(b, t, "articuno", got)
     t.check("articuno: a KO leaves it standing", not b.flag("FLAG_PG_ARTICUNO"))
     b.warp("PointeRouge_IcePlant", 9, 12)
     b.frames(20)
@@ -229,6 +299,8 @@ def run(b, t):
     b.frames(90)
     b.settle()
     t.check("articuno: walking out of the ice plant returns to Pointe Rouge", b.map_name() == "PointeRouge", b.where())
+    b.frames(60)
+    t.check("articuno: the snow does not leak onto Pointe Rouge (%s)" % weather_now(b), weather_now(b) == weather_plan.HEADER["PointeRouge"], weather_now(b))
 
     # ---------------------------------------------------------------- the scripts left the routes
     story = Path(ROOT) / "tools" / "mapgen" / "story"

@@ -484,4 +484,4 @@ Raikou (Route 2), Entei (Route 16). Data: `story_data_lairs.py` (where, tilesets
   rest) and arms the coord triggers (`FLAG_TEMP_1`, cleared on every map load; the triggers are `"gate": true`). Entering = `<Route>_EventScript_LairEnter` (face up, `warp`);
   leaving = `<Lair>_EventScript_Exit` on (10..11, 14) (`warp` to the entrance cell, facing as the table says). `story_gates_check.lair_entrances` proves sealed / open by flood fill.
 - The encounters (FLAG_PG_*, retired only on a catch, rolled when talked to; the night logic of the rougarou and Ursaluna) moved with their scripts; the old route spots are plain route again.
-- No weather in the lairs (a lair's weather would start in its battle): all WEATHER_NONE.
+- Weather (weather_plan.HEADER, user-approved): rougarou fog, Ursaluna sandstorm, Celebi sunny, Suicune rain, Raikou thunderstorm, Entei drought, Articuno snow; the battle takes it from the overworld weather (fog = Misty Terrain, thunderstorm = rain + Electric Terrain, snow = snow, sunny = nothing).
