@@ -51,8 +51,11 @@ def enemy_mon(b, slot=0):
     return b.r32(b.sym("gEnemyPartyPtr")) + slot * 100
 
 
-def start_wild(b, species, level, item=0):
+def start_wild(b, species, level, item=0, harmless=False):
     b.call("CreateScriptedWildMon", enum_value("species.h", species), level, enum_value("items.h", item) if item else 0)
+    if harmless:                                   # the foe only splashes: the Thief test must not depend on its moves (sleep, rain, crits)
+        for slot in range(4):
+            b.call("SetMonMoveSlot", enemy_mon(b), enum_value("moves.h", "MOVE_SPLASH"), slot)
     b.call("BattleSetup_StartScriptedWildBattle")
 
 
@@ -124,7 +127,8 @@ def run(b, t):
     b.frames(200)
     b.shot("intro_weakness_policy_page2")
     leave_battle(b)
-    start_wild(b, "SPECIES_ZIGZAGOON", 5, 0)
+    # a species with no common/rare item of its own (Zigzagoon holds a Potion half the time: SetWildMonHeldItem rolls it at battle start)
+    start_wild(b, "SPECIES_WAILMER", 5, 0)
     txt = intro_text(b)
     t.check("no item: no announcement: %r" % txt, txt is not None and "holding" not in txt, txt)
     b.frames(200)
@@ -135,7 +139,7 @@ def run(b, t):
     for slot in range(4):
         b.set_move(slot, "MOVE_THIEF", 0)          # whichever move the cursor lands on is Thief
     b.force_win = False
-    start_wild(b, "SPECIES_WAILORD", 20, "ITEM_LEFTOVERS")
+    start_wild(b, "SPECIES_WAILORD", 20, "ITEM_LEFTOVERS", harmless=True)
     intro_text(b)
     stolen = False
     for _ in range(160):

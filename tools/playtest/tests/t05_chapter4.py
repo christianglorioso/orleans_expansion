@@ -168,14 +168,27 @@ def run(b, t):
     b.frames(120)                                          # the Surf animation
     b.settle()
     t.check("the player surfs north off the Route 6 shore", b.pos()[1] < 22, b.where())
-    for _ in range(12):                                    # up the channel (x 30) to y 15, above the jam objects (rows 16-21)
+    def clear_encounters():
+        """a random (or overworld) wild encounter on the water starts its battle transition a few dozen frames AFTER the step ends, so a step
+        followed straight away by in_battle() can miss it and the next keypress is swallowed: let the transition run, win the fight, repeat"""
+        for _ in range(6):
+            b.frames(70)
+            if not (b.in_battle() or b.script_status() != 2):
+                return
+            b.advance_text(120)
+            b.frames(30)
+
+    for _ in range(14):                                    # up the channel (x 30) to y 15, above the jam objects (rows 16-21)
         if b.pos()[1] <= 15:
             break
         b.step("U")
-        if b.in_battle() or b.script_status() != 2:        # a wild encounter on the water: win it and go on
-            b.advance_text(120)
+        clear_encounters()
+    clear_encounters()
     b.shot("route6_surfer")
-    b.step("L")                                            # onto the cut (x 29)
+    for _ in range(3):                                     # onto the cut (x 29); a swallowed keypress (late encounter) is retried
+        if b.step("L") or b.script_status() != 2 or b.pos()[0] < 30:
+            break
+        clear_encounters()
     b.frames(20)
     while b.in_battle():
         b.advance_text(120)
@@ -184,6 +197,7 @@ def run(b, t):
     b.advance_text(60)
     t.check("and turns the surfer back east of the cut", b.map_name() == "Route6" and b.pos()[0] >= 30, b.where())
     b.set_flag("FLAG_ROUTE6_DEBRIS_CLEARED", True)
+    clear_encounters()
     b.step("L")
     b.frames(20)
     t.check("after the verse the surfer sails through the cut", b.script_status() == 2 and b.pos()[0] == 29, b.where())
