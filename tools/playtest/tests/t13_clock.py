@@ -196,21 +196,21 @@ def run(b, t):
     b.set_flag("FLAG_PG_URSALUNA_BM", True)
     b.set_flag("FLAG_PG_URSALUNA_DONE", False)
     b.set_clock(12, 0)
-    b.warp("Route23", 24, 20)
+    b.warp("Route23_BloodmoonArroyo", 10, 13)
     b.frames(30)
     t.check("by day Ursaluna is hidden", b.flag("FLAG_PG_URSALUNA_BM"))
     rest(b, 3)                                         # until night at the Quarter's Center
-    b.warp("Route23", 24, 20)
+    b.warp("Route23_BloodmoonArroyo", 10, 13)
     b.frames(30)
     t.check("after resting until night Ursaluna appears", not b.flag("FLAG_PG_URSALUNA_BM"), b.flag("FLAG_PG_URSALUNA_BM"))
     b.shot("ursaluna_night")
     # the Route 14 rougarou: same switch
     b.set_flag("FLAG_ROUTE14_ROUGAROU_DONE", False)
-    b.warp("Route14", 12, 12)
+    b.warp("Route14_RougarouHollow", 10, 13)
     b.frames(30)
-    t.check("at night the rougarou is on the Route 14 crest", not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
+    t.check("at night the rougarou is in its hollow off Route 14", not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
     rest(b, 0)                                         # back to morning
-    b.warp("Route14", 12, 12)
+    b.warp("Route14_RougarouHollow", 10, 13)
     b.frames(30)
     t.check("by day the rougarou is gone again", b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
 

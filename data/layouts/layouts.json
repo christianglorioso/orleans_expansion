@@ -3121,7 +3121,7 @@
       "width": 19,
       "height": 14,
       "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
+      "secondary_tileset": "gTileset_OrleansIcePlant",
       "border_filepath": "data/layouts/PointeRouge_IcePlant/border.bin",
       "blockdata_filepath": "data/layouts/PointeRouge_IcePlant/map.bin"
     },
@@ -3154,6 +3154,66 @@
       "secondary_tileset": "gTileset_OrleansSaltdome",
       "border_filepath": "data/layouts/LandsEnd_SaltCathedral/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_SaltCathedral/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE14_ROUGAROU_HOLLOW",
+      "name": "Route14_RougarouHollow_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairsWet",
+      "border_filepath": "data/layouts/Route14_RougarouHollow/border.bin",
+      "blockdata_filepath": "data/layouts/Route14_RougarouHollow/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE23_BLOODMOON_ARROYO",
+      "name": "Route23_BloodmoonArroyo_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairsDry",
+      "border_filepath": "data/layouts/Route23_BloodmoonArroyo/border.bin",
+      "blockdata_filepath": "data/layouts/Route23_BloodmoonArroyo/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE7_CELEBI_GLADE",
+      "name": "Route7_CelebiGlade_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairRootkin",
+      "border_filepath": "data/layouts/Route7_CelebiGlade/border.bin",
+      "blockdata_filepath": "data/layouts/Route7_CelebiGlade/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE11_SUICUNE_ISLE",
+      "name": "Route11_SuicuneIsle_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairsWet",
+      "border_filepath": "data/layouts/Route11_SuicuneIsle/border.bin",
+      "blockdata_filepath": "data/layouts/Route11_SuicuneIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2_RAIKOU_CLEARING",
+      "name": "Route2_RaikouClearing_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairStorm",
+      "border_filepath": "data/layouts/Route2_RaikouClearing/border.bin",
+      "blockdata_filepath": "data/layouts/Route2_RaikouClearing/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE16_ENTEI_FIELD",
+      "name": "Route16_EnteiField_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairsDry",
+      "border_filepath": "data/layouts/Route16_EnteiField/border.bin",
+      "blockdata_filepath": "data/layouts/Route16_EnteiField/map.bin"
     }
   ]
 }

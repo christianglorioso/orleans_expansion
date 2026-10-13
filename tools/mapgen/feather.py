@@ -45,7 +45,7 @@ FACE_DIR = {"UP": (0, -1), "DOWN": (0, 1), "LEFT": (-1, 0), "RIGHT": (1, 0)}
 
 
 SCRIPT_XY = re.compile(r"setobjectxy(?:perm)?\s+\w+\s*,\s*(\d+)\s*,\s*(\d+)")
-LINE_TRIGGER = re.compile(r"WaterGate|DustStorm|FloodedRoad|SandstormTrigger|SunTrigger|ViciousSandstorm")
+LINE_TRIGGER = re.compile(r"WaterGate|DustStorm|FloodedRoad|SandstormTrigger|SunTrigger|ViciousSandstorm|LairEnter")   # (LairEnter: the legendary lairs' entrance triggers sit in the wall notch, they do not shape it)
 DECOR = re.compile(r"^(cypress|reeds|reed|snag|waterlog|lily|knee|stump|tall|weed|bush|shrub|flower|rock|boulder|log)", re.I)
 
 
@@ -69,6 +69,7 @@ def protected(b, key, extras=True):
     spec = b.spec
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
         P |= {(o["x"], o["y"]) for o in spec.get(coll, []) if not o.get("gate")}
+    P |= {tuple(c) for c in spec.get("keep_open", [])}
     for ex in spec.get("exits", []):
         P |= {tuple(c) for c in ex["cells"]}
     for bd in spec.get("buildings", []):

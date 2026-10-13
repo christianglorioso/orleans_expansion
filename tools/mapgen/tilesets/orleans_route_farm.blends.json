@@ -542,5 +542,81 @@
   "id": "bk_dry_out_NE_2cfd7b76",
   "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NE_2cfd7b76.png",
   "attr_of": "dry:0_0"
+ },
+ {
+  "id": "ovl_lent_11_0__bk_dry_out_NE_2cfd7b76",
+  "overlay": {
+   "base": "patch:bk_dry_out_NE_2cfd7b76",
+   "art": "lent:11_0"
+  }
+ },
+ {
+  "id": "ovl_lent_11_1__dry_0_0",
+  "overlay": {
+   "base": "dry:0_0",
+   "art": "lent:11_1"
+  }
+ },
+ {
+  "id": "ovl_lent_8_0__dry_2_15",
+  "overlay": {
+   "base": "dry:2_15",
+   "art": "lent:8_0"
+  }
+ },
+ {
+  "id": "ovl_lent_8_1__dry_5_14",
+  "overlay": {
+   "base": "dry:5_14",
+   "art": "lent:8_1"
+  }
+ },
+ {
+  "id": "ovl_lent_9_0__dry_3_15",
+  "overlay": {
+   "base": "dry:3_15",
+   "art": "lent:9_0"
+  }
+ },
+ {
+  "id": "ovl_lent_9_1__dry_6_14",
+  "overlay": {
+   "base": "dry:6_14",
+   "art": "lent:9_1"
+  }
+ },
+ {
+  "id": "bk_dry_E1_f4f9ac21",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_E1_f4f9ac21.png",
+  "attr_of": "dry:4_15"
+ },
+ {
+  "id": "bk_dry_S0_dfd9876d",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_S0_dfd9876d.png",
+  "attr_of": "dry:3_15"
+ },
+ {
+  "id": "bk_dry_S1_785deef6",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_S1_785deef6.png",
+  "attr_of": "dry:3_14"
+ },
+ {
+  "id": "bk_dry_in_NW_6b98a45b",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_in_NW_6b98a45b.png",
+  "attr_of": "dry:2_15"
+ },
+ {
+  "id": "ovl_lent_8_0__dry_0_15",
+  "overlay": {
+   "base": "dry:0_15",
+   "art": "lent:8_0"
+  }
+ },
+ {
+  "id": "ovl_lent_9_0__dry_6_14",
+  "overlay": {
+   "base": "dry:6_14",
+   "art": "lent:9_0"
+  }
  }
 ]

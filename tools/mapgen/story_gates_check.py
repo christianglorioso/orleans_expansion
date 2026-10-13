@@ -449,8 +449,44 @@ def redfield_mill():
     rr = ow.fill([(22, 32)], stop=())
     check(all(c in rr or c in ow.blocked for c in cells) and all(not (c in ow.blocked and c != (22, 32)) or c in cells for c in cells),
           "Old Water: the raid's arrival cell (22, 32) and the actors' cells are on reachable land")
-    r14 = Grid("Route14")
-    check(r14.walk(21, 28) or (21, 29) in r14.blocked, "Route 14: the rougarou's crest cell (21, 29) is on land")
+
+
+def state_cells(map_name, state):
+    """{(x, y): (collision, elevation)} the generated <Map>_EventScript_State<state> sets (its setmetatile lines), over the map's own elevations"""
+    import re
+    m, mb, w, h = layout(map_name)
+    src = open(f"data/maps/{map_name}/scripts.inc", encoding="utf-8").read()
+    body = src.split(f"{map_name}_EventScript_State{state}::")[1].split("	return")[0]
+    out = {}
+    for x, y, coll in re.findall(r"setmetatile (\d+), (\d+), 0x[0-9A-Fa-f]+, (TRUE|FALSE)", body):
+        x, y = int(x), int(y)
+        out[(x, y)] = (1 if coll == "TRUE" else 0, mb[y * w + x] >> 12)
+    return out
+
+
+def lair_entrances():
+    """The legendary lairs (story_data_lairs.py): every route entrance is SEALED in map.bin (no walker reaches its trigger cells from the cell the lair's exit
+    returns to), the generated state opens it (all trigger cells reachable and the return cell too), the trigger cells carry the armed-flag trigger, the
+    lair's own exit triggers sit on walkable cells of the lair and its encounter has a reachable neighbour (lairs.py --check)."""
+    import lairs
+    import story_data_lairs as D
+    for key, lair in D.LAIRS.items():
+        route = lair["route"]
+        state = {"rougarou": "RougarouOpen", "ursaluna": "UrsalunaOpen", "celebi": "CelebiOpen", "suicune": "SuicuneOpen",
+                 "raikou": "RaikouOpen", "entei": "EnteiOpen"}[key]
+        land = (lair["back"][0], lair["back"][1])
+        trig = [(c["x"], c["y"]) for c in layout(route)[0]["coord_events"] if c.get("script") == f"{route}_EventScript_LairEnter"]
+        check(len(trig) == 2 and all(c.get("var") == D.TRIG and str(c.get("var_value")) == "1" for c in layout(route)[0]["coord_events"]
+                                     if c.get("script") == f"{route}_EventScript_LairEnter"),
+              f"{route}: the lair entrance has two triggers {trig} armed by {D.TRIG} (a sealed way never has a live one)")
+        opened = state_cells(route, state)
+        g_shut, g_open = Grid(route), Grid(route, raised=opened)
+        src = [lair["approach"]]
+        r_shut, r_open = g_shut.fill(src), g_open.fill(src)
+        check(all(c not in r_shut for c in trig), f"{route}: SEALED, no walker reaches the entrance trigger cells {trig} from {src[0]} (map.bin holds the closed look)")
+        check(all(c in r_open for c in trig) and land in r_open, f"{route}: OPEN (the state's {len(opened)} cells), the trigger cells {trig} and the return cell {land} are reachable from {src[0]}")
+    bad = lairs.check()
+    check(bad == 0, f"the {len(D.LAIRS)} lair maps match their generator, arrival and exits walk, every encounter has a reachable neighbour ({bad} problems)")
 
 
 def lands_end():
@@ -563,7 +599,7 @@ def frontier_gate():
     for (m, key, kind, flag, gfx, (x, y), s) in c10.all_objects():
         g = Grid(m)
         # an arena's legend stands on its dais (a blocking cell in the art): the player faces it from the cell below
-        fy = y + 1 if key in ("KYOGRE_RE", "GROUDON_RE") else y
+        fy = y + 1 if key in ("KYOGRE_RE", "GROUDON_RE", "ARTICUNO") else y         # (Articuno's ice dais blocks too)
         if not (g.w > x and g.h > fy) or (g.cell(x, fy)[0] != 0):
             bad.append(f"{m} {key} {x},{fy} is not a walkable cell")
         o = [e for e in g.m["object_events"] if e.get("flag") == flag]
@@ -648,6 +684,7 @@ if __name__ == "__main__":
     camp_cocodrie()
     lutins_hollow()
     redfield_mill()
+    lair_entrances()
     lands_end()
     verse_panels()
     finale_rooms()

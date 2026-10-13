@@ -468,3 +468,20 @@ in memory), `feather_preview.py <dir> <maps>` (in-memory picture, pending pieces
   the corner sets `berm` (grid char `R`, blocking) and `mound` (grid char `U`; `"open_center"` keeps its top walkable, build.py `corners()`), the shrine prefabs.
   Route 25's seam band is 7 rows deep (rows 25-31, primary pieces only), deeper than the mock assumed, so the landing is one row higher than the mock (15-18, 21-24) and the
   secondary islet props stand on rows <= 24. `tilesets/arenas/arena_mocks.py` still draws the original mock.
+
+## The legendary lairs, batch 1 (2026-10-13; art in `tilesets/lairs/`, mocks in `../tile_review/set_pieces/lairs/`)
+Seven lairs: the rougarou (Route 14, night), Bloodmoon Ursaluna (Route 23, night), Articuno (the Pointe Rouge ice plant), Celebi (Route 7), Suicune (Route 11's island, by Surf),
+Raikou (Route 2), Entei (Route 16). Data: `story_data_lairs.py` (where, tilesets, stand cells, the six entrances); scripts: `story/<Map>.inc`.
+- **Tilesets**: the five recipes are registered (`tilesets/recipes/orleans_lairs_wet|orleans_lair_rootkin|orleans_lairs_dry|orleans_lair_storm|orleans_iceplant`, compose --register).
+  The entrance art is the overlay-only source `lent` (`lair_entrances_tileset.py`, patched into orleans_route, _b, _dry and _farm; `make_route_tilesets.patch_base` applies it too).
+- **The six outdoor lair maps** (`Route14_RougarouHollow`, `Route23_BloodmoonArroyo`, `Route7_CelebiGlade`, `Route11_SuicuneIsle`, `Route2_RaikouClearing`, `Route16_EnteiField`;
+  gMapGroup_Routes, appended) are written by `lairs.py` cell for cell from the mock builders (20 x 16, the wall block is also the border; blocking where the mock does not walk,
+  water included: elevation 3, no Surf). `python tools/mapgen/lairs.py [--check]`; `--check` (also run by repro_check.py and check_interior.py) diffs map.bin, border.bin, map.json
+  and the layouts entry against a regeneration and proves arrival / exits / stand cells. One deviation from the mock: Suicune's ford (10, 8) walks (the mock's player cell is two
+  cells from it). Articuno's room is the existing ice plant: `arena_rooms.py` kind `"iceplant"` through `build_interior.py` (exit warp 8 of Pointe Rouge kept).
+- **Entrances** are spec `"gates"` (`build.py gates()`, merged by `story_overlay.py` from `story_data_lairs.ROUTES`): map.bin holds the SEALED look (the notch filled with the wall
+  block, or the vine arch), the generated `<Route>_EventScript_State<Name>` setmetatile's the OPEN one; the route's OnLoad calls it (`FLAG_BADGE06_GET` for the rougarou, story 45 for the
+  rest) and arms the coord triggers (`FLAG_TEMP_1`, cleared on every map load; the triggers are `"gate": true`). Entering = `<Route>_EventScript_LairEnter` (face up, `warp`);
+  leaving = `<Lair>_EventScript_Exit` on (10..11, 14) (`warp` to the entrance cell, facing as the table says). `story_gates_check.lair_entrances` proves sealed / open by flood fill.
+- The encounters (FLAG_PG_*, retired only on a catch, rolled when talked to; the night logic of the rougarou and Ursaluna) moved with their scripts; the old route spots are plain route again.
+- No weather in the lairs (a lair's weather would start in its battle): all WEATHER_NONE.

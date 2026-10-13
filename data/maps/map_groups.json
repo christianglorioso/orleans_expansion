@@ -1211,7 +1211,13 @@
     "Route22",
     "Route23",
     "Route24",
-    "Route25"
+    "Route25",
+    "Route14_RougarouHollow",
+    "Route23_BloodmoonArroyo",
+    "Route7_CelebiGlade",
+    "Route11_SuicuneIsle",
+    "Route2_RaikouClearing",
+    "Route16_EnteiField"
   ],
   "gMapGroup_IndoorIsleMarais": [
     "IsleMarais_Shelter",

@@ -1,7 +1,7 @@
 """Chapter 10 (the post-game) data for story_overlay.py: balls and static legendary encounters that stay hidden until the game is cleared
 (story 45), plus the gifts, trades and shop changes that make every dex-required item obtainable (tools/dex/obtain_audit.py).
 
-How the hiding works (gen_postgame.py writes the scripts): each object has its own FLAG_PG_*. Every map load below story 45 sets it (hidden); the
+How the hiding works (the scripts are hand-written in story/<Map>.inc, "post-game" blocks): each object has its own FLAG_PG_*. Every map load below story 45 sets it (hidden); the
 epilogue clears them all (OldestShrine.inc); picking an item up / ending an encounter sets it again for good (nothing sets it at story >= 45, except
 the two conditional kinds: an arena's legendary shows only if Jayden took it, and the night-only Ursaluna only at night).
 """
@@ -14,11 +14,11 @@ def spec(x):
 
 # key, map, species const, species gfx name, level, (x, y), note
 STATICS = [
-    dict(key="RAIKOU", map="Route2", sp="RAIKOU", level=60, at=(25, 14)),
+    dict(key="RAIKOU", map="Route2_RaikouClearing", sp="RAIKOU", level=60, at=(10, 10)),
     dict(key="ZAPDOS", map="StormsEdge", sp="ZAPDOS", level=60, at=(22, 20)),
-    dict(key="ENTEI", map="Route16", sp="ENTEI", level=60, at=(18, 10)),
+    dict(key="ENTEI", map="Route16_EnteiField", sp="ENTEI", level=60, at=(9, 10)),
     dict(key="MOLTRES", map="Route17", sp="MOLTRES", level=60, at=(23, 14)),
-    dict(key="SUICUNE", map="Route11", sp="SUICUNE", level=60, at=(29, 20)),
+    dict(key="SUICUNE", map="Route11_SuicuneIsle", sp="SUICUNE", level=60, at=(10, 7)),
     dict(key="ARTICUNO", map="PointeRouge_IcePlant", sp="ARTICUNO", level=60, at=(9, 5)),
     dict(key="GALAR_ARTICUNO", map="CrescentCity", sp="ARTICUNO_GALAR", gfx="ARTICUNO_GALAR", level=60, at=(57, 22)),
     dict(key="GALAR_ZAPDOS", map="CrescentCity", sp="ZAPDOS_GALAR", gfx="ZAPDOS_GALAR", level=60, at=(65, 35)),
@@ -31,8 +31,8 @@ STATICS = [
     dict(key="UXIE", map="OldWater", sp="UXIE", level=55, at=(24, 29)),
     dict(key="ZARUDE", map="Route13", sp="ZARUDE", level=55, at=(14, 19)),
     dict(key="OGERPON", map="Route13", sp="OGERPON_TEAL", gfx="OGERPON", level=50, at=(12, 25)),
-    dict(key="CELEBI", map="Route7", sp="CELEBI", level=50, at=(32, 10)),
-    dict(key="URSALUNA_BM", map="Route23", sp="URSALUNA_BLOODMOON", gfx="URSALUNA_BLOODMOON", level=60, at=(23, 18), night=True, done="FLAG_PG_URSALUNA_DONE"),
+    dict(key="CELEBI", map="Route7_CelebiGlade", sp="CELEBI", level=50, at=(10, 10)),
+    dict(key="URSALUNA_BM", map="Route23_BloodmoonArroyo", sp="URSALUNA_BLOODMOON", gfx="URSALUNA_BLOODMOON", level=60, at=(10, 8), night=True, done="FLAG_PG_URSALUNA_DONE"),
     # the raid arenas: the legendary Jayden took is back (only that one): Kyogre if the player took Groudon (pick 2), Groudon if the player took Kyogre
     dict(key="KYOGRE_RE", map="LandsEnd_DrownedTemple", sp="KYOGRE", gfx="KYOGRE_FRONT", level=70, at=(9, 5), pick=2, raw_gfx=True),
     dict(key="GROUDON_RE", map="LandsEnd_SaltCathedral", sp="GROUDON", gfx="GROUDON_FRONT", level=70, at=(11, 4), pick=1, raw_gfx=True),
@@ -51,6 +51,10 @@ ITEMS = [
     dict(key="WELLSPRING_MASK", map="Route19", item="ITEM_WELLSPRING_MASK", at=(36, 3)),
     dict(key="CORNERSTONE_MASK", map="Route24", item="ITEM_CORNERSTONE_MASK", at=(31, 8)),
 ]
+
+# the legendary lairs (lairs.py builds these maps; story_data_lairs.py): their statics are placed there, not by a route spec's overlay. Articuno's lair is the
+# existing ice plant room (INTERIOR_KEYS)
+LAIR_MAPS = {"Route2_RaikouClearing", "Route16_EnteiField", "Route11_SuicuneIsle", "Route7_CelebiGlade", "Route23_BloodmoonArroyo"}
 
 # interior rooms: (mockup key, kind) so the generated people get a script label (read back from the built map.json by position)
 INTERIOR_KEYS = {"PointeRouge_IcePlant": "pointe_rouge_ice_plant", "CrescentCity_BlacksnakeBase": "crescent_city_blacksnake_base",

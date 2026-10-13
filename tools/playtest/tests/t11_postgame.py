@@ -96,13 +96,13 @@ def run(b, t):
     b.interact("U", 120)
     t.check("the Chandelurite is picked up (item in the bag, ball hidden for good)", has_item(b, "ITEM_CHANDELURITE") and b.flag("FLAG_PG_CHANDELURITE"))
 
-    # ---------------------------------------------------------------- a static legend: Raikou on Route 2
+    # ---------------------------------------------------------------- a static legend: Raikou in its struck clearing (off Route 2)
     b.set_flag("FLAG_PG_RAIKOU", False)
     other_map(b)
-    b.warp("Route2", 25, 16)
+    b.warp("Route2_RaikouClearing", 10, 13)
     b.frames(30)
-    rk = [o for o in map_data("Route2")["objects"] if o.get("flag") == "FLAG_PG_RAIKOU"][0]
-    b.warp("Route2", rk["x"], rk["y"] + 1)
+    rk = [o for o in map_data("Route2_RaikouClearing")["objects"] if o.get("flag") == "FLAG_PG_RAIKOU"][0]
+    b.warp("Route2_RaikouClearing", rk["x"], rk["y"] + 1)
     b.face("U")
     b.press("A", 4, 20)
     t.check("Raikou: a battle starts", battle_through(b))
@@ -110,30 +110,30 @@ def run(b, t):
     b.face("U")
     b.press("A", 4, 20)
     t.check("Raikou: after the win it is still standing and fights again", battle_through(b))
-    r2 = (Path(ROOT) / "data/maps/Route2/scripts.inc").read_text()
+    r2 = (Path(ROOT) / "data/maps/Route2_RaikouClearing/scripts.inc").read_text()
     body = r2.split(rk["script"] + "::")[1].split("PGStill")[0]
     t.check("Raikou: only B_OUTCOME_CAUGHT goes to the Done label (sets the flag and removes it)",
             re.search(r"B_OUTCOME_CAUGHT, %sDone" % rk["script"], r2) is not None and not re.search(r"B_OUTCOME_WON, \w+Done", body))
     t.check("Raikou: the Done label sets the flag and removes the object",
             "%sDone:" % rk["script"] in r2 and "setflag FLAG_PG_RAIKOU" in r2.split("%sDone:" % rk["script"])[1].split("end")[0] and "removeobject" in r2.split("%sDone:" % rk["script"])[1].split("end")[0])
 
-    # ---------------------------------------------------------------- night-only Ursaluna Bloodmoon (Route 23)
+    # ---------------------------------------------------------------- night-only Ursaluna Bloodmoon (its arroyo off Route 23)
     b.set_flag("FLAG_PG_URSALUNA_BM", True)
     b.set_flag("FLAG_PG_URSALUNA_DONE", False)
     set_time(b, DAY)
     other_map(b)
-    b.warp("Route23", 24, 20)
+    b.warp("Route23_BloodmoonArroyo", 10, 13)
     b.frames(30)
     t.check("by day Ursaluna is hidden", b.flag("FLAG_PG_URSALUNA_BM"))
     set_time(b, NIGHT)
     other_map(b)
-    b.warp("Route23", 24, 20)
+    b.warp("Route23_BloodmoonArroyo", 10, 13)
     b.frames(30)
     t.check("at night (story 45) Ursaluna appears", not b.flag("FLAG_PG_URSALUNA_BM"))
     # it is still on screen when the dawn comes; talking to it by day only hides it
-    ub = [o for o in map_data("Route23")["objects"] if o.get("flag") == "FLAG_PG_URSALUNA_BM"][0]
+    ub = [o for o in map_data("Route23_BloodmoonArroyo")["objects"] if o.get("flag") == "FLAG_PG_URSALUNA_BM"][0]
     set_time(b, DAY)
-    b.warp("Route23", ub["x"], ub["y"] + 1)
+    b.warp("Route23_BloodmoonArroyo", ub["x"], ub["y"] + 1)
     b.face("U")
     b.press("A", 4, 20)
     battled = False
@@ -207,8 +207,8 @@ def run(b, t):
     t.check("there are 30 FLAG_PG_ objects in the world", len(flags) == 30, str(len(flags)))
     t.check("PostGame_EventScript_Unhide clears all 29 non-night post-game flags and the guard's",
             len(rest) == 29 and all("clearflag " + f in un for f in rest) and "setflag FLAG_UNUSED_0x2D9" in un and "call PostGame_EventScript_Unhide" in sh, str(len(rest)))
-    r23 = (Path(ROOT) / "data/maps/Route23/scripts.inc").read_text()
-    t.check("Ursaluna's night script clears its own flag (Route 23 PGNight)", "clearflag FLAG_PG_URSALUNA_BM" in r23)
+    r23 = (Path(ROOT) / "data/maps/Route23_BloodmoonArroyo/scripts.inc").read_text()
+    t.check("Ursaluna's night script clears its own flag (the arroyo's PGNight)", "clearflag FLAG_PG_URSALUNA_BM" in r23)
 
     # ---------------------------------------------------------------- the Battle Frontier: the Arena door leads to the vanilla lobby, its exit mat comes back
     b.set_var("VAR_ORLEANS_STORY", 45)

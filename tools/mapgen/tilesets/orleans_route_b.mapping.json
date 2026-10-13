@@ -128,7 +128,11 @@
 "patch:ovl_osho_7_4__osh_mound_E": 625,
 "patch:ovl_osho_7_4__osh_mound_W": 626,
 "patch:ovl_osho_8_4__osh_mound_N": 627,
-"patch:ovl_osho_9_4__osh_mound_N": 628
+"patch:ovl_osho_9_4__osh_mound_N": 628,
+"patch:ovl_lent_0_0__bd_swamp_W_marsh_0": 629,
+"patch:ovl_lent_0_1__bd_swamp_W_marsh_1": 630,
+"patch:ovl_lent_1_0__bd_swamp_canopy_00": 631,
+"patch:ovl_lent_1_1__bd_swamp_canopy_01": 632
 },
 "palettes": null,
 "tiles": {}

@@ -1,5 +1,5 @@
 Route2_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route2_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route2_OnLoad
 	.byte 0
 
 @ Route 2: Grand Oak to Storm's Edge, under the high-voltage line. Five trainers (levels 13-16, west to east),
@@ -108,56 +108,28 @@ Route2_Text_GuitaristRestored:
 	.string "The line's singing in tune again.\n"
 	.string "Whatever you did, thank you!$"
 
-Route2_OnTransitionPG:
-	call Route2_EventScript_PGSetup
+@ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route2_EventScript_StateRaikouOpen swaps the
+@ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
+Route2_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route2_EventScript_LairOpen
 	end
 
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route2_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route2_EventScript_PGHide
-Route2_EventScript_PGSetupDone:
+Route2_EventScript_LairOpen:
+	call Route2_EventScript_StateRaikouOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route2_EventScript_PGHide:
-	setflag FLAG_PG_RAIKOU
-	return
-
-Route2_EventScript_PgRaikou::
-	lock
-	faceplayer
-	playmoncry SPECIES_RAIKOU, CRY_MODE_ENCOUNTER
-	msgbox Route2_Text_PGRaikou, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_RAIKOU, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route2_EventScript_PgRaikouDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route2_EventScript_PgRaikouStill
-	release
+Route2_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route2_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE2_RAIKOU_CLEARING, 10, 13
+	waitstate
 	end
 
-Route2_EventScript_PgRaikouStill:
-	msgbox Route2_Text_PGStillRaikou, MSGBOX_DEFAULT
-	release
-	end
-
-Route2_EventScript_PgRaikouDone:
-	setflag FLAG_PG_RAIKOU
-	removeobject LOCALID_ROUTE2_PG_RAIKOU
-	release
-	end
-
-Route2_Text_PGRaikou:
-	.string "RAIKOU stands before you,\n"
-	.string "its hide crackling with static.$"
-
-Route2_Text_PGStillRaikou:
-	.string "RAIKOU shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route2_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -181,5 +153,14 @@ Route2_EventScript_RouteSign3::
 
 Route2_Text_RouteSign3:
 	.string "SEASIDE LOOKOUT\nThe boats are best from here.$"
+
+Route2_EventScript_StateRaikouOpen::
+	setmetatile 24, 0, 0x12F, FALSE
+	setmetatile 25, 0, 0x12E, FALSE
+	setmetatile 24, 1, 0x133, FALSE
+	setmetatile 25, 1, 0x13B, FALSE
+	setmetatile 24, 2, 0x170, FALSE
+	setmetatile 25, 2, 0x16F, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

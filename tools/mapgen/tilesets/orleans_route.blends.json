@@ -1479,5 +1479,145 @@
    "base": "ekat:water_weeds1",
    "art": "wpr:1_0"
   }
+ },
+ {
+  "id": "ovl_lent_2_0__bd_swamp_E_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_1",
+   "art": "lent:2_0"
+  }
+ },
+ {
+  "id": "ovl_lent_2_1__bk_swamp_out_NW_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NW_f819ccaa",
+   "art": "lent:2_1"
+  }
+ },
+ {
+  "id": "ovl_lent_3_0__bd_swamp_W_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_W_marsh_1",
+   "art": "lent:3_0"
+  }
+ },
+ {
+  "id": "ovl_lent_3_1__bk_swamp_out_NE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NE_f819ccaa",
+   "art": "lent:3_1"
+  }
+ },
+ {
+  "id": "ovl_lent_6_0__bd_swamp_E_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_1",
+   "art": "lent:6_0"
+  }
+ },
+ {
+  "id": "ovl_lent_6_1__bk_swamp_out_NW_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NW_f819ccaa",
+   "art": "lent:6_1"
+  }
+ },
+ {
+  "id": "ovl_lent_7_0__bd_swamp_W_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_W_marsh_1",
+   "art": "lent:7_0"
+  }
+ },
+ {
+  "id": "ovl_lent_7_1__bk_swamp_out_NE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NE_f819ccaa",
+   "art": "lent:7_1"
+  }
+ },
+ {
+  "id": "ovl_lent_4_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:4_0"
+  }
+ },
+ {
+  "id": "ovl_lent_4_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:4_1"
+  }
+ },
+ {
+  "id": "ovl_lent_5_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:5_0"
+  }
+ },
+ {
+  "id": "ovl_lent_5_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:5_1"
+  }
+ },
+ {
+  "id": "ovl_lent_6_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:6_0"
+  }
+ },
+ {
+  "id": "ovl_lent_6_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:6_1"
+  }
+ },
+ {
+  "id": "ovl_lent_7_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:7_0"
+  }
+ },
+ {
+  "id": "ovl_lent_7_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:7_1"
+  }
+ },
+ {
+  "id": "ovl_lent_2_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:2_0"
+  }
+ },
+ {
+  "id": "ovl_lent_2_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:2_1"
+  }
+ },
+ {
+  "id": "ovl_lent_3_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:3_0"
+  }
+ },
+ {
+  "id": "ovl_lent_3_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:3_1"
+  }
  }
 ]

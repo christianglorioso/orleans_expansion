@@ -22,17 +22,22 @@ for p in (HERE, ARENAS):
 ARENAS_BY_NAME = {
     "temple": dict(tileset="orleans_temple", secondary="gTileset_OrleansTemple", prefix="dt", border="dt:void"),
     "cathedral": dict(tileset="orleans_saltdome", secondary="gTileset_OrleansSaltdome", prefix="sc", border="sc:void"),
+    # Articuno's frozen hall: the Pointe Rouge ice plant redone from the lair art (tilesets/lairs/lair_mocks.py articuno()); the room's black border as every interior's
+    "iceplant": dict(tileset="orleans_iceplant", secondary="gTileset_OrleansIcePlant", prefix="ip", border="jb:008"),
 }
 # the cell the art marks as the exit (walking south onto it leaves: MB_SOUTH_ARROW_WARP in the piece)
-EXITS = {"temple": [(9, 19)], "cathedral": [(11, 21)]}
+EXITS = {"temple": [(9, 19)], "cathedral": [(11, 21)], "iceplant": [(9, 13)]}
 # where the arrival lands (one step in from the exit) and where the legendary stands / the player faces it from
-ARRIVAL = {"temple": (9, 18), "cathedral": (11, 20)}
-LEGENDARY = {"temple": (9, 5), "cathedral": (11, 4)}
+ARRIVAL = {"temple": (9, 18), "cathedral": (11, 20), "iceplant": (9, 12)}
+LEGENDARY = {"temple": (9, 5), "cathedral": (11, 4), "iceplant": (9, 5)}
 SING_CELL = (9, 11)       # the temple: the player sings here, facing the door cell (9, 10)
 DOOR_CELL = (9, 10)
 
 
 def mock(arena, state=None):
+    if arena == "iceplant":      # the lair art's mock (lairs.py shares its loader), not an arena mock
+        import lairs
+        return lairs.iceplant_mock()
     import arena_mocks
     if arena == "temple":
         return arena_mocks.temple_mock(state or "closed")

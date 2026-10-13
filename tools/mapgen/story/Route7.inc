@@ -1,5 +1,5 @@
 Route7_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route7_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route7_OnLoad
 	.byte 0
 
 @ Route 7 (the bayou islands): four trainers (32-34), a cut stump that holds a Pry Bar cache (Kleavorite; decision 2: optional,
@@ -95,53 +95,25 @@ Route7_Text_Route7BirdKeeperAfter:
 
 @ --- end route trainers ---
 
-Route7_OnTransitionPG:
-	call Route7_EventScript_PGSetup
+@ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route7_EventScript_StateCelebiOpen swaps the
+@ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
+Route7_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route7_EventScript_LairOpen
 	end
 
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route7_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route7_EventScript_PGHide
-Route7_EventScript_PGSetupDone:
+Route7_EventScript_LairOpen:
+	call Route7_EventScript_StateCelebiOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route7_EventScript_PGHide:
-	setflag FLAG_PG_CELEBI
-	return
-
-Route7_EventScript_PgCelebi::
-	lock
-	faceplayer
-	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
-	msgbox Route7_Text_PGCelebi, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_CELEBI, 50
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route7_EventScript_PgCelebiDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route7_EventScript_PgCelebiStill
-	release
+Route7_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route7_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE7_CELEBI_GLADE, 10, 13
+	waitstate
 	end
 
-Route7_EventScript_PgCelebiStill:
-	msgbox Route7_Text_PGStillCelebi, MSGBOX_DEFAULT
-	release
-	end
-
-Route7_EventScript_PgCelebiDone:
-	setflag FLAG_PG_CELEBI
-	removeobject LOCALID_ROUTE7_PG_CELEBI
-	release
-	end
-
-Route7_Text_PGCelebi:
-	.string "CELEBI stands before you,\n"
-	.string "the air shimmering with time.$"
-
-Route7_Text_PGStillCelebi:
-	.string "CELEBI shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route7_Movement_LairFaceUp:
+	face_up
+	step_end

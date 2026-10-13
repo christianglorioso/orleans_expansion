@@ -82,6 +82,10 @@ def main(argv):
                 rbad += 1
         print(f"{len(rooms)} healer rooms, {rbad} rest-spot drifts")
         bad += rbad
+        import lairs     # the six legendary lair maps (lairs.py) are generated too: map.bin, border.bin, map.json, layouts entry
+        lbad = lairs.check()
+        print(f"{len(lairs.D.LAIRS)} legendary lairs, {lbad} problems")
+        bad += lbad
     return 1 if bad else 0
 
 

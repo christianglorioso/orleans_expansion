@@ -481,6 +481,7 @@ class Builder:
             self.blocks[y][x] = (self.blocks[y][x] & ~0x0C00) | (1 << 10)
         import borders
         borders.apply(self)  # the inward walls and their edge cells (borders.py)
+        self.gates()
         self.sight_cells()
 
     def sight_cells(self):
@@ -528,6 +529,24 @@ class Builder:
                     mid = hx(c["tile"])
                 out.append((x, y, mid, c.get("collision", 0)))
             self.state_cells[name] = out
+
+    def gates(self):
+        """Lair entrances (story_data_lairs.py): spec "gates" {State: {"open": [cells], "sealed": [cells]}}, resolved last (after the borders), so the
+        terrain beneath is the finished map. map.bin holds the SEALED look; the generated <Map>_EventScript_State<State> setmetatile's the OPEN one
+        (the map's OnLoad calls it once the story opens the way). A cell is {"x", "y"} plus "overlay": art drawn over the cell's terrain (as in states())
+        or "tile": a named piece, and "collision" (open: default 0 = walkable; sealed: default 1). An open cell with neither overlay nor tile keeps the
+        cell as built ("terrain"). The open look is taken from the cell BEFORE the sealed look is written over it."""
+        for name, g in self.spec.get("gates", {}).items():
+            out = []
+            for c in g.get("open", []):
+                x, y = c["x"], c["y"]
+                mid = hx(self.overlay(c["overlay"], x, y)) if "overlay" in c else hx(c["tile"]) if "tile" in c else self.blocks[y][x] & 0x3FF
+                out.append((x, y, mid, c.get("collision", 0)))
+            self.state_cells[name] = out
+            for c in g.get("sealed", []):
+                x, y = c["x"], c["y"]
+                mid = hx(self.overlay(c["overlay"], x, y)) if "overlay" in c else hx(c["tile"])
+                self.blocks[y][x] = block(mid, c.get("collision", 1), self.blocks[y][x] >> ELEVATION_SHIFT)
 
     # --- levees ----------------------------------------------------------
     def levee(self):

@@ -211,27 +211,27 @@ def run(b, t):
     t.check("outside the raid the Old Water has no raiders (hidden on load)", b.flag("FLAG_HIDE_RAID_ISAAC") and b.flag("FLAG_HIDE_RAID_GRUNT1")
             and b.flag("FLAG_HIDE_RAID_GRUNT2") and b.flag("FLAG_HIDE_RAID_WREN"))
 
-    # ---------------------------------------------------------------- 7.1 the rougarou (night only), then Lycanrocite
+    # ---------------------------------------------------------------- 7.1 the rougarou (night only, in its hollow off Route 14), then Lycanrocite
     b.set_flag("FLAG_ROUTE14_ROUGAROU_DONE", False)
     b.set_flag("FLAG_RECEIVED_LYCANROCITE", False)
     set_time(b, DAY)
-    b.warp("Route14", 12, 12)
+    b.warp("Route14_RougarouHollow", 10, 13)
     b.frames(30)
-    t.check("by day the rougarou is not on the crest", b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
+    t.check("by day the rougarou is not in its hollow", b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
     set_time(b, NIGHT)
-    b.warp("Route14", 12, 12)
+    b.warp("Route14_RougarouHollow", 10, 13)
     b.frames(30)
-    t.check("at night the rougarou is on the crest", not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
-    b.warp("Route14", 21, 30)
+    t.check("at night the rougarou is in its hollow", not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"))
+    b.warp("Route14_RougarouHollow", 9, 9)
     b.interact("U", 300)
     b.frames(30)
-    # fix C (2026-10-13): only a CATCH retires the rougarou and gives the stone; a KO leaves it on the crest for another try
+    # fix C (2026-10-13): only a CATCH retires the rougarou and gives the stone; a KO leaves it in the hollow for another try
     t.check("rougarou KO'd (not caught): it stays, no stone, no one-off flags",
             not b.flag("FLAG_ROUTE14_ROUGAROU_DONE") and not b.flag("FLAG_RECEIVED_LYCANROCITE") and not has_item(b, "ITEM_LYCANROCITE")
             and not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"), "done=%s got=%s" % (b.flag("FLAG_ROUTE14_ROUGAROU_DONE"), b.flag("FLAG_RECEIVED_LYCANROCITE")))
     from pathlib import Path as _P
-    r14 = (_P(__file__).resolve().parents[3] / "tools/mapgen/story/Route14.inc").read_text(encoding="utf-8")
-    t.check("the rougarou script retires it on B_OUTCOME_CAUGHT only", "B_OUTCOME_CAUGHT, Route14_EventScript_RougarouBeaten" in r14 and "B_OUTCOME_WON, Route14_EventScript_RougarouBeaten" not in r14)
+    r14 = (_P(__file__).resolve().parents[3] / "tools/mapgen/story/Route14_RougarouHollow.inc").read_text(encoding="utf-8")
+    t.check("the rougarou script retires it on B_OUTCOME_CAUGHT only", "B_OUTCOME_CAUGHT, Route14_RougarouHollow_EventScript_RougarouBeaten" in r14 and "B_OUTCOME_WON, Route14_RougarouHollow_EventScript_RougarouBeaten" not in r14)
     set_time(b, DAY)
 
     # ---------------------------------------------------------------- Wren's raid partner: the starter line the player did NOT take (hotfix 2026-10-13)

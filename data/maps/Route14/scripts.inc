@@ -1,17 +1,36 @@
 Route14_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route14_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route14_OnLoad
 	.byte 0
 
-@ Route 14 (Chapter 7). The rougarou: a one-off night Lycanroc Midnight (Lv. 42) on the levee crest; the object shows at night only, until it
-@ is caught (a KO leaves it for another try). Then the crest holds a LYCANROCITE (given once, bag-full safe: the flag is set after the stone is in the bag).
+@ Route 14 (Chapter 7). The rougarou, a one-off night Lycanroc Midnight (Lv. 42), no longer stands on the levee crest: it lives in its own hollow in the
+@ east canopy (Route14_RougarouHollow, story/Route14_RougarouHollow.inc). The trail into the trees opens with the flood: the generated
+@ Route14_EventScript_StateRougarouOpen (the canopy gap, story_data_lairs.py) is swapped in on load once FLAG_BADGE06_GET is set (the water is down, the
+@ road is open) and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load).
 Route14_OnTransition:
 	call Route14_EventScript_StoryWeather
-	setflag FLAG_HIDE_ROUTE14_ROUGAROU
-	goto_if_set FLAG_RECEIVED_LYCANROCITE, Route14_EventScript_NoRougarou
-	special OrleansSvc_IsNight
-	goto_if_eq VAR_RESULT, TRUE, Route14_EventScript_ShowRougarou
-Route14_EventScript_NoRougarou:
 	end
+
+Route14_OnLoad:
+	call_if_set FLAG_BADGE06_GET, Route14_EventScript_LairOpen
+	end
+
+Route14_EventScript_LairOpen:
+	call Route14_EventScript_StateRougarouOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route14_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE14_ROUGAROU_HOLLOW, 10, 13
+	waitstate
+	end
+
+Route14_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ weather (weather_plan.py): rain until the floodwater has gone (gym 6), then clear. Runs from OnTransition, before the weather starts.
 Route14_EventScript_StoryWeather:
@@ -19,45 +38,6 @@ Route14_EventScript_StoryWeather:
 	setweather WEATHER_NONE
 Route14_EventScript_StoryWeatherDone:
 	return
-
-Route14_EventScript_ShowRougarou:
-	clearflag FLAG_HIDE_ROUTE14_ROUGAROU
-	end
-
-Route14_EventScript_Rougarou::
-	lock
-	faceplayer
-	goto_if_set FLAG_ROUTE14_ROUGAROU_DONE, Route14_EventScript_RougarouStone
-	playmoncry SPECIES_LYCANROC_MIDNIGHT, CRY_MODE_ENCOUNTER
-	msgbox Route14_Text_Rougarou1, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_LYCANROC_MIDNIGHT, 42
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route14_EventScript_RougarouBeaten
-	msgbox Route14_Text_RougarouRan, MSGBOX_DEFAULT
-	release
-	end
-
-Route14_EventScript_RougarouBeaten:
-	setflag FLAG_ROUTE14_ROUGAROU_DONE
-	goto Route14_EventScript_RougarouStone
-
-Route14_EventScript_RougarouStone:
-	goto_if_set FLAG_RECEIVED_LYCANROCITE, Route14_EventScript_RougarouGone
-	msgbox Route14_Text_RougarouStone, MSGBOX_DEFAULT
-	giveitem ITEM_LYCANROCITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_LYCANROCITE
-	setflag FLAG_HIDE_ROUTE14_ROUGAROU
-	removeobject LOCALID_ROUTE14_ROUGAROU
-	release
-	end
-
-Route14_EventScript_RougarouGone:
-	msgbox Route14_Text_RougarouGone, MSGBOX_DEFAULT
-	release
-	end
 
 @ --- route trainers (gen_route_trainers.py) ---
 Route14_EventScript_Trainer0::
@@ -146,23 +126,6 @@ Route14_Text_Route14BlackBeltAfter:
 
 @ --- end route trainers ---
 
-Route14_Text_Rougarou1:
-	.string "Something big stands on the levee\n"
-	.string "crest, silver in the dark. It lifts\p"
-	.string "its head and howls, once.$"
-
-Route14_Text_RougarouRan:
-	.string "The rougarou melts into the cane.\n"
-	.string "The crest is quiet again.$"
-
-Route14_Text_RougarouStone:
-	.string "Where it stood, a stone glows dimly:\n"
-	.string "a LYCANROCITE, left in the grass.$"
-
-Route14_Text_RougarouGone:
-	.string "The crest is empty now. Only the\n"
-	.string "wind, and a flattened ring of grass.$"
-
 @ --- mapgen: generated NPC scripts (begin) ---
 
 Route14_EventScript_SignCity::
@@ -178,5 +141,12 @@ Route14_EventScript_RouteSign1::
 
 Route14_Text_RouteSign1:
 	.string "LEVEE GATE\nClosed to carts after dark.$"
+
+Route14_EventScript_StateRougarouOpen::
+	setmetatile 25, 30, 0x275, FALSE
+	setmetatile 26, 30, 0x277, FALSE
+	setmetatile 25, 31, 0x276, FALSE
+	setmetatile 26, 31, 0x278, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

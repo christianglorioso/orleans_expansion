@@ -166,8 +166,23 @@ const u16 gMetatileAttributes_OrleansHollow[] = INCBIN_U16("data/tilesets/second
 const u16 gMetatiles_OrleansHome[] = INCBIN_U16("data/tilesets/secondary/orleans_home/metatiles.bin");
 const u16 gMetatileAttributes_OrleansHome[] = INCBIN_U16("data/tilesets/secondary/orleans_home/metatile_attributes.bin");
 
+const u16 gMetatiles_OrleansIcePlant[] = INCBIN_U16("data/tilesets/secondary/orleans_iceplant/metatiles.bin");
+const u16 gMetatileAttributes_OrleansIcePlant[] = INCBIN_U16("data/tilesets/secondary/orleans_iceplant/metatile_attributes.bin");
+
 const u16 gMetatiles_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatiles.bin");
 const u16 gMetatileAttributes_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairRootkin[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_rootkin/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairRootkin[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_rootkin/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairStorm[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_storm/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairStorm[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_storm/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairsDry[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_dry/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairsDry[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_dry/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairsWet[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_wet/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairsWet[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_wet/metatile_attributes.bin");
 
 const u16 gMetatiles_OrleansOffshore[] = INCBIN_U16("data/tilesets/secondary/orleans_offshore/metatiles.bin");
 const u16 gMetatileAttributes_OrleansOffshore[] = INCBIN_U16("data/tilesets/secondary/orleans_offshore/metatile_attributes.bin");

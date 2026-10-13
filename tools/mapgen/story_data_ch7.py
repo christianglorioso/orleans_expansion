@@ -141,11 +141,7 @@ def _patch(m):
 ROUTE14 = {
     "patch_objects": _patch("Route14"),
     "add_items": [{"x": 24, "y": 9, "item": "ITEM_TM_SEED_BOMB", "flag": "FLAG_ROUTE14_ITEM_SEED_BOMB", "_comment": "TM075 (Routes 7-12 band, left over)"}],
-    "add_objects": [
-        # the rougarou: a one-off night Lycanroc Midnight on the levee crest (shown at night only, until beaten or caught)
-        {"id": "LOCALID_ROUTE14_ROUGAROU", "gfx": "OBJ_EVENT_GFX_SPECIES(LYCANROC_MIDNIGHT)", "x": 21, "y": 29, "move": FACE + "DOWN",
-         "text": "", "custom": True, "flag": "FLAG_HIDE_ROUTE14_ROUGAROU"},
-    ],
+    # (the rougarou, a one-off night Lycanroc Midnight, lives in its lair since the legendary lairs: Route14_RougarouHollow, story_data_lairs.py)
 }
 ROUTE15 = {
     "patch_objects": _patch("Route15"),

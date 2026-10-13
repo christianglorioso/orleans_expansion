@@ -855,5 +855,61 @@
    "base": "osh:mound_N",
    "art": "osho:9_4"
   }
+ },
+ {
+  "id": "ovl_lent_0_0__bd_swamp_W_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_W_marsh_0",
+   "art": "lent:0_0"
+  }
+ },
+ {
+  "id": "ovl_lent_0_1__bd_swamp_W_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_W_marsh_1",
+   "art": "lent:0_1"
+  }
+ },
+ {
+  "id": "ovl_lent_1_0__bd_swamp_canopy_00",
+  "overlay": {
+   "base": "bd:swamp_canopy_00",
+   "art": "lent:1_0"
+  }
+ },
+ {
+  "id": "ovl_lent_1_1__bd_swamp_canopy_01",
+  "overlay": {
+   "base": "bd:swamp_canopy_01",
+   "art": "lent:1_1"
+  }
+ },
+ {
+  "id": "ovl_lent_0_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:0_0"
+  }
+ },
+ {
+  "id": "ovl_lent_0_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:0_1"
+  }
+ },
+ {
+  "id": "ovl_lent_1_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:1_0"
+  }
+ },
+ {
+  "id": "ovl_lent_1_1__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "lent:1_1"
+  }
  }
 ]

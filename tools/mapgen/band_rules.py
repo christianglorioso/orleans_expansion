@@ -180,6 +180,7 @@ def nudge(b, bd, strict, others):
     busy = {(x, y) for o in others + b.spec.get("buildings", []) if o is not bd for x, y, _ in prefab_cells(b, o)}
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
         busy |= {(o["x"], o["y"]) for o in b.spec.get(coll, []) if not o.get("gate")}  # (verse-gate trigger lines do not shape props)
+    busy |= {tuple(c) for c in b.spec.get("keep_open", [])}  # cells the lairs' old encounter spots held (story_data_lairs.py)
     for ex in b.spec.get("exits", []):
         busy |= {tuple(c) for c in ex["cells"]}
     cand = sorted(((dx, dy) for dx in range(-12, 13) for dy in range(-12, 13) if (dx, dy) != (0, 0)), key=lambda d: (abs(d[0]) + abs(d[1]), d))

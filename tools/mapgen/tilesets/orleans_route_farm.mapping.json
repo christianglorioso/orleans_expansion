@@ -124,7 +124,13 @@
 "patch:bk_dry_out_SW_2cfd7b76": 621,
 "patch:bk_dry_out_SW_60e582c4": 622,
 "patch:bk_dry_out_SW_de0f1ada": 623,
-"patch:bk_dry_out_NE_2cfd7b76": 624
+"patch:bk_dry_out_NE_2cfd7b76": 624,
+"patch:ovl_lent_11_0__bk_dry_out_NE_2cfd7b76": 625,
+"patch:ovl_lent_11_1__dry_0_0": 626,
+"patch:ovl_lent_8_0__dry_2_15": 627,
+"patch:ovl_lent_8_1__dry_5_14": 628,
+"patch:ovl_lent_9_0__dry_3_15": 629,
+"patch:ovl_lent_9_1__dry_6_14": 630
 },
 "palettes": null,
 "tiles": {}

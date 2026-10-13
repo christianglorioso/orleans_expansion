@@ -1,5 +1,5 @@
 Route16_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route16_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route16_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -75,56 +75,28 @@ Route16_Text_Route16Picnicker2After:
 
 @ --- end route trainers ---
 
-Route16_OnTransitionPG:
-	call Route16_EventScript_PGSetup
+@ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route16_EventScript_StateEnteiOpen swaps the
+@ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
+Route16_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route16_EventScript_LairOpen
 	end
 
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route16_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route16_EventScript_PGHide
-Route16_EventScript_PGSetupDone:
+Route16_EventScript_LairOpen:
+	call Route16_EventScript_StateEnteiOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route16_EventScript_PGHide:
-	setflag FLAG_PG_ENTEI
-	return
-
-Route16_EventScript_PgEntei::
-	lock
-	faceplayer
-	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
-	msgbox Route16_Text_PGEntei, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_ENTEI, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route16_EventScript_PgEnteiDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route16_EventScript_PgEnteiStill
-	release
+Route16_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route16_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE16_ENTEI_FIELD, 10, 13
+	waitstate
 	end
 
-Route16_EventScript_PgEnteiStill:
-	msgbox Route16_Text_PGStillEntei, MSGBOX_DEFAULT
-	release
-	end
-
-Route16_EventScript_PgEnteiDone:
-	setflag FLAG_PG_ENTEI
-	removeobject LOCALID_ROUTE16_PG_ENTEI
-	release
-	end
-
-Route16_Text_PGEntei:
-	.string "ENTEI stands before you,\n"
-	.string "heat rolling off its mane.$"
-
-Route16_Text_PGStillEntei:
-	.string "ENTEI shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route16_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -134,5 +106,14 @@ Route16_EventScript_RouteSign1::
 
 Route16_Text_RouteSign1:
 	.string "PEPPER FIELDS\nPickers wanted. Mind the heat.$"
+
+Route16_EventScript_StateEnteiOpen::
+	setmetatile 15, 1, 0x273, FALSE
+	setmetatile 16, 1, 0x275, FALSE
+	setmetatile 15, 2, 0x274, FALSE
+	setmetatile 16, 2, 0x276, FALSE
+	setmetatile 17, 2, 0x271, TRUE
+	setmetatile 17, 3, 0x272, TRUE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

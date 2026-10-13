@@ -82,7 +82,7 @@ def tileset_dir(symbol):
     """gTileset_OrleansRootkinIn -> orleans_rootkin_in, gTileset_GenericBuilding -> generic_building."""
     import re
     name = symbol.replace("gTileset_", "")
-    special = {"OrleansRootkinIn": "orleans_rootkin_in"}
+    special = {"OrleansRootkinIn": "orleans_rootkin_in", "OrleansIcePlant": "orleans_iceplant"}
     if name in special:
         return special[name]
     return re.sub(r"(?<!^)(?=[A-Z])", "_", name).lower()
@@ -177,6 +177,11 @@ def main(args):
             d.text((ex * 48 + 18, ey * 48 + 16), "E", fill=(230, 0, 230))
         im.save(os.path.join(out, name + ".png"))
         compare(room, im, out)
+    if not [x for x in args if not x.startswith("--") and x != out]:   # the legendary lairs' maps (unconnected outdoor maps built by lairs.py): arrival, exits, stand cells, generator drift
+        import lairs
+        lbad = lairs.check()
+        print(f"{len(lairs.D.LAIRS)} legendary lairs: {lbad} problems")
+        bad += lbad
     bad += nurse_check()
     print(f"problems: {bad}")
     if bad:

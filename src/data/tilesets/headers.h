@@ -196,6 +196,17 @@ const struct Tileset gTileset_OrleansHome =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_OrleansIcePlant =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansIcePlant,
+    .palettes = gTilesetPalettes_OrleansIcePlant,
+    .metatiles = gMetatiles_OrleansIcePlant,
+    .metatileAttributes = gMetatileAttributes_OrleansIcePlant,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_OrleansInterior =
 {
     .isCompressed = TRUE,
@@ -204,6 +215,50 @@ const struct Tileset gTileset_OrleansInterior =
     .palettes = gTilesetPalettes_OrleansInterior,
     .metatiles = gMetatiles_OrleansInterior,
     .metatileAttributes = gMetatileAttributes_OrleansInterior,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansLairRootkin =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansLairRootkin,
+    .palettes = gTilesetPalettes_OrleansLairRootkin,
+    .metatiles = gMetatiles_OrleansLairRootkin,
+    .metatileAttributes = gMetatileAttributes_OrleansLairRootkin,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansLairStorm =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansLairStorm,
+    .palettes = gTilesetPalettes_OrleansLairStorm,
+    .metatiles = gMetatiles_OrleansLairStorm,
+    .metatileAttributes = gMetatileAttributes_OrleansLairStorm,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansLairsDry =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansLairsDry,
+    .palettes = gTilesetPalettes_OrleansLairsDry,
+    .metatiles = gMetatiles_OrleansLairsDry,
+    .metatileAttributes = gMetatileAttributes_OrleansLairsDry,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansLairsWet =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansLairsWet,
+    .palettes = gTilesetPalettes_OrleansLairsWet,
+    .metatiles = gMetatiles_OrleansLairsWet,
+    .metatileAttributes = gMetatileAttributes_OrleansLairsWet,
     .callback = NULL,
 };
 

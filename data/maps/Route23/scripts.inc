@@ -1,5 +1,6 @@
 Route23_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route23_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route23_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -78,15 +79,12 @@ Route23_EventScript_StoryWeatherDone:
 @ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
 Route23_EventScript_PGSetup:
 	call_if_lt VAR_ORLEANS_STORY, 45, Route23_EventScript_PGHide
-	goto_if_lt VAR_ORLEANS_STORY, 45, Route23_EventScript_PGSetupDone
-	call Route23_EventScript_PGNightUrsalunaBm
 Route23_EventScript_PGSetupDone:
 	return
 
 Route23_EventScript_PGHide:
 	setflag FLAG_PG_LANDORUS
 	setflag FLAG_PG_AZELF
-	setflag FLAG_PG_URSALUNA_BM
 	return
 
 Route23_EventScript_PgLandorus::
@@ -139,52 +137,6 @@ Route23_EventScript_PgAzelfDone:
 	release
 	end
 
-Route23_EventScript_PgUrsalunaBm::
-	lock
-	special OrleansSvc_IsNight
-	goto_if_eq VAR_RESULT, TRUE, Route23_EventScript_PgUrsalunaBmNight
-	msgbox Route23_Text_PGDayUrsalunaBm, MSGBOX_DEFAULT
-	setflag FLAG_PG_URSALUNA_BM
-	removeobject LOCALID_ROUTE23_PG_URSALUNA_BM
-	release
-	end
-
-Route23_EventScript_PgUrsalunaBmNight:
-	faceplayer
-	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
-	msgbox Route23_Text_PGUrsalunaBm, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_URSALUNA_BLOODMOON, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgUrsalunaBmDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgUrsalunaBmStill
-	release
-	end
-
-Route23_EventScript_PgUrsalunaBmStill:
-	msgbox Route23_Text_PGStillUrsalunaBm, MSGBOX_DEFAULT
-	release
-	end
-
-Route23_EventScript_PgUrsalunaBmDone:
-	setflag FLAG_PG_URSALUNA_BM
-	setflag FLAG_PG_URSALUNA_DONE
-	removeobject LOCALID_ROUTE23_PG_URSALUNA_BM
-	release
-	end
-
-Route23_EventScript_PGNightUrsalunaBm:
-	goto_if_set FLAG_PG_URSALUNA_DONE, Route23_EventScript_PGNightHideUrsalunaBm
-	special OrleansSvc_IsNight
-	goto_if_eq VAR_RESULT, FALSE, Route23_EventScript_PGNightHideUrsalunaBm
-	clearflag FLAG_PG_URSALUNA_BM
-	return
-
-Route23_EventScript_PGNightHideUrsalunaBm:
-	setflag FLAG_PG_URSALUNA_BM
-	return
-
 Route23_Text_PGLandorus:
 	.string "LANDORUS stands before you,\n"
 	.string "the ground trembling under it.$"
@@ -201,19 +153,31 @@ Route23_Text_PGStillAzelf:
 	.string "AZELF shakes itself off,\n"
 	.string "still standing its ground.$"
 
-Route23_Text_PGUrsalunaBm:
-	.string "URSALUNA stands before you,\n"
-	.string "a red moon in its eyes.$"
-
-Route23_Text_PGStillUrsalunaBm:
-	.string "URSALUNA shakes itself off,\n"
-	.string "still standing its ground.$"
-
-Route23_Text_PGDayUrsalunaBm:
-	.string "URSALUNA dislikes the daylight and\n"
-	.string "slips back into the brush.$"
-
 @ --- end post-game ---
+
+@ Bloodmoon Ursaluna's lair (Route23_BloodmoonArroyo, story/Route23_BloodmoonArroyo.inc): the arroyo's way in is the cleft in the north scrub (22-23, rows 0-2),
+@ sealed in map.bin; from story 45 the generated Route23_EventScript_StateUrsalunaOpen swaps the open look in on load and arms the entrance trigger
+@ (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
+Route23_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route23_EventScript_LairOpen
+	end
+
+Route23_EventScript_LairOpen:
+	call Route23_EventScript_StateUrsalunaOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route23_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route23_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE23_BLOODMOON_ARROYO, 10, 13
+	waitstate
+	end
+
+Route23_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -244,5 +208,14 @@ Route23_EventScript_RouteSign3::
 
 Route23_Text_RouteSign3:
 	.string "FERTILE HOLLOW\nThe ground is green here, oddly.$"
+
+Route23_EventScript_StateUrsalunaOpen::
+	setmetatile 22, 1, 0x2A8, FALSE
+	setmetatile 23, 1, 0x2AA, FALSE
+	setmetatile 22, 2, 0x2A9, FALSE
+	setmetatile 23, 2, 0x2AB, FALSE
+	setmetatile 21, 2, 0x2A6, TRUE
+	setmetatile 21, 3, 0x2A7, TRUE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

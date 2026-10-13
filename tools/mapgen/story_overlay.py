@@ -285,7 +285,7 @@ import story_data_ch10 as _c10  # noqa: E402
 
 
 def _merge_ch10():
-    outdoor = sorted({m for (m, *_rest) in _c10.all_objects() if m not in _c10.INTERIOR_KEYS})
+    outdoor = sorted({m for (m, *_rest) in _c10.all_objects() if m not in _c10.INTERIOR_KEYS and m not in _c10.LAIR_MAPS})
     for name in outdoor:
         _merge_into(OVERLAY.setdefault(name, {}), {"add_objects": _c10.overlay_for(name)})
     for name, key in _c10.INTERIOR_KEYS.items():
@@ -299,6 +299,17 @@ def _merge_ch10():
 
 
 _merge_ch10()
+
+# ---------------------------------------------------------------------------------------------- the legendary lairs' route entrances (story_data_lairs.py)
+import story_data_lairs as _lairs  # noqa: E402
+
+
+def _merge_lairs():
+    for name, data in _lairs.ROUTES.items():
+        _merge_into(OVERLAY.setdefault(name, {}), data)
+
+
+_merge_lairs()
 
 # ---------------------------------------------------------------------------------------------- the water gates (story_data_gates.py)
 import story_data_gates as _gates  # noqa: E402
@@ -361,6 +372,13 @@ def apply(spec):
     ov = OVERLAY.get(spec.get("map"))
     if not ov:
         return spec
+    for rb in ov.get("remove_buildings", []):       # a prefab the lairs' entrances replace (the Route 11 island's cypress)
+        spec["buildings"] = [b for b in spec.get("buildings", []) if not (b["prefab"] == rb["prefab"] and b["x"] == rb["x"] and b["y"] == rb["y"])]
+    if ov.get("keep_open"):                           # cells that keep shaping the borders / seam bands although nothing stands there any more
+        spec.setdefault("keep_open", [])
+        spec["keep_open"] += [c for c in ov["keep_open"] if c not in spec["keep_open"]]
+    if ov.get("gates"):                               # lair entrances: sealed in map.bin, opened by a map state (build.py gates())
+        spec.setdefault("gates", {}).update(json.loads(json.dumps(ov["gates"])))
     objs = spec.setdefault("objects", [])
     byid = {o["id"]: o for o in objs}
     for lid, fields in ov.get("patch_objects", {}).items():

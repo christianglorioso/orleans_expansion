@@ -134,6 +134,7 @@ def prepare(b, key):
     keep_open = set()
     for coll in ("objects", "items", "signs", "hidden_items", "triggers"):
         keep_open |= {(o["x"], o["y"]) for o in spec.get(coll, []) if not o.get("gate")}  # a verse-gate trigger line (story_data_gates.py) is written across the whole route and must not shape the terrain
+    keep_open |= {tuple(c) for c in spec.get("keep_open", [])}   # the old encounter spots of the legendary lairs: their walls keep the shape they gave (story_data_lairs.py)
     for ex in spec.get("exits", []):
         keep_open |= {tuple(c) for c in ex["cells"]}
     for bd in spec.get("buildings", []):

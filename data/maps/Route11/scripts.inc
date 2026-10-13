@@ -1,5 +1,5 @@
 Route11_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route11_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route11_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -47,57 +47,36 @@ Route11_Text_Route11Swimmer2After:
 
 @ --- end route trainers ---
 
-Route11_OnTransitionPG:
-	call Route11_EventScript_PGSetup
+@ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route11_EventScript_StateSuicuneOpen swaps the
+@ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
+Route11_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route11_EventScript_LairOpen
 	end
 
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route11_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route11_EventScript_PGHide
-Route11_EventScript_PGSetupDone:
+Route11_EventScript_LairOpen:
+	call Route11_EventScript_StateSuicuneOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route11_EventScript_PGHide:
-	setflag FLAG_PG_SUICUNE
-	return
-
-Route11_EventScript_PgSuicune::
-	lock
-	faceplayer
-	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
-	msgbox Route11_Text_PGSuicune, MSGBOX_DEFAULT
-	waitmoncry
-	setwildbattle SPECIES_SUICUNE, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route11_EventScript_PgSuicuneDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route11_EventScript_PgSuicuneStill
-	release
+Route11_EventScript_LairEnter::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route11_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE11_SUICUNE_ISLE, 10, 13
+	waitstate
 	end
 
-Route11_EventScript_PgSuicuneStill:
-	msgbox Route11_Text_PGStillSuicune, MSGBOX_DEFAULT
-	release
-	end
-
-Route11_EventScript_PgSuicuneDone:
-	setflag FLAG_PG_SUICUNE
-	removeobject LOCALID_ROUTE11_PG_SUICUNE
-	release
-	end
-
-Route11_Text_PGSuicune:
-	.string "SUICUNE stands before you,\n"
-	.string "the water around it perfectly still.$"
-
-Route11_Text_PGStillSuicune:
-	.string "SUICUNE shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route11_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
+
+Route11_EventScript_StateSuicuneOpen::
+	setmetatile 28, 20, 0x287, TRUE
+	setmetatile 29, 20, 0x289, TRUE
+	setmetatile 28, 21, 0x288, FALSE
+	setmetatile 29, 21, 0x28A, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

@@ -71,7 +71,9 @@ def patch_base():
     import landmarks_tileset
     cp, rp = os.path.join(TS, "orleans_route.json"), os.path.join(TS, "recipes", "orleans_route.json")
     c, r = json.load(open(cp, encoding="utf-8")), json.load(open(rp, encoding="utf-8"))
-    if landmarks_tileset.apply(r, c):
+    import lair_entrances_tileset      # the legendary lairs' route entrance art (overlay-only source `lent`)
+    changed = lair_entrances_tileset.apply(r, c)
+    if landmarks_tileset.apply(r, c) or changed:
         for path, obj in ((cp, c), (rp, r)):
             with open(path + ".new", "w", encoding="utf-8", newline="\n") as f:
                 json.dump(obj, f, indent=1, ensure_ascii=False)
