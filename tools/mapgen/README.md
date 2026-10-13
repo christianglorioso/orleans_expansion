@@ -453,3 +453,18 @@ in memory), `feather_preview.py <dir> <maps>` (in-memory picture, pending pieces
 - Crescent City's floodwater is a map state: `crescent_flood.py` (water pieces over rows 63-65 of the Route 14 connection, rows 64-65 collide) written into the
   spec's `states`; `CrescentCity_OnLoad` calls `StateFlooded` while FLAG_BADGE06_GET is clear; the trigger row is y 63. `crop_render_state.py` draws a state.
 
+
+## The legendary arenas (2026-10-13; art in `tilesets/arenas/`, mocks in `../tile_review/arenas/`)
+- **Interiors** (Drowned Temple, Salt Cathedral): `arena_rooms.py` takes the layouts from the approved mocks (`arena_mocks.temple_mock / cathedral_mock`: metatile name per
+  cell + walk mask) and `build_interior.py` (room key `"arena"`, set by the tail of `interior_rooms.py`) writes them cell for cell: blocking where the art does not walk, the
+  void piece as the border block, the exit warp on the art's exit cell (temple (9,19), cathedral (11,21)). Own secondaries `gTileset_OrleansTemple` (`dt:`) and
+  `gTileset_OrleansSaltdome` (`sc:`) on `orleans_building` (recipes in `tilesets/recipes/`, registered by `compose.py --register`). The people come from `story_data_ch9.ROOMS`
+  (`"people"` + `"positions"`; `story_overlay.interior_people` appends the post-game extras): the legendary stands on its dais (temple (9,5), cathedral (11,4)).
+- **Map states in an interior**: the Tide Hall's sealed door is drawn closed in map.bin; `arena_rooms.states("temple")` (closed vs open mock) becomes the generated script
+  `LandsEnd_DrownedTemple_EventScript_StateDoorOpen` (setmetatile lines). `story/LandsEnd_DrownedTemple.inc` calls it from `OnLoad` while FLAG_TEMPLE_DOOR_OPEN is set and from the
+  singing script (sign event on the door's middle cell (9,10), faced from (9,11)). `check_interior.py` and `story_gates_check.finale_rooms()` apply the state.
+- **The Oldest Shrine** (`oldest_shrine.py`, hand-designed, run it like `lands_end.py`): the island, ridges, mound, shell road and landing of `arena_mocks.shrine_design()` on the 36 x 32
+  map; the art lives on `orleans_route_b` through `shrine_tileset.py` (the variant's `"addon"` in `make_route_tilesets.py`): sources `osh` (opaque) and `osho` (overlays),
+  the corner sets `berm` (grid char `R`, blocking) and `mound` (grid char `U`; `"open_center"` keeps its top walkable, build.py `corners()`), the shrine prefabs.
+  Route 25's seam band is 7 rows deep (rows 25-31, primary pieces only), deeper than the mock assumed, so the landing is one row higher than the mock (15-18, 21-24) and the
+  secondary islet props stand on rows <= 24. `tilesets/arenas/arena_mocks.py` still draws the original mock.

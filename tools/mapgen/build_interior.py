@@ -126,6 +126,16 @@ def kit_room(room):
     return grid, exits, []
 
 
+# ------------------------------------------------------------------ arena rooms
+def arena_room(room):
+    """The Drowned Temple / Salt Cathedral: the approved arena mock cell for cell (arena_rooms.py), blocking where the art does not walk."""
+    import arena_rooms
+    M = load_mapping("orleans_building", room["tileset"])
+    names, walk = arena_rooms.layout(room["arena"])
+    grid = [[block(M[n], 0 if w else 1) for n, w in zip(nrow, wrow)] for nrow, wrow in zip(names, walk)]
+    return grid, list(arena_rooms.EXITS[room["arena"]]), []
+
+
 # ------------------------------------------------------------------ mockup rooms
 def mockup_room(room):
     spec = mock.INTERIORS[room["mockup"]]
@@ -240,7 +250,7 @@ def free_cell(grid, taken, exits, near):
 
 def build(room, door_warps):
     name = room["map"]
-    grid, exits, spots = (pret_room(room) if room["map"] in src.PRET_ROOMS else kit_room(room) if room.get("kit")
+    grid, exits, spots = (pret_room(room) if room["map"] in src.PRET_ROOMS else arena_room(room) if room.get("arena") else kit_room(room) if room.get("kit")
                           else ref_room(room) if room.get("ref") else mockup_room(room))
     if room.get("crop"):  # trim a reference room (e.g. the black padding HnS layouts carry)
         cx, cy, cw, ch = room["crop"]
@@ -261,7 +271,7 @@ def build(room, door_warps):
     d = f"data/layouts/{name}"
     os.makedirs(d, exist_ok=True)
     open(f"{d}/map.bin", "wb").write(struct.pack(f"<{w * h}H", *[v for row in grid for v in row]))
-    border = grid[0][0] & 0x3FF
+    border = M[room["border"]] if room.get("border") else grid[0][0] & 0x3FF
     open(f"{d}/border.bin", "wb").write(struct.pack("<4H", *[block(border, 1, 0)] * 4))
     lp = "data/layouts/layouts.json"
     L = json.load(open(lp))
@@ -342,6 +352,9 @@ def build(room, door_warps):
         else:
             tid = f"{name}_Text_{tag}{i}"
             scripts.append(f"{sid}::\n\tmsgbox {tid}, MSGBOX_NPC\n\tend\n\n{tid}:\n\t.string \"{text}$\"\n")
+    if room.get("arena"):  # map states (the temple's sealed door): setmetatile scripts the story calls
+        import arena_rooms
+        scripts += arena_rooms.state_scripts(name, room["arena"], M)
     md = f"data/maps/{name}"
     os.makedirs(md, exist_ok=True)
     mp = f"{md}/map.json"

@@ -102,7 +102,11 @@ def main(args):
         w, h = L["width"], L["height"]
         raw = open(L["blockdata_filepath"], "rb").read()
         g = struct.unpack(f"<{w * h}H", raw)
-        walk = lambda x, y: 0 <= x < w and 0 <= y < h and not (g[y * w + x] >> 10) & 3
+        opened = set()
+        if room.get("arena"):  # an arena's map states (the Tide Hall's sealed door) are applied: its people must be reachable once the story opens them
+            import arena_rooms
+            opened = {(x, y) for st in arena_rooms.states(room["arena"]).values() for x, y, _n, wk in st if wk}
+        walk = lambda x, y: 0 <= x < w and 0 <= y < h and (not (g[y * w + x] >> 10) & 3 or (x, y) in opened)
         problems, notes = [], []
         exits = [(e["x"], e["y"]) for e in m["warp_events"]]
         if not exits:
@@ -142,14 +146,14 @@ def main(args):
             if not any((ex + dx, ey + dy) in seen for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
                 problems.append(f"warp ({ex},{ey}) can't be reached")
         for o in m["object_events"]:
-            if not walk(o["x"], o["y"]):
-                problems.append(f"{o['local_id']} stands on a blocked tile ({o['x']},{o['y']})")
-            elif not any((o["x"] + dx, o["y"] + dy) in seen or (o["x"] + 2 * dx, o["y"] + 2 * dy) in seen
-                         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):  # two away = talking across a counter
             if room.get("arena") and not walk(o["x"], o["y"]):
                 continue  # the legendary stands on its dais (a blocked cell: the player faces it from the cell below, checked in story_gates_check.py)
             if o["graphics_id"] == "OBJ_EVENT_GFX_ITEM_BALL" and not walk(o["x"], o["y"]) and walk(o["x"], o["y"] + 1):
                 continue  # a Poke Ball on a table (the shelter's starters): faced from the floor cell below
+            if not walk(o["x"], o["y"]):
+                problems.append(f"{o['local_id']} stands on a blocked tile ({o['x']},{o['y']})")
+            elif not any((o["x"] + dx, o["y"] + dy) in seen or (o["x"] + 2 * dx, o["y"] + 2 * dy) in seen
+                         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):  # two away = talking across a counter
                 if room.get("gated"):
                     notes.append(f"{o['local_id']} is behind the puzzle (expected)")
                 else:

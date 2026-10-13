@@ -3169,6 +3169,646 @@
      ]
     }
    ]
+  },
+  {
+   "name": "osh",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/arenas/shrine.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "metatiles": [
+    {
+     "id": "berm_C",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "berm_N",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "berm_S",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "berm_W",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "berm_E",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "berm_inNW",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "berm_inNE",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "berm_inSW",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "berm_inSE",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "berm_landSE",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "berm_landSW",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "berm_landNE",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "berm_landNW",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "berm_sTLBR",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "berm_sTRBL",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "mound_N",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "mound_W",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "mound_E",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "mound_inNW",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "mound_inNE",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "mound_inSW",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "mound_inSE",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "mound_landSE",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "mound_landSW",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "mound_sTLBR",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "mound_sTRBL",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "mound_S",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "mound_landNE",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "mound_landNW",
+     "bottom": [
+      12,
+      1
+     ]
+    },
+    {
+     "id": "mound_face",
+     "bottom": [
+      13,
+      1
+     ]
+    },
+    {
+     "id": "mound_face_l",
+     "bottom": [
+      14,
+      1
+     ]
+    },
+    {
+     "id": "mound_face_r",
+     "bottom": [
+      15,
+      1
+     ]
+    },
+    {
+     "id": "mound_steps_0_0",
+     "bottom": [
+      0,
+      2
+     ]
+    },
+    {
+     "id": "mound_steps_1_0",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "mound_steps_0_1",
+     "bottom": [
+      0,
+      3
+     ]
+    },
+    {
+     "id": "mound_steps_1_1",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "shell_C",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "shell_N",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "shell_S",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "shell_W",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "shell_E",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "shell_NW",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "shell_NE",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "shell_SW",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "shell_SE",
+     "bottom": [
+      10,
+      2
+     ]
+    },
+    {
+     "id": "landing_0_0",
+     "bottom": [
+      10,
+      4
+     ]
+    },
+    {
+     "id": "landing_1_0",
+     "bottom": [
+      11,
+      4
+     ]
+    },
+    {
+     "id": "landing_2_0",
+     "bottom": [
+      12,
+      4
+     ]
+    },
+    {
+     "id": "landing_3_0",
+     "bottom": [
+      13,
+      4
+     ]
+    },
+    {
+     "id": "landing_0_1",
+     "bottom": [
+      10,
+      5
+     ]
+    },
+    {
+     "id": "landing_1_1",
+     "bottom": [
+      11,
+      5
+     ]
+    },
+    {
+     "id": "landing_2_1",
+     "bottom": [
+      12,
+      5
+     ]
+    },
+    {
+     "id": "landing_3_1",
+     "bottom": [
+      13,
+      5
+     ]
+    },
+    {
+     "id": "landing_0_2",
+     "bottom": [
+      10,
+      6
+     ]
+    },
+    {
+     "id": "landing_1_2",
+     "bottom": [
+      11,
+      6
+     ]
+    },
+    {
+     "id": "landing_2_2",
+     "bottom": [
+      12,
+      6
+     ]
+    },
+    {
+     "id": "landing_3_2",
+     "bottom": [
+      13,
+      6
+     ]
+    },
+    {
+     "id": "landing_0_3",
+     "bottom": [
+      10,
+      7
+     ]
+    },
+    {
+     "id": "landing_1_3",
+     "bottom": [
+      11,
+      7
+     ]
+    },
+    {
+     "id": "landing_2_3",
+     "bottom": [
+      12,
+      7
+     ]
+    },
+    {
+     "id": "landing_3_3",
+     "bottom": [
+      13,
+      7
+     ]
+    }
+   ],
+   "_comment": "opaque pieces: the ridge berm and mound sets, the mound steps, the landing"
+  },
+  {
+   "name": "osho",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/arenas/shrine.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "overlay_only": true,
+   "metatiles": [
+    {
+     "id": "11_2",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "11_3",
+     "bottom": [
+      11,
+      3
+     ]
+    },
+    {
+     "id": "12_2",
+     "bottom": [
+      12,
+      2
+     ]
+    },
+    {
+     "id": "0_4",
+     "bottom": [
+      0,
+      4
+     ]
+    },
+    {
+     "id": "1_4",
+     "bottom": [
+      1,
+      4
+     ]
+    },
+    {
+     "id": "2_4",
+     "bottom": [
+      2,
+      4
+     ]
+    },
+    {
+     "id": "3_4",
+     "bottom": [
+      3,
+      4
+     ]
+    },
+    {
+     "id": "0_5",
+     "bottom": [
+      0,
+      5
+     ]
+    },
+    {
+     "id": "1_5",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "2_5",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "3_5",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "0_6",
+     "bottom": [
+      0,
+      6
+     ]
+    },
+    {
+     "id": "1_6",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "2_6",
+     "bottom": [
+      2,
+      6
+     ]
+    },
+    {
+     "id": "3_6",
+     "bottom": [
+      3,
+      6
+     ]
+    },
+    {
+     "id": "4_4",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "4_5",
+     "bottom": [
+      4,
+      5
+     ]
+    },
+    {
+     "id": "5_4",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "5_5",
+     "bottom": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "6_4",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "6_5",
+     "bottom": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "7_4",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "8_4",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "9_4",
+     "bottom": [
+      9,
+      4
+     ]
+    },
+    {
+     "id": "8_5",
+     "bottom": [
+      8,
+      5
+     ]
+    },
+    {
+     "id": "9_5",
+     "bottom": [
+      9,
+      5
+     ]
+    }
+   ],
+   "_comment": "overlays (live oak, cedar posts, standing stones, singing stone), drawn over whatever ground"
   }
  ],
  "recolor": [

@@ -1186,6 +1186,28 @@ const u16 gTilesetPalettes_OrleansRouteFarm[][16] =
     INCGFX_U16("data/tilesets/secondary/orleans_route_farm/palettes/15.pal", ".gbapal"),
 };
 
+const u32 gTilesetTiles_OrleansSaltdome[] = INCGFX_U32("data/tilesets/secondary/orleans_saltdome/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansSaltdome[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_saltdome/palettes/15.pal", ".gbapal"),
+};
+
 const u32 gTilesetTiles_OrleansServices[] = INCGFX_U32("data/tilesets/secondary/orleans_services/tiles.png", ".4bpp.fastSmol");
 
 const u16 gTilesetPalettes_OrleansServices[][16] =
@@ -1206,6 +1228,28 @@ const u16 gTilesetPalettes_OrleansServices[][16] =
     INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/13.pal", ".gbapal"),
     INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/14.pal", ".gbapal"),
     INCGFX_U16("data/tilesets/secondary/orleans_services/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansTemple[] = INCGFX_U32("data/tilesets/secondary/orleans_temple/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansTemple[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_temple/palettes/15.pal", ".gbapal"),
 };
 
 const u32 gTilesetTiles_OrleansTown[] = INCGFX_U32("data/tilesets/secondary/orleans_town/tiles.png", ".4bpp.fastSmol");

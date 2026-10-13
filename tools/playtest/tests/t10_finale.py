@@ -140,10 +140,14 @@ def run(b, t):
     b.set_flag("FLAG_KYOGRE_CALMED", False)
     b.set_flag("FLAG_GROUDON_CALMED", False)
     b.set_flag("FLAG_ROUTE25_OPEN", False)
-    b.warp("LandsEnd_DrownedTemple", 8, 9)
+    b.warp("LandsEnd_DrownedTemple", 9, 11)                # the hall side of the sealed door (9, 10)
     b.interact("U", 120)
     t.check("singing at the sealed door opens it", b.flag("FLAG_TEMPLE_DOOR_OPEN"))
-    b.warp("LandsEnd_DrownedTemple", 8, 4)
+    b.frames(20)
+    b.shot("temple_door_open")
+    b.walk("UUU")                                       # (9, 10), (9, 9), then the causeway (9, 8): the engine's own collision, the BFS reads the closed layout
+    t.check("the door is a map state: its middle column now lets the player through to the causeway", b.pos() == (9, 8), b.where())
+    b.warp("LandsEnd_DrownedTemple", 9, 6)
     b.face("U")
     b.press("A", 4, 20)
     mash_until(b, lambda: b.flag("FLAG_KYOGRE_CALMED"), 300)
@@ -152,7 +156,8 @@ def run(b, t):
             "story=%d at %s" % (b.var("VAR_ORLEANS_STORY"), b.where()))
     b.advance_text(60)
     b.shot("kyogre_done")
-    b.goto(8, 13)
+    b.walk("DDDDD")                                      # back through the open door (the BFS reads the closed layout)
+    b.goto(9, 18)                                       # the dive pool's top step
     b.press("DOWN", 8, 8)
     b.frames(160)
     t.check("the exit mat leaves by script to the islet at the end of Route 22", b.map_name() == "Route22" and b.pos() == (5, 24), b.where())
@@ -169,7 +174,7 @@ def run(b, t):
     mash_until(b, lambda: b.map_name() == "LandsEnd_SaltCathedral", 60)
     b.frames(30)
     t.check("with the Lantern the shaft leads to the Salt Cathedral", b.map_name() == "LandsEnd_SaltCathedral", b.where())
-    b.warp("LandsEnd_SaltCathedral", 10, 4)
+    b.warp("LandsEnd_SaltCathedral", 11, 5)
     b.face("U")
     b.press("A", 4, 20)
     # the second raid: story 40, the channel opens, the ceremony follows at the Old Water
@@ -217,7 +222,7 @@ def run(b, t):
 
     # ---------------------------------------------------------------- F.5 the landing steps (story 41 -> 42)
     b.set_var("VAR_SHRINE_ARRIVAL", 0)
-    b.warp("OldestShrine", 18, 22)
+    b.warp("OldestShrine", 17, 24)
     b.frames(40)
     mash_until(b, lambda: b.var("VAR_ORLEANS_STORY") == 42, 400)
     b.advance_text(120)
@@ -231,7 +236,7 @@ def run(b, t):
     make_room(b, "ITEM_SWAMPERTITE")
     b.set_var("VAR_ORLEANS_STORY", 43)
     b.set_flag("FLAG_RECEIVED_SWAMPERTITE", False)
-    b.warp("OldestShrine", 14, 13)                     # the shrine keeper (14, 12) hands over the owed stone
+    b.warp("OldestShrine", 15, 15)                     # the shrine keeper (15, 14) hands over the owed stone
     b.interact("U", 60)
     t.check("the singing stone gives the Swampertite (own flag, in the bag)", b.flag("FLAG_RECEIVED_SWAMPERTITE") and has_item(b, "ITEM_SWAMPERTITE"))
     b.call("RemoveBagItem", 315, 1)                   # ITEM_SWAMPERTITE: back to a full pocket for the raid below
@@ -243,7 +248,7 @@ def run(b, t):
     # ---------------------------------------------------------------- F.6 the Rayquaza raid, the Swampertite, the epilogue
     b.set_flag("FLAG_RECEIVED_SWAMPERTITE", False)
     b.warp("Route24", 34, 8)                         # (a same-map warp would crash the harness helper)
-    b.warp("OldestShrine", 18, 9)
+    b.warp("OldestShrine", 16, 10)                     # the top step, facing Rayquaza (16, 9)
     b.face("U")
     b.press("A", 4, 20)
     seen = {"story": 0, "swamp": False, "credits": False}

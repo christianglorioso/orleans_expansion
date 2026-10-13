@@ -2,7 +2,7 @@
  "_comment": "The Salt Cathedral (Groudon's arena) (own art, tools/mapgen/tilesets/arenas). Composes on top of the interiors' primary (orleans_building). Compose with: python tools/mapgen/compose.py tools/mapgen/tilesets/arenas/recipes/orleans_saltdome.json (mapping lands in tilesets/arenas/); to register it in the ROM, copy this recipe into tilesets/recipes/ with primary_mapping 'orleans_building.mapping.json' and run compose.py --register.",
  "kind": "secondary",
  "dir": "orleans_saltdome",
- "symbol": "gTileset_OrleansSaltDome",
+ "symbol": "gTileset_OrleansSaltdome",
  "primary_mapping": "../orleans_building.mapping.json",
  "sources": [
   {

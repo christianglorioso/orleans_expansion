@@ -34,10 +34,10 @@ STATICS = [
     dict(key="CELEBI", map="Route7", sp="CELEBI", level=50, at=(32, 10)),
     dict(key="URSALUNA_BM", map="Route23", sp="URSALUNA_BLOODMOON", gfx="URSALUNA_BLOODMOON", level=60, at=(23, 18), night=True, done="FLAG_PG_URSALUNA_DONE"),
     # the raid arenas: the legendary Jayden took is back (only that one): Kyogre if the player took Groudon (pick 2), Groudon if the player took Kyogre
-    dict(key="KYOGRE_RE", map="LandsEnd_DrownedTemple", sp="KYOGRE", gfx="KYOGRE_FRONT", level=70, at=(8, 3), pick=2, raw_gfx=True),
-    dict(key="GROUDON_RE", map="LandsEnd_SaltCathedral", sp="GROUDON", gfx="GROUDON_FRONT", level=70, at=(10, 3), pick=1, raw_gfx=True),
+    dict(key="KYOGRE_RE", map="LandsEnd_DrownedTemple", sp="KYOGRE", gfx="KYOGRE_FRONT", level=70, at=(9, 5), pick=2, raw_gfx=True),
+    dict(key="GROUDON_RE", map="LandsEnd_SaltCathedral", sp="GROUDON", gfx="GROUDON_FRONT", level=70, at=(11, 4), pick=1, raw_gfx=True),
     # Rayquaza returns to the stone, catchable (Mega Rayquaza needs only Dragon Ascent)
-    dict(key="RAYQUAZA", map="OldestShrine", sp="RAYQUAZA", level=70, at=(18, 8)),
+    dict(key="RAYQUAZA", map="OldestShrine", sp="RAYQUAZA", level=70, at=(16, 9)),
 ]
 
 # the items that had no source (tools/dex/obtain_audit.py): balls hidden until the game is cleared
@@ -45,7 +45,7 @@ ITEMS = [
     dict(key="CHANDELURITE", map="Redfield", item="ITEM_CHANDELURITE", at=(26, 12)),
     dict(key="SCOVILLAINITE", map="Redfield", item="ITEM_SCOVILLAINITE", at=(34, 32)),
     dict(key="HEARTHFLAME_MASK", map="Redfield", item="ITEM_HEARTHFLAME_MASK", at=(42, 7)),
-    dict(key="DRAGONINITE", map="OldestShrine", item="ITEM_DRAGONINITE", at=(15, 18)),
+    dict(key="DRAGONINITE", map="OldestShrine", item="ITEM_DRAGONINITE", at=(17, 24)),
     dict(key="CRABOMINITE", map="PointeRouge", item="ITEM_CRABOMINITE", at=(31, 29)),
     dict(key="WEEZINGITE", map="CrescentCity_BlacksnakeBase", item="ITEM_WEEZINGITE", at=(20, 5)),
     dict(key="WELLSPRING_MASK", map="Route19", item="ITEM_WELLSPRING_MASK", at=(36, 3)),

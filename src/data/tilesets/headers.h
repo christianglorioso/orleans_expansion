@@ -306,6 +306,17 @@ const struct Tileset gTileset_OrleansRouteFarm =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_OrleansSaltdome =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansSaltdome,
+    .palettes = gTilesetPalettes_OrleansSaltdome,
+    .metatiles = gMetatiles_OrleansSaltdome,
+    .metatileAttributes = gMetatileAttributes_OrleansSaltdome,
+    .callback = NULL,
+};
+
 const struct Tileset gTileset_OrleansServices =
 {
     .isCompressed = TRUE,
@@ -314,6 +325,17 @@ const struct Tileset gTileset_OrleansServices =
     .palettes = gTilesetPalettes_OrleansServices,
     .metatiles = gMetatiles_OrleansServices,
     .metatileAttributes = gMetatileAttributes_OrleansServices,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_OrleansTemple =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OrleansTemple,
+    .palettes = gTilesetPalettes_OrleansTemple,
+    .metatiles = gMetatiles_OrleansTemple,
+    .metatileAttributes = gMetatileAttributes_OrleansTemple,
     .callback = NULL,
 };
 

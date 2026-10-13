@@ -2541,7 +2541,7 @@ def first_pass(entry):
 
 
 BLENDS = "--blends" in sys.argv  # request transition and overlay tiles (then compose, then run again)
-HANDMADE = {"crescent_city", "pointe_rouge", "storms_edge", "camp_cocodrie", "lutins_hollow", "redfield", "lands_end"}  # own generators (crescent.py, pointe.py, storms_edge.py, camp.py, hollow.py, redfield.py, lands_end.py)
+HANDMADE = {"crescent_city", "pointe_rouge", "storms_edge", "camp_cocodrie", "lutins_hollow", "redfield", "lands_end", "oldest_shrine"}  # own generators (crescent.py, pointe.py, storms_edge.py, camp.py, hollow.py, redfield.py, lands_end.py, oldest_shrine.py)
 SACRED = {"oldest_shrine"}  # the shrine island: its courtyard stays a courtyard, its ring of trees the mockup's
 LANDINGS = {"oldest_shrine", "route_4", "route_9", "route_12"}  # routes whose mockups mark a boat landing
 SALT = {"route_2", "route_21", "route_22", "isle_marais", "storms_edge", "lands_end"}  # on the Gulf: salt water

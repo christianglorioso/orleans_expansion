@@ -10,7 +10,7 @@ Route22_EventScript_DiveSpot::
 	msgbox Route22_Text_DiveGo, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	warpsilent MAP_LANDS_END_DROWNED_TEMPLE, 8, 13
+	warpsilent MAP_LANDS_END_DROWNED_TEMPLE, 9, 18
 	waitstate
 	releaseall
 	end

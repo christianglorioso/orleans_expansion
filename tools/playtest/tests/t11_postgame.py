@@ -162,7 +162,7 @@ def run(b, t):
     # ---------------------------------------------------------------- Rayquaza returns to the stone
     b.set_flag("FLAG_PG_RAYQUAZA", False)
     other_map(b)
-    b.warp("OldestShrine", 18, 12)
+    b.warp("OldestShrine", 17, 14)
     b.frames(30)
     t.check("at story 45 Rayquaza's post-game object is shown", not b.flag("FLAG_PG_RAYQUAZA"))
     rq = [o for o in map_data("OldestShrine")["objects"] if o.get("flag") == "FLAG_PG_RAYQUAZA"][0]

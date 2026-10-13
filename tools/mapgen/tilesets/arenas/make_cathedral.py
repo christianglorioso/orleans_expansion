@@ -977,7 +977,7 @@ def main():
                           for n, p in sh.pieces.items()], FAMILIES, "cathedral")
     for b in bad:
         print("off-family tile:", b)
-    write(sh, meta, "sc", "orleans_saltdome", "gTileset_OrleansSaltDome", "cathedral.png", FAMILIES,
+    write(sh, meta, "sc", "orleans_saltdome", "gTileset_OrleansSaltdome", "cathedral.png", FAMILIES,
           "The Salt Cathedral (Groudon's arena)")
     print(f"cathedral: {len([n for n in sh.pieces if not n.endswith('__top')])} pieces, sheet {sh.image.size}, {len(bad)} off-family tiles")
 

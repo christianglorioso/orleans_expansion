@@ -12,7 +12,7 @@ Route24_EventScript_SaltShaft::
 	msgbox Route24_Text_ShaftGo, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	warpsilent MAP_LANDS_END_SALT_CATHEDRAL, 10, 15
+	warpsilent MAP_LANDS_END_SALT_CATHEDRAL, 11, 20
 	waitstate
 	releaseall
 	end

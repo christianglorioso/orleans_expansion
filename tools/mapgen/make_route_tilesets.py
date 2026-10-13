@@ -19,8 +19,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TS = os.path.join(HERE, "tilesets")
 VARIANTS = {"orleans_river": {"symbol": "gTileset_OrleansRiver",
                               "what": "routes along river channels (the levee pieces)"},
-            "orleans_route_b": {"symbol": "gTileset_OrleansRouteB",
-                                "what": "Route 14 and the Oldest Shrine (the later routes' set; the Gulf and dry routes split off)"},
+            "orleans_route_b": {"symbol": "gTileset_OrleansRouteB", "addon": "shrine_tileset",
+                                "what": "Route 14 and the Oldest Shrine (the later routes' set; the Gulf and dry routes split off) + the shrine's own art"},
             "orleans_coast": {"symbol": "gTileset_OrleansCoast",
                               "what": "Route 2, the coast: its power line, wires, lookout and beach (landmark art, 174+ tiles)"},
             "orleans_gulf": {"symbol": "gTileset_OrleansGulf",

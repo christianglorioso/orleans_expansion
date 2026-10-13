@@ -317,3 +317,12 @@ STYLES = {
 import interior_rooms_world as _world  # noqa: E402
 STYLES["generic"] = _world.STYLE
 ROOMS += _world.world_rooms(room)
+
+# the finale's two arenas are drawn from the approved arena art (arena_rooms.py), not from their planning mockups: the Drowned Temple and
+# the Salt Cathedral on their own secondaries, the layout cell for cell
+import arena_rooms as _arena  # noqa: E402
+for _r in ROOMS:
+    _a = {"lands_end_drowned_temple": "temple", "lands_end_salt_cathedral": "cathedral"}.get(_r.get("mockup"))
+    if _a:
+        _r.update(arena=_a, tileset=_arena.ARENAS_BY_NAME[_a]["tileset"], secondary=_arena.ARENAS_BY_NAME[_a]["secondary"],
+                  border=_arena.ARENAS_BY_NAME[_a]["border"])

@@ -3138,20 +3138,20 @@
     {
       "id": "LAYOUT_LANDS_END_DROWNED_TEMPLE",
       "name": "LandsEnd_DrownedTemple_Layout",
-      "width": 17,
-      "height": 15,
+      "width": 19,
+      "height": 21,
       "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
+      "secondary_tileset": "gTileset_OrleansTemple",
       "border_filepath": "data/layouts/LandsEnd_DrownedTemple/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_DrownedTemple/map.bin"
     },
     {
       "id": "LAYOUT_LANDS_END_SALT_CATHEDRAL",
       "name": "LandsEnd_SaltCathedral_Layout",
-      "width": 21,
-      "height": 17,
+      "width": 23,
+      "height": 22,
       "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
+      "secondary_tileset": "gTileset_OrleansSaltdome",
       "border_filepath": "data/layouts/LandsEnd_SaltCathedral/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_SaltCathedral/map.bin"
     }

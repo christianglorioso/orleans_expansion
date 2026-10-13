@@ -405,7 +405,11 @@ def interior_people(key, people, positions):
     """The room's people and their positions: the overlay's if it has one, else what the generator made."""
     ov = INTERIOR.get(key)
     if ov and ov.get("people"):
-        return list(ov["people"]), list(ov.get("positions", positions))
+        out, pos = list(ov["people"]), list(ov.get("positions", positions))
+        for kind, text, opts, at in ov.get("extra", []):  # the post-game objects (story_data_ch10) come after the room's own people
+            out.append((kind, text, opts) if opts else (kind, text))
+            pos.append(at)
+        return out, pos
     if ov and (ov.get("texts") or ov.get("opts") or ov.get("extra")):  # change some of the generated people in place
         out = []
         for i, p in enumerate(people):

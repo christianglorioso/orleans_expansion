@@ -765,7 +765,7 @@ def main():
     # ---- the Salt Cathedral
     c = cathedral_mock()
     cimg = c.render()
-    caption(cimg, "Salt Cathedral (Groudon) - mock layout, 23 x 22, own secondary gTileset_OrleansSaltDome, 3x",
+    caption(cimg, "Salt Cathedral (Groudon) - mock layout, 23 x 22, own secondary gTileset_OrleansSaltdome, 3x",
             c.notes + [f"Tileset: {stats['orleans_saltdome']}; per-tile palette check 0 off-family; "
                        f"{bad['orleans_saltdome']} metatiles off their art."]).save(
         os.path.join(REVIEW, "salt_cathedral_mock.png"))
@@ -845,7 +845,7 @@ def review_sheet(stats, bad, est):
         if name == "chandelier":
             im = with_top("cathedral.json", "cathedral.png", name)
         its.append((name, im, p, f"{name} {p['w']}x{p['h']}: {distinct_tiles(im)} t"))
-    secs.append(section(its, "Salt Cathedral (Groudon): gTileset_OrleansSaltDome, own secondary on orleans_building",
+    secs.append(section(its, "Salt Cathedral (Groudon): gTileset_OrleansSaltdome, own secondary on orleans_building",
                         f"{stats['orleans_saltdome']}  |  budget 512 tiles / 512 metatiles / 7 palettes  |  families "
                         f"SALT, MINE, HEAT  |  {bad['orleans_saltdome']} metatiles off art  |  pieces at 4x"))
     # shrine

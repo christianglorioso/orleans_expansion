@@ -1,8 +1,8 @@
 {
- "_comment": "The Salt Cathedral (Groudon's arena): piece -> sheet cell rectangle (16 px cells), the metatile names per cell ('sc:<id>' in the composed tileset gTileset_OrleansSaltDome), walkable cells (everything else should block), notes. Made by make_cathedral.py.",
+ "_comment": "The Salt Cathedral (Groudon's arena): piece -> sheet cell rectangle (16 px cells), the metatile names per cell ('sc:<id>' in the composed tileset gTileset_OrleansSaltdome), walkable cells (everything else should block), notes. Made by make_cathedral.py.",
  "png": "cathedral.png",
  "source": "sc",
- "tileset": "gTileset_OrleansSaltDome",
+ "tileset": "gTileset_OrleansSaltdome",
  "families": {
   "SALT": [
    [

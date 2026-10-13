@@ -249,7 +249,8 @@ class Builder:
                 n = bits.count("1")
                 elev = patch_elev if n >= 2 else self.ts["terrain"].get(self.grid[y][x], {"elev": 3})["elev"]
                 # "collision": a blocking patch (the dry country's cane wall): its tiles with two or more corners in it
-                self.blocks[y][x] = block(hx(tile), a.get("collision", 0) if n >= 2 else 0, elev)
+                # "open_center": the set's C piece (a raised platform's top, the Oldest Shrine's mound) does not block, only its edges do
+                self.blocks[y][x] = block(hx(tile), a.get("collision", 0) if n >= 2 and not (key == "C" and a.get("open_center")) else 0, elev)
         if a.get("face"):
             # "face": the cliff's face extension (dry-country rock_wall, make_dry_country.face_cells): under every south edge
             # and outer corner the plain cell below the wall gets a face piece (blocking); _il / _ir when the wall steps

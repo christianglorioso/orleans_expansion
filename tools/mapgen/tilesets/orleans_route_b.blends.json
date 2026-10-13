@@ -533,5 +533,327 @@
    "base": "ekat:water_C",
    "art": "wpr:3_0"
   }
+ },
+ {
+  "id": "ovl_osho_0_4__ekat_water_inSE",
+  "overlay": {
+   "base": "ekat:water_inSE",
+   "art": "osho:0_4"
+  }
+ },
+ {
+  "id": "ovl_osho_0_4__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "osho:0_4"
+  }
+ },
+ {
+  "id": "ovl_osho_0_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:0_5"
+  }
+ },
+ {
+  "id": "ovl_osho_0_5__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "osho:0_5"
+  }
+ },
+ {
+  "id": "ovl_osho_0_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:0_6"
+  }
+ },
+ {
+  "id": "ovl_osho_11_2__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "osho:11_2"
+  }
+ },
+ {
+  "id": "ovl_osho_11_3__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "osho:11_3"
+  }
+ },
+ {
+  "id": "ovl_osho_12_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:12_2"
+  }
+ },
+ {
+  "id": "ovl_osho_1_4__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "osho:1_4"
+  }
+ },
+ {
+  "id": "ovl_osho_1_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:1_5"
+  }
+ },
+ {
+  "id": "ovl_osho_1_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:1_6"
+  }
+ },
+ {
+  "id": "ovl_osho_2_4__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "osho:2_4"
+  }
+ },
+ {
+  "id": "ovl_osho_2_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:2_5"
+  }
+ },
+ {
+  "id": "ovl_osho_2_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:2_6"
+  }
+ },
+ {
+  "id": "ovl_osho_3_4__ekat_water_inSW",
+  "overlay": {
+   "base": "ekat:water_inSW",
+   "art": "osho:3_4"
+  }
+ },
+ {
+  "id": "ovl_osho_3_4__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "osho:3_4"
+  }
+ },
+ {
+  "id": "ovl_osho_3_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:3_5"
+  }
+ },
+ {
+  "id": "ovl_osho_3_5__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "osho:3_5"
+  }
+ },
+ {
+  "id": "ovl_osho_3_6__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:3_6"
+  }
+ },
+ {
+  "id": "ovl_osho_4_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:4_4"
+  }
+ },
+ {
+  "id": "ovl_osho_4_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:4_5"
+  }
+ },
+ {
+  "id": "ovl_osho_5_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:5_4"
+  }
+ },
+ {
+  "id": "ovl_osho_5_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:5_5"
+  }
+ },
+ {
+  "id": "ovl_osho_6_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:6_4"
+  }
+ },
+ {
+  "id": "ovl_osho_6_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:6_5"
+  }
+ },
+ {
+  "id": "ovl_osho_7_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:7_4"
+  }
+ },
+ {
+  "id": "ovl_osho_8_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:8_4"
+  }
+ },
+ {
+  "id": "ovl_osho_8_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:8_5"
+  }
+ },
+ {
+  "id": "ovl_osho_9_4__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:9_4"
+  }
+ },
+ {
+  "id": "ovl_osho_9_5__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "osho:9_5"
+  }
+ },
+ {
+  "id": "ovl_wpr_2_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:2_0"
+  }
+ },
+ {
+  "id": "ovl_osho_4_4__osh_berm_landSE",
+  "overlay": {
+   "base": "osh:berm_landSE",
+   "art": "osho:4_4"
+  }
+ },
+ {
+  "id": "ovl_osho_4_4__osh_berm_landSW",
+  "overlay": {
+   "base": "osh:berm_landSW",
+   "art": "osho:4_4"
+  }
+ },
+ {
+  "id": "ovl_osho_4_5__osh_berm_inNE",
+  "overlay": {
+   "base": "osh:berm_inNE",
+   "art": "osho:4_5"
+  }
+ },
+ {
+  "id": "ovl_osho_4_5__osh_berm_inNW",
+  "overlay": {
+   "base": "osh:berm_inNW",
+   "art": "osho:4_5"
+  }
+ },
+ {
+  "id": "ovl_osho_6_4__osh_berm_C",
+  "overlay": {
+   "base": "osh:berm_C",
+   "art": "osho:6_4"
+  }
+ },
+ {
+  "id": "ovl_osho_6_4__osh_berm_landSE",
+  "overlay": {
+   "base": "osh:berm_landSE",
+   "art": "osho:6_4"
+  }
+ },
+ {
+  "id": "ovl_osho_6_4__osh_berm_landSW",
+  "overlay": {
+   "base": "osh:berm_landSW",
+   "art": "osho:6_4"
+  }
+ },
+ {
+  "id": "ovl_osho_6_5__osh_berm_inSE",
+  "overlay": {
+   "base": "osh:berm_inSE",
+   "art": "osho:6_5"
+  }
+ },
+ {
+  "id": "ovl_osho_6_5__osh_berm_inSW",
+  "overlay": {
+   "base": "osh:berm_inSW",
+   "art": "osho:6_5"
+  }
+ },
+ {
+  "id": "ovl_osho_6_5__osh_berm_landNE",
+  "overlay": {
+   "base": "osh:berm_landNE",
+   "art": "osho:6_5"
+  }
+ },
+ {
+  "id": "ovl_osho_6_5__osh_berm_landNW",
+  "overlay": {
+   "base": "osh:berm_landNW",
+   "art": "osho:6_5"
+  }
+ },
+ {
+  "id": "ovl_osho_7_4__osh_mound_E",
+  "overlay": {
+   "base": "osh:mound_E",
+   "art": "osho:7_4"
+  }
+ },
+ {
+  "id": "ovl_osho_7_4__osh_mound_W",
+  "overlay": {
+   "base": "osh:mound_W",
+   "art": "osho:7_4"
+  }
+ },
+ {
+  "id": "ovl_osho_8_4__osh_mound_N",
+  "overlay": {
+   "base": "osh:mound_N",
+   "art": "osho:8_4"
+  }
+ },
+ {
+  "id": "ovl_osho_9_4__osh_mound_N",
+  "overlay": {
+   "base": "osh:mound_N",
+   "art": "osho:9_4"
+  }
  }
 ]

@@ -196,8 +196,14 @@ const u16 gMetatileAttributes_OrleansRouteDry[] = INCBIN_U16("data/tilesets/seco
 const u16 gMetatiles_OrleansRouteFarm[] = INCBIN_U16("data/tilesets/secondary/orleans_route_farm/metatiles.bin");
 const u16 gMetatileAttributes_OrleansRouteFarm[] = INCBIN_U16("data/tilesets/secondary/orleans_route_farm/metatile_attributes.bin");
 
+const u16 gMetatiles_OrleansSaltdome[] = INCBIN_U16("data/tilesets/secondary/orleans_saltdome/metatiles.bin");
+const u16 gMetatileAttributes_OrleansSaltdome[] = INCBIN_U16("data/tilesets/secondary/orleans_saltdome/metatile_attributes.bin");
+
 const u16 gMetatiles_OrleansServices[] = INCBIN_U16("data/tilesets/secondary/orleans_services/metatiles.bin");
 const u16 gMetatileAttributes_OrleansServices[] = INCBIN_U16("data/tilesets/secondary/orleans_services/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansTemple[] = INCBIN_U16("data/tilesets/secondary/orleans_temple/metatiles.bin");
+const u16 gMetatileAttributes_OrleansTemple[] = INCBIN_U16("data/tilesets/secondary/orleans_temple/metatile_attributes.bin");
 
 const u16 gMetatiles_OrleansTown[] = INCBIN_U16("data/tilesets/secondary/orleans_town/metatiles.bin");
 const u16 gMetatileAttributes_OrleansTown[] = INCBIN_U16("data/tilesets/secondary/orleans_town/metatile_attributes.bin");

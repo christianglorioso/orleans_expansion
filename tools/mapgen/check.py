@@ -38,7 +38,8 @@ OBJECT_PREFIXES = ("johto:02A", "johto:03A", "johto:003",  # the approach lamp (
                    "patch:shrine", "patch:ovl_", "vgen:", "patch:mart", "patch:pc_door",
                    "patch:gym_door", "ekat:log", "ekat:stump", "ekat:cane", "004", "patch:peppers", "patch:cane", "patch:fl_", "patch:fnt_fl", "np:", "patch:gymsign",
                    "ccwr:", "cclr:", "ccsr:", "lep:", "patch:pcw_", "patch:fence_", "patch:sign_dry", "patch:lamp_dry",
-                   "patch:se_h", "patch:se_step", "bd:", "patch:bdg_", "patch:bk_")  # Crescent City's own opaque pieces (boardwalk planks, flower beds); lep: Land's End's planks
+                   "patch:se_h", "patch:se_step", "bd:", "patch:bdg_", "patch:bk_",
+                   "osh:")  # Crescent City's own opaque pieces (boardwalk planks, flower beds); lep: Land's End's planks
 
 
 def opt(args, name, default):

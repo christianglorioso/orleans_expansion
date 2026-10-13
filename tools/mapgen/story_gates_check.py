@@ -508,15 +508,21 @@ def verse_panels():
 def finale_rooms():
     """Chapter 9: in the Tide Hall the sealed door is the corridor's only way to Kyogre, Kyogre and Groudon have a standing cell to face them, the
     exits are on the entry side, and the Oldest Shrine's scene cells are free."""
+    import arena_rooms
     t = Grid("LandsEnd_DrownedTemple")
     ex = t.m["warp_events"][0]
-    door = next(o for o in t.m["object_events"] if o.get("local_id", "").endswith("_THE_SEALED0"))
-    ky = next(o for o in t.m["object_events"] if o.get("local_id", "").endswith("_KYOGRE_RAID1"))
+    sign = next(b for b in t.m["bg_events"] if str(b.get("script", "")).endswith("_TheSealed0"))
+    ky = next(o for o in t.m["object_events"] if o.get("local_id", "").endswith("_KYOGRE_RAID0"))
+    # the sealed door is a map state (arena_rooms.states): closed in map.bin, its middle column walkable once StateDoorOpen has run
+    opened = {(x, y): (0 if walk else 1, 3) for x, y, _n, walk in arena_rooms.states("temple")["DoorOpen"]}
     r_shut = t.fill([(ex["x"], ex["y"] - 1)])
-    t2 = Grid("LandsEnd_DrownedTemple", remove_objects=(door["local_id"],))
-    r_open = t2.fill([(ex["x"], ex["y"] - 1)])
-    check(door["flag"] == "FLAG_TEMPLE_DOOR_OPEN" and (ky["x"], ky["y"] + 1) not in r_shut and (ky["x"], ky["y"] + 1) in r_open,
-          "Drowned Temple: Kyogre's standing cell is reachable only once the sealed door is open (FLAG_TEMPLE_DOOR_OPEN)")
+    r_open = Grid("LandsEnd_DrownedTemple", raised=opened).fill([(ex["x"], ex["y"] - 1)])
+    sing = (sign["x"], sign["y"] + 1)
+    inc = open("tools/mapgen/story/LandsEnd_DrownedTemple.inc", encoding="utf-8").read()
+    check(ky["flag"] == "FLAG_HIDE_KYOGRE_RAID" and (ky["x"], ky["y"] + 1) not in r_shut and (ky["x"], ky["y"] + 1) in r_open
+          and sing in r_shut and not t.walk(sign["x"], sign["y"]) and (sign["x"], sign["y"]) in r_open
+          and "call_if_set FLAG_TEMPLE_DOOR_OPEN, LandsEnd_DrownedTemple_EventScript_StateDoorOpen" in inc and "StateDoorOpen::" in open("data/maps/LandsEnd_DrownedTemple/scripts.inc", encoding="utf-8").read(),
+          "Drowned Temple: Kyogre's standing cell is reachable only once the sealed door is open (map state StateDoorOpen, set on load from FLAG_TEMPLE_DOOR_OPEN); the singing cell in front of it is reachable")
     g = Grid("LandsEnd_SaltCathedral")
     ex = g.m["warp_events"][0]
     gr = next(o for o in g.m["object_events"] if o.get("local_id", "").endswith("_GROUDON_RAID0"))
@@ -546,8 +552,10 @@ def frontier_gate():
     bad = []
     for (m, key, kind, flag, gfx, (x, y), s) in c10.all_objects():
         g = Grid(m)
-        if not (g.w > x and g.h > y) or (g.cell(x, y)[0] != 0):
-            bad.append(f"{m} {key} {x},{y} is not a walkable cell")
+        # an arena's legend stands on its dais (a blocking cell in the art): the player faces it from the cell below
+        fy = y + 1 if key in ("KYOGRE_RE", "GROUDON_RE") else y
+        if not (g.w > x and g.h > fy) or (g.cell(x, fy)[0] != 0):
+            bad.append(f"{m} {key} {x},{fy} is not a walkable cell")
         o = [e for e in g.m["object_events"] if e.get("flag") == flag]
         if not o:
             bad.append(f"{m} {key}: no object with {flag}")

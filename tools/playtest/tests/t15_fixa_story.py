@@ -295,9 +295,9 @@ def run(b, t):
     b.set_flag("FLAG_RECEIVED_LEGENDARY", True)
     b.set_var("VAR_ORLEANS_LEGENDARY_PICK", 2)
     b.give_mon("SPECIES_KYOGRE", 60)
-    b.warp("OldestShrine", 18, 22)
+    b.warp("OldestShrine", 17, 24)
     b.frames(30)
-    b.warp("OldestShrine", 18, 9)
+    b.warp("OldestShrine", 16, 10)
     b.face("U")
     b.press("A", 4, 20)
     for _ in range(60):
