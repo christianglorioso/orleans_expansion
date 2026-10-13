@@ -357,7 +357,7 @@ SINGLE_BATTLE_TEST("Embargo doesn't prevent Mega Evolution")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BATON_PASS, opponent);
         MESSAGE("2 sent out Charizard!");
         // Turn 3
-        MESSAGE("The opposing Charizard's Charizardite Y is reacting to 2's Mega Ring!");
+        MESSAGE("The opposing Charizard's Charizardite Y is reacting to 2's Cypress Charm!");
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, opponent);
         MESSAGE("The opposing Charizard has Mega Evolved into Mega Charizard!");
     }
