@@ -43,7 +43,7 @@ OldWater_SongHouse_EventScript_HideVerse4:
 OldWater_SongHouse_EventScript_Tupelo0::
 	lock
 	faceplayer
-	goto_if_ge VAR_ORLEANS_STORY, 38, OldWater_SongHouse_EventScript_TupeloTold
+	goto_if_ge VAR_ORLEANS_STORY, 38, OldWater_SongHouse_EventScript_TupeloLate
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
 	goto_if_ge VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Gate
 OldWater_SongHouse_EventScript_TupeloRest:
@@ -55,6 +55,12 @@ OldWater_SongHouse_EventScript_TupeloRest:
 	msgbox OldWater_SongHouse_Text_TupeloBringVerse, MSGBOX_DEFAULT
 	release
 	end
+
+@ story 38+: the telling is whole, but a player who skipped verse 6 / the carver still gets the charm (hotfix 2026-10-13)
+OldWater_SongHouse_EventScript_TupeloLate:
+	goto_if_set FLAG_RECEIVED_CYPRESS_CHARM, OldWater_SongHouse_EventScript_TupeloTold
+	goto_if_unset FLAG_BADGE06_GET, OldWater_SongHouse_EventScript_TupeloTold
+	goto OldWater_SongHouse_EventScript_TupeloVerse6Gate
 
 OldWater_SongHouse_EventScript_TupeloTrust:
 	msgbox OldWater_SongHouse_Text_TupeloTrust, MSGBOX_DEFAULT

@@ -325,7 +325,7 @@
 #define FLAG_TEMPLE_DOOR_OPEN                            0x11B // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_HIDE_KYOGRE_RAID                            0x11C // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_FINALE_NEVER_SET                            0x11D // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
-#define FLAG_ORLEANS_POOL_138                           0x11E
+#define FLAG_HIDE_POINTE_ICE_GUARD                       0x11E // Orleans hotfix: Pointe Rouge ice plant guard hidden from story 45 (set in PGSetup)
 #define FLAG_ORLEANS_POOL_139                           0x11F
 #define FLAG_ORLEANS_POOL_140                           0x120
 #define FLAG_ORLEANS_POOL_141                           0x121

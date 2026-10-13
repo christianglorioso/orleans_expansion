@@ -224,7 +224,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PointeRouge_EventScript_IcePlantGuard",
-      "flag": "0"
+      "flag": "FLAG_HIDE_POINTE_ICE_GUARD"
     },
     {
       "local_id": "LOCALID_POINTE_ROUGE_PG_CRABOMINITE",

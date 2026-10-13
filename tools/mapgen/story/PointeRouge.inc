@@ -218,7 +218,18 @@ PointeRouge_OnTransitionPG:
 @ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
 PointeRouge_EventScript_PGSetup:
 	call_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_PGHide
+	call_if_ge VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardGone
+	call_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardHere
 PointeRouge_EventScript_PGSetupDone:
+	return
+
+@ the ice plant guard steps aside from story 45, state-based so a save that already cleared the game is fixed too
+PointeRouge_EventScript_IceGuardGone:
+	setflag FLAG_HIDE_POINTE_ICE_GUARD
+	return
+
+PointeRouge_EventScript_IceGuardHere:
+	clearflag FLAG_HIDE_POINTE_ICE_GUARD
 	return
 
 PointeRouge_EventScript_PGHide:

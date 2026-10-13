@@ -229,6 +229,40 @@ def run(b, t):
             and has_item(b, "ITEM_LYCANROCITE"), "done=%s got=%s" % (b.flag("FLAG_ROUTE14_ROUGAROU_DONE"), b.flag("FLAG_RECEIVED_LYCANROCITE")))
     set_time(b, DAY)
 
+    # ---------------------------------------------------------------- Wren's raid partner: the starter line the player did NOT take (hotfix 2026-10-13)
+    from bot import enum_value
+    lines = {0: ("FUECOCO", "CROCALOR", "SKELEDIRGE"), 1: ("TOTODILE", "CROCONAW", "FERALIGATR"), 2: ("CHIKORITA", "BAYLEEF", "MEGANIUM")}
+    allstarter = {n for v in lines.values() for n in v}
+    for starter, want in lines.items():
+        b.set_var("VAR_STARTER_MON", starter)
+        b.set_var("VAR_ORLEANS_STORY", 33)
+        b.set_var("VAR_REDFIELD_RAID_CALL", 1)
+        b.set_var("VAR_OLD_WATER_RAID", 1)
+        b.warp("OldWater", 22, 32)
+        for _ in range(400):
+            if b.in_battle():
+                break
+            b.press("A", 4, 22)
+        b.frames(120)
+        base = b.sym("gParties") + 2 * 6 * 100                      # B_TRAINER_PARTNER = 2
+        got = []
+        for k in range(3):
+            sp = b.call("GetMonData2", base + k * 100, 18) & 0xFFFF
+            got.append([n for n in allstarter if enum_value("species.h", "SPECIES_" + n) == sp])
+        names = [g[0] if g else "?" for g in got]
+        t.check("Wren's partner team for VAR_STARTER_MON=%d fields the %s line (%s)" % (starter, want[0], names),
+                b.in_battle() and any(n in want for n in names) and not any(n in allstarter - set(want) for n in names), str(names))
+        lose_battle(b)
+        menu_choice(b, 1)                                           # NOT YET
+        for _ in range(30):
+            if b.map_name() == "Redfield":
+                break
+            b.advance_text(60)
+            b.frames(30)
+    b.set_var("VAR_STARTER_MON", 2)
+    b.set_var("VAR_ORLEANS_STORY", 34)
+    b.set_var("VAR_OLD_WATER_RAID", 2)
+
     # ---------------------------------------------------------------- static checks: the route trainers
     for name, n in (("Route14", 6), ("Route15", 5), ("Route16", 5), ("Route17", 4)):
         tr = [o for o in map_data(name)["objects"] if o.get("trainer_type") == "TRAINER_TYPE_NORMAL" and o.get("script", "").startswith(name + "_EventScript_Trainer")]

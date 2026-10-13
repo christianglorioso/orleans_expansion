@@ -295,6 +295,13 @@ def pointe_gym():
     door2 = (39, 25)
     nb = [(door2[0] + dx, door2[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)) if pr.walk(door2[0] + dx, door2[1] + dy) or guard and (door2[0] + dx, door2[1] + dy) == (guard["x"], guard["y"])]
     check(guard is not None and nb == [(guard["x"], guard["y"])], f"Pointe Rouge: the ice plant door's only approach cell {nb} is held by the guard")
+    check(guard is not None and guard.get("flag") == "FLAG_HIDE_POINTE_ICE_GUARD", "Pointe Rouge: the ice plant guard is hidden by FLAG_HIDE_POINTE_ICE_GUARD (set by PGSetup from story 45)")
+    pr2 = Grid("PointeRouge", remove_objects=["LOCALID_POINTE_ROUGE_ICE_PLANT_GUARD"])
+    reach_door = pr2.fill([(39, 27)])
+    check((39, 26) in reach_door and (39, 25) in reach_door, "Pointe Rouge, guard gone (story 45+): the ice plant door (39, 25) is reachable from the street")
+    ps = open(os.path.join(ROOT, "data", "maps", "PointeRouge", "scripts.inc"), encoding="utf-8").read()
+    check("call_if_ge VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardGone" in ps and "setflag FLAG_HIDE_POINTE_ICE_GUARD" in ps,
+          "Pointe Rouge: PGSetup hides the ice plant guard state-based at story >= 45 (cleared saves are fixed too)")
 
 
 def world_gates():

@@ -51,6 +51,15 @@ def run(b, t):
     b.frames(60)
     t.check("at story 33 the arrival changes nothing (story 33, still armed)", b.var("VAR_ORLEANS_STORY") == 33 and b.var("VAR_LANDS_END_ARRIVAL") == 0,
             "story=%d var=%d" % (b.var("VAR_ORLEANS_STORY"), b.var("VAR_LANDS_END_ARRIVAL")))
+    # regression (hotfix 2026-10-13): the early arrival used to run setrespawn every frame and freeze the player (no movement, no Start menu)
+    moved = False
+    p0 = b.pos()
+    for d in ("D", "R", "U", "L"):
+        if b.step(d):
+            moved = True
+            break
+    t.check("at story 33 the player can move in Land's End (the early arrival must not freeze the frame script)", moved and b.pos() != p0, "%s -> %s" % (p0, b.pos()))
+    t.check("at story 33 the arrival is still armed after moving", b.var("VAR_LANDS_END_ARRIVAL") == 0 and b.var("VAR_ORLEANS_STORY") == 33)
     talk(b, "LandsEnd_Gym", "Heron0", "D", 300)
     t.check("Heron refuses at story 33 (no badge, story stays 33)", not b.flag("FLAG_BADGE08_GET") and b.var("VAR_ORLEANS_STORY") == 33)
     b.set_var("VAR_ORLEANS_STORY", 34)               # the raid is done later

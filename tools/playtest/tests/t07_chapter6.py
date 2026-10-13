@@ -129,3 +129,56 @@ def run(b, t):
     t.check("the vendor's shop menu opens with the charm", shop, str(b.active_tasks()))
     b.press("B", 4, 30)
     b.press("B", 4, 30)
+
+    # ---------------------------------------------------------------- hotfix 2026-10-13: the charm is never lost after the telling (story 38+)
+    from bot import enum_value
+
+    def lose_charm():
+        b.call("RemoveBagItem", enum_value("items.h", "ITEM_MEGA_RING"), 1)
+        b.set_flag("FLAG_RECEIVED_CYPRESS_CHARM", False)
+        b.set_flag("FLAG_VERSE6_HEARD", False)
+
+    def shop_opens():
+        o = obj_by_script("CrescentCity_Dept3f", "Clerk0")
+        b.warp("CrescentCity_Dept3f", o["x"], o["y"] + 1)
+        b.face("U")
+        b.press("A", 4, 30)
+        for _ in range(30):
+            if any("hopMenu" in str(x) or "Shop" in str(x) for x in b.active_tasks()):
+                break
+            b.press("A", 4, 30)
+        opened = any("hopMenu" in str(x) or "Shop" in str(x) for x in b.active_tasks())
+        for _ in range(4):
+            b.press("B", 4, 30)
+        b.advance_text(30)
+        return opened
+
+    b.set_flag("FLAG_BADGE06_GET", True)
+    lose_charm()
+    b.set_var("VAR_ORLEANS_STORY", 37)
+    talk(b, "OldWater_Carver", "Carver0", "D")
+    t.check("story 37, verse 6 unsung: the carver still withholds the charm", not has_item(b, "ITEM_MEGA_RING") and not b.flag("FLAG_RECEIVED_CYPRESS_CHARM"))
+    t.check("no charm: the vendor stays closed (stock opens on owning the charm, not on the story)", not shop_opens())
+
+    b.set_var("VAR_ORLEANS_STORY", 38)
+    talk(b, "OldWater_Carver", "Carver0", "D")
+    t.check("story 38, verse 6 never sung: the carver gives the charm (badge 6); the story stays 38", has_item(b, "ITEM_MEGA_RING") and b.flag("FLAG_RECEIVED_CYPRESS_CHARM") and b.var("VAR_ORLEANS_STORY") == 38,
+            "story=%d" % b.var("VAR_ORLEANS_STORY"))
+    t.check("story 38 with the charm: the vendor opens", shop_opens())
+
+    lose_charm()
+    b.set_var("VAR_ORLEANS_STORY", 39)          # (entering the song house at 38 plays the telling and moves on to 39)
+    talk(b, "OldWater_SongHouse", "Tupelo0", "D")
+    t.check("story 39, never sang verse 6: Tupelo still sings it (flag set, story unchanged)", b.flag("FLAG_VERSE6_HEARD") and b.var("VAR_ORLEANS_STORY") == 39,
+            "heard=%s story=%d" % (b.flag("FLAG_VERSE6_HEARD"), b.var("VAR_ORLEANS_STORY")))
+    talk(b, "OldWater_Carver", "Carver0", "D")
+    t.check("story 39: the carver gives the charm after Tupelo's verse", has_item(b, "ITEM_MEGA_RING") and b.flag("FLAG_RECEIVED_CYPRESS_CHARM"))
+
+    lose_charm()
+    b.set_var("VAR_ORLEANS_STORY", 45)
+    talk(b, "OldWater_Carver", "Carver0", "D")
+    t.check("story 45, verse 6 never heard: the carver alone gives the charm (badge 6 held)", has_item(b, "ITEM_MEGA_RING") and b.flag("FLAG_RECEIVED_CYPRESS_CHARM") and b.var("VAR_ORLEANS_STORY") == 45,
+            "story=%d" % b.var("VAR_ORLEANS_STORY"))
+    lose_charm()
+    talk(b, "OldWater_SongHouse", "Tupelo0", "D")
+    t.check("story 45: Tupelo sings verse 6 for a player without the charm", b.flag("FLAG_VERSE6_HEARD") and b.var("VAR_ORLEANS_STORY") == 45)

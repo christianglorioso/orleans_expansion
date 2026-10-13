@@ -8,7 +8,10 @@ OldWater_Carver_EventScript_Carver0::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_CYPRESS_CHARM, OldWater_Carver_EventScript_Done
-	goto_if_unset FLAG_VERSE6_HEARD, OldWater_Carver_EventScript_Plain
+	goto_if_set FLAG_VERSE6_HEARD, OldWater_Carver_EventScript_GiveCharm
+	goto_if_unset FLAG_BADGE06_GET, OldWater_Carver_EventScript_Plain
+	goto_if_lt VAR_ORLEANS_STORY, 38, OldWater_Carver_EventScript_Plain
+OldWater_Carver_EventScript_GiveCharm:
 	msgbox OldWater_Carver_Text_Gives, MSGBOX_DEFAULT
 	giveitem ITEM_MEGA_RING
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull

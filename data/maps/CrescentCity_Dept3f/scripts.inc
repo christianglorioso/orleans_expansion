@@ -6,7 +6,7 @@ CrescentCity_Dept3f_MapScripts::
 CrescentCity_Dept3f_EventScript_Clerk0::
 	lock
 	faceplayer
-	goto_if_ge VAR_ORLEANS_STORY, 30, CrescentCity_Dept3f_EventScript_VendorOpen
+	goto_if_set FLAG_RECEIVED_CYPRESS_CHARM, CrescentCity_Dept3f_EventScript_VendorOpen
 	msgbox CrescentCity_Dept3f_Text_VendorClosed, MSGBOX_DEFAULT
 	release
 	end

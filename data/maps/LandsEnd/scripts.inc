@@ -12,7 +12,14 @@ LandsEnd_OnTransition:
 	setflag FLAG_HIDE_LANDS_END_ANDREW
 	setflag FLAG_HIDE_LANDS_END_JAYDEN
 	call_if_eq VAR_ORLEANS_STORY, 36, LandsEnd_EventScript_ShowPair
+	call_if_ge VAR_ORLEANS_STORY, 33, LandsEnd_EventScript_SetRespawn
 	end
+
+@ the respawn moves from story 33 on (Surf lets a player in before the raid). Set here, NOT in the frame script: an effectful
+@ command in a frame script that never sets its var re-runs every frame and freezes the player (hotfix 2026-10-13)
+LandsEnd_EventScript_SetRespawn:
+	setrespawn HEAL_LOCATION_LANDS_END
+	return
 
 LandsEnd_EventScript_ShowPair:
 	clearflag FLAG_HIDE_LANDS_END_ANDREW
@@ -41,8 +48,8 @@ LandsEnd_EventScript_Arrival::
 LandsEnd_EventScript_ArrivalSkip:
 	end
 
+@ effect-free on purpose (Script_HasNoEffect drops it): the arrival stays armed at 33 without locking the player
 LandsEnd_EventScript_ArrivalEarly:
-	setrespawn HEAL_LOCATION_LANDS_END
 	end
 
 LandsEnd_EventScript_SetStory35:

@@ -66,9 +66,9 @@ OldWater_EventScript_RaidStale:
 	end
 
 OldWater_EventScript_RaidBattle:
-	call_if_eq VAR_STARTER_MON, 0, OldWater_EventScript_BattleChikorita
-	call_if_eq VAR_STARTER_MON, 1, OldWater_EventScript_BattleFuecoco
-	call_if_eq VAR_STARTER_MON, 2, OldWater_EventScript_BattleTotodile
+	call_if_eq VAR_STARTER_MON, 0, OldWater_EventScript_BattleFuecoco
+	call_if_eq VAR_STARTER_MON, 1, OldWater_EventScript_BattleTotodile
+	call_if_eq VAR_STARTER_MON, 2, OldWater_EventScript_BattleChikorita
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, OldWater_EventScript_RaidLost
 	goto OldWater_EventScript_RaidWon
@@ -135,6 +135,8 @@ OldWater_EventScript_RaidWon:
 	fadescreen FADE_FROM_BLACK
 	msgbox OldWater_Text_Wren2, MSGBOX_DEFAULT
 	msgbox OldWater_Text_Wren3, MSGBOX_DEFAULT
+	goto_if_unset FLAG_RECEIVED_CYPRESS_CHARM, OldWater_EventScript_RaidWrenCharm
+OldWater_EventScript_RaidWrenDone:
 	closemessage
 	setflag FLAG_HIDE_RAID_WREN
 	fadescreen FADE_TO_BLACK
@@ -205,11 +207,19 @@ OldWater_Text_Wren2:
 	.string "WREN: I'll stay and help TUPELO put\n"
 	.string "the green back in order.$"
 
+OldWater_EventScript_RaidWrenCharm:
+	msgbox OldWater_Text_WrenCharm, MSGBOX_DEFAULT
+	goto OldWater_EventScript_RaidWrenDone
+
+OldWater_Text_WrenCharm:
+	.string "WREN: You haven't got the CHARM yet.\n"
+	.string "The CARVER by the landing has it.$"
+
 OldWater_Text_Wren3:
 	.string "WREN: The sixth and seventh verses\n"
 	.string "hold. Go on to LAND'S END. I'll\p"
-	.string "send word. Take the boat. It's\n"
-	.string "faster than the road.$"
+	.string "send word. Follow the river by\n"
+	.string "Surf.$"
 
 OldWater_Text_Retry:
 	.string "WREN: Again? Together this time?\n"

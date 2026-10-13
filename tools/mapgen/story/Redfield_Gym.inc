@@ -74,7 +74,12 @@ Redfield_Gym_EventScript_StoneReward:
 	giveitem ITEM_CHARIZARDITE_Y
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_CHARIZARDITE_Y
+	goto_if_set FLAG_RECEIVED_CYPRESS_CHARM, Redfield_Gym_EventScript_StoneInfoOwned
+	msgbox Redfield_Gym_Text_StoneInfoNoCharm, MSGBOX_DEFAULT
+	goto Redfield_Gym_EventScript_StoneInfoDone
+Redfield_Gym_EventScript_StoneInfoOwned:
 	msgbox Redfield_Gym_Text_StoneInfo, MSGBOX_DEFAULT
+Redfield_Gym_EventScript_StoneInfoDone:
 	msgbox Redfield_Gym_Text_Span, MSGBOX_DEFAULT
 Redfield_Gym_EventScript_RewardsDone:
 	return
@@ -161,6 +166,10 @@ Redfield_Gym_Text_TakeThisToo:
 Redfield_Gym_Text_StoneInfo:
 	.string "CAYENNE: Hold it on a CHARIZARD and\n"
 	.string "the Cypress Charm will do the rest.$"
+
+Redfield_Gym_Text_StoneInfoNoCharm:
+	.string "CAYENNE: Without the charm from the\n"
+	.string "OLD WATER's carver it's a stone.$"
 
 Redfield_Gym_Text_Span:
 	.string "CAYENNE: The fallen span on Route 18\n"

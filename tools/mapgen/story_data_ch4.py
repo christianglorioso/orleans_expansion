@@ -69,6 +69,7 @@ POINTE_ROUGE = {
     "add_objects": [
         # the old ice plant is locked until the post-game; the worker stands on its door's only approach cell (39, 26)
         {"id": "LOCALID_POINTE_ROUGE_ICE_PLANT_GUARD", "gfx": "OBJ_EVENT_GFX_WORKER_M", "x": 39, "y": 26, "move": FACE + "DOWN",
+         "flag": "FLAG_HIDE_POINTE_ICE_GUARD",  # hidden from story 45 by PointeRouge_EventScript_PGSetup
          "text": T("The old ice plant is padlocked.", "Cold room's off limits. For now.")},
     ],
     "add_hidden": [
