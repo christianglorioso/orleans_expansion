@@ -1,0 +1,59 @@
+{
+ "_comment": "Interior wall end pieces for gTileset_OrleansInterior (own art, make_caps.py). Each piece is a plain bottom-layer cell (layer type normal, behaviour normal, blocks like the cell it replaces). 'palettes' = the existing palette slot each 8x8 tile fits (no new colours).",
+ "png": "caps_interior.png",
+ "tileset": "gTileset_OrleansInterior",
+ "pieces": {
+  "gen_top_L": {
+   "x": 0,
+   "y": 0,
+   "replaces": "jb:0A8",
+   "metatile": "ec:gen_top_L",
+   "where": "wall top row, left end (x=0, y=0)",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "gen_top_R": {
+   "x": 1,
+   "y": 0,
+   "replaces": "jb:0A8",
+   "metatile": "ec:gen_top_R",
+   "where": "wall top row, right end (x=W-1, y=0)",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "gen_foot_L": {
+   "x": 2,
+   "y": 0,
+   "replaces": "jb:0B0",
+   "metatile": "ec:gen_foot_L",
+   "where": "wall lower row, left end: the pilaster's plinth at the floor (x=0, y=1)",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ]
+  },
+  "gen_foot_R": {
+   "x": 3,
+   "y": 0,
+   "replaces": "jb:0B0",
+   "metatile": "ec:gen_foot_R",
+   "where": "wall lower row, right end (x=W-1, y=1)",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ]
+  }
+ }
+}

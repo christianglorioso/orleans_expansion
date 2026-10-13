@@ -1,0 +1,72 @@
+{
+ "_comment": "Interior wall end pieces for gTileset_OrleansConservatory (own art, make_caps.py). Each piece is a plain bottom-layer cell (layer type normal, behaviour normal, blocks like the cell it replaces). 'palettes' = the existing palette slot each 8x8 tile fits (no new colours).",
+ "png": "caps_conservatory.png",
+ "tileset": "gTileset_OrleansConservatory",
+ "pieces": {
+  "cv_top0_L": {
+   "x": 0,
+   "y": 0,
+   "replaces": "cv:glass_0",
+   "metatile": "ec:cv_top0_L",
+   "where": "glass roof row 0, left end (x=0, y=0)",
+   "palettes": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  "cv_top0_R": {
+   "x": 1,
+   "y": 0,
+   "replaces": "cv:glass_0",
+   "metatile": "ec:cv_top0_R",
+   "where": "glass roof row 0, right end (x=W-1, y=0)",
+   "palettes": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  "cv_top1_L": {
+   "x": 2,
+   "y": 0,
+   "replaces": "cv:glass_1",
+   "metatile": "ec:cv_top1_L",
+   "where": "glass roof row 1, left end (x=0, y=1)",
+   "palettes": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  "cv_top1_R": {
+   "x": 3,
+   "y": 0,
+   "replaces": "cv:glass_1",
+   "metatile": "ec:cv_top1_R",
+   "where": "glass roof row 1, right end (x=W-1, y=1)",
+   "palettes": [
+    6,
+    6,
+    6,
+    6
+   ]
+  },
+  "cv_foot": {
+   "x": 4,
+   "y": 0,
+   "replaces": "cv:glass_side",
+   "metatile": "ec:cv_foot",
+   "where": "both bottom corners (x=0 and x=W-1, y=H-1)",
+   "palettes": [
+    6,
+    6,
+    6,
+    6
+   ]
+  }
+ }
+}

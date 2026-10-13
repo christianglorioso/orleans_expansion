@@ -1,0 +1,59 @@
+{
+ "_comment": "Interior wall end pieces for gTileset_OrleansHall (own art, make_caps.py). Each piece is a plain bottom-layer cell (layer type normal, behaviour normal, blocks like the cell it replaces). 'palettes' = the existing palette slot each 8x8 tile fits (no new colours).",
+ "png": "caps_church.png",
+ "tileset": "gTileset_OrleansHall",
+ "pieces": {
+  "ch_top_L": {
+   "x": 0,
+   "y": 0,
+   "replaces": "cw:side",
+   "metatile": "ec:ch_top_L",
+   "where": "Church side, top (x=0, y=0)",
+   "palettes": [
+    11,
+    11,
+    10,
+    10
+   ]
+  },
+  "ch_top_R": {
+   "x": 1,
+   "y": 0,
+   "replaces": "cw:side",
+   "metatile": "ec:ch_top_R",
+   "where": "Church side, top (x=W-1, y=0)",
+   "palettes": [
+    11,
+    11,
+    10,
+    10
+   ]
+  },
+  "ch_foot_L": {
+   "x": 2,
+   "y": 0,
+   "replaces": "cw:side",
+   "metatile": "ec:ch_foot_L",
+   "where": "Church side, last cell above the black bottom row (x=0)",
+   "palettes": [
+    10,
+    10,
+    11,
+    11
+   ]
+  },
+  "ch_foot_R": {
+   "x": 3,
+   "y": 0,
+   "replaces": "cw:side",
+   "metatile": "ec:ch_foot_R",
+   "where": "Church side, foot (x=W-1)",
+   "palettes": [
+    10,
+    10,
+    11,
+    11
+   ]
+  }
+ }
+}

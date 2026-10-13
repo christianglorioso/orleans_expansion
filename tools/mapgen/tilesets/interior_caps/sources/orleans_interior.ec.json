@@ -1,0 +1,44 @@
+{
+ "_comment": "Append this object to the 'sources' list of tools/mapgen/tilesets/recipes/orleans_interior.json, then compose that recipe; the pieces land as ec:<id> in orleans_interior.mapping.json.",
+ "name": "ec",
+ "type": "image",
+ "image": "tools/mapgen/tilesets/interior_caps/caps_interior.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "group_rule": "fewest",
+ "metatiles": [
+  {
+   "id": "gen_top_L",
+   "bottom": [
+    0,
+    0
+   ]
+  },
+  {
+   "id": "gen_top_R",
+   "bottom": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "gen_foot_L",
+   "bottom": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "gen_foot_R",
+   "bottom": [
+    3,
+    0
+   ]
+  }
+ ]
+}

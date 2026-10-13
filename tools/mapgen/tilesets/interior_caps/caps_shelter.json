@@ -1,0 +1,59 @@
+{
+ "_comment": "Interior wall end pieces for gTileset_OrleansHall (own art, make_caps.py). Each piece is a plain bottom-layer cell (layer type normal, behaviour normal, blocks like the cell it replaces). 'palettes' = the existing palette slot each 8x8 tile fits (no new colours).",
+ "png": "caps_shelter.png",
+ "tileset": "gTileset_OrleansHall",
+ "pieces": {
+  "sh_top_L": {
+   "x": 0,
+   "y": 0,
+   "replaces": "th:44D",
+   "metatile": "es:sh_top_L",
+   "where": "Shelter pillar, top (x=0, y=0)",
+   "palettes": [
+    7,
+    7,
+    7,
+    7
+   ]
+  },
+  "sh_top_R": {
+   "x": 1,
+   "y": 0,
+   "replaces": "th:44D",
+   "metatile": "es:sh_top_R",
+   "where": "Shelter pillar, top (x=W-1, y=0)",
+   "palettes": [
+    7,
+    7,
+    7,
+    7
+   ]
+  },
+  "sh_foot_L": {
+   "x": 2,
+   "y": 0,
+   "replaces": "th:44D",
+   "metatile": "es:sh_foot_L",
+   "where": "Shelter pillar, last cell above the black bottom row (x=0)",
+   "palettes": [
+    7,
+    7,
+    7,
+    7
+   ]
+  },
+  "sh_foot_R": {
+   "x": 3,
+   "y": 0,
+   "replaces": "th:44D",
+   "metatile": "es:sh_foot_R",
+   "where": "Shelter pillar, foot (x=W-1)",
+   "palettes": [
+    7,
+    7,
+    7,
+    7
+   ]
+  }
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "_comment": "Append this object to the 'sources' list of tools/mapgen/tilesets/recipes/orleans_hall.json, then compose that recipe; the pieces land as ec:<id> in orleans_hall.mapping.json.",
+ "name": "ec",
+ "type": "image",
+ "image": "tools/mapgen/tilesets/interior_caps/caps_church.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "group_rule": "fewest",
+ "metatiles": [
+  {
+   "id": "ch_top_L",
+   "bottom": [
+    0,
+    0
+   ]
+  },
+  {
+   "id": "ch_top_R",
+   "bottom": [
+    1,
+    0
+   ]
+  },
+  {
+   "id": "ch_foot_L",
+   "bottom": [
+    2,
+    0
+   ]
+  },
+  {
+   "id": "ch_foot_R",
+   "bottom": [
+    3,
+    0
+   ]
+  }
+ ]
+}

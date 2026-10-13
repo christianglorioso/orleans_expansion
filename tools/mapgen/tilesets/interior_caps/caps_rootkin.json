@@ -1,0 +1,59 @@
+{
+ "_comment": "Interior wall end pieces for gTileset_OrleansRootkinIn (own art, make_caps.py). Each piece is a plain bottom-layer cell (layer type normal, behaviour normal, blocks like the cell it replaces). 'palettes' = the existing palette slot each 8x8 tile fits (no new colours).",
+ "png": "caps_rootkin.png",
+ "tileset": "gTileset_OrleansRootkinIn",
+ "pieces": {
+  "rk_top_L": {
+   "x": 0,
+   "y": 0,
+   "replaces": "rk:side",
+   "metatile": "ec:rk_top_L",
+   "where": "frame's top-left corner (x=0, y=0)",
+   "palettes": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "rk_top_R": {
+   "x": 1,
+   "y": 0,
+   "replaces": "rk:side",
+   "metatile": "ec:rk_top_R",
+   "where": "frame's top-right corner (x=W-1, y=0)",
+   "palettes": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "rk_foot_L": {
+   "x": 2,
+   "y": 0,
+   "replaces": "rk:side",
+   "metatile": "ec:rk_foot_L",
+   "where": "frame's bottom-left corner (x=0, y=H-1)",
+   "palettes": [
+    8,
+    8,
+    8,
+    8
+   ]
+  },
+  "rk_foot_R": {
+   "x": 3,
+   "y": 0,
+   "replaces": "rk:side",
+   "metatile": "ec:rk_foot_R",
+   "where": "frame's bottom-right corner (x=W-1, y=H-1)",
+   "palettes": [
+    8,
+    8,
+    8,
+    8
+   ]
+  }
+ }
+}
