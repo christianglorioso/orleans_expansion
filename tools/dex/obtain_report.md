@@ -37,7 +37,7 @@
 | ITEM_LANTERN | the Salt Cathedral shaft | given in CrescentCity_Gym |
 | ITEM_LEAF_STONE | evolution of SPECIES_GLOOM | sold in CrescentCity_Dept2f (+3 more) |
 | ITEM_LINKING_CORD | evolution of SPECIES_POLIWHIRL | sold in CrescentCity_Dept2f (+2 more) |
-| ITEM_LYCANROCITE | Mega/primal form SPECIES_LYCANROC_MIDNIGHT_MEGA | given in Route14 |
+| ITEM_LYCANROCITE | Mega/primal form SPECIES_LYCANROC_MIDNIGHT_MEGA | given in Route14_RougarouHollow |
 | ITEM_MALAMARITE | Mega/primal form SPECIES_MALAMAR_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_MEGANIUMITE | Mega/primal form SPECIES_MEGANIUM_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_MEGA_RING | every Mega Evolution (the Cypress Charm) | given in OldWater_Carver |
@@ -84,6 +84,8 @@ Missing: none
 | ITEM_BLACK_BELT | 16 BP | yes, at the engine item price |
 | ITEM_BLACK_GLASSES | 16 BP | yes, at the engine item price |
 | ITEM_BLACK_SLUDGE | 48 BP | yes, at the engine item price |
+| ITEM_CALCIUM_EX | 10 BP | - |
+| ITEM_CARBOS_EX | 10 BP | - |
 | ITEM_CHARCOAL | 16 BP | yes, at the engine item price |
 | ITEM_CHARTI_BERRY | - | yes, at the engine item price |
 | ITEM_CHOICE_SCARF | 96 BP | yes, at the engine item price |
@@ -100,6 +102,8 @@ Missing: none
 | ITEM_HABAN_BERRY | - | yes, at the engine item price |
 | ITEM_HARD_STONE | 16 BP | yes, at the engine item price |
 | ITEM_HEAVY_DUTY_BOOTS | 32 BP | yes, at the engine item price |
+| ITEM_HP_UP_EX | 10 BP | - |
+| ITEM_IRON_EX | 10 BP | - |
 | ITEM_KASIB_BERRY | - | yes, at the engine item price |
 | ITEM_KEBIA_BERRY | - | yes, at the engine item price |
 | ITEM_LEPPA_BERRY | 16 BP | yes, at the engine item price |
@@ -118,6 +122,7 @@ Missing: none
 | ITEM_PAYAPA_BERRY | - | yes, at the engine item price |
 | ITEM_PETAYA_BERRY | 16 BP | yes, at the engine item price |
 | ITEM_POISON_BARB | 16 BP | yes, at the engine item price |
+| ITEM_PROTEIN_EX | 10 BP | - |
 | ITEM_RINDO_BERRY | - | yes, at the engine item price |
 | ITEM_ROCKY_HELMET | 64 BP | yes, at the engine item price |
 | ITEM_ROSELI_BERRY | - | yes, at the engine item price |
@@ -137,6 +142,7 @@ Missing: none
 | ITEM_WEAKNESS_POLICY | 64 BP | yes, at the engine item price |
 | ITEM_WISE_GLASSES | 32 BP | yes, at the engine item price |
 | ITEM_YACHE_BERRY | - | yes, at the engine item price |
+| ITEM_ZINC_EX | 10 BP | - |
 
 ## Competitive held items from wild Pokemon (5% each; tools/dex/wild_held_items.py)
 

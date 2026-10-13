@@ -19,36 +19,35 @@ NUM_MONS = 882
 # banned for the player in the Frontier (isFrontierBanned): never used by opponents either
 # Smeargle: the Orleans sheet gives it Sketch and nothing else, so a trainer Smeargle could never attack (note in audit/11_fix_coordination.md)
 EXCLUDED = {"SPECIES_SMEARGLE"}
+# NO legendaries or mythicals anywhere in the Frontier (user decision 2026-10-13): everything the species data flags as legendary / sub-legendary /
+# restricted / mythical / ultra beast / paradox, plus the ones the flags miss (Bloodmoon Ursaluna, Gimmighoul and Gholdengo are treated as legends).
+LEGEND_FLAGS = ("isLegendary", "isMythical", "isSubLegendary", "isRestrictedLegendary", "isUltraBeast", "isParadox")
+LEGEND_EXTRA = {"SPECIES_URSALUNA_BLOODMOON", "SPECIES_GIMMIGHOUL_CHEST", "SPECIES_GHOLDENGO"}
 BANNED = {"SPECIES_ZARUDE", "SPECIES_CELEBI", "SPECIES_GROUDON", "SPECIES_KYOGRE", "SPECIES_RAYQUAZA"}
+LEGENDS = []   # kept for older imports
+HIGH_TIER = ["SPECIES_DRAGONITE", "SPECIES_METAGROSS", "SPECIES_DRAGAPULT", "SPECIES_GOODRA", "SPECIES_ARCHALUDON", "SPECIES_URSALUNA", "SPECIES_EXCADRILL", "SPECIES_GENGAR"]
+OGERPON_MASK = {}
 
-LEGENDS = ["SPECIES_UXIE", "SPECIES_MESPRIT", "SPECIES_AZELF", "SPECIES_ARTICUNO", "SPECIES_ARTICUNO_GALAR", "SPECIES_ZAPDOS", "SPECIES_ZAPDOS_GALAR",
-           "SPECIES_MOLTRES", "SPECIES_MOLTRES_GALAR", "SPECIES_RAIKOU", "SPECIES_ENTEI", "SPECIES_SUICUNE", "SPECIES_TORNADUS_INCARNATE",
-           "SPECIES_THUNDURUS_INCARNATE", "SPECIES_LANDORUS_INCARNATE", "SPECIES_OGERPON_TEAL", "SPECIES_OGERPON_WELLSPRING",
-           "SPECIES_OGERPON_HEARTHFLAME", "SPECIES_OGERPON_CORNERSTONE"]
-PSEUDO = ["SPECIES_DRAGONITE", "SPECIES_METAGROSS", "SPECIES_GOODRA", "SPECIES_DRAGAPULT", "SPECIES_ARCHALUDON", "SPECIES_GHOLDENGO",
-          "SPECIES_URSALUNA", "SPECIES_URSALUNA_BLOODMOON", "SPECIES_GRIMMSNARL", "SPECIES_LYCANROC_MIDNIGHT", "SPECIES_FLOETTE_ETERNAL", "SPECIES_FLORGES_RED"]
-HIGH_TIER = ["SPECIES_DRAGONITE", "SPECIES_METAGROSS", "SPECIES_DRAGAPULT", "SPECIES_GOODRA", "SPECIES_LANDORUS_INCARNATE", "SPECIES_RAIKOU", "SPECIES_ENTEI", "SPECIES_SUICUNE"]
-OGERPON_MASK = {"SPECIES_OGERPON_WELLSPRING": "ITEM_WELLSPRING_MASK",
-                "SPECIES_OGERPON_HEARTHFLAME": "ITEM_HEARTHFLAME_MASK", "SPECIES_OGERPON_CORNERSTONE": "ITEM_CORNERSTONE_MASK"}
+
+def is_legend(dex, sp):
+    import re
+    c = dex.canonical(sp)
+    return c in LEGEND_EXTRA or any(re.search(r"\." + f + r" = (TRUE|1)", dex.ents[c]) for f in LEGEND_FLAGS)
 
 
 def plan(dex):
     """returns dict tier -> list of species (the species list of that group, in table order)"""
-    allsp = [s for s in dex.species if s not in BANNED and s not in EXCLUDED]
+    allsp = [s for s in dex.species if s not in BANNED and s not in EXCLUDED and not is_legend(dex, s)]
     bst = lambda s: sum(dex.stats(s).values())
     key = lambda s: (bst(s), s)
-    # Rotom forms other than the base are the same shape: keep but they sort together
-    legend_set = set(LEGENDS)
-    fe = sorted([s for s in allsp if dex.fully_evolved(s) and s not in legend_set], key=key)
+    fe = sorted([s for s in allsp if dex.fully_evolved(s)], key=key)
     nfe = sorted([s for s in allsp if not dex.fully_evolved(s)], key=key)
     out = {}
     out["T0"] = nfe[:110]
     t1 = nfe[110:] + [s for s in fe if s not in nfe][:52 - len(nfe[110:])]
     out["T1"] = sorted(t1, key=key)
-    a = sorted(fe[:105], key=key)
-    out["A"] = a
-    b = sorted(fe[-96:], key=key)
-    out["B"] = b
-    out["L_species"] = sorted(PSEUDO, key=key) + sorted([s for s in LEGENDS if s in dex.species], key=key)
+    out["A"] = sorted(fe[:105], key=key)
+    out["B"] = sorted(fe[-96:], key=key)
+    out["L_species"] = sorted(fe[-31:], key=key)   # the 31 strongest finished non-legend species (pseudo-legends first in BST order)
     out["H_species"] = HIGH_TIER
     return out

@@ -84,7 +84,7 @@ class Gen(PoolMixin):
         self.plan = lp.plan(self.d)
         # every Mega base must be in the B list
         b = self.plan["B"]
-        need = [s for s in self.megas if s in self.d.species and s not in b and s not in lp.BANNED and s not in self.plan["L_species"]]
+        need = [s for s in self.megas if s in self.d.species and s not in b and s not in lp.BANNED and not lp.is_legend(self.d, s) and s != "SPECIES_SMEARGLE"]
         if need:
             drop = [s for s in b if s not in self.megas][:len(need)]
             b = sorted([s for s in b if s not in drop] + need, key=lambda s: (sum(self.d.stats(s).values()), s))
@@ -151,7 +151,7 @@ class Gen(PoolMixin):
         for g, tier in enumerate(("B1", "B2", "B3", "B4")):
             for j, sp in enumerate(p["B"]):
                 mega = None
-                if sp in self.megas and (tier == "B4" or (tier == "B3" and j % 2 == 0)):
+                if sp in self.megas and (tier == "B4" or (tier == "B3" and j % 3 == 0)):
                     mega = self.megas[sp][0] if tier == "B4" else (self.megas[sp][-1] if len(self.megas[sp]) > 1 else self.megas[sp][0])
                 self.make(i, sp, tier, g + 1, mega=mega)
                 i += 1

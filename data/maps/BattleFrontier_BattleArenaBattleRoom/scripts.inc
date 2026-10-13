@@ -549,20 +549,20 @@ BattleFrontier_BattleArenaBattleRoom_Text_NowFaceTycoon:
 	.string "My dear challenger!\p"
 	.string "Your skill level is truly astounding!\p"
 	.string "We now would like you to face our\n"
-	.string "leader, the ARENA TYCOON!$"
+	.string "leader, the KREWE QUEEN!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_PreparedForTycoon:
-	.string "A battle with the ARENA TYCOON!\n"
+	.string "A battle with the KREWE QUEEN!\n"
 	.string "Are you prepared?$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_MakeWayForGreta:
-	.string "REFEREE: The ARENA TYCOON!\n"
-	.string "Make way for GRETA!$"
+	.string "REFEREE: The KREWE QUEEN!\n"
+	.string "Make way for MARGUERITE!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureChallenger:
-	.string "GRETA: Hey!\n"
-	.string "Howdy!\p"
-	.string "…Wait, are you the challenger?$"
+	.string "MARGUERITE: Bonjour, cher!\n"
+	.string "Welcome to my Arena!\p"
+	.string "...Wait, are you the challenger?$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_IsThatRight:
 	.string "Is that right? Hmm…\n"
@@ -581,9 +581,9 @@ BattleFrontier_BattleArenaBattleRoom_Text_IgniteMyPassionForBattle:
 	.string "for battle!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaYoureToughAfterAll:
-	.string "GRETA: Ow, wait a second!\n"
+	.string "MARGUERITE: Mais non, wait a second!\n"
 	.string "You are tough after all!\p"
-	.string "I like you!\n"
+	.string "I like you, cher!\n"
 	.string "Let's see your FRONTIER PASS.$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_ReceivedGutsSymbol:
@@ -596,11 +596,13 @@ BattleFrontier_BattleArenaBattleRoom_Text_GoingToBeFunNextTime:
 	.string "I'm looking forward to it!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaLookingForwardToSeeingAgain:
-	.string "GRETA: Hey! Howdy!\n"
-	.string "You finally won your way up to me!\p"
-	.string "I was getting worried waiting for you!\n"
-	.string "I was really looking forward to seeing\l"
-	.string "you again!$"
+	.string "MARGUERITE: Bonjour, cher!\n"
+	.string "You finally made your way up to me!\p"
+	.string "The parade leader up in CRESCENT CITY\n"
+	.string "learned every step of his dance from me.\p"
+	.string "He told me he gave you his\n"
+	.string "QUAQUAVALITE. Let's see if it was\l"
+	.string "well spent!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_SoAreYouReady:
 	.string "… … …\n"
@@ -615,7 +617,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_LetsGetThisStarted:
 	.string "Let's get this started!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GretaBlownAway:
-	.string "GRETA: Gaaah! Blown away!\n"
+	.string "MARGUERITE: Mais non! Blown away!\n"
 	.string "Let's see your FRONTIER PASS!$"
 
 BattleFrontier_BattleArenaBattleRoom_Text_GutsSymbolTookGoldenShine:
@@ -624,6 +626,7 @@ BattleFrontier_BattleArenaBattleRoom_Text_GutsSymbolTookGoldenShine:
 
 BattleFrontier_BattleArenaBattleRoom_Text_IfWeBattleAgainWontLose:
 	.string "Arrrgh!\n"
-	.string "This is so infuriating!\p"
+	.string "That's what I get for showin' off!\p"
 	.string "If we ever battle again, I won't lose!\n"
-	.string "Don't you forget it! Bye-bye!$"
+	.string "Don't you forget it, cher!\n"
+	.string "Laissez les bons temps rouler!$"

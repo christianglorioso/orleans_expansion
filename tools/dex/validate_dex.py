@@ -252,6 +252,13 @@ def main():
         m_ = re.search(r"gItemEffect_%sEX\[\d+\] = \{(.*?)\};" % e, eff_d, re.S)
         if not m_ or "ITEM6_MAX_EV" not in m_.group(1):
             bad("items", f"gItemEffect_{e}EX does not max the EV")
+    # ---- 8 Battle Frontier rosters: species in dex, moves legal, abilities valid, items allowed, no legendaries (tools/frontier/frontier_check.py) ----
+    fr = subprocess.run([sys.executable, str(ROOT / "tools/frontier/frontier_check.py")], capture_output=True, text=True, cwd=ROOT)
+    for line in fr.stdout.splitlines():
+        if line.startswith("["):
+            bad("frontier", line)
+    if fr.returncode and not any(line.startswith("[") for line in fr.stdout.splitlines()):
+        bad("frontier", "frontier_check.py failed: " + (fr.stderr.strip().splitlines() or ["?"])[-1])
     print(f"checked {ntype} sheet rows, {len(rows)} learnset rows, {len(order)} regional dex entries")
     for i in info:
         print("info:", i)

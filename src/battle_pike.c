@@ -89,80 +89,78 @@ static u8 GetPikeQueenFightType(u8);
 static bool8 StatusInflictionFadeOut(struct Task *task);
 static bool8 StatusInflictionFadeIn(struct Task *task);
 
+// BEGIN GENERATED (tools/frontier/gen_extras.py): Pike wild mons; SpeciesToPikeMonId needs Seviper first, Milotic second
 // Const rom data.
 static const struct PikeWildMon sLvl50_Mons1[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_ALLURING_VOICE}
     },
     {
-        .species = SPECIES_DUSCLOPS,
+        .species = SPECIES_JELLICENT,
         .levelDelta = 5,
-        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_SHADOW_PUNCH}
+        .moves = {MOVE_TAUNT, MOVE_SURF, MOVE_SHADOW_BALL, MOVE_WILL_O_WISP}
     }
 };
-
 static const struct PikeWildMon sLvl50_Mons2[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_ALLURING_VOICE}
     },
     {
-        .species = SPECIES_ELECTRODE,
+        .species = SPECIES_ELECTRODE_ORLEANIAN,
         .levelDelta = 5,
-        .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_THUNDER, MOVE_TOXIC}
+        .moves = {MOVE_TAUNT, MOVE_THUNDERBOLT, MOVE_SURF, MOVE_THUNDER_WAVE}
     }
 };
-
 static const struct PikeWildMon sLvl50_Mons3[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_TAIL, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_DAZZLING_GLEAM}
     },
     {
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
-        .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+        .moves = {MOVE_SEED_BOMB, MOVE_SUPERPOWER, MOVE_SPORE, MOVE_FACADE}
     }
 };
-
 static const struct PikeWildMon sLvl50_Mons4[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_BODY_SLAM, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_SURF}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_DAZZLING_GLEAM}
     },
     {
-        .species = SPECIES_WOBBUFFET,
+        .species = SPECIES_HYPNO,
         .levelDelta = 5,
-        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_DESTINY_BOND}
+        .moves = {MOVE_TAUNT, MOVE_PSYSHOCK, MOVE_DARK_PULSE, MOVE_THUNDER_WAVE}
     }
 };
 
@@ -179,74 +177,71 @@ static const struct PikeWildMon sLvlOpen_Mons1[] =
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SCALD, MOVE_ALLURING_VOICE}
     },
     {
-        .species = SPECIES_DUSCLOPS,
+        .species = SPECIES_MISMAGIUS,
         .levelDelta = 5,
-        .moves = {MOVE_WILL_O_WISP, MOVE_MEAN_LOOK, MOVE_TOXIC, MOVE_ICE_BEAM}
+        .moves = {MOVE_TAUNT, MOVE_SHADOW_BALL, MOVE_DAZZLING_GLEAM, MOVE_THUNDER_WAVE}
     }
 };
-
 static const struct PikeWildMon sLvlOpen_Mons2[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_ALLURING_VOICE}
     },
     {
-        .species = SPECIES_ELECTRODE,
+        .species = SPECIES_ELECTRODE_ORLEANIAN,
         .levelDelta = 5,
-        .moves = {MOVE_EXPLOSION, MOVE_SELF_DESTRUCT, MOVE_THUNDER, MOVE_TOXIC}
+        .moves = {MOVE_TAUNT, MOVE_THUNDERBOLT, MOVE_SURF, MOVE_TOXIC}
     }
 };
-
 static const struct PikeWildMon sLvlOpen_Mons3[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_HEAD, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_HYDRO_PUMP, MOVE_ALLURING_VOICE}
     },
     {
         .species = SPECIES_BRELOOM,
         .levelDelta = 5,
-        .moves = {MOVE_SPORE, MOVE_STUN_SPORE, MOVE_POISON_POWDER, MOVE_HIDDEN_POWER}
+        .moves = {MOVE_SEED_BOMB, MOVE_CLOSE_COMBAT, MOVE_SPORE, MOVE_FACADE}
     }
 };
-
 static const struct PikeWildMon sLvlOpen_Mons4[] =
 {
     {
         .species = SPECIES_SEVIPER,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_GLARE, MOVE_POISON_FANG, MOVE_SLUDGE_BOMB}
+        .moves = {MOVE_TAUNT, MOVE_GUNK_SHOT, MOVE_IRON_TAIL, MOVE_TOXIC}
     },
     {
         .species = SPECIES_MILOTIC,
         .levelDelta = 4,
-        .moves = {MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_BODY_SLAM, MOVE_ICE_BEAM}
+        .moves = {MOVE_RECOVER, MOVE_TOXIC, MOVE_SURF, MOVE_ALLURING_VOICE}
     },
     {
-        .species = SPECIES_WOBBUFFET,
+        .species = SPECIES_MALAMAR,
         .levelDelta = 5,
-        .moves = {MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_SAFEGUARD, MOVE_ENCORE}
+        .moves = {MOVE_TAUNT, MOVE_FOUL_PLAY, MOVE_ZEN_HEADBUTT, MOVE_TOXIC}
     }
 };
 
@@ -258,6 +253,7 @@ static const struct PikeWildMon *const sLvlOpenMons[] =
     sLvlOpen_Mons4
 };
 
+// END GENERATED
 static const struct PikeWildMon *const *const sWildMons[2] =
 {
     [FRONTIER_LVL_50]   = sLvl50Mons,

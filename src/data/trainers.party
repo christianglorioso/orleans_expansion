@@ -12974,7 +12974,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 
 === TRAINER_ANABEL ===
-Name: ANABEL
+Name: CELESTE
 Class: Salon Maiden
 Pic: Salon Maiden Anabel
 Gender: Female
@@ -12987,7 +12987,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TUCKER ===
-Name: TUCKER
+Name: BEAUREGARD
 Class: Dome Ace
 Pic: Dome Ace Tucker
 Gender: Male
@@ -13000,7 +13000,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SPENSER ===
-Name: SPENSER
+Name: ARMAND
 Class: Palace Maven
 Pic: Palace Maven Spenser
 Gender: Male
@@ -13013,7 +13013,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRETA ===
-Name: GRETA
+Name: MARGUERITE
 Class: Arena Tycoon
 Pic: Arena Tycoon Greta
 Gender: Female
@@ -13026,7 +13026,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NOLAND ===
-Name: NOLAND
+Name: ETIENNE
 Class: Factory Head
 Pic: Factory Head Noland
 Gender: Male
@@ -13039,7 +13039,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LUCY ===
-Name: LUCY
+Name: LUCILLE
 Class: Pike Queen
 Pic: Pike Queen Lucy
 Gender: Female
@@ -13052,7 +13052,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRANDON ===
-Name: BRANDON
+Name: LAFITTE
 Class: Pyramid King
 Pic: Pyramid King Brandon
 Gender: Male

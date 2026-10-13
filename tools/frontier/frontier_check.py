@@ -4,6 +4,7 @@ usage (from the decomp root):  python tools/frontier/frontier_check.py [--quiet]
 exit code 1 on any problem.
 
 Checks
+  legends   no legendary, sub-legendary, restricted, mythical, ultra beast or paradox species anywhere (flags in the species data + Bloodmoon Ursaluna, Gimmighoul, Gholdengo)
   species   every set / brain / Pike / Pyramid species is in the Orleans dex (Orleanian forms, not the Kantonian base), is not Frontier-banned,
             and is a real SPECIES constant
   moves     every move is a real move, is legal for the species under OUR learnsets (level-up up to 50 incl. pre-evolutions, egg, TM/tutor),
@@ -27,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fdata
 import movedb
 import odex
+import layoutplan
 import lint_items
 
 ROOT = fdata.ROOT
@@ -57,6 +59,8 @@ def main():
             return
         if c in banned_sp:
             bad("species", f"{where}: {sp} is Frontier-banned")
+        if layoutplan.is_legend(d, c):
+            bad("species", f"{where}: {sp} is a legendary / mythical / sub-legendary (none allowed in the Battle Frontier)")
         legal = d.legal(sp, level)
         seen = set()
         real = [m for m in moves if m != "MOVE_NONE"]

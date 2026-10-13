@@ -48,6 +48,58 @@ static const enum Item sFrontierExchangeCorner_HoldItems[] =
     ITEM_LIST_END
 };
 
+static const enum Item sFrontierExchangeCorner_Competitive[] =
+{
+    ITEM_HP_UP_EX,
+    ITEM_PROTEIN_EX,
+    ITEM_IRON_EX,
+    ITEM_CALCIUM_EX,
+    ITEM_ZINC_EX,
+    ITEM_CARBOS_EX,
+    ITEM_LIFE_ORB,
+    ITEM_CHOICE_SPECS,
+    ITEM_CHOICE_SCARF,
+    ITEM_ASSAULT_VEST,
+    ITEM_FOCUS_SASH,
+    ITEM_EXPERT_BELT,
+    ITEM_ROCKY_HELMET,
+    ITEM_WEAKNESS_POLICY,
+    ITEM_EVIOLITE,
+    ITEM_SHELL_BELL,
+    ITEM_BLACK_SLUDGE,
+    ITEM_LIGHT_CLAY,
+    ITEM_FLAME_ORB,
+    ITEM_TOXIC_ORB,
+    ITEM_MUSCLE_BAND,
+    ITEM_WISE_GLASSES,
+    ITEM_AIR_BALLOON,
+    ITEM_HEAVY_DUTY_BOOTS,
+    ITEM_SITRUS_BERRY,
+    ITEM_SALAC_BERRY,
+    ITEM_LIECHI_BERRY,
+    ITEM_PETAYA_BERRY,
+    ITEM_LEPPA_BERRY,
+    ITEM_SILK_SCARF,
+    ITEM_BLACK_BELT,
+    ITEM_SHARP_BEAK,
+    ITEM_POISON_BARB,
+    ITEM_SOFT_SAND,
+    ITEM_HARD_STONE,
+    ITEM_SILVER_POWDER,
+    ITEM_SPELL_TAG,
+    ITEM_METAL_COAT,
+    ITEM_CHARCOAL,
+    ITEM_MYSTIC_WATER,
+    ITEM_MIRACLE_SEED,
+    ITEM_MAGNET,
+    ITEM_TWISTED_SPOON,
+    ITEM_NEVER_MELT_ICE,
+    ITEM_DRAGON_FANG,
+    ITEM_BLACK_GLASSES,
+    ITEM_FAIRY_FEATHER,
+    ITEM_LIST_END
+};
+
 static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
 {
     BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc,

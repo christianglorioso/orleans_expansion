@@ -752,9 +752,9 @@ BattleFrontier_BattlePikeRoomNormal_Text_EnjoyRestOfChallenge2:
 	.string "Battle Choice challenge…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ImThePikeQueen:
-	.string "I am LUCY…\n"
+	.string "I am LUCILLE…\n"
 	.string "I am the law here…\l"
-	.string "For I am the PIKE QUEEN…\p"
+	.string "For I am the SWAMP QUEEN…\p"
 	.string "You already know it, but to advance,\n"
 	.string "you must defeat me…\p"
 	.string "…I'm not one for idle chatter.\n"
@@ -765,7 +765,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_HopeYouDidntUseUpLuck:
 	.string "I hope you didn't use it all up here…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyShowMeFrontierPass:
-	.string "LUCY: … … … … … …\n"
+	.string "LUCILLE: … … … … … …\n"
 	.string "Show me your FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ReceivedLuckSymbol:
@@ -777,7 +777,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_AllThereIsDisappear:
 	.string "Disappear already…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyYouAgain:
-	.string "LUCY: …You again…\p"
+	.string "LUCILLE: …You again…\p"
 	.string "… … … … … …\p"
 	.string "…I've trampled flowers and braved\n"
 	.string "storms to get to where I am…\p"
@@ -791,7 +791,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_NowComeOn:
 	.string "Come on!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LucyFrontierPass:
-	.string "LUCY: … … … … … …\p"
+	.string "LUCILLE: … … … … … …\p"
 	.string "…FRONTIER PASS…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_LuckSymbolTookGoldenShine:

@@ -15,21 +15,21 @@ ROOT = Path(__file__).resolve().parents[2]
 # ------------------------------------------------------------------------------------------------ brains
 # (species, forced role) per slot; Greta's Arena teams are hand-written below.
 AUTO_BRAINS = {
-    "FRONTIER_FACILITY_TOWER": dict(  # Anabel: psychic calm, a cursed beast and a wall
-        silver=[("SPECIES_HYPNO", "setup"), ("SPECIES_ENTEI", "attacker"), ("SPECIES_OINKOLOGNE_M", "attacker")],
-        gold=[("SPECIES_RAIKOU", "setup"), ("SPECIES_AZELF", "attacker"), ("SPECIES_URSALUNA", "choice")]),
-    "FRONTIER_FACILITY_DOME": dict(  # Tucker: the Dome Ace's all-rounders
+    "FRONTIER_FACILITY_TOWER": dict(  # Celeste: the salon belle; psychic poise, a firebrand and a big appetite
+        silver=[("SPECIES_HYPNO", "setup"), ("SPECIES_DELPHOX", "attacker"), ("SPECIES_OINKOLOGNE_M", "attacker")],
+        gold=[("SPECIES_MALAMAR", "setup"), ("SPECIES_WYRDEER", "attacker"), ("SPECIES_URSALUNA", "choice")]),
+    "FRONTIER_FACILITY_DOME": dict(  # Beauregard: the zydeco showman's all-rounders
         silver=[("SPECIES_SWAMPERT", "attacker"), ("SPECIES_DRAGONITE", "setup"), ("SPECIES_CHARIZARD", "attacker")],
-        gold=[("SPECIES_SWAMPERT", "choice"), ("SPECIES_METAGROSS", "setup"), ("SPECIES_MESPRIT", "attacker")]),
-    "FRONTIER_FACILITY_PALACE": dict(  # Spenser: a bat, a loud one and a lady of the water
+        gold=[("SPECIES_SWAMPERT", "choice"), ("SPECIES_METAGROSS", "setup"), ("SPECIES_DRAGAPULT", "attacker")]),
+    "FRONTIER_FACILITY_PALACE": dict(  # Armand: Mardi Gras revellers, a bat, a loud one and a lady of the water
         silver=[("SPECIES_CROBAT", "attacker"), ("SPECIES_EXPLOUD", "attacker"), ("SPECIES_MILOTIC", "attacker")],
-        gold=[("SPECIES_NINETALES", "attacker"), ("SPECIES_EXPLOUD", "choice"), ("SPECIES_SUICUNE", "setup")]),
-    "FRONTIER_FACILITY_PIKE": dict(  # Lucy: venom, steel and a sea serpent
+        gold=[("SPECIES_NINETALES", "attacker"), ("SPECIES_EXPLOUD", "choice"), ("SPECIES_VAPOREON", "setup")]),
+    "FRONTIER_FACILITY_PIKE": dict(  # Lucille: venom, steel and a sea serpent
         silver=[("SPECIES_SEVIPER", "attacker"), ("SPECIES_FERROTHORN", "bulky"), ("SPECIES_MILOTIC", "bulky")],
         gold=[("SPECIES_SEVIPER", "setup"), ("SPECIES_ARCHALUDON", "attacker"), ("SPECIES_GYARADOS", "setup")]),
-    "FRONTIER_FACILITY_PYRAMID": dict(  # Brandon: stone and the three birds
+    "FRONTIER_FACILITY_PYRAMID": dict(  # Lafitte: the mound king's stone and ice
         silver=[("SPECIES_GIGALITH", "attacker"), ("SPECIES_MAGNEZONE", "attacker"), ("SPECIES_VANILLUXE", "attacker")],
-        gold=[("SPECIES_ARTICUNO", "attacker"), ("SPECIES_ZAPDOS", "attacker"), ("SPECIES_MOLTRES", "attacker")]),
+        gold=[("SPECIES_NINETALES_ALOLA", "attacker"), ("SPECIES_COALOSSAL", "attacker"), ("SPECIES_CLOYSTER", "setup")]),
 }
 # Factory: random rentals fill the real party; these are only the species the brain card / Steven-style display uses
 FACTORY = dict(silver=[("SPECIES_METANG", "ITEM_SITRUS_BERRY"), ("SPECIES_CORVIKNIGHT", "ITEM_LUM_BERRY"), ("SPECIES_ARCHALUDON", "ITEM_LEFTOVERS")],
@@ -193,9 +193,8 @@ def pyramid_files(G):
     lv_50 = [int(x) for x in re.findall(r"\.lvl = (\d+)", lv50)]
     lv_op = [int(x) for x in re.findall(r"\.lvl = (\d+)", lvop)]
     assert len(lv_50) == len(lv_op) == 160
-    from layoutplan import BANNED, EXCLUDED
-    pool = [s for s in d.species if s not in BANNED and s not in EXCLUDED and not s.endswith("_ORLEANIAN") or s in d.species and s.endswith("_ORLEANIAN")]
-    pool = [s for s in d.species if s not in BANNED and s not in EXCLUDED]
+    from layoutplan import BANNED, EXCLUDED, is_legend
+    pool = [s for s in d.species if s not in BANNED and s not in EXCLUDED and not is_legend(d, s)]
     rounds = []
     used_global = {}
     for r in range(20):

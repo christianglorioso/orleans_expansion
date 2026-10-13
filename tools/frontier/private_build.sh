@@ -14,9 +14,11 @@ mkdir -p "$DEST"
 if [ "$MODE" = head ]; then
     TMP=$HOME/orleans_frontier_head.new
     rm -rf "$TMP"; mkdir -p "$TMP"
-    git -C "$SRC" archive HEAD | tar -x -C "$TMP"
+    git -C "$SRC" archive "${REF:-HEAD}" | tar -x -C "$TMP"
     rsync -rlpgoD --checksum --exclude=/build/ --exclude=/build.log "$TMP/" "$DEST/"
     rm -rf "$TMP"
+    # files a previous `tree` run copied in that are untracked in the repo (other agents' work in progress) must not leak into a HEAD build
+    git -C "$SRC" ls-files --others --exclude-standard | while read -r f; do rm -f "$DEST/$f"; done
 else
     rsync -rlpgoD --checksum --filter=':- .gitignore' --exclude=/build/ --exclude=/build.log --exclude=/.git/ "$SRC/" "$DEST/"
 fi

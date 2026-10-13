@@ -87,7 +87,7 @@ def until_menu(b, n=40):
 
 def to_party(b):
     b.warp("BattleFrontier_BattleArenaLobby", 7, 9)
-    b.frames(30)
+    b.frames(2600)   # the achievements popups queued by the badge flags must drain before the attendant answers
     b.goto(7, 8)
     b.face("U")
     b.press("A", 4, 20)
@@ -111,6 +111,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--rounds", type=int, default=3)
     ap.add_argument("--real", default="1", help="battle numbers fought for real (force-win off), comma separated")
+    ap.add_argument("--mega-tests", dest="mega_tests", type=int, default=2, help="battles whose lead holds a Mega stone that are fought for real and screenshotted")
+    ap.add_argument("--save-from", dest="save_from", type=int, default=999, help="save a state at the start of every battle from this number on")
     ap.add_argument("--tag", default="frontier_arena")
     ap.add_argument("--rom", default=str(ROM))
     a = ap.parse_args()
@@ -120,8 +122,8 @@ def main():
     try:
         setup(b)
         for sp in ("SPECIES_DRAGONITE", "SPECIES_GENGAR", "SPECIES_METAGROSS", "SPECIES_SWAMPERT"):
-            b.give_mon(sp, 100)
-        battles, inb = 0, False
+            b.give_mon(sp, 50)
+        battles, inb, mega_tests = 0, False, 0
         for rnd in range(a.rounds):
             to_party(b)
             for k in range(3):
@@ -135,6 +137,8 @@ def main():
                     if not inb:
                         inb = True
                         battles += 1
+                        if battles >= a.save_from:
+                            b.savestate(str(Path(b.out) / ("pre_b%02d.state" % battles)))   # just after the battle began: replayable when something dies later
                         b.frames(30)
                         party = enemy_party(b)
                         teams.append(dict(battle=battles, round=rnd + 1, party=party))
@@ -142,6 +146,19 @@ def main():
                         for q in range(3):
                             b.frames(40)
                             b.shot("b%02d_%d" % (battles, q))
+                    lead = party[0]["item"] if party else ""
+                    mega_lead = lead.endswith("ITE") or lead.endswith("ITE_X") or lead.endswith("ITE_Y")
+                    if mega_lead and mega_tests < a.mega_tests:
+                        # fight for real and screenshot every second: does the AI Mega Evolve on the held stone?
+                        mega_tests += 1
+                        print("MEGA TEST battle", battles, party[0]["species"], lead, flush=True)
+                        for q in range(30):
+                            if not b.in_battle():
+                                break
+                            b.press("A", 4, 26)
+                            b.frames(40)
+                            b.shot("mega%d_%02d" % (battles, q))
+                        continue
                     b.fight(max_s=90, force_win=(battles not in real))
                     continue
                 inb = False

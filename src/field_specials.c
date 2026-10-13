@@ -2423,6 +2423,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 48;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     case SCROLL_MULTI_BERRY_POWDER_VENDOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 12;
@@ -2579,6 +2589,57 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         COMPOUND_STRING("KING'S ROCK{CLEAR_TO 94}64BP"),
         COMPOUND_STRING("FOCUS BAND{CLEAR_TO 94}64BP"),
         COMPOUND_STRING("SCOPE LENS{CLEAR_TO 94}64BP"),
+        gText_Exit
+    },
+    [SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR] =
+    {
+        COMPOUND_STRING("HP UP EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("PROTEIN EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("IRON EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("CALCIUM EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("ZINC EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("CARBOS EX{CLEAR_TO 94}10BP"),
+        COMPOUND_STRING("LIFE ORB{CLEAR_TO 94}96BP"),
+        COMPOUND_STRING("CHOICE SPECS{CLEAR_TO 94}96BP"),
+        COMPOUND_STRING("CHOICE SCARF{CLEAR_TO 94}96BP"),
+        COMPOUND_STRING("ASSAULT VEST{CLEAR_TO 94}80BP"),
+        COMPOUND_STRING("FOCUS SASH{CLEAR_TO 94}64BP"),
+        COMPOUND_STRING("EXPERT BELT{CLEAR_TO 94}64BP"),
+        COMPOUND_STRING("ROCKY HELMET{CLEAR_TO 94}64BP"),
+        COMPOUND_STRING("WEAKNESS POLICY{CLEAR_TO 94}64BP"),
+        COMPOUND_STRING("EVIOLITE{CLEAR_TO 94}64BP"),
+        COMPOUND_STRING("SHELL BELL{CLEAR_TO 94}48BP"),
+        COMPOUND_STRING("BLACK SLUDGE{CLEAR_TO 94}48BP"),
+        COMPOUND_STRING("LIGHT CLAY{CLEAR_TO 94}48BP"),
+        COMPOUND_STRING("FLAME ORB{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("TOXIC ORB{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("MUSCLE BAND{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("WISE GLASSES{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("AIR BALLOON{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("HVY-DUTY BOOTS{CLEAR_TO 94}32BP"),
+        COMPOUND_STRING("SITRUS BERRY{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SALAC BERRY{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("LIECHI BERRY{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("PETAYA BERRY{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("LEPPA BERRY{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SILK SCARF{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("BLACK BELT{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SHARP BEAK{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("POISON BARB{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SOFT SAND{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("HARD STONE{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SILVER POWDER{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("SPELL TAG{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("METAL COAT{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("CHARCOAL{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("MYSTIC WATER{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("MIRACLE SEED{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("MAGNET{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("TWISTED SPOON{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("NEVERMELTICE{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("DRAGON FANG{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("BLACKGLASSES{CLEAR_TO 94}16BP"),
+        COMPOUND_STRING("FAIRY FEATHER{CLEAR_TO 94}16BP"),
         gText_Exit
     },
     [SCROLL_MULTI_BERRY_POWDER_VENDOR] =
@@ -3100,7 +3161,7 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
 {
     #include "data/battle_frontier/battle_frontier_exchange_corner.h"
 
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
+    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR)
     {
         FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
         switch (menu)
@@ -3139,6 +3200,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
             AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Competitive[selection] == ITEM_LIST_END ? gText_Exit : GetItemDescription(sFrontierExchangeCorner_Competitive[selection]), 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Competitive[selection]);
+            break;
         default:
             break;
         }
@@ -3169,6 +3234,7 @@ static void HideFrontierExchangeCornerItemIcon(enum ScrollMulti menu, u16 unused
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR:
             // This makes sure deleting the icon will not clear palettes in use by object events
             FieldEffectFreeGraphicsResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
