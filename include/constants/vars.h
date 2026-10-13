@@ -119,12 +119,12 @@
 #define VAR_ORLEANS_LEGENDARY_PICK                       0x4061 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
 #define VAR_OLD_WATER_CEREMONY                           0x4062 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
 #define VAR_SHRINE_ARRIVAL                               0x4063 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
-#define VAR_ORLEANS_POOL_017                            0x4064
-#define VAR_ORLEANS_POOL_018                            0x4065
-#define VAR_ORLEANS_POOL_019                            0x4066
-#define VAR_ORLEANS_POOL_020                            0x4067
-#define VAR_ORLEANS_POOL_021                            0x4068
-#define VAR_ORLEANS_POOL_022                            0x4069
+#define VAR_DERBY_RACER_1                                0x4064 // Game Corner Derby racer 1: nickname id * 1000 + species * 100 + shiny * 10 + condition
+#define VAR_DERBY_RACER_2                                0x4065 // Game Corner Derby racer 2: nickname id * 1000 + species * 100 + shiny * 10 + condition
+#define VAR_DERBY_RACER_3                                0x4066 // Game Corner Derby racer 3: nickname id * 1000 + species * 100 + shiny * 10 + condition
+#define VAR_DERBY_RACER_4                                0x4067 // Game Corner Derby racer 4: nickname id * 1000 + species * 100 + shiny * 10 + condition
+#define VAR_DERBY_RACER_5                                0x4068 // Game Corner Derby racer 5: nickname id * 1000 + species * 100 + shiny * 10 + condition
+#define VAR_DERBY_RACER_6                                0x4069 // Game Corner Derby racer 6: nickname id * 1000 + species * 100 + shiny * 10 + condition
 #define VAR_DEXNAV_SPECIES                               0x406A // DexNav registered species
 #define VAR_DEXNAV_SEARCH_LEVEL                          0x406B // DexNav search level of the registered species
 #define VAR_DEXNAV_STEP_COUNTER                          0x406C // DexNav hidden-Pokemon step counter

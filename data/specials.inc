@@ -654,3 +654,4 @@ gSpecials::
 	def_special OrleansDex_CheckBaseComplete
 	def_special StartBlackJack
 	def_special StartGacha
+	def_special StartDerby
