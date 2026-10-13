@@ -61,8 +61,8 @@ BRIDGE = (22, 11, 8)            # x, y (north rail row), length: deck from bank 
 # the river flaring into the harbour: first and last water column per row (rows above 16: RIVER)
 FLARE = {16: (24, 28), 17: (24, 29), 18: (23, 29), 19: (22, 30), 20: (21, 31)}
 SHORE = 21                      # the first row of open water along the south shore (the quays stand on it)
-EAST_LAND = {21: (40, 49), 22: (40, 49), 23: (40, 48), 24: (40, 47), 36: (39, 45)}  # the east shore and the spit
-EAST_LAND.update({y: (39, 46) for y in range(25, 36)})
+EAST_LAND = {21: (40, 49), 22: (40, 49), 23: (40, 48), 24: (40, 47), 36: (38, 45)}  # the east shore and the spit
+EAST_LAND.update({y: (37, 46) for y in range(25, 36)})
 YARD = (0, 0, 12, 11)           # the substation's fence: x0, y0, x1, y1 (paving inside); WEST bank (user decision 9, 2026-10-12)
 GATE = (5, 7)                   # the yard's gate columns (the hall's porch above it)
 
@@ -151,9 +151,9 @@ def terrain(t):
         t.fill(".", x0, SHORE, x1 - x0 + 1, 2)
     # the lighthouse path: off the east quay's end, down the spit's west side, round to the door
     R(40, 21, 2, 5)
-    R(39, 26, 2, 10)
-    R(39, 25, 3, 2)           # a two-row shoulder where the lane steps west (no hard jog)
-    R(39, 34, 5, 2)
+    R(37, 26, 2, 10)
+    R(37, 25, 5, 2)           # a two-row shoulder where the lane steps west (no hard jog)
+    R(37, 34, 5, 2)
     # the substation yard: paving inside the fence, out through the gate to a kerbed end on the road (a one-row
     # break-up ('&') read as rubble at the gate, not as paving wearing out)
     x0, y0, x1, y1 = YARD
@@ -182,7 +182,7 @@ BUILDINGS = [
     ("storms_edge_house_c", "stilt_house", (6, 17)),
     ("storms_edge_seafood_market", "brick_shop", (14, 15)),
     ("storms_edge_house_e", "stilt_house", (35, 17)),
-    ("storms_edge_lighthouse", "lighthouse", (41, 28)),
+    ("storms_edge_lighthouse", "lighthouse", (39, 28)),
 ]
 ON_PAVING = {"storms_edge_gym"}
 

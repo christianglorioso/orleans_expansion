@@ -26,7 +26,7 @@ REACH = 2                     # levee ground: land within this many cells of cha
 MAPS = {"route_4", "storms_edge", "redfield"}
 # where on a map (cells x0, y0, x1, y1); maps not listed: anywhere. Storm's Edge: the river above the town
 # bridge (below it the river opens into the harbour, whose shores, like the lighthouse inlet's, stay natural)
-AREAS = {"storms_edge": (0, 0, 32, 11)}  # x0 <= x < x1: storms_edge.py's river is 5 wide (x 24-28)
+AREAS = {"storms_edge": (21, 0, 32, 16)}  # x0 <= x < x1: storms_edge.py's river is 5 wide (x 24-28)
 
 # one palette: the swamp grass and water the levee meets, plus its own slope, earth, stone and foam
 GRASS = [(104, 144, 96), (120, 160, 104), (136, 176, 128)]

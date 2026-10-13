@@ -2138,5 +2138,33 @@
   "base": "ekat:grass",
   "attr_of": "ekat:grass",
   "group": "levee"
+ },
+ {
+  "id": "ovl_seq_1_3__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "seq:1_3"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_2_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:2_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_3_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:3_0"
+  }
  }
 ]

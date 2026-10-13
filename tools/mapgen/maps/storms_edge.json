@@ -60,7 +60,7 @@
     },
     {
       "prefab": "lighthouse",
-      "x": 41,
+      "x": 39,
       "y": 32,
       "label": "Lighthouse (storms_edge_lighthouse)",
       "interior": "MAP_STORMS_EDGE_LIGHTHOUSE"
@@ -1864,12 +1864,6 @@
       "prefab": "cypress_small_water",
       "x": 16,
       "y": 37,
-      "label": "Water prop"
-    },
-    {
-      "prefab": "cypress_small_water",
-      "x": 36,
-      "y": 39,
       "label": "Water prop"
     },
     {

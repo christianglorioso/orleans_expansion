@@ -305,9 +305,22 @@ def prepare(b, key, style, sp, keep_open, strict_all):
     return prepare_canopy(b, key, style, sp, keep_open, strict_all)
 
 
+def groves(b):
+    """the marsh groves of the spec (cypress on a marsh patch, with the patch's window): the wall gives way round them rather than eating them"""
+    br = __import__("band_rules")
+    out = set()
+    for bd in b.spec.get("buildings", []):
+        if bd["prefab"] in ("cypress_marsh", "cypress_small_marsh"):
+            for x, y, _ in br.prefab_cells(b, bd):
+                out |= {(x + i, y + j) for i in (-1, 0, 1) for j in (-1, 0, 1)}
+    return {c for c in out if 0 <= c[0] < b.w and 0 <= c[1] < b.h}
+
+
 def prepare_canopy(b, key, style, sp, keep_open, strict_all, maxb=MAXB):
     w, h = b.w, b.h
     P = protected(b, key) | keep_open | landmarks(b)
+    if style == "swamp" and b.spec.get("feather", {}).get("keep_groves"):      # a town that wants its bayou groves (Isle Marais): the wall retreats round them
+        P |= groves(b)
     PD = dilate(P, 1, w, h)
     forbid = seam_zone(key, 3)
     if style == "dry":
@@ -604,17 +617,32 @@ def _ranges(v):
 # at scenery, never at the map's end.  The sealed zone S (water rows 0..L-1 along the edge, L wandering 1..3) is walled off by a
 # chain of blocking props along S's 4-neighbour boundary B (diagonal steps seal for 4-direction movement), so the last water the
 # surfer can reach lies behind cypress / logs / snags / pilings.  Props come from a per-tileset palette (swamp or sea).
-BARRIER_SWAMP = (("cypress_water", 3), ("cypress_small_water", 3), ("waterlog", 2), ("snag_water", 2), ("wp_knees_a", 3), ("wp_knees_b", 3), ("wp_cattails", 3))
-BARRIER_PORT = (("cypress_small_water", 4), ("cypress_water", 2), ("snag_water", 3))      # the port tileset (Storm's Edge + Route 2) is at its tile limit: only pieces its maps already pay for
-BARRIER_SEA = (("sunken_piling", 4), ("waterlog", 3), ("snag_water", 3), ("channel_buoy", 1), ("cypress_small_water", 1), ("wp_rock_a", 5), ("wp_rock_b", 5), ("wp_rock_ledge", 3))
-SEA_TILESETS = ("gulf", "offshore", "harbor", "coast", "port", "crescent")
+BARRIER_CLASSES = {
+    # class -> ((prefab, weight), ...): "big" pieces make a grove / cluster, "low" pieces close the gaps between clusters, "accent" is rare
+    "swamp": {"big": (("cypress_water", 3), ("cypress_small_water", 3)),
+              "low": (("wp_knees_a", 3), ("wp_knees_b", 3), ("wp_cattails", 3), ("waterlog", 2), ("snag_water", 2)),
+              "accent": (("snag_water", 1),)},
+    "sea": {"big": (("wp_rock_ledge", 3), ("wp_rock_a", 2)),
+            "low": (("wp_rock_a", 4), ("wp_rock_b", 4), ("snag_water", 1), ("waterlog", 1)),
+            "accent": (("sunken_piling", 2), ("channel_buoy", 1), ("cypress_small_water", 1))},
+    # the port tileset (Storm's Edge + Route 2) is at its tile limit: only pieces its maps already pay for
+    "port": {"big": (("cypress_small_water", 4), ("cypress_water", 3)),
+             "low": (("snag_water", 3), ("wp_knees_a", 2), ("wp_cattails", 2)),
+             "accent": ()},
+}
+SEA_TILESETS = ("gulf", "offshore", "harbor", "coast", "crescent")
 
 
-def barrier_palette(b):
+def barrier_classes(b):
     name = b.spec["tileset"]
-    pal = BARRIER_PORT if name.endswith("_port") else BARRIER_SEA if any(s in name for s in SEA_TILESETS) else BARRIER_SWAMP
-    out = [(p, wgt) for p, wgt in pal if p in b.ts["prefabs"]]
-    return out or [(p, 1) for p in ("cypress_water", "cypress_small_water", "waterlog", "snag_water") if p in b.ts["prefabs"]]
+    kind = "port" if name.endswith("_port") else "sea" if any(s in name for s in SEA_TILESETS) else "swamp"
+    have = b.ts["prefabs"]
+    out = {c: [(p, w_) for p, w_ in lst if p in have] for c, lst in BARRIER_CLASSES[kind].items()}
+    if not out["big"]:
+        out["big"] = [(p, 1) for p in ("cypress_water", "cypress_small_water") if p in have]
+    if not out["low"]:
+        out["low"] = [(p, 1) for p in ("waterlog", "snag_water") if p in have]
+    return kind, out
 
 
 def prefab_shape(b, name):
@@ -640,8 +668,11 @@ def blocking_cells(b):
     return blocked, struct
 
 
-def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=3, events=()):
-    """wall the open water off 1-3 cells short of every unconnected edge; returns the number of leaks (boundary cells it could not seal)"""
+def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
+    """Stop the surfer 1-4 cells short of every unconnected edge with scenery that reads as the place, not as a fence:
+    segments of the edge alternate between CLUSTERS (groves of big props, a thick sealed zone behind them filled with undergrowth) and GAPS
+    (low pieces: knees, cattails, rocks, snags), the line wanders 1-4 cells from the edge, no prop is repeated more than 3 times in a row.
+    Movement is 4-way, so a chain of blocking cells that only touches diagonally still seals.  Returns the number of unsealed boundary cells."""
     w, h = b.w, b.h
     br = __import__("band_rules")
     rng = _rng(key, "barrier")
@@ -650,27 +681,41 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=3, events=()):
     occupied = set(P) | struct
     for bd in b.spec.get("buildings", []):
         occupied |= {(x, y) for x, y, _ in br.prefab_cells(b, bd)}
-    pal = barrier_palette(b)
-    sea = any(t in b.spec["tileset"] for t in SEA_TILESETS)
-    if not pal:
+    kind, cls = barrier_classes(b)
+    allp = {p for lst in cls.values() for p, _ in lst}
+    if not allp:
         b.feather_report.append("no barrier props in this tileset")
         return 0
-    S = set()
+    shapes = {p: prefab_shape(b, p) for p in allp}
+    S, owner, mode = set(), {}, {}
     for side in "NSWE":
         n, cell = side_geom(b, side)
         for lo, hi in sp[side]:
+            r2 = _rng(key, side, lo, "surf2")
             dl = []
             for i in range(lo, hi):
                 k = 0
-                while k < 8 and cell(i, k) in water:
+                while k < 9 and cell(i, k) in water:
                     k += 1
                 dl.append(k)                 # water rows from the edge (a non-water cell stops the run)
-            want = walk(_rng(key, side, lo, "surf"), hi - lo, 1, maxl, (1, 2, 3) if sea else (2, 3, 4))
+            segs, i, is_cl = [], lo, r2.random() < 0.5
+            while i < hi:
+                ln = r2.randint(4, 8) if is_cl else r2.randint(2, 5)
+                segs.append((i, min(hi, i + ln), is_cl))
+                i += ln
+                is_cl = not is_cl
+            want = []
+            for a, e, cl in segs:
+                base = r2.choice((3, 4) if cl else (1, 2)) if kind != "sea" else r2.choice((2, 3, 4) if cl else (1, 2))
+                for i in range(a, e):
+                    mode[(side, i)] = "big" if cl else "low"
+                    want.append(max(1, min(maxl, base + (r2.choice((-1, 1)) if r2.random() < 0.3 else 0))))
             cap = [min(maxl, d - 2) if d >= 3 else 0 for d in dl]
             L = relax(want, cap)
             for i in range(lo, hi):
                 for k in range(L[i - lo]):
                     S.add(cell(i, k))
+                    owner.setdefault(cell(i, k), (side, i))
 
     S -= dilate(events or P, 2, w, h)        # an event / NPC / item in the water is never sealed in: the barrier keeps two cells away from it
 
@@ -694,64 +739,139 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=3, events=()):
             break
         S -= bad
     b.border_log.append(f"feather surf zone: {s0} cells wanted, {len(S)} sealable")
-    shapes = {p: prefab_shape(b, p) for p, _ in pal}
+
+    def fits(p, ax, ay, S, newocc, newblocked, inside_only=False):
+        """the prop's footprint stands on free water (and on the patch window the prop's rule wants); its passable cells never touch the sealed zone from outside"""
+        cells, blk = shapes[p]
+        foot = {(ax + i, ay + j) for i, j in cells}
+        if any(not usable(f) or f in newocc for f in foot):
+            return None
+        if inside_only and any(f not in S for f in foot):
+            return None
+        win = {(f[0] + dx, f[1] + dy) for f in foot for dx in (0, 1) for dy in (0, 1)}
+        if any(q not in water and 0 <= q[0] < w and 0 <= q[1] < h for q in win):
+            return None
+        if any(f in strict_all for f in foot) and not br.prefab_is_primary(b, {"prefab": p, "x": ax, "y": ay}):
+            return None
+        pas = {(ax + i, ay + j) for i, j in cells - blk}
+        if any(q not in S and q not in newblocked and any(nb in S and nb not in foot for nb in nbrs(q)) for q in pas):
+            return None
+        return foot, {(ax + i, ay + j) for i, j in blk}
+
+    def pick(order, weights_by_class):
+        flat = []
+        for ci, c in enumerate(order):
+            for p, w_ in weights_by_class.get(c, ()):
+                flat.append((p, w_, ci))
+        return flat
 
     def solve(S):
         B = {nb for c in S for nb in nbrs(c) if 0 <= nb[0] < w and 0 <= nb[1] < h and nb not in S and nb not in blocked}
+
+        def okey(c):
+            ow = next((owner[q] for q in nbrs(c) if q in owner), ("Z", 0))
+            return (ow[0], ow[1], c[0] + c[1])
         placed, newblocked, newocc, leaks = [], set(), set(), set()
+        recent = {}
         rest = set(B)
         while rest:
-            c = min(rest, key=lambda q: (q[1], q[0]))
+            c = min(rest, key=okey)
+            ow = next((owner[q] for q in nbrs(c) if q in owner), ("Z", 0))
+            want = mode.get(ow, "low")
+            order = ("big", "low", "accent") if want == "big" else ("low", "big", "accent")
+            last = recent.setdefault(ow[0], [])
             best, bestscore = None, -1e9
-            wmax = max(wg for _, wg in pal)
-            for p, wgt in pal:
-                if rng.random() > wgt / wmax:        # the palette's weights are how often a prop is considered at all
+            for strictseq in (True, False):                         # the "no more than 3 of one prop in a row" rule gives way only when nothing else fits
+              for p, wgt, ci in pick(order, cls):
+                if ci == 2 and rng.random() > 0.10:
+                    continue                                       # accents are rare
+                if strictseq and len(last) >= 3 and last[-1] == last[-2] == last[-3] == p:
                     continue
                 cells, blk = shapes[p]
                 for (bx, by) in blk:
                     ax, ay = c[0] - bx, c[1] - by
-                    foot = {(ax + i, ay + j) for i, j in cells}
-                    if any(not usable(f) or f in newocc for f in foot):
+                    r = fits(p, ax, ay, S, newocc, newblocked)
+                    if r is None:
                         continue
-                    win = {(f[0] + dx, f[1] + dy) for f in foot for dx in (0, 1) for dy in (0, 1)}   # the patch rule: a prop stands on a patch window
-                    if any(q not in water and 0 <= q[0] < w and 0 <= q[1] < h for q in win):
-                        continue
-                    if any(f in strict_all for f in foot) and not br.prefab_is_primary(b, {"prefab": p, "x": ax, "y": ay}):
-                        continue
-                    pas = {(ax + i, ay + j) for i, j in cells - blk}
-                    own = {(ax + i, ay + j) for i, j in cells}
-                    if any(q not in S and q not in newblocked and any(nb in S and nb not in own for nb in nbrs(q)) for q in pas):
-                        continue             # a passable cell (a snag's top) outside the sealed zone that touches it is a stepping stone for a surfer: not there
-                    cover = {(ax + i, ay + j) for i, j in blk} & rest
-                    depth_over = sum(1 for f in foot if min(f[0], f[1], w - 1 - f[0], h - 1 - f[1]) > maxl + 2)
-                    score = 3 * len(cover) - depth_over + wgt * 0.3 + rng.random() * 1.2
+                    foot, blkc = r
+                    cover = blkc & rest
+                    score = 1.2 * len(cover) + (3 if ci == 0 else 0) + wgt * 0.3 + rng.random() * 4.0
                     if score > bestscore:
-                        best, bestscore = (p, ax, ay, foot, {(ax + i, ay + j) for i, j in blk}), score
+                        best, bestscore = (p, ax, ay, foot, blkc), score
+              if best is not None:
+                break
             if best is None:
                 leaks.add(c)
                 rest.discard(c)
                 continue
             p, ax, ay, foot, blkc = best
             placed.append({"prefab": p, "x": ax, "y": ay, "label": "Surf barrier"})
+            last.append(p)
             newocc |= foot
             newblocked |= blkc
             rest -= blkc
-        return placed, leaks
+        return placed, leaks, newocc, newblocked
 
+    result = None
     for rnd in range(40):                     # a boundary cell no prop can take: other draws first, then pull the sealed zone back from it
         best = None
         for seed in range(14):
             rng = _rng(key, "barrier", rnd, seed)
-            placed, leaks = solve(S)
-            if best is None or len(leaks) < len(best[1]):
-                best = (placed, leaks)
-            if not leaks:
+            r = solve(S)
+            if best is None or len(r[1]) < len(best[1]):
+                best = r
+            if not r[1]:
                 break
-        placed, leaks = best
-        if not leaks:
+        result = best
+        if not best[1]:
             break
-        rad = 1 + rnd // 3                    # a wider cut each time, so the loop always ends with a closed zone (or none)
-        S = {c for c in S if not any(abs(c[0] - q[0]) <= rad and abs(c[1] - q[1]) <= rad for q in leaks)}
+        rad = 1 + rnd // 3
+        S = {c for c in S if not any(abs(c[0] - q[0]) <= rad and abs(c[1] - q[1]) <= rad for q in best[1])}
+    placed, leaks, newocc, newblocked = result
+    # undergrowth: the sealed zone behind a cluster is not bare water, and a few single low pieces drift in front of the line
+    rng = _rng(key, "undergrowth")
+    extras = []
+    lows = [p for p, _ in cls["low"] if len(shapes[p][0]) == 1] or [p for p, _ in cls["low"]]
+    bigs = cls["big"]
+    cs = sorted(S)
+    rng.shuffle(cs)
+    for c in cs:
+        ow = owner.get(c)
+        if ow is None or c in newocc or c in newblocked:
+            continue
+        cl = mode.get(ow) == "big"
+        r0 = rng.random()
+        if cl and bigs and r0 < 0.10:
+            p = rng.choices([q for q, _ in bigs], [w_ for _, w_ in bigs])[0]
+        elif r0 < ((0.16 if kind == "sea" else 0.34) if cl else 0.06) and lows:
+            p = rng.choice(lows)
+        else:
+            continue
+        r = fits(p, c[0], c[1], S, newocc, newblocked, inside_only=True)
+        if r is None:
+            continue
+        foot, blkc = r
+        extras.append({"prefab": p, "x": c[0], "y": c[1], "label": "Surf barrier"})
+        newocc |= foot
+        newblocked |= blkc
+    edge_d = lambda q: min(q[0], q[1], w - 1 - q[0], h - 1 - q[1])
+    for c in sorted(water):
+        if edge_d(c) < 4 or edge_d(c) > 8 or c in S or c in newocc or rng.random() > 0.022:
+            continue
+        p = rng.choice(lows) if lows else None
+        if p is None:
+            continue
+        # only on open water well clear of the sealed zone and of every placed prop
+        if any((c[0] + i, c[1] + j) in S or (c[0] + i, c[1] + j) in newocc for i in range(-2, 3) for j in range(-2, 3)):
+            continue
+        r = fits(p, c[0], c[1], S, newocc, newblocked)
+        if r is None:
+            continue
+        foot, blkc = r
+        extras.append({"prefab": p, "x": c[0], "y": c[1], "label": "Surf barrier"})
+        newocc |= foot
+        newblocked |= blkc
+    placed = placed + extras
     for pl in placed:
         cells, _ = shapes[pl["prefab"]]
         for f in {(pl["x"] + i, pl["y"] + j) for i, j in cells}:       # plain deep water ('w') under a prop becomes the decorated water its patch rule wants
@@ -852,7 +972,7 @@ def regrow(b, dropped, zone, P, radius=12, forbid=()):
             found = (x, y, foot)
             break
         if found is None and base == '"' and tree:
-            found = new_grove(b, bd, cells, occ, near_zone, P, ring)
+            found = new_grove(b, bd, cells, occ, near_zone, P, ring, zone)
         if found is None:
             lost.append(bd)
             continue
@@ -866,7 +986,7 @@ def regrow(b, dropped, zone, P, radius=12, forbid=()):
     return moved, lost
 
 
-def new_grove(b, bd, cells, occ, near_zone, P, ring):
+def new_grove(b, bd, cells, occ, near_zone, P, ring, zone=()):
     """a lost marsh grove is grown again where there is room: a small round marsh patch on open grass (a grass cell all round it), the tree in
     its middle; returns (x, y, foot) or None"""
     w, h = b.w, b.h
@@ -883,7 +1003,8 @@ def new_grove(b, bd, cells, occ, near_zone, P, ring):
                 c = (cx, cy)
                 inner = x0 <= cx <= x1 and y0 <= cy <= y1
                 ch = b.grid[cy][cx]
-                if c in occ or c in near_zone or c in P or (inner and ch not in '."') or (not inner and ch != "."):
+                tree = x <= cx < x + tw and y <= cy < y + th
+                if c in occ or c in P or c in zone or (tree and c in near_zone) or ch not in '."':      # grass or marsh only (a new patch may join an old marsh margin and touch the edge cells)
                     ok = False
                     break
             if not ok:

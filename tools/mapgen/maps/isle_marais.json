@@ -367,5 +367,8 @@
       "script": "IsleMarais_EventScript_DisplacedWingull"
     }
   ],
-  "_comment": "Isle Marais, polished by isle_marais_gen.py (edit that, not this file)."
+  "_comment": "Isle Marais, polished by isle_marais_gen.py (edit that, not this file).",
+  "feather": {
+    "keep_groves": true
+  }
 }

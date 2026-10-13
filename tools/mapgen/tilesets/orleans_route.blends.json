@@ -1472,5 +1472,12 @@
    "base": "ekat:water_weeds1",
    "art": "wpr:0_0"
   }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:1_0"
+  }
  }
 ]

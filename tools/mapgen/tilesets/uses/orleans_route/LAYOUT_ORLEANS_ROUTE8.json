@@ -26,6 +26,7 @@
 "ekat:marshwater_landNE",
 "ekat:marshwater_landNW",
 "ekat:marshwater_landSW",
+"ekat:snag_top_water",
 "ekat:tallgrass",
 "ekat:water_C",
 "ekat:water_E",
@@ -44,6 +45,7 @@
 "ekat:water_weeds1",
 "ekat:waterlog_0",
 "ekat:waterlog_1",
+"ekat:waterstump",
 "patch:blend_marsh_N_inNE",
 "patch:blend_marsh_N_inNW",
 "patch:blend_marsh_S_inSE",
@@ -76,5 +78,7 @@
 "patch:ovl_lmk_2_11__ekat_marsh_C",
 "patch:ovl_lmk_2_9__ekat_marsh_inNE",
 "patch:ovl_wpr_0_0__ekat_water_C",
-"patch:ovl_wpr_0_0__ekat_water_weeds1"
+"patch:ovl_wpr_1_0__ekat_water_C",
+"patch:ovl_wpr_2_0__ekat_water_C",
+"patch:ovl_wpr_3_0__ekat_water_C"
 ]

@@ -334,5 +334,10 @@
    "M": "ekat:marsh_inSE",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "bk_swamp_E1_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
  }
 ]
