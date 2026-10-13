@@ -230,7 +230,9 @@ ROUTE_AXIS = {1: ("y", True), 2: ("x", True), 3: ("x", True), 4: ("y", True), 5:
 CELL_FIX = {
     1: ([(3, 10)], []),          # the hidden channel to the Old Water is Route 1's map
 }
-FERRY = [(13.45, 5.0), (14.6, 6.2), (15.2, 6.9)]  # riverboat, drawn dotted
+# the riverboat, Pointe Rouge -> Crescent City along the Emerald River: white dots drawn over the river AND the route
+# bands it crosses (Route 4's landing, Route 6), so the line reads unbroken from one city marker to the other
+FERRY = [(12.0, 3.0), (12.15, 3.6), (12.45, 4.6), (13.4, 5.3), (14.6, 6.2), (15.4, 7.1), (15.9, 8.1), (16.3, 8.95)]  # riverboat, drawn dotted
 
 
 # ------------------------------------------------------------------ helpers
@@ -620,18 +622,22 @@ def draw_routes(P, T):
                 else:
                     if d <= 3.6:
                         P[y][x] = CI["b"] if y % 2 == 0 else CI["B"]
-    # the riverboat (Crescent City <-> Route 4 landing): white dots on the river
+    # the riverboat (Pointe Rouge <-> Crescent City): white dots, drawn after the bands so they sit on top
+    for x, y in ferry_pixels():
+        P[y][x] = CI["#"]
+
+
+def ferry_pixels():
     pp = [to_px(p) for p in FERRY]
-    step, acc = 3.0, 0.0
+    out, step, acc = [], 3.0, 0.0
     for a, b in zip(pp, pp[1:]):
         seg = math.hypot(b[0] - a[0], b[1] - a[1])
         t = acc
         while t < seg:
-            x = int(a[0] + (b[0] - a[0]) * t / seg)
-            y = int(a[1] + (b[1] - a[1]) * t / seg)
-            P[y][x] = CI["#"]
+            out.append((int(a[0] + (b[0] - a[0]) * t / seg), int(a[1] + (b[1] - a[1]) * t / seg)))
             t += step
         acc = t - seg
+    return out
 
 
 def draw_markers(P):
@@ -704,6 +710,8 @@ def build_outputs(P, taken, secs):
         for dx in range(w):
             for dy in range(h):
                 protected.add((cx + OFF_X + dx, cy + OFF_Y + dy))
+    for x, y in ferry_pixels():                       # the tile merge must not eat riverboat dots
+        protected.add((x // 8, y // 8))
     merges = reduce_tiles(grid, protected)
     # the final picture (after merging)
     Q = [[0] * W for _ in range(H)]
