@@ -68,10 +68,10 @@ TRAINERS = [
 
 EXTRA_PARTIES = [
     # the raids: one legendary each, the primal weather comes from its orb at switch-in (Primordial Sea / Desolate Land)
-    dict(const="TRAINER_ORLEANS_KYOGRE_RAID", name="KYOGRE", cls="Pkmn Trainer 1", pic="Brendan", sex="Male", music="Male",
+    dict(const="TRAINER_ORLEANS_KYOGRE_RAID", name="KYOGRE", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
          team=[("Kyogre", 60, ["Origin Pulse", "Ice Beam", "Thunder", "Calm Mind"], {"item": "Blue Orb"})],
          ai="Check Bad Move / Try To Faint", iv=31),
-    dict(const="TRAINER_ORLEANS_GROUDON_RAID", name="GROUDON", cls="Pkmn Trainer 1", pic="Brendan", sex="Male", music="Male",
+    dict(const="TRAINER_ORLEANS_GROUDON_RAID", name="GROUDON", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
          team=[("Groudon", 60, ["Precipice Blades", "Fire Punch", "Rock Slide", "Swords Dance"], {"item": "Red Orb"})],
          ai="Check Bad Move / Try To Faint", iv=31),
     # the Oldest Shrine's landing steps: Camille (Mega Weezing), then Andrew (Mega Metagross)
@@ -83,7 +83,7 @@ EXTRA_PARTIES = [
                ("Metagross", 60, [], {"item": "Metagrossite"})],
          ai="Check Bad Move / Try To Faint", iv=30),
     # the Rayquaza raid: one Mega Rayquaza (Dragon Ascent) against the player and Jayden (2 v 1); Delta Stream overrides both primal weathers
-    dict(const="TRAINER_ORLEANS_RAYQUAZA_RAID", name="RAYQUAZA", cls="Pkmn Trainer 1", pic="Brendan", sex="Male", music="Male",
+    dict(const="TRAINER_ORLEANS_RAYQUAZA_RAID", name="RAYQUAZA", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
          team=[("Rayquaza", 66, ["Dragon Ascent", "Extreme Speed", "Earthquake", "Dragon Dance"])],
          ai="Check Bad Move / Try To Faint", iv=31),
 ]

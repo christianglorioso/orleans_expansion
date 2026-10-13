@@ -17,7 +17,7 @@ CrescentCity_Dept2f_EventScript_Clerk0::
 	release
 	end
 
-@ the Metal Alloy (Duraludon -> Archaludon) joins the stock at the sixth badge; after the game is cleared the Sun, Ice, Dusk and Shiny Stones too
+@ the Metal Alloy (Duraludon -> Archaludon) joins the stock at the sixth badge; after the game is cleared the Sun, Ice, Dusk and Shiny Stones and the six EX vitamins (SoulGold, 40000 each) too
 CrescentCity_Dept2f_EventScript_Clerk02:
 	pokemart CrescentCity_Dept2f_Pokemart_Clerk02
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
@@ -43,6 +43,7 @@ CrescentCity_Dept2f_Pokemart_Clerk00:
 	.2byte ITEM_THUNDER_STONE
 	.2byte ITEM_LEAF_STONE
 	.2byte ITEM_EVERSTONE
+	.2byte ITEM_HEART_SCALE
 	pokemartlistend
 
 	.align 2
@@ -54,6 +55,7 @@ CrescentCity_Dept2f_Pokemart_Clerk01:
 	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_HEART_SCALE
 	pokemartlistend
 
 	.align 2
@@ -66,6 +68,7 @@ CrescentCity_Dept2f_Pokemart_Clerk02:
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_PRISM_SCALE
 	.2byte ITEM_METAL_ALLOY
+	.2byte ITEM_HEART_SCALE
 	pokemartlistend
 
 	.align 2
@@ -82,6 +85,13 @@ CrescentCity_Dept2f_Pokemart_Clerk03:
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_PRISM_SCALE
 	.2byte ITEM_METAL_ALLOY
+	.2byte ITEM_HP_UP_EX
+	.2byte ITEM_PROTEIN_EX
+	.2byte ITEM_IRON_EX
+	.2byte ITEM_CALCIUM_EX
+	.2byte ITEM_ZINC_EX
+	.2byte ITEM_CARBOS_EX
+	.2byte ITEM_HEART_SCALE
 	pokemartlistend
 
 CrescentCity_Dept2f_EventScript_Clerk1::

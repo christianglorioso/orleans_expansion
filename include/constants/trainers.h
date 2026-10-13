@@ -177,6 +177,7 @@ enum __attribute__((packed)) TrainerPicID
     TRAINER_PIC_CRUSH_GIRL_FRLG,
     TRAINER_PIC_POKEMON_BREEDER_FRLG,
     TRAINER_PIC_PAINTER_FRLG,
+    TRAINER_PIC_ORLEANS_LEGEND, // Orleans: blank front pic for the legend raids (Kyogre, Groudon, Rayquaza)
     TRAINER_PIC_COUNT,
 };
 

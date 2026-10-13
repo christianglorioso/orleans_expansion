@@ -2,6 +2,8 @@
 #include "data.h"
 
 const u32 gTrainerFrontPic_None[] = INCGFX_U32("graphics/trainers/front_pics/none.png", ".4bpp.smol");
+const u32 gTrainerFrontPic_OrleansLegend[] = INCGFX_U32("graphics/trainers/front_pics/orleans_legend.png", ".4bpp.smol");
+const u16 gTrainerPalette_OrleansLegend[] = INCGFX_U16("graphics/trainers/palettes/orleans_legend.pal", ".gbapal");
 const u16 gTrainerPalette_None[] = INCGFX_U16("graphics/trainers/palettes/none.pal", ".gbapal");
 
 const u32 gTrainerFrontPic_Hiker[] = INCGFX_U32("graphics/trainers/front_pics/hiker.png", ".4bpp.smol");
@@ -1225,5 +1227,9 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_PAINTER_FRLG] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PainterFrlg, gTrainerPalette_PainterFrlg),
+    },
+    [TRAINER_PIC_ORLEANS_LEGEND] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_OrleansLegend, gTrainerPalette_OrleansLegend),
     },
 };

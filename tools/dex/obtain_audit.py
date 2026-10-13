@@ -114,6 +114,21 @@ def main():
         sc = src.get(it)
         rows.append(f"| {it} | {need[it]} | {(sc[0] + (' (+%d more)' % (len(sc) - 1) if len(sc) > 1 else '')) if sc else 'MISSING'} |")
     rows += ["", "Missing: " + (", ".join(missing) if missing else "none")]
+    # Battle Frontier opponent items: the competitive items the Frontier rosters hold are all for sale (tools/frontier/gen_shops.py)
+    sys.path.insert(0, "tools/frontier")
+    import gen_shops
+    rows += ["", "## Battle Frontier competitive items (held by Frontier opponents; sold to the player)", "",
+             "| Item | Battle Point clerk (Arena lobby) | Crescent City department store (floor 2, clerk 0, story 45+) |", "|---|---|---|"]
+    bp = {i_: b_ for i_, _, b_ in gen_shops.BP_ITEMS}
+    for it in sorted(set(gen_shops.DEPT_ITEMS) | set(bp)):
+        rows.append(f"| {it} | {str(bp[it]) + ' BP' if it in bp else '-'} | {'yes, at the engine item price' if it in gen_shops.DEPT_ITEMS else '-'} |")
+    # competitive held items farmed off wild Pokemon (5% itemRare slot): tools/dex/wild_held_items.py (full table in ../frontier/wild_held_items.md)
+    import wild_held_items
+    wsrc = wild_held_items.sources()
+    rows += ["", "## Competitive held items from wild Pokemon (5% each; tools/dex/wild_held_items.py)", "", "| Item | Wild species (slot) |", "|---|---|"]
+    for it in wild_held_items.ITEMS:
+        rows.append(f"| ITEM_{it} | " + (", ".join(f"{s} ({slot})" for s, slot, _ in wsrc[it]) if it in wsrc else "MISSING") + " |")
+    missing += ["wild held: " + it for it in wild_held_items.ITEMS if it not in wsrc]
     open("tools/dex/obtain_report.md", "w", encoding="utf-8", newline="\n").write("\n".join(rows) + "\n")
     print("\nmissing:", missing or "none")
     sys.exit(1 if missing else 0)

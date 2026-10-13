@@ -11,6 +11,9 @@ CrescentCity_Conservation_EventScript_Lafayette0::
 	call_if_unset FLAG_DEXNAV_OBTAINED, CrescentCity_Conservation_EventScript_GiveDexNav
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_KabutoRevive
+@ After the shrine fight (story 43+) Lafayette hands over the BELDUM that splintered off Andrew's Mega Metagross (once).
+	goto_if_lt VAR_ORLEANS_STORY, 43, CrescentCity_Conservation_EventScript_Tally
+	goto_if_unset FLAG_RECEIVED_BELDUM_GIFT, CrescentCity_Conservation_EventScript_BeldumGift
 @ Every unclaimed tier is given in order (10 species, 15, 25), each only once, however many species he is told about at a time.
 CrescentCity_Conservation_EventScript_Tally:
 	setvar VAR_0x8004, 1
@@ -224,6 +227,36 @@ CrescentCity_Conservation_Text_FossilDone:
 CrescentCity_Conservation_Text_FossilNoRoom:
 	.string "LAFAYETTE: Your party and your boxes\n"
 	.string "are full. Make room and come back.$"
+
+CrescentCity_Conservation_EventScript_BeldumGift:
+	msgbox CrescentCity_Conservation_Text_BeldumOffer, MSGBOX_DEFAULT
+	givemon SPECIES_BELDUM, 5
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, CrescentCity_Conservation_EventScript_BeldumNoRoom
+	setflag FLAG_RECEIVED_BELDUM_GIFT
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, CrescentCity_Conservation_EventScript_BeldumToPC
+	msgbox CrescentCity_Conservation_Text_BeldumGiven, MSGBOX_DEFAULT
+	goto CrescentCity_Conservation_EventScript_Tally
+
+CrescentCity_Conservation_EventScript_BeldumToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BELDUM
+	call Common_EventScript_TransferredToPC
+	msgbox CrescentCity_Conservation_Text_BeldumGiven, MSGBOX_DEFAULT
+	goto CrescentCity_Conservation_EventScript_Tally
+
+CrescentCity_Conservation_EventScript_BeldumNoRoom:
+	call Common_EventScript_NoMoreRoomForPokemon
+	release
+	end
+
+CrescentCity_Conservation_Text_BeldumOffer:
+	.string "LAFAYETTE: I walked the shrine\n"
+	.string "steps after the fight and found\p"
+	.string "this in the rubble. A small steel\n"
+	.string "thing, chipped off that Mega\p"
+	.string "METAGROSS. It's alive. It's yours.$"
+
+CrescentCity_Conservation_Text_BeldumGiven:
+	.string "You received a BELDUM!$"
 
 @ Orleans: the DexNav (config/dexnav.h, DN_FLAG_DEXNAV_GET = FLAG_DEXNAV_OBTAINED): Lafayette gives it at the first briefing (story 13), or on the
 @ next visit for a player already past it. It adds a DEXNAV entry to the START menu.

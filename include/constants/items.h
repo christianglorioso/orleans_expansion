@@ -1094,6 +1094,12 @@ enum __attribute__((packed)) Item
     ITEM_LYCANROCITE = 914,  // Orleans custom Mega stone (tools/dex/apply_megas.py)
     ITEM_FAIS_DO_DO_RIBBON = 915,  // Orleans: evolves Petilil into Hisuian Lilligant (tools/dex/apply_evolutions.py)
     ITEM_DIVING_GEAR = 916,  // Orleans: Heron's gift, lets the player dive off Route 22 (Chapter 8)
+    ITEM_HP_UP_EX = 917,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
+    ITEM_PROTEIN_EX = 918,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
+    ITEM_IRON_EX = 919,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
+    ITEM_CALCIUM_EX = 920,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
+    ITEM_ZINC_EX = 921,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
+    ITEM_CARBOS_EX = 922,  // Orleans: SoulGold super vitamin (Eemeliri/soulgold): maxes the stat's EV
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

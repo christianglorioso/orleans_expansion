@@ -242,6 +242,16 @@ def main():
     for sp_ in not_dex:
         bad("trainers", f"Orleans trainer uses {sp_}, which is not in the Orleans dex")
 
+    # SoulGold's EX vitamins: item constants, data blocks and the max-EV effect arrays exist
+    items_c = (ROOT / "include/constants/items.h").read_text(encoding="utf-8")
+    items_d = (ROOT / "src/data/items.h").read_text(encoding="utf-8")
+    eff_d = (ROOT / "src/data/pokemon/item_effects.h").read_text(encoding="utf-8")
+    for n, e in (("HP_UP", "HPUp"), ("PROTEIN", "Protein"), ("IRON", "Iron"), ("CALCIUM", "Calcium"), ("ZINC", "Zinc"), ("CARBOS", "Carbos")):
+        if f"ITEM_{n}_EX = " not in items_c or f"[ITEM_{n}_EX] =" not in items_d:
+            bad("items", f"ITEM_{n}_EX is missing")
+        m_ = re.search(r"gItemEffect_%sEX\[\d+\] = \{(.*?)\};" % e, eff_d, re.S)
+        if not m_ or "ITEM6_MAX_EV" not in m_.group(1):
+            bad("items", f"gItemEffect_{e}EX does not max the EV")
     print(f"checked {ntype} sheet rows, {len(rows)} learnset rows, {len(order)} regional dex entries")
     for i in info:
         print("info:", i)

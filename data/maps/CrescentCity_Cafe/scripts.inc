@@ -12,7 +12,6 @@ CrescentCity_Cafe_EventScript_RotomBlender2::
 	setwildbattle SPECIES_ROTOM_FAN, 22
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_Cafe_EventScript_RotomDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_Cafe_EventScript_RotomDone
 	release
 	end

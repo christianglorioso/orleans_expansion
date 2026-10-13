@@ -3460,7 +3460,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
     bool32 friendshipOnly = FALSE;
     enum Item heldItem;
     u8 effectFlags;
-    s8 evChange;
+    s32 evChange; // Orleans: s32 (was s8) so the EX vitamins can carry 252
     u16 evCount;
     u8 levelBefore;
     bool8 didLevelUp = FALSE;
@@ -3590,7 +3590,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1]);
-                        evChange = temp2;
+                        evChange = (itemEffect[itemEffectParam] == ITEM6_MAX_EV) ? MAX_PER_STAT_EVS : temp2; // Orleans: the EX vitamins (from SoulGold) raise the EV as far as the caps allow
 
                         if (evChange > 0) // Increasing EV (HP or Atk)
                         {
@@ -3785,7 +3785,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, enum Item item, u8 partyIndex, 
                         evCount = GetMonEVCount(mon);
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2]);
-                        evChange = temp2;
+                        evChange = (itemEffect[itemEffectParam] == ITEM6_MAX_EV) ? MAX_PER_STAT_EVS : temp2; // Orleans: the EX vitamins (from SoulGold) raise the EV as far as the caps allow
                         if (evChange > 0) // Increasing EV
                         {
                             // Check if the total EV limit is reached

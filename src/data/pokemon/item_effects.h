@@ -223,6 +223,39 @@ const u8 gItemEffect_Zinc[11] = {
     [10] = ITEM10_IS_VITAMIN,
 };
 
+// Orleans: SoulGold's EX vitamins (Eemeliri/soulgold): maximise the EV within the per-stat and total caps
+const u8 gItemEffect_HPUpEX[11] = {
+    [4] = ITEM4_EV_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
+const u8 gItemEffect_ProteinEX[11] = {
+    [4] = ITEM4_EV_ATK,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
+const u8 gItemEffect_IronEX[11] = {
+    [5] = ITEM5_EV_DEF | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
+const u8 gItemEffect_CalciumEX[11] = {
+    [5] = ITEM5_EV_SPATK | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
+const u8 gItemEffect_ZincEX[11] = {
+    [5] = ITEM5_EV_SPDEF | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
+const u8 gItemEffect_CarbosEX[11] = {
+    [5] = ITEM5_EV_SPEED | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_MAX_EV,
+};
+
 #define FEATHER_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 3, /* Friendship change, low */  \
     [(i) + 1] = 2, /* Friendship change, mid */  \

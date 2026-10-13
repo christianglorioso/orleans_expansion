@@ -2,7 +2,7 @@ CrescentCity_Laundry_MapScripts::
 	.byte 0
 
 @ The ROTOM quest (after gym 3): a mischievous appliance. Before the badge it only pranks; after, the ROTOM inside battles (a wild
-@ battle, level 22). The flag hides it once the battle is over, however it ended.
+@ battle, level 22). The flag hides it only once it is caught (a KO leaves it to try again).
 CrescentCity_Laundry_EventScript_RotomWasher1::
 	lock
 	faceplayer
@@ -13,7 +13,6 @@ CrescentCity_Laundry_EventScript_RotomWasher1::
 	setwildbattle SPECIES_ROTOM_WASH, 22
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_Laundry_EventScript_RotomDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_Laundry_EventScript_RotomDone
 	release
 	end

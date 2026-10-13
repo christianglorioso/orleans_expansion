@@ -721,12 +721,12 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 
     [SPECIES_OINKOLOGNE_F] =
     {
-        .baseHP        = 115,
-        .baseAttack    = 90,
-        .baseDefense   = 70,
+        .baseHP        = 110,
+        .baseAttack    = 100,
+        .baseDefense   = 75,
         .baseSpeed     = 65,
-        .baseSpAttack  = 59,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 100,
         .expYield = 171,
@@ -736,7 +736,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_AROMA_VEIL, ABILITY_GLUTTONY, ABILITY_THICK_FAT },
+        .abilities = { ABILITY_LINGERING_AROMA, ABILITY_GLUTTONY, ABILITY_THICK_FAT },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Oinkologne"),
         .cryId = CRY_OINKOLOGNE_F,
@@ -778,7 +778,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_OinkologneF,
             gShinyOverworldPalette_OinkologneF
         )
-        .levelUpLearnset = sOinkologneFLevelUpLearnset,
+        .levelUpLearnset = sOinkologneMLevelUpLearnset, // Orleans: the sheet has one Oinkologne (stats, ability, learnset) for both genders
         .teachableLearnset = sOinkologneTeachableLearnset,
         .formSpeciesIdTable = sOinkologneFormSpeciesIdTable,
     },

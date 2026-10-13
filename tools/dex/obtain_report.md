@@ -5,6 +5,8 @@
 | ITEM_BARBARACITE | Mega/primal form SPECIES_BARBARACLE_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_BLACK_AUGURITE | evolution of SPECIES_SCYTHER | hidden in PointeRouge |
 | ITEM_BLUE_ORB | Mega/primal form SPECIES_KYOGRE_PRIMAL | given in OldWater |
+| ITEM_CALCIUM_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
+| ITEM_CARBOS_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
 | ITEM_CHANDELURITE | Mega/primal form SPECIES_CHANDELURE_MEGA | given in Redfield |
 | ITEM_CHARIZARDITE_Y | Mega/primal form SPECIES_CHARIZARD_MEGA_Y | given in Redfield_Gym |
 | ITEM_CORNERSTONE_MASK | Ogerpon (Cornerstone Mask) | given in Route24 |
@@ -27,7 +29,9 @@
 | ITEM_GENGARITE | Mega/primal form SPECIES_GENGAR_MEGA | ball in CrescentCity |
 | ITEM_GYARADOSITE | Mega/primal form SPECIES_GYARADOS_MEGA | given in LandsEnd_Gym |
 | ITEM_HEARTHFLAME_MASK | Ogerpon (Hearthflame Mask) | given in Redfield |
+| ITEM_HP_UP_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
 | ITEM_ICE_STONE | evolution of SPECIES_SANDSHREW_ALOLA | hidden in Route11 (+1 more) |
+| ITEM_IRON_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
 | ITEM_KINGLERITE | Mega/primal form SPECIES_KINGLER_ORLEANIAN_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_KLEAVORITE | Mega/primal form SPECIES_KLEAVOR_MEGA | given in Route7 |
 | ITEM_LANTERN | the Salt Cathedral shaft | given in CrescentCity_Gym |
@@ -41,6 +45,7 @@
 | ITEM_METAL_ALLOY | evolution of SPECIES_DURALUDON | sold in CrescentCity_Dept2f (+1 more) |
 | ITEM_PEAT_BLOCK | evolution of SPECIES_URSARING | hidden in CampCocodrie |
 | ITEM_PRISM_SCALE | evolution of SPECIES_FEEBAS | sold in CrescentCity_Dept2f (+2 more) |
+| ITEM_PROTEIN_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
 | ITEM_QUAQUAVALITE | Mega/primal form SPECIES_QUAQUAVAL_MEGA | given in CrescentCity |
 | ITEM_RAICHUNITE_X | Mega/primal form SPECIES_RAICHU_MEGA_X | ball in StormsEdge |
 | ITEM_RAICHUNITE_Y | Mega/primal form SPECIES_RAICHU_MEGA_Y | ball in Route2 |
@@ -51,12 +56,12 @@
 | ITEM_SCYTHERITE | Mega/primal form SPECIES_SCYTHER_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SERPERITE | Mega/primal form SPECIES_SERPERIOR_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SHARPEDONITE | Mega/primal form SPECIES_SHARPEDO_MEGA | sold in CrescentCity_Dept3f |
+| ITEM_SHINY_CHARM | 3 shiny rolls instead of 1 (Lafayette, every base species of the regional dex caught) | given in CrescentCity_Conservation |
 | ITEM_SHINY_STONE | evolution of SPECIES_ROSELIA_ORLEANIAN | ball in CampCocodrie (+1 more) |
 | ITEM_SKELEDIRGITE | Mega/primal form SPECIES_SKELEDIRGE_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_STARAPTITE | Mega/primal form SPECIES_STARAPTOR_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SUDOWOODITE | Mega/primal form SPECIES_SUDOWOODO_ORLEANIAN_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SUN_STONE | evolution of SPECIES_GLOOM | hidden in Route5 (+1 more) |
-| ITEM_SHINY_CHARM | 3 shiny rolls instead of 1 (Lafayette, every base species of the regional dex caught) | given in CrescentCity_Conservation |
 | ITEM_SWAMPERTITE | Mega/primal form SPECIES_SWAMPERT_MEGA | given in OldestShrine |
 | ITEM_TANGROWTHITE | Mega/primal form SPECIES_TANGROWTH_ORLEANIAN_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_THUNDER_STONE | evolution of SPECIES_PIKACHU | hidden in Route2 (+4 more) |
@@ -65,5 +70,199 @@
 | ITEM_WATER_STONE | evolution of SPECIES_POLIWHIRL | hidden in Route20 (+4 more) |
 | ITEM_WEEZINGITE | Mega/primal form SPECIES_WEEZING_ORLEANIAN_MEGA | given in CrescentCity_BlacksnakeBase |
 | ITEM_WELLSPRING_MASK | Ogerpon (Wellspring Mask) | given in Route19 |
+| ITEM_ZINC_EX | EX vitamin (SoulGold port) | sold in CrescentCity_Dept2f |
 
 Missing: none
+
+## Battle Frontier competitive items (held by Frontier opponents; sold to the player)
+
+| Item | Battle Point clerk (Arena lobby) | Crescent City department store (floor 2, clerk 0, story 45+) |
+|---|---|---|
+| ITEM_AIR_BALLOON | 32 BP | yes, at the engine item price |
+| ITEM_ASSAULT_VEST | 80 BP | yes, at the engine item price |
+| ITEM_BABIRI_BERRY | - | yes, at the engine item price |
+| ITEM_BLACK_BELT | 16 BP | yes, at the engine item price |
+| ITEM_BLACK_GLASSES | 16 BP | yes, at the engine item price |
+| ITEM_BLACK_SLUDGE | 48 BP | yes, at the engine item price |
+| ITEM_CHARCOAL | 16 BP | yes, at the engine item price |
+| ITEM_CHARTI_BERRY | - | yes, at the engine item price |
+| ITEM_CHOICE_SCARF | 96 BP | yes, at the engine item price |
+| ITEM_CHOICE_SPECS | 96 BP | yes, at the engine item price |
+| ITEM_CHOPLE_BERRY | - | yes, at the engine item price |
+| ITEM_COBA_BERRY | - | yes, at the engine item price |
+| ITEM_COLBUR_BERRY | - | yes, at the engine item price |
+| ITEM_DRAGON_FANG | 16 BP | yes, at the engine item price |
+| ITEM_EVIOLITE | 64 BP | yes, at the engine item price |
+| ITEM_EXPERT_BELT | 64 BP | yes, at the engine item price |
+| ITEM_FAIRY_FEATHER | 16 BP | yes, at the engine item price |
+| ITEM_FLAME_ORB | 32 BP | yes, at the engine item price |
+| ITEM_FOCUS_SASH | 64 BP | yes, at the engine item price |
+| ITEM_HABAN_BERRY | - | yes, at the engine item price |
+| ITEM_HARD_STONE | 16 BP | yes, at the engine item price |
+| ITEM_HEAVY_DUTY_BOOTS | 32 BP | yes, at the engine item price |
+| ITEM_KASIB_BERRY | - | yes, at the engine item price |
+| ITEM_KEBIA_BERRY | - | yes, at the engine item price |
+| ITEM_LEPPA_BERRY | 16 BP | yes, at the engine item price |
+| ITEM_LIECHI_BERRY | 16 BP | yes, at the engine item price |
+| ITEM_LIFE_ORB | 96 BP | yes, at the engine item price |
+| ITEM_LIGHT_BALL | - | yes, at the engine item price |
+| ITEM_LIGHT_CLAY | 48 BP | yes, at the engine item price |
+| ITEM_MAGNET | 16 BP | yes, at the engine item price |
+| ITEM_METAL_COAT | 16 BP | yes, at the engine item price |
+| ITEM_MIRACLE_SEED | 16 BP | yes, at the engine item price |
+| ITEM_MUSCLE_BAND | 32 BP | yes, at the engine item price |
+| ITEM_MYSTIC_WATER | 16 BP | yes, at the engine item price |
+| ITEM_NEVER_MELT_ICE | 16 BP | yes, at the engine item price |
+| ITEM_OCCA_BERRY | - | yes, at the engine item price |
+| ITEM_PASSHO_BERRY | - | yes, at the engine item price |
+| ITEM_PAYAPA_BERRY | - | yes, at the engine item price |
+| ITEM_PETAYA_BERRY | 16 BP | yes, at the engine item price |
+| ITEM_POISON_BARB | 16 BP | yes, at the engine item price |
+| ITEM_RINDO_BERRY | - | yes, at the engine item price |
+| ITEM_ROCKY_HELMET | 64 BP | yes, at the engine item price |
+| ITEM_ROSELI_BERRY | - | yes, at the engine item price |
+| ITEM_SALAC_BERRY | 16 BP | yes, at the engine item price |
+| ITEM_SHARP_BEAK | 16 BP | yes, at the engine item price |
+| ITEM_SHELL_BELL | 48 BP | yes, at the engine item price |
+| ITEM_SHUCA_BERRY | - | yes, at the engine item price |
+| ITEM_SILK_SCARF | 16 BP | yes, at the engine item price |
+| ITEM_SILVER_POWDER | 16 BP | yes, at the engine item price |
+| ITEM_SITRUS_BERRY | 16 BP | yes, at the engine item price |
+| ITEM_SOFT_SAND | 16 BP | yes, at the engine item price |
+| ITEM_SPELL_TAG | 16 BP | yes, at the engine item price |
+| ITEM_TANGA_BERRY | - | yes, at the engine item price |
+| ITEM_TOXIC_ORB | 32 BP | yes, at the engine item price |
+| ITEM_TWISTED_SPOON | 16 BP | yes, at the engine item price |
+| ITEM_WACAN_BERRY | - | yes, at the engine item price |
+| ITEM_WEAKNESS_POLICY | 64 BP | yes, at the engine item price |
+| ITEM_WISE_GLASSES | 32 BP | yes, at the engine item price |
+| ITEM_YACHE_BERRY | - | yes, at the engine item price |
+
+## Competitive held items from wild Pokemon (5% each; tools/dex/wild_held_items.py)
+
+| Item | Wild species (slot) |
+|---|---|
+| ITEM_ABILITY_SHIELD | MALAMAR (5%) |
+| ITEM_FAIRY_FEATHER | SHIINOTIC (5%) |
+| ITEM_LEPPA_BERRY | FOONGUS (5%) |
+| ITEM_LIECHI_BERRY | BRELOOM (5%) |
+| ITEM_PETAYA_BERRY | PARAS (5%) |
+| ITEM_SALAC_BERRY | PARASECT (5%) |
+| ITEM_ABSORB_BULB | ODDISH (5%) |
+| ITEM_ADRENALINE_ORB | RATTATA (5%) |
+| ITEM_AIR_BALLOON | LEDIAN (5%) |
+| ITEM_ASSAULT_VEST | JELLICENT (5%) |
+| ITEM_BABIRI_BERRY | MORGREM (5%) |
+| ITEM_BIG_ROOT | BELLSPROUT (5%) |
+| ITEM_BINDING_BAND | EKANS (5%) |
+| ITEM_BLACK_BELT | STARLY (5%) |
+| ITEM_BLACK_GLASSES | SANDILE (5%), KROOKODILE (50%) |
+| ITEM_BLACK_SLUDGE | CROAGUNK (5%) |
+| ITEM_BRIGHT_POWDER | VOLBEAT (5%) |
+| ITEM_CELL_BATTERY | PICHU (5%) |
+| ITEM_CHARCOAL | VULPIX (5%) |
+| ITEM_CHARTI_BERRY | GYARADOS (5%) |
+| ITEM_CHILAN_BERRY | WATTREL (5%) |
+| ITEM_CHOICE_BAND | URSARING (5%) |
+| ITEM_CHOICE_SCARF | CROBAT (5%) |
+| ITEM_CHOICE_SPECS | CURSOLA (5%) |
+| ITEM_CHOPLE_BERRY | RATICATE (5%) |
+| ITEM_CLEAR_AMULET | FRILLISH (5%) |
+| ITEM_COBA_BERRY | ARAQUANID (5%) |
+| ITEM_COLBUR_BERRY | JOLTIK (5%) |
+| ITEM_COVERT_CLOAK | ARBOK (5%) |
+| ITEM_DAMP_ROCK | WOOPER (5%) |
+| ITEM_DEEP_SEA_TOOTH | SHARPEDO (5%) |
+| ITEM_DRACO_PLATE | FLYGON (5%) |
+| ITEM_DRAGON_FANG | DRAKLOAK (5%) |
+| ITEM_DREAD_PLATE | SPEAROW_ORLEANIAN (5%) |
+| ITEM_EARTH_PLATE | DODUO (5%) |
+| ITEM_EJECT_BUTTON | DUCKLETT (5%) |
+| ITEM_EJECT_PACK | CRAMORANT (5%) |
+| ITEM_EVIOLITE | BONSLY_ORLEANIAN (5%) |
+| ITEM_EXPERT_BELT | STARAPTOR (5%) |
+| ITEM_FIST_PLATE | CRAWDAUNT_ORLEANIAN (5%) |
+| ITEM_FLAME_ORB | KOFFING_ORLEANIAN (5%) |
+| ITEM_FLAME_PLATE | FENNEKIN (5%) |
+| ITEM_FLOAT_STONE | SWANNA (5%) |
+| ITEM_FOCUS_BAND | SEISMITOAD (5%) |
+| ITEM_FOCUS_SASH | SMEARGLE (5%) |
+| ITEM_GRIP_CLAW | SANDSLASH (5%) |
+| ITEM_HABAN_BERRY | NOIBAT (5%) |
+| ITEM_HARD_STONE | BOLDORE (5%), GIGALITH (5%) |
+| ITEM_HEAT_ROCK | CAPSAKID (5%) |
+| ITEM_HEAVY_DUTY_BOOTS | EXCADRILL (5%) |
+| ITEM_ICICLE_PLATE | EEVEE (5%) |
+| ITEM_ICY_ROCK | BUIZEL (5%) |
+| ITEM_INSECT_PLATE | SURSKIT (5%) |
+| ITEM_IRON_PLATE | DURALUDON (5%) |
+| ITEM_KASIB_BERRY | TANGELA_ORLEANIAN (5%) |
+| ITEM_KEBIA_BERRY | PIKIPEK (5%) |
+| ITEM_KINGS_ROCK | POLIWHIRL (5%) |
+| ITEM_LEFTOVERS | WAILORD (5%) |
+| ITEM_LIFE_ORB | FLOATZEL (5%) |
+| ITEM_LIGHT_BALL | PIKACHU (5%) |
+| ITEM_LIGHT_CLAY | WHISCASH (5%) |
+| ITEM_LOADED_DICE | EXEGGCUTE_ORLEANIAN (5%) |
+| ITEM_LUMINOUS_MOSS | DHELMISE (5%) |
+| ITEM_LUM_BERRY | SUNKERN (5%) |
+| ITEM_MAGNET | VOLTORB_ORLEANIAN (5%) |
+| ITEM_MEADOW_PLATE | BUDEW_ORLEANIAN (5%) |
+| ITEM_MENTAL_HERB | DROWZEE (5%) |
+| ITEM_METAL_COAT | MAGNEMITE (5%) |
+| ITEM_METAL_POWDER | DITTO (5%) |
+| ITEM_MIND_PLATE | STANTLER (5%) |
+| ITEM_MIRACLE_SEED | GLOOM (5%) |
+| ITEM_MIRROR_HERB | SKRELP (5%) |
+| ITEM_MUSCLE_BAND | CRABRAWLER (5%) |
+| ITEM_MYSTIC_WATER | DEWPIDER (5%) |
+| ITEM_NEVER_MELT_ICE | SWINUB (5%) |
+| ITEM_OCCA_BERRY | SANDSHREW (5%) |
+| ITEM_PASSHO_BERRY | ILLUMISE (5%) |
+| ITEM_PAYAPA_BERRY | HAUNTER (5%) |
+| ITEM_PIXIE_PLATE | RIBOMBEE (5%) |
+| ITEM_POISON_BARB | TENTACOOL (5%) |
+| ITEM_POWER_HERB | NUZLEAF (5%) |
+| ITEM_PROTECTIVE_PADS | FLAMIGO (5%) |
+| ITEM_QUICK_CLAW | KRABBY_ORLEANIAN (5%) |
+| ITEM_QUICK_POWDER | DITTO (50%) |
+| ITEM_RAZOR_CLAW | CORPHISH_ORLEANIAN (5%) |
+| ITEM_RAZOR_FANG | ZUBAT (5%) |
+| ITEM_RED_CARD | PELIPPER (5%) |
+| ITEM_RINDO_BERRY | MUDKIP (5%) |
+| ITEM_ROCKY_HELMET | COALOSSAL (5%) |
+| ITEM_ROOM_SERVICE | QUAGSIRE (5%) |
+| ITEM_ROSELI_BERRY | NOIVERN (5%) |
+| ITEM_SAFETY_GOGGLES | INKAY (5%) |
+| ITEM_SCOPE_LENS | NOCTOWL (5%) |
+| ITEM_SHARP_BEAK | DODRIO (5%) |
+| ITEM_SHED_SHELL | SEVIPER (5%), SLIGGOO (5%) |
+| ITEM_SHELL_BELL | DREDNAW (5%) |
+| ITEM_SHUCA_BERRY | TENTACRUEL (5%) |
+| ITEM_SILK_SCARF | TRUBBISH (5%) |
+| ITEM_SILVER_POWDER | MASQUERAIN (5%) |
+| ITEM_SITRUS_BERRY | TOUCANNON (50%) |
+| ITEM_SKY_PLATE | HOOTHOOT (5%) |
+| ITEM_SMOOTH_ROCK | BARBOACH (5%) |
+| ITEM_SNOWBALL | BIDOOF (5%) |
+| ITEM_SOFT_SAND | NINCADA (5%) |
+| ITEM_SPELL_TAG | MISDREAVUS (5%) |
+| ITEM_SPLASH_PLATE | MAGIKARP (5%) |
+| ITEM_SPOOKY_PLATE | LITWICK_ORLEANIAN (5%) |
+| ITEM_STARF_BERRY | ROOKIDEE (5%) |
+| ITEM_STICKY_BARB | FERROSEED (5%), FERROTHORN (5%) |
+| ITEM_STONE_PLATE | BARBARACLE (5%) |
+| ITEM_TANGA_BERRY | PETILIL (5%) |
+| ITEM_TERRAIN_EXTENDER | SERVINE (5%) |
+| ITEM_THROAT_SPRAY | WHISMUR (5%) |
+| ITEM_TOXIC_ORB | WEEZING_ORLEANIAN (5%) |
+| ITEM_TOXIC_PLATE | GOLBAT (5%) |
+| ITEM_TWISTED_SPOON | GOLDUCK (5%) |
+| ITEM_UTILITY_UMBRELLA | WINGULL (5%) |
+| ITEM_WACAN_BERRY | POLIWAG (5%) |
+| ITEM_WEAKNESS_POLICY | DRAGALGE (5%) |
+| ITEM_WHITE_HERB | WEEPINBELL (5%) |
+| ITEM_WIDE_LENS | GASTLY (5%) |
+| ITEM_WISE_GLASSES | PSYDUCK (5%) |
+| ITEM_YACHE_BERRY | BULBASAUR (5%) |
+| ITEM_ZAP_PLATE | MAGNETON (5%) |

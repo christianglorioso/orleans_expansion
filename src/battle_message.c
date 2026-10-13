@@ -98,6 +98,9 @@ static const u8 sText_Trainer1WantsToBattle[] = _("You are challenged by {B_TRAI
 static const u8 sText_LinkTrainerWantsToBattle[] = _("You are challenged by {B_LINK_OPPONENT1_NAME}!");
 static const u8 sText_TwoLinkTrainersWantToBattle[] = _("You are challenged by {B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME}!");
 static const u8 sText_Trainer1SentOutPkmn[] = _("{B_TRAINER1_NAME_WITH_CLASS} sent out {B_OPPONENT_MON1_NAME}!");
+// Orleans: the Kyogre/Groudon/Rayquaza raids are trainer battles with an empty trainer class and a blank trainer pic; they open like a legendary encounter.
+static const u8 sText_OrleansLegendBlocksTheWay[] = _("{B_TRAINER1_NAME} bars the way!\p");
+static const u8 sText_OrleansLegendReadies[] = _("{B_OPPONENT_MON1_NAME} readies to fight!");
 static const u8 sText_Trainer1SentOutTwoPkmn[] = _("{B_TRAINER1_NAME_WITH_CLASS} sent out {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME}!");
 static const u8 sText_Trainer1SentOutPkmn2[] = _("{B_TRAINER1_NAME_WITH_CLASS} sent out {B_BUFF1}!");
 static const u8 sText_LinkTrainerIntroSendOutPkmn[] = _("{B_LINK_OPPONENT1_NAME} sent out {B_LINK_OPPONENT_MON1_NAME}!");
@@ -2423,6 +2426,14 @@ static const struct BattleWindowText *const sBattleTextOnWindowsInfo[] =
 
 static const u8 sRecordedBattleTextSpeeds[] = {8, 4, 1, 0};
 
+// Orleans: legend raid opponents use TRAINER_CLASS_PKMN_TRAINER_2 (unused by vanilla trainers, name emptied in battle_main.c)
+static bool32 IsOrleansLegendBattle(void)
+{
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+        return FALSE;
+    return GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_CLASS_PKMN_TRAINER_2;
+}
+
 void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
 {
     s32 i;
@@ -2520,7 +2531,9 @@ static void BufferWildDescription(u8 *dst, enum BattlerId battler)
             }
             else
             {
-                if (BATTLE_TWO_VS_ONE_OPPONENT)
+                if (IsOrleansLegendBattle())
+                    stringPtr = sText_OrleansLegendBlocksTheWay;
+                else if (BATTLE_TWO_VS_ONE_OPPONENT)
                     stringPtr = sText_Trainer1WantsToBattle;
                 else if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
                     stringPtr = sText_TwoTrainersWantToBattle;
@@ -2581,6 +2594,10 @@ static void BufferWildDescription(u8 *dst, enum BattlerId battler)
             {
                 stringPtr = sText_GoPkmn;
             }
+        }
+        else if (IsOrleansLegendBattle())
+        {
+            stringPtr = sText_OrleansLegendReadies;
         }
         else
         {
@@ -3332,8 +3349,11 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                     textStart[classLength] = classString[classLength];
                     classLength++;
                 }
-                textStart[classLength] = CHAR_SPACE;
-                textStart += classLength + 1;
+                if (classLength != 0) // Orleans: an empty class (the legend raids) prints the name alone
+                {
+                    textStart[classLength] = CHAR_SPACE;
+                    textStart += classLength + 1;
+                }
                 nameString = BattleStringGetOpponentNameByTrainerId(TRAINER_BATTLE_PARAM.opponentA, textStart, multiplayerId, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
                 if (nameString != textStart)
                 {

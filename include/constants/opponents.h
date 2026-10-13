@@ -888,6 +888,7 @@
 
 
 
+
 // --- orleans trainers (begin) ---
 #define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
 #define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1

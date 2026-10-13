@@ -225,8 +225,13 @@ def run(b, t):
     b.warp("Route14", 21, 30)
     b.interact("U", 300)
     b.frames(30)
-    t.check("rougarou beaten: Lycanrocite in the bag, one-off flags set", b.flag("FLAG_ROUTE14_ROUGAROU_DONE") and b.flag("FLAG_RECEIVED_LYCANROCITE")
-            and has_item(b, "ITEM_LYCANROCITE"), "done=%s got=%s" % (b.flag("FLAG_ROUTE14_ROUGAROU_DONE"), b.flag("FLAG_RECEIVED_LYCANROCITE")))
+    # fix C (2026-10-13): only a CATCH retires the rougarou and gives the stone; a KO leaves it on the crest for another try
+    t.check("rougarou KO'd (not caught): it stays, no stone, no one-off flags",
+            not b.flag("FLAG_ROUTE14_ROUGAROU_DONE") and not b.flag("FLAG_RECEIVED_LYCANROCITE") and not has_item(b, "ITEM_LYCANROCITE")
+            and not b.flag("FLAG_HIDE_ROUTE14_ROUGAROU"), "done=%s got=%s" % (b.flag("FLAG_ROUTE14_ROUGAROU_DONE"), b.flag("FLAG_RECEIVED_LYCANROCITE")))
+    from pathlib import Path as _P
+    r14 = (_P(__file__).resolve().parents[3] / "tools/mapgen/story/Route14.inc").read_text(encoding="utf-8")
+    t.check("the rougarou script retires it on B_OUTCOME_CAUGHT only", "B_OUTCOME_CAUGHT, Route14_EventScript_RougarouBeaten" in r14 and "B_OUTCOME_WON, Route14_EventScript_RougarouBeaten" not in r14)
     set_time(b, DAY)
 
     # ---------------------------------------------------------------- Wren's raid partner: the starter line the player did NOT take (hotfix 2026-10-13)

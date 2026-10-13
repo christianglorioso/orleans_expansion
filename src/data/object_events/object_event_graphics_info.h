@@ -4470,7 +4470,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree = {
 // Orleans: used by Orleans maps (Eclair, line workers, Route 3 Auguste), so not FRLG-only.
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WorkerM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_WHITE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,

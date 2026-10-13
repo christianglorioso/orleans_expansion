@@ -17587,8 +17587,8 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 === TRAINER_ORLEANS_KYOGRE_RAID ===
 Name: KYOGRE
-Class: Pkmn Trainer 1
-Pic: Brendan
+Class: Pkmn Trainer 2
+Pic: Orleans Legend
 Gender: Male
 Music: Male
 Double Battle: No
@@ -17605,8 +17605,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_ORLEANS_GROUDON_RAID ===
 Name: GROUDON
-Class: Pkmn Trainer 1
-Pic: Brendan
+Class: Pkmn Trainer 2
+Pic: Orleans Legend
 Gender: Male
 Music: Male
 Double Battle: No
@@ -17687,8 +17687,8 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_ORLEANS_RAYQUAZA_RAID ===
 Name: RAYQUAZA
-Class: Pkmn Trainer 1
-Pic: Brendan
+Class: Pkmn Trainer 2
+Pic: Orleans Legend
 Gender: Male
 Music: Male
 Double Battle: No

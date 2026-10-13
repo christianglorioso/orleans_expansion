@@ -169,7 +169,6 @@ CrescentCity_EventScript_RotomGenerator::
 	setwildbattle SPECIES_ROTOM_HEAT, 22
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_RotomDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_RotomDone
 	release
 	end
@@ -196,7 +195,6 @@ CrescentCity_EventScript_RotomMow::
 	setwildbattle SPECIES_ROTOM_MOW, 22
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_RotomMowDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_RotomMowDone
 	release
 	end

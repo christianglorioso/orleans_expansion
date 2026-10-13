@@ -12,7 +12,6 @@ CrescentCity_Dept1f_EventScript_RotomTv2::
 	setwildbattle SPECIES_ROTOM, 22
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_Dept1f_EventScript_RotomDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_Dept1f_EventScript_RotomDone
 	release
 	end
