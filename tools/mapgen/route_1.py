@@ -214,6 +214,7 @@ def chamfer(bound):
 # by smooth noise; a 3x3 blur of the field rounds the outline into even treads.
 DRIFTS = [(21.5, 21.5, 1.9), (21.5, 33.5, 1.7), (9.5, 17.5, 1.2), (24.5, 10.8, 1.1), (5.5, 22.5, 1.1), (7.5, 29.5, 1.0), (7.8, 32.6, 1.3)]
 G_WANT = 372
+NO_G_FROM_TOP = 2       # rows above this stay plain lawn: they sit against Grand Oak's town grass (seam fix 2026-10-13)
 NO_G_FROM = 44          # rows from here down are the south bank: plain grass
 G_AMP = 2.4
 
@@ -221,7 +222,7 @@ G_AMP = 2.4
 def tall_grass(t, road, verge):
     noise = Noise(SEED, 5.0)
     noise2 = Noise(SEED + 7, 2.5)
-    ground = {(x, y) for y in range(NO_G_FROM) for x in range(W) if t.g[y][x] == "." and (x, y) not in verge
+    ground = {(x, y) for y in range(NO_G_FROM_TOP, NO_G_FROM) for x in range(W) if t.g[y][x] == "." and (x, y) not in verge
               and not (x <= 2 and 20 <= y <= 26)}   # the grass cell beside the Old Water's marsh shore stays plain
     drift = {(x, y) for cx, cy, r in DRIFTS for x in range(W) for y in range(H) if math.hypot(x - cx, y - cy) <= r}
     free = ({(x, y) for x, y in verge if 0 <= x < W and 0 <= y < H and t.g[y][x] != ":"} | (drift & ground))

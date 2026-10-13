@@ -7,24 +7,10 @@
   "group": "levee"
  },
  {
-  "id": "lv_2332494d9c23",
-  "pixels": "tools/mapgen/tilesets/levee/lv_2332494d9c23.png",
-  "base": "ekat:water_W",
-  "attr_of": "ekat:water_W",
-  "group": "levee"
- },
- {
   "id": "lv_3e3d0a1cc208",
   "pixels": "tools/mapgen/tilesets/levee/lv_3e3d0a1cc208.png",
   "base": "ekat:water_C",
   "attr_of": "ekat:water_C",
-  "group": "levee"
- },
- {
-  "id": "lv_4563d38d90a7",
-  "pixels": "tools/mapgen/tilesets/levee/lv_4563d38d90a7.png",
-  "base": "ekat:water_W",
-  "attr_of": "ekat:water_W",
   "group": "levee"
  },
  {
@@ -42,24 +28,10 @@
   "group": "levee"
  },
  {
-  "id": "lv_6029607904ff",
-  "pixels": "tools/mapgen/tilesets/levee/lv_6029607904ff.png",
-  "base": "ekat:water_C",
-  "attr_of": "ekat:water_C",
-  "group": "levee"
- },
- {
   "id": "lv_676a7d035c44",
   "pixels": "tools/mapgen/tilesets/levee/lv_676a7d035c44.png",
   "base": "ekat:water_W",
   "attr_of": "ekat:water_W",
-  "group": "levee"
- },
- {
-  "id": "lv_6b734b941fb8",
-  "pixels": "tools/mapgen/tilesets/levee/lv_6b734b941fb8.png",
-  "base": "ekat:water_C",
-  "attr_of": "ekat:water_C",
   "group": "levee"
  },
  {
@@ -102,20 +74,6 @@
   "pixels": "tools/mapgen/tilesets/levee/lv_f114be0d17cf.png",
   "base": "ekat:water_W",
   "attr_of": "ekat:water_W",
-  "group": "levee"
- },
- {
-  "id": "lv_f3d3babfcbd3",
-  "pixels": "tools/mapgen/tilesets/levee/lv_f3d3babfcbd3.png",
-  "base": "ekat:water_inNW",
-  "attr_of": "ekat:water_inNW",
-  "group": "levee"
- },
- {
-  "id": "lv_f7d13de60540",
-  "pixels": "tools/mapgen/tilesets/levee/lv_f7d13de60540.png",
-  "base": "ekat:water_C",
-  "attr_of": "ekat:water_C",
   "group": "levee"
  },
  {
@@ -521,57 +479,9 @@
   }
  },
  {
-  "id": "ovl_ccl_pgrass_00__ekat_water_C__door",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "ccl:pgrass_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
-  "id": "ovl_ccl_pgrass_00__ekat_water_S__door",
-  "overlay": {
-   "base": "ekat:water_S",
-   "art": "ccl:pgrass_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
-  "id": "ovl_ccl_pgrass_00__ekat_water_W__door",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "ccl:pgrass_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
   "id": "ovl_ccl_pgrass_rim_00__ekat_grass__door",
   "overlay": {
    "base": "ekat:grass",
-   "art": "ccl:pgrass_rim_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
-  "id": "ovl_ccl_pgrass_rim_00__ekat_water_C__door",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "ccl:pgrass_rim_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
-  "id": "ovl_ccl_pgrass_rim_00__ekat_water_S__door",
-  "overlay": {
-   "base": "ekat:water_S",
-   "art": "ccl:pgrass_rim_00",
-   "behavior": "MB_TALL_GRASS"
-  }
- },
- {
-  "id": "ovl_ccl_pgrass_rim_00__ekat_water_W__door",
-  "overlay": {
-   "base": "ekat:water_W",
    "art": "ccl:pgrass_rim_00",
    "behavior": "MB_TALL_GRASS"
   }
@@ -1480,23 +1390,9 @@
   }
  },
  {
-  "id": "ovl_ccs_fence_NS_00__ekat_water_C",
-  "overlay": {
-   "base": "ekat:water_C",
-   "art": "ccs:fence_NS_00"
-  }
- },
- {
   "id": "ovl_ccs_fence_N_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
-   "art": "ccs:fence_N_00"
-  }
- },
- {
-  "id": "ovl_ccs_fence_N_00__ekat_water_C",
-  "overlay": {
-   "base": "ekat:water_C",
    "art": "ccs:fence_N_00"
   }
  },
@@ -2320,20 +2216,6 @@
   }
  },
  {
-  "id": "ovl_ccw_barrel_00__johto_1C8",
-  "overlay": {
-   "base": "johto:1C8",
-   "art": "ccw:barrel_00"
-  }
- },
- {
-  "id": "ovl_ccw_barrel_00__johto_1C9",
-  "overlay": {
-   "base": "johto:1C9",
-   "art": "ccw:barrel_00"
-  }
- },
- {
   "id": "ovl_ccw_easel_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
@@ -2344,13 +2226,6 @@
   "id": "ovl_ccw_flower_cart_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
-   "art": "ccw:flower_cart_00"
-  }
- },
- {
-  "id": "ovl_ccw_flower_cart_00__johto_1C0",
-  "overlay": {
-   "base": "johto:1C0",
    "art": "ccw:flower_cart_00"
   }
  },
@@ -2379,6 +2254,13 @@
   "id": "ovl_ccw_sign_00__ekat_grass",
   "overlay": {
    "base": "ekat:grass",
+   "art": "ccw:sign_00"
+  }
+ },
+ {
+  "id": "ovl_ccw_sign_00__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
    "art": "ccw:sign_00"
   }
  },
@@ -2486,13 +2368,6 @@
   "overlay": {
    "base": "ekat:grass",
    "art": "ccw:wh_wall9_82"
-  }
- },
- {
-  "id": "ovl_ccw_sign_00__ekat_water_W",
-  "overlay": {
-   "base": "ekat:water_W",
-   "art": "ccw:sign_00"
   }
  }
 ]

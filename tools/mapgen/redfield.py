@@ -267,7 +267,7 @@ def dress(t):
                          ("lamp", 21, 22), ("lamp", 24, 22), ("barrel", 34, 30), ("crates", 36, 30)):
         D(prefab, x, y)
     # dry-farmland trees: field-edge oaks and pecans (stand-ins: magnolias) round the town
-    for prefab, x, y in (("field_tree", 0, 13), ("field_tree", 7, 13), ("field_tree", 9, 13), ("field_tree", 12, 13),
+    for prefab, x, y in (("field_tree", 2, 13), ("field_tree", 7, 13), ("field_tree", 9, 13), ("field_tree", 12, 13),
                          ("field_tree", 24, 0), ("field_tree", 30, 0), ("field_tree", 37, 0), ("field_tree", 41, 0),
                          ("field_tree", 12, 22), ("field_tree", 2, 22), ("field_tree", 6, 22),
                          ("field_tree", 38, 22), ("field_tree", 41, 22), ("field_tree_l", 37, 32),

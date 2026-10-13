@@ -165,8 +165,9 @@ TREES = [
     (0, 7), (1, 10), (0, 14), (0, 17), (0, 21), (0, 24), (0, 28),
     (3, 16), (5, 18), (2, 19), (7, 18), (9, 19), (7, 21), (12, 18), (14, 18), (13, 21),
     # the south wall (varied gaps) and the south-east corner
-    (0, 31), (7, 31), (9, 31), (11, 31), (14, 31),
-    (24, 31), (26, 31), (29, 31), (37, 31),
+    # (the ones in front of the Route 1 seam, x 5-32, stand one row up: a tree on the last row met Route 1's pale marsh in a hard colour cut)
+    (0, 31), (7, 30), (9, 30), (11, 30), (14, 30),
+    (24, 30), (26, 30), (29, 30), (37, 31),
     (36, 28),
     # east of the nursery: an avenue line and a grove
     (28, 18), (31, 19), (34, 17), (36, 20),

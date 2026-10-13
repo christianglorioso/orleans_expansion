@@ -1510,39 +1510,15 @@
       "label": "Boardwalk"
     },
     {
-      "prefab": "plank_vw",
-      "x": 41,
-      "y": 36,
-      "label": "Boardwalk"
-    },
-    {
-      "prefab": "plank_ve",
-      "x": 42,
-      "y": 36,
-      "label": "Boardwalk"
-    },
-    {
-      "prefab": "plank_vw",
-      "x": 41,
-      "y": 37,
-      "label": "Boardwalk"
-    },
-    {
-      "prefab": "plank_ve",
-      "x": 42,
-      "y": 37,
-      "label": "Boardwalk"
-    },
-    {
       "prefab": "plank_vsw",
       "x": 41,
-      "y": 38,
+      "y": 36,
       "label": "Boardwalk"
     },
     {
       "prefab": "plank_vse",
       "x": 42,
-      "y": 38,
+      "y": 36,
       "label": "Boardwalk"
     },
     {
@@ -2120,6 +2096,18 @@
       "label": "Pilings"
     },
     {
+      "prefab": "skirt_plain",
+      "x": 41,
+      "y": 37,
+      "label": "Pilings"
+    },
+    {
+      "prefab": "skirt_e",
+      "x": 42,
+      "y": 37,
+      "label": "Pilings"
+    },
+    {
       "prefab": "pc_skirt_r",
       "x": 19,
       "y": 23,
@@ -2468,7 +2456,8 @@
       ]
     },
     {
-      "name": "Route 21 landing pier (south)",
+      "name": "Route 21: open water south of the landing pier (by Surf)",
+      "by_boat": true,
       "cells": [
         [
           41,

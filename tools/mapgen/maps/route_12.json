@@ -264,20 +264,8 @@
     },
     {
       "prefab": "reeds_marsh",
-      "x": 23,
-      "y": 1,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
       "x": 26,
       "y": 9,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 26,
-      "y": 1,
       "label": "Reeds"
     },
     {

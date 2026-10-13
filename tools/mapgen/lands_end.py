@@ -72,7 +72,7 @@ BOARDWALK = [
     (14, 23, 18, 23, "h"),     # the Center's stub
     (39, 23, 42, 23, "h"),     # house 5's stub
     (37, 30, 44, 30, "h"),     # the station's deck
-    (41, 31, 42, 38, "v"),     # the Route 21 landing pier
+    (41, 31, 42, 36, "v"),     # the Route 21 landing pier (its head stands two rows short of the seam: the pier no longer runs into the border; the boatman and the pearl stay on it)
     (35, 12, 36, 14, "v"),     # the pad north of the main walk, by the north houses (Andrew and Jayden)
     (22, 29, 32, 29, "h"),     # the pavilion's rear deck (1 wide)
     (22, 30, 22, 34, "v"),     # ... its west side
@@ -449,7 +449,7 @@ def main(args):
             "buildings": t.b, "objects": t.objects, "surf_only": [], "items": t.items, "hidden_items": t.hidden,
             "signs": t.signs,
             "exits": [{"name": "Route 20 boat exit, boardwalk end (west)", "cells": [list(c) for c in EXITS["W"]]},
-                      {"name": "Route 21 landing pier (south)", "cells": [list(c) for c in EXITS["S"]]}]}
+                      {"name": "Route 21: open water south of the landing pier (by Surf)", "by_boat": True, "cells": [list(c) for c in EXITS["S"]]}]}
     dump(SPEC, spec)
     if "--no-build" in args:
         return

@@ -131,8 +131,8 @@
       "x": 16,
       "y": 38,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
-      "text": "LAFAYETTE: Every species out here\\nneeds counting before the water\\pmoves them. Take this POK\u00c3\u00a9DEX.",
-      "_note": "1. Lafayette gives the Pok\u00c3\u00a9dex (placeholder; script later)",
+      "text": "LAFAYETTE: Every species out here\\nneeds counting before the water\\pmoves them. Take this POKÃ©DEX.",
+      "_note": "1. Lafayette gives the PokÃ©dex (placeholder; script later)",
       "custom": true,
       "flag": "FLAG_HIDE_ROUTE1_LAFAYETTE"
     },
@@ -216,7 +216,7 @@
       "x": 24,
       "y": 24,
       "flag": "FLAG_ITEM_ROUTE1_POKE_BALL",
-      "_note": "5. Pok\u00c3\u00a9 Ball (moved from the pond to its shore)"
+      "_note": "5. PokÃ© Ball (moved from the pond to its shore)"
     },
     {
       "item": "ITEM_ORAN_BERRY",

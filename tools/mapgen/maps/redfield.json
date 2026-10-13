@@ -1367,7 +1367,7 @@
     },
     {
       "prefab": "field_tree",
-      "x": 0,
+      "x": 2,
       "y": 13,
       "label": "Tree"
     },
@@ -1472,12 +1472,6 @@
       "x": 15,
       "y": 33,
       "label": "Tree"
-    },
-    {
-      "prefab": "rock",
-      "x": 3,
-      "y": 14,
-      "label": "Rock"
     },
     {
       "prefab": "rock",

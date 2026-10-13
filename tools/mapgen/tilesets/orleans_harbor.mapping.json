@@ -351,12 +351,10 @@
 "patch:ovl_lmk_5_4__ekat_water_C": 848,
 "patch:ovl_lmk_5_5__ekat_water_C": 849,
 "patch:blend_marsh_N_inNE": 850,
-"patch:ovl_lmk_6_5__ekat_water_C": 851,
-"patch:ovl_lmk_6_6__ekat_water_C": 852,
-"patch:ovl_wpr_4_0__ekat_water_C": 853,
-"patch:ovl_wpr_5_0__ekat_water_C": 854,
-"patch:ovl_wpr_6_0__ekat_water_C": 855,
-"patch:ovl_wpr_7_0__ekat_water_C": 856
+"patch:ovl_wpr_4_0__ekat_water_C": 851,
+"patch:ovl_wpr_5_0__ekat_water_C": 852,
+"patch:ovl_wpr_6_0__ekat_water_C": 853,
+"patch:ovl_wpr_7_0__ekat_water_C": 854
 },
 "palettes": null,
 "tiles": {}

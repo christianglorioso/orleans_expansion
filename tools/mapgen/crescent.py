@@ -473,7 +473,7 @@ def frontier(c):
         c.put("flower_cart", x, y, "Flower cart")
     for x, y in ((-12, 60), (34, 60)):
         c.put("barrel", x, y, "Barrel")
-    for x in (-12, -7, -2, 3, 18, 23, 28, 33):  # a row of magnolias along the south edge, mirrored about x 11
+    for x in (-12, -7, -2, 3, 18, 23):  # a row of magnolias along the south edge (the two at design x 28 and 33 stood on the last row against Route 14's marsh: hard colour cut)
         c.put("magnolia", x, 63, "Magnolia")
     c.sign("FrontierSign", 36, 56, "BATTLE FRONTIER\nOpen to champions only.", art=False)
     c.npc("FRONTIER_GUARD", "OBJ_EVENT_GFX_MAN_1", 36, 57, "(The Battle Frontier opens after the Rayquaza finale.)",

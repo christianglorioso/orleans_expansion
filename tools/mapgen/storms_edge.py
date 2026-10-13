@@ -137,7 +137,7 @@ def terrain(t):
     R(BRIDGE[0] + BRIDGE[2], ROAD[0], W - BRIDGE[0] - BRIDGE[2], 2)  # and east of it, to the causeway
     R(14, 9, 5, 3)            # the Center's forecourt (west bank; x13 stays grass for the welcome sign)
     R(36, 9, 8, 3)            # the Mart's forecourt (east bank: the Mart moved over when the gym took the west lot)
-    R(0, 14, 21, 3)           # worn ground along the waterfront behind the houses and the market (a port, not a lawn)
+    R(3, 14, 18, 3)           # worn ground along the waterfront behind the houses and the market (a port, not a lawn)
     R(32, 14, 13, 3)          # and on the east side of the lane
     # The lanes cross the strip of open water (row SHORE) and end under the quay's plank row (SHORE+1, drawn over
     # them), so the dirt runs straight into the planks. Dual-grid banks: the tile left of a lane takes its bank from the
@@ -262,7 +262,7 @@ def pier(t, x0, y0, length):
 
 
 def waterfront(t):
-    quay(t, 0, 19, pier=(10, 12))
+    quay(t, 2, 19, pier=(10, 12))      # starts at x 2 so the planks do not run flush into the Route 2 seam (water meets water there)
     quay(t, 32, 39)
     pier(t, 10, SHORE + 3, 9)
 

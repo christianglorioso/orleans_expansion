@@ -220,21 +220,13 @@
     },
     {
       "prefab": "quay",
-      "x": 0,
+      "x": 2,
       "y": 26,
       "label": "Quay",
       "rows": [
         [
           {
             "overlay": "seq:0_0",
-            "walk": true
-          },
-          {
-            "overlay": "seq:1_0",
-            "walk": true
-          },
-          {
-            "overlay": "seq:1_0",
             "walk": true
           },
           {
@@ -340,14 +332,6 @@
             "walk": true
           },
           {
-            "overlay": "seq:1_2",
-            "walk": true
-          },
-          {
-            "overlay": "seq:1_2",
-            "walk": true
-          },
-          {
             "overlay": "seq:1_1",
             "walk": true
           },
@@ -391,12 +375,6 @@
         [
           {
             "overlay": "seq:0_3"
-          },
-          {
-            "overlay": "seq:1_3"
-          },
-          {
-            "overlay": "seq:1_3"
           },
           {
             "overlay": "seq:1_3"
@@ -519,14 +497,6 @@
           0
         ],
         [
-          18,
-          0
-        ],
-        [
-          19,
-          0
-        ],
-        [
           0,
           1
         ],
@@ -596,14 +566,6 @@
         ],
         [
           17,
-          1
-        ],
-        [
-          18,
-          1
-        ],
-        [
-          19,
           1
         ]
       ]
