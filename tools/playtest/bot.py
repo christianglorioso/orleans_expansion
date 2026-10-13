@@ -1,7 +1,7 @@
 """Playtest bot for the Orleans ROM: drives tools/playtest/harness (headless libmgba in WSL) from Windows.
 
     from bot import Bot
-    b = Bot("my_run")             # boots the current pokeemerald.gba, screenshots go to out/my_run/
+    b = Bot("my_run")             # boots the current pokemon_orleans.gba, screenshots go to out/my_run/
     b.press("A"); b.walk("RRDD"); b.warp("CrescentCity", 40, 60); b.shot("here")
     b.var("VAR_ORLEANS_STORY"); b.set_var("VAR_ORLEANS_STORY", 11); b.flag("FLAG_BADGE06_GET")
 
@@ -23,7 +23,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[2]
 PLAYTEST = Path(__file__).resolve().parent
 OUT = PLAYTEST / "out"
-ROM = ROOT / "pokeemerald.gba"
+ROM = ROOT / "pokemon_orleans.gba"
 WSL_DISTRO = "Ubuntu"
 WSL_HOME_ROM_DIR = "orleans_expansion"          # the build mirror (tools/wsl_build.sh)
 HARNESS_CMD = "~/.cache/orleans_playtest/harness"
@@ -49,8 +49,8 @@ def rom_sha1(path=ROM):
 
 # --------------------------------------------------------------------------- symbols
 class Symbols:
-    """name -> address. Primary source: readelf -sW of the mirror's pokeemerald.elf (has the thumb bit for
-    functions), cross-checked against pokeemerald.map. Falls back to the map file alone (all functions then
+    """name -> address. Primary source: readelf -sW of the mirror's pokemon_orleans.elf (has the thumb bit for
+    functions), cross-checked against pokemon_orleans.map. Falls back to the map file alone (all functions then
     assumed thumb). Cached per ROM hash."""
 
     def __init__(self, sha):
@@ -66,14 +66,14 @@ class Symbols:
         cache.write_text(json.dumps({"addr": self.addr, "thumb": sorted(self.thumb)}))
 
     def _from_map(self):
-        r = wsl("cat ~/%s/pokeemerald.map" % WSL_HOME_ROM_DIR)
+        r = wsl("cat ~/%s/pokemon_orleans.map 2>/dev/null || cat ~/%s/pokeemerald.map" % (WSL_HOME_ROM_DIR, WSL_HOME_ROM_DIR))
         for line in r.stdout.splitlines():
             m = re.match(r"^\s+0x([0-9a-f]{8})\s+([A-Za-z_][A-Za-z0-9_]*)\s*$", line)
             if m and m.group(2) not in self.addr:
                 self.addr[m.group(2)] = int(m.group(1), 16)
 
     def _from_elf(self):
-        r = wsl("readelf -sW ~/%s/pokeemerald.elf" % WSL_HOME_ROM_DIR)
+        r = wsl("f=~/%s/pokemon_orleans.elf; [ -f $f ] || f=~/%s/pokeemerald.elf; readelf -sW $f" % (WSL_HOME_ROM_DIR, WSL_HOME_ROM_DIR))
         for line in r.stdout.splitlines():
             p = line.split()
             if len(p) >= 8 and p[3] in ("FUNC", "OBJECT", "NOTYPE") and re.fullmatch(r"[0-9a-f]+", p[1]):

@@ -3,7 +3,7 @@
 Headless smoke tests for the ROM: a tiny libmgba program (WSL) driven from Python (Windows). No display, no GUI.
 
 ```
-python tools/playtest/run_all.py                  # every test against the current pokeemerald.gba
+python tools/playtest/run_all.py                  # every test against the current pokemon_orleans.gba
 python tools/playtest/run_all.py t00 t02          # only tests whose file name starts with these
 python tools/playtest/run_all.py --slow           # everything including t_transitions
 python tools/playtest/run_all.py --rom X.gba --run tag
@@ -22,7 +22,7 @@ wsl -d Ubuntu -- bash /mnt/c/Users/chris/orleans_expansion/orleans_expansion/too
 ```
 
 It writes `~/.cache/orleans_playtest/harness`. Python needs Pillow. The ROM must have been built by `tools/wsl_build.sh`
-(the bot reads `~/orleans_expansion/pokeemerald.map` and `.elf` in the WSL mirror for symbol addresses; they must match the ROM).
+(the bot reads `~/orleans_expansion/pokemon_orleans.map` and `.elf` in the WSL mirror for symbol addresses; they must match the ROM).
 
 ## How it works
 

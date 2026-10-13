@@ -22,5 +22,6 @@ make -j"$(nproc)" "$@" > build.log 2>&1
 status=$?
 echo "EXIT=$status" >> build.log
 cp build.log "$SRC/build.log"
-[ $status -eq 0 ] && cp pokeemerald.gba "$SRC/pokeemerald.gba"
+# Orleans ROM name is pokemon_orleans.gba; pokeemerald.gba is kept as a transition copy for older scripts.
+[ $status -eq 0 ] && cp pokemon_orleans.gba "$SRC/pokemon_orleans.gba" && cp pokemon_orleans.gba "$SRC/pokeemerald.gba"
 exit $status

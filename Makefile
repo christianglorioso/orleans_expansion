@@ -26,7 +26,12 @@ REVISION    := 0
 KEEP_TEMPS  ?= 0
 
 # `File name`.gba
-FILE_NAME := poke$(BUILD_NAME)
+# Orleans: the Emerald build is Pokemon Orleans
+ifeq ($(BUILD_NAME),emerald)
+  FILE_NAME := pokemon_orleans
+else
+  FILE_NAME := poke$(BUILD_NAME)
+endif
 BUILD_DIR := build
 
 # Compares the ROM to a checksum of the original - only makes sense using when non-modern

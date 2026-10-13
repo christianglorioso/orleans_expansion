@@ -1,6 +1,6 @@
 """Run every smoke test in tools/playtest/tests against the current ROM and print a pass/fail table.
 
-    python tools/playtest/run_all.py                 # all tests, current pokeemerald.gba
+    python tools/playtest/run_all.py                 # all tests, current pokemon_orleans.gba
     python tools/playtest/run_all.py t00 t02        # only tests whose file name starts with these
     python tools/playtest/run_all.py --rom path.gba --run mytag
 
