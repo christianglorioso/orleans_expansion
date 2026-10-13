@@ -125,7 +125,8 @@ OldestShrine_EventScript_RayBattle:
 	call_if_eq VAR_STARTER_MON, 1, OldestShrine_EventScript_BattleFuecoco
 	call_if_eq VAR_STARTER_MON, 2, OldestShrine_EventScript_BattleTotodile
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, OldestShrine_EventScript_RayLost
+	@ a draw (both sides faint) is no win: it offers the retry too (audit fin S2)
+	goto_if_ne VAR_RESULT, B_OUTCOME_WON, OldestShrine_EventScript_RayLost
 	goto OldestShrine_EventScript_RayWon
 
 OldestShrine_EventScript_BattleChikorita:

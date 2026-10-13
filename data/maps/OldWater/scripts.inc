@@ -70,7 +70,8 @@ OldWater_EventScript_RaidBattle:
 	call_if_eq VAR_STARTER_MON, 1, OldWater_EventScript_BattleTotodile
 	call_if_eq VAR_STARTER_MON, 2, OldWater_EventScript_BattleChikorita
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, OldWater_EventScript_RaidLost
+	@ anything but a win (a loss, or a draw where both sides faint) offers the retry: the multi special never whites out (audit fin S2)
+	goto_if_ne VAR_RESULT, B_OUTCOME_WON, OldWater_EventScript_RaidLost
 	goto OldWater_EventScript_RaidWon
 
 OldWater_EventScript_BattleChikorita:
@@ -336,7 +337,7 @@ OldWater_EventScript_RedOrb:
 	setflag FLAG_RECEIVED_LEGENDARY_ORB
 	goto OldWater_EventScript_CerEnd
 
-@ the story moves on (40 -> 41) and Tupelo's boat takes the player to Route 8's north islet; the actors leave
+@ the story moves on (40 -> 41) and the river carries the player to the water off Route 8's north islet; the actors leave
 OldWater_EventScript_CerEnd:
 	msgbox OldWater_Text_Cer5, MSGBOX_DEFAULT
 	closemessage
@@ -348,7 +349,8 @@ OldWater_EventScript_CerEnd:
 	setflag FLAG_HIDE_CER_TUPELO
 	setflag FLAG_HIDE_CER_JAYDEN
 	setflag FLAG_HIDE_CER_WREN
-	warpsilent MAP_ORLEANS_ROUTE8, 9, 8
+	@ onto the open water just south of the islet: a warp onto a surfable tile gives the surfing avatar, so a party with no Surf user is never stranded (audit fin S4)
+	warpsilent MAP_ORLEANS_ROUTE8, 9, 10
 	waitstate
 	releaseall
 	end
@@ -388,8 +390,8 @@ OldWater_Text_Cer2:
 OldWater_Text_Cer3:
 	.string "TUPELO: The Long One will not come\n"
 	.string "alone. Two voices must walk with it,\p"
-	.string "or it will wake the storms.\n"
-	.string "TUPELO: One of these two will walk\p"
+	.string "or it will wake the storms.\p"
+	.string "TUPELO: One of these two will walk\n"
 	.string "beside you. The other, the boy.$"
 
 OldWater_Text_Cer4:
@@ -443,9 +445,9 @@ OldWater_Text_NoRoom:
 
 OldWater_Text_Cer5:
 	.string "TUPELO: The OLDEST SHRINE is across\n"
-	.string "the channel north of ROUTE 8. My\p"
-	.string "boat takes you to the shore. Go at\n"
-	.string "dawn.$"
+	.string "the channel north of ROUTE 8. The\p"
+	.string "river carries you to its edge. Go\n"
+	.string "at dawn.$"
 
 @ --- post-game (gen_postgame.py) ---
 

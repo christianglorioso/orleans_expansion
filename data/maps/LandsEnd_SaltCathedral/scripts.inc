@@ -68,8 +68,8 @@ LandsEnd_SaltCathedral_Text_GroudonCalm:
 
 LandsEnd_SaltCathedral_Text_OneLeft:
 	.string "One sleeper is calm. The other waits\n"
-	.string "under the OLD WATER's tide: KYOGRE,\p"
-	.string "in the DROWNED TEMPLE.$"
+	.string "behind the ruin door off ROUTE 22:\p"
+	.string "KYOGRE, in the DROWNED TEMPLE.$"
 
 LandsEnd_SaltCathedral_Text_BothDone:
 	.string "Far away, a storm wall breaks. The\n"
