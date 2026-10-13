@@ -9,6 +9,7 @@ OldWater_MapScripts::
 
 @ the raid actors are hidden on every load; the scene brings them in (clearflag + addobject)
 OldWater_OnTransition:
+	setflag FLAG_VISITED_OLD_WATER
 	call OldWater_EventScript_PGSetup
 	setflag FLAG_HIDE_RAID_ISAAC
 	setflag FLAG_HIDE_RAID_GRUNT1

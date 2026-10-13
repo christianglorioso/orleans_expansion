@@ -210,6 +210,7 @@ PointeRouge_Text_DustStorm:
 	.string "have to blow itself out first.$"
 
 PointeRouge_OnTransitionPG:
+	setflag FLAG_VISITED_POINTE_ROUGE
 	call PointeRouge_EventScript_PGSetup
 	end
 

@@ -9,6 +9,7 @@ LandsEnd_MapScripts::
 @ VAR_LANDS_END_SCENE plays the scene wherever the player stands (leaving the gym by its door warp, any route), and a blackout in the battle replays it.
 
 LandsEnd_OnTransition:
+	setflag FLAG_VISITED_LANDS_END
 	setflag FLAG_HIDE_LANDS_END_ANDREW
 	setflag FLAG_HIDE_LANDS_END_JAYDEN
 	call_if_eq VAR_ORLEANS_STORY, 36, LandsEnd_EventScript_ShowPair

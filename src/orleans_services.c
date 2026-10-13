@@ -5,6 +5,10 @@
 #include "pokemon.h"
 #include "event_data.h"
 #include "overworld.h"
+#include "field_move.h"
+#include "region_map.h"
+#include "constants/field_move.h"
+#include "constants/region_map_sections.h"
 #include "rtc.h"
 #include "constants/pokemon.h"
 #include "constants/game_stat.h"
@@ -179,4 +183,52 @@ void OrleansSvc_MirrorCheck(void)
         }
     }
     gSpecialVar_Result = lit;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------------
+// Region map / Fly (tools/regionmap, region_map/01_wiring_plan.md)
+
+// Fly without an HM: once the Fly badge is owned, the Pokenav map and the Town Map item fly with R to a visited town (or the
+// Battle Frontier once the post-game opened it). Same rules as the party menu's Fly: only on outdoor maps. The Oldest Shrine
+// (the finale arena, an outdoor map type) is excluded.
+bool32 Orleans_CanFlyFromMapType(u8 mapSecType)
+{
+    if (mapSecType != MAPSECTYPE_CITY_CANFLY && mapSecType != MAPSECTYPE_BATTLE_FRONTIER)
+        return FALSE;
+    if (!IsFieldMoveUnlocked(FIELD_MOVE_FLY))
+        return FALSE;
+    if (!Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType))
+        return FALSE;
+    if (gMapHeader.regionMapSectionId == MAPSEC_OLDEST_SHRINE)
+        return FALSE;
+    return TRUE;
+}
+
+// Run on Continue: sets the "visited" flags a save from before the region map would be missing. Only sets, never clears,
+// so it is idempotent. Thresholds are VAR_ORLEANS_STORY values at which the player has stood in that town.
+void Orleans_CatchUpVisitedFlags(void)
+{
+    u16 story = VarGet(VAR_ORLEANS_STORY);
+
+    FlagSet(FLAG_VISITED_ISLE_MARAIS);
+    if (story >= 5)
+        FlagSet(FLAG_VISITED_OLD_WATER);
+    if (story >= 7 || FlagGet(FLAG_RESPAWN_GRAND_OAK_SET) || FlagGet(FLAG_BADGE01_GET))
+        FlagSet(FLAG_VISITED_GRAND_OAK);
+    if (story >= 10 || FlagGet(FLAG_RESPAWN_STORMS_EDGE_SET))
+        FlagSet(FLAG_VISITED_STORMS_EDGE);
+    if (story >= 13)
+        FlagSet(FLAG_VISITED_CRESCENT_CITY);
+    if (story >= 19 || FlagGet(FLAG_BADGE04_GET))
+        FlagSet(FLAG_VISITED_POINTE_ROUGE);
+    if (story >= 23)
+        FlagSet(FLAG_VISITED_CAMP_COCODRIE);
+    if (story >= 27)
+        FlagSet(FLAG_VISITED_LUTINS_HOLLOW);
+    if (story >= 31)
+        FlagSet(FLAG_VISITED_REDFIELD);
+    if (story >= 35)
+        FlagSet(FLAG_VISITED_LANDS_END);
+    if (story >= 45)
+        FlagSet(FLAG_LANDMARK_BATTLE_FRONTIER);
 }

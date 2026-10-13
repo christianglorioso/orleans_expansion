@@ -137,6 +137,10 @@ void BlendRegionMap(u16 color, u32 coeff);
 void SetRegionMapDataForZoom(void);
 enum RegionMapType GetRegionMapType(u32 mapSecId);
 
+// Orleans: Fly without an HM (replaces OW_FLAG_POKE_RIDER): the Pokenav map and the Town Map item fly with R once the Fly badge is owned
+bool32 Orleans_CanFlyFromMapType(u8 mapSecType);
+void Orleans_CatchUpVisitedFlags(void);
+
 //Pokenav Fly funcs
 u32 FilterFlyDestination(struct RegionMap* regionMap);
 void SetFlyDestination(struct RegionMap* regionMap);

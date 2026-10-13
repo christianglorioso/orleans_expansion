@@ -1,10 +1,15 @@
 CampCocodrie_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CampCocodrie_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, CampCocodrie_OnFrameTable
 	.byte 0
 
 @ Camp Cocodrie (Chapter 5). Story: 23 arrived (this frame script, once: VAR_CAMP_ARRIVAL; frame tables compare vars only), 24 Isaac
 @ beaten (he stands on the nurse cabin's only approach cell, (7, 22), until then), 25 the gumbo cook-off judged a tie (in the
 @ cookhouse), 26 the brothers beaten: badge 5, verse 5, the lake road (Route 10) opens (FLAG_BADGE05_GET).
+
+CampCocodrie_OnTransition:
+	setflag FLAG_VISITED_CAMP_COCODRIE
+	end
 
 CampCocodrie_OnFrameTable:
 	map_script_2 VAR_CAMP_ARRIVAL, 0, CampCocodrie_EventScript_Arrival

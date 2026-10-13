@@ -17,6 +17,7 @@ StormsEdge_OnLoad:
 @ Raichunite X lies in the substation yard but stays out of reach (its item flag is
 @ held set) until the grid is back, when the gym victory clears the flag.
 StormsEdge_OnTransition:
+	setflag FLAG_VISITED_STORMS_EDGE
 	call StormsEdge_EventScript_StoryWeather
 	call StormsEdge_EventScript_PGSetup
 	call_if_unset FLAG_RESPAWN_STORMS_EDGE_SET, StormsEdge_EventScript_FirstRespawn

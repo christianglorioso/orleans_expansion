@@ -4,6 +4,7 @@ IsleMarais_MapScripts::
 	.byte 0
 
 IsleMarais_OnTransition:
+	setflag FLAG_VISITED_ISLE_MARAIS
 	call IsleMarais_EventScript_StoryWeather
 	end
 

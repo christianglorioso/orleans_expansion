@@ -10,6 +10,7 @@ Redfield_MapScripts::
 @ Wren waits outside the mill door while the story is 33 (the first return to town plays the call: VAR_REDFIELD_RAID_CALL).
 
 Redfield_OnTransition:
+	setflag FLAG_VISITED_REDFIELD
 	call Redfield_EventScript_PGSetup
 	setflag FLAG_HIDE_REDFIELD_RITA
 	setflag FLAG_HIDE_REDFIELD_WREN

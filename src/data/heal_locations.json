@@ -390,7 +390,7 @@
       "id": "HEAL_LOCATION_STORMS_EDGE",
       "map": "MAP_STORMS_EDGE",
       "x": 15,
-      "y": 9,
+      "y": 13,
       "respawn_map": "MAP_STORMS_EDGE_POKECENTER",
       "respawn_npc": "LOCALID_STORMS_EDGE_POKECENTER_NURSE0",
       "respawn_x": 7,

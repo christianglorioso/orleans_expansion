@@ -1383,22 +1383,39 @@
 #define NUM_BADGES                            (1 + FLAG_BADGE08_GET - FLAG_BADGE01_GET)
 
 // Towns and Cities
-#define FLAG_VISITED_LITTLEROOT_TOWN                (SYSTEM_FLAGS + 0xF)
-#define FLAG_VISITED_OLDALE_TOWN                    (SYSTEM_FLAGS + 0x10)
-#define FLAG_VISITED_DEWFORD_TOWN                   (SYSTEM_FLAGS + 0x11)
-#define FLAG_VISITED_LAVARIDGE_TOWN                 (SYSTEM_FLAGS + 0x12)
-#define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x13)
-#define FLAG_VISITED_VERDANTURF_TOWN                (SYSTEM_FLAGS + 0x14)
-#define FLAG_VISITED_PACIFIDLOG_TOWN                (SYSTEM_FLAGS + 0x15)
-#define FLAG_VISITED_PETALBURG_CITY                 (SYSTEM_FLAGS + 0x16)
-#define FLAG_VISITED_SLATEPORT_CITY                 (SYSTEM_FLAGS + 0x17)
-#define FLAG_VISITED_MAUVILLE_CITY                  (SYSTEM_FLAGS + 0x18)
-#define FLAG_VISITED_RUSTBORO_CITY                  (SYSTEM_FLAGS + 0x19)
-#define FLAG_VISITED_FORTREE_CITY                   (SYSTEM_FLAGS + 0x1A)
-#define FLAG_VISITED_LILYCOVE_CITY                  (SYSTEM_FLAGS + 0x1B)
-#define FLAG_VISITED_MOSSDEEP_CITY                  (SYSTEM_FLAGS + 0x1C)
-#define FLAG_VISITED_SOOTOPOLIS_CITY                (SYSTEM_FLAGS + 0x1D)
-#define FLAG_VISITED_EVER_GRANDE_CITY               (SYSTEM_FLAGS + 0x1E)
+#define FLAG_VISITED_ISLE_MARAIS                           (SYSTEM_FLAGS + 0xF) // Orleans: town visited (Fly); was FLAG_VISITED_LITTLEROOT_TOWN
+#define FLAG_VISITED_GRAND_OAK                             (SYSTEM_FLAGS + 0x10) // Orleans: town visited (Fly); was FLAG_VISITED_OLDALE_TOWN
+#define FLAG_VISITED_OLD_WATER                             (SYSTEM_FLAGS + 0x11) // Orleans: town visited (Fly); was FLAG_VISITED_DEWFORD_TOWN
+#define FLAG_VISITED_POINTE_ROUGE                          (SYSTEM_FLAGS + 0x12) // Orleans: town visited (Fly); was FLAG_VISITED_LAVARIDGE_TOWN
+#define FLAG_VISITED_STORMS_EDGE                           (SYSTEM_FLAGS + 0x13) // Orleans: town visited (Fly); was FLAG_VISITED_FALLARBOR_TOWN
+#define FLAG_VISITED_CAMP_COCODRIE                         (SYSTEM_FLAGS + 0x14) // Orleans: town visited (Fly); was FLAG_VISITED_VERDANTURF_TOWN
+#define FLAG_VISITED_REDFIELD                              (SYSTEM_FLAGS + 0x15) // Orleans: town visited (Fly); was FLAG_VISITED_PACIFIDLOG_TOWN
+#define FLAG_VISITED_LANDS_END                             (SYSTEM_FLAGS + 0x16) // Orleans: town visited (Fly); was FLAG_VISITED_PETALBURG_CITY
+#define FLAG_VISITED_OLDEST_SHRINE                         (SYSTEM_FLAGS + 0x17) // Orleans: town visited (Fly); was FLAG_VISITED_SLATEPORT_CITY
+#define FLAG_VISITED_CRESCENT_CITY                         (SYSTEM_FLAGS + 0x18) // Orleans: town visited (Fly); was FLAG_VISITED_MAUVILLE_CITY
+#define FLAG_VISITED_SPARE_19                              (SYSTEM_FLAGS + 0x19) // Orleans: town visited (Fly); was FLAG_VISITED_RUSTBORO_CITY
+#define FLAG_VISITED_LUTINS_HOLLOW                         (SYSTEM_FLAGS + 0x1A) // Orleans: town visited (Fly); was FLAG_VISITED_FORTREE_CITY
+#define FLAG_VISITED_SPARE_1B                              (SYSTEM_FLAGS + 0x1B) // Orleans: town visited (Fly); was FLAG_VISITED_LILYCOVE_CITY
+#define FLAG_VISITED_SPARE_1C                              (SYSTEM_FLAGS + 0x1C) // Orleans: town visited (Fly); was FLAG_VISITED_MOSSDEEP_CITY
+#define FLAG_VISITED_SPARE_1D                              (SYSTEM_FLAGS + 0x1D) // Orleans: town visited (Fly); was FLAG_VISITED_SOOTOPOLIS_CITY
+#define FLAG_VISITED_SPARE_1E                              (SYSTEM_FLAGS + 0x1E) // Orleans: town visited (Fly); was FLAG_VISITED_EVER_GRANDE_CITY
+// Hoenn names kept as aliases (vs_seeker.c, cable_club.inc, debug lists)
+#define FLAG_VISITED_LITTLEROOT_TOWN                       FLAG_VISITED_ISLE_MARAIS
+#define FLAG_VISITED_OLDALE_TOWN                           FLAG_VISITED_GRAND_OAK
+#define FLAG_VISITED_DEWFORD_TOWN                          FLAG_VISITED_OLD_WATER
+#define FLAG_VISITED_LAVARIDGE_TOWN                        FLAG_VISITED_POINTE_ROUGE
+#define FLAG_VISITED_FALLARBOR_TOWN                        FLAG_VISITED_STORMS_EDGE
+#define FLAG_VISITED_VERDANTURF_TOWN                       FLAG_VISITED_CAMP_COCODRIE
+#define FLAG_VISITED_PACIFIDLOG_TOWN                       FLAG_VISITED_REDFIELD
+#define FLAG_VISITED_PETALBURG_CITY                        FLAG_VISITED_LANDS_END
+#define FLAG_VISITED_SLATEPORT_CITY                        FLAG_VISITED_OLDEST_SHRINE
+#define FLAG_VISITED_MAUVILLE_CITY                         FLAG_VISITED_CRESCENT_CITY
+#define FLAG_VISITED_RUSTBORO_CITY                         FLAG_VISITED_SPARE_19
+#define FLAG_VISITED_FORTREE_CITY                          FLAG_VISITED_LUTINS_HOLLOW
+#define FLAG_VISITED_LILYCOVE_CITY                         FLAG_VISITED_SPARE_1B
+#define FLAG_VISITED_MOSSDEEP_CITY                         FLAG_VISITED_SPARE_1C
+#define FLAG_VISITED_SOOTOPOLIS_CITY                       FLAG_VISITED_SPARE_1D
+#define FLAG_VISITED_EVER_GRANDE_CITY                      FLAG_VISITED_SPARE_1E
 
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)

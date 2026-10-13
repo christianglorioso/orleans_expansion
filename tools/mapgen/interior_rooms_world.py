@@ -133,6 +133,8 @@ def world_rooms(room):
             r["exit_to"] = (tmap, 0)
         else:
             r["door_label"] = door_label(key, spec["title"])
+        # the two legendary arenas are entered from Routes 24 / 22: their own region map sections (Fly map, popup)
+        r["mapsec"] = {"lands_end_salt_cathedral": "MAPSEC_SALT_DOME", "lands_end_drowned_temple": "MAPSEC_DROWNED_TEMPLE"}.get(key, r["mapsec"])
         rooms.append(r)
     # stairs between floors. An upper floor's warp 0 is its way down, landing on the up-warp of the floor
     # below; that up-warp comes after the floor's own exits (the door mat, or the way down)

@@ -8,6 +8,7 @@ LutinsHollow_MapScripts::
 @ The gym door's only approach cell (25, 7) is held by Lutin's pupil until story 28, so the scene cannot be skipped.
 
 LutinsHollow_OnTransition:
+	setflag FLAG_VISITED_LUTINS_HOLLOW
 	setflag FLAG_HIDE_HOLLOW_JAYDEN
 	setflag FLAG_HIDE_HOLLOW_WREN
 	setflag FLAG_HIDE_HOLLOW_GYM_USHER

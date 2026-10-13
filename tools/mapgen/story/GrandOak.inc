@@ -5,6 +5,7 @@ GrandOak_MapScripts::
 @ The first arrival sets the respawn point (a blackout on Route 2 returns here even if the Center was never entered). Only the
 @ first: a later visit must not override a Center healed at in another town.
 GrandOak_OnTransition:
+	setflag FLAG_VISITED_GRAND_OAK
 	call_if_unset FLAG_RESPAWN_GRAND_OAK_SET, GrandOak_EventScript_FirstRespawn
 	end
 

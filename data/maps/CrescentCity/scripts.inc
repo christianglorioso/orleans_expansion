@@ -9,7 +9,14 @@ CrescentCity_MapScripts::
 @
 @ People who appear for one story value are hidden on every load and shown again only for that value: Lafayette outside the
 @ conservation center while the story is 13, Wren at the Drowned Ward gate while it is 16.
+CrescentCity_EventScript_OpenFrontierLandmark:
+	@ the post-game opens the Battle Frontier district: it becomes a Fly target (FLAG_LANDMARK_BATTLE_FRONTIER)
+	setflag FLAG_LANDMARK_BATTLE_FRONTIER
+	return
+
 CrescentCity_OnTransition:
+	setflag FLAG_VISITED_CRESCENT_CITY
+	call_if_ge VAR_ORLEANS_STORY, 45, CrescentCity_EventScript_OpenFrontierLandmark
 	call CrescentCity_EventScript_PGSetup
 	setflag FLAG_HIDE_CRESCENT_LAFAYETTE
 	setflag FLAG_HIDE_CRESCENT_WREN

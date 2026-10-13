@@ -121,7 +121,7 @@ static const u16 sRegionMapCursorPal[] = INCGFX_U16("graphics/pokenav/region_map
 static const u32 sRegionMapCursorSmallGfxLZ[] = INCGFX_U32("graphics/pokenav/region_map/cursor_small.png", ".4bpp.smol");
 static const u32 sRegionMapCursorLargeGfxLZ[] = INCGFX_U32("graphics/pokenav/region_map/cursor_large.png", ".4bpp.smol");
 static const u16 sRegionMapBg_Pal[] = INCGFX_U16("graphics/pokenav/region_map/map.pal", ".gbapal");
-static const u32 sRegionMapBg_GfxLZ[] = INCGFX_U32("graphics/pokenav/region_map/map.png", ".8bpp.smol", "-num_tiles 233 -Wnum_tiles");
+static const u32 sRegionMapBg_GfxLZ[] = INCGFX_U32("graphics/pokenav/region_map/map.png", ".8bpp.smol", "-num_tiles 232 -Wnum_tiles");
 static const u32 sRegionMapBg_TilemapLZ[] = INCGFX_U32("graphics/pokenav/region_map/map.bin", ".smolTM");
 static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCGFX_U16("graphics/pokenav/region_map/brendan_icon.png", ".gbapal");
 static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCGFX_U8("graphics/pokenav/region_map/brendan_icon.png", ".4bpp");
@@ -133,6 +133,7 @@ static const u16 sRegionMapPlayerIcon_LeafPal[] = INCGFX_U16("graphics/pokenav/r
 static const u8 sRegionMapPlayerIcon_LeafGfx[] = INCGFX_U8("graphics/pokenav/region_map/leaf_icon.png", ".4bpp");
 
 #include "data/region_map/region_map_layout.h"
+#include "data/region_map/region_map_orleans_paths.h"
 #include "data/region_map/region_map_layout_kanto.h"
 #include "data/region_map/region_map_layout_sevii123.h"
 #include "data/region_map/region_map_layout_sevii45.h"
@@ -444,31 +445,31 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_SAFFRON_CITY] = {MAP_GROUP(MAP_SAFFRON_CITY), MAP_NUM(MAP_SAFFRON_CITY), HEAL_LOCATION_SAFFRON_CITY},
     [MAPSEC_ROUTE_4_POKECENTER] = {MAP_GROUP(MAP_ROUTE4), MAP_NUM(MAP_ROUTE4), HEAL_LOCATION_ROUTE4},
     [MAPSEC_ROUTE_10_POKECENTER] = {MAP_GROUP(MAP_ROUTE10), MAP_NUM(MAP_ROUTE10), HEAL_LOCATION_ROUTE10},
-    [MAPSEC_ROUTE_1] = {MAP_GROUP(MAP_ROUTE1), MAP_NUM(MAP_ROUTE1), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_2] = {MAP_GROUP(MAP_ROUTE2), MAP_NUM(MAP_ROUTE2), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_3] = {MAP_GROUP(MAP_ROUTE3), MAP_NUM(MAP_ROUTE3), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_4] = {MAP_GROUP(MAP_ROUTE4), MAP_NUM(MAP_ROUTE4), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_5] = {MAP_GROUP(MAP_ROUTE5), MAP_NUM(MAP_ROUTE5), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_6] = {MAP_GROUP(MAP_ROUTE6), MAP_NUM(MAP_ROUTE6), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_7] = {MAP_GROUP(MAP_ROUTE7), MAP_NUM(MAP_ROUTE7), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_8] = {MAP_GROUP(MAP_ROUTE8), MAP_NUM(MAP_ROUTE8), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_9] = {MAP_GROUP(MAP_ROUTE9), MAP_NUM(MAP_ROUTE9), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_10] = {MAP_GROUP(MAP_ROUTE10), MAP_NUM(MAP_ROUTE10), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_11] = {MAP_GROUP(MAP_ROUTE11), MAP_NUM(MAP_ROUTE11), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_12] = {MAP_GROUP(MAP_ROUTE12), MAP_NUM(MAP_ROUTE12), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_13] = {MAP_GROUP(MAP_ROUTE13), MAP_NUM(MAP_ROUTE13), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_14] = {MAP_GROUP(MAP_ROUTE14), MAP_NUM(MAP_ROUTE14), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_15] = {MAP_GROUP(MAP_ROUTE15), MAP_NUM(MAP_ROUTE15), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_16] = {MAP_GROUP(MAP_ROUTE16), MAP_NUM(MAP_ROUTE16), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_17] = {MAP_GROUP(MAP_ROUTE17), MAP_NUM(MAP_ROUTE17), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_18] = {MAP_GROUP(MAP_ROUTE18), MAP_NUM(MAP_ROUTE18), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_19] = {MAP_GROUP(MAP_ROUTE19), MAP_NUM(MAP_ROUTE19), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_20] = {MAP_GROUP(MAP_ROUTE20), MAP_NUM(MAP_ROUTE20), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_21] = {MAP_GROUP(MAP_ROUTE21_NORTH), MAP_NUM(MAP_ROUTE21_NORTH), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_22] = {MAP_GROUP(MAP_ROUTE22), MAP_NUM(MAP_ROUTE22), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_23] = {MAP_GROUP(MAP_ROUTE23), MAP_NUM(MAP_ROUTE23), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_24] = {MAP_GROUP(MAP_ROUTE24), MAP_NUM(MAP_ROUTE24), HEAL_LOCATION_NONE},
-    [MAPSEC_ROUTE_25] = {MAP_GROUP(MAP_ROUTE25), MAP_NUM(MAP_ROUTE25), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_1] = {MAP_GROUP(MAP_ORLEANS_ROUTE1), MAP_NUM(MAP_ORLEANS_ROUTE1), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_2] = {MAP_GROUP(MAP_ORLEANS_ROUTE2), MAP_NUM(MAP_ORLEANS_ROUTE2), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_3] = {MAP_GROUP(MAP_ORLEANS_ROUTE3), MAP_NUM(MAP_ORLEANS_ROUTE3), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_4] = {MAP_GROUP(MAP_ORLEANS_ROUTE4), MAP_NUM(MAP_ORLEANS_ROUTE4), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_5] = {MAP_GROUP(MAP_ORLEANS_ROUTE5), MAP_NUM(MAP_ORLEANS_ROUTE5), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_6] = {MAP_GROUP(MAP_ORLEANS_ROUTE6), MAP_NUM(MAP_ORLEANS_ROUTE6), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_7] = {MAP_GROUP(MAP_ORLEANS_ROUTE7), MAP_NUM(MAP_ORLEANS_ROUTE7), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_8] = {MAP_GROUP(MAP_ORLEANS_ROUTE8), MAP_NUM(MAP_ORLEANS_ROUTE8), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_9] = {MAP_GROUP(MAP_ORLEANS_ROUTE9), MAP_NUM(MAP_ORLEANS_ROUTE9), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_10] = {MAP_GROUP(MAP_ORLEANS_ROUTE10), MAP_NUM(MAP_ORLEANS_ROUTE10), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_11] = {MAP_GROUP(MAP_ORLEANS_ROUTE11), MAP_NUM(MAP_ORLEANS_ROUTE11), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_12] = {MAP_GROUP(MAP_ORLEANS_ROUTE12), MAP_NUM(MAP_ORLEANS_ROUTE12), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_13] = {MAP_GROUP(MAP_ORLEANS_ROUTE13), MAP_NUM(MAP_ORLEANS_ROUTE13), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_14] = {MAP_GROUP(MAP_ORLEANS_ROUTE14), MAP_NUM(MAP_ORLEANS_ROUTE14), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_15] = {MAP_GROUP(MAP_ORLEANS_ROUTE15), MAP_NUM(MAP_ORLEANS_ROUTE15), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_16] = {MAP_GROUP(MAP_ORLEANS_ROUTE16), MAP_NUM(MAP_ORLEANS_ROUTE16), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_17] = {MAP_GROUP(MAP_ORLEANS_ROUTE17), MAP_NUM(MAP_ORLEANS_ROUTE17), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_18] = {MAP_GROUP(MAP_ORLEANS_ROUTE18), MAP_NUM(MAP_ORLEANS_ROUTE18), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_19] = {MAP_GROUP(MAP_ORLEANS_ROUTE19), MAP_NUM(MAP_ORLEANS_ROUTE19), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_20] = {MAP_GROUP(MAP_ORLEANS_ROUTE20), MAP_NUM(MAP_ORLEANS_ROUTE20), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_21] = {MAP_GROUP(MAP_ORLEANS_ROUTE21), MAP_NUM(MAP_ORLEANS_ROUTE21), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_22] = {MAP_GROUP(MAP_ORLEANS_ROUTE22), MAP_NUM(MAP_ORLEANS_ROUTE22), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_23] = {MAP_GROUP(MAP_ORLEANS_ROUTE23), MAP_NUM(MAP_ORLEANS_ROUTE23), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_24] = {MAP_GROUP(MAP_ORLEANS_ROUTE24), MAP_NUM(MAP_ORLEANS_ROUTE24), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_25] = {MAP_GROUP(MAP_ORLEANS_ROUTE25), MAP_NUM(MAP_ORLEANS_ROUTE25), HEAL_LOCATION_NONE},
     [MAPSEC_VIRIDIAN_FOREST] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_MT_MOON] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_S_S_ANNE] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
@@ -535,6 +536,20 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_RIXY_CHAMBER] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_VIAPOIS_CHAMBER] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
     [MAPSEC_EMBER_SPA] = {MAP_GROUP(MAP_PALLET_TOWN), MAP_NUM(MAP_PALLET_TOWN), HEAL_LOCATION_NONE},
+    // Orleans (section ids after the Kanto block; the array is sized by the highest index)
+    [MAPSEC_ISLE_MARAIS] = {MAP_GROUP(MAP_ISLE_MARAIS), MAP_NUM(MAP_ISLE_MARAIS), HEAL_LOCATION_ISLE_MARAIS},
+    [MAPSEC_GRAND_OAK] = {MAP_GROUP(MAP_GRAND_OAK), MAP_NUM(MAP_GRAND_OAK), HEAL_LOCATION_GRAND_OAK},
+    [MAPSEC_OLD_WATER] = {MAP_GROUP(MAP_OLD_WATER), MAP_NUM(MAP_OLD_WATER), HEAL_LOCATION_OLD_WATER},
+    [MAPSEC_STORMS_EDGE] = {MAP_GROUP(MAP_STORMS_EDGE), MAP_NUM(MAP_STORMS_EDGE), HEAL_LOCATION_STORMS_EDGE},
+    [MAPSEC_CRESCENT_CITY] = {MAP_GROUP(MAP_CRESCENT_CITY), MAP_NUM(MAP_CRESCENT_CITY), HEAL_LOCATION_CRESCENT_CITY},
+    [MAPSEC_POINTE_ROUGE] = {MAP_GROUP(MAP_POINTE_ROUGE), MAP_NUM(MAP_POINTE_ROUGE), HEAL_LOCATION_POINTE_ROUGE},
+    [MAPSEC_CAMP_COCODRIE] = {MAP_GROUP(MAP_CAMP_COCODRIE), MAP_NUM(MAP_CAMP_COCODRIE), HEAL_LOCATION_CAMP_COCODRIE},
+    [MAPSEC_LUTINS_HOLLOW] = {MAP_GROUP(MAP_LUTINS_HOLLOW), MAP_NUM(MAP_LUTINS_HOLLOW), HEAL_LOCATION_LUTINS_HOLLOW},
+    [MAPSEC_REDFIELD] = {MAP_GROUP(MAP_REDFIELD), MAP_NUM(MAP_REDFIELD), HEAL_LOCATION_REDFIELD},
+    [MAPSEC_LANDS_END] = {MAP_GROUP(MAP_LANDS_END), MAP_NUM(MAP_LANDS_END), HEAL_LOCATION_LANDS_END},
+    [MAPSEC_OLDEST_SHRINE] = {MAP_GROUP(MAP_OLDEST_SHRINE), MAP_NUM(MAP_OLDEST_SHRINE), HEAL_LOCATION_NONE},
+    [MAPSEC_SALT_DOME] = {MAP_GROUP(MAP_ORLEANS_ROUTE24), MAP_NUM(MAP_ORLEANS_ROUTE24), HEAL_LOCATION_NONE},
+    [MAPSEC_DROWNED_TEMPLE] = {MAP_GROUP(MAP_ORLEANS_ROUTE22), MAP_NUM(MAP_ORLEANS_ROUTE22), HEAL_LOCATION_NONE},
 };
 
 static const u8 *const sEverGrandeCityNames[] =
@@ -1222,6 +1237,7 @@ static void InitMapBasedOnPlayerLocation(void)
     u16 y;
     u16 dimensionScale;
     u16 xOnMap;
+    u16 yOnMap;
     struct WarpData *warp;
 
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SS_TIDAL_CORRIDOR)
@@ -1308,6 +1324,34 @@ static void InitMapBasedOnPlayerLocation(void)
     }
 
     xOnMap = x;
+    yOnMap = y;
+
+    // Orleans routes follow the real geography: the icon sits on the route's own cells
+    {
+        u32 pi, ci;
+        for (pi = 0; pi < ARRAY_COUNT(sOrleansRoutePaths); pi++)
+        {
+            if (sOrleansRoutePaths[pi].mapsec != sRegionMap->mapSecId)
+                continue;
+            if (sOrleansRoutePaths[pi].alongY)
+                ci = (yOnMap * sOrleansRoutePaths[pi].count) / (mapHeight ? mapHeight : 1);
+            else
+                ci = (xOnMap * sOrleansRoutePaths[pi].count) / (mapWidth ? mapWidth : 1);
+            if (ci >= sOrleansRoutePaths[pi].count)
+                ci = sOrleansRoutePaths[pi].count - 1;
+            sRegionMap->cursorPosX = sOrleansRoutePaths[pi].cells[ci][0] + MAPCURSOR_X_MIN;
+            sRegionMap->cursorPosY = sOrleansRoutePaths[pi].cells[ci][1] + MAPCURSOR_Y_MIN;
+            return;
+        }
+    }
+
+    if (gRegionMapEntries[sRegionMap->mapSecId].width == 0 || gRegionMapEntries[sRegionMap->mapSecId].height == 0)
+    {
+        // a section without a map rectangle (should not happen): sit at its origin instead of dividing by zero
+        sRegionMap->cursorPosX = gRegionMapEntries[sRegionMap->mapSecId].x + MAPCURSOR_X_MIN;
+        sRegionMap->cursorPosY = gRegionMapEntries[sRegionMap->mapSecId].y + MAPCURSOR_Y_MIN;
+        return;
+    }
 
     dimensionScale = mapWidth / gRegionMapEntries[sRegionMap->mapSecId].width;
     if (dimensionScale == 0)
@@ -1400,6 +1444,8 @@ static void RegionMap_InitializeStateBasedOnSSTidalLocation(void)
         mapHeader = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
 
         sRegionMap->mapSecId = mapHeader->regionMapSectionId;
+        if (gRegionMapEntries[sRegionMap->mapSecId].width == 0 || gRegionMapEntries[sRegionMap->mapSecId].height == 0)
+            break;
         dimensionScale = mapHeader->mapLayout->width / gRegionMapEntries[sRegionMap->mapSecId].width;
         if (dimensionScale == 0)
             dimensionScale = 1;
@@ -1426,38 +1472,26 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
     {
     case MAPSEC_NONE:
         return MAPSECTYPE_NONE;
-    case MAPSEC_LITTLEROOT_TOWN:
-        return FlagGet(FLAG_VISITED_LITTLEROOT_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_OLDALE_TOWN:
-        return FlagGet(FLAG_VISITED_OLDALE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_DEWFORD_TOWN:
-        return FlagGet(FLAG_VISITED_DEWFORD_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LAVARIDGE_TOWN:
-        return FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FALLARBOR_TOWN:
-        return FlagGet(FLAG_VISITED_FALLARBOR_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_VERDANTURF_TOWN:
-        return FlagGet(FLAG_VISITED_VERDANTURF_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PACIFIDLOG_TOWN:
-        return FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PETALBURG_CITY:
-        return FlagGet(FLAG_VISITED_PETALBURG_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SLATEPORT_CITY:
-        return FlagGet(FLAG_VISITED_SLATEPORT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MAUVILLE_CITY:
-        return FlagGet(FLAG_VISITED_MAUVILLE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_RUSTBORO_CITY:
-        return FlagGet(FLAG_VISITED_RUSTBORO_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FORTREE_CITY:
-        return FlagGet(FLAG_VISITED_FORTREE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LILYCOVE_CITY:
-        return FlagGet(FLAG_VISITED_LILYCOVE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MOSSDEEP_CITY:
-        return FlagGet(FLAG_VISITED_MOSSDEEP_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SOOTOPOLIS_CITY:
-        return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_EVER_GRANDE_CITY:
-        return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_ISLE_MARAIS:
+        return FlagGet(FLAG_VISITED_ISLE_MARAIS) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_GRAND_OAK:
+        return FlagGet(FLAG_VISITED_GRAND_OAK) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_OLD_WATER:
+        return FlagGet(FLAG_VISITED_OLD_WATER) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_STORMS_EDGE:
+        return FlagGet(FLAG_VISITED_STORMS_EDGE) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_CRESCENT_CITY:
+        return FlagGet(FLAG_VISITED_CRESCENT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_POINTE_ROUGE:
+        return FlagGet(FLAG_VISITED_POINTE_ROUGE) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_CAMP_COCODRIE:
+        return FlagGet(FLAG_VISITED_CAMP_COCODRIE) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_LUTINS_HOLLOW:
+        return FlagGet(FLAG_VISITED_LUTINS_HOLLOW) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_REDFIELD:
+        return FlagGet(FLAG_VISITED_REDFIELD) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_LANDS_END:
+        return FlagGet(FLAG_VISITED_LANDS_END) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_BATTLE_FRONTIER:
         return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
     case MAPSEC_SOUTHERN_ISLAND:
@@ -2141,83 +2175,53 @@ static const struct FlyLocation sFlyLocations[] =
 {
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LITTLEROOT_TOWN,
-        .flag = FLAG_VISITED_LITTLEROOT_TOWN,
+        .mapsec = MAPSEC_ISLE_MARAIS,
+        .flag = FLAG_VISITED_ISLE_MARAIS,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_OLDALE_TOWN,
-        .flag = FLAG_VISITED_OLDALE_TOWN,
+        .mapsec = MAPSEC_OLD_WATER,
+        .flag = FLAG_VISITED_OLD_WATER,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_DEWFORD_TOWN,
-        .flag = FLAG_VISITED_DEWFORD_TOWN,
+        .mapsec = MAPSEC_GRAND_OAK,
+        .flag = FLAG_VISITED_GRAND_OAK,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LAVARIDGE_TOWN,
-        .flag = FLAG_VISITED_LAVARIDGE_TOWN,
+        .mapsec = MAPSEC_STORMS_EDGE,
+        .flag = FLAG_VISITED_STORMS_EDGE,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_FALLARBOR_TOWN,
-        .flag = FLAG_VISITED_FALLARBOR_TOWN,
+        .mapsec = MAPSEC_CRESCENT_CITY,
+        .flag = FLAG_VISITED_CRESCENT_CITY,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_VERDANTURF_TOWN,
-        .flag = FLAG_VISITED_VERDANTURF_TOWN,
+        .mapsec = MAPSEC_POINTE_ROUGE,
+        .flag = FLAG_VISITED_POINTE_ROUGE,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_PACIFIDLOG_TOWN,
-        .flag = FLAG_VISITED_PACIFIDLOG_TOWN,
+        .mapsec = MAPSEC_CAMP_COCODRIE,
+        .flag = FLAG_VISITED_CAMP_COCODRIE,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_PETALBURG_CITY,
-        .flag = FLAG_VISITED_PETALBURG_CITY,
+        .mapsec = MAPSEC_LUTINS_HOLLOW,
+        .flag = FLAG_VISITED_LUTINS_HOLLOW,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_SLATEPORT_CITY,
-        .flag = FLAG_VISITED_SLATEPORT_CITY,
+        .mapsec = MAPSEC_REDFIELD,
+        .flag = FLAG_VISITED_REDFIELD,
     },
     {
         .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_MAUVILLE_CITY,
-        .flag = FLAG_VISITED_MAUVILLE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_RUSTBORO_CITY,
-        .flag = FLAG_VISITED_RUSTBORO_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_FORTREE_CITY,
-        .flag = FLAG_VISITED_FORTREE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_LILYCOVE_CITY,
-        .flag = FLAG_VISITED_LILYCOVE_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_MOSSDEEP_CITY,
-        .flag = FLAG_VISITED_MOSSDEEP_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_SOOTOPOLIS_CITY,
-        .flag = FLAG_VISITED_SOOTOPOLIS_CITY,
-    },
-    {
-        .regionMapType = REGION_MAP_HOENN,
-        .mapsec = MAPSEC_EVER_GRANDE_CITY,
-        .flag = FLAG_VISITED_EVER_GRANDE_CITY,
+        .mapsec = MAPSEC_LANDS_END,
+        .flag = FLAG_VISITED_LANDS_END,
     },
     {
         .regionMapType = REGION_MAP_KANTO,
@@ -2512,7 +2516,7 @@ u32 FilterFlyDestination(struct RegionMap* regionMap)
     case MAPSEC_EVER_GRANDE_CITY:
         return (FlagGet(FLAG_LANDMARK_POKEMON_LEAGUE) && regionMap->posWithinMapSec == 0 ? HEAL_LOCATION_EVER_GRANDE_CITY_POKEMON_LEAGUE : HEAL_LOCATION_EVER_GRANDE_CITY);
     default:
-        if (sMapHealLocations[regionMap->mapSecId][2] != HEAL_LOCATION_NONE)
+        if (regionMap->mapSecId < ARRAY_COUNT(sMapHealLocations) && sMapHealLocations[regionMap->mapSecId][2] != HEAL_LOCATION_NONE)
             return sMapHealLocations[regionMap->mapSecId][2];
         else
             return WARP_ID_NONE;
@@ -2525,6 +2529,6 @@ void SetFlyDestination(struct RegionMap* regionMap)
 
     if (flyDestination != WARP_ID_NONE)
         SetWarpDestinationToHealLocation(flyDestination);
-    else
+    else if (regionMap->mapSecId < ARRAY_COUNT(sMapHealLocations))
         SetWarpDestinationToMapWarp(sMapHealLocations[regionMap->mapSecId][0], sMapHealLocations[regionMap->mapSecId][1], WARP_ID_NONE);
 }
