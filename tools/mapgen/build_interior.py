@@ -161,7 +161,8 @@ def mockup_room(room):
 # SPRITE_OVERRIDES[(map, index)], then SPRITE_BY_KIND[kind] (the role word of the room's people list), then a role word found in
 # the spec text, then the fallback by marker kind. Every id must be a non-NULL Emerald graphics id (gfx_null_check.py) and
 # each map stays far inside the 16 OBJ palette slots (npc_sprites.py palettes). Nurses are always the Pokemon Center nurse and
-# Mart clerks the Mart employee; shop-less "clerks" (cafe, salon...) are overridden below so they look like what they are.
+# Mart clerks the Mart employee. Anyone who runs Common_EventScript_PkmnCenterNurse (or is a heal respawn_npc) MUST be a NURSE: the bow
+# movement exists only on that sprite and waitmovement never ends on another (check_interior.py enforces it); shop-less "clerks" (cafe, salon...) are overridden below so they look like what they are.
 G = "OBJ_EVENT_GFX_"
 SPRITE_BY_KIND = {
     "nurse": "NURSE", "clerk": "MART_EMPLOYEE", "mother": "WOMAN_5", "lafayette": "SCIENTIST_1", "magnolia": "WOMAN_4",
@@ -189,7 +190,6 @@ SPRITE_OVERRIDES = {
     ("IsleMarais_HouseNE", 0): "WOMAN_1", ("IsleMarais_HouseNE", 1): "LITTLE_GIRL",
     ("GrandOak_Gym", 0): "MAN_4", ("GrandOak_Gym", 1): "BUG_CATCHER",   # straw-hat gardener trainer
     ("GrandOak_Nursery", 0): "WOMAN_4", ("GrandOak_Nursery", 1): "GIRL_2",
-    ("OldWater_Healer", 0): "OLD_WOMAN",                        # the herbal healer: not a Pokemon Center nurse
     ("OldWater_Trader", 1): "LITTLE_GIRL",
     ("StormsEdge_Mart", 1): "MAN_2",
     ("StormsEdge_SeafoodMarket", 0): "COOK", ("StormsEdge_HouseW", 0): "WOMAN_5", ("StormsEdge_HouseW", 1): "LITTLE_GIRL",

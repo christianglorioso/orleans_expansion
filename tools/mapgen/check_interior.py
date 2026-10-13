@@ -54,6 +54,30 @@ def compare(room, built, out):
 MOCKUPS_OF = MOCKUP_OF.get
 
 
+def nurse_check():
+    """Anyone who runs Common_EventScript_PkmnCenterNurse, and every heal respawn_npc (the whiteout script), must use OBJ_EVENT_GFX_NURSE:
+    the bow movement exists only on that sprite, so on any other the script's waitmovement never ends and the game freezes."""
+    import glob
+    import re
+    bad = 0
+    heal = set(re.findall(r'"respawn_npc":\s*"(LOCALID_\w+)"', open("src/data/heal_locations.json", encoding="utf-8").read()))
+    for p in sorted(glob.glob("data/maps/*/map.json")):
+        d = os.path.dirname(p)
+        m = json.load(open(p, encoding="utf-8"))
+        sc = open(os.path.join(d, "scripts.inc"), encoding="utf-8").read() if os.path.exists(os.path.join(d, "scripts.inc")) else ""
+        for o in m.get("object_events", []):
+            lid = o.get("local_id", "")
+            uses = False
+            i = sc.find(o["script"] + "::")
+            if i >= 0:
+                body = sc[i:].split("\n\n")[0]
+                uses = "Common_EventScript_PkmnCenterNurse" in body or "EventScript_PkmnCenterNurse" in body
+            if (uses or lid in heal) and o["graphics_id"] != "OBJ_EVENT_GFX_NURSE":
+                print(f"{m['name']}: {lid} heals/bows but is {o['graphics_id']}, not OBJ_EVENT_GFX_NURSE (waitmovement on the nurse bow never ends)")
+                bad += 1
+    return bad
+
+
 def tileset_dir(symbol):
     """gTileset_OrleansRootkinIn -> orleans_rootkin_in, gTileset_GenericBuilding -> generic_building."""
     import re
@@ -145,7 +169,10 @@ def main(args):
             d.text((ex * 48 + 18, ey * 48 + 16), "E", fill=(230, 0, 230))
         im.save(os.path.join(out, name + ".png"))
         compare(room, im, out)
+    bad += nurse_check()
     print(f"problems: {bad}")
+    if bad:
+        sys.exit(1)
 
 
 if __name__ == "__main__":
