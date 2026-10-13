@@ -920,7 +920,7 @@ struct BattleAnimationInfo
     u8 introAnimActive:1;
     u8 wildMonInvisible:1;
     u8 field_9_x1C:3;
-    u8 field_9_x20:1;
+    u8 captureSuccessAnimActive:1; // Orleans: battle speed stays 1x while the capture stars play
     u8 field_9_x40:1;
     u8 field_9_x80:1;
     u8 numBallParticles;

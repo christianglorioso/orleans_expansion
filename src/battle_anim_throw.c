@@ -1234,6 +1234,7 @@ static void SpriteCB_Ball_Release(struct Sprite *sprite)
 
 static void SpriteCB_Ball_Capture(struct Sprite *sprite)
 {
+    gBattleSpritesDataPtr->animationData->captureSuccessAnimActive = TRUE;
     sprite->animPaused = TRUE;
     sprite->callback = SpriteCB_Ball_Capture_Step;
     sprite->data[3] = 0;
@@ -1259,6 +1260,7 @@ static void SpriteCB_Ball_Capture_Step(struct Sprite *sprite)
     }
     else if (sprite->sTimer == 95)
     {
+        gBattleSpritesDataPtr->animationData->captureSuccessAnimActive = FALSE;
         gDoingBattleAnim = FALSE;
         UpdateOamPriorityInAllHealthboxes(1, FALSE);
         m4aMPlayAllStop();

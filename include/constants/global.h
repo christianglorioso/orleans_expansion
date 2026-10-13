@@ -201,6 +201,12 @@ enum Gender
 #define OPTIONS_BATTLE_STYLE_SHIFT 0
 #define OPTIONS_BATTLE_STYLE_SET 1
 
+// Overworld speed (1x-4x) and battle speed (1x-3x); 0 = 1x so old saves read as normal speed
+#define OPTIONS_SPEED_1X 0
+#define OPTIONS_SPEED_2X 1
+#define OPTIONS_SPEED_3X 2
+#define OPTIONS_SPEED_4X 3
+
 enum __attribute__((packed)) Direction
 {
     DIR_NONE,

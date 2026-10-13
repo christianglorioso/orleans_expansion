@@ -429,11 +429,33 @@ static void UNUSED UnusedDoBattleSpriteAffineAnim(struct Sprite *sprite, bool8 p
 
 #define sSpeedX data[0]
 
+// Slides step toward zero and stop there, never past it (SoulGold's helper).
+static s16 MoveIntroOffsetTowardZero(s16 offset, s16 step)
+{
+    if (offset > 0)
+    {
+        offset -= step;
+        if (offset < 0)
+            offset = 0;
+    }
+    else if (offset < 0)
+    {
+        offset += step;
+        if (offset > 0)
+            offset = 0;
+    }
+
+    return offset;
+}
+
 void SpriteCB_TrainerSlideIn(struct Sprite *sprite)
 {
     if (!(gIntroSlideFlags & 1))
     {
-        sprite->x2 += sprite->sSpeedX;
+        s16 speedX = sprite->sSpeedX;
+        if (speedX < 0)
+            speedX = -speedX;
+        sprite->x2 = MoveIntroOffsetTowardZero(sprite->x2, speedX);
         if (sprite->x2 == 0)
         {
             if (sprite->y2 != 0)
@@ -459,7 +481,7 @@ void SpriteCB_TrainerSpawn(struct Sprite *sprite)
 // Slide up to 0 if necessary (used by multi battle intro)
 static void SpriteCB_TrainerSlideVertical(struct Sprite *sprite)
 {
-    sprite->y2 -= 2;
+    sprite->y2 = MoveIntroOffsetTowardZero(sprite->y2, 2);
     if (sprite->y2 == 0)
         sprite->callback = SpriteCallbackDummy;
 }

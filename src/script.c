@@ -434,6 +434,9 @@ void RunOnLoadMapScript(void)
 
 void RunOnTransitionMapScript(void)
 {
+    // Orleans: a script that set FLAG_PREVENT_OVERWORLD_SPEEDUP for a timed sequence only holds it until the next map load
+    // (on-transition scripts may set it again).
+    FlagClear(FLAG_PREVENT_OVERWORLD_SPEEDUP);
     MapHeaderRunScriptType(MAP_SCRIPT_ON_TRANSITION);
 }
 

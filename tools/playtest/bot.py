@@ -73,7 +73,7 @@ class Symbols:
                 self.addr[m.group(2)] = int(m.group(1), 16)
 
     def _from_elf(self):
-        r = wsl("f=~/%s/pokemon_orleans.elf; [ -f $f ] || f=~/%s/pokeemerald.elf; readelf -sW $f" % (WSL_HOME_ROM_DIR, WSL_HOME_ROM_DIR))
+        r = wsl("readelf -sW ~/%s/pokemon_orleans.elf 2>/dev/null || readelf -sW ~/%s/pokeemerald.elf" % (WSL_HOME_ROM_DIR, WSL_HOME_ROM_DIR))   # no shell variables: they do not survive wsl.exe here
         for line in r.stdout.splitlines():
             p = line.split()
             if len(p) >= 8 and p[3] in ("FUNC", "OBJECT", "NOTYPE") and re.fullmatch(r"[0-9a-f]+", p[1]):

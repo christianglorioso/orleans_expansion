@@ -10200,6 +10200,8 @@ bool32 IsSleepClauseEnabled(void)
         return TRUE;
     if (FlagGet(B_FLAG_SLEEP_CLAUSE))
         return TRUE;
+    if (gSaveBlock2Ptr->optionsSleepClause) // Orleans: the SLEEP CLAUSE option
+        return TRUE;
     return FALSE;
 }
 

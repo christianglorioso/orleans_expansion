@@ -91,6 +91,9 @@ static void CB2_HandleStartMultiBattle(void);
 static void CB2_HandleStartBattle(void);
 static void TryCorrectShedinjaLanguage(struct Pokemon *mon);
 static void BattleMainCB1(void);
+static void RunBattleSoftwareTick(void);
+static void AdvanceBattleFrameRng(void);
+static bool32 CanRunExtraBattleTick(void);
 static void CB2_EndLinkBattle(void);
 static void EndLinkBattleInSteps(void);
 static void CB2_InitAskRecordBattle(void);
@@ -533,7 +536,7 @@ static void CB2_InitBattleInternal(void)
     {
         gBattle_WIN0V = WIN_RANGE(DISPLAY_HEIGHT / 2, DISPLAY_HEIGHT / 2 + 1);
         ScanlineEffect_Clear();
-        if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+        if (!IsFastIntroNoSlideEnabled() && !gTestRunnerHeadless)
         {
             for (i = 0; i < DISPLAY_HEIGHT / 2; i++)
             {
@@ -572,7 +575,7 @@ static void CB2_InitBattleInternal(void)
     LoadBattleTextboxAndBackground();
     ResetSpriteData();
     ResetTasks();
-    if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+    if (!IsFastIntroNoSlideEnabled() && !gTestRunnerHeadless)
         DrawBattleEntryBackground();
     FreeAllSpritePalettes();
     gReservedSpritePaletteCount = MAX_BATTLERS_COUNT;
@@ -1728,13 +1731,48 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
+// FAST INTRO option: the runtime form of B_FAST_INTRO_NO_SLIDE (SoulGold's IsFastIntroNoSlideEnabled).
+bool32 IsFastIntroNoSlideEnabled(void)
+{
+    return B_FAST_INTRO_NO_SLIDE || gSaveBlock2Ptr->optionsFastIntro;
+}
+
+// Battle speed option (BATTLE SPEED 1x-3x). Orleans port of SoulGold's battle speedup (Pokeabbie, reworked by
+// Eemeliri/soulgold in 33dc7ee569): callback2 runs the software tick up to GetBattleSpeedScale() times per frame.
+// Only the real VBlank uploads to hardware. CanRunExtraBattleTick() drops back to 1x whenever extra ticks are unsafe.
 void BattleMainCB2(void)
 {
-    AnimateSprites();
-    BuildOamBuffer();
-    RunTextPrinters();
-    UpdatePaletteFade();
-    RunTasks();
+    u32 speedScale = GetBattleSpeedScale();
+    u32 tick;
+
+    if (!CanRunExtraBattleTick())
+        speedScale = 1;
+
+    // callback1 has already run once in CallCallbacks. Each pass here completes that logical battle tick using the
+    // original software update order.
+    for (tick = 0; tick < speedScale; tick++)
+    {
+        RunBattleSoftwareTick();
+
+        // A task can leave the battle or replace either callback. Do not touch battle-owned state after that.
+        if (!gMain.inBattle
+         || gMain.callback1 != BattleMainCB1
+         || gMain.callback2 != BattleMainCB2)
+            return;
+
+        AdvanceBattleFrameRng();
+
+        if (tick + 1 >= speedScale || !CanRunExtraBattleTick())
+            break;
+
+        // Start the next logical tick. BattleMainCB1 is called explicitly so a task cannot make us run an unrelated callback.
+        BattleMainCB1();
+
+        if (!gMain.inBattle
+         || gMain.callback1 != BattleMainCB1
+         || gMain.callback2 != BattleMainCB2)
+            return;
+    }
 
     if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
@@ -1744,6 +1782,79 @@ void BattleMainCB2(void)
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_QuitRecordedBattle);
     }
+}
+
+// How many logical ticks BattleMainCB2 runs per frame: 1 (BATTLE SPEED 1x) to 3 (3x). Always 1 in link battles and while
+// the player is choosing a move / action. Hold SELECT during animations for a temporary 1x: SELECT has no job outside
+// the move / action menus (L is A in the L=A button mode and R is the Mega / ball button, so neither is free).
+u32 GetBattleSpeedScale(void)
+{
+    u32 option = gSaveBlock2Ptr->optionsBattleSpeed;
+
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK)
+        return 1;
+    if (JOY_HELD(SELECT_BUTTON))
+        return 1;
+    if (InBattleChoosingMoves())
+        return 1;
+    if (option > OPTIONS_SPEED_3X)
+        option = OPTIONS_SPEED_1X; // an old or damaged save: unknown values mean 1x
+    return option + 1;
+}
+
+static void RunBattleSoftwareTick(void)
+{
+    // BuildOamBuffer only creates the software snapshot; the last snapshot is uploaded at VBlank.
+    AnimateSprites();
+    BuildOamBuffer();
+    RunTextPrinters();
+    UpdatePaletteFade();
+    RunTasks();
+}
+
+static void AdvanceBattleFrameRng(void)
+{
+    // Vanilla advances the primary RNG twice per frame in a battle (VBlankCB_Battle and the global VBlank handler).
+    // Burn those values at the logical frame boundary instead, so accelerated animations consume the same RNG
+    // sequence at every speed.
+    if (!gTestRunnerEnabled
+     && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_RECORDED)))
+    {
+        AdvanceRandom();
+        AdvanceRandom();
+    }
+}
+
+bool32 InBattleChoosingMoves(void)
+{
+    return gBattleMainFunc == HandleTurnActionSelectionState;
+}
+
+static bool32 CanRunExtraBattleTick(void)
+{
+    // Link, audio and receive services advance on physical frames: link battles stay at 1x.
+    if (gBattleTypeFlags & BATTLE_TYPE_LINK)
+        return FALSE;
+
+    if (!gMain.inBattle
+     || gMain.callback1 != BattleMainCB1
+     || gMain.callback2 != BattleMainCB2)
+        return FALSE;
+
+    if (InBattleChoosingMoves())
+        return FALSE;
+
+    // Palette fades require a transfer between updates. A fade can begin in callback1 or RunTasks, so this is
+    // checked before every extra tick.
+    if (gPaletteFade.active || IsPaletteFadeTransferPending())
+        return FALSE;
+
+    // Capture stars toggle on logical sprite frames and alias when several states are sampled into one rendered frame.
+    if (gBattleSpritesDataPtr->animationData->captureSuccessAnimActive
+     || gBattleResults.caughtMonSpecies)
+        return FALSE;
+
+    return TRUE;
 }
 
 static void FreeRestoreBattleData(void)
@@ -1790,10 +1901,7 @@ void CB2_QuitRecordedBattle(void)
 
 void VBlankCB_Battle(void)
 {
-    // Change gRngSeed every vblank unless the battle could be recorded.
-    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_RECORDED)))
-        AdvanceRandom();
-
+    // (Orleans: the per-VBlank AdvanceRandom moved to AdvanceBattleFrameRng, see BattleMainCB2)
     SetGpuReg(REG_OFFSET_BG0HOFS, gBattle_BG0_X);
     SetGpuReg(REG_OFFSET_BG0VOFS, gBattle_BG0_Y);
     SetGpuReg(REG_OFFSET_BG1HOFS, gBattle_BG1_X);
@@ -2375,7 +2483,7 @@ void SpriteCB_WildMon(struct Sprite *sprite)
 {
     sprite->callback = SpriteCB_MoveWildMonToRight;
     StartSpriteAnimIfDifferent(sprite, 0);
-    if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+    if (!IsFastIntroNoSlideEnabled() && !gTestRunnerHeadless)
     {
         if (WILD_DOUBLE_BATTLE)
             BeginNormalPaletteFade((0x10000 << sprite->sBattler) | (0x10000 << GetPartnerBattler(sprite->sBattler)), 0, 10, 10, RGB(8, 8, 8));
@@ -2384,12 +2492,31 @@ void SpriteCB_WildMon(struct Sprite *sprite)
     }
 }
 
+// Slides step toward zero and stop there, never past it (SoulGold's helper).
+static s16 MoveIntroOffsetTowardZero(s16 offset, s16 step)
+{
+    if (offset > 0)
+    {
+        offset -= step;
+        if (offset < 0)
+            offset = 0;
+    }
+    else if (offset < 0)
+    {
+        offset += step;
+        if (offset > 0)
+            offset = 0;
+    }
+
+    return offset;
+}
+
 static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
 {
     if ((gIntroSlideFlags & 1) == 0)
     {
-        if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
-            sprite->x2 += 2;
+        if (!IsFastIntroNoSlideEnabled() && !gTestRunnerHeadless)
+            sprite->x2 = MoveIntroOffsetTowardZero(sprite->x2, 2);
         else
             sprite->x2 = 0;
 
@@ -2408,7 +2535,7 @@ static void SpriteCB_WildMonShowHealthbox(struct Sprite *sprite)
         SetHealthboxSpriteVisible(gHealthboxSpriteIds[sprite->sBattler]);
         sprite->callback = SpriteCB_WildMonAnimate;
         StartSpriteAnimIfDifferent(sprite, 0);
-        if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+        if (!IsFastIntroNoSlideEnabled() && !gTestRunnerHeadless)
         {
             if (WILD_DOUBLE_BATTLE)
                 BeginNormalPaletteFade((0x10000 << sprite->sBattler) | (0x10000 << GetPartnerBattler(sprite->sBattler)), 0, 10, 0, RGB(8, 8, 8));
@@ -2535,7 +2662,7 @@ static void SpriteCB_BattleSpriteSlideLeft(struct Sprite *sprite)
 {
     if (!(gIntroSlideFlags & 1))
     {
-        sprite->x2 -= 2;
+        sprite->x2 = MoveIntroOffsetTowardZero(sprite->x2, 2);
         if (sprite->x2 == 0)
         {
             sprite->callback = SpriteCB_Idle;

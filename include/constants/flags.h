@@ -329,7 +329,7 @@
 #define FLAG_RECEIVED_VANILLITE                          0x11F // Vanillite bought at the ice cream stand; Lafayette's Beldum gift after the shrine
 #define FLAG_RECEIVED_BELDUM_GIFT                        0x120 // Vanillite bought at the ice cream stand; Lafayette's Beldum gift after the shrine
 #define FLAG_CRESCENT_WREN_IN_BASE                       0x121 // Orleans ch3: Wren went into the Blacksnake base at story 16; she no longer waits at the Drowned Ward gate
-#define FLAG_ORLEANS_POOL_142                           0x122
+#define FLAG_PREVENT_OVERWORLD_SPEEDUP                   0x122 // while set, the overworld speed option is forced to 1x (scripted sequences that rely on frame timing)
 #define FLAG_RECEIVED_SS_TICKET              0x123
 #define FLAG_DERBY_RESET                                 0x124 // Game Corner Derby: the race for the day has been generated (clear to roll a new one)
 #define FLAG_DERBY_NICKNAME                              0x125 // Game Corner Derby: the racers' nicknames have been generated

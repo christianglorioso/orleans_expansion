@@ -37,6 +37,7 @@
 #include "link_rfu.h"
 #include "load_save.h"
 #include "main.h"
+#include "config/dexnav.h"
 #include "malloc.h"
 #include "m4a.h"
 #include "map_name_popup.h"
@@ -1884,12 +1885,41 @@ void CB2_OverworldBasic(void)
 }
 
 void CB2_Overworld(void)
+// Overworld speed option (OW SPEED 1x-4x). Orleans port of SoulGold's overworld speedup (HashtagMarky's
+// "Overworld Speedup" tutorial, via Eemeliri/soulgold). N-1 extra sprite + camera updates run after the normal
+// frame; scripts, tasks, text, fades, VBlank and the clock (PlayTimeCounter_Update / fake RTC) tick once per frame.
+// Forced to 1x: R held, controls locked (scripts, text, menus), link / Union Room, FLAG_PREVENT_OVERWORLD_SPEEDUP.
+u32 OverworldSpeedup_AdditionalIterations(void)
+{
+    u32 speed = gSaveBlock2Ptr->optionsOverworldSpeed;
+
+    if (speed == OPTIONS_SPEED_1X
+     || (gMain.heldKeys & R_BUTTON)
+     || ArePlayerFieldControlsLocked()
+     || gReceivedRemoteLinkPlayers
+     || InUnionRoom()
+     || FlagGet(FLAG_PREVENT_OVERWORLD_SPEEDUP)
+     || (DEXNAV_ENABLED && DN_FLAG_SEARCHING != 0 && FlagGet(DN_FLAG_SEARCHING)))
+        return 0;
+    return speed; // 2x = 1 extra iteration ... 4x = 3
+}
+
 {
     bool32 fading = (gPaletteFade.active != 0);
     if (fading)
+    u32 loops, extraLoops;
         SetVBlankCallback(NULL);
     OverworldBasic();
     if (fading)
+
+    extraLoops = OverworldSpeedup_AdditionalIterations();
+    for (loops = 0; loops < extraLoops; loops++)
+    {
+        AnimateSprites();
+        CameraUpdate();
+        UpdateCameraPanning();
+    }
+
     {
         SetFieldVBlankCallback();
         return;

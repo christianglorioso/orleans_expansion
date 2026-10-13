@@ -28,6 +28,8 @@
 
 #define SKIP_OBJECT_EVENT_LOAD  1
 
+u32 OverworldSpeedup_AdditionalIterations(void);
+
 // trigger a time-of-day blend once
 #define HOURS_BLEND_ONCE 25
 // don't update gTimeBlend
