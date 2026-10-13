@@ -8,6 +8,6 @@ GrandOak_HouseSW2_EventScript_Woman0::
 	end
 
 GrandOak_HouseSW2_Text_Woman0:
-	.string "I sell sugarcane in CRESCENT CITY,\nbut the storm hedge blocks the road.$"
+	.string "I sell sugarcane in CRESCENT CITY,\nbut that hedge ruined my route.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

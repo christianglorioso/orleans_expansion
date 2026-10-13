@@ -61,6 +61,10 @@ OVERLAY = {
             "LOCALID_STORMS_EDGE_DECKHAND": {"custom": True},
             "LOCALID_STORMS_EDGE_LINEMAN": {"custom": True},
             "LOCALID_STORMS_EDGE_KEEPER": {"custom": True},
+            # ordinary townsfolk read the same before and after the grid is back (audit ch2 S2)
+            "LOCALID_STORMS_EDGE_KID": {"text": "The poles hum when the wind blows.\nZzzzt! Zzzzt!"},
+            "LOCALID_STORMS_EDGE_FISHMONGER": {"text": "Shrimp's cheap today. The boats\ncome and go with the tide."},
+            "LOCALID_STORMS_EDGE_BOY": {"text": "ECLAIR's crew keeps the substation\nhumming. Listen to it!"},
         },
     },
     "Route3": {
@@ -157,8 +161,8 @@ INTERIOR = {
     "storms_edge_seafood_market": {"opts": {1: {"custom": True}}},                  # Shrimper1
     "storms_edge_lighthouse": {"opts": {0: {"custom": True}}},                      # Keeper0
     "storms_edge_mart": {"texts": {1: "Everything electric sold out in a\\nday. Batteries, bulbs, the lot!"}},
-    "storms_edge_house_w": {"texts": {0: "My husband's been up the poles for\\nthree days. He sleeps up there.",
-                                      1: "I want to see the lighthouse lit\\nagain!"}},
+    "storms_edge_house_w": {"texts": {0: "My husband climbs the poles all\\nday. He sleeps like a log.",
+                                      1: "I love the lighthouse. It looks so\\ntall from our window!"}},
     "storms_edge_house_e": {"texts": {0: "I'd swap my WINGULL for a MAGIKARP.\\nIt's homesick for the sea."}},
 }
 

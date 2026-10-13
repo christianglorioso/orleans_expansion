@@ -262,7 +262,7 @@ StormsEdge_Gym_EventScript_Electrician2::
 	msgbox StormsEdge_Gym_Text_ElectricianAfter, MSGBOX_AUTOCLOSE
 	end
 
-@ Buoy VOLTORB roll along the conduits; talking to one (or bumping into it) starts a wild battle. Gone once beaten or caught.
+@ Buoy VOLTORB roll along the conduits; talking to one (or bumping into it) starts a wild battle. Gone once beaten or caught; a Voltorb you ran from stays.
 StormsEdge_Gym_EventScript_Voltorb4::
 	lock
 	faceplayer
@@ -271,6 +271,13 @@ StormsEdge_Gym_EventScript_Voltorb4::
 	waitmoncry
 	setwildbattle SPECIES_VOLTORB_ORLEANIAN, 15
 	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, StormsEdge_Gym_EventScript_Voltorb4Gone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, StormsEdge_Gym_EventScript_Voltorb4Gone
+	release
+	end
+
+StormsEdge_Gym_EventScript_Voltorb4Gone:
 	setflag FLAG_HIDE_STORMS_EDGE_VOLTORB_1
 	removeobject LOCALID_STORMS_EDGE_GYM_VOLTORB4
 	release
@@ -284,6 +291,13 @@ StormsEdge_Gym_EventScript_Voltorb5::
 	waitmoncry
 	setwildbattle SPECIES_VOLTORB_ORLEANIAN, 16
 	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, StormsEdge_Gym_EventScript_Voltorb5Gone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, StormsEdge_Gym_EventScript_Voltorb5Gone
+	release
+	end
+
+StormsEdge_Gym_EventScript_Voltorb5Gone:
 	setflag FLAG_HIDE_STORMS_EDGE_VOLTORB_2
 	removeobject LOCALID_STORMS_EDGE_GYM_VOLTORB5
 	release
@@ -439,7 +453,7 @@ StormsEdge_Gym_Text_ReceivedBadge:
 StormsEdge_Gym_Text_BadgeInfo:
 	.string "ÉCLAIR: That BADGE hums, doesn't it?\n"
 	.string "Your POKéMON feel it too.\p"
-	.string "They'll act a little quicker,\n"
+	.string "They'll heed you a little more,\n"
 	.string "like a spark finding its path.$"
 
 StormsEdge_Gym_Text_TakeThis:

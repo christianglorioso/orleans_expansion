@@ -226,14 +226,14 @@ StormsEdge_EventScript_Kid::
 	end
 
 StormsEdge_Text_Kid:
-	.string "The Pokémon Center runs on a\ngenerator now. Chug chug chug!$"
+	.string "The poles hum when the wind blows.\nZzzzt! Zzzzt!$"
 
 StormsEdge_EventScript_Fishmonger::
 	msgbox StormsEdge_Text_Fishmonger, MSGBOX_NPC
 	end
 
 StormsEdge_Text_Fishmonger:
-	.string "Shrimp's cheap today. Half the\nboats are still tied up.$"
+	.string "Shrimp's cheap today. The boats\ncome and go with the tide.$"
 
 StormsEdge_EventScript_Sailor::
 	msgbox StormsEdge_Text_Sailor, MSGBOX_NPC
@@ -254,7 +254,7 @@ StormsEdge_EventScript_Boy::
 	end
 
 StormsEdge_Text_Boy:
-	.string "Eclair's crew hasn't left the\nsubstation in days. It hums!$"
+	.string "ECLAIR's crew keeps the substation\nhumming. Listen to it!$"
 
 StormsEdge_EventScript_SignWest::
 	msgbox StormsEdge_Text_SignWest, MSGBOX_SIGN

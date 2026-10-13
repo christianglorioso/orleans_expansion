@@ -134,9 +134,9 @@ Route1_Text_ReceivedPokedex:
 	.string "{PLAYER} received the POKéDEX!$"
 
 Route1_Text_LafayetteBalls:
-	.string "LAFAYETTE: And these. A BUG,\n"
-	.string "FLYING or POISON POKéMON would\p"
-	.string "serve you well in GRAND OAK.$"
+	.string "LAFAYETTE: And these. A FIRE or\n"
+	.string "FLYING POKéMON would serve you\p"
+	.string "well in GRAND OAK.$"
 
 Route1_Text_LafayetteGoAhead:
 	.string "LAFAYETTE: GRAND OAK is north,\n"

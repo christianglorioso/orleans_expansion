@@ -23,7 +23,7 @@ GrandOak_EventScript_StormHedge3::
 	goto_if_lt VAR_ORLEANS_STORY, 7, GrandOak_EventScript_HedgeTangled
 	goto_if_lt VAR_ORLEANS_STORY, 8, GrandOak_EventScript_HedgeNotYet
 	checkitem ITEM_GARDEN_SHEARS
-	goto_if_eq VAR_RESULT, FALSE, GrandOak_EventScript_HedgeTangled
+	goto_if_eq VAR_RESULT, FALSE, GrandOak_EventScript_HedgeNoShears
 	msgbox GrandOak_Text_UseShears, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, GrandOak_EventScript_HedgeEnd
 	msgbox GrandOak_Text_ShearsCut, MSGBOX_DEFAULT
@@ -44,6 +44,11 @@ GrandOak_EventScript_Route2Open:
 
 GrandOak_EventScript_HedgeTangled:
 	msgbox GrandOak_Text_HedgeTangled, MSGBOX_DEFAULT
+	releaseall
+	end
+
+GrandOak_EventScript_HedgeNoShears:
+	msgbox GrandOak_Text_HedgeNoShears, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -87,6 +92,10 @@ GrandOak_Text_RoadEast:
 GrandOak_Text_HedgeTangled:
 	.string "A hedge the storm tangled into a\n"
 	.string "wall. It needs cutting back.$"
+
+GrandOak_Text_HedgeNoShears:
+	.string "It needs cutting back. MAGNOLIA\n"
+	.string "has GARDEN SHEARS for it.$"
 
 GrandOak_Text_UseShears:
 	.string "Use the GARDEN SHEARS?$"

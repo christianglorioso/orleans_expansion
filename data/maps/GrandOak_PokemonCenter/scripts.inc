@@ -22,7 +22,7 @@ GrandOak_PokemonCenter_EventScript_Traveller1::
 	end
 
 GrandOak_PokemonCenter_Text_Traveller1:
-	.string "MAGNOLIA's gym uses Grassy Terrain.\nBug, Flying or Poison types help.$"
+	.string "MAGNOLIA's gym uses Grassy Terrain.\nFire or Flying types help.$"
 
 GrandOak_PokemonCenter_EventScript_Volunteer2::
 	msgbox GrandOak_PokemonCenter_Text_Volunteer2, MSGBOX_NPC

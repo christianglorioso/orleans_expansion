@@ -15,6 +15,6 @@ IsleMarais_HouseNE_EventScript_Child1::
 	end
 
 IsleMarais_HouseNE_Text_Child1:
-	.string "I saw a weird POKéMON on ROUTE 1!\nI'd give a POKé BALL to see it.$"
+	.string "I saw a weird POKéMON on ROUTE 1!\nI wish I could see it again.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

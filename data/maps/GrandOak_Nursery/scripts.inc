@@ -8,13 +8,13 @@ GrandOak_Nursery_EventScript_Gardener0::
 	end
 
 GrandOak_Nursery_Text_Gardener0:
-	.string "One BERRY a day, free to anyone who\npromises to plant it.$"
+	.string "The magnolias are my pride. The\nrest of the garden is a sideline.$"
 
 GrandOak_Nursery_EventScript_Helper1::
 	msgbox GrandOak_Nursery_Text_Helper1, MSGBOX_NPC
 	end
 
 GrandOak_Nursery_Text_Helper1:
-	.string "The soft soil out back will be ready\nfor planting soon.$"
+	.string "I water the beds out back. Slowly,\nbut it's worth it.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

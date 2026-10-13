@@ -82,12 +82,18 @@ IsleMarais_Shelter_EventScript_Fisherman5::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_OLD_ROD, IsleMarais_Shelter_EventScript_FishermanAfterRod
+	goto_if_eq VAR_ORLEANS_STORY, 0, IsleMarais_Shelter_EventScript_FishermanDrying
 	goto_if_lt VAR_ORLEANS_STORY, 2, IsleMarais_Shelter_EventScript_FishermanRescue
 	msgbox IsleMarais_Shelter_Text_FishermanOfferRod, MSGBOX_DEFAULT
 	giveitem ITEM_OLD_ROD
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_OLD_ROD
 	msgbox IsleMarais_Shelter_Text_FishermanRodInfo, MSGBOX_DEFAULT
+	release
+	end
+
+IsleMarais_Shelter_EventScript_FishermanDrying:
+	msgbox IsleMarais_Shelter_Text_FishermanDrying, MSGBOX_DEFAULT
 	release
 	end
 
@@ -286,6 +292,11 @@ IsleMarais_Shelter_Text_LafayettePick:
 	.string "LAFAYETTE: They're cold and scared.\n"
 	.string "See if one of them takes to you.$"
 
+IsleMarais_Shelter_Text_FishermanDrying:
+	.string "FISHERMAN: Just in to dry off. The\n"
+	.string "rest of the crew is still out on\p"
+	.string "the roofs. Shouldn't be long.$"
+
 IsleMarais_Shelter_Text_FishermanRescue:
 	.string "FISHERMAN: The water came right up\n"
 	.string "the streets. We pulled what we could\p"
@@ -300,7 +311,9 @@ IsleMarais_Shelter_Text_FishermanRodInfo:
 	.string "water. Plenty of that around here.$"
 
 IsleMarais_Shelter_Text_FishermanAfterRod:
-	.string "FISHERMAN: Caught anything yet?$"
+	.string "FISHERMAN: Caught anything yet?\p"
+	.string "Rain never stops out here. The\n"
+	.string "slimy kinds, SLIGGOO, love it.$"
 
 IsleMarais_Shelter_Text_TotodileLooks:
 	.string "TOTODILE is shivering, but it\n"

@@ -14941,8 +14941,8 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A lineworker's\n"
-            "pry bar. Breaks\n"
-            "open cracked rock."),
+            "pry bar. Pries open\n"
+            "hollow stumps."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

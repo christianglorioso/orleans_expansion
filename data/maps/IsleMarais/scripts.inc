@@ -40,8 +40,7 @@ IsleMarais_Text_WingullLunges:
 	.string "It lunges at you!$"
 
 IsleMarais_Text_WingullFlewOff:
-	.string "The WINGULL shook itself free and\n"
-	.string "flew off over the water.\p"
+	.string "The shelter steps are clear again.\p"
 	.string "Your partner looks pleased\n"
 	.string "with itself.$"
 
