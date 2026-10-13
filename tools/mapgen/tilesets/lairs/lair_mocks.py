@@ -97,36 +97,51 @@ def frame_std(m, extra_n=(), extra_s=(), extra_w=(), extra_e=()):
 def rougarou(P):
     m = wet_map(P)
     frame_std(m)
-    m.disc("~", 13.6, 5.2, 3.0, 1.6)                   # the black pond in the north-east, mist on it
+    m.disc("~", 13.6, 5.0, 3.0, 1.5)                   # the black pond in the north-east, mist on it
+    cy = 8.6
     for j in range(m.H):                               # the circling track round the hollow's heart
         for i in range(m.W):
-            rho = math.hypot((i + 0.5 - 9.0) / 3.0, (j + 0.5 - 9.5) / 2.4)
+            rho = math.hypot((i + 0.5 - 9.0) / 3.0, (j + 0.5 - cy) / 2.3)
             if 0.70 <= rho < 1.12 and m.g[j][i] == ".":
                 m.g[j][i] = "t"
     for j in range(m.H):                               # the levee bank wraps it from the west round to the north
         for i in range(m.W):
-            rho = math.hypot((i + 0.5 - 9.3) / 5.0, (j + 0.5 - 9.5) / 4.4)
-            a = math.degrees(math.atan2(j + 0.5 - 9.5, i + 0.5 - 9.3))
-            if 0.90 <= rho < 1.14 and (a < -80 or a > 140) and m.g[j][i] == "." and (i, j) not in m.wall:
+            rho = math.hypot((i + 0.5 - 9.3) / 5.0, (j + 0.5 - cy) / 4.2)
+            a = math.degrees(math.atan2(j + 0.5 - cy, i + 0.5 - 9.3))
+            if 0.90 <= rho < 1.14 and (a < -80 or a > 140) and m.g[j][i] == "." and (i, j) not in m.wall                     and 4 <= j <= 9 and i >= 4:
                 m.g[j][i] = "R"
-    m.prop("lw", "dead_cypress", 14, 8)
-    m.prop("lw", "cross", 3, 4)
-    m.prop("lw", "wisp_lantern", 12, 11)
-    m.prop("lw", "driftwood", 4, 12)
-    m.prop("lw", "clawed_stump", 7, 12)
-    m.prop("lw", "clawed_stump", 16, 11)
-    for (x, y) in [(12, 5), (13, 5), (14, 5), (15, 5), (16, 5)]:
+    m.prop("lw", "dead_cypress", 14, 7)
+    m.prop("lw", "dead_snag", 3, 9)
+    m.prop("lw", "hunting_stand", 12, 10)
+    m.prop("lw", "cross", 3, 3)
+    m.prop("lw", "wisp_lantern", 16, 11)
+    m.prop("lw", "fence_a", 8, 12)
+    m.prop("lw", "fence_b", 7, 12)
+    m.prop("lw", "fence_a", 14, 12)
+    m.prop("lw", "driftwood", 5, 12)
+    m.prop("lw", "clawed_stump", 11, 7)
+    m.prop("lw", "clawed_stump", 6, 3)
+    m.prop("lw", "bones", 3, 12)
+    m.prop("lw", "bones", 13, 9)
+    m.prop("lw", "trap", 9, 12)
+    for (x, y) in [(10, 3), (12, 7), (16, 6), (17, 3)]:
+        if m.g[y][x] == "." and not m.edge_cell(x, y):
+            m.prop("lw", "cattails", x, y)
+    for (x, y) in [(12, 5), (13, 5), (14, 5), (15, 5)]:
         if all(m.ch(x + dx, y + dy) == "~" for dx in (0, 1) for dy in (0, 1)):
             m.prop("lw", f"fog_water{x % 2}", x, y)
-    for (x, y) in [(10, 7), (11, 7), (12, 7), (13, 7), (3, 9), (4, 9)]:
-        if m.g[y][x] == ".":
+    for (x, y) in [(7, 3), (8, 3), (9, 3), (3, 6), (3, 7), (13, 4), (16, 9), (16, 10), (3, 11), (15, 12), (16, 12)]:
+        if m.g[y][x] == "." and not m.edge_cell(x, y) and not any(px <= x < px + P.items[n]["cv"].cw and
+                                                                    py <= y < py + P.items[n]["cv"].ch
+                                                                    for (_, n, px, py) in m.props if _ == "lw"):
             m.prop("lw", f"fog_grass{x % 2}", x, y)
-    m.obj("lycanroc", 9, 10, "the rougarou (Lycanroc Midnight, night only) in the middle of its track")
-    m.obj("player", 10, 13, "the player, facing north")
+    m.obj("lycanroc", 9, 8, "the rougarou (Lycanroc Midnight, night only) in the middle of its track")
+    m.obj("player", 10, 12, "the player, facing north")
     m.notes = [
         "20x16, unconnected, swamp canopy wall (primary art), the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "A hollow ringed by the levee bank (the shrine's ridge set), the circling track of trampled grass round the stand cell (9,10),",
-        "a black pond in the north-east under mist, a dead cypress, a wayside cross, a feu-follet lantern, driftwood, clawed stumps.",
+        "A hollow ringed by the levee bank (the shrine's ridge set), the circling track of trampled grass round the stand cell (9,8);",
+        "a black pond with cattails in the north-east, two dead trees, an old hunting stand and broken fences by the way in, a",
+        "wayside cross, a feu-follet lantern, driftwood, clawed stumps, bones and a sprung trap, mist along the edges.",
         "Night only: the hollow is the same by day (the rougarou object is hidden then); the lantern's flame reads best at night.",
     ]
     return m
@@ -138,32 +153,52 @@ def celebi(P):
     base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), "m": ("lk:moss_C", True)}
     m = LairMap(20, 16, base, sets, {"lk": P}, wall_style="swamp")
     frame_std(m)
-    m.disc("m", 10.5, 8.2, 3.2, 2.4)
-    m.disc("~", 5.0, 5.2, 1.5, 1.2)                    # a spring pool in the north-west
-    m.prop("lk", "sun_stone", 9, 7)
-    m.prop("lk", "spirit_house", 13, 3)
+    m.disc("m", 10.0, 9.0, 3.3, 2.5)                   # the sunken moss circle
+    m.disc("~", 15.5, 11.7, 1.7, 1.2)                  # a spring pool in the south-east
+    m.prop("lk", "live_oak", 3, 3)                     # two great oaks framing the north
+    m.prop("lk", "live_oak", 13, 3)
+    m.prop("lk", "spirit_house", 9, 4)                 # the spirit house on the axis, behind the sun stone
+    m.prop("lk", "sun_stone", 9, 8)
+    m.prop("lk", "cedar_post_bird", 7, 5)
+    m.prop("lk", "cedar_post_bird", 12, 5)
+    m.prop("lk", "stone_tall", 4, 8)
+    m.prop("lk", "stone_tall", 15, 7)
+    occupied = set()
+    for (_, n, px, py) in m.props:
+        cv = P.items[n]["cv"]
+        occupied |= {(px + i, py + j) for i in range(cv.cw) for j in range(cv.ch)}
+
+    def free(x, y):
+        return (3 <= x <= 16 and 3 <= y <= 12 and m.g[y][x] == "." and (x, y) not in occupied
+                and not m.edge_cell(x, y) and not (9 <= x <= 11 and y >= 11) and m.ch(x + 1, y) == "." and m.ch(x, y + 1) == "."
+                and m.ch(x + 1, y + 1) == "." and m.ch(x - 1, y) != "~" and m.ch(x, y - 1) != "~")
     ring = []
-    for k in range(16):
-        a = 2 * math.pi * k / 16
-        x, y = int(round(10.0 + 4.6 * math.cos(a))), int(round(7.8 + 3.5 * math.sin(a)))
-        if 3 <= x <= 16 and 3 <= y <= 12 and m.g[y][x] == "." and (x, y) not in ring and not (9 <= x <= 12 and y > 10)                 and not (12 <= x <= 15 and 2 <= y <= 5):
+    for k in range(48):                                # a full ring of lilies and ferns round the moss
+        a = 2 * math.pi * k / 48
+        x, y = int(round(9.6 + 5.0 * math.cos(a))), int(round(8.6 + 3.6 * math.sin(a)))
+        if free(x, y) and (x, y) not in ring:
             ring.append((x, y))
     for k, (x, y) in enumerate(ring):
-        m.prop("lk", "lily_white" if k % 3 else "lily_pink", x, y)
-    m.prop("lk", "stone_tall", 16, 7)
-    m.prop("lk", "stone_tall", 4, 9)
-    m.prop("lk", "cedar_post_bird", 8, 3)
-    m.prop("lk", "cedar_post", 16, 10)
-    m.prop("lk", "mushrooms", 15, 12)
-    m.prop("lk", "mushrooms", 6, 3)
-    lily_pads(m, [(5, 5)])
+        m.prop("lk", ["lily_white", "fern", "lily_white", "lily_pink", "fern"][k % 5], x, y)
+        occupied.add((x, y))
+    for (x, y, n) in [(5, 11, "fern"), (6, 12, "mushrooms"), (13, 12, "fern"), (3, 7, "fern"), (16, 10, "fern"),
+                      (4, 12, "mossy_stones"), (16, 5, "mossy_stones"), (7, 3, "mushrooms"), (12, 3, "fern"),
+                      (8, 11, "dapple"), (12, 7, "dapple"), (6, 6, "dapple"), (14, 9, "dapple")]:
+        if free(x, y):
+            m.prop("lk", n, x, y)
+            occupied.add((x, y))
+    for (x, y) in [(8, 9), (11, 10), (12, 9)]:
+        if all(m.ch(x + dx, y + dy) == "m" for dx in (0, 1) for dy in (0, 1)) and (x, y) not in occupied:
+            m.prop("lk", "dapple_moss", x, y)
+    lily_pads(m, [(15, 11), (16, 11)])
     m.obj("celebi", 10, 10, "Celebi (post-game) hovering before the sun stone")
     m.obj("player", 10, 12, "the player, facing north")
     m.notes = [
         "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "A Rootkin shrine: a sunken circle of deep moss, the Rootkin sun stone (a sundial with a spiral) at its heart, a little",
-        "palmetto-thatched spirit house with offerings, spiral standing stones and carved cedar posts, a ring of spider lilies,",
-        "a spring pool with lily pads. Celebi at (10,10), the player at (10,12). Uxie, Mesprit and Azelf's shrines can share the set.",
+        "A Rootkin shrine: two great live oaks frame the north, the palmetto-thatched spirit house stands on the axis behind",
+        "the Rootkin sun stone at the heart of a sunken moss circle; carved cedar posts with egrets, spiral standing stones,",
+        "a full ring of spider lilies and ferns, mossy stones, mushrooms, a spring pool and light dappling through the trees.",
+        "Celebi at (10,10), the player at (10,12). Uxie, Mesprit and Azelf's shrines can share the set.",
     ]
     return m
 
@@ -183,6 +218,34 @@ def suicune(P):
     m.prop("lw", "stepping", 6, 10)
     m.prop("lw", "ruin", 4, 4)
     m.prop("lw", "ruin_l", 15, 8)
+    def inner(ch, x, y, w=1, h=1):
+        return all(m.ch(i, j) == ch for i in range(x, x + w + 1) for j in range(y, y + h + 1))
+    for (x, y) in [(13, 3), (12, 3), (14, 3), (3, 9), (12, 10)]:
+        if inner("~", x, y, 3, 1):
+            m.prop("lw", "pillar_fallen", x, y)          # a second pillar, fallen into the lagoon
+            break
+    for (x, y) in [(6, 7), (7, 7), (6, 6), (13, 6), (12, 6), (13, 7)]:
+        if inner("s", x, y, 3, 1):
+            m.prop("lw", "pillar_fallen_sh", x, y)       # and a drum of it lying in the shallows
+            break
+    else:
+        for (x, y) in [(13, 10), (3, 9), (4, 10), (14, 10)]:
+            if inner("~", x, y, 3, 1) and not any(abs(px - x) < 4 and abs(py - y) < 2
+                                                  for (_, n, px, py) in m.props if _ == "lw"):
+                m.prop("lw", "pillar_fallen", x, y)      # (the shallows are too narrow: a second drum in the lagoon)
+                break
+    placed = 0
+    for (x, y) in [(9, 8), (11, 8), (8, 8), (12, 8), (7, 7), (13, 7), (8, 4), (13, 5)]:
+        if inner("s", x, y) and placed < 3 and not any(px <= x < px + P.items[n]["cv"].cw and py <= y < py + P.items[n]["cv"].ch
+                                                       for (_, n, px, py) in m.props if _ == "lw"):
+            m.prop("lw", "blocks_sh", x, y)              # broken causeway blocks tipped into the shallows
+            placed += 1
+    for x in (3, 5, 9, 15, 16):
+        if m.g[3][x] == "~" and m.g[4][x] == "~" and not any(
+                px <= x < px + P.items[n]["cv"].cw and py <= 3 < py + P.items[n]["cv"].ch
+                for (_, n, px, py) in m.props if _ == "lw"):
+            m.prop("lw", "reflection", x, 3)            # the trees' reflection under the north wall
+    m.fixed = {(2, 11): "lw:shore_w", (17, 11): "lw:shore_e"}
     lily_pads(m, [(4, 7), (15, 4), (16, 6), (14, 10), (6, 4)])
     for (x, y) in [(3, 6), (16, 11), (4, 11)]:
         if all(m.ch(x + dx, y + dy) == "~" for dx in (0, 1) for dy in (0, 1)):
@@ -192,7 +255,9 @@ def suicune(P):
     m.notes = [
         "20x16, unconnected, swamp canopy wall over the water; the way in from the south (x 10-11, rows 14-15: exit trigger).",
         "A still lagoon; an island ringed by clear shallows, a carved pillar, a ruined causeway (walkable, x 10, rows 9-11) from",
-        "the shore, a broken spur with stepping stones, sunken ruins, lily pads and mist. Suicune at (10,7), the player at (10,9).",
+        "the shore, its broken blocks tipped into the shallows, a broken spur with stepping stones, a second pillar fallen in the",
+        "lagoon and a drum of it in the shallows, sunken ruins, the trees' reflection, lily pads and mist. Suicune at (10,7).",
+        "The two cells where the bank meets the side walls are hand-made (shore_w / shore_e: the canopy over the bank).",
     ]
     return m
 
@@ -224,28 +289,39 @@ def ursaluna(P):
     m = dry_map(P)
     frame_std(m)
     m.rect("r", 4, 4, 12, 2)                           # the arroyo's head wall in the north
-    m.rect("r", 4, 6, 2, 4)                            # its west wall
-    m.rect("r", 14, 6, 2, 5)                           # its east wall
-    for (x, y) in [(6, 6), (13, 6), (4, 10), (5, 10)]:
-        m.g[y][x] = "r"
-    # the red clay of the bed, meandering down from the den
-    for (x, y, w) in [(9, 9, 3), (8, 10, 3), (8, 11, 3), (9, 12, 3)]:
-        m.rect("c", x, y, w, 1)
+    m.rect("r", 4, 6, 4, 6)                            # the west wall (cells 4-7)
+    m.rect("r", 12, 6, 4, 6)                           # the east wall (cells 12-15)
+    pass                                               # (red clay streaks the walls; the floor stays dry)
     m.prop("ld", "den", 8, 5)
-    for (x, y) in [(6, 7)]:
-        pass
-    m.prop("ld", "scarred_stump", 7, 9)
+    # the channel (floor tiles 8-10): the side walls drawn as cliffs, the west wall's shadow on the floor
+    for y in range(8, 12):
+        m.prop("ld", "cliff_w", 7, y)
+        m.prop("ld", "floor_shadow", 8, y)
+        m.prop("ld", "cliff_e", 11, y)
+    m.prop("ld", "scarred_stump", 5, 12)
     m.prop("ld", "scarred_stump", 13, 12)
-    m.prop("ld", "bones", 12, 9)
-    m.prop("ld", "fur", 7, 11)
-    m.prop("ld", "fur", 12, 11)
+    m.prop("ld", "bones", 10, 10)
+    m.prop("ld", "bones", 3, 12)
+    m.prop("ld", "fur", 9, 9)
+    m.prop("ld", "fur", 15, 12)
+    for x in (4, 14):
+        m.prop("ld", "rock_face_claw", x, 12)
+    from lair_kit import hashn
+    m.fixed = {}
+    for y in range(m.H):                               # the rock tops: the set's weathered variants, cracks and slabs
+        for x in range(m.W):
+            if all(m.ch(x + dx, y + dy) == "r" for dx in (0, 1) for dy in (0, 1)):
+                h = hashn(x, y, 99)
+                if h < 0.55:
+                    m.fixed[(x, y)] = ["ld:rock_C1", "ld:rock_C2", "ld:rock_C3"][int(h * 100) % 3]
     m.obj("ursaluna", 10, 8, "the Bloodmoon Ursaluna (post-game, night only) at its den")
-    m.obj("player", 10, 12, "the player, facing north")
+    m.obj("player", 9, 11, "the player in the arroyo, facing north")
     m.notes = [
         "20x16, unconnected, dry scrub wall (the Route 23 border art), the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "A dead-end arroyo: rock walls (the dry country's rock wall set) close it on three sides, a slab of rock leans out over",
-        "the den (bedding of leaves, fur, broken branches), claw-scored stumps and faces, old bones, a streak of red clay in the bed.",
-        "Ursaluna at (10,8) before the bedding, the player at (10,12).",
+        "A narrow, deep arroyo: two rock walls close in from both sides (lit rims, the west face in shade, the east face lit,",
+        "red clay bleeding down both, the west wall's shadow across the floor), a channel three cells wide to the den: a slab",
+        "of rock leaning over a bedding of leaves, fur and branches. Claw-scored faces and stumps, bones and shed fur.",
+        "Ursaluna at (10,8) before the bedding, the player at (9,11).",
     ]
     return m
 
@@ -363,7 +439,7 @@ ENTRANCES = {
     # lair: (route map, crop (x, y, w, h), sealed actions, open actions)
     "rougarou": ("Route14", (14, 24, 14, 11), [], [("ovl", "canopy_gap_w", 25, 30)]),
     "ursaluna": ("Route23", (14, 0, 18, 10), [("fill", "dry", 22, 0, 2, 2)],
-                 [("ovl", "scrub_gap", 22, 1), ("ovl", "claw_stump", 21, 3)]),
+                 [("ovl", "scrub_gap", 22, 1), ("ovl", "claw_stump", 21, 2)]),
     "celebi": ("Route7", (26, 0, 18, 10), [("ovl", "stone_arch_vines", 34, 1)], [("ovl", "stone_arch", 34, 1)]),
     "suicune": ("Route11", (21, 15, 16, 10), [("decypress",), ("ovl", "stone_arch_vines", 28, 20)],
                 [("decypress",), ("ovl", "stone_arch_mist", 28, 20)]),

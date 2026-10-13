@@ -400,6 +400,9 @@ class LairMap:
                             problems.append((x + i, y + j, f"prop {name} over a wall edge cell"))
                         names[y + j][x + i] = nm
                         walk[y + j][x + i] = (i, j) in wset
+        for (x, y), nm in getattr(self, "fixed", {}).items():      # hand-made cells (e.g. a bank meeting the wall)
+            names[y][x] = nm
+            problems[:] = [p for p in problems if (p[0], p[1]) != (x, y)]
         self.names, self.walk, self.problems = names, walk, problems
         return names
 

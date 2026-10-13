@@ -48,6 +48,7 @@ BONE = R6
 FAMILIES = {
     "SCRUB": [DH, D1, D2, D3, ST, ST_D, L0, L1, L2, L3, L4, K0, K1, K2, B0],
     "ROCK": [DH, D1, D2, D3, DL, R0, R1, R2, R3, R4, R5, R6, B0, B1],
+    "CLIFF": [R0, R1, R2, R3, R4, R5, R6, B0, RE_L, RE, RE_D, RE_DD, D2, D3, DL],
     "CLAY": [DH, D1, D2, D3, DL, RE_L, RE, RE_D, RE_DD, B0],
     "DEN": [D1, D2, D3, DL, R1, R2, R3, R4, R6, B0, FU1, FU2, FU3, LV1, LV2],
     "FIRE": [DH, D1, D2, D3, DL, CH0, CH1, CH2, CH3, ASH1, EM1, EM2, EM3, EM4, (96, 56, 40)],
@@ -204,6 +205,57 @@ def face_claw():
     return over(cv, DRY)
 
 
+def cliff(side):
+    """The arroyo's side walls seen into from above, one cell wide, placed in place of the rock set's E / W edge cells
+    along a north-south channel. side 'w' = the west wall (rock top on the cell's left, its inner face in shade, red
+    clay bleeding down it); side 'e' = the east wall (its inner face catches the light, red clay streaks, the rock top
+    on the right). Both end in a dark crack where the face meets the floor."""
+    top = dc_list("rock_wall")[0]
+    tp = top.im.load()
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, tp[i, j][:3])
+    if side == "w":
+        for j in range(16):
+            cv.put(3, j, R6)
+            cv.put(4, j, R5)
+            for i in range(5, 14):
+                c = R1 if (j % 5) else R2
+                if i in (7, 11) and (j + i) % 7 < 5:
+                    c = RE_DD                      # red clay bleeding down the shaded face
+                if i == 5:
+                    c = R2
+                cv.put(i, j, c)
+            cv.put(14, j, R0)
+            cv.put(15, j, B0)
+    else:
+        for j in range(16):
+            cv.put(0, j, B0)
+            cv.put(1, j, R1)
+            for i in range(2, 11):
+                c = R4 if (j % 5) else R3
+                if i in (4, 8) and (j * 2 + i) % 9 < 6:
+                    c = RE if i == 4 else RE_D     # red clay streaks on the lit face
+                if i == 10:
+                    c = R3
+                cv.put(i, j, c)
+            cv.put(11, j, R5)
+            cv.put(12, j, R6)
+    return cv
+
+
+def floor_shadow():
+    """The channel floor in the west wall's cast shadow: dry ground darkened on its west half, dithered at its edge."""
+    cv = ground(DRY)
+    for j in range(16):
+        for i in range(16):
+            if i < 7 or (i < 10 and (i + j) % 2 == 0):
+                c = cv.get(i, j)
+                cv.put(i, j, {D1: D3, D2: D3, DL: D2}.get(c, c))
+    return cv
+
+
 def scarred_stump():
     cv = ground(DRY)
     cv.ellipse(8, 11, 6.5, 3.5, B0)
@@ -321,6 +373,12 @@ def build():
     for k in ("face", "face_l", "face_r"):
         P.add(f"rock_{k}", dc(f"rock_wall_{k}"), comment=f"rock wall face extension ({k})", lair="ursaluna")
     P.add("rock_face_claw", face_claw(), comment="rock wall face gouged by claws", lair="ursaluna")
+    P.add("cliff_w", cliff("w"), comment="the arroyo's west wall: rock top, shaded face, red clay (blocking)",
+          lair="ursaluna")
+    P.add("cliff_e", cliff("e"), comment="the arroyo's east wall: lit face, red clay streaks, rock top (blocking)",
+          lair="ursaluna")
+    P.add("floor_shadow", floor_shadow(), walk=True, comment="the channel floor in the west wall's shadow",
+          lair="ursaluna")
     for k in keys:
         P.add(f"clay_{k}", dc(f"red_earth_{k}"), walk=True, comment=f"red clay on dry ground {k}", lair="ursaluna")
     for i, cv in enumerate(dc_list("red_earth")):

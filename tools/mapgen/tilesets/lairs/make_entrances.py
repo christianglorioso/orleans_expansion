@@ -39,6 +39,7 @@ L0, L1, L2 = (24, 48, 32), (40, 80, 48), (64, 112, 56)
 K0, K1, K2 = (104, 96, 80), (152, 144, 120), (200, 192, 168)
 B0, B1, B2 = (64, 40, 32), (104, 72, 48), (144, 104, 64)
 ST, ST_D = (216, 184, 88), (176, 144, 64)
+EMB1, EMB2 = (248, 120, 88), (216, 48, 32)                 # the pepper reds Route 16's tileset already has
 
 
 def canopy_gap_w():
@@ -123,52 +124,105 @@ def stone_arch(fill):
 
 
 def scrub_gap():
-    """2x2 a cleft into the dry scrub (the wall to the north): a dark gap between the thickets, rocks at its lips,
-    the earth trodden into it."""
+    """2x2 a rock cleft in the dry scrub (the wall to the north): two weathered rock jaws push out of the thickets,
+    lit along their tops, their inner faces dropping into a dark slot between them; their shadow falls across the
+    trodden earth leading in; scree at their feet."""
     cv = Canvas(2, 2)
-    for j in range(0, 20):
-        w = 9 - j * 0.15
+    # the dark slot, narrowing as it goes in (north)
+    for j in range(0, 24):
+        w = 3.0 + j * 0.22
         for i in range(32):
-            if abs(i + 0.5 - 16) < w + 1.5 * math.sin(j * 0.9):
-                cv.put(i, j, L0 if (i + j) % 3 else B0)
-    for (x, y) in [(6, 14), (25, 13), (8, 17), (23, 18)]:
-        cv.ellipse(x, y, 2.5, 1.8, K0)
-        cv.ellipse(x - 0.5, y - 0.5, 1.8, 1.2, K1)
-        cv.put(int(x - 1), int(y - 1), K2)
-    for j in range(16, 32):
-        for i in range(8, 24):
-            if (i * 3 + j) % 7 in (0, 1):
+            if abs(i + 0.5 - 16) < w:
+                cv.put(i, j, L0 if (i + 2 * j) % 5 else B0)
+    # the jaws: two weathered outcrops either side, rounded and ragged on the outside, faces toward the slot
+    for side in (1, -1):
+        body = set()
+        for j in range(1, 24):
+            for k in range(13):                           # k = distance from the slot
+                i = (12 - k) if side == 1 else (19 + k)
+                outer = 9 + int(2.5 * math.sin(j * 0.55 + (0 if side == 1 else 2)))
+                top = 1 + (k * k) // 14
+                bottom = 23 - k // 2
+                if k <= outer and top <= j <= bottom:
+                    body.add((i, j))
+        for (i, j) in body:
+            k = (12 - i) if side == 1 else (i - 19)
+            lit_top = (i, j - 1) not in body or (i, j - 2) not in body
+            if lit_top:
+                c = K2
+            elif k < 3:
+                c = K0 if side == 1 else K1               # the inner face: the west jaw in shade, the east one lit
+            else:
+                c = K1 if (i * 3 + j) % 7 else K0
+            cv.put(i, j, c)
+        for (x, y) in list(body):
+            for dx, dy in ((1, 0), (-1, 0), (0, -1)):
+                if (x + dx, y + dy) not in body and cv.get(x + dx, y + dy) not in (L0, B0):
+                    cv.put(x + dx, y + dy, B0)
+    for (x, y) in [(4, 9), (9, 14), (24, 8), (27, 15), (6, 18)]:
+        cv.put(x, y, B0)
+        cv.put(x + 1, y, K2)                                 # cracks
+    # shadow cast toward the south-east, trodden earth, scree
+    for j in range(22, 32):
+        for i in range(4, 30):
+            if (i + j) % 2 == 0 and i > 10 + (j - 22):
                 cv.put(i, j, D3)
-            elif (i + j) % 5 == 0:
+            elif (i * 3 + j) % 7 in (0, 1) and 9 <= i <= 23:
                 cv.put(i, j, D2)
+    for (x, y) in [(5, 25), (8, 27), (24, 26), (27, 24), (13, 29)]:
+        cv.put(x, y, K1)
+        cv.put(x + 1, y, K0)
     return cv
 
 
 def claw_stump():
-    cv = Canvas(1, 1)
-    cv.ellipse(8, 11, 6.5, 3.5, B0)
-    cv.ellipse(8, 10, 5.5, 4.5, B1)
-    cv.ellipse(8, 7, 5.5, 2.6, B0)
-    cv.ellipse(8, 7, 4.6, 2.0, B2)
-    cv.ellipse(8, 7, 2.2, 0.9, B1)
+    """1x2 a broken oak trunk beside the cleft, raked by three long claw gouges (pale wood showing), splinters at its
+    snapped top: a clear warning on the way in."""
+    cv = Canvas(1, 2)
+    body = set()
+    for j in range(5, 30):
+        hw = 4 + (2 if j > 25 else 0)
+        for i in range(16):
+            if abs(i + 0.5 - 8) <= hw:
+                body.add((i, j))
+    for (i, j) in body:
+        cv.put(i, j, B1 if i < 9 else B0)
+        if i == 4:
+            cv.put(i, j, B2)
+    for (x, y) in [(5, 4), (7, 2), (9, 3), (11, 4), (6, 3)]:
+        cv.put(x, y, B2)
+        body.add((x, y))
     for x in (5, 8, 11):
-        cv.line(x, 9, x - 1, 14, B0)
-        cv.put(x + 1, 10, K2)
+        cv.line(x, 9, x - 1, 22, K2)
+        cv.line(x + 1, 9, x, 22, B0)
+    for (x, y) in list(body):
+        for dx, dy in ((1, 0), (-1, 0), (0, -1)):
+            if (x + dx, y + dy) not in body and cv.get(x + dx, y + dy) is None:
+                cv.put(x + dx, y + dy, L0)
+    cv.hline(2, 13, 30, D3)
+    cv.hline(1, 14, 31, D3)
     return cv
 
 
 def charred_stake():
+    """1x2 two charred field stakes lashed in an X, their tips still glowing, a ring of ash round their feet: the mark
+    the fire left at the way into Entei's field."""
     cv = Canvas(1, 2)
-    for j in range(6, 29):
-        cv.put(7, j, B1 if j % 4 else B0)
-        cv.put(8, j, B0)
-        cv.put(6, j, L0)
-        cv.put(9, j, L0)
-    cv.put(7, 5, ST)
-    cv.put(8, 5, ST_D)
-    cv.put(7, 4, ST)
-    cv.hline(5, 10, 29, D3)
-    cv.put(9, 3, ST)
+    for (a, b) in [((3, 6), (12, 29)), ((12, 6), (3, 29))]:
+        cv.line(*a, *b, B0)
+        cv.line(a[0] + 1, a[1], b[0] + 1, b[1], B1)
+    cv.put(7, 17, K1)
+    cv.put(8, 17, K1)
+    for (x, y) in [(3, 5), (4, 5), (12, 5), (13, 5)]:
+        cv.put(x, y, EMB2)
+    for (x, y) in [(3, 4), (13, 4), (4, 3)]:
+        cv.put(x, y, EMB1)
+    for (x, y) in [(2, 2), (12, 1)]:
+        cv.put(x, y, K1)                                     # smoke
+    for i in range(1, 15):
+        cv.put(i, 30, K1 if i % 3 else K0)                  # the ash ring
+        if 3 < i < 12:
+            cv.put(i, 31, K2)
     return cv
 
 
@@ -182,8 +236,8 @@ def build():
               comment=f"2x2 overlay: a Rootkin stone arch ({f})", lair="celebi suicune")
     P.add("scrub_gap", scrub_gap(), walk=[[0, 0], [1, 0], [0, 1], [1, 1]],
           comment="2x2 overlay: a cleft into the dry scrub, the wall to the north (Routes 23, 16)", lair="ursaluna entei")
-    P.add("claw_stump", claw_stump(), comment="1x1 overlay: a clawed stump (Route 23)", lair="ursaluna")
-    P.add("charred_stake", charred_stake(), comment="1x2 overlay: a charred stake, glowing tip (Route 16)", lair="entei")
+    P.add("claw_stump", claw_stump(), comment="1x2 overlay: a broken trunk raked by claws (Route 23)", lair="ursaluna")
+    P.add("charred_stake", charred_stake(), comment="1x2 overlay: two charred stakes in an X, glowing tips, an ash ring (Route 16)", lair="entei")
     return P
 
 
@@ -217,7 +271,7 @@ def main():
         "placements": {
             "Route14": {"tileset": "orleans_route_b", "open": [["canopy_gap_w", 25, 30]], "sealed": "the canopy as built",
                         "trigger": [[26, 30], [26, 31]], "opens": "story ch7 (the flood clears); the lair is night-only inside"},
-            "Route23": {"tileset": "orleans_route_dry", "open": [["scrub_gap", 22, 1], ["claw_stump", 21, 3]],
+            "Route23": {"tileset": "orleans_route_dry", "open": [["scrub_gap", 22, 1], ["claw_stump", 21, 2]],
                         "sealed": "the feather notch at x 22-23 filled with the dry scrub block", "trigger": [[22, 1], [23, 1]],
                         "opens": "story 45 (post-game); Ursaluna inside at night"},
             "Route7": {"tileset": "orleans_route", "open": [["stone_arch", 34, 1]], "sealed": [["stone_arch_vines", 34, 1]],

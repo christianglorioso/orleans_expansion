@@ -314,373 +314,394 @@
      ]
     },
     {
-     "id": "clay_N",
+     "id": "cliff_w",
      "bottom": [
       10,
+      2
+     ]
+    },
+    {
+     "id": "cliff_e",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "floor_shadow",
+     "bottom": [
+      12,
+      2
+     ]
+    },
+    {
+     "id": "clay_N",
+     "bottom": [
+      13,
       2
      ]
     },
     {
      "id": "clay_S",
      "bottom": [
-      11,
+      14,
       2
      ]
     },
     {
      "id": "clay_W",
      "bottom": [
-      12,
+      15,
       2
      ]
     },
     {
      "id": "clay_E",
      "bottom": [
-      13,
-      2
+      0,
+      3
      ]
     },
     {
      "id": "clay_inNW",
      "bottom": [
-      14,
-      2
+      1,
+      3
      ]
     },
     {
      "id": "clay_inNE",
      "bottom": [
-      15,
-      2
+      2,
+      3
      ]
     },
     {
      "id": "clay_inSW",
      "bottom": [
-      0,
+      3,
       3
      ]
     },
     {
      "id": "clay_inSE",
      "bottom": [
-      1,
+      4,
       3
      ]
     },
     {
      "id": "clay_landSE",
      "bottom": [
-      2,
+      5,
       3
      ]
     },
     {
      "id": "clay_landSW",
      "bottom": [
-      3,
+      6,
       3
      ]
     },
     {
      "id": "clay_landNE",
      "bottom": [
-      4,
+      7,
       3
      ]
     },
     {
      "id": "clay_landNW",
      "bottom": [
-      5,
+      8,
       3
      ]
     },
     {
      "id": "clay_sTLBR",
      "bottom": [
-      6,
+      9,
       3
      ]
     },
     {
      "id": "clay_sTRBL",
      "bottom": [
-      7,
+      10,
       3
      ]
     },
     {
      "id": "clay_C",
      "bottom": [
-      8,
+      11,
       3
      ]
     },
     {
      "id": "clay_C1",
      "bottom": [
-      9,
+      12,
       3
      ]
     },
     {
      "id": "clay_C2",
      "bottom": [
-      10,
+      13,
       3
      ]
     },
     {
      "id": "den_0_0",
      "bottom": [
-      11,
-      3
+      0,
+      4
      ]
     },
     {
      "id": "den_1_0",
      "bottom": [
-      12,
-      3
+      1,
+      4
      ]
     },
     {
      "id": "den_2_0",
      "bottom": [
-      13,
-      3
+      2,
+      4
      ]
     },
     {
      "id": "den_3_0",
      "bottom": [
-      14,
-      3
+      3,
+      4
      ]
     },
     {
      "id": "den_0_1",
      "bottom": [
-      11,
-      4
+      0,
+      5
      ]
     },
     {
      "id": "den_1_1",
      "bottom": [
-      12,
-      4
+      1,
+      5
      ]
     },
     {
      "id": "den_2_1",
      "bottom": [
-      13,
-      4
+      2,
+      5
      ]
     },
     {
      "id": "den_3_1",
      "bottom": [
-      14,
-      4
+      3,
+      5
      ]
     },
     {
      "id": "den_0_2",
-     "bottom": [
-      11,
-      5
-     ]
-    },
-    {
-     "id": "den_1_2",
-     "bottom": [
-      12,
-      5
-     ]
-    },
-    {
-     "id": "den_2_2",
-     "bottom": [
-      13,
-      5
-     ]
-    },
-    {
-     "id": "den_3_2",
-     "bottom": [
-      14,
-      5
-     ]
-    },
-    {
-     "id": "scarred_stump",
-     "bottom": [
-      15,
-      3
-     ]
-    },
-    {
-     "id": "bones",
      "bottom": [
       0,
       6
      ]
     },
     {
-     "id": "fur",
+     "id": "den_1_2",
      "bottom": [
       1,
       6
      ]
     },
     {
-     "id": "pepper",
+     "id": "den_2_2",
      "bottom": [
       2,
       6
      ]
     },
     {
-     "id": "pepper_burnt",
+     "id": "den_3_2",
      "bottom": [
       3,
       6
      ]
     },
     {
-     "id": "ash_C",
+     "id": "scarred_stump",
      "bottom": [
       4,
-      6
+      4
+     ]
+    },
+    {
+     "id": "bones",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "fur",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "pepper",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "pepper_burnt",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "ash_C",
+     "bottom": [
+      9,
+      4
      ]
     },
     {
      "id": "ash_N",
      "bottom": [
-      5,
-      6
+      10,
+      4
      ]
     },
     {
      "id": "ash_S",
      "bottom": [
-      6,
-      6
+      11,
+      4
      ]
     },
     {
      "id": "ash_W",
      "bottom": [
-      7,
-      6
+      12,
+      4
      ]
     },
     {
      "id": "ash_E",
      "bottom": [
-      8,
-      6
+      13,
+      4
      ]
     },
     {
      "id": "ash_inNW",
      "bottom": [
-      9,
-      6
+      14,
+      4
      ]
     },
     {
      "id": "ash_inNE",
      "bottom": [
-      10,
-      6
+      15,
+      4
      ]
     },
     {
      "id": "ash_inSW",
      "bottom": [
-      11,
-      6
+      0,
+      7
      ]
     },
     {
      "id": "ash_inSE",
      "bottom": [
-      12,
-      6
+      1,
+      7
      ]
     },
     {
      "id": "ash_landSE",
      "bottom": [
-      13,
-      6
+      2,
+      7
      ]
     },
     {
      "id": "ash_landSW",
      "bottom": [
-      14,
-      6
+      3,
+      7
      ]
     },
     {
      "id": "ash_landNE",
      "bottom": [
-      15,
-      6
+      4,
+      7
      ]
     },
     {
      "id": "ash_landNW",
      "bottom": [
-      0,
+      5,
       7
      ]
     },
     {
      "id": "ash_sTLBR",
      "bottom": [
-      1,
+      6,
       7
      ]
     },
     {
      "id": "ash_sTRBL",
      "bottom": [
-      2,
+      7,
       7
      ]
     },
     {
      "id": "brazier_0_0",
      "bottom": [
-      3,
+      8,
       7
      ]
     },
     {
      "id": "brazier_0_1",
      "bottom": [
-      3,
+      8,
       8
      ]
     },
     {
      "id": "vent",
      "bottom": [
-      4,
+      9,
       7
      ]
     },
     {
      "id": "stubble",
      "bottom": [
-      5,
+      10,
       7
      ]
     }

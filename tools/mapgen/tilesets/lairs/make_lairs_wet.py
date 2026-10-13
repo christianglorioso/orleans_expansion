@@ -487,6 +487,215 @@ def copy_ruin(name):
     return over(cv, WATER)
 
 
+# ---------------------------------------------------------------- rougarou, round 2: menace and density
+def dead_snag():
+    """2x3 a second dead tree: a smaller cypress snag, its top split and leaning, two crooked limbs, moss rags."""
+    cv = Canvas(2, 3)
+    body = set()
+    for j in range(8, 46):
+        t = (j - 8) / 38.0
+        hw = 2.2 + 1.2 * t + (5.0 * ((t - 0.75) / 0.25) ** 1.5 if t > 0.75 else 0)
+        cx = 16 + 3.0 * (1 - t) ** 2
+        for i in range(32):
+            if abs(i + 0.5 - cx) <= hw:
+                body.add((i, j))
+    for (a, b, w) in [((18, 12), (27, 5), 1), ((17, 20), (6, 13), 1), ((6, 13), (4, 8), 1), ((19, 9), (16, 3), 1)]:
+        n = max(abs(b[0] - a[0]), abs(b[1] - a[1])) * 2
+        for k in range(n + 1):
+            t = k / n
+            body.add((round(a[0] + (b[0] - a[0]) * t), round(a[1] + (b[1] - a[1]) * t)))
+    for (i, j) in body:
+        c = DW3 if i < 16 else DW2
+        if (i * 2 + j) % 11 == 0:
+            c = DW1
+        cv.put(i, j, c)
+    for (x, y) in list(body):
+        for dx, dy in ((1, 0), (-1, 0), (0, -1), (0, 1)):
+            if (x + dx, y + dy) not in body and cv.get(x + dx, y + dy) is None:
+                cv.put(x + dx, y + dy, INKW)
+    for (x, y, n) in [(7, 14, 5), (25, 7, 6), (5, 9, 4)]:
+        for k in range(n):
+            if cv.get(x, y + k) in (None, INKW):
+                cv.put(x, y + k, MS1 if k % 3 else MS2)
+    for (a, b) in [((12, 45), (7, 47)), ((20, 45), (25, 47))]:
+        cv.line(*a, *b, DW2)
+    return over(cv, GRASS)
+
+
+def cattails():
+    """1x1 cattails and reeds on the pond's grassy edge: brown heads on tall stalks, a few bent blades."""
+    cv = ground(GRASS)
+    for (x, h, lean) in [(3, 11, 0), (6, 13, 1), (9, 10, 0), (12, 12, -1), (14, 8, 0)]:
+        for k in range(h):
+            xx = x + (lean * k) // 5
+            cv.put(xx, 15 - k, SL2 if k % 2 else SL1)
+        top = 15 - h
+        xx = x + (lean * h) // 5
+        cv.vline(xx, top - 2, top + 1, E2)
+        cv.put(xx, top - 2, E3)
+        cv.put(xx, top - 3, SL3)
+    for (a, b) in [((1, 15), (0, 9)), ((10, 15), (13, 8)), ((7, 15), (4, 10))]:
+        cv.line(*a, *b, SL3)
+    return cv
+
+
+def bones():
+    """1x1 bleached bones in the grass: a ribcage arc, a long bone, a skull-less jaw (an old kill)."""
+    cv = ground(GRASS)
+    for k, x in enumerate(range(3, 11, 2)):
+        cv.line(x, 6, x + 1, 11 - (k % 2), DW4)
+        cv.put(x + 1, 12 - (k % 2), INKW)
+    cv.line(3, 6, 10, 5, DW3)
+    cv.line(9, 13, 15, 11, DW4)
+    cv.put(8, 13, DW3)
+    cv.put(15, 10, DW3)
+    cv.line(1, 12, 4, 14, DW4)
+    return cv
+
+
+def trap():
+    """1x1 an old leg-hold trap, jaws sprung and rusted grey, its chain running to a stake."""
+    cv = ground(GRASS)
+    cv.ellipse(7, 9, 4.5, 2.6, INKW)
+    cv.ellipse(7, 9, 3.5, 1.8, DW2)
+    cv.ellipse(7, 9, 2.0, 0.8, INKW)
+    for x in range(4, 11, 2):
+        cv.put(x, 7, DW3)
+        cv.put(x, 11, DW3)
+    cv.rect(6, 8, 3, 2, DW1)
+    for k, x in enumerate(range(11, 15)):
+        cv.put(x, 9 + (k % 2), DW1 if k % 2 else DW3)
+    cv.vline(14, 6, 11, DW2)
+    cv.put(14, 5, DW4)
+    return cv
+
+
+def hunting_stand():
+    """2x3 an old hunting stand: a platform on four grey poles, a ladder up its front, the rail broken, a board
+    hanging loose (the walk in passes under its gaze)."""
+    cv = Canvas(2, 3)
+    for x in (4, 26):
+        for j in range(10, 46):
+            cv.put(x, j, DW2)
+            cv.put(x + 1, j, DW1)
+            cv.put(x - 1, j, INKW)
+            cv.put(x + 2, j, INKW)
+    for x in (9, 21):
+        for j in range(16, 44):
+            cv.put(x, j, DW1)
+    cv.rect(2, 10, 28, 6, DW3)
+    for x in range(2, 30, 4):
+        cv.vline(x, 10, 15, DW2)
+    cv.hline(2, 29, 10, DW4)
+    cv.hline(1, 30, 16, INKW)
+    cv.hline(1, 30, 9, INKW)
+    # rail: posts with a broken top rail
+    for x in (3, 15, 28):
+        cv.vline(x, 3, 9, DW2)
+    cv.hline(3, 12, 3, DW3)
+    cv.line(15, 4, 22, 8, DW3)                         # the broken rail hanging
+    # ladder
+    for j in range(17, 45):
+        cv.put(12, j, DW3)
+        cv.put(19, j, DW3)
+    for j in range(19, 45, 5):
+        cv.hline(12, 19, j, DW2)
+    cv.line(23, 18, 27, 30, DW3)                       # a loose board
+    for i in range(2, 30):
+        if cv.get(i, 46) is None:
+            cv.put(i, 46, SH)
+    return over(cv, GRASS)
+
+
+def fence(kind):
+    """1x1 a broken fence: posts with a sagging rail (a) or a post and a fallen rail in the grass (b)."""
+    cv = ground(GRASS)
+    if kind == "a":
+        for x in (3, 12):
+            cv.vline(x, 3, 13, DW2)
+            cv.vline(x + 1, 3, 13, DW1)
+            cv.put(x, 2, DW4)
+        cv.line(0, 6, 15, 8, DW3)
+        cv.line(0, 7, 15, 9, DW1)
+    else:
+        cv.vline(5, 4, 13, DW2)
+        cv.vline(6, 4, 13, DW1)
+        cv.put(5, 3, DW4)
+        cv.line(7, 13, 15, 10, DW3)
+        cv.line(7, 14, 15, 11, DW1)
+    cv.hline(0, 15, 14, SH)
+    return cv
+
+
+# ---------------------------------------------------------------- suicune, round 2: the ruin story
+def pillar_fallen(shallow):
+    """3x1 a fallen pillar drum lying half sunk, spiral bands, moss at the waterline (over deep water or over the
+    clear shallows)."""
+    base = (lambda i, j: shallows_style(i, j, True, {"dn": None, "ds": None, "dw": None, "de": None})) if shallow else WATER
+    cv = ground(base, 3, 1)
+    for i in range(3, 44):
+        for j in range(3, 12):
+            c = ST3 if j > 4 else ST4
+            if j == 10:
+                c = ST2
+            if j == 11:
+                c = MO if i % 3 else ST1
+            cv.put(i, j, c)
+        cv.put(i, 2, INK)
+        cv.put(i, 12, WD if not shallow else SH2)
+        if i % 4 == 0:
+            cv.put(i, 13, RP)
+    for x in (12, 26, 37):
+        cv.vline(x, 4, 10, ST2)
+        cv.put(x + 2, 6, ST1)
+        cv.put(x + 3, 7, ST1)
+    cv.ellipse(44, 7, 2.5, 4.5, ST2)
+    cv.ellipse(44, 7, 1.5, 3.5, ST4)
+    cv.vline(2, 3, 11, INK)
+    return cv
+
+
+def blocks_sh():
+    """1x1 broken causeway blocks tipped into the clear shallows, their reflections below."""
+    cv = ground(lambda i, j: shallows_style(i, j, True, {"dn": None, "ds": None, "dw": None, "de": None}))
+    for (x, y, w, h) in [(2, 3, 6, 4), (9, 7, 5, 4)]:
+        cv.rect(x, y, w, h, ST3)
+        cv.hline(x, x + w - 1, y, ST4)
+        cv.hline(x, x + w - 1, y + h - 1, ST2)
+        cv.vline(x - 1, y, y + h - 1, INK)
+        for k in range(3):
+            cv.hline(x, x + w - 1, y + h + k, SH1 if k % 2 else WD)        # reflection, broken by ripples
+    return cv
+
+
+def reflection():
+    """1x1 the trees' reflection on the lagoon: a soft dark band hanging from the canopy edge, its lower edge
+    wavering, a glint where the sky shows through."""
+    cv = ground(WATER)
+    for i in range(16):
+        h = 6 + int(2 * math.sin(i * 0.8) + 1.5 * math.sin(i * 0.31 + 1))
+        for j in range(h):
+            if j < h - 2 or (i + j) % 2 == 0:
+                cv.put(i, j, WD)
+    cv.put(5, 3, RP)
+    cv.put(11, 2, RP)
+    return cv
+
+
+def shore_corner(side, y_parity, bank):
+    """The canopy's edge cell where the lagoon's bank runs into the side wall: the canopy hanging over the bank tile
+    beneath (the water's edge cell's own overhang, laid over the bank)."""
+    edge = pcell(f"bd:swamp_{side}_water_{y_parity}")
+    water = pcell("ekat:water_C")
+    b = pcell(bank)
+    cv = Canvas(1, 1)
+    pe, pw, pb = edge.load(), water.load(), b.load()
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, pe[i, j] if pe[i, j] != pw[i, j] else pb[i, j])
+    return cv
+
+
 # ---------------------------------------------------------------- build
 def build():
     P = Pieces("lw")
@@ -505,6 +714,13 @@ def build():
           lair="rougarou")
     P.add("driftwood", driftwood(), comment="2x1 bleached driftwood, blocking", lair="rougarou")
     P.add("clawed_stump", clawed_stump(), comment="1x1 a stump raked by claws, blocking", lair="rougarou")
+    P.add("dead_snag", dead_snag(), comment="2x3 a second dead tree, a split snag, blocking", lair="rougarou")
+    P.add("cattails", cattails(), comment="1x1 cattails on the pond's grassy edge, blocking", lair="rougarou")
+    P.add("bones", bones(), walk=True, comment="1x1 bleached bones in the grass (walkable)", lair="rougarou")
+    P.add("trap", trap(), walk=True, comment="1x1 an old sprung leg-hold trap (walkable)", lair="rougarou")
+    P.add("hunting_stand", hunting_stand(), comment="2x3 an old hunting stand, blocking", lair="rougarou")
+    P.add("fence_a", fence("a"), comment="1x1 a broken fence: posts and a sagging rail, blocking", lair="rougarou")
+    P.add("fence_b", fence("b"), comment="1x1 a broken fence: a post and a fallen rail, blocking", lair="rougarou")
     for v in (0, 1):
         P.add(f"fog_grass{v}", fog(False, v), walk=True, comment="1x1 a band of ground mist over grass (walkable)",
               lair="rougarou")
@@ -525,11 +741,27 @@ def build():
     P.add("stepping", stepping(), comment="1x1 stepping stones in the water (scenery, blocking)", lair="suicune")
     P.add("ruin", copy_ruin("sunken_ruin"), comment="1x2 a sunken carved pillar (route landmark art)", lair="suicune")
     P.add("ruin_l", copy_ruin("sunken_ruin_l"), comment="2x2 a larger sunken ruin (route landmark art)", lair="suicune")
+    P.add("pillar_fallen", pillar_fallen(False), comment="3x1 a fallen pillar drum half sunk in the lagoon",
+          lair="suicune")
+    P.add("pillar_fallen_sh", pillar_fallen(True), comment="3x1 a fallen pillar drum in the shallows", lair="suicune")
+    P.add("blocks_sh", blocks_sh(), comment="1x1 broken causeway blocks tipped into the shallows", lair="suicune")
+    P.add("reflection", reflection(), comment="1x1 the trees' reflection on the lagoon (water)", lair="suicune")
+    P.add("shore_w", shore_corner("E", 1, "ekat:water_S"), walk=True,
+          comment="the west wall's edge where the lagoon's bank meets it (canopy over the bank)", lair="suicune")
+    P.add("shore_e", shore_corner("W", 1, "ekat:water_S"), walk=True,
+          comment="the east wall's edge where the lagoon's bank meets it", lair="suicune")
     return P
 
 
 def main():
     P = build()
+    from lair_kit import gba
+    sh = set()
+    for n in ("shore_w", "shore_e"):
+        im = P.items[n]["cv"].im
+        sh |= {gba(im.getpixel((i, j))[:3]) for j in range(16) for i in range(16)}
+    FAMILIES["SHORE"] = sorted(sh)          # the primary's own canopy + bank colours (one primary palette)
+    print("SHORE", len(sh))
     bad = P.write("lairs_wet.png", "orleans_lairs_wet", "gTileset_OrleansLairsWet", "orleans_general.mapping.json",
                   FAMILIES, "The green lairs (rougarou, Suicune)")
     for b in bad:

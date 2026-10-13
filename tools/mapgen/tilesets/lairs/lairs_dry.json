@@ -152,6 +152,83 @@
     48
    ]
   ],
+  "CLIFF": [
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    64,
+    64,
+    64
+   ],
+   [
+    96,
+    92,
+    96
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    200,
+    196,
+    184
+   ],
+   [
+    240,
+    232,
+    216
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    224,
+    176,
+    136
+   ],
+   [
+    200,
+    144,
+    104
+   ],
+   [
+    168,
+    112,
+    80
+   ],
+   [
+    136,
+    88,
+    64
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
   "CLAY": [
    [
     240,
@@ -1132,8 +1209,55 @@
    "lair": "ursaluna",
    "comment": "rock wall face gouged by claws"
   },
-  "clay_N": {
+  "cliff_w": {
    "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:cliff_w"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "the arroyo's west wall: rock top, shaded face, red clay (blocking)"
+  },
+  "cliff_e": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:cliff_e"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "the arroyo's east wall: lit face, red clay streaks, rock top (blocking)"
+  },
+  "floor_shadow": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:floor_shadow"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "the channel floor in the west wall's shadow"
+  },
+  "clay_N": {
+   "x": 13,
    "y": 2,
    "w": 1,
    "h": 1,
@@ -1152,7 +1276,7 @@
    "comment": "red clay on dry ground N"
   },
   "clay_S": {
-   "x": 11,
+   "x": 14,
    "y": 2,
    "w": 1,
    "h": 1,
@@ -1171,7 +1295,7 @@
    "comment": "red clay on dry ground S"
   },
   "clay_W": {
-   "x": 12,
+   "x": 15,
    "y": 2,
    "w": 1,
    "h": 1,
@@ -1190,8 +1314,8 @@
    "comment": "red clay on dry ground W"
   },
   "clay_E": {
-   "x": 13,
-   "y": 2,
+   "x": 0,
+   "y": 3,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1209,8 +1333,8 @@
    "comment": "red clay on dry ground E"
   },
   "clay_inNW": {
-   "x": 14,
-   "y": 2,
+   "x": 1,
+   "y": 3,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1228,8 +1352,8 @@
    "comment": "red clay on dry ground inNW"
   },
   "clay_inNE": {
-   "x": 15,
-   "y": 2,
+   "x": 2,
+   "y": 3,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1247,7 +1371,7 @@
    "comment": "red clay on dry ground inNE"
   },
   "clay_inSW": {
-   "x": 0,
+   "x": 3,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1266,7 +1390,7 @@
    "comment": "red clay on dry ground inSW"
   },
   "clay_inSE": {
-   "x": 1,
+   "x": 4,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1285,7 +1409,7 @@
    "comment": "red clay on dry ground inSE"
   },
   "clay_landSE": {
-   "x": 2,
+   "x": 5,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1304,7 +1428,7 @@
    "comment": "red clay on dry ground landSE"
   },
   "clay_landSW": {
-   "x": 3,
+   "x": 6,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1323,7 +1447,7 @@
    "comment": "red clay on dry ground landSW"
   },
   "clay_landNE": {
-   "x": 4,
+   "x": 7,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1342,7 +1466,7 @@
    "comment": "red clay on dry ground landNE"
   },
   "clay_landNW": {
-   "x": 5,
+   "x": 8,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1361,7 +1485,7 @@
    "comment": "red clay on dry ground landNW"
   },
   "clay_sTLBR": {
-   "x": 6,
+   "x": 9,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1380,7 +1504,7 @@
    "comment": "red clay on dry ground sTLBR"
   },
   "clay_sTRBL": {
-   "x": 7,
+   "x": 10,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1399,7 +1523,7 @@
    "comment": "red clay on dry ground sTRBL"
   },
   "clay_C": {
-   "x": 8,
+   "x": 11,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1418,7 +1542,7 @@
    "comment": "red clay"
   },
   "clay_C1": {
-   "x": 9,
+   "x": 12,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1437,7 +1561,7 @@
    "comment": "red clay"
   },
   "clay_C2": {
-   "x": 10,
+   "x": 13,
    "y": 3,
    "w": 1,
    "h": 1,
@@ -1456,8 +1580,8 @@
    "comment": "red clay"
   },
   "den": {
-   "x": 11,
-   "y": 3,
+   "x": 0,
+   "y": 4,
    "w": 4,
    "h": 3,
    "rows": [
@@ -1485,8 +1609,8 @@
    "comment": "4x3 the den: rock overhang, dark hollow, bedding (all blocking)"
   },
   "scarred_stump": {
-   "x": 15,
-   "y": 3,
+   "x": 4,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1499,8 +1623,8 @@
    "comment": "1x1 a stump scored by claws, blocking"
   },
   "bones": {
-   "x": 0,
-   "y": 6,
+   "x": 5,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1518,8 +1642,8 @@
    "comment": "1x1 old bones (walkable)"
   },
   "fur": {
-   "x": 1,
-   "y": 6,
+   "x": 6,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1537,8 +1661,8 @@
    "comment": "1x1 tufts of shed fur (walkable)"
   },
   "pepper": {
-   "x": 2,
-   "y": 6,
+   "x": 7,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1551,8 +1675,8 @@
    "comment": "pepper rows (the dry country's field cell, copied), blocking"
   },
   "pepper_burnt": {
-   "x": 3,
-   "y": 6,
+   "x": 8,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1565,8 +1689,8 @@
    "comment": "pepper rows burned black, blocking"
   },
   "ash_C": {
-   "x": 4,
-   "y": 6,
+   "x": 9,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1584,8 +1708,8 @@
    "comment": "ash over dry ground (C)"
   },
   "ash_N": {
-   "x": 5,
-   "y": 6,
+   "x": 10,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1603,8 +1727,8 @@
    "comment": "ash over dry ground (N)"
   },
   "ash_S": {
-   "x": 6,
-   "y": 6,
+   "x": 11,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1622,8 +1746,8 @@
    "comment": "ash over dry ground (S)"
   },
   "ash_W": {
-   "x": 7,
-   "y": 6,
+   "x": 12,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1641,8 +1765,8 @@
    "comment": "ash over dry ground (W)"
   },
   "ash_E": {
-   "x": 8,
-   "y": 6,
+   "x": 13,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1660,8 +1784,8 @@
    "comment": "ash over dry ground (E)"
   },
   "ash_inNW": {
-   "x": 9,
-   "y": 6,
+   "x": 14,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1679,8 +1803,8 @@
    "comment": "ash over dry ground (inNW)"
   },
   "ash_inNE": {
-   "x": 10,
-   "y": 6,
+   "x": 15,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1698,8 +1822,8 @@
    "comment": "ash over dry ground (inNE)"
   },
   "ash_inSW": {
-   "x": 11,
-   "y": 6,
+   "x": 0,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1717,8 +1841,8 @@
    "comment": "ash over dry ground (inSW)"
   },
   "ash_inSE": {
-   "x": 12,
-   "y": 6,
+   "x": 1,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1736,8 +1860,8 @@
    "comment": "ash over dry ground (inSE)"
   },
   "ash_landSE": {
-   "x": 13,
-   "y": 6,
+   "x": 2,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1755,8 +1879,8 @@
    "comment": "ash over dry ground (landSE)"
   },
   "ash_landSW": {
-   "x": 14,
-   "y": 6,
+   "x": 3,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1774,8 +1898,8 @@
    "comment": "ash over dry ground (landSW)"
   },
   "ash_landNE": {
-   "x": 15,
-   "y": 6,
+   "x": 4,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1793,7 +1917,7 @@
    "comment": "ash over dry ground (landNE)"
   },
   "ash_landNW": {
-   "x": 0,
+   "x": 5,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1812,7 +1936,7 @@
    "comment": "ash over dry ground (landNW)"
   },
   "ash_sTLBR": {
-   "x": 1,
+   "x": 6,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1831,7 +1955,7 @@
    "comment": "ash over dry ground (sTLBR)"
   },
   "ash_sTRBL": {
-   "x": 2,
+   "x": 7,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1850,7 +1974,7 @@
    "comment": "ash over dry ground (sTRBL)"
   },
   "brazier": {
-   "x": 3,
+   "x": 8,
    "y": 7,
    "w": 1,
    "h": 2,
@@ -1867,7 +1991,7 @@
    "comment": "1x2 a burning stone brazier on the ash, blocking"
   },
   "vent": {
-   "x": 4,
+   "x": 9,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1881,7 +2005,7 @@
    "comment": "1x1 glowing cracks in the ash (blocking: hot)"
   },
   "stubble": {
-   "x": 5,
+   "x": 10,
    "y": 7,
    "w": 1,
    "h": 1,

@@ -342,6 +342,145 @@
     120,
     48
    ]
+  ],
+  "OAK": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    128,
+    80
+   ],
+   [
+    72,
+    104,
+    64
+   ],
+   [
+    56,
+    80,
+    56
+   ],
+   [
+    168,
+    200,
+    136
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    160,
+    120,
+    80
+   ],
+   [
+    120,
+    88,
+    64
+   ],
+   [
+    80,
+    64,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    200,
+    208,
+    176
+   ]
+  ],
+  "MOSSY": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    88,
+    48
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    208,
+    216,
+    200
+   ]
   ]
  },
  "pieces": {
@@ -775,6 +914,106 @@
    ],
    "lair": "celebi",
    "comment": "1x1 a fairy ring of mushrooms (walkable)"
+  },
+  "fern": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:fern"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 a clump of ferns (walkable)"
+  },
+  "dapple": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:dapple"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 sunlight dappling the grass (walkable)"
+  },
+  "dapple_moss": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:dapple_moss"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 sunlight dappling the moss (walkable)"
+  },
+  "mossy_stones": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:mossy_stones"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "1x1 old stones swallowed by moss, blocking"
+  },
+  "live_oak": {
+   "x": 0,
+   "y": 3,
+   "w": 4,
+   "h": 3,
+   "rows": [
+    [
+     "lk:live_oak_0_0",
+     "lk:live_oak_1_0",
+     "lk:live_oak_2_0",
+     "lk:live_oak_3_0"
+    ],
+    [
+     "lk:live_oak_0_1",
+     "lk:live_oak_1_1",
+     "lk:live_oak_2_1",
+     "lk:live_oak_3_1"
+    ],
+    [
+     "lk:live_oak_0_2",
+     "lk:live_oak_1_2",
+     "lk:live_oak_2_2",
+     "lk:live_oak_3_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "4x3 a great live oak with Spanish moss (the Oldest Shrine's art), blocking"
   }
  }
 }

@@ -363,338 +363,527 @@
      ]
     },
     {
-     "id": "fog_grass0",
+     "id": "dead_snag_0_0",
      "bottom": [
       8,
       2
      ]
     },
     {
-     "id": "fog_water0",
+     "id": "dead_snag_1_0",
      "bottom": [
       9,
       2
      ]
     },
     {
-     "id": "fog_grass1",
+     "id": "dead_snag_0_1",
+     "bottom": [
+      8,
+      3
+     ]
+    },
+    {
+     "id": "dead_snag_1_1",
+     "bottom": [
+      9,
+      3
+     ]
+    },
+    {
+     "id": "dead_snag_0_2",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "dead_snag_1_2",
+     "bottom": [
+      9,
+      4
+     ]
+    },
+    {
+     "id": "cattails",
      "bottom": [
       10,
       2
      ]
     },
     {
-     "id": "fog_water1",
+     "id": "bones",
      "bottom": [
       11,
       2
      ]
     },
     {
-     "id": "shallows_C",
+     "id": "trap",
      "bottom": [
       12,
       2
      ]
     },
     {
-     "id": "shallows_N",
+     "id": "hunting_stand_0_0",
      "bottom": [
       13,
       2
      ]
     },
     {
-     "id": "shallows_S",
+     "id": "hunting_stand_1_0",
      "bottom": [
       14,
       2
      ]
     },
     {
-     "id": "shallows_W",
+     "id": "hunting_stand_0_1",
+     "bottom": [
+      13,
+      3
+     ]
+    },
+    {
+     "id": "hunting_stand_1_1",
+     "bottom": [
+      14,
+      3
+     ]
+    },
+    {
+     "id": "hunting_stand_0_2",
+     "bottom": [
+      13,
+      4
+     ]
+    },
+    {
+     "id": "hunting_stand_1_2",
+     "bottom": [
+      14,
+      4
+     ]
+    },
+    {
+     "id": "fence_a",
      "bottom": [
       15,
       2
      ]
     },
     {
-     "id": "shallows_E",
+     "id": "fence_b",
      "bottom": [
       0,
+      6
+     ]
+    },
+    {
+     "id": "fog_grass0",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "fog_water0",
+     "bottom": [
+      2,
+      6
+     ]
+    },
+    {
+     "id": "fog_grass1",
+     "bottom": [
+      3,
+      6
+     ]
+    },
+    {
+     "id": "fog_water1",
+     "bottom": [
+      4,
+      6
+     ]
+    },
+    {
+     "id": "shallows_C",
+     "bottom": [
+      5,
+      6
+     ]
+    },
+    {
+     "id": "shallows_N",
+     "bottom": [
+      6,
+      6
+     ]
+    },
+    {
+     "id": "shallows_S",
+     "bottom": [
+      7,
+      6
+     ]
+    },
+    {
+     "id": "shallows_W",
+     "bottom": [
+      8,
+      6
+     ]
+    },
+    {
+     "id": "shallows_E",
+     "bottom": [
+      9,
       6
      ]
     },
     {
      "id": "shallows_inNW",
      "bottom": [
-      1,
+      10,
       6
      ]
     },
     {
      "id": "shallows_inNE",
      "bottom": [
-      2,
+      11,
       6
      ]
     },
     {
      "id": "shallows_inSW",
      "bottom": [
-      3,
+      12,
       6
      ]
     },
     {
      "id": "shallows_inSE",
      "bottom": [
-      4,
+      13,
       6
      ]
     },
     {
      "id": "shallows_landSE",
      "bottom": [
-      5,
+      14,
       6
      ]
     },
     {
      "id": "shallows_landSW",
      "bottom": [
-      6,
+      15,
       6
      ]
     },
     {
      "id": "shallows_landNE",
      "bottom": [
-      7,
-      6
-     ]
-    },
-    {
-     "id": "shallows_landNW",
-     "bottom": [
-      8,
-      6
-     ]
-    },
-    {
-     "id": "shallows_sTLBR",
-     "bottom": [
-      9,
-      6
-     ]
-    },
-    {
-     "id": "shallows_sTRBL",
-     "bottom": [
-      10,
-      6
-     ]
-    },
-    {
-     "id": "isle_C",
-     "bottom": [
-      11,
-      6
-     ]
-    },
-    {
-     "id": "isle_N",
-     "bottom": [
-      12,
-      6
-     ]
-    },
-    {
-     "id": "isle_S",
-     "bottom": [
-      13,
-      6
-     ]
-    },
-    {
-     "id": "isle_W",
-     "bottom": [
-      14,
-      6
-     ]
-    },
-    {
-     "id": "isle_E",
-     "bottom": [
-      15,
-      6
-     ]
-    },
-    {
-     "id": "isle_inNW",
-     "bottom": [
       0,
       7
      ]
     },
     {
-     "id": "isle_inNE",
+     "id": "shallows_landNW",
      "bottom": [
       1,
       7
      ]
     },
     {
-     "id": "isle_inSW",
+     "id": "shallows_sTLBR",
      "bottom": [
       2,
       7
      ]
     },
     {
-     "id": "isle_inSE",
+     "id": "shallows_sTRBL",
      "bottom": [
       3,
       7
      ]
     },
     {
-     "id": "isle_landSE",
+     "id": "isle_C",
      "bottom": [
       4,
       7
      ]
     },
     {
-     "id": "isle_landSW",
+     "id": "isle_N",
      "bottom": [
       5,
       7
      ]
     },
     {
-     "id": "isle_landNE",
+     "id": "isle_S",
      "bottom": [
       6,
       7
      ]
     },
     {
-     "id": "isle_landNW",
+     "id": "isle_W",
      "bottom": [
       7,
       7
      ]
     },
     {
-     "id": "isle_sTLBR",
+     "id": "isle_E",
      "bottom": [
       8,
       7
      ]
     },
     {
-     "id": "isle_sTRBL",
+     "id": "isle_inNW",
      "bottom": [
       9,
       7
      ]
     },
     {
-     "id": "pillar_0_0",
+     "id": "isle_inNE",
      "bottom": [
       10,
       7
      ]
     },
     {
-     "id": "pillar_0_1",
-     "bottom": [
-      10,
-      8
-     ]
-    },
-    {
-     "id": "pillar_0_2",
-     "bottom": [
-      10,
-      9
-     ]
-    },
-    {
-     "id": "causeway_v",
+     "id": "isle_inSW",
      "bottom": [
       11,
       7
      ]
     },
     {
-     "id": "causeway_v_sh",
+     "id": "isle_inSE",
      "bottom": [
       12,
       7
      ]
     },
     {
-     "id": "causeway_head",
+     "id": "isle_landSE",
      "bottom": [
       13,
       7
      ]
     },
     {
-     "id": "causeway_broken",
+     "id": "isle_landSW",
      "bottom": [
       14,
       7
      ]
     },
     {
-     "id": "stepping",
+     "id": "isle_landNE",
      "bottom": [
       15,
       7
      ]
     },
     {
-     "id": "ruin_0_0",
+     "id": "isle_landNW",
      "bottom": [
       0,
+      8
+     ]
+    },
+    {
+     "id": "isle_sTLBR",
+     "bottom": [
+      1,
+      8
+     ]
+    },
+    {
+     "id": "isle_sTRBL",
+     "bottom": [
+      2,
+      8
+     ]
+    },
+    {
+     "id": "pillar_0_0",
+     "bottom": [
+      3,
+      8
+     ]
+    },
+    {
+     "id": "pillar_0_1",
+     "bottom": [
+      3,
+      9
+     ]
+    },
+    {
+     "id": "pillar_0_2",
+     "bottom": [
+      3,
       10
+     ]
+    },
+    {
+     "id": "causeway_v",
+     "bottom": [
+      4,
+      8
+     ]
+    },
+    {
+     "id": "causeway_v_sh",
+     "bottom": [
+      5,
+      8
+     ]
+    },
+    {
+     "id": "causeway_head",
+     "bottom": [
+      6,
+      8
+     ]
+    },
+    {
+     "id": "causeway_broken",
+     "bottom": [
+      7,
+      8
+     ]
+    },
+    {
+     "id": "stepping",
+     "bottom": [
+      8,
+      8
+     ]
+    },
+    {
+     "id": "ruin_0_0",
+     "bottom": [
+      9,
+      8
      ]
     },
     {
      "id": "ruin_0_1",
      "bottom": [
-      0,
-      11
+      9,
+      9
      ]
     },
     {
      "id": "ruin_l_0_0",
      "bottom": [
-      1,
-      10
+      10,
+      8
      ]
     },
     {
      "id": "ruin_l_1_0",
      "bottom": [
-      2,
-      10
+      11,
+      8
      ]
     },
     {
      "id": "ruin_l_0_1",
+     "bottom": [
+      10,
+      9
+     ]
+    },
+    {
+     "id": "ruin_l_1_1",
+     "bottom": [
+      11,
+      9
+     ]
+    },
+    {
+     "id": "pillar_fallen_0_0",
+     "bottom": [
+      12,
+      8
+     ]
+    },
+    {
+     "id": "pillar_fallen_1_0",
+     "bottom": [
+      13,
+      8
+     ]
+    },
+    {
+     "id": "pillar_fallen_2_0",
+     "bottom": [
+      14,
+      8
+     ]
+    },
+    {
+     "id": "pillar_fallen_sh_0_0",
+     "bottom": [
+      0,
+      11
+     ]
+    },
+    {
+     "id": "pillar_fallen_sh_1_0",
      "bottom": [
       1,
       11
      ]
     },
     {
-     "id": "ruin_l_1_1",
+     "id": "pillar_fallen_sh_2_0",
      "bottom": [
       2,
+      11
+     ]
+    },
+    {
+     "id": "blocks_sh",
+     "bottom": [
+      3,
+      11
+     ]
+    },
+    {
+     "id": "reflection",
+     "bottom": [
+      4,
+      11
+     ]
+    },
+    {
+     "id": "shore_w",
+     "bottom": [
+      5,
+      11
+     ]
+    },
+    {
+     "id": "shore_e",
+     "bottom": [
+      6,
       11
      ]
     }

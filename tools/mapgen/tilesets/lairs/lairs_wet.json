@@ -362,6 +362,63 @@
     224,
     216
    ]
+  ],
+  "SHORE": [
+   [
+    40,
+    56,
+    40
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    72,
+    96,
+    64
+   ],
+   [
+    80,
+    80,
+    80
+   ],
+   [
+    80,
+    112,
+    104
+   ],
+   [
+    88,
+    72,
+    72
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    104,
+    152,
+    120
+   ],
+   [
+    120,
+    160,
+    104
+   ]
   ]
  },
  "pieces": {
@@ -954,9 +1011,135 @@
    "lair": "rougarou",
    "comment": "1x1 a stump raked by claws, blocking"
   },
-  "fog_grass0": {
+  "dead_snag": {
    "x": 8,
    "y": 2,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "lw:dead_snag_0_0",
+     "lw:dead_snag_1_0"
+    ],
+    [
+     "lw:dead_snag_0_1",
+     "lw:dead_snag_1_1"
+    ],
+    [
+     "lw:dead_snag_0_2",
+     "lw:dead_snag_1_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "2x3 a second dead tree, a split snag, blocking"
+  },
+  "cattails": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:cattails"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x1 cattails on the pond's grassy edge, blocking"
+  },
+  "bones": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:bones"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "1x1 bleached bones in the grass (walkable)"
+  },
+  "trap": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:trap"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "1x1 an old sprung leg-hold trap (walkable)"
+  },
+  "hunting_stand": {
+   "x": 13,
+   "y": 2,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "lw:hunting_stand_0_0",
+     "lw:hunting_stand_1_0"
+    ],
+    [
+     "lw:hunting_stand_0_1",
+     "lw:hunting_stand_1_1"
+    ],
+    [
+     "lw:hunting_stand_0_2",
+     "lw:hunting_stand_1_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "2x3 an old hunting stand, blocking"
+  },
+  "fence_a": {
+   "x": 15,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fence_a"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x1 a broken fence: posts and a sagging rail, blocking"
+  },
+  "fence_b": {
+   "x": 0,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fence_b"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x1 a broken fence: a post and a fallen rail, blocking"
+  },
+  "fog_grass0": {
+   "x": 1,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -974,8 +1157,8 @@
    "comment": "1x1 a band of ground mist over grass (walkable)"
   },
   "fog_water0": {
-   "x": 9,
-   "y": 2,
+   "x": 2,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -988,8 +1171,8 @@
    "comment": "1x1 a band of mist over water (water: blocking)"
   },
   "fog_grass1": {
-   "x": 10,
-   "y": 2,
+   "x": 3,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1007,8 +1190,8 @@
    "comment": "1x1 a band of ground mist over grass (walkable)"
   },
   "fog_water1": {
-   "x": 11,
-   "y": 2,
+   "x": 4,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1021,8 +1204,8 @@
    "comment": "1x1 a band of mist over water (water: blocking)"
   },
   "shallows_C": {
-   "x": 12,
-   "y": 2,
+   "x": 5,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1035,8 +1218,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (C)"
   },
   "shallows_N": {
-   "x": 13,
-   "y": 2,
+   "x": 6,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1049,8 +1232,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (N)"
   },
   "shallows_S": {
-   "x": 14,
-   "y": 2,
+   "x": 7,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1063,8 +1246,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (S)"
   },
   "shallows_W": {
-   "x": 15,
-   "y": 2,
+   "x": 8,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1077,7 +1260,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (W)"
   },
   "shallows_E": {
-   "x": 0,
+   "x": 9,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1091,7 +1274,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (E)"
   },
   "shallows_inNW": {
-   "x": 1,
+   "x": 10,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1105,7 +1288,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inNW)"
   },
   "shallows_inNE": {
-   "x": 2,
+   "x": 11,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1119,7 +1302,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inNE)"
   },
   "shallows_inSW": {
-   "x": 3,
+   "x": 12,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1133,7 +1316,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inSW)"
   },
   "shallows_inSE": {
-   "x": 4,
+   "x": 13,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1147,7 +1330,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inSE)"
   },
   "shallows_landSE": {
-   "x": 5,
+   "x": 14,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1161,7 +1344,7 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landSE)"
   },
   "shallows_landSW": {
-   "x": 6,
+   "x": 15,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1175,8 +1358,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landSW)"
   },
   "shallows_landNE": {
-   "x": 7,
-   "y": 6,
+   "x": 0,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1189,8 +1372,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landNE)"
   },
   "shallows_landNW": {
-   "x": 8,
-   "y": 6,
+   "x": 1,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1203,8 +1386,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landNW)"
   },
   "shallows_sTLBR": {
-   "x": 9,
-   "y": 6,
+   "x": 2,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1217,8 +1400,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (sTLBR)"
   },
   "shallows_sTRBL": {
-   "x": 10,
-   "y": 6,
+   "x": 3,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1231,8 +1414,8 @@
    "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (sTRBL)"
   },
   "isle_C": {
-   "x": 11,
-   "y": 6,
+   "x": 4,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1250,8 +1433,8 @@
    "comment": "the island's grass bank on the shallows (C)"
   },
   "isle_N": {
-   "x": 12,
-   "y": 6,
+   "x": 5,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1269,8 +1452,8 @@
    "comment": "the island's grass bank on the shallows (N)"
   },
   "isle_S": {
-   "x": 13,
-   "y": 6,
+   "x": 6,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1288,8 +1471,8 @@
    "comment": "the island's grass bank on the shallows (S)"
   },
   "isle_W": {
-   "x": 14,
-   "y": 6,
+   "x": 7,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1307,8 +1490,8 @@
    "comment": "the island's grass bank on the shallows (W)"
   },
   "isle_E": {
-   "x": 15,
-   "y": 6,
+   "x": 8,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1326,7 +1509,7 @@
    "comment": "the island's grass bank on the shallows (E)"
   },
   "isle_inNW": {
-   "x": 0,
+   "x": 9,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1345,7 +1528,7 @@
    "comment": "the island's grass bank on the shallows (inNW)"
   },
   "isle_inNE": {
-   "x": 1,
+   "x": 10,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1364,7 +1547,7 @@
    "comment": "the island's grass bank on the shallows (inNE)"
   },
   "isle_inSW": {
-   "x": 2,
+   "x": 11,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1383,7 +1566,7 @@
    "comment": "the island's grass bank on the shallows (inSW)"
   },
   "isle_inSE": {
-   "x": 3,
+   "x": 12,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1402,7 +1585,7 @@
    "comment": "the island's grass bank on the shallows (inSE)"
   },
   "isle_landSE": {
-   "x": 4,
+   "x": 13,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1421,7 +1604,7 @@
    "comment": "the island's grass bank on the shallows (landSE)"
   },
   "isle_landSW": {
-   "x": 5,
+   "x": 14,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1440,7 +1623,7 @@
    "comment": "the island's grass bank on the shallows (landSW)"
   },
   "isle_landNE": {
-   "x": 6,
+   "x": 15,
    "y": 7,
    "w": 1,
    "h": 1,
@@ -1459,8 +1642,8 @@
    "comment": "the island's grass bank on the shallows (landNE)"
   },
   "isle_landNW": {
-   "x": 7,
-   "y": 7,
+   "x": 0,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1478,8 +1661,8 @@
    "comment": "the island's grass bank on the shallows (landNW)"
   },
   "isle_sTLBR": {
-   "x": 8,
-   "y": 7,
+   "x": 1,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1497,8 +1680,8 @@
    "comment": "the island's grass bank on the shallows (sTLBR)"
   },
   "isle_sTRBL": {
-   "x": 9,
-   "y": 7,
+   "x": 2,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1516,8 +1699,8 @@
    "comment": "the island's grass bank on the shallows (sTRBL)"
   },
   "pillar": {
-   "x": 10,
-   "y": 7,
+   "x": 3,
+   "y": 8,
    "w": 1,
    "h": 3,
    "rows": [
@@ -1536,8 +1719,8 @@
    "comment": "1x3 the carved pillar on the island, blocking"
   },
   "causeway_v": {
-   "x": 11,
-   "y": 7,
+   "x": 4,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1555,8 +1738,8 @@
    "comment": "causeway slabs over the lagoon (walkable)"
   },
   "causeway_v_sh": {
-   "x": 12,
-   "y": 7,
+   "x": 5,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1574,8 +1757,8 @@
    "comment": "causeway slabs over the shallows"
   },
   "causeway_head": {
-   "x": 13,
-   "y": 7,
+   "x": 6,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1593,8 +1776,8 @@
    "comment": "the causeway's south end at the landing"
   },
   "causeway_broken": {
-   "x": 14,
-   "y": 7,
+   "x": 7,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1607,8 +1790,8 @@
    "comment": "a broken span, slabs tipped into the water (blocking)"
   },
   "stepping": {
-   "x": 15,
-   "y": 7,
+   "x": 8,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1621,8 +1804,8 @@
    "comment": "1x1 stepping stones in the water (scenery, blocking)"
   },
   "ruin": {
-   "x": 0,
-   "y": 10,
+   "x": 9,
+   "y": 8,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1638,8 +1821,8 @@
    "comment": "1x2 a sunken carved pillar (route landmark art)"
   },
   "ruin_l": {
-   "x": 1,
-   "y": 10,
+   "x": 10,
+   "y": 8,
    "w": 2,
    "h": 2,
    "rows": [
@@ -1655,6 +1838,104 @@
    "walk": [],
    "lair": "suicune",
    "comment": "2x2 a larger sunken ruin (route landmark art)"
+  },
+  "pillar_fallen": {
+   "x": 12,
+   "y": 8,
+   "w": 3,
+   "h": 1,
+   "rows": [
+    [
+     "lw:pillar_fallen_0_0",
+     "lw:pillar_fallen_1_0",
+     "lw:pillar_fallen_2_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "3x1 a fallen pillar drum half sunk in the lagoon"
+  },
+  "pillar_fallen_sh": {
+   "x": 0,
+   "y": 11,
+   "w": 3,
+   "h": 1,
+   "rows": [
+    [
+     "lw:pillar_fallen_sh_0_0",
+     "lw:pillar_fallen_sh_1_0",
+     "lw:pillar_fallen_sh_2_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "3x1 a fallen pillar drum in the shallows"
+  },
+  "blocks_sh": {
+   "x": 3,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:blocks_sh"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "1x1 broken causeway blocks tipped into the shallows"
+  },
+  "reflection": {
+   "x": 4,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:reflection"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "1x1 the trees' reflection on the lagoon (water)"
+  },
+  "shore_w": {
+   "x": 5,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shore_w"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the west wall's edge where the lagoon's bank meets it (canopy over the bank)"
+  },
+  "shore_e": {
+   "x": 6,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shore_e"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the east wall's edge where the lagoon's bank meets it"
   }
  }
 }

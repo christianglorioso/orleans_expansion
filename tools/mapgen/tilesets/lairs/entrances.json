@@ -95,10 +95,10 @@
    "x": 10,
    "y": 0,
    "w": 1,
-   "h": 1,
+   "h": 2,
    "walk": [],
    "lair": "ursaluna",
-   "comment": "1x1 overlay: a clawed stump (Route 23)"
+   "comment": "1x2 overlay: a broken trunk raked by claws (Route 23)"
   },
   "charred_stake": {
    "x": 11,
@@ -107,7 +107,7 @@
    "h": 2,
    "walk": [],
    "lair": "entei",
-   "comment": "1x2 overlay: a charred stake, glowing tip (Route 16)"
+   "comment": "1x2 overlay: two charred stakes in an X, glowing tips, an ash ring (Route 16)"
   }
  },
  "source": {
@@ -268,6 +268,13 @@
     "bottom": [
      10,
      0
+    ]
+   },
+   {
+    "id": "10_1",
+    "bottom": [
+     10,
+     1
     ]
    },
    {
@@ -447,11 +454,16 @@
    ]
   },
   "claw_stump": {
-   "_comment": "1x1 overlay: a clawed stump (Route 23)",
+   "_comment": "1x2 overlay: a broken trunk raked by claws (Route 23)",
    "rows": [
     [
      {
       "overlay": "lent:10_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:10_1"
      }
     ]
    ],
@@ -459,7 +471,7 @@
    "passable": []
   },
   "charred_stake": {
-   "_comment": "1x2 overlay: a charred stake, glowing tip (Route 16)",
+   "_comment": "1x2 overlay: two charred stakes in an X, glowing tips, an ash ring (Route 16)",
    "rows": [
     [
      {
@@ -510,7 +522,7 @@
     [
      "claw_stump",
      21,
-     3
+     2
     ]
    ],
    "sealed": "the feather notch at x 22-23 filled with the dry scrub block",
