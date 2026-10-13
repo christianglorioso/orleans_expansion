@@ -450,8 +450,102 @@ def edge_cell(style, face, parity, base, g):
     return img, stray
 
 
+# ---------------------------------------------------------------- OUTER (convex) corner cells (2026-10-13)
+# The terrain cell diagonal to a wall's convex corner: the wall is a quadrant (union of 2x2 blocks on the even grid, so the
+# corner's wall cell always has parity (1, 1) for out_NW, (0, 1) out_NE, (1, 0) out_SW, (0, 0) out_SE and the corner cell
+# the opposite one: out_NW (0, 0), out_NE (1, 0), out_SW (0, 1), out_SE (1, 1)). Its two 4-neighbours on the wall side are
+# the faces' edge cells (out_NW: S_1 to its west, E_1 to its north). The cell shows exactly the overhanging clumps that cross
+# into it from those two edge cells (so it joins them pixel-exactly, as the next face cell along a straight wall would),
+# plus one corner clump of the tree standing in the wall's corner, which rounds the canopy off diagonally; its right /
+# bottom (outer) sides are plain ground. Grounds: any 16x16 cell (bake_edge(style, "out_NW", None, base16)).
+OUTER = {   # corner: (horizontal face's wall, vertical face's wall, cell origin in block coordinates, unit vector out of the corner)
+    "out_NW": ("S", "E", (P, P), (1, 1)),
+    "out_NE": ("S", "W", (P - 16, P), (-1, 1)),
+    "out_SW": ("N", "E", (P, P - 16), (1, -1)),
+    "out_SE": ("N", "W", (P - 16, P - 16), (-1, -1)),
+}
+OUTER_ORDER = ("out_NW", "out_NE", "out_SW", "out_SE")
+# the corner clump: centre CORNER_D px out from the wall corner along the diagonal, radii (rx, ry); per style
+CORNER_CLUMP = {"swamp": (3.0, 5.0, 4.0), "dry": (3.0, 4.5, 3.5)}
+
+
+def _quad(corner):
+    hw, vw = OUTER[corner][:2]
+    return lambda x, y: WALLS[hw](x, y) and WALLS[vw](x, y)
+
+
+def corner_tree(style, corner):
+    """the tree standing in the wall's corner pixel (its clumps cover the pixel just inside the corner), as (species,
+    tree bias, tree key, box, height) from the block's clumps; None if the corner pixel is open ground"""
+    hw, vw, (ex, ey), (ux, uy) = OUTER[corner]
+    px, py = P - (1 if ux > 0 else 0), P - (1 if uy > 0 else 0)     # the wall pixel at the corner
+    best = None
+    for c in sorted(clumps_of(style), key=order_key):
+        if (px, py) in footprint(c):
+            best = c
+    return best
+
+
+def outer_cell(style, corner, base, g, corner_clump=True):
+    """The 16x16 outer-corner cell over the 16x16 ground cell `base` (see OUTER). Returns (img, info)."""
+    hw, vw, (ex, ey), (ux, uy) = OUTER[corner]
+    quad = _quad(corner)
+    bp = base.load()
+    bg = block_ground(style, g)
+    for w in (hw, vw):
+        if (style, w) not in _KEEP:
+            _KEEP[(style, w)] = wall_keep(style, w)
+    kh, kv = _KEEP[(style, hw)], _KEEP[(style, vw)]
+
+    def ground(x, y):
+        if quad(x, y):
+            return bg(x, y) if bg else None
+        return bp[x % 16, y % 16]
+    ntrees = len(STYLES[style]["trees"])
+    allc = clumps_of(style, extras=True)
+    fp = {(c[7], c[8]): footprint(c) for c in allc if ex - 20 < c[0] < ex + 36 and ey - 20 < c[1] < ey + 36}
+
+    def keep(c):
+        k = (c[7], c[8])
+        if k not in fp:
+            return False
+        pts = fp[k]
+        if c[7][0] < ntrees:
+            # a face's overhanging clump crosses in only if it reaches the wall's other side (it lies in that face's edge cell
+            # or in the wall itself)
+            return ((k in kh and any(WALLS[vw](x, y) for x, y in pts))
+                    or (k in kv and any(WALLS[hw](x, y) for x, y in pts)))
+        return False   # no edge-only stones in an outer corner: the faces and inner corners already carry them every 32 px
+    extra = []
+    if corner_clump:
+        t = corner_tree(style, corner)
+        if t is not None:
+            d, rx, ry = CORNER_CLUMP[style]
+            cx, cy = P + ux * d, P + uy * d
+            # one more clump of the corner tree, the last of its clumps (index past the layout's), drawn over its neighbours
+            extra.append((cx, cy, rx, ry, 0.0, t[5], t[6], t[7], 900 + OUTER_ORDER.index(corner), t[9], t[10]))
+    img, owner = render_extra(style, ex, ey, 16, 16, ground, keep, extra)
+    return img, {"corner_tree": None if not extra else extra[0][5]}
+
+
+def render_extra(style, x0, y0, w, h, ground, keep, extra):
+    """render() with extra clumps added to the layout (the outer corner's corner clump)"""
+    global clumps_of
+    base_fn = clumps_of
+
+    def patched(st, reps=2, extras=False):
+        return base_fn(st, reps, extras) + (list(extra) if st == style else [])
+    clumps_of = patched
+    try:
+        return render(style, x0, y0, w, h, ground, lambda c: keep(c) or c in extra, extras=True)
+    finally:
+        clumps_of = base_fn
+
+
 def bake_edge(style, face, parity, base16):
-    """Public: an edge cell baked on any 16x16 ground cell (PIL RGB)."""
+    """Public: an edge cell baked on any 16x16 ground cell (PIL RGB). face may also be an outer corner (out_NW ...)."""
+    if face in OUTER:
+        return outer_cell(style, face, base16, ground_cells())[0]
     return edge_cell(style, face, parity, base16, ground_cells())[0]
 
 

@@ -1,0 +1,125 @@
+{
+ "_comment": "Outer (convex) corner cells of the border walls (make_border_corners.py). File = <id>.png, named as borders.bake() names a baked edge cell with face = the corner (out_NW: the wall is NW of the cell, the cell sits at parity (0, 0); out_NE (1, 0); out_SW (0, 1); out_SE (1, 1)).",
+ "cells": {
+  "bk_swamp_out_NW_f819ccaa": {
+   "style": "swamp",
+   "corner": "out_NW",
+   "ground": "marsh",
+   "under": "ekat:marsh_C"
+  },
+  "bk_swamp_out_NE_f819ccaa": {
+   "style": "swamp",
+   "corner": "out_NE",
+   "ground": "marsh",
+   "under": "ekat:marsh_C"
+  },
+  "bk_swamp_out_SW_f819ccaa": {
+   "style": "swamp",
+   "corner": "out_SW",
+   "ground": "marsh",
+   "under": "ekat:marsh_C"
+  },
+  "bk_swamp_out_SE_f819ccaa": {
+   "style": "swamp",
+   "corner": "out_SE",
+   "ground": "marsh",
+   "under": "ekat:marsh_C"
+  },
+  "bk_swamp_out_NW_5181453c": {
+   "style": "swamp",
+   "corner": "out_NW",
+   "ground": "water",
+   "under": "ekat:water_C"
+  },
+  "bk_swamp_out_NE_5181453c": {
+   "style": "swamp",
+   "corner": "out_NE",
+   "ground": "water",
+   "under": "ekat:water_C"
+  },
+  "bk_swamp_out_SW_5181453c": {
+   "style": "swamp",
+   "corner": "out_SW",
+   "ground": "water",
+   "under": "ekat:water_C"
+  },
+  "bk_swamp_out_SE_5181453c": {
+   "style": "swamp",
+   "corner": "out_SE",
+   "ground": "water",
+   "under": "ekat:water_C"
+  },
+  "bdg_swamp_out_NW_542aa1ca": {
+   "style": "swamp",
+   "corner": "out_NW",
+   "ground": "town grass",
+   "under": "ekat:grass"
+  },
+  "bdg_swamp_out_NE_542aa1ca": {
+   "style": "swamp",
+   "corner": "out_NE",
+   "ground": "town grass",
+   "under": "ekat:grass"
+  },
+  "bdg_swamp_out_SW_542aa1ca": {
+   "style": "swamp",
+   "corner": "out_SW",
+   "ground": "town grass",
+   "under": "ekat:grass"
+  },
+  "bdg_swamp_out_SE_542aa1ca": {
+   "style": "swamp",
+   "corner": "out_SE",
+   "ground": "town grass",
+   "under": "ekat:grass"
+  },
+  "bk_dry_out_NW_2cfd7b76": {
+   "style": "dry",
+   "corner": "out_NW",
+   "ground": "sand (dry ground d)",
+   "under": "dry:0_0"
+  },
+  "bk_dry_out_NE_2cfd7b76": {
+   "style": "dry",
+   "corner": "out_NE",
+   "ground": "sand (dry ground d)",
+   "under": "dry:0_0"
+  },
+  "bk_dry_out_SW_2cfd7b76": {
+   "style": "dry",
+   "corner": "out_SW",
+   "ground": "sand (dry ground d)",
+   "under": "dry:0_0"
+  },
+  "bk_dry_out_SE_2cfd7b76": {
+   "style": "dry",
+   "corner": "out_SE",
+   "ground": "sand (dry ground d)",
+   "under": "dry:0_0"
+  },
+  "bk_dry_out_NW_28ea4f5b": {
+   "style": "dry",
+   "corner": "out_NW",
+   "ground": "red earth (e)",
+   "under": "dry:0_14"
+  },
+  "bk_dry_out_NE_28ea4f5b": {
+   "style": "dry",
+   "corner": "out_NE",
+   "ground": "red earth (e)",
+   "under": "dry:0_14"
+  },
+  "bk_dry_out_SW_28ea4f5b": {
+   "style": "dry",
+   "corner": "out_SW",
+   "ground": "red earth (e)",
+   "under": "dry:0_14"
+  },
+  "bk_dry_out_SE_28ea4f5b": {
+   "style": "dry",
+   "corner": "out_SE",
+   "ground": "red earth (e)",
+   "under": "dry:0_14"
+  }
+ }
+}
