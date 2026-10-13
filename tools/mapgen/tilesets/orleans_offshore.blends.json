@@ -712,5 +712,84 @@
    "art": "lmk:9_9",
    "walk": true
   }
+ },
+ {
+  "id": "ovl_lmk_15_7__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:15_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_15_8__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:15_8"
+  }
+ },
+ {
+  "id": "bk_swamp_E0_b43e3fbf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_b43e3fbf.png",
+  "attr_of": "ekat:marsh_N"
+ },
+ {
+  "id": "bk_swamp_E0_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_E1_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_N0_9b836668",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N0_9b836668.png",
+  "attr_of": "ekat:marsh_E"
+ },
+ {
+  "id": "bk_swamp_S0_9b836668",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_S0_9b836668.png",
+  "attr_of": "ekat:marsh_E"
+ },
+ {
+  "id": "bk_swamp_W0_b43e3fbf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W0_b43e3fbf.png",
+  "attr_of": "ekat:marsh_N"
+ },
+ {
+  "id": "bk_swamp_W0_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W0_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_W1_b43e3fbf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_b43e3fbf.png",
+  "attr_of": "ekat:marsh_N"
+ },
+ {
+  "id": "bk_swamp_in_NW_ac92689d",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_in_NW_ac92689d.png",
+  "attr_of": "ekat:marsh_inNW"
+ },
+ {
+  "id": "bk_swamp_out_NE_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_NW_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NW_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_SE_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_SW_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SW_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
  }
 ]

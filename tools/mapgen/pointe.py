@@ -18,7 +18,7 @@ Layout (x right, y down), following the mockup (review round 2, 2026-10-12: less
     PC, Mart      between the Capitol and the river; Riverfront Drive (x 45-47, widening to bays) joins both bridges
     works         ONE closed fence (x 1-19, y 21-47) round the refinery (crude tanks, columns, flare stack, process house,
                   planted islands in its floor) and the rail yard (three sidings of boxcars); one gate, Refinery Road
-                  (east); the sidings end inside the yard, just short of the west fence
+                  (east); the three sidings run on west through gaps in the west fence to the map's edge
     south         tackle shop and old ice plant on lawns off Laurel Street; a house with a path to the levee road;
                   Kingfisher's boathouse gym standing on the quay (x 40-46) with its dock; lawns, benches facing flower
                   beds; the dock walk (x 37-38)
@@ -238,7 +238,7 @@ def refinery_works(t):
 
 
 # one closed fence round the whole works and the rail yard below it: x 1..19, y 21..47. The one gate (an opening with a
-# post either side) is Refinery Road in the east side; the sidings end inside the yard, just short of the west fence.
+# post either side) is Refinery Road in the east side; the three sidings pass through 1-cell gaps in the west fence.
 FENCE = (1, 21, 19, 47)
 
 
@@ -274,17 +274,18 @@ def fence(t, x0, y0, x1, y1, gates=()):
 
 def compound_fence(t):
     x0, y0, x1, y1 = FENCE
-    gates = {(x1, 33), (x1, 34)}
+    gates = {(x1, 33), (x1, 34)} | {(x0, y) for y in RAIL_ROWS}   # Refinery Road (east), and a gap where each siding runs out west
     fence(t, x0, y0, x1, y1, gates)
 
 
 def rail_yard(t):
-    """Three sidings from just inside the west fence (the track stops one cell short of it) to the yard lane, each with a boxcar
-    or two standing on it (the boxcar's bottom row is the track)."""
+    """Three sidings from the map's west edge (x 0, out through a gap in the fence) to the yard lane, each with a boxcar or two
+    standing on it (the boxcar's bottom row is the track). The track and cars are primary art (gTileset_OrleansGeneral), so they
+    may stand in the seam bands of the south and south-west."""
     for y, cars in ((RAIL_ROWS[0], (3, 11)), (RAIL_ROWS[1], (7,)), (RAIL_ROWS[2], (3, 11))):
         for car in cars:
             t.place("rail_car", car, y - 1, "Rail car", ground=None)
-        for x in range(3, 17):
+        for x in range(0, 17):
             if (x, y) not in t.occ:
                 t.place("rail_h", x, y, "Track", ground=None)
 

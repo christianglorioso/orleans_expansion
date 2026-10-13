@@ -8,7 +8,7 @@ IsleMarais_OnLoad:
 
 @ The player's house is boarded up until Magnolia is beaten; then Mom moves back in.
 IsleMarais_EventScript_BoardUpPlayersHouse::
-	setmetatile 16, 18, 569, TRUE   @ the cabin wall where the door was (a name, not an id: ids move when the tileset is recomposed)
+	setmetatile 16, 18, 573, TRUE   @ the cabin wall where the door was (a name, not an id: ids move when the tileset is recomposed)
 	return
 
 IsleMarais_EventScript_BoardedDoor::

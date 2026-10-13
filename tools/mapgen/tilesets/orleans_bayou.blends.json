@@ -230,5 +230,109 @@
    "M": "ekat:marsh_E",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "bk_swamp_E1_80455671",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_80455671.png",
+  "attr_of": "ekat:marshwater_S"
+ },
+ {
+  "id": "bk_swamp_W1_e805cc08",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_e805cc08.png",
+  "attr_of": "ekat:marshwater_N"
+ },
+ {
+  "id": "bk_swamp_out_NE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_NE_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_NW_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NW_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_NW_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NW_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_SE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_SE_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_out_SW_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SW_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_SW_f819ccaa",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SW_f819ccaa.png",
+  "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "bk_swamp_E0_b43e3fbf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_b43e3fbf.png",
+  "attr_of": "ekat:marsh_N"
+ },
+ {
+  "id": "bk_swamp_E0_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_E1_9c92079a",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_9c92079a.png",
+  "attr_of": "ekat:water_S"
+ },
+ {
+  "id": "bk_swamp_E1_f9abf6da",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_f9abf6da.png",
+  "attr_of": "ekat:water_N"
+ },
+ {
+  "id": "bk_swamp_W0_b43e3fbf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W0_b43e3fbf.png",
+  "attr_of": "ekat:marsh_N"
+ },
+ {
+  "id": "bk_swamp_W1_9c92079a",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_9c92079a.png",
+  "attr_of": "ekat:water_S"
+ },
+ {
+  "id": "bk_swamp_W1_d0e443d9",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_d0e443d9.png",
+  "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_W1_f9abf6da",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_f9abf6da.png",
+  "attr_of": "ekat:water_N"
+ },
+ {
+  "id": "bk_swamp_out_SE_8490e987",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_8490e987.png",
+  "attr_of": "ekat:marsh_W"
+ },
+ {
+  "id": "blend_marsh_landSW_inSE",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:marshwater_landSW",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
  }
 ]

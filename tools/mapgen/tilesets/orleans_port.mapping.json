@@ -269,7 +269,12 @@
 "patch:ovl_lmk_9_4__ekat_grass": 766,
 "patch:ovl_lmk_9_5__ekat_grass": 767,
 "patch:ovl_lmk_9_6__ekat_grass": 768,
-"patch:ovl_lmk_9_7__ekat_grass": 769
+"patch:ovl_lmk_9_7__ekat_grass": 769,
+"patch:ovl_lmk_15_7__ekat_water_C": 770,
+"patch:ovl_lmk_15_8__ekat_water_C": 771,
+"patch:bk_swamp_N0_104d7ecb": 772,
+"patch:bk_swamp_out_SE_5181453c": 773,
+"patch:bk_swamp_out_SW_5181453c": 774
 },
 "palettes": null,
 "tiles": {}

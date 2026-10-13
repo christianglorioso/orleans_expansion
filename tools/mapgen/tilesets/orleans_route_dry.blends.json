@@ -1521,5 +1521,101 @@
    "walk": true,
    "behavior": "MB_NON_ANIMATED_DOOR"
   }
+ },
+ {
+  "id": "bk_dry_E1_84a74186",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_E1_84a74186.png",
+  "attr_of": "dry:1_1"
+ },
+ {
+  "id": "bk_dry_W0_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_W0_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_W1_23e759fd",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_W1_23e759fd.png",
+  "attr_of": "dry:6_1"
+ },
+ {
+  "id": "bk_dry_in_SE_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_in_SE_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_out_NE_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NE_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_NE_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NE_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_out_NW_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NW_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_SE_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_SE_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_SE_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_SE_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_out_SW_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_SW_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_E1_38ff78b3",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_E1_38ff78b3.png",
+  "attr_of": "dry:0_19"
+ },
+ {
+  "id": "bk_dry_out_NW_c51999b7",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NW_c51999b7.png",
+  "attr_of": "dry:3_18"
+ },
+ {
+  "id": "ovl_lmk_14_7__dry_4_18",
+  "overlay": {
+   "base": "dry:4_18",
+   "art": "lmk:14_7"
+  }
+ },
+ {
+  "id": "ovl_lmk_14_8__dry_3_19",
+  "overlay": {
+   "base": "dry:3_19",
+   "art": "lmk:14_8"
+  }
+ },
+ {
+  "id": "ovl_lmk_14_9__dry_2_22",
+  "overlay": {
+   "base": "dry:2_22",
+   "art": "lmk:14_9"
+  }
+ },
+ {
+  "id": "bk_dry_N0_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_N0_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_S0_d38f12ed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_S0_d38f12ed.png",
+  "attr_of": "dry:2_1"
+ },
+ {
+  "id": "bk_dry_W1_84a74186",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_W1_84a74186.png",
+  "attr_of": "dry:1_1"
  }
 ]

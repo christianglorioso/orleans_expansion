@@ -61,6 +61,8 @@ def is_structure(b, bd):
 def _primary_cell(b, c):
     if isinstance(c, str):
         return _primary_name(b, c)
+    if isinstance(c, dict) and c.get("overlay") in _build(b).PRIMARY_LMK and b.spec["tileset"] == "orleans_pointe":
+        return True                      # the rail track / boxcar over paving or grass: in the primary (Pointe Rouge's rail yard)
     if isinstance(c, dict) and "overlay" in c and not c.get("walk") and not c.get("upper"):
         build = _build(b)
         art = c["overlay"].split(":")[0]

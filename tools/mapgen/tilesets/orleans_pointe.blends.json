@@ -3062,5 +3062,35 @@
    "base": "johto:1C1",
    "art": "sbr:2_2"
   }
+ },
+ {
+  "id": "bk_swamp_N0_fd9c61fe",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N0_fd9c61fe.png",
+  "attr_of": "ekat:water_E"
+ },
+ {
+  "id": "bk_swamp_S0_fd9c61fe",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_S0_fd9c61fe.png",
+  "attr_of": "ekat:water_E"
+ },
+ {
+  "id": "bk_swamp_S1_104d7ecb",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_S1_104d7ecb.png",
+  "attr_of": "ekat:water_W"
+ },
+ {
+  "id": "bk_swamp_out_NE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_NW_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NW_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_SE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_5181453c.png",
+  "attr_of": "ekat:water_C"
  }
 ]

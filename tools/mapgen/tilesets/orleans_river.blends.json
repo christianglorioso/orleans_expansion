@@ -1003,5 +1003,25 @@
   "base": "ekat:grass",
   "attr_of": "ekat:grass",
   "group": "levee"
+ },
+ {
+  "id": "bk_swamp_N0_bfdb6fcf",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N0_bfdb6fcf.png",
+  "attr_of": "patch:lv_9a4709f8f910"
+ },
+ {
+  "id": "bk_swamp_W0_42854eed",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W0_42854eed.png",
+  "attr_of": "patch:lv_d1d6d5abf88d"
+ },
+ {
+  "id": "bk_swamp_out_NE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_SE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_5181453c.png",
+  "attr_of": "ekat:water_C"
  }
 ]

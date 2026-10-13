@@ -2487,5 +2487,12 @@
    "base": "ekat:grass",
    "art": "ccw:wh_wall9_82"
   }
+ },
+ {
+  "id": "ovl_ccw_sign_00__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "ccw:sign_00"
+  }
  }
 ]

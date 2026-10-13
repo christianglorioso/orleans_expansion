@@ -27,6 +27,20 @@ DEMAND = False
 
 
 PRIMARY_ART = ("brg", "mag", "props")  # overlay art that lives in the primary (make_primary_recipe.py): the railed road bridge
+# the rail track and boxcar (route landmark art) over paving / grass: Pointe Rouge's rail yard runs through its seam bands, so just
+# these pieces over just these grounds live in the primary (make_primary_recipe.py LMK_IDS, tilesets/orleans_general.blends.json)
+PRIMARY_LMK = {f"lmk:{i}" for i in ("15_9", "8_11", "9_11", "10_11", "8_12", "9_12", "10_12")}
+PRIMARY_LMK_BASES = ("johto:1C9", "johto:1C8", "johto:1B9", "ekat:grass")
+
+
+CURRENT_TILESET = ""
+
+
+def primary_overlay(o):
+    """is this overlay (a dict with art, base) of primary art over a primary ground (so it belongs to the primary's blends)?"""
+    if o["art"] in PRIMARY_LMK:     # only Pointe Rouge's yard: other maps' landmark rails stay in their own secondary
+        return o["base"] in PRIMARY_LMK_BASES and CURRENT_TILESET == "orleans_pointe"
+    return o["art"].split(":")[0] in PRIMARY_ART and 0 <= MAPPING.get(o["base"], 9999) < 512
 PRIMARY_IDS = None  # metatile ids the (pruned) primary really holds: tilesets/orleans_general.mapping.json
 CHECK_PRIMARY = False  # set by Builder for maps on gTileset_OrleansGeneral
 
@@ -789,9 +803,12 @@ def main(argv):
     elif b.pending_blends:
         # an overlay of primary art on a primary piece (the shared bridge, tilesets/orleans_general.blends.json) belongs to the
         # primary: every secondary reaches it there, and it may stand in a seam band
+        global CURRENT_TILESET
+        CURRENT_TILESET = b.spec["tileset"]
+
         def pool(e):
             o = e.get("overlay")
-            if o and o["art"].split(":")[0] in PRIMARY_ART and 0 <= MAPPING.get(o["base"], 9999) < 512                     and not (o["art"].startswith("mag:") and b.spec["tileset"] == "orleans_pointe"):   # Pointe's magnolia is its own art
+            if o and primary_overlay(o) and not (o["art"].startswith("mag:") and b.spec["tileset"] == "orleans_pointe"):   # Pointe's magnolia is its own art
                 return "orleans_general.blends.json"
             if e["id"].startswith("bdg_"):   # swamp border cells baked over grass: the primary's
                 return "orleans_general.blends.json"

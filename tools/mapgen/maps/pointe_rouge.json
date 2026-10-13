@@ -970,7 +970,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0F7"
         ]
       ]
     },
@@ -987,17 +987,6 @@
     },
     {
       "prefab": "fence",
-      "x": 1,
-      "y": 38,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
       "x": 19,
       "y": 38,
       "label": "Fence",
@@ -1014,7 +1003,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0EF"
         ]
       ]
     },
@@ -1036,7 +1025,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0F7"
         ]
       ]
     },
@@ -1053,17 +1042,6 @@
     },
     {
       "prefab": "fence",
-      "x": 1,
-      "y": 41,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
       "x": 19,
       "y": 41,
       "label": "Fence",
@@ -1080,7 +1058,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0EF"
         ]
       ]
     },
@@ -1102,7 +1080,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0F7"
         ]
       ]
     },
@@ -1114,17 +1092,6 @@
       "rows": [
         [
           "0F5"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 1,
-      "y": 44,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
         ]
       ]
     },
@@ -1146,7 +1113,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F4"
+          "0EF"
         ]
       ]
     },
@@ -1194,6 +1161,24 @@
       "x": 11,
       "y": 37,
       "label": "Rail car"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 0,
+      "y": 38,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 1,
+      "y": 38,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 2,
+      "y": 38,
+      "label": "Track"
     },
     {
       "prefab": "rail_h",
@@ -1248,6 +1233,24 @@
       "x": 7,
       "y": 40,
       "label": "Rail car"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 0,
+      "y": 41,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 1,
+      "y": 41,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 2,
+      "y": 41,
+      "label": "Track"
     },
     {
       "prefab": "rail_h",
@@ -1326,6 +1329,24 @@
       "x": 11,
       "y": 43,
       "label": "Rail car"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 0,
+      "y": 44,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 1,
+      "y": 44,
+      "label": "Track"
+    },
+    {
+      "prefab": "rail_h",
+      "x": 2,
+      "y": 44,
+      "label": "Track"
     },
     {
       "prefab": "rail_h",

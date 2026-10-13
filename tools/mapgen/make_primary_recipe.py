@@ -22,6 +22,7 @@ RECIPES = os.path.join(HERE, "tilesets", "recipes")
 
 # metatile names (regexes over "source:name") that live in the primary
 SHARED = [
+    r"^patch:ovl_lmk_",        # the rail track and boxcar (route landmark art) over paving and grass: rails may run through a seam band
     r"^ekat:grass$",
     r"^ekat:marsh_",           # marsh set + plants (marsh_C, edges, corners, land*, saddles, marsh_plants*)
     r"^ekat:marshwater_",      # marsh-water bank
@@ -41,6 +42,7 @@ SHARED = [
     r"^bd:swamp_",             # border art, swamp style (make_borders.py): canopy block, wall-edge cells on marsh and water
     r"^dry:0_0$",              # the plain dry-country ground: the ONE dry fill a seam band may hold
 ]
+LMK_IDS = ("15_9", "8_11", "9_11", "10_11", "8_12", "9_12", "10_12")   # track, boxcar top row, boxcar bottom row
 # patches taken over from the route tileset (the canonical green-route recipe): their sources are all in the primary
 WANT_PATCH = ("cypress_", "path_i", "tallgrass_marsh", "pier_")
 
@@ -89,6 +91,10 @@ def main(args):
                         ids.update({m["id"]: m for m in x["metatiles"]})
             src["metatiles"] = [ids[k] for k in sorted(ids)]
             cur["sources"].append(src)
+        # rail track + boxcar art (Pointe Rouge's rail yard runs through its seam bands): just the 7 landmark cells it uses
+        lmk = json.load(open(os.path.join(HERE, "sources", "orleans_custom", "route_landmarks.json"), encoding="utf-8"))["source"]
+        lmk["metatiles"] = [m for m in lmk["metatiles"] if m["id"] in LMK_IDS]
+        cur["sources"].append(lmk)
         cur["patches"] = [p for p in route["patches"] if p["id"].startswith(WANT_PATCH)]
         cur["shared"] = SHARED
         # grass and water must come out exact: keep the colours the route tileset keeps, plus the water the ekat sheet uses

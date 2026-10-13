@@ -1090,5 +1090,32 @@
    "M": "ekat:mud_E",
    "land": "ekat:mud_C"
   }
+ },
+ {
+  "id": "blend_mud_landNE_inSE",
+  "blend": {
+   "A": "ekat:water_landNE",
+   "B": "ekat:mudwater_landNE",
+   "M": "ekat:mud_inSE",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSE_N",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:mudwater_landSE",
+   "M": "ekat:mud_N",
+   "land": "ekat:mud_C"
+  }
+ },
+ {
+  "id": "blend_mud_landSW_N",
+  "blend": {
+   "A": "ekat:water_landSW",
+   "B": "ekat:mudwater_landSW",
+   "M": "ekat:mud_N",
+   "land": "ekat:mud_C"
+  }
  }
 ]

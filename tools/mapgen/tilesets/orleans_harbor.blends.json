@@ -2110,5 +2110,28 @@
    "base": "ekat:water_C",
    "art": "lmk:5_5"
   }
+ },
+ {
+  "id": "blend_marsh_N_inNE",
+  "blend": {
+   "A": "ekat:water_N",
+   "B": "ekat:marshwater_N",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ovl_lmk_6_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:6_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_6_6__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:6_6"
+  }
  }
 ]

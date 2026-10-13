@@ -3078,5 +3078,35 @@
   "base": "ekat:water_C",
   "attr_of": "ekat:water_C",
   "group": "levee"
+ },
+ {
+  "id": "bk_dry_N1_bf92d57f",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_N1_bf92d57f.png",
+  "attr_of": "dry:3_1"
+ },
+ {
+  "id": "bk_dry_S1_bf92d57f",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_S1_bf92d57f.png",
+  "attr_of": "dry:3_1"
+ },
+ {
+  "id": "bk_dry_out_NE_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NE_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_NW_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_NW_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_SE_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_SE_2cfd7b76.png",
+  "attr_of": "dry:0_0"
+ },
+ {
+  "id": "bk_dry_out_SW_2cfd7b76",
+  "pixels": "tools/mapgen/tilesets/borders/bk_dry_out_SW_2cfd7b76.png",
+  "attr_of": "dry:0_0"
  }
 ]

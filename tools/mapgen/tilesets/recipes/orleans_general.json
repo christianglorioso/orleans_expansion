@@ -2012,6 +2012,71 @@
      ]
     }
    ]
+  },
+  {
+   "name": "lmk",
+   "type": "image",
+   "image": "tools/mapgen/sources/orleans_custom/route_landmarks.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "overlay_only": true,
+   "_comment": "Route landmarks (own art, make_route_landmarks.py), overlays on any ground.",
+   "metatiles": [
+    {
+     "id": "15_9",
+     "bottom": [
+      15,
+      9
+     ]
+    },
+    {
+     "id": "8_11",
+     "bottom": [
+      8,
+      11
+     ]
+    },
+    {
+     "id": "9_11",
+     "bottom": [
+      9,
+      11
+     ]
+    },
+    {
+     "id": "10_11",
+     "bottom": [
+      10,
+      11
+     ]
+    },
+    {
+     "id": "8_12",
+     "bottom": [
+      8,
+      12
+     ]
+    },
+    {
+     "id": "9_12",
+     "bottom": [
+      9,
+      12
+     ]
+    },
+    {
+     "id": "10_12",
+     "bottom": [
+      10,
+      12
+     ]
+    }
+   ]
   }
  ],
  "_recolor": "Mint Johto/Emerald grass and lime foliage mapped onto Ekat99's muted swamp greens, so every source shares one grass colour.",
@@ -3151,6 +3216,7 @@
   }
  ],
  "shared": [
+  "^patch:ovl_lmk_",
   "^ekat:grass$",
   "^ekat:marsh_",
   "^ekat:marshwater_",

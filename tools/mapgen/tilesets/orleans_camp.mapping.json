@@ -313,7 +313,19 @@
 "patch:ovl_camp_8_19__ekat_water_C": 810,
 "patch:ovl_camp_10_7__ekat_grass": 811,
 "patch:ovl_camp_13_1__ekat_marsh_N": 812,
-"patch:blend_marsh_landSE_N": 813
+"patch:blend_marsh_landSE_N": 813,
+"patch:bk_swamp_N0_b0bf2b74": 814,
+"patch:bk_swamp_N0_e139eff7": 815,
+"patch:bk_swamp_S1_104d7ecb": 816,
+"patch:bk_swamp_S1_9b836668": 817,
+"patch:bk_swamp_out_NE_5181453c": 818,
+"patch:bk_swamp_out_NE_f819ccaa": 819,
+"patch:bk_swamp_out_NW_5181453c": 820,
+"patch:bk_swamp_out_NW_f819ccaa": 821,
+"patch:bk_swamp_out_SE_5181453c": 822,
+"patch:bk_swamp_out_SE_f819ccaa": 823,
+"patch:bk_swamp_out_SW_5181453c": 824,
+"patch:bk_swamp_out_SW_f819ccaa": 825
 },
 "palettes": null,
 "tiles": {}
