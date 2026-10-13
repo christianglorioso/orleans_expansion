@@ -1,5 +1,6 @@
 OldWater_SongHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, OldWater_SongHouse_OnLoad
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, OldWater_SongHouse_OnFrameTable
 	.byte 0
 
 @ Each verse panel stays bare reed wall until its Singer's badge is earned.
@@ -42,6 +43,7 @@ OldWater_SongHouse_EventScript_HideVerse4:
 OldWater_SongHouse_EventScript_Tupelo0::
 	lock
 	faceplayer
+	goto_if_ge VAR_ORLEANS_STORY, 38, OldWater_SongHouse_EventScript_TupeloTold
 	goto_if_eq VAR_ORLEANS_STORY, 5, OldWater_SongHouse_EventScript_TupeloTrust
 	goto_if_ge VAR_ORLEANS_STORY, 21, OldWater_SongHouse_EventScript_TupeloVerse4Gate
 OldWater_SongHouse_EventScript_TupeloRest:
@@ -353,3 +355,66 @@ OldWater_SongHouse_Text_Verse6B:
 OldWater_SongHouse_Text_Verse6Reminder:
 	.string "TUPELO: The carver is waiting in his\nworkshop. He has your charm.$"
 
+OldWater_SongHouse_OnFrameTable:
+	map_script_2 VAR_OLD_WATER_TELLING, 0, OldWater_SongHouse_EventScript_TellingEntry
+	.2byte 0
+
+@ 8.6 The full telling (story 38 -> 39): Tupelo assembles the eight verses; the quest to wake Kyogre and Groudon begins. Plays on the first
+@ entry while the story is 38 (Land's End's note warps the player here); everywhere else the entry does nothing.
+OldWater_SongHouse_EventScript_TellingEntry::
+	goto_if_ne VAR_ORLEANS_STORY, 38, OldWater_SongHouse_EventScript_TellingSkip
+	lockall
+	msgbox OldWater_SongHouse_Text_Telling1, MSGBOX_DEFAULT
+	msgbox OldWater_SongHouse_Text_Telling2, MSGBOX_DEFAULT
+	msgbox OldWater_SongHouse_Text_Telling3, MSGBOX_DEFAULT
+	msgbox OldWater_SongHouse_Text_Telling4, MSGBOX_DEFAULT
+	msgbox OldWater_SongHouse_Text_Telling5, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_OLD_WATER_TELLING, 2
+	setvar VAR_ORLEANS_STORY, 39
+	fadescreen FADE_TO_BLACK
+	warpsilent MAP_LANDS_END, 27, 35
+	waitstate
+	releaseall
+	end
+
+OldWater_SongHouse_EventScript_TellingSkip:
+	end
+
+OldWater_SongHouse_EventScript_TupeloTold:
+	msgbox OldWater_SongHouse_Text_Told, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_Text_Telling1:
+	.string "The song house is full of lamplight.\n"
+	.string "Eight panels, eight verses, and\p"
+	.string "TUPELO waiting under them with WREN.$"
+
+OldWater_SongHouse_Text_Telling2:
+	.string "TUPELO: Eight Singers, eight verses.\n"
+	.string "You carried every one here.\p"
+	.string "TUPELO: Put in order, they are the\n"
+	.string "telling. Sung whole, it calls it.$"
+
+OldWater_SongHouse_Text_Telling3:
+	.string "TUPELO: Not to destroy. To calm.\n"
+	.string "The Long One lay down to guard,\p"
+	.string "TUPELO: not to die. It is awake now.\n"
+	.string "Your song will settle it.$"
+
+OldWater_SongHouse_Text_Telling4:
+	.string "WREN: Two older sleepers keep the\n"
+	.string "water and land in balance.\p"
+	.string "WREN: KYOGRE in the DROWNED TEMPLE,\n"
+	.string "off Route 22. GROUDON, salt dome.$"
+
+OldWater_SongHouse_Text_Telling5:
+	.string "TUPELO: Wake and calm them first, so\n"
+	.string "the Long One is not alone.\p"
+	.string "TUPELO: Sing HERON's verse at the\n"
+	.string "temple door. The gear is the key.$"
+
+OldWater_SongHouse_Text_Told:
+	.string "TUPELO: The telling is whole. Wake\n"
+	.string "KYOGRE and GROUDON, then come back.$"

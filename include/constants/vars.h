@@ -109,12 +109,12 @@
 #define VAR_REDFIELD_RAID_CALL                           0x4057 // Chapter 7: Wren calls the player to the Old Water raid (0 = not yet)
 #define VAR_REDFIELD_MIRRORS                             0x4058 // Chapter 7: mill yard mirror facings, 2 bits each (6 mirrors)
 #define VAR_OLD_WATER_RAID                               0x4059 // Chapter 7: Isaac's raid at the Old Water (0 idle, 1 scene armed, 2 done)
-#define VAR_ORLEANS_POOL_010                            0x405A
-#define VAR_ORLEANS_POOL_011                            0x405B
-#define VAR_ORLEANS_POOL_012                            0x405C
+#define VAR_LANDS_END_ARRIVAL                            0x405A // Chapter 8: Land's End arrival scene (0 = not yet seen)
+#define VAR_HERON_PANELS                                 0x405B // Chapter 8: Heron's verse panels, the next verse expected (0-7)
+#define VAR_LANDS_END_SCENE                              0x405C // Chapter 8: Andrew and Jayden 5 scene (0 = pending)
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_ORLEANS_POOL_013                            0x405F
+#define VAR_OLD_WATER_TELLING                            0x405F // Chapter 8: the full telling at the Old Water (0 idle, 1 armed, 2 done)
 #define VAR_ROUTE101_STATE                               0x4060
 #define VAR_ORLEANS_POOL_014                            0x4061
 #define VAR_ORLEANS_POOL_015                            0x4062

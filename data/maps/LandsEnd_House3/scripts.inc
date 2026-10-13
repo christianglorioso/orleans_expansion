@@ -8,6 +8,6 @@ LandsEnd_House3_EventScript_Woman0::
 	end
 
 LandsEnd_House3_Text_Woman0:
-	.string "a man in a black coat asked\nabout the Rain Pavilion (story\pevent 2 outside)$"
+	.string "A man in a black coat asked about\nthe Rain Pavilion. Then he left.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

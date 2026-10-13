@@ -197,7 +197,7 @@
 #define FLAG_ROUTE11_ITEM_LIQUIDATION                    0x9F // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_RECEIVED_QUAQUAVALITE                       0xA0 // Orleans Ch6/7: the parade leader's Quaquavalite (after badge 6)
 #define FLAG_HIDE_REDFIELD_RITA                          0xA1 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
-#define FLAG_ORLEANS_POOL_052                            0xA2
+#define FLAG_HIDE_LANDS_END_ANDREW                       0xA2 // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_HIDE_REDFIELD_WREN                          0xA3 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
 #define FLAG_HIDE_RAID_ISAAC                             0xA4 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
 #define FLAG_HIDE_RAID_GRUNT1                            0xA5 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
@@ -235,16 +235,16 @@
 #define FLAG_ROUTE16_ITEM_THROAT_CHOP                    0xC5 // Orleans Ch7: item balls (TMs) placed by the story pass
 #define FLAG_ROUTE17_ITEM_FOUL_PLAY                      0xC6 // Orleans Ch7: item balls (TMs) placed by the story pass
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
-#define FLAG_ORLEANS_POOL_072                           0xC8
-#define FLAG_ORLEANS_POOL_073                           0xC9
-#define FLAG_ORLEANS_POOL_074                           0xCA
-#define FLAG_ORLEANS_POOL_075                           0xCB
-#define FLAG_ORLEANS_POOL_076                           0xCC
-#define FLAG_ORLEANS_POOL_077                           0xCD
-#define FLAG_ORLEANS_POOL_078                           0xCE
+#define FLAG_HIDE_LANDS_END_JAYDEN                       0xC8 // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_HERON_TRIAL_DONE                            0xC9 // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_RECEIVED_TM082_SCALD                        0xCA // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_RECEIVED_GYARADOSITE                        0xCB // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_RECEIVED_DIVING_GEAR                        0xCC // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_KABUTO_REVIVED                              0xCD // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_ROUTE18_ITEM_UPROAR                         0xCE // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
-#define FLAG_ORLEANS_POOL_079                           0xD0
-#define FLAG_ORLEANS_POOL_080                           0xD1
+#define FLAG_ORLEANS_POOL_079                            0xD0
+#define FLAG_ORLEANS_POOL_080                            0xD1
 #define FLAG_ORLEANS_POOL_081                           0xD2
 #define FLAG_ORLEANS_POOL_082                           0xD3
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
@@ -567,7 +567,7 @@
 #define FLAG_ROUTE5_HIDDEN_SUN_STONE                     (FLAG_HIDDEN_ITEMS_START + 0x05) // Orleans Ch4: hidden items
 #define FLAG_CAMP_HIDDEN_PEAT_BLOCK                      (FLAG_HIDDEN_ITEMS_START + 0x06) // Orleans Ch5: hidden Peat Block at the camp
 #define FLAG_ROUTE11_HIDDEN_ICE_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x07) // Orleans Ch6: hidden Ice Stone on Route 11
-#define FLAG_ORLEANS_POOL_183                           (FLAG_HIDDEN_ITEMS_START + 0x08)
+#define FLAG_ROUTE19_HIDDEN_DOME_FOSSIL                  (FLAG_HIDDEN_ITEMS_START + 0x08) // Chapter 8: hidden Dome Fossil on Route 19's tidal flats
 #define FLAG_ORLEANS_POOL_184                           (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_ORLEANS_POOL_185                           (FLAG_HIDDEN_ITEMS_START + 0x0A)
 #define FLAG_ORLEANS_POOL_186                           (FLAG_HIDDEN_ITEMS_START + 0x0B)

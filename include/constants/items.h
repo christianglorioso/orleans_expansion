@@ -1093,6 +1093,7 @@ enum __attribute__((packed)) Item
     ITEM_SERPERITE = 913,  // Orleans custom Mega stone (tools/dex/apply_megas.py)
     ITEM_LYCANROCITE = 914,  // Orleans custom Mega stone (tools/dex/apply_megas.py)
     ITEM_FAIS_DO_DO_RIBBON = 915,  // Orleans: evolves Petilil into Hisuian Lilligant (tools/dex/apply_evolutions.py)
+    ITEM_DIVING_GEAR = 916,  // Orleans: Heron's gift, lets the player dive off Route 22 (Chapter 8)
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

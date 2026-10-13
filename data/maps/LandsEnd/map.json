@@ -28,22 +28,22 @@
     {
       "local_id": "LOCALID_LANDS_END_ANDREW",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 35,
-      "y": 12,
+      "x": 26,
+      "y": 36,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LandsEnd_EventScript_Andrew",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LANDS_END_ANDREW"
     },
     {
       "local_id": "LOCALID_LANDS_END_JAYDEN",
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 36,
-      "y": 12,
+      "x": 28,
+      "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LandsEnd_EventScript_Jayden",
-      "flag": "0"
+      "flag": "FLAG_HIDE_LANDS_END_JAYDEN"
     },
     {
       "local_id": "LOCALID_LANDS_END_HERON",

@@ -344,6 +344,12 @@ def world_gates():
     s33 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET"}))
     want33 = want29 | {"Route19", "Route20", "LandsEnd", "Route21"}  # Route 21 only up to its row-8 cut
     check(s33 == want33, f"story 33 (verse 7, the fallen span is gone): Routes 18-20, Land's End and Route 21's near side open, no Route 22 cell (extra {sorted(s33 - want33)}, missing {sorted(want33 - s33)})")
+    s36 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET"}))
+    want36 = want33 | {"Route22"}
+    check(s36 == want36, f"story 36 (verse 8, the barge and the rain are gone): Route 21 and Route 22 open, nothing east of the dust storms (extra {sorted(s36 - want36)}, missing {sorted(want36 - s36)})")
+    s38 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET", "FLAG_DUST_STORMS_LIFTED"}))
+    want38 = want36 | {"Route23", "Route24"}
+    check(s38 == want38, f"story 38 (Rayquaza wakes, the dust storms lift): Routes 23-24 open, still no Route 25 or shrine cell (extra {sorted(s38 - want38)}, missing {sorted(want38 - s38)})")
 
 
 def camp_cocodrie():
@@ -430,6 +436,32 @@ def redfield_mill():
     check(r14.walk(21, 28) or (21, 29) in r14.blocked, "Route 14: the rougarou's crest cell (21, 29) is on land")
 
 
+def lands_end():
+    """Chapter 8: the Rain Pavilion's seven panels are props with a reachable neighbour, Andrew and Jayden's cells in front of the gym door are
+    free and leave its approach cell open, and the verse order is a permutation of 1-7."""
+    import story_data_ch8 as c8
+    g = Grid("LandsEnd_Gym")
+    ex = g.m["warp_events"][0]
+    r = g.fill([(ex["x"], ex["y"] - 1)])
+    bad = []
+    for k, (cells, v) in c8.PANELS.items():
+        for (x, y) in cells:
+            if g.walk(x, y):
+                bad.append(f"panel {k} {x},{y} is walkable")
+            elif not any((x + dx, y + dy) in r for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                bad.append(f"panel {k} {x},{y} has no reachable neighbour")
+    check(not bad and sorted(v for _c, v in c8.PANELS.values()) == list(range(1, 8)),
+          f"Land's End gym: the seven verse panels are props with reachable neighbours and carry verses 1-7 once each ({bad})")
+    le = Grid("LandsEnd", remove_objects=("LOCALID_LANDS_END_ANDREW", "LOCALID_LANDS_END_JAYDEN"))
+    door = next(w for w in le.m["warp_events"] if w["dest_map"] == "MAP_LANDS_END_GYM")
+    door = (door["x"], door["y"])
+    objs = {o["local_id"]: o for o in le.m["object_events"] if "local_id" in o}
+    a, j = objs["LOCALID_LANDS_END_ANDREW"], objs["LOCALID_LANDS_END_JAYDEN"]
+    ok = le.walk(a["x"], a["y"]) and le.walk(j["x"], j["y"]) and (door[0], door[1] + 1) not in ((a["x"], a["y"]), (j["x"], j["y"]))
+    check(ok and a["flag"] == "FLAG_HIDE_LANDS_END_ANDREW" and j["flag"] == "FLAG_HIDE_LANDS_END_JAYDEN",
+          f"Land's End: Andrew {(a['x'], a['y'])} and Jayden {(j['x'], j['y'])} stand beside the gym door's approach cell {(door[0], door[1] + 1)}, hidden by their flags")
+
+
 def trainers_vs_triggers():
     """A trainer who spots the player on a flag-trigger cell takes over (the approach/battle runs instead of the coord event), and the player
     then stands ON the cell and walks on: a gate leak. So no trainer's line of sight may cover a cell that carries a flag trigger."""
@@ -506,6 +538,7 @@ if __name__ == "__main__":
     camp_cocodrie()
     lutins_hollow()
     redfield_mill()
+    lands_end()
     trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()

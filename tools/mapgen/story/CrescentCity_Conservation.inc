@@ -8,6 +8,8 @@ CrescentCity_Conservation_EventScript_Lafayette0::
 	lock
 	faceplayer
 	goto_if_lt VAR_ORLEANS_STORY, 14, CrescentCity_Conservation_EventScript_FirstBriefing
+	checkitem ITEM_DOME_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_KabutoRevive
 @ Every unclaimed tier is given in order (10 species, 15, 25), each only once, however many species he is told about at a time.
 CrescentCity_Conservation_EventScript_Tally:
 	setvar VAR_0x8004, 1
@@ -137,3 +139,40 @@ CrescentCity_Conservation_EventScript_Scientist2::
 CrescentCity_Conservation_Text_Scientist:
 	.string "The fossil lab revives a fossil\n"
 	.string "once you bring one. Mind the dust.$"
+
+@ the fossil revival (Chapter 8, 8.1): the Route 19 Dome Fossil becomes a KABUTO (Lv. 40); the fossil is kept if there is no room
+CrescentCity_Conservation_EventScript_KabutoRevive:
+	msgbox CrescentCity_Conservation_Text_FossilFound, MSGBOX_DEFAULT
+	givemon SPECIES_KABUTO, 40
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, CrescentCity_Conservation_EventScript_KabutoNoRoom
+	removeitem ITEM_DOME_FOSSIL
+	setflag FLAG_KABUTO_REVIVED
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, CrescentCity_Conservation_EventScript_KabutoToPC
+	msgbox CrescentCity_Conservation_Text_FossilDone, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Conservation_EventScript_KabutoToPC:
+	call Common_EventScript_TransferredToPC
+	msgbox CrescentCity_Conservation_Text_FossilDone, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Conservation_EventScript_KabutoNoRoom:
+	msgbox CrescentCity_Conservation_Text_FossilNoRoom, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Conservation_Text_FossilFound:
+	.string "LAFAYETTE: A DOME FOSSIL, from the\n"
+	.string "Route 19 flats! May I revive it?\p"
+	.string "LAFAYETTE: The old restoration rig\n"
+	.string "still works. Here we go.$"
+
+CrescentCity_Conservation_Text_FossilDone:
+	.string "Out of the machine, blinking at the\n"
+	.string "light: a KABUTO!$"
+
+CrescentCity_Conservation_Text_FossilNoRoom:
+	.string "LAFAYETTE: Your party and your boxes\n"
+	.string "are full. Make room and come back.$"

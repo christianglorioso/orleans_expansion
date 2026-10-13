@@ -247,6 +247,20 @@ def _merge_ch7():
 
 _merge_ch7()
 
+# ---------------------------------------------------------------------------------------------- Chapter 8 (story_data_ch8.py)
+import story_data_ch8 as _c8  # noqa: E402
+
+
+def _merge_ch8():
+    for name, data in (("Route18", _c8.ROUTE18), ("Route19", _c8.ROUTE19), ("Route20", _c8.ROUTE20), ("Route21", _c8.ROUTE21),
+                       ("Route22", _c8.ROUTE22), ("LandsEnd", _c8.LANDS_END)):
+        _merge_into(OVERLAY.setdefault(name, {}), data)
+    for k, v in _c8.ROOMS.items():
+        INTERIOR[k] = v
+
+
+_merge_ch8()
+
 # ---------------------------------------------------------------------------------------------- the water gates (story_data_gates.py)
 import story_data_gates as _gates  # noqa: E402
 

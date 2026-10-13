@@ -14951,6 +14951,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_WailmerPail,
     },
 
+    [ITEM_DIVING_GEAR] =
+    {
+        .name = ITEM_NAME("Diving Gear"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Heron's gear. Lets you\n"
+            "dive where the Gulf\n"
+            "runs deep."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_WailmerPail,
+        .iconPalette = gItemIconPalette_WailmerPail,
+    },
+
     [ITEM_LANTERN] =
     {
         .name = ITEM_NAME("Lantern"),

@@ -2986,26 +2986,6 @@
       "blockdata_filepath": "data/layouts/Redfield_House2/map.bin"
     },
     {
-      "id": "LAYOUT_LANDS_END_GYM",
-      "name": "LandsEnd_Gym_Layout",
-      "width": 21,
-      "height": 16,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/LandsEnd_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/LandsEnd_Gym/map.bin"
-    },
-    {
-      "id": "LAYOUT_LANDS_END_POKECENTER",
-      "name": "LandsEnd_Pokecenter_Layout",
-      "width": 15,
-      "height": 10,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/LandsEnd_Pokecenter/border.bin",
-      "blockdata_filepath": "data/layouts/LandsEnd_Pokecenter/map.bin"
-    },
-    {
       "id": "LAYOUT_LANDS_END_MARINE_SUPPLY",
       "name": "LandsEnd_MarineSupply_Layout",
       "width": 11,
@@ -3054,16 +3034,6 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/LandsEnd_House2/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_House2/map.bin"
-    },
-    {
-      "id": "LAYOUT_LANDS_END_HOUSE3",
-      "name": "LandsEnd_House3_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/LandsEnd_House3/border.bin",
-      "blockdata_filepath": "data/layouts/LandsEnd_House3/map.bin"
     },
     {
       "id": "LAYOUT_LANDS_END_HOUSE4",
@@ -3134,6 +3104,36 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/Redfield_ShotgunHouse2/border.bin",
       "blockdata_filepath": "data/layouts/Redfield_ShotgunHouse2/map.bin"
+    },
+    {
+      "id": "LAYOUT_LANDS_END_GYM",
+      "name": "LandsEnd_Gym_Layout",
+      "width": 21,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/LandsEnd_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/LandsEnd_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_LANDS_END_POKECENTER",
+      "name": "LandsEnd_Pokecenter_Layout",
+      "width": 15,
+      "height": 10,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/LandsEnd_Pokecenter/border.bin",
+      "blockdata_filepath": "data/layouts/LandsEnd_Pokecenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_LANDS_END_HOUSE3",
+      "name": "LandsEnd_House3_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/LandsEnd_House3/border.bin",
+      "blockdata_filepath": "data/layouts/LandsEnd_House3/map.bin"
     }
   ]
 }

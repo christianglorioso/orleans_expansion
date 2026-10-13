@@ -1,5 +1,11 @@
 LandsEnd_Pokecenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LandsEnd_Pokecenter_OnTransition
 	.byte 0
+
+@ Walking in sets the respawn point
+LandsEnd_Pokecenter_OnTransition:
+	setrespawn HEAL_LOCATION_LANDS_END
+	end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -16,7 +22,7 @@ LandsEnd_Pokecenter_EventScript_Shrimper1::
 	end
 
 LandsEnd_Pokecenter_Text_Shrimper1:
-	.string "the Gulf's been strange since\nthe temple lights came on$"
+	.string "The Gulf's been strange since the\ntemple lights came on.$"
 
 LandsEnd_Pokecenter_EventScript_Hiker2::
 	msgbox LandsEnd_Pokecenter_Text_Hiker2, MSGBOX_NPC
