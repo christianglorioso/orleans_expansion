@@ -1,7 +1,7 @@
 """The starter Poke Balls, the wild intro text, the statics' soft-reset rolls and Lafayette's Shiny Charm (2026-10-13).
 
   * the shelter's top-right table carries three Poke Ball objects (16..18, 2), Lafayette's text sends the player to it
-  * looking at a ball rolls nature / gender / shiny / ability for THAT ball (RAM only, never saved) and shows "This male, Adamant TOTODILE ..." with the
+  * looking at a ball rolls nature / gender / shiny / ability for THAT ball (RAM only, never saved) and shows "A male, Adamant TOTODILE ..." with the
     pic in its shiny palette when shiny; looking twice shows the same values; the Pokemon handed over matches the text exactly
   * a forced shiny roll gives a different sprite palette (the pic differs from the normal one) and a shiny Pokemon
   * soft reset: a save made BEFORE choosing, then two boots with different timing, give different rolls; one boot is consistent
@@ -27,7 +27,7 @@ for i in range(10):
 NATURES = ("Hardy", "Lonely", "Brave", "Adamant", "Naughty", "Bold", "Docile", "Relaxed", "Impish", "Lax", "Timid", "Hasty", "Serious", "Jolly", "Naive",
            "Modest", "Mild", "Quiet", "Bashful", "Rash", "Calm", "Gentle", "Sassy", "Careful", "Quirky")
 SPECIES = ("Totodile", "Chikorita", "Fuecoco")
-LOOK = re.compile(r"This (male, |female, )?([A-Z][a-z]+) ([A-Za-z]+)")
+LOOK = re.compile(r"A (male, |female, )?([A-Z][a-z]+) ([A-Za-z]+)")
 WILD = re.compile(r"A wild (male, |female, )?([A-Z][a-z]+) ([A-Za-z]+)")
 
 

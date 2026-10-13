@@ -71,6 +71,6 @@ void StarterBall_ShowPic(void)
     StarterBall_Prepare();
     // personality only picks the gender-difference sprite: 0 is "female", 0xFF "male"
     ScriptMenu_SetPicShiny(gSpecialVar_0x8008, gSpecialVar_0x8007 == MON_FEMALE ? 0 : 0xFF);
-    ScriptMenu_ShowPokemonPic(sStarterSpecies[gSpecialVar_0x8004 < STARTER_COUNT ? gSpecialVar_0x8004 : 0], 1, 1);
+    ScriptMenu_ShowPokemonPic(sStarterSpecies[gSpecialVar_0x8004 < STARTER_COUNT ? gSpecialVar_0x8004 : 0], 10, 3);
     ScriptMenu_SetPicShiny(FALSE, 0x8000);
 }

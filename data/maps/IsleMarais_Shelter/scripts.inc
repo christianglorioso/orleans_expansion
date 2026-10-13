@@ -330,7 +330,7 @@ IsleMarais_Shelter_Text_FishermanAfterRod:
 	.string "slimy kinds, SLIGGOO, love it.$"
 
 IsleMarais_Shelter_Text_BallLooks:
-	.string "This {STR_VAR_2}{STR_VAR_3} {STR_VAR_1}\n"
+	.string "A {STR_VAR_2}{STR_VAR_3} {STR_VAR_1}\n"
 	.string "peeks out of its POKé BALL.$"
 
 IsleMarais_Shelter_Text_LookAfterIt:
