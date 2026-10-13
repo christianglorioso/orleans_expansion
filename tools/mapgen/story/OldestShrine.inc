@@ -8,6 +8,7 @@ OldestShrine_MapScripts::
 @ the Swampertite, the dawn and the credits (story 44, then 45 = the post-game). A blackout replays what is not done (trainer flags skip won fights).
 
 OldestShrine_OnTransition:
+	call OldestShrine_EventScript_PGSetup
 	setflag FLAG_HIDE_SHRINE_CAMILLE
 	setflag FLAG_HIDE_SHRINE_ANDREW
 	setflag FLAG_HIDE_SHRINE_RAYQUAZA
@@ -220,6 +221,7 @@ OldestShrine_EventScript_Epilogue:
 	setflag FLAG_HIDE_SHRINE_JAYDEN
 	setrespawn HEAL_LOCATION_CRESCENT_CITY
 	call_if_eq VAR_ORLEANS_STORY, 44, OldestShrine_EventScript_SetStory45
+	call PostGame_EventScript_Unhide
 	special GameClear
 	waitstate
 	releaseall
@@ -376,3 +378,84 @@ OldestShrine_Text_CamilleIdle:
 OldestShrine_Text_AndrewIdle:
 	.string "ANDREW: ...$"
 
+@ the game is cleared: every post-game ball and legend appears, the Battle Frontier's guard steps aside
+PostGame_EventScript_Unhide:
+	clearflag FLAG_PG_RAIKOU
+	clearflag FLAG_PG_ZAPDOS
+	clearflag FLAG_PG_ENTEI
+	clearflag FLAG_PG_MOLTRES
+	clearflag FLAG_PG_SUICUNE
+	clearflag FLAG_PG_ARTICUNO
+	clearflag FLAG_PG_GALAR_ARTICUNO
+	clearflag FLAG_PG_GALAR_ZAPDOS
+	clearflag FLAG_PG_GALAR_MOLTRES
+	clearflag FLAG_PG_TORNADUS
+	clearflag FLAG_PG_THUNDURUS
+	clearflag FLAG_PG_LANDORUS
+	clearflag FLAG_PG_AZELF
+	clearflag FLAG_PG_MESPRIT
+	clearflag FLAG_PG_UXIE
+	clearflag FLAG_PG_ZARUDE
+	clearflag FLAG_PG_OGERPON
+	clearflag FLAG_PG_CELEBI
+	clearflag FLAG_PG_KYOGRE_RE
+	clearflag FLAG_PG_GROUDON_RE
+	clearflag FLAG_PG_RAYQUAZA
+	clearflag FLAG_PG_CHANDELURITE
+	clearflag FLAG_PG_SCOVILLAINITE
+	clearflag FLAG_PG_HEARTHFLAME_MASK
+	clearflag FLAG_PG_DRAGONINITE
+	clearflag FLAG_PG_CRABOMINITE
+	clearflag FLAG_PG_WEEZINGITE
+	clearflag FLAG_PG_WELLSPRING_MASK
+	clearflag FLAG_PG_CORNERSTONE_MASK
+	setflag FLAG_UNUSED_0x2D9
+	return
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+OldestShrine_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, OldestShrine_EventScript_PGHide
+OldestShrine_EventScript_PGSetupDone:
+	return
+
+OldestShrine_EventScript_PGHide:
+	setflag FLAG_PG_RAYQUAZA
+	setflag FLAG_PG_DRAGONINITE
+	return
+
+OldestShrine_EventScript_PgRayquaza::
+	lock
+	faceplayer
+	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
+	msgbox OldestShrine_Text_PGRayquaza, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_RAYQUAZA, 70
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldestShrine_EventScript_PgRayquazaDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, OldestShrine_EventScript_PgRayquazaDone
+	release
+	end
+
+OldestShrine_EventScript_PgRayquazaDone:
+	setflag FLAG_PG_RAYQUAZA
+	removeobject LOCALID_OLDEST_SHRINE_PG_RAYQUAZA
+	release
+	end
+
+OldestShrine_EventScript_PgDragoninite::
+	lock
+	giveitem ITEM_DRAGONINITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_DRAGONINITE
+	removeobject LOCALID_OLDEST_SHRINE_PG_DRAGONINITE
+	release
+	end
+
+OldestShrine_Text_PGRayquaza:
+	.string "RAYQUAZA stands before you,\n"
+	.string "coiled in the clouds, listening.$"
+
+@ --- end post-game ---

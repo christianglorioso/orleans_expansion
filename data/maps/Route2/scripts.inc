@@ -1,4 +1,5 @@
 Route2_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route2_OnTransitionPG
 	.byte 0
 
 @ Route 2: Grand Oak to Storm's Edge, under the high-voltage line. Five trainers (levels 13-16, west to east),
@@ -106,6 +107,48 @@ Route2_Text_GuitaristAfter:
 Route2_Text_GuitaristRestored:
 	.string "The line's singing in tune again.\n"
 	.string "Whatever you did, thank you!$"
+
+Route2_OnTransitionPG:
+	call Route2_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route2_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route2_EventScript_PGHide
+Route2_EventScript_PGSetupDone:
+	return
+
+Route2_EventScript_PGHide:
+	setflag FLAG_PG_RAIKOU
+	return
+
+Route2_EventScript_PgRaikou::
+	lock
+	faceplayer
+	playmoncry SPECIES_RAIKOU, CRY_MODE_ENCOUNTER
+	msgbox Route2_Text_PGRaikou, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_RAIKOU, 60
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route2_EventScript_PgRaikouDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route2_EventScript_PgRaikouDone
+	release
+	end
+
+Route2_EventScript_PgRaikouDone:
+	setflag FLAG_PG_RAIKOU
+	removeobject LOCALID_ROUTE2_PG_RAIKOU
+	release
+	end
+
+Route2_Text_PGRaikou:
+	.string "RAIKOU stands before you,\n"
+	.string "its hide crackling with static.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

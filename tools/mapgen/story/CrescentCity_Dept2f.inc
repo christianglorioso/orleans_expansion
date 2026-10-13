@@ -9,8 +9,23 @@ CrescentCity_Dept2f_EventScript_Clerk0::
 	message gText_HowMayIServeYou
 	waitmessage
 	@ the Linking Cord (every trade evolution) and the Prism Scale (Feebas -> Milotic) join the stock at the third badge
+	goto_if_ge VAR_ORLEANS_STORY, 45, CrescentCity_Dept2f_EventScript_Clerk03
+	goto_if_set FLAG_BADGE06_GET, CrescentCity_Dept2f_EventScript_Clerk02
 	goto_if_set FLAG_BADGE03_GET, CrescentCity_Dept2f_EventScript_Clerk01
 	pokemart CrescentCity_Dept2f_Pokemart_Clerk00
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+@ the Metal Alloy (Duraludon -> Archaludon) joins the stock at the sixth badge; after the game is cleared the Sun, Ice, Dusk and Shiny Stones too
+CrescentCity_Dept2f_EventScript_Clerk02:
+	pokemart CrescentCity_Dept2f_Pokemart_Clerk02
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Dept2f_EventScript_Clerk03:
+	pokemart CrescentCity_Dept2f_Pokemart_Clerk03
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
@@ -39,6 +54,34 @@ CrescentCity_Dept2f_Pokemart_Clerk01:
 	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_PRISM_SCALE
+	pokemartlistend
+
+	.align 2
+CrescentCity_Dept2f_Pokemart_Clerk02:
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_METAL_ALLOY
+	pokemartlistend
+
+	.align 2
+CrescentCity_Dept2f_Pokemart_Clerk03:
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_ICE_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_LINKING_CORD
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_PRISM_SCALE
+	.2byte ITEM_METAL_ALLOY
 	pokemartlistend
 
 CrescentCity_Dept2f_EventScript_Clerk1::

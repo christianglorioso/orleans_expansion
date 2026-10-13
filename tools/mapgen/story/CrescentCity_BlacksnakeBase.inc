@@ -7,6 +7,7 @@ CrescentCity_BlacksnakeBase_MapScripts::
 @ (Proposed: Wren doesn't fight; she holds the hall while the player takes the three grunts and the lieutenant one at a time.
 @ A partner/multi battle needs engine support that isn't in yet: see the plan's open questions.)
 CrescentCity_BlacksnakeBase_OnTransition:
+	call CrescentCity_BlacksnakeBase_EventScript_PGSetup
 	setflag FLAG_HIDE_CRESCENT_BASE_WREN
 	call_if_eq VAR_ORLEANS_STORY, 16, CrescentCity_BlacksnakeBase_EventScript_ShowWren
 	end
@@ -197,3 +198,26 @@ CrescentCity_BlacksnakeBase_Text_CarvingSeen:
 	.string "The empty spot where the damaged\n"
 	.string "carving stood. Dust in a shape\p"
 	.string "like a long, folded snake.$"
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+CrescentCity_BlacksnakeBase_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, CrescentCity_BlacksnakeBase_EventScript_PGHide
+CrescentCity_BlacksnakeBase_EventScript_PGSetupDone:
+	return
+
+CrescentCity_BlacksnakeBase_EventScript_PGHide:
+	setflag FLAG_PG_WEEZINGITE
+	return
+
+CrescentCity_BlacksnakeBase_EventScript_Pgweezingite5::
+	lock
+	giveitem ITEM_WEEZINGITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_WEEZINGITE
+	removeobject LOCALID_CRESCENT_CITY_BLACKSNAKE_BASE_PGWEEZINGITE5
+	release
+	end
+
+@ --- end post-game ---

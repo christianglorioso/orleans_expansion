@@ -1,4 +1,5 @@
 LandsEnd_DrownedTemple_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LandsEnd_DrownedTemple_OnTransitionPG
 	.byte 0
 
 @ The Drowned Temple's Tide Hall (Chapter 9, F.1): the sealed door opens when the player sings Heron's verse (story >= 39), Kyogre waits in the
@@ -102,6 +103,54 @@ LandsEnd_DrownedTemple_Text_BothDone:
 
 LandsEnd_DrownedTemple_Text_NotYet:
 	.string "The water pulls at you. Not yet.$"
+
+LandsEnd_DrownedTemple_OnTransitionPG:
+	call LandsEnd_DrownedTemple_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+LandsEnd_DrownedTemple_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_DrownedTemple_EventScript_PGHide
+	goto_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_DrownedTemple_EventScript_PGSetupDone
+	call_if_ne VAR_ORLEANS_LEGENDARY_PICK, 2, LandsEnd_DrownedTemple_EventScript_PGHideKyogreRe
+LandsEnd_DrownedTemple_EventScript_PGSetupDone:
+	return
+
+LandsEnd_DrownedTemple_EventScript_PGHide:
+	setflag FLAG_PG_KYOGRE_RE
+	return
+
+LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2::
+	lock
+	faceplayer
+	playmoncry SPECIES_KYOGRE, CRY_MODE_ENCOUNTER
+	msgbox LandsEnd_DrownedTemple_Text_PGKyogreRe, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_KYOGRE, 70
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Done
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Done
+	release
+	end
+
+LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Done:
+	setflag FLAG_PG_KYOGRE_RE
+	removeobject LOCALID_LANDS_END_DROWNED_TEMPLE_PGKYOGRE_RE2
+	release
+	end
+
+LandsEnd_DrownedTemple_EventScript_PGHideKyogreRe:
+	setflag FLAG_PG_KYOGRE_RE
+	return
+
+LandsEnd_DrownedTemple_Text_PGKyogreRe:
+	.string "KYOGRE stands before you,\n"
+	.string "the sea rising around it.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

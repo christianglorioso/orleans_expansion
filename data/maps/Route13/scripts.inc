@@ -1,4 +1,5 @@
 Route13_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route13_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -59,6 +60,73 @@ Route13_Text_Route13BirdKeeperAfter:
 	.string "The hollow's gate is a lane of\nmoss. You'll feel watched.$"
 
 @ --- end route trainers ---
+
+Route13_OnTransitionPG:
+	call Route13_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route13_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route13_EventScript_PGHide
+Route13_EventScript_PGSetupDone:
+	return
+
+Route13_EventScript_PGHide:
+	setflag FLAG_PG_ZARUDE
+	setflag FLAG_PG_OGERPON
+	return
+
+Route13_EventScript_PgZarude::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZARUDE, CRY_MODE_ENCOUNTER
+	msgbox Route13_Text_PGZarude, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ZARUDE, 55
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgZarudeDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgZarudeDone
+	release
+	end
+
+Route13_EventScript_PgZarudeDone:
+	setflag FLAG_PG_ZARUDE
+	removeobject LOCALID_ROUTE13_PG_ZARUDE
+	release
+	end
+
+Route13_EventScript_PgOgerpon::
+	lock
+	faceplayer
+	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
+	msgbox Route13_Text_PGOgerpon, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_OGERPON_TEAL, 50
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgOgerponDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgOgerponDone
+	release
+	end
+
+Route13_EventScript_PgOgerponDone:
+	setflag FLAG_PG_OGERPON
+	removeobject LOCALID_ROUTE13_PG_OGERPON
+	release
+	end
+
+Route13_Text_PGZarude:
+	.string "ZARUDE stands before you,\n"
+	.string "vines swaying like a crowd.$"
+
+Route13_Text_PGOgerpon:
+	.string "OGERPON stands before you,\n"
+	.string "a mask on its face, dancing.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

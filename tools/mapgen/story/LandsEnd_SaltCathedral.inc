@@ -1,4 +1,5 @@
 LandsEnd_SaltCathedral_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LandsEnd_SaltCathedral_OnTransitionPG
 	.byte 0
 
 @ The Salt Cathedral (Chapter 9, F.2): Groudon waits in the lowest pit (story >= 39). A trainer battle with Primal Groudon (its Red Orb makes
@@ -79,3 +80,50 @@ LandsEnd_SaltCathedral_Text_BothDone:
 LandsEnd_SaltCathedral_Text_NotYet:
 	.string "The heat pushes you back. Not yet.$"
 
+LandsEnd_SaltCathedral_OnTransitionPG:
+	call LandsEnd_SaltCathedral_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+LandsEnd_SaltCathedral_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_SaltCathedral_EventScript_PGHide
+	goto_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_SaltCathedral_EventScript_PGSetupDone
+	call_if_ne VAR_ORLEANS_LEGENDARY_PICK, 1, LandsEnd_SaltCathedral_EventScript_PGHideGroudonRe
+LandsEnd_SaltCathedral_EventScript_PGSetupDone:
+	return
+
+LandsEnd_SaltCathedral_EventScript_PGHide:
+	setflag FLAG_PG_GROUDON_RE
+	return
+
+LandsEnd_SaltCathedral_EventScript_Pggroudon_re1::
+	lock
+	faceplayer
+	playmoncry SPECIES_GROUDON, CRY_MODE_ENCOUNTER
+	msgbox LandsEnd_SaltCathedral_Text_PGGroudonRe, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_GROUDON, 70
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Done
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Done
+	release
+	end
+
+LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Done:
+	setflag FLAG_PG_GROUDON_RE
+	removeobject LOCALID_LANDS_END_SALT_CATHEDRAL_PGGROUDON_RE1
+	release
+	end
+
+LandsEnd_SaltCathedral_EventScript_PGHideGroudonRe:
+	setflag FLAG_PG_GROUDON_RE
+	return
+
+LandsEnd_SaltCathedral_Text_PGGroudonRe:
+	.string "GROUDON stands before you,\n"
+	.string "the floor cracking with heat.$"
+
+@ --- end post-game ---

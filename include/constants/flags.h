@@ -61,7 +61,7 @@
 // ---------------------------------------------------------------------------------------------
 #define FLAG_ITEM_ISLE_MARAIS_POTION       0x20
 #define FLAG_ITEM_ISLE_MARAIS_POKE_BALL    0x21
-#define FLAG_ORLEANS_POOL_950                            0x22
+#define FLAG_PG_CHANDELURITE                             0x22 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_ITEM_ROUTE1_POTION          0x23
 #define FLAG_ITEM_ROUTE1_POKE_BALL       0x24
 #define FLAG_ITEM_ROUTE1_ORAN_BERRY      0x25
@@ -267,57 +267,57 @@
 #define FLAG_RECEIVED_SWAMPERTITE                        0xE3 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_REGI_DOORS_OPENED               0xE4
 #define FLAG_FINALE_NEVER_SET                            0xE5 // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
-#define FLAG_ORLEANS_POOL_095                           0xE6
-#define FLAG_ORLEANS_POOL_096                           0xE7
-#define FLAG_ORLEANS_POOL_097                           0xE8
+#define FLAG_PG_SCOVILLAINITE                            0xE6 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_HEARTHFLAME_MASK                         0xE7 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_DRAGONINITE                              0xE8 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 
-#define FLAG_ORLEANS_POOL_098                           0xE9
+#define FLAG_PG_CRABOMINITE                              0xE9 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 
-#define FLAG_ORLEANS_POOL_099                           0xEA
+#define FLAG_PG_WEEZINGITE                               0xEA // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
-#define FLAG_ORLEANS_POOL_100                           0xEC
+#define FLAG_PG_WELLSPRING_MASK                          0xEC // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_RECEIVED_SILVER_SHIELD          0xED
 #define FLAG_RECEIVED_GOLD_SHIELD            0xEE
-#define FLAG_ORLEANS_POOL_101                           0xEF
-#define FLAG_ORLEANS_POOL_102                           0xF0
-#define FLAG_ORLEANS_POOL_103                           0xF1
-#define FLAG_ORLEANS_POOL_104                           0xF2
-#define FLAG_ORLEANS_POOL_105                           0xF3
-#define FLAG_ORLEANS_POOL_106                           0xF4
-#define FLAG_ORLEANS_POOL_107                           0xF5
-#define FLAG_ORLEANS_POOL_108                           0xF6
-#define FLAG_ORLEANS_POOL_109                           0xF7
-#define FLAG_ORLEANS_POOL_110                           0xF8
-#define FLAG_ORLEANS_POOL_111                           0xF9
-#define FLAG_ORLEANS_POOL_112                           0xFA
-#define FLAG_ORLEANS_POOL_113                           0xFB
-#define FLAG_ORLEANS_POOL_114                           0xFC
+#define FLAG_PG_CORNERSTONE_MASK                         0xEF // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_RAIKOU                                   0xF0 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_ENTEI                                    0xF1 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_SUICUNE                                  0xF2 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_ZAPDOS                                   0xF3 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_MOLTRES                                  0xF4 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_ARTICUNO                                 0xF5 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_GALAR_ARTICUNO                           0xF6 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_GALAR_ZAPDOS                             0xF7 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_GALAR_MOLTRES                            0xF8 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_TORNADUS                                 0xF9 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_THUNDURUS                                0xFA // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_LANDORUS                                 0xFB // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_AZELF                                    0xFC // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_ENABLE_RIVAL_MATCH_CALL         0xFD
-#define FLAG_ORLEANS_POOL_115                           0xFE
+#define FLAG_PG_MESPRIT                                  0xFE // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_LATIOS_OR_LATIAS_ROAMING        0xFF
-#define FLAG_ORLEANS_POOL_116                           0x100
+#define FLAG_PG_UXIE                                     0x100 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_RECEIVED_OLD_ROD                0x101
-#define FLAG_ORLEANS_POOL_117                           0x102
-#define FLAG_ORLEANS_POOL_118                           0x103
-#define FLAG_ORLEANS_POOL_119                           0x104
-#define FLAG_ORLEANS_POOL_120                           0x105
-#define FLAG_ORLEANS_POOL_121                           0x106
-#define FLAG_ORLEANS_POOL_122                           0x107
-#define FLAG_ORLEANS_POOL_123                           0x108
+#define FLAG_PG_ZARUDE                                   0x102 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_OGERPON                                  0x103 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_CELEBI                                   0x104 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_URSALUNA_BM                              0x105 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_KYOGRE_RE                                0x106 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_GROUDON_RE                               0x107 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_PG_RAYQUAZA                                 0x108 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_RECEIVED_TM_TORMENT             0x109
-#define FLAG_ORLEANS_POOL_124                           0x10A
-#define FLAG_ORLEANS_POOL_125                           0x10B
+#define FLAG_RECEIVED_FAIS_DO_DO                         0x10A // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
+#define FLAG_RECEIVED_FLOETTE_EF                         0x10B // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
-#define FLAG_ORLEANS_POOL_126                           0x10D
+#define FLAG_RECEIVED_FLOETTITE                          0x10D // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
 #define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
-#define FLAG_ORLEANS_POOL_127                           0x10F
+#define FLAG_TRADED_ALOLAN_RAICHU                        0x10F // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
 #define FLAG_RECEIVED_EXP_SHARE              0x110
 #define FLAG_POKERUS_EXPLAINED               0x111
 #define FLAG_RECEIVED_RUNNING_SHOES          0x112
-#define FLAG_ORLEANS_POOL_128                           0x113
-#define FLAG_ORLEANS_POOL_129                           0x114
-#define FLAG_ORLEANS_POOL_130                           0x115
-#define FLAG_ORLEANS_POOL_131                           0x116
+#define FLAG_TRADED_ALOLAN_VULPIX                        0x113 // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
+#define FLAG_TRADED_ALOLAN_SANDSHREW                     0x114 // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
+#define FLAG_ORLEANS_POOL_130                            0x115
+#define FLAG_PG_URSALUNA_DONE                            0x116 // Chapter 10: Ursaluna Bloodmoon (night) beaten or caught
 #define FLAG_ORLEANS_POOL_132                           0x117
 #define FLAG_ORLEANS_POOL_133                           0x118
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119

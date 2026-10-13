@@ -1,4 +1,5 @@
 PointeRouge_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PointeRouge_OnTransitionPG
 	.byte 0
 
 @ Pointe Rouge (Chapter 4). The beats, in order:
@@ -207,6 +208,33 @@ PointeRouge_Text_DustStorm:
 	.string "the plains. No one can see to cross.\p"
 	.string "Nobody crosses in this. It will\n"
 	.string "have to blow itself out first.$"
+
+PointeRouge_OnTransitionPG:
+	call PointeRouge_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+PointeRouge_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_PGHide
+PointeRouge_EventScript_PGSetupDone:
+	return
+
+PointeRouge_EventScript_PGHide:
+	setflag FLAG_PG_CRABOMINITE
+	return
+
+PointeRouge_EventScript_PgCrabominite::
+	lock
+	giveitem ITEM_CRABOMINITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_CRABOMINITE
+	removeobject LOCALID_POINTE_ROUGE_PG_CRABOMINITE
+	release
+	end
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

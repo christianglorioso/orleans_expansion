@@ -4,6 +4,7 @@ Route3_MapScripts::
 
 @ Jayden is only on the causeway for his scene (BridgeStandoff clears this flag), at any story value.
 Route3_OnTransition:
+	call Route3_EventScript_PGSetup
 	setflag FLAG_HIDE_ROUTE3_JAYDEN
 	end
 
@@ -204,3 +205,41 @@ Route3_Text_BridgeAfterwards:
 	.string "city, head down.\p"
 	.string "CRESCENT CITY lies ahead, across\n"
 	.string "the bridge.$"
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route3_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route3_EventScript_PGHide
+Route3_EventScript_PGSetupDone:
+	return
+
+Route3_EventScript_PGHide:
+	setflag FLAG_PG_TORNADUS
+	return
+
+Route3_EventScript_PgTornadus::
+	lock
+	faceplayer
+	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
+	msgbox Route3_Text_PGTornadus, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_TORNADUS, 62
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route3_EventScript_PgTornadusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route3_EventScript_PgTornadusDone
+	release
+	end
+
+Route3_EventScript_PgTornadusDone:
+	setflag FLAG_PG_TORNADUS
+	removeobject LOCALID_ROUTE3_PG_TORNADUS
+	release
+	end
+
+Route3_Text_PGTornadus:
+	.string "TORNADUS stands before you,\n"
+	.string "wrapped in a roaring gale.$"
+
+@ --- end post-game ---

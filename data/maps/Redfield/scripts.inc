@@ -10,6 +10,7 @@ Redfield_MapScripts::
 @ Wren waits outside the mill door while the story is 33 (the first return to town plays the call: VAR_REDFIELD_RAID_CALL).
 
 Redfield_OnTransition:
+	call Redfield_EventScript_PGSetup
 	setflag FLAG_HIDE_REDFIELD_RITA
 	setflag FLAG_HIDE_REDFIELD_WREN
 	call_if_eq VAR_ORLEANS_STORY, 31, Redfield_EventScript_ShowRita
@@ -450,6 +451,49 @@ Redfield_Text_WrenCall3:
 Redfield_Text_WrenRetry:
 	.string "WREN: The OLD WATER's burning. Come\n"
 	.string "on!$"
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Redfield_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Redfield_EventScript_PGHide
+Redfield_EventScript_PGSetupDone:
+	return
+
+Redfield_EventScript_PGHide:
+	setflag FLAG_PG_CHANDELURITE
+	setflag FLAG_PG_SCOVILLAINITE
+	setflag FLAG_PG_HEARTHFLAME_MASK
+	return
+
+Redfield_EventScript_PgChandelurite::
+	lock
+	giveitem ITEM_CHANDELURITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_CHANDELURITE
+	removeobject LOCALID_REDFIELD_PG_CHANDELURITE
+	release
+	end
+
+Redfield_EventScript_PgScovillainite::
+	lock
+	giveitem ITEM_SCOVILLAINITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_SCOVILLAINITE
+	removeobject LOCALID_REDFIELD_PG_SCOVILLAINITE
+	release
+	end
+
+Redfield_EventScript_PgHearthflameMask::
+	lock
+	giveitem ITEM_HEARTHFLAME_MASK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_HEARTHFLAME_MASK
+	removeobject LOCALID_REDFIELD_PG_HEARTHFLAME_MASK
+	release
+	end
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

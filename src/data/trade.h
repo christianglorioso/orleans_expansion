@@ -1211,6 +1211,54 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_PONYTA
+    },
+    [INGAME_TRADE_ALOLAN_RAICHU] =
+    {
+        .nickname = _("LIGHTNING"),
+        .species = SPECIES_RAICHU_ALOLA,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 77001,
+        .conditions = {20, 20, 20, 20, 20},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_NONE,
+        .mailNum = 255,
+        .otName = _("LILI"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_RAICHU
+    },
+    [INGAME_TRADE_ALOLAN_VULPIX] =
+    {
+        .nickname = _("SNOWFLUFF"),
+        .species = SPECIES_VULPIX_ALOLA,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 77001,
+        .conditions = {20, 20, 20, 20, 20},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_NONE,
+        .mailNum = 255,
+        .otName = _("LILI"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_VULPIX
+    },
+    [INGAME_TRADE_ALOLAN_SANDSHREW] =
+    {
+        .nickname = _("FROSTBALL"),
+        .species = SPECIES_SANDSHREW_ALOLA,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 77001,
+        .conditions = {20, 20, 20, 20, 20},
+        .personality = 0x5c77ecfa,
+        .heldItem = ITEM_NONE,
+        .mailNum = 255,
+        .otName = _("LILI"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_SANDSHREW
     }
 };
 

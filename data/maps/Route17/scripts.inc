@@ -1,4 +1,5 @@
 Route17_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route17_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -59,6 +60,48 @@ Route17_Text_Route17HikerAfter:
 	.string "Past the gate, the sun's the\njudge. Come at noon.$"
 
 @ --- end route trainers ---
+
+Route17_OnTransitionPG:
+	call Route17_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route17_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route17_EventScript_PGHide
+Route17_EventScript_PGSetupDone:
+	return
+
+Route17_EventScript_PGHide:
+	setflag FLAG_PG_MOLTRES
+	return
+
+Route17_EventScript_PgMoltres::
+	lock
+	faceplayer
+	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
+	msgbox Route17_Text_PGMoltres, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_MOLTRES, 60
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route17_EventScript_PgMoltresDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route17_EventScript_PgMoltresDone
+	release
+	end
+
+Route17_EventScript_PgMoltresDone:
+	setflag FLAG_PG_MOLTRES
+	removeobject LOCALID_ROUTE17_PG_MOLTRES
+	release
+	end
+
+Route17_Text_PGMoltres:
+	.string "MOLTRES stands before you,\n"
+	.string "wings burning like a forge.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

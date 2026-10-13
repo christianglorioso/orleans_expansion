@@ -39,7 +39,7 @@ ROOMS = [
                  ("clerk", ""),
                  ("recruit", "We've got hot food and good news.\\nTake a pamphlet, friend."),
                  ("fisherman", "", {"custom": True}),
-                 ("accordion", "Someone still plays that old\\naccordion every evening."),
+                 ("accordion", "Someone still plays that old\\naccordion every evening.", {"custom": True}),
                  # the starter pick (story steps 2-3): three rescued Pokémon at the field station, Jayden and Wren
                  ("totodile", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_SPECIES(TOTODILE)", "flag": "FLAG_HIDE_SHELTER_TOTODILE"}),
                  ("chikorita", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_SPECIES(CHIKORITA)", "flag": "FLAG_HIDE_SHELTER_CHIKORITA"}),

@@ -23,13 +23,70 @@ LutinsHollow_Herbalist_Pokemart:
 	.2byte ITEM_MAX_REPEL
 	pokemartlistend
 
-@ --- mapgen: generated NPC scripts (begin) ---
-
+@ the Floette (Eternal Flower) and its Floettite: after the game is cleared (story 45), one each (own flags; the Floettite also if the party was full)
 LutinsHollow_Herbalist_EventScript_Apprentice1::
-	msgbox LutinsHollow_Herbalist_Text_Apprentice1, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_lt VAR_ORLEANS_STORY, 45, LutinsHollow_Herbalist_EventScript_ApprenticeSeed
+	goto_if_set FLAG_RECEIVED_FLOETTE_EF, LutinsHollow_Herbalist_EventScript_ApprenticeStone
+	msgbox LutinsHollow_Herbalist_Text_Woke, MSGBOX_DEFAULT
+	givemon SPECIES_FLOETTE_ETERNAL, 50
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, LutinsHollow_Herbalist_EventScript_ApprenticeNoRoom
+	setflag FLAG_RECEIVED_FLOETTE_EF
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LutinsHollow_Herbalist_EventScript_ApprenticeToPC
+	goto LutinsHollow_Herbalist_EventScript_ApprenticeStone
+
+LutinsHollow_Herbalist_EventScript_ApprenticeToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_FLOETTE_ETERNAL
+	call Common_EventScript_TransferredToPC
+	goto LutinsHollow_Herbalist_EventScript_ApprenticeStone
+
+LutinsHollow_Herbalist_EventScript_ApprenticeStone:
+	goto_if_set FLAG_RECEIVED_FLOETTITE, LutinsHollow_Herbalist_EventScript_ApprenticeAfter
+	msgbox LutinsHollow_Herbalist_Text_WokeStone, MSGBOX_DEFAULT
+	giveitem ITEM_FLOETTITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_FLOETTITE
+	release
 	end
 
-LutinsHollow_Herbalist_Text_Apprentice1:
-	.string "The Floette seed is for later. It\nwakes after the great storm.$"
+LutinsHollow_Herbalist_EventScript_ApprenticeAfter:
+	msgbox LutinsHollow_Herbalist_Text_After, MSGBOX_DEFAULT
+	release
+	end
+
+LutinsHollow_Herbalist_EventScript_ApprenticeNoRoom:
+	msgbox LutinsHollow_Herbalist_Text_NoRoom, MSGBOX_DEFAULT
+	release
+	end
+
+LutinsHollow_Herbalist_EventScript_ApprenticeSeed:
+	msgbox LutinsHollow_Herbalist_Text_Seed, MSGBOX_DEFAULT
+	release
+	end
+
+LutinsHollow_Herbalist_Text_Seed:
+	.string "The Floette seed is for later. It\n"
+	.string "wakes after the great storm.$"
+
+LutinsHollow_Herbalist_Text_Woke:
+	.string "The seed woke! After the great storm\n"
+	.string "it bloomed into a FLOETTE with an\p"
+	.string "eternal flower. It chose you.$"
+
+LutinsHollow_Herbalist_Text_WokeStone:
+	.string "And this came up with it:\n"
+	.string "a FLOETTITE.$"
+
+LutinsHollow_Herbalist_Text_NoRoom:
+	.string "Your party and boxes are full. Make\n"
+	.string "room and come back to me.$"
+
+LutinsHollow_Herbalist_Text_After:
+	.string "The garden's lovelier since the\n"
+	.string "storm passed.$"
+
+@ --- mapgen: generated NPC scripts (begin) ---
+
 
 @ --- mapgen: generated NPC scripts (end) ---

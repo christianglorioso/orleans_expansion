@@ -1,4 +1,5 @@
 Route11_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route11_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -45,6 +46,48 @@ Route11_Text_Route11Swimmer2After:
 	.string "I saw something glow under the\nlilies at dusk. Twice.$"
 
 @ --- end route trainers ---
+
+Route11_OnTransitionPG:
+	call Route11_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route11_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route11_EventScript_PGHide
+Route11_EventScript_PGSetupDone:
+	return
+
+Route11_EventScript_PGHide:
+	setflag FLAG_PG_SUICUNE
+	return
+
+Route11_EventScript_PgSuicune::
+	lock
+	faceplayer
+	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
+	msgbox Route11_Text_PGSuicune, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_SUICUNE, 60
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route11_EventScript_PgSuicuneDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route11_EventScript_PgSuicuneDone
+	release
+	end
+
+Route11_EventScript_PgSuicuneDone:
+	setflag FLAG_PG_SUICUNE
+	removeobject LOCALID_ROUTE11_PG_SUICUNE
+	release
+	end
+
+Route11_Text_PGSuicune:
+	.string "SUICUNE stands before you,\n"
+	.string "the water around it perfectly still.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

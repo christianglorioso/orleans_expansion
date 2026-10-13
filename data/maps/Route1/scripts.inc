@@ -1,4 +1,5 @@
 Route1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route1_OnTransitionPG
 	.byte 0
 
 @ ---------------------------------------------------------------- the south gate (before the first battle)
@@ -218,6 +219,48 @@ Route1_Text_ThroughTheReeds:
 	.string "WREN steers the canoe through a\n"
 	.string "gap in the reeds you'd never have\p"
 	.string "seen on your own...$"
+
+Route1_OnTransitionPG:
+	call Route1_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route1_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route1_EventScript_PGHide
+Route1_EventScript_PGSetupDone:
+	return
+
+Route1_EventScript_PGHide:
+	setflag FLAG_PG_MESPRIT
+	return
+
+Route1_EventScript_PgMesprit::
+	lock
+	faceplayer
+	playmoncry SPECIES_MESPRIT, CRY_MODE_ENCOUNTER
+	msgbox Route1_Text_PGMesprit, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_MESPRIT, 55
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route1_EventScript_PgMespritDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route1_EventScript_PgMespritDone
+	release
+	end
+
+Route1_EventScript_PgMespritDone:
+	setflag FLAG_PG_MESPRIT
+	removeobject LOCALID_ROUTE1_PG_MESPRIT
+	release
+	end
+
+Route1_Text_PGMesprit:
+	.string "MESPRIT stands before you,\n"
+	.string "its heart glowing soft and warm.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

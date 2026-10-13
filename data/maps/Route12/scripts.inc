@@ -1,4 +1,5 @@
 Route12_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route12_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -59,6 +60,48 @@ Route12_Text_Route12FishermanAfter:
 	.string "The pond is bottomless, they\nsay. I've dropped a lot in it.$"
 
 @ --- end route trainers ---
+
+Route12_OnTransitionPG:
+	call Route12_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route12_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route12_EventScript_PGHide
+Route12_EventScript_PGSetupDone:
+	return
+
+Route12_EventScript_PGHide:
+	setflag FLAG_PG_THUNDURUS
+	return
+
+Route12_EventScript_PgThundurus::
+	lock
+	faceplayer
+	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
+	msgbox Route12_Text_PGThundurus, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_THUNDURUS, 62
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route12_EventScript_PgThundurusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route12_EventScript_PgThundurusDone
+	release
+	end
+
+Route12_EventScript_PgThundurusDone:
+	setflag FLAG_PG_THUNDURUS
+	removeobject LOCALID_ROUTE12_PG_THUNDURUS
+	release
+	end
+
+Route12_Text_PGThundurus:
+	.string "THUNDURUS stands before you,\n"
+	.string "thunder rolling around it.$"
+
+@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

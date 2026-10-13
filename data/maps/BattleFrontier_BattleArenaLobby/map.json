@@ -91,7 +91,17 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "var": "FLAG_FINALE_NEVER_SET",
+      "var_value": "0",
+      "script": "BattleFrontier_BattleArenaLobby_EventScript_ExitToCrescent"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

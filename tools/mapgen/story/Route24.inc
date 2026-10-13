@@ -1,4 +1,5 @@
 Route24_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route24_OnTransitionPG
 	.byte 0
 
 @ The cracked shaft (Chapter 9, F.2): stand below it at (34, 7) facing up. Needs the Lantern (Fifolet) and the telling (story >= 39); it leads
@@ -97,3 +98,30 @@ Route24_Text_Route24RuinManiacAfter:
 	.string "The oldest wall has carvings.\nRootkin hands. A verse, maybe.$"
 
 @ --- end route trainers ---
+
+Route24_OnTransitionPG:
+	call Route24_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route24_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route24_EventScript_PGHide
+Route24_EventScript_PGSetupDone:
+	return
+
+Route24_EventScript_PGHide:
+	setflag FLAG_PG_CORNERSTONE_MASK
+	return
+
+Route24_EventScript_PgCornerstoneMask::
+	lock
+	giveitem ITEM_CORNERSTONE_MASK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_CORNERSTONE_MASK
+	removeobject LOCALID_ROUTE24_PG_CORNERSTONE_MASK
+	release
+	end
+
+@ --- end post-game ---

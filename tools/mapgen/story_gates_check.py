@@ -510,13 +510,37 @@ def finale_rooms():
     ex = g.m["warp_events"][0]
     gr = next(o for o in g.m["object_events"] if o.get("local_id", "").endswith("_GROUDON_RAID0"))
     check((gr["x"], gr["y"] + 1) in g.fill([(ex["x"], ex["y"] - 1)]), "Salt Cathedral: Groudon's standing cell is reachable from the exit")
-    sh = Grid("OldestShrine", remove_objects=("LOCALID_OLDEST_SHRINE_CAMILLE", "LOCALID_OLDEST_SHRINE_ANDREW", "LOCALID_OLDEST_SHRINE_RAYQUAZA", "LOCALID_OLDEST_SHRINE_JAYDEN"))
+    _pg = tuple(o["local_id"] for o in Grid("OldestShrine").m["object_events"] if str(o.get("flag", "")).startswith("FLAG_PG_"))
+    sh = Grid("OldestShrine", remove_objects=("LOCALID_OLDEST_SHRINE_CAMILLE", "LOCALID_OLDEST_SHRINE_ANDREW", "LOCALID_OLDEST_SHRINE_RAYQUAZA", "LOCALID_OLDEST_SHRINE_JAYDEN") + _pg)
     objs = {o["local_id"]: o for o in sh.m["object_events"] if "local_id" in o}
     cells = [(objs[k]["x"], objs[k]["y"]) for k in ("LOCALID_OLDEST_SHRINE_CAMILLE", "LOCALID_OLDEST_SHRINE_ANDREW", "LOCALID_OLDEST_SHRINE_RAYQUAZA", "LOCALID_OLDEST_SHRINE_JAYDEN")]
     up = next(c for c in sh.m["connections"] if c["direction"] == "down")
     rr = sh.fill([(x, 22) for x in range(sh.w)])
-    check(all(sh.walk(*c) for c in cells) and sum(1 for c in cells if c in rr) >= 3 and all(objs[k]["flag"].startswith("FLAG_HIDE_SHRINE") for k in objs if k.startswith("LOCALID_OLDEST_SHRINE_") and k.split("_")[-1] in ("CAMILLE", "ANDREW", "RAYQUAZA", "JAYDEN")),
+    check(all(sh.walk(*c) for c in cells) and sum(1 for c in cells if c in rr) >= 3 and all(objs[k]["flag"].startswith("FLAG_HIDE_SHRINE") for k in objs if k.startswith("LOCALID_OLDEST_SHRINE_") and "_PG_" not in k and k.split("_")[-1] in ("CAMILLE", "ANDREW", "RAYQUAZA", "JAYDEN")),
           f"Oldest Shrine: the scene cells {cells} are walkable (and reachable from the landing) and hidden by their flags")
+
+
+def frontier_gate():
+    """Chapter 10: the Battle Frontier plaza (Crescent City, south of Canal Avenue) is sealed by its fence and the guard in the one-tile gate; the Arena door's
+    standing cell (25, 50) is inside, and every post-game object stands on a walkable cell hidden by its own flag."""
+    cc = Grid("CrescentCity")
+    guard = next(o for o in cc.m["object_events"] if o.get("local_id") == "LOCALID_CRESCENT_CITY_FRONTIER_GUARD")
+    src = [(48, 21)]
+    r_closed = cc.fill(src)
+    cc2 = Grid("CrescentCity", remove_objects=("LOCALID_CRESCENT_CITY_FRONTIER_GUARD",))
+    r_open = cc2.fill(src)
+    check(guard["flag"] == "FLAG_UNUSED_0x2D9" and (25, 50) not in r_closed and (25, 50) in r_open,
+          "Crescent City: the Frontier plaza (Arena door cell (25, 50)) is reachable only once the guard is gone (FLAG_UNUSED_0x2D9)")
+    import story_data_ch10 as c10
+    bad = []
+    for (m, key, kind, flag, gfx, (x, y), s) in c10.all_objects():
+        g = Grid(m)
+        if not (g.w > x and g.h > y) or (g.cell(x, y)[0] != 0):
+            bad.append(f"{m} {key} {x},{y} is not a walkable cell")
+        o = [e for e in g.m["object_events"] if e.get("flag") == flag]
+        if not o:
+            bad.append(f"{m} {key}: no object with {flag}")
+    check(not bad, f"post-game objects: all {len(c10.all_objects())} stand on collision-free cells, each hidden by its own flag ({bad})")
 
 
 def trainers_vs_triggers():
@@ -598,6 +622,7 @@ if __name__ == "__main__":
     lands_end()
     verse_panels()
     finale_rooms()
+    frontier_gate()
     trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()

@@ -1,4 +1,5 @@
 Route19_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route19_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -59,3 +60,30 @@ Route19_Text_Route19RangerAfter:
 	.string "Kabutops are older than the\ntown. They keep to the flats.$"
 
 @ --- end route trainers ---
+
+Route19_OnTransitionPG:
+	call Route19_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route19_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route19_EventScript_PGHide
+Route19_EventScript_PGSetupDone:
+	return
+
+Route19_EventScript_PGHide:
+	setflag FLAG_PG_WELLSPRING_MASK
+	return
+
+Route19_EventScript_PgWellspringMask::
+	lock
+	giveitem ITEM_WELLSPRING_MASK
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_PG_WELLSPRING_MASK
+	removeobject LOCALID_ROUTE19_PG_WELLSPRING_MASK
+	release
+	end
+
+@ --- end post-game ---

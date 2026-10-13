@@ -2166,16 +2166,6 @@
       "blockdata_filepath": "data/layouts/StripStub/map.bin"
     },
     {
-      "id": "LAYOUT_ISLE_MARAIS_SHELTER",
-      "name": "IsleMarais_Shelter_Layout",
-      "width": 22,
-      "height": 15,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansHall",
-      "border_filepath": "data/layouts/IsleMarais_Shelter/border.bin",
-      "blockdata_filepath": "data/layouts/IsleMarais_Shelter/map.bin"
-    },
-    {
       "id": "LAYOUT_ISLE_MARAIS_PLAYERS_HOUSE",
       "name": "IsleMarais_PlayersHouse_Layout",
       "width": 11,
@@ -2556,16 +2546,6 @@
       "blockdata_filepath": "data/layouts/CrescentCity_PokecenterWaterfront/map.bin"
     },
     {
-      "id": "LAYOUT_CRESCENT_CITY_TRADES",
-      "name": "CrescentCity_Trades_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_Trades/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_Trades/map.bin"
-    },
-    {
       "id": "LAYOUT_CRESCENT_CITY_DEPT1F",
       "name": "CrescentCity_Dept1f_Layout",
       "width": 17,
@@ -2686,16 +2666,6 @@
       "blockdata_filepath": "data/layouts/CrescentCity_Gym/map.bin"
     },
     {
-      "id": "LAYOUT_CRESCENT_CITY_BLACKSNAKE_BASE",
-      "name": "CrescentCity_BlacksnakeBase_Layout",
-      "width": 23,
-      "height": 16,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/CrescentCity_BlacksnakeBase/border.bin",
-      "blockdata_filepath": "data/layouts/CrescentCity_BlacksnakeBase/map.bin"
-    },
-    {
       "id": "LAYOUT_POINTE_ROUGE_CAPITOL_LOBBY",
       "name": "PointeRouge_CapitolLobby_Layout",
       "width": 17,
@@ -2744,16 +2714,6 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/PointeRouge_TackleShop/border.bin",
       "blockdata_filepath": "data/layouts/PointeRouge_TackleShop/map.bin"
-    },
-    {
-      "id": "LAYOUT_POINTE_ROUGE_ICE_PLANT",
-      "name": "PointeRouge_IcePlant_Layout",
-      "width": 19,
-      "height": 14,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/PointeRouge_IcePlant/border.bin",
-      "blockdata_filepath": "data/layouts/PointeRouge_IcePlant/map.bin"
     },
     {
       "id": "LAYOUT_POINTE_ROUGE_REFINERY",
@@ -2914,16 +2874,6 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/LutinsHollow_Pokecenter/border.bin",
       "blockdata_filepath": "data/layouts/LutinsHollow_Pokecenter/map.bin"
-    },
-    {
-      "id": "LAYOUT_LUTINS_HOLLOW_HERBALIST",
-      "name": "LutinsHollow_Herbalist_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
-      "border_filepath": "data/layouts/LutinsHollow_Herbalist/border.bin",
-      "blockdata_filepath": "data/layouts/LutinsHollow_Herbalist/map.bin"
     },
     {
       "id": "LAYOUT_LUTINS_HOLLOW_MOSS_HOUSE_N",
@@ -3134,6 +3084,56 @@
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/LandsEnd_House3/border.bin",
       "blockdata_filepath": "data/layouts/LandsEnd_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ISLE_MARAIS_SHELTER",
+      "name": "IsleMarais_Shelter_Layout",
+      "width": 22,
+      "height": 15,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansHall",
+      "border_filepath": "data/layouts/IsleMarais_Shelter/border.bin",
+      "blockdata_filepath": "data/layouts/IsleMarais_Shelter/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRESCENT_CITY_TRADES",
+      "name": "CrescentCity_Trades_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_Trades/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_Trades/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRESCENT_CITY_BLACKSNAKE_BASE",
+      "name": "CrescentCity_BlacksnakeBase_Layout",
+      "width": 23,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/CrescentCity_BlacksnakeBase/border.bin",
+      "blockdata_filepath": "data/layouts/CrescentCity_BlacksnakeBase/map.bin"
+    },
+    {
+      "id": "LAYOUT_POINTE_ROUGE_ICE_PLANT",
+      "name": "PointeRouge_IcePlant_Layout",
+      "width": 19,
+      "height": 14,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/PointeRouge_IcePlant/border.bin",
+      "blockdata_filepath": "data/layouts/PointeRouge_IcePlant/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUTINS_HOLLOW_HERBALIST",
+      "name": "LutinsHollow_Herbalist_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansInterior",
+      "border_filepath": "data/layouts/LutinsHollow_Herbalist/border.bin",
+      "blockdata_filepath": "data/layouts/LutinsHollow_Herbalist/map.bin"
     },
     {
       "id": "LAYOUT_LANDS_END_DROWNED_TEMPLE",

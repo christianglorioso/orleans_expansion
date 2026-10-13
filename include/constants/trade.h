@@ -21,6 +21,10 @@ enum InGameTradeID
     INGAME_TRADE_ELECTRODE,
     INGAME_TRADE_TANGELA,
     INGAME_TRADE_SEEL,
+    // Orleans (Chapter 10): the trade house in Crescent City
+    INGAME_TRADE_ALOLAN_RAICHU,
+    INGAME_TRADE_ALOLAN_VULPIX,
+    INGAME_TRADE_ALOLAN_SANDSHREW,
 };
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon

@@ -1,4 +1,5 @@
 Route16_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route16_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -73,3 +74,45 @@ Route16_Text_Route16Picnicker2After:
 	.string "Dusk is when the mill sleeps.\nOnly the cane keeps growing.$"
 
 @ --- end route trainers ---
+
+Route16_OnTransitionPG:
+	call Route16_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route16_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route16_EventScript_PGHide
+Route16_EventScript_PGSetupDone:
+	return
+
+Route16_EventScript_PGHide:
+	setflag FLAG_PG_ENTEI
+	return
+
+Route16_EventScript_PgEntei::
+	lock
+	faceplayer
+	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
+	msgbox Route16_Text_PGEntei, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ENTEI, 60
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route16_EventScript_PgEnteiDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route16_EventScript_PgEnteiDone
+	release
+	end
+
+Route16_EventScript_PgEnteiDone:
+	setflag FLAG_PG_ENTEI
+	removeobject LOCALID_ROUTE16_PG_ENTEI
+	release
+	end
+
+Route16_Text_PGEntei:
+	.string "ENTEI stands before you,\n"
+	.string "heat rolling off its mane.$"
+
+@ --- end post-game ---

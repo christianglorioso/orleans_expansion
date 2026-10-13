@@ -1,4 +1,5 @@
 Route23_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route23_OnTransitionPG
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -59,3 +60,109 @@ Route23_Text_Route23BlackBeltAfter:
 	.string "Cleaner air makes better\ntraining.$"
 
 @ --- end route trainers ---
+
+Route23_OnTransitionPG:
+	call Route23_EventScript_PGSetup
+	end
+
+@ --- post-game (gen_postgame.py) ---
+
+@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
+Route23_EventScript_PGSetup:
+	call_if_lt VAR_ORLEANS_STORY, 45, Route23_EventScript_PGHide
+	goto_if_lt VAR_ORLEANS_STORY, 45, Route23_EventScript_PGSetupDone
+	call Route23_EventScript_PGNightUrsalunaBm
+Route23_EventScript_PGSetupDone:
+	return
+
+Route23_EventScript_PGHide:
+	setflag FLAG_PG_LANDORUS
+	setflag FLAG_PG_AZELF
+	setflag FLAG_PG_URSALUNA_BM
+	return
+
+Route23_EventScript_PgLandorus::
+	lock
+	faceplayer
+	playmoncry SPECIES_LANDORUS, CRY_MODE_ENCOUNTER
+	msgbox Route23_Text_PGLandorus, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_LANDORUS, 62
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgLandorusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgLandorusDone
+	release
+	end
+
+Route23_EventScript_PgLandorusDone:
+	setflag FLAG_PG_LANDORUS
+	removeobject LOCALID_ROUTE23_PG_LANDORUS
+	release
+	end
+
+Route23_EventScript_PgAzelf::
+	lock
+	faceplayer
+	playmoncry SPECIES_AZELF, CRY_MODE_ENCOUNTER
+	msgbox Route23_Text_PGAzelf, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_AZELF, 55
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgAzelfDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgAzelfDone
+	release
+	end
+
+Route23_EventScript_PgAzelfDone:
+	setflag FLAG_PG_AZELF
+	removeobject LOCALID_ROUTE23_PG_AZELF
+	release
+	end
+
+Route23_EventScript_PgUrsalunaBm::
+	lock
+	faceplayer
+	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
+	msgbox Route23_Text_PGUrsalunaBm, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_URSALUNA_BLOODMOON, 60
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgUrsalunaBmDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgUrsalunaBmDone
+	release
+	end
+
+Route23_EventScript_PgUrsalunaBmDone:
+	setflag FLAG_PG_URSALUNA_BM
+	setflag FLAG_PG_URSALUNA_DONE
+	removeobject LOCALID_ROUTE23_PG_URSALUNA_BM
+	release
+	end
+
+Route23_EventScript_PGNightUrsalunaBm:
+	goto_if_set FLAG_PG_URSALUNA_DONE, Route23_EventScript_PGNightHideUrsalunaBm
+	special OrleansSvc_IsNight
+	goto_if_eq VAR_RESULT, FALSE, Route23_EventScript_PGNightHideUrsalunaBm
+	clearflag FLAG_PG_URSALUNA_BM
+	return
+
+Route23_EventScript_PGNightHideUrsalunaBm:
+	setflag FLAG_PG_URSALUNA_BM
+	return
+
+Route23_Text_PGLandorus:
+	.string "LANDORUS stands before you,\n"
+	.string "the ground trembling under it.$"
+
+Route23_Text_PGAzelf:
+	.string "AZELF stands before you,\n"
+	.string "its will gleaming like a blade.$"
+
+Route23_Text_PGUrsalunaBm:
+	.string "URSALUNA stands before you,\n"
+	.string "a red moon in its eyes.$"
+
+@ --- end post-game ---

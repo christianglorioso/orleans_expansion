@@ -349,6 +349,49 @@ IsleMarais_Shelter_Text_LafayetteHeadsOut:
 	.string "I'm heading up to ROUTE 1 to count\n"
 	.string "what the storm moved. Meet me there!$"
 
+@ the Fais Do-Do Ribbon (Chapter 10 audit: Petilil -> Hisuian Lilligant): the accordion player gives it once the sixth badge is held
+IsleMarais_Shelter_EventScript_Accordion6::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_FAIS_DO_DO, IsleMarais_Shelter_EventScript_AccordionAfter
+	goto_if_unset FLAG_BADGE06_GET, IsleMarais_Shelter_EventScript_AccordionTune
+	msgbox IsleMarais_Shelter_Text_Ribbon1, MSGBOX_DEFAULT
+	giveitem ITEM_FAIS_DO_DO_RIBBON
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_FAIS_DO_DO
+	msgbox IsleMarais_Shelter_Text_RibbonGiven, MSGBOX_DEFAULT
+	release
+	end
+
+IsleMarais_Shelter_EventScript_AccordionAfter:
+	msgbox IsleMarais_Shelter_Text_RibbonAfter, MSGBOX_DEFAULT
+	release
+	end
+
+IsleMarais_Shelter_EventScript_AccordionTune:
+	msgbox IsleMarais_Shelter_Text_Accordion, MSGBOX_DEFAULT
+	release
+	end
+
+IsleMarais_Shelter_Text_Accordion:
+	.string "Someone still plays that old\n"
+	.string "accordion every evening.$"
+
+IsleMarais_Shelter_Text_Ribbon1:
+	.string "The accordion player grins. You've\n"
+	.string "danced a long road, haven't you?\p"
+	.string "Take this fais do-do ribbon. It's\n"
+	.string "for whoever the dance picks. A shy\p"
+	.string "PETILIL would love it.$"
+
+IsleMarais_Shelter_Text_RibbonGiven:
+	.string "Hold it to a PETILIL and it will\n"
+	.string "dance into a HISUIAN LILLIGANT.$"
+
+IsleMarais_Shelter_Text_RibbonAfter:
+	.string "Fais do-do! Dance till the lamps\n"
+	.string "go out.$"
+
 @ --- mapgen: generated NPC scripts (begin) ---
 
 IsleMarais_Shelter_EventScript_Nurse2::
@@ -383,12 +426,5 @@ IsleMarais_Shelter_EventScript_Recruit4::
 
 IsleMarais_Shelter_Text_Recruit4:
 	.string "We've got hot food and good news.\nTake a pamphlet, friend.$"
-
-IsleMarais_Shelter_EventScript_Accordion6::
-	msgbox IsleMarais_Shelter_Text_Accordion6, MSGBOX_NPC
-	end
-
-IsleMarais_Shelter_Text_Accordion6:
-	.string "Someone still plays that old\naccordion every evening.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

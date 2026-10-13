@@ -275,6 +275,26 @@ def _merge_ch9():
 
 _merge_ch9()
 
+# ---------------------------------------------------------------------------------------------- Chapter 10, the post-game (story_data_ch10.py)
+import story_data_ch10 as _c10  # noqa: E402
+
+
+def _merge_ch10():
+    outdoor = sorted({m for (m, *_rest) in _c10.all_objects() if m not in _c10.INTERIOR_KEYS})
+    for name in outdoor:
+        _merge_into(OVERLAY.setdefault(name, {}), {"add_objects": _c10.overlay_for(name)})
+    for name, key in _c10.INTERIOR_KEYS.items():
+        ov = INTERIOR.setdefault(key, {})
+        ov.setdefault("extra", []).extend(_c10.interior_extras(name))
+    _merge_into(OVERLAY.setdefault("CrescentCity", {}), _c10.FRONTIER)
+    for k, v in _c10.ROOMS.items():
+        ov = INTERIOR.setdefault(k, {})
+        for sub, val in v.items():
+            ov.setdefault(sub, {}).update(val)
+
+
+_merge_ch10()
+
 # ---------------------------------------------------------------------------------------------- the water gates (story_data_gates.py)
 import story_data_gates as _gates  # noqa: E402
 
