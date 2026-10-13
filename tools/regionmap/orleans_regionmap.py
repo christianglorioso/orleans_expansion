@@ -111,7 +111,7 @@ DEEP = [(-1.5, 14.75), (3.0, 14.6), (7.0, 14.75), (10.0, 14.75), (12.5, 14.35), 
         (23.0, 13.95), (27.0, 13.9), (29.5, 13.8)]
 
 LAKES = {
-    "pointe_lake": [(8.7, 2.25), (9.3, 1.85), (10.2, 1.9), (10.65, 2.35), (10.45, 2.95), (9.7, 3.1), (9.0, 2.95)],
+    "pointe_lake": [(8.4, 1.3), (9.0, 0.9), (10.0, 0.95), (10.55, 1.3), (10.35, 1.9), (9.5, 2.0), (8.7, 1.85)],
     "basin_lake": [(7.0, 6.35), (7.8, 5.95), (9.0, 6.0), (9.85, 6.45), (9.95, 7.2), (9.2, 7.6), (8.0, 7.5),
                    (7.2, 7.1)],
     "big_lake": [(17.55, 8.55), (17.85, 7.6), (18.8, 6.75), (20.0, 6.35), (21.4, 6.45), (22.5, 6.25), (23.35, 6.6),
@@ -121,7 +121,7 @@ LAKES = {
 # land inside water (drawn after the lakes and the Gulf)
 ISLANDS = {
     "isle_marais": ("ellipse", (4.45, 13.6), (1.2, 0.62), "marsh"),
-    "suicune_islet": ("ellipse", (21.5, 7.55), (0.32, 0.22), "plain"),
+    "suicune_islet": ("ellipse", (20.6, 6.78), (0.3, 0.17), "plain"),
     # marsh islets off the coast and in the delta mouth
     "islet_w": ("ellipse", (1.0, 12.85), (0.45, 0.2), "marsh"),
     "islet_c1": ("ellipse", (7.4, 13.45), (0.4, 0.18), "marsh"),
@@ -132,8 +132,7 @@ ISLANDS = {
 RIVERS = {  # name: (points, width in px)
     "emerald": ([(11.6, -2.5), (11.7, 0.0), (11.85, 1.6), (11.95, 2.6), (12.15, 3.6), (12.45, 4.6), (13.4, 5.3),
                  (14.6, 6.2), (15.4, 7.1), (15.9, 8.1), (16.4, 9.0), (17.2, 9.75), (18.4, 10.35), (19.5, 10.75),
-                 (20.6, 10.95), (21.9, 11.3), (23.2, 11.8), (24.6, 12.3), (25.7, 12.55), (26.6, 12.75),
-                 (27.1, 13.3)], 3),
+                 (20.5, 11.5), (24.5, 11.5), (24.5, 12.5), (26.5, 12.5), (26.8, 13.0), (27.1, 13.3)], 3),
     "west_river": ([(7.0, -2.5), (7.1, 0.0), (7.4, 1.6), (7.9, 3.2), (8.35, 4.3), (8.5, 5.3), (8.45, 6.1)], 2),
     "west_river_south": ([(9.5, 7.4), (9.85, 8.4), (10.1, 9.6), (10.3, 10.8), (10.45, 12.0), (10.55, 13.3)], 2),
     "tributary": ([(-1.5, 4.45), (0.5, 4.3), (2.5, 4.55), (4.5, 4.4), (6.5, 4.55), (8.3, 4.45)], 2),
@@ -142,8 +141,8 @@ RIVERS = {  # name: (points, width in px)
     "bayou_coast_w": ([(5.6, 12.6), (6.2, 11.7), (5.9, 11.0), (6.6, 10.4)], 1),
     "bayou_coast_e": ([(12.6, 13.0), (13.0, 12.2), (12.5, 11.4)], 1),
     "bayou_basin": ([(3.6, 6.9), (4.6, 7.2), (5.6, 6.8), (6.2, 6.6)], 1),
-    "delta_1": ([(21.9, 11.35), (22.3, 12.2), (22.0, 13.1)], 1),
-    "delta_2": ([(24.0, 12.25), (24.5, 12.7), (24.3, 13.15)], 1),
+    "delta_1": ([(22.0, 11.9), (22.3, 12.5), (22.0, 13.1)], 1),
+    "delta_2": ([(23.4, 12.0), (23.7, 12.6), (23.5, 13.15)], 1),
 }
 # land types other than plain (order: later wins)
 REGIONS = [
@@ -163,9 +162,9 @@ REGIONS = [
              (13.6, 1.5), (13.1, 0.9), (13.35, 0.1), (12.95, -0.8)]),                       # the high dry country
     ("sugar", [(14.3, 10.25), (15.8, 9.95), (16.9, 10.25), (17.7, 11.0), (18.4, 11.45), (19.3, 11.75),
                (18.6, 12.4), (17.7, 12.75), (15.3, 12.75), (14.4, 12.1)]),                    # sugar country
-    ("pepper", [(17.6, 11.0), (18.6, 10.85), (19.7, 11.2), (19.6, 11.9), (18.3, 12.05), (17.5, 11.8)]),  # peppers
-    ("marsh", [(21.0, 10.9), (22.1, 11.05), (23.2, 11.45), (24.6, 11.95), (25.8, 12.25), (26.9, 12.45),
-               (27.4, 13.6), (21.2, 13.6), (20.75, 12.7), (21.05, 12.2), (20.8, 11.6)]),     # the delta
+    ("pepper", [(17.2, 10.45), (18.4, 10.3), (18.95, 10.7), (18.85, 11.8), (17.6, 11.85), (17.1, 11.2)]),  # peppers
+    ("marsh", [(21.0, 11.15), (22.4, 11.05), (23.6, 11.2), (24.9, 11.15), (25.2, 12.0), (26.9, 12.2),
+               (27.4, 13.6), (21.2, 13.6), (20.75, 12.7), (21.05, 12.2), (20.8, 11.7)]),     # the delta
 ]
 
 # ------------------------------------------------------------------ sections
@@ -190,36 +189,39 @@ TOWNS = [
 
 # routes: (number, foot|boat, polyline).  Cells are the ones the line runs through (see route_cells), minus
 # town/site cells, plus CELL_FIX.
+# Routes are straight bands with right-angle corners only, like vanilla Emerald (user, 2026-10-13).  Each line runs
+# through cell centres (x.5) in world.WORLD order; where two places are diagonal the corner is the one closest to the
+# design map.  The band fills its cells (square ends and corners: see band_dist).
 ROUTES = [
-    (1, "foot", [(4.5, 13.25), (4.5, 9.75)]),
-    (2, "foot", [(4.85, 9.6), (5.6, 10.0), (7.0, 10.85), (8.6, 11.8), (10.2, 12.4)]),
-    (3, "foot", [(10.8, 12.4), (12.0, 11.6), (13.4, 10.8), (14.55, 10.05), (15.5, 9.6), (16.1, 9.5)]),
-    (4, "foot", [(12.75, 3.0), (12.85, 4.0), (12.9, 4.85)]),
-    (5, "foot", [(12.0, 2.55), (11.2, 2.75), (10.5, 3.25), (9.3, 3.5)]),
-    (6, "boat", [(12.9, 8.2), (14.0, 8.4), (15.2, 8.55), (16.1, 9.1)]),
-    (7, "boat", [(9.9, 7.4), (11.0, 7.6), (12.0, 7.9), (12.9, 8.2)]),
-    (8, "boat", [(7.95, 6.6), (9.0, 7.0), (9.9, 7.4)]),
-    (9, "boat", [(6.9, 6.5), (7.95, 6.6)]),
-    (10, "boat", [(17.95, 9.15), (18.6, 8.5)]),
-    (11, "boat", [(18.6, 8.5), (19.8, 7.8), (21.0, 7.25), (22.3, 6.75), (23.1, 6.35)]),
-    (12, "foot", [(23.1, 6.35), (23.4, 5.4), (23.5, 4.6)]),
-    (13, "foot", [(23.5, 4.6), (24.05, 3.9), (24.6, 3.5), (25.2, 3.5)]),
-    (14, "foot", [(16.5, 10.0), (16.4, 10.95)]),
-    (15, "foot", [(16.4, 10.95), (16.5, 11.85), (17.0, 12.4)]),
-    (16, "foot", [(17.0, 12.4), (18.6, 12.5)]),
-    (17, "foot", [(18.6, 12.5), (19.5, 12.2), (20.2, 11.7)]),
-    (18, "boat", [(20.85, 11.05), (21.9, 11.3), (23.0, 11.75)]),
-    (19, "boat", [(23.0, 11.75), (24.6, 12.3)]),
-    (20, "boat", [(24.6, 12.3), (25.7, 12.55), (26.1, 12.6)]),
-    (21, "boat", [(26.5, 12.85), (26.4, 13.45), (25.4, 13.55)]),
-    (22, "boat", [(25.4, 13.55), (23.6, 13.5), (21.9, 13.5)]),
-    (23, "foot", [(14.0, 2.5), (15.0, 1.9), (16.0, 1.6)]),
-    (24, "foot", [(16.0, 1.6), (17.2, 1.45), (18.1, 1.5)]),
-    (25, "boat", [(8.5, 6.2), (8.5, 4.95)]),
+    (1, "foot", [(4.5, 9.5), (4.5, 13.5)]),                                  # Grand Oak S -> Isle Marais
+    (2, "foot", [(4.5, 9.5), (7.5, 9.5), (7.5, 12.5), (10.5, 12.5)]),        # Grand Oak E, down the coast, Storm's Edge W
+    (3, "foot", [(10.5, 12.5), (13.5, 12.5), (13.5, 9.5), (16.5, 9.5)]),     # Storm's Edge E, north, Crescent W
+    (4, "foot", [(13.5, 2.5), (13.5, 4.95)]),                                # Pointe Rouge S, the river's east bank
+    (5, "foot", [(12.5, 2.5), (9.05, 2.5)]),                                 # Pointe Rouge W, under the Pointe lake
+    (6, "boat", [(12.95, 7.5), (16.5, 7.5), (16.5, 9.5)]),                   # the canal into Crescent from the north-west
+    (7, "boat", [(9.95, 6.5), (10.5, 6.5), (10.5, 7.5), (12.95, 7.5)]),
+    (8, "boat", [(7.95, 6.5), (9.95, 6.5)]),                                 # across the Basin lake
+    (9, "boat", [(6.5, 6.5), (7.95, 6.5)]),                                  # Camp Cocodrie E
+    (10, "boat", [(17.5, 9.5), (18.5, 9.5), (18.5, 7.95)]),                  # Crescent E, north onto the Big Lake
+    (11, "boat", [(18.5, 7.95), (18.5, 7.5), (22.95, 7.5)]),                 # across the Big Lake
+    (12, "foot", [(22.95, 7.5), (23.5, 7.5), (23.5, 3.95)]),                 # north along the forest edge
+    (13, "foot", [(23.5, 3.95), (23.5, 3.5), (25.5, 3.5)]),                  # east into Lutin's Hollow
+    (14, "foot", [(16.5, 9.5), (16.5, 10.95)]),                              # Crescent S (levee road)
+    (15, "foot", [(16.5, 10.95), (16.5, 12.5), (16.95, 12.5)]),
+    (16, "foot", [(16.95, 12.5), (18.95, 12.5)]),
+    (17, "foot", [(18.95, 12.5), (19.5, 12.5), (19.5, 11.5), (20.5, 11.5)]),  # up to Redfield's mill road
+    (18, "boat", [(20.5, 11.5), (23.95, 11.5)]),                             # down the river
+    (19, "boat", [(23.95, 11.5), (24.5, 11.5), (24.5, 12.5), (24.95, 12.5)]),
+    (20, "boat", [(24.95, 12.5), (26.5, 12.5)]),                             # into Land's End
+    (21, "boat", [(26.5, 12.5), (26.5, 13.5), (25.05, 13.5)]),               # Land's End S, then west
+    (22, "boat", [(25.05, 13.5), (21.5, 13.5)]),                             # out to the Drowned Temple
+    (23, "foot", [(13.5, 2.5), (15.5, 2.5), (15.5, 1.5), (15.95, 1.5)]),     # Pointe Rouge E, up into the dry country
+    (24, "foot", [(15.95, 1.5), (18.5, 1.5)]),                               # to the Salt Dome
+    (25, "boat", [(8.5, 6.5), (8.5, 4.5)]),                                  # Route 8 N -> the Oldest Shrine
 ]
 # Player icon: the map's long axis and whether the polyline starts at the map's low end (west / north).  The
 # region map places the player icon on icon_path[progress along that axis] (see 01_wiring_plan.md).
-ROUTE_AXIS = {1: ("y", False), 2: ("x", True), 3: ("x", True), 4: ("y", True), 5: ("x", False), 6: ("x", True),
+ROUTE_AXIS = {1: ("y", True), 2: ("x", True), 3: ("x", True), 4: ("y", True), 5: ("x", False), 6: ("x", True),
               7: ("x", True), 8: ("x", True), 9: ("x", True), 10: ("x", True), 11: ("x", True), 12: ("y", False),
               13: ("y", False), 14: ("y", True), 15: ("x", True), 16: ("x", True), 17: ("x", True), 18: ("x", True),
               19: ("x", True), 20: ("x", True), 21: ("x", False), 22: ("x", False), 23: ("x", True), 24: ("x", True),
@@ -228,7 +230,7 @@ ROUTE_AXIS = {1: ("y", False), 2: ("x", True), 3: ("x", True), 4: ("y", True), 5
 CELL_FIX = {
     1: ([(3, 10)], []),          # the hidden channel to the Old Water is Route 1's map
 }
-FERRY = [(12.9, 4.9), (13.4, 5.3), (14.6, 6.2), (15.4, 7.1), (15.9, 8.1), (16.2, 8.7)]  # riverboat, drawn dotted
+FERRY = [(13.45, 5.0), (14.6, 6.2), (15.2, 6.9)]  # riverboat, drawn dotted
 
 
 # ------------------------------------------------------------------ helpers
@@ -286,6 +288,16 @@ def seg_dist(px, py, a, b):
     t = 0 if L == 0 else max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / L))
     qx, qy = ax + t * dx, ay + t * dy
     return math.hypot(px - qx, py - qy)
+
+
+def band_dist(px, py, pts):
+    """Chebyshev distance to a polyline of horizontal/vertical segments: square band ends and corners"""
+    best = 1e9
+    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+        qx = min(max(px, min(ax, bx)), max(ax, bx))
+        qy = min(max(py, min(ay, by)), max(ay, by))
+        best = min(best, max(abs(px - qx), abs(py - qy)))
+    return best
 
 
 def poly_dist(px, py, pts):
@@ -486,11 +498,11 @@ def feature_tiles(T, dist):
                     busy.add((x // 8, y // 8))
     for num, mode, pts in ROUTES:
         pp = [to_px(p) for p in pts]
-        reach = 3.0 if mode == "foot" else 2.6
+        reach = 3.6
         for ty in range(SCREEN_TH):
             for tx in range(SCREEN_TW):
-                if (tx, ty) not in busy and poly_dist(tx * 8 + 4, ty * 8 + 4, pp) <= reach + 5.66:
-                    if any(poly_dist(tx * 8 + x + 0.5, ty * 8 + y + 0.5, pp) <= reach
+                if (tx, ty) not in busy and band_dist(tx * 8 + 4, ty * 8 + 4, pp) <= reach + 4:
+                    if any(band_dist(tx * 8 + x + 0.5, ty * 8 + y + 0.5, pp) <= reach
                            for y in range(8) for x in range(8)):
                         busy.add((tx, ty))
     for mapsec, name, (cx, cy), w, h, kind in TOWNS:
@@ -597,16 +609,16 @@ def draw_routes(P, T):
         ys = [p[1] for p in pp]
         for y in range(max(0, int(min(ys)) - 5), min(H, int(max(ys)) + 6)):
             for x in range(max(0, int(min(xs)) - 5), min(W, int(max(xs)) + 6)):
-                d = poly_dist(x + 0.5, y + 0.5, pp)
+                d = band_dist(x + 0.5, y + 0.5, pp)
                 if mode == "foot":
-                    if d <= 1.05:
+                    if d <= 1.0:
                         P[y][x] = CI["O"]
-                    elif d <= 2.1:
+                    elif d <= 2.6:
                         P[y][x] = CI["o"]
-                    elif d <= 3.0:
+                    elif d <= 3.6:
                         P[y][x] = CI["r"]
                 else:
-                    if d <= 2.6:
+                    if d <= 3.6:
                         P[y][x] = CI["b"] if y % 2 == 0 else CI["B"]
     # the riverboat (Crescent City <-> Route 4 landing): white dots on the river
     pp = [to_px(p) for p in FERRY]
