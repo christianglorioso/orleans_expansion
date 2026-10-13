@@ -88,10 +88,10 @@ static const u8 sText_TwoWildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME
 static const u8 sText_PlayerDefeatedLinkTrainerTrainer1[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS}!\p");
 static const u8 sText_OpponentMon1Appeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
 // Orleans: wild intros name the gender and nature ({B_BUFF1} / {B_BUFF2} hold "male, Adamant " built by BufferWildDescription)
-static const u8 sText_WildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p");
-static const u8 sText_LegendaryPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p");
-static const u8 sText_WildPkmnAppearedPause[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!{PAUSE 127}");
-static const u8 sText_TwoWildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nand {B_BUFF2}{B_OPPONENT_MON2_NAME} appeared!\p");
+static const u8 sText_WildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p{B_COPY_VAR_3}");
+static const u8 sText_LegendaryPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p{B_COPY_VAR_3}");
+static const u8 sText_WildPkmnAppearedPause[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!{PAUSE 127}{B_COPY_VAR_3}");
+static const u8 sText_TwoWildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nand {B_BUFF2}{B_OPPONENT_MON2_NAME} appeared!\p{B_COPY_VAR_3}");
 static const u8 sText_GhostAppearedCantId[] = _("The GHOST appeared!\pDarn!\nThe GHOST can't be ID'd!\p");
 static const u8 sText_TheGhostAppeared[] = _("The GHOST appeared!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("You are challenged by {B_TRAINER1_NAME_WITH_CLASS}!\p");
@@ -2445,6 +2445,44 @@ static bool32 IsOrleansLegendBattle(void)
     return GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_CLASS_PKMN_TRAINER_2;
 }
 
+// Orleans: the item a wild Pokemon holds is announced after the intro (never for trainers). gStringVar3 = "" or "It's holding an Oran Berry.\p" (a double
+// battle names each holder: "Zigzagoon is holding a Leftovers.\p")
+static void BufferWildHeldItemText(void)
+{
+    u32 i, count = IsDoubleBattle() ? 2 : 1;
+    u8 *dst = gStringVar3;
+
+    *dst = EOS;
+    for (i = 0; i < count; i++)
+    {
+        enum BattlerId battler = GetBattlerAtPosition(i == 0 ? B_POSITION_OPPONENT_LEFT : B_POSITION_OPPONENT_RIGHT);
+        struct Pokemon *mon = GetBattlerMon(battler);
+        enum Item item;
+        const u8 *name;
+
+        if (i == 1 && !IsValidForBattle(mon))
+            break;
+        item = GetMonData(mon, MON_DATA_HELD_ITEM);
+        if (item == ITEM_NONE)
+            continue;
+        name = GetItemName(item);
+        if (count == 1)
+        {
+            dst = StringCopy(dst, COMPOUND_STRING("It's holding "));
+        }
+        else
+        {
+            GetMonData(mon, MON_DATA_NICKNAME, dst);
+            StringGet_Nickname(dst);
+            dst = dst + StringLength(dst);
+            dst = StringCopy(dst, COMPOUND_STRING(" is holding "));
+        }
+        dst = StringCopy(dst, (name[0] == CHAR_A || name[0] == CHAR_E || name[0] == CHAR_I || name[0] == CHAR_O || name[0] == CHAR_U) ? COMPOUND_STRING("an ") : COMPOUND_STRING("a "));
+        dst = StringCopy(dst, name);
+        dst = StringCopy(dst, COMPOUND_STRING(".\p"));
+    }
+}
+
 // Orleans: "male, Adamant " / "female, Adamant " / "Adamant " (genderless) for the wild intro
 static void BufferWildDescription(u8 *dst, enum BattlerId battler)
 {
@@ -2550,6 +2588,7 @@ static void BufferWildDescription(u8 *dst, enum BattlerId battler)
             else if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
                 stringPtr = sText_TheGhostAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+            BufferWildHeldItemText();
             BufferWildDescription(gBattleTextBuff1, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
             if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
                 BufferWildDescription(gBattleTextBuff2, GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
