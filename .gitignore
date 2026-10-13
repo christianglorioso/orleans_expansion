@@ -91,6 +91,7 @@ tools/strip_manifest.md
 *.sav
 !data/*.gba
 tools/mapgen/edges_plan.md
+tools/mapgen/edge_feather_plan.md
 tools/playtest/out/
 # Pokedex implementation: planning docs, logs and the spreadsheet dump stay local
 tools/dex/commissioned_art_pending.md
