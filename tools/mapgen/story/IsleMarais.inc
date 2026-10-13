@@ -1,6 +1,18 @@
 IsleMarais_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, IsleMarais_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, IsleMarais_OnLoad
 	.byte 0
+
+IsleMarais_OnTransition:
+	call IsleMarais_EventScript_StoryWeather
+	end
+
+@ weather (weather_plan.py): rain until the player has left for Grand Oak (story 6), then sunny with clouds. Runs from OnTransition, before the weather starts.
+IsleMarais_EventScript_StoryWeather:
+	goto_if_lt VAR_ORLEANS_STORY, 6, IsleMarais_EventScript_StoryWeatherDone
+	setweather WEATHER_SUNNY_CLOUDS
+IsleMarais_EventScript_StoryWeatherDone:
+	return
 
 IsleMarais_OnLoad:
 	call_if_unset FLAG_BADGE01_GET, IsleMarais_EventScript_BoardUpPlayersHouse
@@ -17,29 +29,7 @@ IsleMarais_EventScript_BoardedDoor::
 IsleMarais_EventScript_BoardedDoorEnd:
 	end
 
-@ step 4: the first battle, a Pokémon the flood displaced, blocking the shelter steps
-IsleMarais_EventScript_DisplacedWingull::
-	lockall
-	msgbox IsleMarais_Text_WingullLunges, MSGBOX_DEFAULT
-	closemessage
-	setwildbattle SPECIES_WINGULL, 3
-	dowildbattle
-	special HealPlayerParty
-	msgbox IsleMarais_Text_WingullFlewOff, MSGBOX_DEFAULT
-	setvar VAR_ORLEANS_STORY, 3
-	releaseall
-	end
-
 IsleMarais_Text_BoardedDoor:
 	.string "The door's boarded up.\n"
 	.string "MOM says it isn't safe yet.$"
 
-IsleMarais_Text_WingullLunges:
-	.string "A WINGULL blown in by the storm\n"
-	.string "is tangled in the debris!\p"
-	.string "It lunges at you!$"
-
-IsleMarais_Text_WingullFlewOff:
-	.string "The shelter steps are clear again.\p"
-	.string "Your partner looks pleased\n"
-	.string "with itself.$"

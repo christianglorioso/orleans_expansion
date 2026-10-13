@@ -25,6 +25,7 @@ from event_scripts import include_map_scripts  # noqa: E402
 from interior_rooms import ROOMS, STYLES  # noqa: E402
 import story_overlay  # noqa: E402
 import interior_rest  # noqa: E402
+import weather_plan  # noqa: E402
 
 TS = os.path.join(HERE, "tilesets")
 WALL_ELEV = 3
@@ -350,7 +351,7 @@ def build(room, door_warps):
     rest = interior_rest.rest_events(name, lambda x, y: walkable(grid, x, y, exits), taken_cells)
     bg = interior_rest.without_rest(story_overlay.interior_events(room.get("mockup"), "bg_events", old.get("bg_events", []))) + rest
     dump(mp, {"id": room["const"], "name": name, "layout": lid, "music": room.get("music", "MUS_RG_PALLET"),
-              "region_map_section": room["mapsec"], "requires_flash": False, "weather": "WEATHER_NONE",
+              "region_map_section": room["mapsec"], "requires_flash": False, "weather": weather_plan.header(name) or "WEATHER_NONE",
               "map_type": "MAP_TYPE_INDOOR", "allow_cycling": False, "allow_escaping": False, "allow_running": True,
               "show_map_name": False, "battle_scene": "MAP_BATTLE_SCENE_NORMAL", "connections": None,
               "object_events": objs, "warp_events": warps,

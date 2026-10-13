@@ -17,10 +17,18 @@ StormsEdge_OnLoad:
 @ Raichunite X lies in the substation yard but stays out of reach (its item flag is
 @ held set) until the grid is back, when the gym victory clears the flag.
 StormsEdge_OnTransition:
+	call StormsEdge_EventScript_StoryWeather
 	call StormsEdge_EventScript_PGSetup
 	call_if_unset FLAG_RESPAWN_STORMS_EDGE_SET, StormsEdge_EventScript_FirstRespawn
 	call_if_unset FLAG_STORMS_EDGE_GRID_RESTORED, StormsEdge_EventScript_HoldRaichuniteX
 	end
+
+@ weather (weather_plan.py): thunderstorm until the grid is back, then clear. Runs from OnTransition, before the weather starts.
+StormsEdge_EventScript_StoryWeather:
+	goto_if_unset FLAG_STORMS_EDGE_GRID_RESTORED, StormsEdge_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+StormsEdge_EventScript_StoryWeatherDone:
+	return
 
 @ Only the first arrival sets the respawn point here; a later visit must not override a Center healed at elsewhere (the Center
 @ itself sets it every time the player walks in).

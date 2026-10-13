@@ -317,7 +317,7 @@ def run(b, t):
     t.check("a draw in the Rayquaza raid is not a win: the retry menu appears and the story stays 42", choice_open(b) and st == 42, "story=%d tasks=%s" % (st, b.active_tasks()[:3]))
 
     # ---------------------------------------------------------------- the Route 8 islet (fin S4): the ceremony's end lands on water, afloat
-    b.warp("Route8", 9, 10)       # the exact spot of the ceremony's warp
+    b.warp("Route8", 11, 10)      # the exact spot of the ceremony's warp
     b.frames(40)
     av = b.r8(b.sym("gPlayerAvatar"))
     t.check("a warp onto the water south of the islet gives the surfing avatar (no Surf user needed)", (av & 0x08) != 0 or (av & 0x20) != 0, "avatar flags 0x%02x" % av)

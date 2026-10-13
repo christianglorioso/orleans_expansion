@@ -350,7 +350,7 @@ OldWater_EventScript_CerEnd:
 	setflag FLAG_HIDE_CER_JAYDEN
 	setflag FLAG_HIDE_CER_WREN
 	@ onto the open water just south of the islet: a warp onto a surfable tile gives the surfing avatar, so a party with no Surf user is never stranded (audit fin S4)
-	warpsilent MAP_ORLEANS_ROUTE8, 9, 10
+	warpsilent MAP_ORLEANS_ROUTE8, 11, 10
 	waitstate
 	releaseall
 	end

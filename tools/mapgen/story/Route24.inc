@@ -100,8 +100,16 @@ Route24_Text_Route24RuinManiacAfter:
 @ --- end route trainers ---
 
 Route24_OnTransitionPG:
+	call Route24_EventScript_StoryWeather
 	call Route24_EventScript_PGSetup
 	end
+
+@ weather (weather_plan.py): sandstorm until Rayquaza lifts the dust storms, then clear. Runs from OnTransition, before the weather starts.
+Route24_EventScript_StoryWeather:
+	goto_if_unset FLAG_DUST_STORMS_LIFTED, Route24_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+Route24_EventScript_StoryWeatherDone:
+	return
 
 @ --- post-game (gen_postgame.py) ---
 

@@ -221,8 +221,16 @@ Route1_Text_ThroughTheReeds:
 	.string "seen on your own...$"
 
 Route1_OnTransitionPG:
+	call Route1_EventScript_StoryWeather
 	call Route1_EventScript_PGSetup
 	end
+
+@ weather (weather_plan.py): rain until story 6, then sunny with clouds. Runs from OnTransition, before the weather starts.
+Route1_EventScript_StoryWeather:
+	goto_if_lt VAR_ORLEANS_STORY, 6, Route1_EventScript_StoryWeatherDone
+	setweather WEATHER_SUNNY_CLOUDS
+Route1_EventScript_StoryWeatherDone:
+	return
 
 @ --- post-game (gen_postgame.py) ---
 

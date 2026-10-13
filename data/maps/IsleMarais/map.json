@@ -161,62 +161,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 22,
-      "y": 5,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 5,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 5,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "type": "trigger",
-      "x": 22,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "type": "trigger",
-      "x": 23,
-      "y": 6,
-      "elevation": 3,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "2",
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

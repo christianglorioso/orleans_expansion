@@ -62,8 +62,16 @@ Route23_Text_Route23BlackBeltAfter:
 @ --- end route trainers ---
 
 Route23_OnTransitionPG:
+	call Route23_EventScript_StoryWeather
 	call Route23_EventScript_PGSetup
 	end
+
+@ weather (weather_plan.py): sandstorm until Rayquaza lifts the dust storms, then clear. Runs from OnTransition, before the weather starts.
+Route23_EventScript_StoryWeather:
+	goto_if_unset FLAG_DUST_STORMS_LIFTED, Route23_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+Route23_EventScript_StoryWeatherDone:
+	return
 
 @ --- post-game (gen_postgame.py) ---
 

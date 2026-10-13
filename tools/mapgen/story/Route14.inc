@@ -3,14 +3,22 @@ Route14_MapScripts::
 	.byte 0
 
 @ Route 14 (Chapter 7). The rougarou: a one-off night Lycanroc Midnight (Lv. 42) on the levee crest; the object shows at night only, until it
-@ is beaten or caught. Then the crest holds a LYCANROCITE (given once, bag-full safe: the flag is set after the stone is in the bag).
+@ is caught (a KO leaves it for another try). Then the crest holds a LYCANROCITE (given once, bag-full safe: the flag is set after the stone is in the bag).
 Route14_OnTransition:
+	call Route14_EventScript_StoryWeather
 	setflag FLAG_HIDE_ROUTE14_ROUGAROU
 	goto_if_set FLAG_RECEIVED_LYCANROCITE, Route14_EventScript_NoRougarou
 	special OrleansSvc_IsNight
 	goto_if_eq VAR_RESULT, TRUE, Route14_EventScript_ShowRougarou
 Route14_EventScript_NoRougarou:
 	end
+
+@ weather (weather_plan.py): rain until the floodwater has gone (gym 6), then clear. Runs from OnTransition, before the weather starts.
+Route14_EventScript_StoryWeather:
+	goto_if_unset FLAG_BADGE06_GET, Route14_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+Route14_EventScript_StoryWeatherDone:
+	return
 
 Route14_EventScript_ShowRougarou:
 	clearflag FLAG_HIDE_ROUTE14_ROUGAROU
@@ -26,7 +34,6 @@ Route14_EventScript_Rougarou::
 	setwildbattle SPECIES_LYCANROC_MIDNIGHT, 42
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route14_EventScript_RougarouBeaten
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route14_EventScript_RougarouBeaten
 	msgbox Route14_Text_RougarouRan, MSGBOX_DEFAULT
 	release

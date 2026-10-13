@@ -1,5 +1,17 @@
 Route25_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route25_OnTransition
 	.byte 0
+
+Route25_OnTransition:
+	call Route25_EventScript_StoryWeather
+	end
+
+@ weather (weather_plan.py): thunderstorm through the finale, clear once the Rayquaza raid is won (story 43)
+Route25_EventScript_StoryWeather:
+	goto_if_lt VAR_ORLEANS_STORY, 43, Route25_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+Route25_EventScript_StoryWeatherDone:
+	return
 
 @ --- route trainers (gen_route_trainers.py) ---
 Route25_EventScript_Trainer1::

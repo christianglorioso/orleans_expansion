@@ -8,6 +8,7 @@ OldestShrine_MapScripts::
 @ the Swampertite, the dawn and the credits (story 44, then 45 = the post-game). A blackout replays what is not done (trainer flags skip won fights).
 
 OldestShrine_OnTransition:
+	call OldestShrine_EventScript_StoryWeather
 	call OldestShrine_EventScript_PGSetup
 	setflag FLAG_HIDE_SHRINE_CAMILLE
 	setflag FLAG_HIDE_SHRINE_ANDREW
@@ -30,6 +31,7 @@ OldestShrine_OnFrameTable:
 OldestShrine_EventScript_Arrival::
 	goto_if_ne VAR_ORLEANS_STORY, 41, OldestShrine_EventScript_ArrivalOther
 	lockall
+	setflag FLAG_PREVENT_OVERWORLD_SPEEDUP @ timed cinematic: 1x (the engine clears this flag on the next map load)
 	clearflag FLAG_HIDE_SHRINE_CAMILLE
 	clearflag FLAG_HIDE_SHRINE_ANDREW
 	addobject LOCALID_OLDEST_SHRINE_CAMILLE
@@ -411,6 +413,13 @@ PostGame_EventScript_Unhide:
 	clearflag FLAG_PG_WELLSPRING_MASK
 	clearflag FLAG_PG_CORNERSTONE_MASK
 	setflag FLAG_UNUSED_0x2D9
+	return
+
+@ weather (weather_plan.py): thunderstorm through the finale, clear once the Rayquaza raid is won (story 43)
+OldestShrine_EventScript_StoryWeather:
+	goto_if_lt VAR_ORLEANS_STORY, 43, OldestShrine_EventScript_StoryWeatherDone
+	setweather WEATHER_NONE
+OldestShrine_EventScript_StoryWeatherDone:
 	return
 
 @ --- post-game (gen_postgame.py) ---

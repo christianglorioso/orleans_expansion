@@ -362,7 +362,8 @@ class Bot:
             self.frames(6)
         for _ in range(int(timeout_s * 10)):
             self.frames(6)
-            if self.in_overworld() and not self.fading() and self.player_idle():
+            # fog / rain / sandstorm fade in after the screen does (field_weather): input is ignored until they are up
+            if self.in_overworld() and not self.fading() and self.player_idle() and (self.call("IsWeatherNotFadingIn") & 0xFF):
                 break
         self.frames(10)
 
