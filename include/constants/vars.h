@@ -116,9 +116,9 @@
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 #define VAR_OLD_WATER_TELLING                            0x405F // Chapter 8: the full telling at the Old Water (0 idle, 1 armed, 2 done)
 #define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ORLEANS_POOL_014                            0x4061
-#define VAR_ORLEANS_POOL_015                            0x4062
-#define VAR_ORLEANS_POOL_016                            0x4063
+#define VAR_ORLEANS_LEGENDARY_PICK                       0x4061 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
+#define VAR_OLD_WATER_CEREMONY                           0x4062 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
+#define VAR_SHRINE_ARRIVAL                               0x4063 // Chapter 9 (the finale): the player's legendary (1 Kyogre, 2 Groudon), the ceremony scene, the shrine arrival scene
 #define VAR_ORLEANS_POOL_017                            0x4064
 #define VAR_ORLEANS_POOL_018                            0x4065
 #define VAR_ORLEANS_POOL_019                            0x4066

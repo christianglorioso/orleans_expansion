@@ -36,10 +36,8 @@ int GameClear(void)
 
     SetContinueGameWarpStatus();
 
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
-    else
-        SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);
+    // Orleans: after the credits the game resumes at Crescent City's Center (the post-game)
+    SetContinueGameWarpToHealLocation(HEAL_LOCATION_CRESCENT_CITY);
 
     ribbonGet = FALSE;
 

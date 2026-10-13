@@ -13,9 +13,15 @@ OldWater_OnTransition:
 	setflag FLAG_HIDE_RAID_GRUNT1
 	setflag FLAG_HIDE_RAID_GRUNT2
 	setflag FLAG_HIDE_RAID_WREN
+	setflag FLAG_HIDE_CER_KYOGRE
+	setflag FLAG_HIDE_CER_GROUDON
+	setflag FLAG_HIDE_CER_TUPELO
+	setflag FLAG_HIDE_CER_JAYDEN
+	setflag FLAG_HIDE_CER_WREN
 	end
 
 OldWater_OnFrameTable:
+	map_script_2 VAR_OLD_WATER_CEREMONY, 1, OldWater_EventScript_Ceremony
 	map_script_2 VAR_OLD_WATER_RAID, 0, OldWater_EventScript_RaidEntry
 	map_script_2 VAR_OLD_WATER_RAID, 1, OldWater_EventScript_RaidScene
 	.2byte 0
@@ -216,4 +222,186 @@ OldWater_Text_ChoiceAgain:
 
 OldWater_Text_ChoiceNotYet:
 	.string "NOT YET$"
+
+@ ---------------------------------------------------------------- the dusk orb ceremony (Chapter 9, F.4: story 40 -> 41)
+@ The second raid's end sets VAR_OLD_WATER_CEREMONY 1 and warps here; the player picks Kyogre or Groudon (VAR_ORLEANS_LEGENDARY_PICK 1 or 2), Jayden
+@ takes the other. The legendary and its orb are given (own flags, retried by talking to Tupelo while the ceremony is open).
+OldWater_EventScript_Ceremony::
+	goto_if_lt VAR_ORLEANS_STORY, 40, OldWater_EventScript_CeremonySkip
+	lockall
+	clearflag FLAG_HIDE_CER_KYOGRE
+	clearflag FLAG_HIDE_CER_GROUDON
+	clearflag FLAG_HIDE_CER_TUPELO
+	clearflag FLAG_HIDE_CER_JAYDEN
+	clearflag FLAG_HIDE_CER_WREN
+	addobject LOCALID_OLD_WATER_CER_KYOGRE
+	addobject LOCALID_OLD_WATER_CER_GROUDON
+	addobject LOCALID_OLD_WATER_CER_TUPELO
+	addobject LOCALID_OLD_WATER_CER_JAYDEN
+	addobject LOCALID_OLD_WATER_CER_WREN
+	msgbox OldWater_Text_Cer1, MSGBOX_DEFAULT
+	msgbox OldWater_Text_Cer2, MSGBOX_DEFAULT
+	msgbox OldWater_Text_Cer3, MSGBOX_DEFAULT
+	msgbox OldWater_Text_Cer4, MSGBOX_DEFAULT
+	goto OldWater_EventScript_CerChoose
+
+OldWater_EventScript_CeremonySkip:
+	end
+
+OldWater_EventScript_CerChoose:
+	goto_if_set FLAG_RECEIVED_LEGENDARY, OldWater_EventScript_CerOrb
+	msgbox OldWater_Text_CerAsk, MSGBOX_DEFAULT
+	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, OldWater_Text_ChoiceKyogre, OldWater_Text_ChoiceGroudon
+	goto_if_eq VAR_RESULT, 1, OldWater_EventScript_PickGroudon
+	setvar VAR_ORLEANS_LEGENDARY_PICK, 1
+	givemon SPECIES_KYOGRE, 60
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, OldWater_EventScript_CerNoRoom
+	setflag FLAG_RECEIVED_LEGENDARY
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, OldWater_EventScript_KyogreToPC
+	msgbox OldWater_Text_GotKyogre, MSGBOX_DEFAULT
+	msgbox OldWater_Text_JaydenK, MSGBOX_DEFAULT
+	goto OldWater_EventScript_CerOrb
+
+OldWater_EventScript_KyogreToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KYOGRE
+	call Common_EventScript_TransferredToPC
+	msgbox OldWater_Text_GotKyogre, MSGBOX_DEFAULT
+	msgbox OldWater_Text_JaydenK, MSGBOX_DEFAULT
+	goto OldWater_EventScript_CerOrb
+
+OldWater_EventScript_PickGroudon:
+	setvar VAR_ORLEANS_LEGENDARY_PICK, 2
+	givemon SPECIES_GROUDON, 60
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, OldWater_EventScript_CerNoRoom
+	setflag FLAG_RECEIVED_LEGENDARY
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, OldWater_EventScript_GroudonToPC
+	msgbox OldWater_Text_GotGroudon, MSGBOX_DEFAULT
+	msgbox OldWater_Text_JaydenG, MSGBOX_DEFAULT
+	goto OldWater_EventScript_CerOrb
+
+OldWater_EventScript_GroudonToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GROUDON
+	call Common_EventScript_TransferredToPC
+	msgbox OldWater_Text_GotGroudon, MSGBOX_DEFAULT
+	msgbox OldWater_Text_JaydenG, MSGBOX_DEFAULT
+	goto OldWater_EventScript_CerOrb
+
+OldWater_EventScript_CerNoRoom:
+	setvar VAR_ORLEANS_LEGENDARY_PICK, 0
+	msgbox OldWater_Text_NoRoom, MSGBOX_DEFAULT
+	releaseall
+	end
+
+OldWater_EventScript_CerOrb:
+	goto_if_set FLAG_RECEIVED_LEGENDARY_ORB, OldWater_EventScript_CerEnd
+	msgbox OldWater_Text_OrbGive, MSGBOX_DEFAULT
+	goto_if_eq VAR_ORLEANS_LEGENDARY_PICK, 2, OldWater_EventScript_RedOrb
+	giveitem ITEM_BLUE_ORB
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_LEGENDARY_ORB
+	goto OldWater_EventScript_CerEnd
+
+OldWater_EventScript_RedOrb:
+	giveitem ITEM_RED_ORB
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_LEGENDARY_ORB
+	goto OldWater_EventScript_CerEnd
+
+@ the story moves on (40 -> 41) and Tupelo's boat takes the player to Route 8's north islet; the actors leave
+OldWater_EventScript_CerEnd:
+	msgbox OldWater_Text_Cer5, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_OLD_WATER_CEREMONY, 2
+	call_if_eq VAR_ORLEANS_STORY, 40, OldWater_EventScript_SetStory41
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_HIDE_CER_KYOGRE
+	setflag FLAG_HIDE_CER_GROUDON
+	setflag FLAG_HIDE_CER_TUPELO
+	setflag FLAG_HIDE_CER_JAYDEN
+	setflag FLAG_HIDE_CER_WREN
+	warpsilent MAP_ORLEANS_ROUTE8, 9, 8
+	waitstate
+	releaseall
+	end
+
+OldWater_EventScript_SetStory41:
+	setvar VAR_ORLEANS_STORY, 41
+	return
+
+@ the ceremony actors: Tupelo re-offers the choice while it is open (a full party); the rest are scenery
+OldWater_EventScript_CerTupelo::
+	lock
+	faceplayer
+	goto_if_ne VAR_OLD_WATER_CEREMONY, 1, OldWater_EventScript_CerIdle
+	goto OldWater_EventScript_CerChoose
+
+OldWater_EventScript_CerIdle:
+	release
+	end
+
+OldWater_EventScript_CerKyogre::
+OldWater_EventScript_CerGroudon::
+OldWater_EventScript_CerJayden::
+OldWater_EventScript_CerWren::
+	end
+
+OldWater_Text_Cer1:
+	.string "Dusk over the OLD WATER. Lamps burn\n"
+	.string "along every piling. TUPELO stands at\p"
+	.string "the landing, singing.$"
+
+OldWater_Text_Cer2:
+	.string "KYOGRE rises from the water by the\n"
+	.string "landing. GROUDON climbs the bank.\p"
+	.string "Neither roars. They listen.$"
+
+OldWater_Text_Cer3:
+	.string "TUPELO: The Long One will not come\n"
+	.string "alone. Two voices must walk with it,\p"
+	.string "or it will wake the storms.\n"
+	.string "TUPELO: One of these two will walk\p"
+	.string "beside you. The other, the boy.$"
+
+OldWater_Text_Cer4:
+	.string "JAYDEN: I'll take whichever you\n"
+	.string "leave. I owe somebody that much.\p"
+	.string "WREN: And I'll hold the lamps.$"
+
+OldWater_Text_CerAsk:
+	.string "TUPELO: Which will you walk with?$"
+
+OldWater_Text_ChoiceKyogre:
+	.string "KYOGRE$"
+
+OldWater_Text_ChoiceGroudon:
+	.string "GROUDON$"
+
+OldWater_Text_GotKyogre:
+	.string "KYOGRE chooses to walk with you.\n"
+	.string "The tide at your feet rises.$"
+
+OldWater_Text_GotGroudon:
+	.string "GROUDON chooses to walk with you.\n"
+	.string "The earth underfoot is warm.$"
+
+OldWater_Text_JaydenK:
+	.string "JAYDEN: Then GROUDON's with me.$"
+
+OldWater_Text_JaydenG:
+	.string "JAYDEN: Then KYOGRE's with me.$"
+
+OldWater_Text_OrbGive:
+	.string "TUPELO: And its orb. It carries the\n"
+	.string "sea, or the land. Hold it on the\p"
+	.string "legendary and the old power wakes.$"
+
+OldWater_Text_NoRoom:
+	.string "TUPELO: Your party and boxes are\n"
+	.string "full. Make room, then speak to me.$"
+
+OldWater_Text_Cer5:
+	.string "TUPELO: The OLDEST SHRINE is across\n"
+	.string "the channel north of ROUTE 8. My\p"
+	.string "boat takes you to the shore. Go at\n"
+	.string "dawn.$"
 

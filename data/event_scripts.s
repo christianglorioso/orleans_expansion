@@ -1872,3 +1872,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/LandsEnd_House4/scripts.inc"
 	.include "data/maps/LandsEnd_House5/scripts.inc"
 	.include "data/maps/StormsEdge_LighthouseGallery/scripts.inc"
+	.include "data/maps/LandsEnd_DrownedTemple/scripts.inc"
+	.include "data/maps/LandsEnd_SaltCathedral/scripts.inc"

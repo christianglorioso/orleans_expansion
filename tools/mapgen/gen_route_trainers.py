@@ -82,6 +82,9 @@ def main(ch):
         open(path, "w", encoding="utf-8", newline="\n").write(body)
         print("wrote", path)
     print("wrote", os.path.join("trainers", f"orleans_{ch}.party"))
+    if getattr(data, "PARTNERS", None):
+        import partners
+        partners.write_partners(data.PARTNERS)
 
 
 if __name__ == "__main__":

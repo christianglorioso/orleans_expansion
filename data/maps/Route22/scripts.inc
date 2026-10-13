@@ -1,6 +1,43 @@
 Route22_MapScripts::
 	.byte 0
 
+@ The dive spot (Chapter 9, F.1): stand on the islet's east tip (13, 20) facing the water (14, 20). Needs the Diving Gear (Heron, gym 8) and
+@ the telling (story >= 39); it leads down to the Drowned Temple's Tide Hall (Kyogre's raid arena).
+Route22_EventScript_DiveSpot::
+	lockall
+	goto_if_unset FLAG_RECEIVED_DIVING_GEAR, Route22_EventScript_DiveNoGear
+	goto_if_lt VAR_ORLEANS_STORY, 39, Route22_EventScript_DiveNotYet
+	msgbox Route22_Text_DiveGo, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	warpsilent MAP_LANDS_END_DROWNED_TEMPLE, 8, 13
+	waitstate
+	releaseall
+	end
+
+Route22_EventScript_DiveNoGear:
+	msgbox Route22_Text_DiveNoGear, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route22_EventScript_DiveNotYet:
+	msgbox Route22_Text_DiveNotYet, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Route22_Text_DiveNoGear:
+	.string "The water past the islet is dark and\n"
+	.string "deep. Without gear, you'd never\p"
+	.string "come back up.$"
+
+Route22_Text_DiveNotYet:
+	.string "The water glows faintly below. Not\n"
+	.string "yet. The telling comes first.$"
+
+Route22_Text_DiveGo:
+	.string "You pull on the DIVING GEAR and sink\n"
+	.string "into the dark, toward the glow.$"
+
 @ --- route trainers (gen_route_trainers.py) ---
 Route22_EventScript_Trainer0::
 	trainerbattle_single TRAINER_ORLEANS_ROUTE22_SWIMMER, Route22_Text_Route22SwimmerIntro, Route22_Text_Route22SwimmerDefeat

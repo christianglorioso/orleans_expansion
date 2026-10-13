@@ -261,6 +261,20 @@ def _merge_ch8():
 
 _merge_ch8()
 
+# ---------------------------------------------------------------------------------------------- Chapter 9, the finale (story_data_ch9.py)
+import story_data_ch9 as _c9  # noqa: E402
+
+
+def _merge_ch9():
+    for name, data in (("Route22", _c9.ROUTE22), ("Route23", _c9.ROUTE23), ("Route24", _c9.ROUTE24), ("Route25", _c9.ROUTE25),
+                       ("OldestShrine", _c9.OLDEST_SHRINE), ("OldWater", _c9.OLD_WATER)):
+        _merge_into(OVERLAY.setdefault(name, {}), data)
+    for k, v in _c9.ROOMS.items():
+        INTERIOR[k] = v
+
+
+_merge_ch9()
+
 # ---------------------------------------------------------------------------------------------- the water gates (story_data_gates.py)
 import story_data_gates as _gates  # noqa: E402
 

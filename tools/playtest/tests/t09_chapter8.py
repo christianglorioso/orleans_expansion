@@ -54,7 +54,7 @@ def run(b, t):
     talk(b, "LandsEnd_Gym", "Heron0", "D", 300)
     t.check("Heron refuses at story 33 (no badge, story stays 33)", not b.flag("FLAG_BADGE08_GET") and b.var("VAR_ORLEANS_STORY") == 33)
     b.set_var("VAR_ORLEANS_STORY", 34)               # the raid is done later
-    b.warp("Route20", 20, 12)
+    b.warp("LandsEnd_Pokecenter", 7, 5)
     b.warp("LandsEnd", 3, 20)
     b.frames(40)
     b.advance_text(120)
@@ -64,6 +64,9 @@ def run(b, t):
     # ---------------------------------------------------------------- 8.1 arrival (story 34 -> 35)
     b.set_var("VAR_ORLEANS_STORY", 34)
     b.set_var("VAR_LANDS_END_ARRIVAL", 0)
+    b.advance_text(60)
+    b.frames(60)
+    b.warp("LandsEnd_Pokecenter", 7, 5)                        # (a same-map warp can crash the harness helper)
     t.check("warp into Land's End", b.warp("LandsEnd", 3, 20), b.where())
     b.frames(40)
     b.shot("lands_end_arrival")

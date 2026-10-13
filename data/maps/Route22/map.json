@@ -81,6 +81,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route22_EventScript_RouteSign1"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 20,
+      "elevation": 1,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route22_EventScript_DiveSpot"
     }
   ]
 }

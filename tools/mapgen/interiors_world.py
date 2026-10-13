@@ -616,4 +616,24 @@ def world(house, maze):
             ("lands_end_house_5", "in-game trade", "Trader: swaps a Relicanth for a Clamperl")):
         R[name] = house("House on Pilings", f"Land's End · {sub}", [("npc", 5, 4, npc)],
                         ["Ordinary house on stilts; the floor creaks with the tide."])
+    # ================================================================ the finale's two raid arenas (Chapter 9: scripted warps, no street door)
+    R["lands_end_drowned_temple"] = {
+        "title": "Drowned Temple: the Tide Hall", "subtitle": "Off Route 22 · reached by diving · Kyogre's raid arena",
+        "size": (17, 15), "floor": "stone",
+        "shapes": [("wall", 1, 7, 7, 4, "temple wall"), ("wall", 9, 7, 7, 4, "temple wall"),
+                   ("water", 2, 2, 13, 1, "the Tide Hall's water"), ("metal", 3, 4, 1, 2, "sea pillar"), ("metal", 13, 4, 1, 2, "land pillar"),
+                   ("rug", 7, 12, 3, 1)],
+        "markers": [("npc", 8, 8, "The sealed door: opens when the player sings Heron's verse"),
+                    ("npc", 8, 3, "Kyogre (raid)")],
+        "notes": ["Primordial Sea is active for the whole fight. Reached with the Diving Gear from the end of Route 22."],
+        "exits": [(8, 14, "Exit")]}
+    R["lands_end_salt_cathedral"] = {
+        "title": "Salt Cathedral", "subtitle": "Below Route 24 · the old salt mine · Groudon's raid arena",
+        "size": (21, 17), "floor": "stone",
+        "shapes": [("metal", 3, 3, 2, 2, "salt pillar"), ("metal", 8, 3, 2, 2, "salt pillar"), ("metal", 14, 3, 2, 2, "salt pillar"),
+                   ("metal", 3, 8, 2, 2, "salt pillar"), ("metal", 8, 8, 2, 2, "salt pillar"), ("metal", 14, 8, 2, 2, "salt pillar"),
+                   ("rug", 9, 15, 3, 1)],
+        "markers": [("npc", 10, 3, "Groudon (raid)")],
+        "notes": ["Desolate Land is active for the whole fight. The cracked shaft from Route 24; the Lantern lights the way."],
+        "exits": [(10, 16, "Exit")]}
     return R

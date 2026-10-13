@@ -713,7 +713,7 @@ class Builder:
             {"type": "hidden_item", "x": h["x"], "y": h["y"], "elevation": 3, "item": h["item"], "flag": h["flag"]}
             for h in self.spec.get("hidden_items", [])
         ] + [
-            {"type": "sign", "x": g["x"], "y": g["y"], "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            {"type": "sign", "x": g["x"], "y": g["y"], "elevation": g.get("elevation", 3), "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
              "script": f"{name}_EventScript_{g['id']}"}
             for g in self.spec.get("signs", [])
         ]

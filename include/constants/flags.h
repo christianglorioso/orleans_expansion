@@ -243,30 +243,30 @@
 #define FLAG_KABUTO_REVIVED                              0xCD // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_ROUTE18_ITEM_UPROAR                         0xCE // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
-#define FLAG_ORLEANS_POOL_079                            0xD0
-#define FLAG_ORLEANS_POOL_080                            0xD1
-#define FLAG_ORLEANS_POOL_081                           0xD2
-#define FLAG_ORLEANS_POOL_082                           0xD3
+#define FLAG_TEMPLE_DOOR_OPEN                            0xD0 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_KYOGRE_RAID                            0xD1 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_GROUDON_RAID                           0xD2 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_CER_KYOGRE                             0xD3 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
-#define FLAG_ORLEANS_POOL_083                           0xD5
+#define FLAG_HIDE_CER_GROUDON                            0xD5 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_ENABLE_WALLY_MATCH_CALL         0xD6
 #define FLAG_ENABLE_SCOTT_MATCH_CALL         0xD7
 #define FLAG_ENABLE_MOM_MATCH_CALL           0xD8
-#define FLAG_ORLEANS_POOL_084                           0xD9
-#define FLAG_ORLEANS_POOL_085                           0xDA
-#define FLAG_ORLEANS_POOL_086                           0xDB
+#define FLAG_HIDE_CER_TUPELO                             0xD9 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_CER_JAYDEN                             0xDA // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_CER_WREN                               0xDB // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 
 #define FLAG_NEVER_SET_0x0DC                 0xDC // This flag is read, but never written to
 
-#define FLAG_ORLEANS_POOL_087                           0xDD
-#define FLAG_ORLEANS_POOL_088                           0xDE
-#define FLAG_ORLEANS_POOL_089                           0xDF
-#define FLAG_ORLEANS_POOL_090                           0xE0
-#define FLAG_ORLEANS_POOL_091                           0xE1
-#define FLAG_ORLEANS_POOL_092                           0xE2
-#define FLAG_ORLEANS_POOL_093                           0xE3
+#define FLAG_RECEIVED_LEGENDARY                          0xDD // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_RECEIVED_LEGENDARY_ORB                      0xDE // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_SHRINE_CAMILLE                         0xDF // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_SHRINE_ANDREW                          0xE0 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_SHRINE_RAYQUAZA                        0xE1 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_SHRINE_JAYDEN                          0xE2 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_RECEIVED_SWAMPERTITE                        0xE3 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_ORLEANS_POOL_094                           0xE5
+#define FLAG_FINALE_NEVER_SET                            0xE5 // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
 #define FLAG_ORLEANS_POOL_095                           0xE6
 #define FLAG_ORLEANS_POOL_096                           0xE7
 #define FLAG_ORLEANS_POOL_097                           0xE8

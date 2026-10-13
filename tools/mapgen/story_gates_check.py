@@ -350,6 +350,12 @@ def world_gates():
     s38 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET", "FLAG_DUST_STORMS_LIFTED"}))
     want38 = want36 | {"Route23", "Route24"}
     check(s38 == want38, f"story 38 (Rayquaza wakes, the dust storms lift): Routes 23-24 open, still no Route 25 or shrine cell (extra {sorted(s38 - want38)}, missing {sorted(want38 - s38)})")
+    s40 = set(W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET", "FLAG_DUST_STORMS_LIFTED", "FLAG_ROUTE25_OPEN"}))
+    want40 = want38 | {"Route25", "OldestShrine"}
+    check(s40 == want40, f"story 40 (both raids done, FLAG_ROUTE25_OPEN): Route 25 and the Oldest Shrine open, and only then (extra {sorted(s40 - want40)}, missing {sorted(want40 - s40)})")
+    r40 = W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET", "FLAG_DUST_STORMS_LIFTED"})
+    check((13, 20) in r40.get("Route22", ()) and (34, 7) in r40.get("Route24", ()),
+          "the dive spot's standing cell Route 22 (13, 20) and the shaft's Route 24 (34, 7) are reachable by story 38 (before the raids)")
 
 
 def camp_cocodrie():
@@ -488,6 +494,31 @@ def verse_panels():
     check(not bad, f"Land's End panels: all seven carved verses are verbatim from the Singers' own texts ({bad})")
 
 
+def finale_rooms():
+    """Chapter 9: in the Tide Hall the sealed door is the corridor's only way to Kyogre, Kyogre and Groudon have a standing cell to face them, the
+    exits are on the entry side, and the Oldest Shrine's scene cells are free."""
+    t = Grid("LandsEnd_DrownedTemple")
+    ex = t.m["warp_events"][0]
+    door = next(o for o in t.m["object_events"] if o.get("local_id", "").endswith("_THE_SEALED0"))
+    ky = next(o for o in t.m["object_events"] if o.get("local_id", "").endswith("_KYOGRE_RAID1"))
+    r_shut = t.fill([(ex["x"], ex["y"] - 1)])
+    t2 = Grid("LandsEnd_DrownedTemple", remove_objects=(door["local_id"],))
+    r_open = t2.fill([(ex["x"], ex["y"] - 1)])
+    check(door["flag"] == "FLAG_TEMPLE_DOOR_OPEN" and (ky["x"], ky["y"] + 1) not in r_shut and (ky["x"], ky["y"] + 1) in r_open,
+          "Drowned Temple: Kyogre's standing cell is reachable only once the sealed door is open (FLAG_TEMPLE_DOOR_OPEN)")
+    g = Grid("LandsEnd_SaltCathedral")
+    ex = g.m["warp_events"][0]
+    gr = next(o for o in g.m["object_events"] if o.get("local_id", "").endswith("_GROUDON_RAID0"))
+    check((gr["x"], gr["y"] + 1) in g.fill([(ex["x"], ex["y"] - 1)]), "Salt Cathedral: Groudon's standing cell is reachable from the exit")
+    sh = Grid("OldestShrine", remove_objects=("LOCALID_OLDEST_SHRINE_CAMILLE", "LOCALID_OLDEST_SHRINE_ANDREW", "LOCALID_OLDEST_SHRINE_RAYQUAZA", "LOCALID_OLDEST_SHRINE_JAYDEN"))
+    objs = {o["local_id"]: o for o in sh.m["object_events"] if "local_id" in o}
+    cells = [(objs[k]["x"], objs[k]["y"]) for k in ("LOCALID_OLDEST_SHRINE_CAMILLE", "LOCALID_OLDEST_SHRINE_ANDREW", "LOCALID_OLDEST_SHRINE_RAYQUAZA", "LOCALID_OLDEST_SHRINE_JAYDEN")]
+    up = next(c for c in sh.m["connections"] if c["direction"] == "down")
+    rr = sh.fill([(x, 22) for x in range(sh.w)])
+    check(all(sh.walk(*c) for c in cells) and sum(1 for c in cells if c in rr) >= 3 and all(objs[k]["flag"].startswith("FLAG_HIDE_SHRINE") for k in objs if k.startswith("LOCALID_OLDEST_SHRINE_") and k.split("_")[-1] in ("CAMILLE", "ANDREW", "RAYQUAZA", "JAYDEN")),
+          f"Oldest Shrine: the scene cells {cells} are walkable (and reachable from the landing) and hidden by their flags")
+
+
 def trainers_vs_triggers():
     """A trainer who spots the player on a flag-trigger cell takes over (the approach/battle runs instead of the coord event), and the player
     then stands ON the cell and walks on: a gate leak. So no trainer's line of sight may cover a cell that carries a flag trigger."""
@@ -566,6 +597,7 @@ if __name__ == "__main__":
     redfield_mill()
     lands_end()
     verse_panels()
+    finale_rooms()
     trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()

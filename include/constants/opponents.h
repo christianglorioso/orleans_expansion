@@ -886,6 +886,8 @@
 
 
 
+
+
 // --- orleans trainers (begin) ---
 #define TRAINER_ORLEANS_ROUTE2_YOUNGSTER                 TRAINER_DAISY
 #define TRAINER_ORLEANS_ROUTE2_CAMPER                    TRAINER_ROSE_1
@@ -1027,6 +1029,23 @@
 #define TRAINER_ORLEANS_JAYDEN_LANDS_END_CHIKORITA       TRAINER_RICHARD
 #define TRAINER_ORLEANS_JAYDEN_LANDS_END_FUECOCO         TRAINER_HERMAN
 #define TRAINER_ORLEANS_JAYDEN_LANDS_END_TOTODILE        TRAINER_SANTIAGO
+#define TRAINER_ORLEANS_ROUTE23_HIKER                    TRAINER_GILBERT
+#define TRAINER_ORLEANS_ROUTE23_RUIN_MANIAC              TRAINER_FRANKLIN
+#define TRAINER_ORLEANS_ROUTE23_PICNICKER                TRAINER_KEVIN
+#define TRAINER_ORLEANS_ROUTE23_BLACK_BELT               TRAINER_JACK
+#define TRAINER_ORLEANS_ROUTE24_HIKER                    TRAINER_DUDLEY
+#define TRAINER_ORLEANS_ROUTE24_CAMPER                   TRAINER_CHAD
+#define TRAINER_ORLEANS_ROUTE24_EXPERT                   TRAINER_TONY_2
+#define TRAINER_ORLEANS_ROUTE24_RUIN_MANIAC              TRAINER_TONY_3
+#define TRAINER_ORLEANS_ROUTE25_SWIMMER                  TRAINER_TONY_4
+#define TRAINER_ORLEANS_ROUTE25_SWIMMER_F                TRAINER_TONY_5
+#define TRAINER_ORLEANS_ROUTE25_SWIMMER_2                TRAINER_TAKAO
+#define TRAINER_ORLEANS_ROUTE25_SWIMMER_F2               TRAINER_HITOSHI
+#define TRAINER_ORLEANS_KYOGRE_RAID                      TRAINER_KIYO
+#define TRAINER_ORLEANS_GROUDON_RAID                     TRAINER_KOICHI
+#define TRAINER_ORLEANS_CAMILLE_SHRINE                   TRAINER_NOB_1
+#define TRAINER_ORLEANS_ANDREW                           TRAINER_NOB_2
+#define TRAINER_ORLEANS_RAYQUAZA_RAID                    TRAINER_NOB_3
 // --- orleans trainers (end) ---
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
