@@ -120,8 +120,13 @@ Route7_EventScript_PgCelebi::
 	setwildbattle SPECIES_CELEBI, 50
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route7_EventScript_PgCelebiDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route7_EventScript_PgCelebiDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route7_EventScript_PgCelebiStill
+	release
+	end
+
+Route7_EventScript_PgCelebiStill:
+	msgbox Route7_Text_PGStillCelebi, MSGBOX_DEFAULT
 	release
 	end
 
@@ -134,5 +139,9 @@ Route7_EventScript_PgCelebiDone:
 Route7_Text_PGCelebi:
 	.string "CELEBI stands before you,\n"
 	.string "the air shimmering with time.$"
+
+Route7_Text_PGStillCelebi:
+	.string "CELEBI shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

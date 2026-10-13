@@ -398,8 +398,13 @@ CrescentCity_EventScript_PgGalarArticuno::
 	setwildbattle SPECIES_ARTICUNO_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarArticunoDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarArticunoDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarArticunoStill
+	release
+	end
+
+CrescentCity_EventScript_PgGalarArticunoStill:
+	msgbox CrescentCity_Text_PGStillGalarArticuno, MSGBOX_DEFAULT
 	release
 	end
 
@@ -418,8 +423,13 @@ CrescentCity_EventScript_PgGalarZapdos::
 	setwildbattle SPECIES_ZAPDOS_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarZapdosDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarZapdosDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarZapdosStill
+	release
+	end
+
+CrescentCity_EventScript_PgGalarZapdosStill:
+	msgbox CrescentCity_Text_PGStillGalarZapdos, MSGBOX_DEFAULT
 	release
 	end
 
@@ -438,8 +448,13 @@ CrescentCity_EventScript_PgGalarMoltres::
 	setwildbattle SPECIES_MOLTRES_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarMoltresDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarMoltresDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarMoltresStill
+	release
+	end
+
+CrescentCity_EventScript_PgGalarMoltresStill:
+	msgbox CrescentCity_Text_PGStillGalarMoltres, MSGBOX_DEFAULT
 	release
 	end
 
@@ -453,13 +468,25 @@ CrescentCity_Text_PGGalarArticuno:
 	.string "GALARIAN ARTICUNO stands before you,\n"
 	.string "its gaze cold and proud.$"
 
+CrescentCity_Text_PGStillGalarArticuno:
+	.string "GALARIAN ARTICUNO shakes itself off,\n"
+	.string "still standing its ground.$"
+
 CrescentCity_Text_PGGalarZapdos:
 	.string "GALARIAN ZAPDOS stands before you,\n"
 	.string "kicking up sparks.$"
 
+CrescentCity_Text_PGStillGalarZapdos:
+	.string "GALARIAN ZAPDOS shakes itself off,\n"
+	.string "still standing its ground.$"
+
 CrescentCity_Text_PGGalarMoltres:
 	.string "GALARIAN MOLTRES stands before you,\n"
 	.string "flames dark as a bruise.$"
+
+CrescentCity_Text_PGStillGalarMoltres:
+	.string "GALARIAN MOLTRES shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

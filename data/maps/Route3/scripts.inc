@@ -227,8 +227,13 @@ Route3_EventScript_PgTornadus::
 	setwildbattle SPECIES_TORNADUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route3_EventScript_PgTornadusDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route3_EventScript_PgTornadusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route3_EventScript_PgTornadusStill
+	release
+	end
+
+Route3_EventScript_PgTornadusStill:
+	msgbox Route3_Text_PGStillTornadus, MSGBOX_DEFAULT
 	release
 	end
 
@@ -241,6 +246,10 @@ Route3_EventScript_PgTornadusDone:
 Route3_Text_PGTornadus:
 	.string "TORNADUS stands before you,\n"
 	.string "wrapped in a roaring gale.$"
+
+Route3_Text_PGStillTornadus:
+	.string "TORNADUS shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

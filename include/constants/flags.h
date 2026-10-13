@@ -61,7 +61,7 @@
 // ---------------------------------------------------------------------------------------------
 #define FLAG_ITEM_ISLE_MARAIS_POTION       0x20
 #define FLAG_ITEM_ISLE_MARAIS_POKE_BALL    0x21
-#define FLAG_PG_CHANDELURITE                             0x22 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_ORLEANS_RETIRED_22                          0x22 // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_ITEM_ROUTE1_POTION          0x23
 #define FLAG_ITEM_ROUTE1_POKE_BALL       0x24
 #define FLAG_ITEM_ROUTE1_ORAN_BERRY      0x25
@@ -142,7 +142,7 @@
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_ROUTE5_ITEM_AGILITY                         0x6B // Orleans Ch4: item balls placed by the story pass
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
-#define FLAG_KYOGRE_CALMED                               0x6D // Orleans finale: the Kyogre raid is done (plan story 40; either order)
+#define FLAG_ORLEANS_RETIRED_6D                          0x6D // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_POINTE_GATE_SCENE_SEEN                      0x6E // Orleans Ch4: the refinery gate scene was played
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
 #define FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE  0x70
@@ -197,7 +197,7 @@
 #define FLAG_ROUTE11_ITEM_LIQUIDATION                    0x9F // Orleans Ch6: item balls (TMs) placed by the story pass
 #define FLAG_RECEIVED_QUAQUAVALITE                       0xA0 // Orleans Ch6/7: the parade leader's Quaquavalite (after badge 6)
 #define FLAG_HIDE_REDFIELD_RITA                          0xA1 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
-#define FLAG_HIDE_LANDS_END_ANDREW                       0xA2 // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_ORLEANS_RETIRED_A2                          0xA2 // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_HIDE_REDFIELD_WREN                          0xA3 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
 #define FLAG_HIDE_RAID_ISAAC                             0xA4 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
 #define FLAG_HIDE_RAID_GRUNT1                            0xA5 // Chapter 7 visibility flags: Rita at the mill, her office double, Wren at the mill, the Old Water raid actors, the rougarou
@@ -243,8 +243,8 @@
 #define FLAG_KABUTO_REVIVED                              0xCD // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_ROUTE18_ITEM_UPROAR                         0xCE // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
 #define FLAG_MET_ARCHIE_METEOR_FALLS         0xCF
-#define FLAG_TEMPLE_DOOR_OPEN                            0xD0 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
-#define FLAG_HIDE_KYOGRE_RAID                            0xD1 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_ORLEANS_RETIRED_D0                          0xD0 // retired: shipped ROMs/saves may have set this id; never reuse
+#define FLAG_ORLEANS_RETIRED_D1                          0xD1 // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_HIDE_GROUDON_RAID                           0xD2 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_HIDE_CER_KYOGRE                             0xD3 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
@@ -266,7 +266,7 @@
 #define FLAG_HIDE_SHRINE_JAYDEN                          0xE2 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_RECEIVED_SWAMPERTITE                        0xE3 // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_FINALE_NEVER_SET                            0xE5 // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
+#define FLAG_ORLEANS_RETIRED_E5                          0xE5 // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_PG_SCOVILLAINITE                            0xE6 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_PG_HEARTHFLAME_MASK                         0xE7 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
 #define FLAG_PG_DRAGONINITE                              0xE8 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
@@ -316,15 +316,15 @@
 #define FLAG_RECEIVED_RUNNING_SHOES          0x112
 #define FLAG_TRADED_ALOLAN_VULPIX                        0x113 // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
 #define FLAG_TRADED_ALOLAN_SANDSHREW                     0x114 // Chapter 10 (post-game): one-off gifts and trades, the Frontier gate
-#define FLAG_ORLEANS_POOL_130                            0x115
+#define FLAG_ORLEANS_RETIRED_115                         0x115 // retired: shipped ROMs/saves may have set this id; never reuse
 #define FLAG_PG_URSALUNA_DONE                            0x116 // Chapter 10: Ursaluna Bloodmoon (night) beaten or caught
-#define FLAG_ORLEANS_POOL_132                           0x117
-#define FLAG_ORLEANS_POOL_133                           0x118
+#define FLAG_PG_CHANDELURITE                             0x117 // Chapter 10 (post-game): hidden-until-game-clear objects (balls and static encounters); set on map load below story 45 and when done
+#define FLAG_KYOGRE_CALMED                               0x118 // Orleans finale: the Kyogre raid is done (plan story 40; either order)
 #define FLAG_ENABLE_PROF_BIRCH_MATCH_CALL    0x119
-#define FLAG_ORLEANS_POOL_134                           0x11A
-#define FLAG_ORLEANS_POOL_135                           0x11B
-#define FLAG_ORLEANS_POOL_136                           0x11C
-#define FLAG_ORLEANS_POOL_137                           0x11D
+#define FLAG_HIDE_LANDS_END_ANDREW                       0x11A // Chapter 8: Land's End scenes, Heron's trial and rewards, the fossil revival, route TMs, Wren at the telling
+#define FLAG_TEMPLE_DOOR_OPEN                            0x11B // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_HIDE_KYOGRE_RAID                            0x11C // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
+#define FLAG_FINALE_NEVER_SET                            0x11D // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
 #define FLAG_ORLEANS_POOL_138                           0x11E
 #define FLAG_ORLEANS_POOL_139                           0x11F
 #define FLAG_ORLEANS_POOL_140                           0x120

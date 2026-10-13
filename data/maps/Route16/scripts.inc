@@ -100,8 +100,13 @@ Route16_EventScript_PgEntei::
 	setwildbattle SPECIES_ENTEI, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route16_EventScript_PgEnteiDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route16_EventScript_PgEnteiDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route16_EventScript_PgEnteiStill
+	release
+	end
+
+Route16_EventScript_PgEnteiStill:
+	msgbox Route16_Text_PGStillEntei, MSGBOX_DEFAULT
 	release
 	end
 
@@ -114,6 +119,10 @@ Route16_EventScript_PgEnteiDone:
 Route16_Text_PGEntei:
 	.string "ENTEI stands before you,\n"
 	.string "heat rolling off its mane.$"
+
+Route16_Text_PGStillEntei:
+	.string "ENTEI shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

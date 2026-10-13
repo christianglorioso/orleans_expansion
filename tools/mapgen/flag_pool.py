@@ -12,6 +12,13 @@ usage (from the decomp root):
   python tools/mapgen/flag_pool.py release FLAG_NAME[,FLAG_NAME2] | VAR_NAME          hand a claimed, UNUSED name back to the pool
                                                                                        (refuses while anything else still mentions it)
 
+  python tools/mapgen/flag_pool.py renumber FLAG_NAME[,FLAG_NAME2] | VAR_NAME          move a name that ROMs may already have shipped to a fresh id
+                                                                                       and RETIRE the old id: its define becomes FLAG_ORLEANS_RETIRED_<hex>, never claimable again
+  python tools/mapgen/flag_pool.py retire FLAG_NAME[,...]                              retire an id outright (a shipped, now-unused flag): never hand it out again
+
+  A flag id that any shipped ROM could have set under one meaning must never be re-claimed under another (real saves carry it).
+  So never `release` a name once a ROM using it has been played: `retire` it instead. Retired ids are not in the pool.
+
   --hidden   take an id >= FLAG_HIDDEN_ITEMS_START (0x1F4): the only ids a hidden-item bg event may use
              (without --hidden the lowest free id is taken, which keeps those for hidden items later)
 Item-ball (object) flags do NOT come from here: tools/mapgen/firstpass.py item_flag() hands out the
@@ -127,6 +134,64 @@ def release(names):
         print(f"{name} released -> {orig} ({val})")
 
 
+def _def_re(name):
+    return re.compile(r"^#define %s[ 	]+(.+?)[ 	]*(//.*)?$" % re.escape(name), re.M)
+
+
+def retire(names):
+    for name in names:
+        path = FLAGS if name.startswith("FLAG_") else VARS
+        text = read(path)
+        m = _def_re(name).search(text)
+        if not m:
+            sys.exit(f"{name}: no such define")
+        val = m.group(1).strip()
+        try:
+            ident = eval(val, {"SYSTEM_FLAGS": SYSTEM_FLAGS, "FLAG_HIDDEN_ITEMS_START": HIDDEN_START})
+        except Exception:
+            ident = None
+        pre = name.split("_")[0]
+        new = "%s_ORLEANS_RETIRED_%s" % (pre, ("%X" % ident) if ident is not None else "X")
+        if re.search(r"%s" % new, text):
+            sys.exit(f"{new} already exists")
+        text = text[:m.start()] + "#define %s %s // retired: shipped ROMs/saves may have set this id; never reuse" % (new.ljust(48), val) + text[m.end():]
+        write(path, text)
+        print(f"{name} id {val} -> {new}")
+
+
+def renumber(names):
+    for name in names:
+        path = FLAGS if name.startswith("FLAG_") else VARS
+        prefix = name.split("_")[0]
+        text = read(path)
+        m = _def_re(name).search(text)
+        if not m:
+            sys.exit(f"{name}: no such define")
+        comment = (m.group(2) or "").strip()
+        oldval = m.group(1).strip()
+        entries = sorted(pool_entries(text, prefix), key=lambda e: e[2])
+        if not entries:
+            sys.exit("the pool has no free entries left")
+        num, old, ident = entries[0]
+        pm = re.search(r"^(#define )%s([ 	]+)(.+?)[ 	]*(//.*)?$" % re.escape(old), text, re.M)
+        val = pm.group(3)
+        # retire the old id, then give the pool slot to the name (single edit)
+        newtext = text[:pm.start()] + "#define %s %s %s" % (name.ljust(48), val, comment) + text[pm.end():]
+        write(path, newtext)
+        # the old define still exists (same name twice) -> rewrite the FIRST/OLD one only
+        text2 = read(path)
+        ms = list(_def_re(name).finditer(text2))
+        oldm = [x for x in ms if x.group(1).strip() == oldval][0]
+        try:
+            oid = eval(oldval, {"SYSTEM_FLAGS": SYSTEM_FLAGS, "FLAG_HIDDEN_ITEMS_START": HIDDEN_START})
+        except Exception:
+            oid = None
+        rn = "%s_ORLEANS_RETIRED_%s" % (prefix, ("%X" % oid) if oid is not None else "X")
+        text2 = text2[:oldm.start()] + "#define %s %s // retired: shipped ROMs/saves may have set this id; never reuse" % (rn.ljust(48), oldval) + text2[oldm.end():]
+        write(path, text2)
+        print(f"{name}: {oldval} -> {val} (was {old}); old id retired as {rn}")
+
+
 def status():
     ft, vt = read(FLAGS), read(VARS)
     fe, ve = pool_entries(ft, "FLAG"), pool_entries(vt, "VAR")
@@ -153,6 +218,10 @@ def main(argv):
         return status()
     hidden = "--hidden" in argv
     args = [a for a in argv[2:] if a != "--hidden"]
+    if argv[1] == "retire" and args:
+        return retire(args[0].split(","))
+    if argv[1] == "renumber" and args:
+        return renumber(args[0].split(","))
     if argv[1] == "release" and args:
         return release(args[0].split(","))
     if argv[1] in ("claim", "claimvar") and args:

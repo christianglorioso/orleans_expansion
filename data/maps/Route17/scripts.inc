@@ -86,8 +86,13 @@ Route17_EventScript_PgMoltres::
 	setwildbattle SPECIES_MOLTRES, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route17_EventScript_PgMoltresDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route17_EventScript_PgMoltresDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route17_EventScript_PgMoltresStill
+	release
+	end
+
+Route17_EventScript_PgMoltresStill:
+	msgbox Route17_Text_PGStillMoltres, MSGBOX_DEFAULT
 	release
 	end
 
@@ -100,6 +105,10 @@ Route17_EventScript_PgMoltresDone:
 Route17_Text_PGMoltres:
 	.string "MOLTRES stands before you,\n"
 	.string "wings burning like a forge.$"
+
+Route17_Text_PGStillMoltres:
+	.string "MOLTRES shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

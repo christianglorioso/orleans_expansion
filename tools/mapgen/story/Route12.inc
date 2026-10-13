@@ -86,8 +86,13 @@ Route12_EventScript_PgThundurus::
 	setwildbattle SPECIES_THUNDURUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route12_EventScript_PgThundurusDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route12_EventScript_PgThundurusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route12_EventScript_PgThundurusStill
+	release
+	end
+
+Route12_EventScript_PgThundurusStill:
+	msgbox Route12_Text_PGStillThundurus, MSGBOX_DEFAULT
 	release
 	end
 
@@ -100,5 +105,9 @@ Route12_EventScript_PgThundurusDone:
 Route12_Text_PGThundurus:
 	.string "THUNDURUS stands before you,\n"
 	.string "thunder rolling around it.$"
+
+Route12_Text_PGStillThundurus:
+	.string "THUNDURUS shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

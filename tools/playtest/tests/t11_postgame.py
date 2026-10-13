@@ -32,6 +32,22 @@ def other_map(b):
     b.advance_text(30)
 
 
+def battle_through(b):
+    """talk is already started; fight any battle to its end, then clear the text. Returns True if a battle happened"""
+    seen = False
+    for _ in range(300):
+        if b.in_battle():
+            seen = True
+            b.fight()
+        elif seen:
+            break
+        else:
+            b.press("A", 4, 26)
+    b.frames(30)
+    b.advance_text(60)
+    return seen
+
+
 def run(b, t):
     b.new_game()
     b.give_mon("SPECIES_MEWTWO", 100)
@@ -89,16 +105,17 @@ def run(b, t):
     b.warp("Route2", rk["x"], rk["y"] + 1)
     b.face("U")
     b.press("A", 4, 20)
-    for _ in range(300):
-        if b.in_battle():
-            b.fight()
-        elif b.flag("FLAG_PG_RAIKOU"):
-            break
-        else:
-            b.press("A", 4, 26)
-    b.frames(30)
-    b.advance_text(60)
-    t.check("Raikou: the battle ends in a win/catch and the object is hidden for good", b.flag("FLAG_PG_RAIKOU"))
+    t.check("Raikou: a battle starts", battle_through(b))
+    t.check("Raikou: a win does NOT retire it (hide flag still clear)", not b.flag("FLAG_PG_RAIKOU"))
+    b.face("U")
+    b.press("A", 4, 20)
+    t.check("Raikou: after the win it is still standing and fights again", battle_through(b))
+    r2 = (Path(ROOT) / "data/maps/Route2/scripts.inc").read_text()
+    body = r2.split(rk["script"] + "::")[1].split("PGStill")[0]
+    t.check("Raikou: only B_OUTCOME_CAUGHT goes to the Done label (sets the flag and removes it)",
+            re.search(r"B_OUTCOME_CAUGHT, %sDone" % rk["script"], r2) is not None and not re.search(r"B_OUTCOME_WON, \w+Done", body))
+    t.check("Raikou: the Done label sets the flag and removes the object",
+            "%sDone:" % rk["script"] in r2 and "setflag FLAG_PG_RAIKOU" in r2.split("%sDone:" % rk["script"])[1].split("end")[0] and "removeobject" in r2.split("%sDone:" % rk["script"])[1].split("end")[0])
 
     # ---------------------------------------------------------------- night-only Ursaluna Bloodmoon (Route 23)
     b.set_flag("FLAG_PG_URSALUNA_BM", True)
@@ -113,6 +130,21 @@ def run(b, t):
     b.warp("Route23", 24, 20)
     b.frames(30)
     t.check("at night (story 45) Ursaluna appears", not b.flag("FLAG_PG_URSALUNA_BM"))
+    # it is still on screen when the dawn comes; talking to it by day only hides it
+    ub = [o for o in map_data("Route23")["objects"] if o.get("flag") == "FLAG_PG_URSALUNA_BM"][0]
+    set_time(b, DAY)
+    b.warp("Route23", ub["x"], ub["y"] + 1)
+    b.face("U")
+    b.press("A", 4, 20)
+    battled = False
+    for _ in range(80):
+        if b.in_battle():
+            battled = True
+            break
+        b.press("A", 4, 26)
+    b.frames(30)
+    b.advance_text(60)
+    t.check("talking to Ursaluna by day: no battle, it slips away (hide flag set)", not battled and b.flag("FLAG_PG_URSALUNA_BM"))
     set_time(b, DAY)
 
     # ---------------------------------------------------------------- the arena legend only if Jayden took it
@@ -133,6 +165,15 @@ def run(b, t):
     b.warp("OldestShrine", 18, 12)
     b.frames(30)
     t.check("at story 45 Rayquaza's post-game object is shown", not b.flag("FLAG_PG_RAYQUAZA"))
+    rq = [o for o in map_data("OldestShrine")["objects"] if o.get("flag") == "FLAG_PG_RAYQUAZA"][0]
+    b.warp("OldestShrine", rq["x"], rq["y"] + 1)
+    b.face("U")
+    b.press("A", 4, 20)
+    t.check("Rayquaza: a battle starts", battle_through(b))
+    t.check("Rayquaza: winning does not retire it (flag still clear)", not b.flag("FLAG_PG_RAYQUAZA"))
+    b.face("U")
+    b.press("A", 4, 20)
+    t.check("Rayquaza: after the win it is still standing and fights again", battle_through(b))
 
     # ---------------------------------------------------------------- the herbalist's apprentice: the Floette (Eternal Flower) seed
     b.set_flag("FLAG_RECEIVED_FLOETTE_EF", False)
@@ -153,9 +194,21 @@ def run(b, t):
     # ---------------------------------------------------------------- the epilogue's unhide script clears every post-game flag and the Frontier guard's
     sh = (Path(ROOT) / "data/maps/OldestShrine/scripts.inc").read_text()
     un = sh.split("PostGame_EventScript_Unhide:")[1].split("return")[0]
-    flags = [o["flag"] for m in ("Redfield", "Route2", "OldestShrine", "Route13") for o in map_data(m)["objects"] if str(o.get("flag", "")).startswith("FLAG_PG_")]
-    t.check("PostGame_EventScript_Unhide clears the Redfield, Route 2, Oldest Shrine and Route 13 post-game flags and the guard's",
-            all("clearflag " + f in un for f in flags) and "setflag FLAG_UNUSED_0x2D9" in un and "call PostGame_EventScript_Unhide" in sh, str(len(flags)))
+    import glob
+    import json
+    flags = []
+    for mp in sorted(glob.glob(str(Path(ROOT) / "data/maps/*/map.json"))):
+        for o in json.load(open(mp, encoding="utf-8")).get("object_events", []):
+            if str(o.get("flag", "")).startswith("FLAG_PG_"):
+                flags.append(o["flag"])
+    flags = sorted(set(flags))
+    night = [f for f in flags if f == "FLAG_PG_URSALUNA_BM"]
+    rest = [f for f in flags if f not in night]
+    t.check("there are 30 FLAG_PG_ objects in the world", len(flags) == 30, str(len(flags)))
+    t.check("PostGame_EventScript_Unhide clears all 29 non-night post-game flags and the guard's",
+            len(rest) == 29 and all("clearflag " + f in un for f in rest) and "setflag FLAG_UNUSED_0x2D9" in un and "call PostGame_EventScript_Unhide" in sh, str(len(rest)))
+    r23 = (Path(ROOT) / "data/maps/Route23/scripts.inc").read_text()
+    t.check("Ursaluna's night script clears its own flag (Route 23 PGNight)", "clearflag FLAG_PG_URSALUNA_BM" in r23)
 
     # ---------------------------------------------------------------- the Battle Frontier: the Arena door leads to the vanilla lobby, its exit mat comes back
     b.set_var("VAR_ORLEANS_STORY", 45)

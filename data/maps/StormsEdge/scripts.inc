@@ -186,8 +186,13 @@ StormsEdge_EventScript_PgZapdos::
 	setwildbattle SPECIES_ZAPDOS, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, StormsEdge_EventScript_PgZapdosDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, StormsEdge_EventScript_PgZapdosDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, StormsEdge_EventScript_PgZapdosStill
+	release
+	end
+
+StormsEdge_EventScript_PgZapdosStill:
+	msgbox StormsEdge_Text_PGStillZapdos, MSGBOX_DEFAULT
 	release
 	end
 
@@ -200,6 +205,10 @@ StormsEdge_EventScript_PgZapdosDone:
 StormsEdge_Text_PGZapdos:
 	.string "ZAPDOS stands before you,\n"
 	.string "crackling with stored lightning.$"
+
+StormsEdge_Text_PGStillZapdos:
+	.string "ZAPDOS shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

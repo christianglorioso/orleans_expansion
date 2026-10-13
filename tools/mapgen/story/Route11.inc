@@ -72,8 +72,13 @@ Route11_EventScript_PgSuicune::
 	setwildbattle SPECIES_SUICUNE, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route11_EventScript_PgSuicuneDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route11_EventScript_PgSuicuneDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route11_EventScript_PgSuicuneStill
+	release
+	end
+
+Route11_EventScript_PgSuicuneStill:
+	msgbox Route11_Text_PGStillSuicune, MSGBOX_DEFAULT
 	release
 	end
 
@@ -86,5 +91,9 @@ Route11_EventScript_PgSuicuneDone:
 Route11_Text_PGSuicune:
 	.string "SUICUNE stands before you,\n"
 	.string "the water around it perfectly still.$"
+
+Route11_Text_PGStillSuicune:
+	.string "SUICUNE shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

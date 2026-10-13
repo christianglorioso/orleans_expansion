@@ -245,8 +245,13 @@ Route1_EventScript_PgMesprit::
 	setwildbattle SPECIES_MESPRIT, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route1_EventScript_PgMespritDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route1_EventScript_PgMespritDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route1_EventScript_PgMespritStill
+	release
+	end
+
+Route1_EventScript_PgMespritStill:
+	msgbox Route1_Text_PGStillMesprit, MSGBOX_DEFAULT
 	release
 	end
 
@@ -259,5 +264,9 @@ Route1_EventScript_PgMespritDone:
 Route1_Text_PGMesprit:
 	.string "MESPRIT stands before you,\n"
 	.string "its heart glowing soft and warm.$"
+
+Route1_Text_PGStillMesprit:
+	.string "MESPRIT shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

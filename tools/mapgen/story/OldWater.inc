@@ -458,8 +458,13 @@ OldWater_EventScript_PgUxie::
 	setwildbattle SPECIES_UXIE, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldWater_EventScript_PgUxieDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, OldWater_EventScript_PgUxieDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldWater_EventScript_PgUxieStill
+	release
+	end
+
+OldWater_EventScript_PgUxieStill:
+	msgbox OldWater_Text_PGStillUxie, MSGBOX_DEFAULT
 	release
 	end
 
@@ -472,5 +477,9 @@ OldWater_EventScript_PgUxieDone:
 OldWater_Text_PGUxie:
 	.string "UXIE stands before you,\n"
 	.string "its eyes shut, knowing everything.$"
+
+OldWater_Text_PGStillUxie:
+	.string "UXIE shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

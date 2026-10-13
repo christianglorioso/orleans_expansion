@@ -107,8 +107,13 @@ LandsEnd_SaltCathedral_EventScript_Pggroudon_re1::
 	setwildbattle SPECIES_GROUDON, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Done
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Done
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Still
+	release
+	end
+
+LandsEnd_SaltCathedral_EventScript_Pggroudon_re1Still:
+	msgbox LandsEnd_SaltCathedral_Text_PGStillGroudonRe, MSGBOX_DEFAULT
 	release
 	end
 
@@ -125,6 +130,10 @@ LandsEnd_SaltCathedral_EventScript_PGHideGroudonRe:
 LandsEnd_SaltCathedral_Text_PGGroudonRe:
 	.string "GROUDON stands before you,\n"
 	.string "the floor cracking with heat.$"
+
+LandsEnd_SaltCathedral_Text_PGStillGroudonRe:
+	.string "GROUDON shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

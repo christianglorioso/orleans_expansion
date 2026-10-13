@@ -27,8 +27,13 @@ PointeRouge_IcePlant_EventScript_Pgarticuno0::
 	setwildbattle SPECIES_ARTICUNO, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PointeRouge_IcePlant_EventScript_Pgarticuno0Done
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PointeRouge_IcePlant_EventScript_Pgarticuno0Done
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PointeRouge_IcePlant_EventScript_Pgarticuno0Still
+	release
+	end
+
+PointeRouge_IcePlant_EventScript_Pgarticuno0Still:
+	msgbox PointeRouge_IcePlant_Text_PGStillArticuno, MSGBOX_DEFAULT
 	release
 	end
 
@@ -41,5 +46,9 @@ PointeRouge_IcePlant_EventScript_Pgarticuno0Done:
 PointeRouge_IcePlant_Text_PGArticuno:
 	.string "ARTICUNO stands before you,\n"
 	.string "frost spreading from its wings.$"
+
+PointeRouge_IcePlant_Text_PGStillArticuno:
+	.string "ARTICUNO shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

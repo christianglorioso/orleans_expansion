@@ -131,8 +131,13 @@ LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2::
 	setwildbattle SPECIES_KYOGRE, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Done
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Done
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Still
+	release
+	end
+
+LandsEnd_DrownedTemple_EventScript_Pgkyogre_re2Still:
+	msgbox LandsEnd_DrownedTemple_Text_PGStillKyogreRe, MSGBOX_DEFAULT
 	release
 	end
 
@@ -149,5 +154,9 @@ LandsEnd_DrownedTemple_EventScript_PGHideKyogreRe:
 LandsEnd_DrownedTemple_Text_PGKyogreRe:
 	.string "KYOGRE stands before you,\n"
 	.string "the sea rising around it.$"
+
+LandsEnd_DrownedTemple_Text_PGStillKyogreRe:
+	.string "KYOGRE shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

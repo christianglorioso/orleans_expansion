@@ -90,8 +90,13 @@ Route23_EventScript_PgLandorus::
 	setwildbattle SPECIES_LANDORUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgLandorusDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgLandorusDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgLandorusStill
+	release
+	end
+
+Route23_EventScript_PgLandorusStill:
+	msgbox Route23_Text_PGStillLandorus, MSGBOX_DEFAULT
 	release
 	end
 
@@ -110,8 +115,13 @@ Route23_EventScript_PgAzelf::
 	setwildbattle SPECIES_AZELF, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgAzelfDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgAzelfDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgAzelfStill
+	release
+	end
+
+Route23_EventScript_PgAzelfStill:
+	msgbox Route23_Text_PGStillAzelf, MSGBOX_DEFAULT
 	release
 	end
 
@@ -123,6 +133,15 @@ Route23_EventScript_PgAzelfDone:
 
 Route23_EventScript_PgUrsalunaBm::
 	lock
+	special OrleansSvc_IsNight
+	goto_if_eq VAR_RESULT, TRUE, Route23_EventScript_PgUrsalunaBmNight
+	msgbox Route23_Text_PGDayUrsalunaBm, MSGBOX_DEFAULT
+	setflag FLAG_PG_URSALUNA_BM
+	removeobject LOCALID_ROUTE23_PG_URSALUNA_BM
+	release
+	end
+
+Route23_EventScript_PgUrsalunaBmNight:
 	faceplayer
 	playmoncry SPECIES_URSALUNA_BLOODMOON, CRY_MODE_ENCOUNTER
 	msgbox Route23_Text_PGUrsalunaBm, MSGBOX_DEFAULT
@@ -130,8 +149,13 @@ Route23_EventScript_PgUrsalunaBm::
 	setwildbattle SPECIES_URSALUNA_BLOODMOON, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgUrsalunaBmDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgUrsalunaBmDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgUrsalunaBmStill
+	release
+	end
+
+Route23_EventScript_PgUrsalunaBmStill:
+	msgbox Route23_Text_PGStillUrsalunaBm, MSGBOX_DEFAULT
 	release
 	end
 
@@ -157,12 +181,28 @@ Route23_Text_PGLandorus:
 	.string "LANDORUS stands before you,\n"
 	.string "the ground trembling under it.$"
 
+Route23_Text_PGStillLandorus:
+	.string "LANDORUS shakes itself off,\n"
+	.string "still standing its ground.$"
+
 Route23_Text_PGAzelf:
 	.string "AZELF stands before you,\n"
 	.string "its will gleaming like a blade.$"
 
+Route23_Text_PGStillAzelf:
+	.string "AZELF shakes itself off,\n"
+	.string "still standing its ground.$"
+
 Route23_Text_PGUrsalunaBm:
 	.string "URSALUNA stands before you,\n"
 	.string "a red moon in its eyes.$"
+
+Route23_Text_PGStillUrsalunaBm:
+	.string "URSALUNA shakes itself off,\n"
+	.string "still standing its ground.$"
+
+Route23_Text_PGDayUrsalunaBm:
+	.string "URSALUNA dislikes the daylight and\n"
+	.string "slips back into the brush.$"
 
 @ --- end post-game ---

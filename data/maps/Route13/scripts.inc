@@ -87,8 +87,13 @@ Route13_EventScript_PgZarude::
 	setwildbattle SPECIES_ZARUDE, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgZarudeDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgZarudeDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgZarudeStill
+	release
+	end
+
+Route13_EventScript_PgZarudeStill:
+	msgbox Route13_Text_PGStillZarude, MSGBOX_DEFAULT
 	release
 	end
 
@@ -107,8 +112,13 @@ Route13_EventScript_PgOgerpon::
 	setwildbattle SPECIES_OGERPON_TEAL, 50
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgOgerponDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgOgerponDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgOgerponStill
+	release
+	end
+
+Route13_EventScript_PgOgerponStill:
+	msgbox Route13_Text_PGStillOgerpon, MSGBOX_DEFAULT
 	release
 	end
 
@@ -122,9 +132,17 @@ Route13_Text_PGZarude:
 	.string "ZARUDE stands before you,\n"
 	.string "vines swaying like a crowd.$"
 
+Route13_Text_PGStillZarude:
+	.string "ZARUDE shakes itself off,\n"
+	.string "still standing its ground.$"
+
 Route13_Text_PGOgerpon:
 	.string "OGERPON stands before you,\n"
 	.string "a mask on its face, dancing.$"
+
+Route13_Text_PGStillOgerpon:
+	.string "OGERPON shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

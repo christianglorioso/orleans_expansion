@@ -133,8 +133,13 @@ Route2_EventScript_PgRaikou::
 	setwildbattle SPECIES_RAIKOU, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route2_EventScript_PgRaikouDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route2_EventScript_PgRaikouDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route2_EventScript_PgRaikouStill
+	release
+	end
+
+Route2_EventScript_PgRaikouStill:
+	msgbox Route2_Text_PGStillRaikou, MSGBOX_DEFAULT
 	release
 	end
 
@@ -147,5 +152,9 @@ Route2_EventScript_PgRaikouDone:
 Route2_Text_PGRaikou:
 	.string "RAIKOU stands before you,\n"
 	.string "its hide crackling with static.$"
+
+Route2_Text_PGStillRaikou:
+	.string "RAIKOU shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---

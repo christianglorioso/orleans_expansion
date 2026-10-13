@@ -434,8 +434,13 @@ OldestShrine_EventScript_PgRayquaza::
 	setwildbattle SPECIES_RAYQUAZA, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldestShrine_EventScript_PgRayquazaDone
 	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, OldestShrine_EventScript_PgRayquazaDone
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldestShrine_EventScript_PgRayquazaStill
+	release
+	end
+
+OldestShrine_EventScript_PgRayquazaStill:
+	msgbox OldestShrine_Text_PGStillRayquaza, MSGBOX_DEFAULT
 	release
 	end
 
@@ -457,6 +462,10 @@ OldestShrine_EventScript_PgDragoninite::
 OldestShrine_Text_PGRayquaza:
 	.string "RAYQUAZA stands before you,\n"
 	.string "coiled in the clouds, listening.$"
+
+OldestShrine_Text_PGStillRayquaza:
+	.string "RAYQUAZA shakes itself off,\n"
+	.string "still standing its ground.$"
 
 @ --- end post-game ---
 

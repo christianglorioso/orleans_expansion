@@ -385,7 +385,7 @@ IsleMarais_Shelter_Text_Ribbon1:
 	.string "PETILIL would love it.$"
 
 IsleMarais_Shelter_Text_RibbonGiven:
-	.string "Hold it to a PETILIL and it will\n"
+	.string "Use it on a PETILIL and it will\n"
 	.string "dance into a HISUIAN LILLIGANT.$"
 
 IsleMarais_Shelter_Text_RibbonAfter:
