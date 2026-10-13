@@ -1,0 +1,249 @@
+{
+ "_comment": "The Rootkin shrine lairs (Celebi) (own art, tools/mapgen/tilesets/lairs). Compose: python tools/mapgen/compose.py tools/mapgen/tilesets/lairs/recipes/orleans_lair_rootkin.json (mapping lands in tilesets/lairs/). To register: copy into tilesets/recipes/, set primary_mapping to 'orleans_general.mapping.json', compose --register.",
+ "kind": "secondary",
+ "dir": "orleans_lair_rootkin",
+ "symbol": "gTileset_OrleansLairRootkin",
+ "primary_mapping": "../orleans_general.mapping.json",
+ "palette": "v2",
+ "sources": [
+  {
+   "name": "lk",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/lairs/lair_rootkin.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "group_rule": "fewest",
+   "metatiles": [
+    {
+     "id": "moss_C",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "moss_N",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "moss_S",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "moss_W",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "moss_E",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "moss_inNW",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "moss_inNE",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "moss_inSW",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "moss_inSE",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "moss_landSE",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "moss_landSW",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "moss_landNE",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "moss_landNW",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "moss_sTLBR",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "moss_sTRBL",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "sun_stone_0_0",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "sun_stone_1_0",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "sun_stone_0_1",
+     "bottom": [
+      0,
+      2
+     ]
+    },
+    {
+     "id": "sun_stone_1_1",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "spirit_house_0_0",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "spirit_house_1_0",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "spirit_house_0_1",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "spirit_house_1_1",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "cedar_post_0_0",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "cedar_post_0_1",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "cedar_post_bird_0_0",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "cedar_post_bird_0_1",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "stone_tall_0_0",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "stone_tall_0_1",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "lily_white",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "lily_pink",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "mushrooms",
+     "bottom": [
+      9,
+      1
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,780 @@
+{
+ "_comment": "The Rootkin shrine lairs (Celebi): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lk:<id>' in gTileset_OrleansLairRootkin), walkable cells (the rest block), the lair it belongs to. Made by make_lair_rootkin.py.",
+ "png": "lair_rootkin.png",
+ "tileset": "gTileset_OrleansLairRootkin",
+ "families": {
+  "FLORA": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    48,
+    88,
+    48
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    208,
+    216,
+    200
+   ],
+   [
+    232,
+    200,
+    96
+   ],
+   [
+    232,
+    160,
+    176
+   ],
+   [
+    184,
+    104,
+    128
+   ],
+   [
+    64,
+    112,
+    56
+   ]
+  ],
+  "STONE": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    88,
+    88,
+    80
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    80,
+    112,
+    64
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    88,
+    48
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    96,
+    128,
+    88
+   ]
+  ],
+  "CEDAR": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    56,
+    40
+   ],
+   [
+    136,
+    80,
+    56
+   ],
+   [
+    176,
+    112,
+    72
+   ],
+   [
+    216,
+    168,
+    72
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "THATCH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    216,
+    192,
+    120
+   ],
+   [
+    184,
+    152,
+    88
+   ],
+   [
+    144,
+    120,
+    64
+   ],
+   [
+    104,
+    80,
+    48
+   ],
+   [
+    72,
+    56,
+    40
+   ],
+   [
+    112,
+    88,
+    56
+   ],
+   [
+    64,
+    152,
+    152
+   ],
+   [
+    224,
+    120,
+    48
+   ],
+   [
+    160,
+    48,
+    96
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ]
+  ],
+  "SLAB": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    72,
+    56,
+    40
+   ],
+   [
+    112,
+    88,
+    56
+   ],
+   [
+    184,
+    152,
+    88
+   ],
+   [
+    144,
+    120,
+    64
+   ],
+   [
+    160,
+    48,
+    96
+   ],
+   [
+    224,
+    120,
+    48
+   ]
+  ]
+ },
+ "pieces": {
+  "moss_C": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (C)"
+  },
+  "moss_N": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (N)"
+  },
+  "moss_S": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (S)"
+  },
+  "moss_W": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (W)"
+  },
+  "moss_E": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (E)"
+  },
+  "moss_inNW": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (inNW)"
+  },
+  "moss_inNE": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (inNE)"
+  },
+  "moss_inSW": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (inSW)"
+  },
+  "moss_inSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (inSE)"
+  },
+  "moss_landSE": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (landSE)"
+  },
+  "moss_landSW": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (landSW)"
+  },
+  "moss_landNE": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (landNE)"
+  },
+  "moss_landNW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (landNW)"
+  },
+  "moss_sTLBR": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (sTLBR)"
+  },
+  "moss_sTRBL": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:moss_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "the sunken moss circle (sTRBL)"
+  },
+  "sun_stone": {
+   "x": 0,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lk:sun_stone_0_0",
+     "lk:sun_stone_1_0"
+    ],
+    [
+     "lk:sun_stone_0_1",
+     "lk:sun_stone_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "2x2 the Rootkin sun stone on the moss, blocking"
+  },
+  "spirit_house": {
+   "x": 2,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lk:spirit_house_0_0",
+     "lk:spirit_house_1_0"
+    ],
+    [
+     "lk:spirit_house_0_1",
+     "lk:spirit_house_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "2x2 a Rootkin spirit house with offerings, blocking"
+  },
+  "cedar_post": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lk:cedar_post_0_0"
+    ],
+    [
+     "lk:cedar_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "1x2 cedar_post (the Oldest Shrine's art), blocking"
+  },
+  "cedar_post_bird": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lk:cedar_post_bird_0_0"
+    ],
+    [
+     "lk:cedar_post_bird_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "1x2 cedar_post_bird (the Oldest Shrine's art), blocking"
+  },
+  "stone_tall": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lk:stone_tall_0_0"
+    ],
+    [
+     "lk:stone_tall_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "celebi",
+   "comment": "1x2 stone_tall (the Oldest Shrine's art), blocking"
+  },
+  "lily_white": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:lily_white"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 white spider lilies (walkable)"
+  },
+  "lily_pink": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:lily_pink"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 pink spider lilies (walkable)"
+  },
+  "mushrooms": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lk:mushrooms"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "celebi",
+   "comment": "1x1 a fairy ring of mushrooms (walkable)"
+  }
+ }
+}

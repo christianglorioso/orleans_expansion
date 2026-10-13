@@ -1,0 +1,1660 @@
+{
+ "_comment": "The green lairs (rougarou, Suicune): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lw:<id>' in gTileset_OrleansLairsWet), walkable cells (the rest block), the lair it belongs to. Made by make_lairs_wet.py.",
+ "png": "lairs_wet.png",
+ "tileset": "gTileset_OrleansLairsWet",
+ "families": {
+  "EARTH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    128,
+    80
+   ],
+   [
+    72,
+    104,
+    64
+   ],
+   [
+    56,
+    80,
+    56
+   ],
+   [
+    168,
+    200,
+    136
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    160,
+    120,
+    80
+   ],
+   [
+    120,
+    88,
+    64
+   ],
+   [
+    80,
+    64,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    200,
+    208,
+    176
+   ]
+  ],
+  "DEAD": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    72,
+    72,
+    64
+   ],
+   [
+    112,
+    112,
+    96
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    192,
+    192,
+    176
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    200,
+    208,
+    176
+   ],
+   [
+    152,
+    232,
+    184
+   ],
+   [
+    216,
+    248,
+    224
+   ],
+   [
+    176,
+    192,
+    184
+   ],
+   [
+    216,
+    224,
+    216
+   ]
+  ],
+  "STONE": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    88,
+    88,
+    80
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    80,
+    112,
+    64
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    88,
+    48
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    96,
+    128,
+    88
+   ]
+  ],
+  "WETSTONE": [
+   [
+    88,
+    88,
+    80
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    80,
+    112,
+    64
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    72,
+    112,
+    112
+   ],
+   [
+    152,
+    192,
+    184
+   ],
+   [
+    112,
+    168,
+    160
+   ],
+   [
+    144,
+    192,
+    176
+   ],
+   [
+    168,
+    184,
+    152
+   ]
+  ],
+  "WATERY": [
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    72,
+    112,
+    112
+   ],
+   [
+    152,
+    192,
+    184
+   ],
+   [
+    112,
+    168,
+    160
+   ],
+   [
+    144,
+    192,
+    176
+   ],
+   [
+    168,
+    184,
+    152
+   ],
+   [
+    200,
+    208,
+    176
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    72,
+    96,
+    64
+   ],
+   [
+    216,
+    232,
+    224
+   ],
+   [
+    176,
+    192,
+    184
+   ],
+   [
+    216,
+    224,
+    216
+   ]
+  ]
+ },
+ "pieces": {
+  "levee_C": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_C"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) C"
+  },
+  "levee_N": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_N"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) N"
+  },
+  "levee_S": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_S"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) S"
+  },
+  "levee_W": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_W"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) W"
+  },
+  "levee_E": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_E"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) E"
+  },
+  "levee_inNW": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_inNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) inNW"
+  },
+  "levee_inNE": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_inNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) inNE"
+  },
+  "levee_inSW": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_inSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) inSW"
+  },
+  "levee_inSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_inSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) inSE"
+  },
+  "levee_landSE": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_landSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) landSE"
+  },
+  "levee_landSW": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_landSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) landSW"
+  },
+  "levee_landNE": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_landNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) landNE"
+  },
+  "levee_landNW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_landNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) landNW"
+  },
+  "levee_sTLBR": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_sTLBR"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) sTLBR"
+  },
+  "levee_sTRBL": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:levee_sTRBL"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "levee bank (the shrine's ridge set) sTRBL"
+  },
+  "track_C": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (C)"
+  },
+  "track_N": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (N)"
+  },
+  "track_S": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (S)"
+  },
+  "track_W": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (W)"
+  },
+  "track_E": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (E)"
+  },
+  "track_inNW": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (inNW)"
+  },
+  "track_inNE": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (inNE)"
+  },
+  "track_inSW": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (inSW)"
+  },
+  "track_inSE": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (inSE)"
+  },
+  "track_landSE": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (landSE)"
+  },
+  "track_landSW": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (landSW)"
+  },
+  "track_landNE": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (landNE)"
+  },
+  "track_landNW": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (landNW)"
+  },
+  "track_sTLBR": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (sTLBR)"
+  },
+  "track_sTRBL": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:track_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "the circling track, trampled grass (sTRBL)"
+  },
+  "dead_cypress": {
+   "x": 0,
+   "y": 2,
+   "w": 3,
+   "h": 4,
+   "rows": [
+    [
+     "lw:dead_cypress_0_0",
+     "lw:dead_cypress_1_0",
+     "lw:dead_cypress_2_0"
+    ],
+    [
+     "lw:dead_cypress_0_1",
+     "lw:dead_cypress_1_1",
+     "lw:dead_cypress_2_1"
+    ],
+    [
+     "lw:dead_cypress_0_2",
+     "lw:dead_cypress_1_2",
+     "lw:dead_cypress_2_2"
+    ],
+    [
+     "lw:dead_cypress_0_3",
+     "lw:dead_cypress_1_3",
+     "lw:dead_cypress_2_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "3x4 a dead cypress, bleached and mossy, blocking"
+  },
+  "cross": {
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lw:cross_0_0"
+    ],
+    [
+     "lw:cross_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x2 a weathered wayside cross, blocking"
+  },
+  "wisp_lantern": {
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lw:wisp_lantern_0_0"
+    ],
+    [
+     "lw:wisp_lantern_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x2 a lantern on a crooked post, a pale green flame, blocking"
+  },
+  "driftwood": {
+   "x": 5,
+   "y": 2,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lw:driftwood_0_0",
+     "lw:driftwood_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "2x1 bleached driftwood, blocking"
+  },
+  "clawed_stump": {
+   "x": 7,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:clawed_stump"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou",
+   "comment": "1x1 a stump raked by claws, blocking"
+  },
+  "fog_grass0": {
+   "x": 8,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fog_grass0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "1x1 a band of ground mist over grass (walkable)"
+  },
+  "fog_water0": {
+   "x": 9,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fog_water0"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou suicune",
+   "comment": "1x1 a band of mist over water (water: blocking)"
+  },
+  "fog_grass1": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fog_grass1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "1x1 a band of ground mist over grass (walkable)"
+  },
+  "fog_water1": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:fog_water1"
+    ]
+   ],
+   "walk": [],
+   "lair": "rougarou suicune",
+   "comment": "1x1 a band of mist over water (water: blocking)"
+  },
+  "shallows_C": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_C"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (C)"
+  },
+  "shallows_N": {
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_N"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (N)"
+  },
+  "shallows_S": {
+   "x": 14,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_S"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (S)"
+  },
+  "shallows_W": {
+   "x": 15,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_W"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (W)"
+  },
+  "shallows_E": {
+   "x": 0,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_E"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (E)"
+  },
+  "shallows_inNW": {
+   "x": 1,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_inNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inNW)"
+  },
+  "shallows_inNE": {
+   "x": 2,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_inNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inNE)"
+  },
+  "shallows_inSW": {
+   "x": 3,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_inSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inSW)"
+  },
+  "shallows_inSE": {
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_inSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (inSE)"
+  },
+  "shallows_landSE": {
+   "x": 5,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_landSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landSE)"
+  },
+  "shallows_landSW": {
+   "x": 6,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_landSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landSW)"
+  },
+  "shallows_landNE": {
+   "x": 7,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_landNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landNE)"
+  },
+  "shallows_landNW": {
+   "x": 8,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_landNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (landNW)"
+  },
+  "shallows_sTLBR": {
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_sTLBR"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (sTLBR)"
+  },
+  "shallows_sTRBL": {
+   "x": 10,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:shallows_sTRBL"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "clear shallows over sand on the lagoon (blocking water: surf or the causeway) (sTRBL)"
+  },
+  "isle_C": {
+   "x": 11,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (C)"
+  },
+  "isle_N": {
+   "x": 12,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (N)"
+  },
+  "isle_S": {
+   "x": 13,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (S)"
+  },
+  "isle_W": {
+   "x": 14,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (W)"
+  },
+  "isle_E": {
+   "x": 15,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (E)"
+  },
+  "isle_inNW": {
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (inNW)"
+  },
+  "isle_inNE": {
+   "x": 1,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (inNE)"
+  },
+  "isle_inSW": {
+   "x": 2,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (inSW)"
+  },
+  "isle_inSE": {
+   "x": 3,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (inSE)"
+  },
+  "isle_landSE": {
+   "x": 4,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (landSE)"
+  },
+  "isle_landSW": {
+   "x": 5,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (landSW)"
+  },
+  "isle_landNE": {
+   "x": 6,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (landNE)"
+  },
+  "isle_landNW": {
+   "x": 7,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (landNW)"
+  },
+  "isle_sTLBR": {
+   "x": 8,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (sTLBR)"
+  },
+  "isle_sTRBL": {
+   "x": 9,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:isle_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the island's grass bank on the shallows (sTRBL)"
+  },
+  "pillar": {
+   "x": 10,
+   "y": 7,
+   "w": 1,
+   "h": 3,
+   "rows": [
+    [
+     "lw:pillar_0_0"
+    ],
+    [
+     "lw:pillar_0_1"
+    ],
+    [
+     "lw:pillar_0_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "1x3 the carved pillar on the island, blocking"
+  },
+  "causeway_v": {
+   "x": 11,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:causeway_v"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "causeway slabs over the lagoon (walkable)"
+  },
+  "causeway_v_sh": {
+   "x": 12,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:causeway_v_sh"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "causeway slabs over the shallows"
+  },
+  "causeway_head": {
+   "x": 13,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:causeway_head"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "suicune",
+   "comment": "the causeway's south end at the landing"
+  },
+  "causeway_broken": {
+   "x": 14,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:causeway_broken"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "a broken span, slabs tipped into the water (blocking)"
+  },
+  "stepping": {
+   "x": 15,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lw:stepping"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "1x1 stepping stones in the water (scenery, blocking)"
+  },
+  "ruin": {
+   "x": 0,
+   "y": 10,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lw:ruin_0_0"
+    ],
+    [
+     "lw:ruin_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "1x2 a sunken carved pillar (route landmark art)"
+  },
+  "ruin_l": {
+   "x": 1,
+   "y": 10,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lw:ruin_l_0_0",
+     "lw:ruin_l_1_0"
+    ],
+    [
+     "lw:ruin_l_0_1",
+     "lw:ruin_l_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "suicune",
+   "comment": "2x2 a larger sunken ruin (route landmark art)"
+  }
+ }
+}

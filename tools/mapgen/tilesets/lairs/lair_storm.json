@@ -1,0 +1,855 @@
+{
+ "_comment": "Raikou's lightning-struck clearing: piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('ls:<id>' in gTileset_OrleansLairStorm), walkable cells (the rest block), the lair it belongs to. Made by make_lair_storm.py.",
+ "png": "lair_storm.png",
+ "tileset": "gTileset_OrleansLairStorm",
+ "families": {
+  "SCORCH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    136,
+    120,
+    72
+   ],
+   [
+    104,
+    88,
+    56
+   ],
+   [
+    32,
+    28,
+    32
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    128,
+    120,
+    112
+   ],
+   [
+    168,
+    160,
+    152
+   ],
+   [
+    64,
+    96,
+    112
+   ],
+   [
+    120,
+    168,
+    184
+   ],
+   [
+    208,
+    240,
+    248
+   ]
+  ],
+  "METAL": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    160,
+    216,
+    248
+   ],
+   [
+    248,
+    248,
+    248
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "SNAG": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    40,
+    56,
+    40
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    56,
+    88,
+    56
+   ],
+   [
+    80,
+    120,
+    64
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    128,
+    120
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    128,
+    96
+   ],
+   [
+    216,
+    192,
+    144
+   ]
+  ],
+  "TOWER": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    128,
+    64,
+    40
+   ],
+   [
+    128,
+    128,
+    120
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    168,
+    168,
+    160
+   ],
+   [
+    176,
+    96,
+    56
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    208,
+    208,
+    200
+   ]
+  ],
+  "WIRE": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    160,
+    216,
+    248
+   ],
+   [
+    216,
+    128,
+    64
+   ],
+   [
+    248,
+    248,
+    248
+   ]
+  ],
+  "WIRE_SPAN": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    176,
+    128
+   ]
+  ]
+ },
+ "pieces": {
+  "scorch_C": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (C)"
+  },
+  "scorch_N": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (N)"
+  },
+  "scorch_S": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (S)"
+  },
+  "scorch_W": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (W)"
+  },
+  "scorch_E": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (E)"
+  },
+  "scorch_inNW": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inNW)"
+  },
+  "scorch_inNE": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inNE)"
+  },
+  "scorch_inSW": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inSW)"
+  },
+  "scorch_inSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inSE)"
+  },
+  "scorch_landSE": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landSE)"
+  },
+  "scorch_landSW": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landSW)"
+  },
+  "scorch_landNE": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landNE)"
+  },
+  "scorch_landNW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landNW)"
+  },
+  "scorch_sTLBR": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (sTLBR)"
+  },
+  "scorch_sTRBL": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (sTRBL)"
+  },
+  "scorch_core": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_core"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "the strike's heart, fused char with lightning-fern scars"
+  },
+  "glass": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:glass"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "1x1 fulgurites standing out of the char, blocking"
+  },
+  "snag": {
+   "x": 1,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "ls:snag_0_0",
+     "ls:snag_1_0",
+     "ls:snag_2_0"
+    ],
+    [
+     "ls:snag_0_1",
+     "ls:snag_1_1",
+     "ls:snag_2_1"
+    ],
+    [
+     "ls:snag_0_2",
+     "ls:snag_1_2",
+     "ls:snag_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "3x3 the lightning-struck cypress (landmark art)"
+  },
+  "tower": {
+   "x": 4,
+   "y": 1,
+   "w": 2,
+   "h": 4,
+   "rows": [
+    [
+     "ls:tower_0_0",
+     "ls:tower_1_0"
+    ],
+    [
+     "ls:tower_0_1",
+     "ls:tower_1_1"
+    ],
+    [
+     "ls:tower_0_2",
+     "ls:tower_1_2"
+    ],
+    [
+     "ls:tower_0_3",
+     "ls:tower_1_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "2x4 a power tower (landmark art), blocking"
+  },
+  "tower_down": {
+   "x": 6,
+   "y": 1,
+   "w": 4,
+   "h": 2,
+   "rows": [
+    [
+     "ls:tower_down_0_0",
+     "ls:tower_down_1_0",
+     "ls:tower_down_2_0",
+     "ls:tower_down_3_0"
+    ],
+    [
+     "ls:tower_down_0_1",
+     "ls:tower_down_1_1",
+     "ls:tower_down_2_1",
+     "ls:tower_down_3_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "4x2 a power tower knocked flat, blocking"
+  },
+  "transformer": {
+   "x": 10,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "ls:transformer_0_0",
+     "ls:transformer_1_0"
+    ],
+    [
+     "ls:transformer_0_1",
+     "ls:transformer_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "2x2 a torn-down pole transformer, sparking, blocking"
+  },
+  "wire": {
+   "x": 12,
+   "y": 1,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_0_0",
+     "ls:wire_1_0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "2x1 a fallen live line (landmark art)"
+  },
+  "wire_span": {
+   "x": 14,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span: the line strung between the towers (landmark art)"
+  },
+  "wire_span_l": {
+   "x": 15,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span_l"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span_l: the line strung between the towers (landmark art)"
+  },
+  "wire_span_r": {
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span_r"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span_r: the line strung between the towers (landmark art)"
+  }
+ }
+}

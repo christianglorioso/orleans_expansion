@@ -1,0 +1,382 @@
+{
+ "_comment": "Raikou's lightning-struck clearing (own art, tools/mapgen/tilesets/lairs). Compose: python tools/mapgen/compose.py tools/mapgen/tilesets/lairs/recipes/orleans_lair_storm.json (mapping lands in tilesets/lairs/). To register: copy into tilesets/recipes/, set primary_mapping to 'orleans_general.mapping.json', compose --register.",
+ "kind": "secondary",
+ "dir": "orleans_lair_storm",
+ "symbol": "gTileset_OrleansLairStorm",
+ "primary_mapping": "../orleans_general.mapping.json",
+ "palette": "v2",
+ "sources": [
+  {
+   "name": "ls",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/lairs/lair_storm.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "group_rule": "fewest",
+   "metatiles": [
+    {
+     "id": "scorch_C",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "scorch_N",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "scorch_S",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "scorch_W",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "scorch_E",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "scorch_inNW",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "scorch_inNE",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "scorch_inSW",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "scorch_inSE",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "scorch_landSE",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "scorch_landSW",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "scorch_landNE",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "scorch_landNW",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "scorch_sTLBR",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "scorch_sTRBL",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "scorch_core",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "glass",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "snag_0_0",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "snag_1_0",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "snag_2_0",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "snag_0_1",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "snag_1_1",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "snag_2_1",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "snag_0_2",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "snag_1_2",
+     "bottom": [
+      2,
+      3
+     ]
+    },
+    {
+     "id": "snag_2_2",
+     "bottom": [
+      3,
+      3
+     ]
+    },
+    {
+     "id": "tower_0_0",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "tower_1_0",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "tower_0_1",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "tower_1_1",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "tower_0_2",
+     "bottom": [
+      4,
+      3
+     ]
+    },
+    {
+     "id": "tower_1_2",
+     "bottom": [
+      5,
+      3
+     ]
+    },
+    {
+     "id": "tower_0_3",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "tower_1_3",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "tower_down_0_0",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "tower_down_1_0",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "tower_down_2_0",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "tower_down_3_0",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "tower_down_0_1",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "tower_down_1_1",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "tower_down_2_1",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "tower_down_3_1",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "transformer_0_0",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "transformer_1_0",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "transformer_0_1",
+     "bottom": [
+      10,
+      2
+     ]
+    },
+    {
+     "id": "transformer_1_1",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "wire_0_0",
+     "bottom": [
+      12,
+      1
+     ]
+    },
+    {
+     "id": "wire_1_0",
+     "bottom": [
+      13,
+      1
+     ]
+    },
+    {
+     "id": "wire_span",
+     "bottom": [
+      14,
+      1
+     ]
+    },
+    {
+     "id": "wire_span_l",
+     "bottom": [
+      15,
+      1
+     ]
+    },
+    {
+     "id": "wire_span_r",
+     "bottom": [
+      0,
+      5
+     ]
+    }
+   ]
+  }
+ ]
+}

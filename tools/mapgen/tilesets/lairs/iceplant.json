@@ -1,0 +1,817 @@
+{
+ "_comment": "The frozen hall of the Pointe Rouge ice plant (Articuno): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('ip:<id>' in gTileset_OrleansIcePlant), walkable cells (the rest block), the lair it belongs to. Made by make_iceplant.py.",
+ "png": "iceplant.png",
+ "tileset": "gTileset_OrleansIcePlant",
+ "families": {
+  "CONCRETE": [
+   [
+    24,
+    32,
+    48
+   ],
+   [
+    72,
+    80,
+    96
+   ],
+   [
+    104,
+    112,
+    128
+   ],
+   [
+    136,
+    144,
+    160
+   ],
+   [
+    168,
+    176,
+    192
+   ],
+   [
+    120,
+    160,
+    192
+   ],
+   [
+    152,
+    192,
+    216
+   ],
+   [
+    184,
+    216,
+    232
+   ],
+   [
+    216,
+    236,
+    248
+   ],
+   [
+    248,
+    252,
+    255
+   ],
+   [
+    96,
+    200,
+    224
+   ]
+  ],
+  "STEEL": [
+   [
+    24,
+    32,
+    48
+   ],
+   [
+    48,
+    56,
+    72
+   ],
+   [
+    80,
+    96,
+    112
+   ],
+   [
+    120,
+    136,
+    152
+   ],
+   [
+    168,
+    184,
+    200
+   ],
+   [
+    120,
+    160,
+    192
+   ],
+   [
+    152,
+    192,
+    216
+   ],
+   [
+    184,
+    216,
+    232
+   ],
+   [
+    216,
+    236,
+    248
+   ],
+   [
+    248,
+    252,
+    255
+   ],
+   [
+    216,
+    176,
+    64
+   ],
+   [
+    152,
+    96,
+    72
+   ],
+   [
+    72,
+    80,
+    96
+   ],
+   [
+    104,
+    112,
+    128
+   ],
+   [
+    136,
+    144,
+    160
+   ]
+  ]
+ },
+ "pieces": {
+  "void": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:void"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "outside (black)"
+  },
+  "cap": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:cap"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "the back wall's top: the roof girder"
+  },
+  "wall": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "corrugated steel wall, rimed, icicles"
+  },
+  "wall_pipe": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall_pipe"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "the wall with a rimed pipe run and a valve"
+  },
+  "wall_vent": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall_vent"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "the wall with a frozen fan grille"
+  },
+  "side_l": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:side_l"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "left side wall"
+  },
+  "side_r": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:side_r"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "right side wall"
+  },
+  "wall_s": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall_s"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "south wall"
+  },
+  "wall_sw": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall_sw"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "south-west corner"
+  },
+  "wall_se": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:wall_se"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "south-east corner"
+  },
+  "floor": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:floor"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "frosted concrete"
+  },
+  "ice_C": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (C)"
+  },
+  "ice_N": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (N)"
+  },
+  "ice_S": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (S)"
+  },
+  "ice_W": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (W)"
+  },
+  "ice_E": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (E)"
+  },
+  "ice_inNW": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (inNW)"
+  },
+  "ice_inNE": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (inNE)"
+  },
+  "ice_inSW": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (inSW)"
+  },
+  "ice_inSE": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (inSE)"
+  },
+  "ice_landSE": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (landSE)"
+  },
+  "ice_landSW": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (landSW)"
+  },
+  "ice_landNE": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (landNE)"
+  },
+  "ice_landNW": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (landNW)"
+  },
+  "ice_sTLBR": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (sTLBR)"
+  },
+  "ice_sTRBL": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice on the concrete (sTRBL)"
+  },
+  "ice_crack": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_crack"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "sheet ice, cracked"
+  },
+  "dais": {
+   "x": 11,
+   "y": 1,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "ip:dais_0_0",
+     "ip:dais_1_0",
+     "ip:dais_2_0"
+    ],
+    [
+     "ip:dais_0_1",
+     "ip:dais_1_1",
+     "ip:dais_2_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "3x2 the ice dais (Articuno's perch), blocking"
+  },
+  "light": {
+   "x": 0,
+   "y": 3,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "ip:light_0_0",
+     "ip:light_1_0",
+     "ip:light_2_0"
+    ],
+    [
+     "ip:light_0_1",
+     "ip:light_1_1",
+     "ip:light_2_1"
+    ],
+    [
+     "ip:light_0_2",
+     "ip:light_1_2",
+     "ip:light_2_2"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "3x3 the shaft of cold light from the broken skylight, a snow drift (walkable; place it on sheet ice)"
+  },
+  "conveyor_l": {
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:conveyor_l"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "frozen conveyor (conveyor_l), blocking"
+  },
+  "conveyor": {
+   "x": 4,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:conveyor"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "frozen conveyor (conveyor), blocking"
+  },
+  "conveyor_r": {
+   "x": 5,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:conveyor_r"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "frozen conveyor (conveyor_r), blocking"
+  },
+  "ice_block": {
+   "x": 6,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_block"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "frozen conveyor (ice_block), blocking"
+  },
+  "tank": {
+   "x": 7,
+   "y": 3,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "ip:tank_0_0",
+     "ip:tank_1_0"
+    ],
+    [
+     "ip:tank_0_1",
+     "ip:tank_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "2x2 a rimed brine tank, blocking"
+  },
+  "compressor": {
+   "x": 9,
+   "y": 3,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "ip:compressor_0_0",
+     "ip:compressor_1_0"
+    ],
+    [
+     "ip:compressor_0_1",
+     "ip:compressor_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "2x2 the frozen compressor, blocking"
+  },
+  "ice_stack": {
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:ice_stack"
+    ]
+   ],
+   "walk": [],
+   "lair": "articuno",
+   "comment": "1x1 stacked ice blocks, blocking"
+  },
+  "mat": {
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ip:mat"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "articuno",
+   "comment": "the door mat (south-arrow warp: the exit)"
+  }
+ }
+}

@@ -1,0 +1,1903 @@
+{
+ "_comment": "The dry lairs (Bloodmoon Ursaluna, Entei): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('ld:<id>' in gTileset_OrleansLairsDry), walkable cells (the rest block), the lair it belongs to. Made by make_lairs_dry.py.",
+ "png": "lairs_dry.png",
+ "tileset": "gTileset_OrleansLairsDry",
+ "families": {
+  "SCRUB": [
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    216,
+    184,
+    88
+   ],
+   [
+    176,
+    144,
+    64
+   ],
+   [
+    24,
+    48,
+    32
+   ],
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    152,
+    184,
+    88
+   ],
+   [
+    104,
+    96,
+    80
+   ],
+   [
+    152,
+    144,
+    120
+   ],
+   [
+    200,
+    192,
+    168
+   ],
+   [
+    64,
+    40,
+    32
+   ]
+  ],
+  "ROCK": [
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    64,
+    64,
+    64
+   ],
+   [
+    96,
+    92,
+    96
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    200,
+    196,
+    184
+   ],
+   [
+    240,
+    232,
+    216
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    104,
+    72,
+    48
+   ]
+  ],
+  "CLAY": [
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    224,
+    176,
+    136
+   ],
+   [
+    200,
+    144,
+    104
+   ],
+   [
+    168,
+    112,
+    80
+   ],
+   [
+    136,
+    88,
+    64
+   ],
+   [
+    64,
+    40,
+    32
+   ]
+  ],
+  "DEN": [
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    64,
+    64,
+    64
+   ],
+   [
+    96,
+    92,
+    96
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    240,
+    232,
+    216
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    72,
+    48,
+    40
+   ],
+   [
+    112,
+    72,
+    56
+   ],
+   [
+    152,
+    104,
+    80
+   ],
+   [
+    136,
+    112,
+    56
+   ],
+   [
+    176,
+    144,
+    72
+   ]
+  ],
+  "FIRE": [
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    32,
+    28,
+    32
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    128,
+    120,
+    112
+   ],
+   [
+    168,
+    160,
+    152
+   ],
+   [
+    152,
+    40,
+    24
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    248,
+    160,
+    48
+   ],
+   [
+    248,
+    232,
+    136
+   ],
+   [
+    96,
+    56,
+    40
+   ]
+  ],
+  "CROP": [
+   [
+    40,
+    72,
+    40
+   ],
+   [
+    72,
+    112,
+    48
+   ],
+   [
+    96,
+    56,
+    40
+   ],
+   [
+    112,
+    152,
+    56
+   ],
+   [
+    136,
+    88,
+    56
+   ],
+   [
+    144,
+    24,
+    32
+   ],
+   [
+    160,
+    192,
+    80
+   ],
+   [
+    176,
+    120,
+    80
+   ],
+   [
+    208,
+    224,
+    128
+   ],
+   [
+    216,
+    48,
+    32
+   ],
+   [
+    248,
+    120,
+    88
+   ]
+  ],
+  "BURNT": [
+   [
+    32,
+    24,
+    32
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    96,
+    56,
+    40
+   ],
+   [
+    128,
+    120,
+    112
+   ],
+   [
+    136,
+    88,
+    56
+   ],
+   [
+    176,
+    120,
+    80
+   ],
+   [
+    208,
+    224,
+    128
+   ],
+   [
+    216,
+    88,
+    32
+   ]
+  ]
+ },
+ "pieces": {
+  "block_00": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:block_00"
+    ]
+   ],
+   "walk": [],
+   "lair": "both",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_10": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:block_10"
+    ]
+   ],
+   "walk": [],
+   "lair": "both",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_01": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:block_01"
+    ]
+   ],
+   "walk": [],
+   "lair": "both",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_11": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:block_11"
+    ]
+   ],
+   "walk": [],
+   "lair": "both",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "S0": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:S0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "S1": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:S1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "N0": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:N0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "N1": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:N1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "E0": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:E0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "E1": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:E1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "W0": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:W0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "W1": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:W1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "in_NW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:in_NW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_NE": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:in_NE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_SW": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:in_SW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_SE": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:in_SE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's inner corner"
+  },
+  "out_NW": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:out_NW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_NE": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:out_NE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_SW": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:out_SW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_SE": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:out_SE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "both",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "rock_N": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_N"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) N"
+  },
+  "rock_S": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_S"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) S"
+  },
+  "rock_W": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_W"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) W"
+  },
+  "rock_E": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_E"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) E"
+  },
+  "rock_inNW": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_inNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) inNW"
+  },
+  "rock_inNE": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_inNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) inNE"
+  },
+  "rock_inSW": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_inSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) inSW"
+  },
+  "rock_inSE": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_inSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) inSE"
+  },
+  "rock_landSE": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_landSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) landSE"
+  },
+  "rock_landSW": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_landSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) landSW"
+  },
+  "rock_landNE": {
+   "x": 14,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_landNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) landNE"
+  },
+  "rock_landNW": {
+   "x": 15,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_landNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) landNW"
+  },
+  "rock_sTLBR": {
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_sTLBR"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) sTLBR"
+  },
+  "rock_sTRBL": {
+   "x": 1,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_sTRBL"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall (dry-country set) sTRBL"
+  },
+  "rock_C": {
+   "x": 2,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_C"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall top"
+  },
+  "rock_C1": {
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_C1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall top"
+  },
+  "rock_C2": {
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_C2"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall top"
+  },
+  "rock_C3": {
+   "x": 5,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_C3"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall top"
+  },
+  "rock_face": {
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_face"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall face extension (face)"
+  },
+  "rock_face_l": {
+   "x": 7,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_face_l"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall face extension (face_l)"
+  },
+  "rock_face_r": {
+   "x": 8,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_face_r"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall face extension (face_r)"
+  },
+  "rock_face_claw": {
+   "x": 9,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:rock_face_claw"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "rock wall face gouged by claws"
+  },
+  "clay_N": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground N"
+  },
+  "clay_S": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground S"
+  },
+  "clay_W": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground W"
+  },
+  "clay_E": {
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground E"
+  },
+  "clay_inNW": {
+   "x": 14,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground inNW"
+  },
+  "clay_inNE": {
+   "x": 15,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground inNE"
+  },
+  "clay_inSW": {
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground inSW"
+  },
+  "clay_inSE": {
+   "x": 1,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground inSE"
+  },
+  "clay_landSE": {
+   "x": 2,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground landSE"
+  },
+  "clay_landSW": {
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground landSW"
+  },
+  "clay_landNE": {
+   "x": 4,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground landNE"
+  },
+  "clay_landNW": {
+   "x": 5,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground landNW"
+  },
+  "clay_sTLBR": {
+   "x": 6,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground sTLBR"
+  },
+  "clay_sTRBL": {
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay on dry ground sTRBL"
+  },
+  "clay_C": {
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay"
+  },
+  "clay_C1": {
+   "x": 9,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_C1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay"
+  },
+  "clay_C2": {
+   "x": 10,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:clay_C2"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "red clay"
+  },
+  "den": {
+   "x": 11,
+   "y": 3,
+   "w": 4,
+   "h": 3,
+   "rows": [
+    [
+     "ld:den_0_0",
+     "ld:den_1_0",
+     "ld:den_2_0",
+     "ld:den_3_0"
+    ],
+    [
+     "ld:den_0_1",
+     "ld:den_1_1",
+     "ld:den_2_1",
+     "ld:den_3_1"
+    ],
+    [
+     "ld:den_0_2",
+     "ld:den_1_2",
+     "ld:den_2_2",
+     "ld:den_3_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "4x3 the den: rock overhang, dark hollow, bedding (all blocking)"
+  },
+  "scarred_stump": {
+   "x": 15,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:scarred_stump"
+    ]
+   ],
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "1x1 a stump scored by claws, blocking"
+  },
+  "bones": {
+   "x": 0,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:bones"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "1x1 old bones (walkable)"
+  },
+  "fur": {
+   "x": 1,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:fur"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ursaluna",
+   "comment": "1x1 tufts of shed fur (walkable)"
+  },
+  "pepper": {
+   "x": 2,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:pepper"
+    ]
+   ],
+   "walk": [],
+   "lair": "entei",
+   "comment": "pepper rows (the dry country's field cell, copied), blocking"
+  },
+  "pepper_burnt": {
+   "x": 3,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:pepper_burnt"
+    ]
+   ],
+   "walk": [],
+   "lair": "entei",
+   "comment": "pepper rows burned black, blocking"
+  },
+  "ash_C": {
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (C)"
+  },
+  "ash_N": {
+   "x": 5,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (N)"
+  },
+  "ash_S": {
+   "x": 6,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (S)"
+  },
+  "ash_W": {
+   "x": 7,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (W)"
+  },
+  "ash_E": {
+   "x": 8,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (E)"
+  },
+  "ash_inNW": {
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (inNW)"
+  },
+  "ash_inNE": {
+   "x": 10,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (inNE)"
+  },
+  "ash_inSW": {
+   "x": 11,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (inSW)"
+  },
+  "ash_inSE": {
+   "x": 12,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (inSE)"
+  },
+  "ash_landSE": {
+   "x": 13,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (landSE)"
+  },
+  "ash_landSW": {
+   "x": 14,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (landSW)"
+  },
+  "ash_landNE": {
+   "x": 15,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (landNE)"
+  },
+  "ash_landNW": {
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (landNW)"
+  },
+  "ash_sTLBR": {
+   "x": 1,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (sTLBR)"
+  },
+  "ash_sTRBL": {
+   "x": 2,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:ash_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "ash over dry ground (sTRBL)"
+  },
+  "brazier": {
+   "x": 3,
+   "y": 7,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "ld:brazier_0_0"
+    ],
+    [
+     "ld:brazier_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "entei",
+   "comment": "1x2 a burning stone brazier on the ash, blocking"
+  },
+  "vent": {
+   "x": 4,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:vent"
+    ]
+   ],
+   "walk": [],
+   "lair": "entei",
+   "comment": "1x1 glowing cracks in the ash (blocking: hot)"
+  },
+  "stubble": {
+   "x": 5,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ld:stubble"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "entei",
+   "comment": "1x1 burned cane stubs in the ash (walkable)"
+  }
+ }
+}

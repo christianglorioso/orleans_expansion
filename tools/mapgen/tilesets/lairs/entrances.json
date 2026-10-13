@@ -1,0 +1,629 @@
+{
+ "_comment": "The lairs' route entrances (make_entrances.py): overlay pieces (magenta = clear), the compose source 'lent' (overlay_only) to add to each route recipe that places them, and prefabs.",
+ "png": "entrances.png",
+ "pieces": {
+  "canopy_gap_w": {
+   "x": 0,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "lair": "rougarou",
+   "comment": "2x2 overlay: a trail into the canopy, the wall to the east (Route 14)"
+  },
+  "stone_arch": {
+   "x": 2,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "lair": "celebi suicune",
+   "comment": "2x2 overlay: a Rootkin stone arch (open)"
+  },
+  "stone_arch_mist": {
+   "x": 4,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "lair": "celebi suicune",
+   "comment": "2x2 overlay: a Rootkin stone arch (mist)"
+  },
+  "stone_arch_vines": {
+   "x": 6,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "walk": [],
+   "lair": "celebi suicune",
+   "comment": "2x2 overlay: a Rootkin stone arch (vines)"
+  },
+  "scrub_gap": {
+   "x": 8,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "lair": "ursaluna entei",
+   "comment": "2x2 overlay: a cleft into the dry scrub, the wall to the north (Routes 23, 16)"
+  },
+  "claw_stump": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "walk": [],
+   "lair": "ursaluna",
+   "comment": "1x1 overlay: a clawed stump (Route 23)"
+  },
+  "charred_stake": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "walk": [],
+   "lair": "entei",
+   "comment": "1x2 overlay: a charred stake, glowing tip (Route 16)"
+  }
+ },
+ "source": {
+  "name": "lent",
+  "type": "image",
+  "image": "tools/mapgen/tilesets/lairs/entrances.png",
+  "transparent": [
+   [
+    255,
+    0,
+    255
+   ]
+  ],
+  "overlay_only": true,
+  "metatiles": [
+   {
+    "id": "0_0",
+    "bottom": [
+     0,
+     0
+    ]
+   },
+   {
+    "id": "1_0",
+    "bottom": [
+     1,
+     0
+    ]
+   },
+   {
+    "id": "0_1",
+    "bottom": [
+     0,
+     1
+    ]
+   },
+   {
+    "id": "1_1",
+    "bottom": [
+     1,
+     1
+    ]
+   },
+   {
+    "id": "2_0",
+    "bottom": [
+     2,
+     0
+    ]
+   },
+   {
+    "id": "3_0",
+    "bottom": [
+     3,
+     0
+    ]
+   },
+   {
+    "id": "2_1",
+    "bottom": [
+     2,
+     1
+    ]
+   },
+   {
+    "id": "3_1",
+    "bottom": [
+     3,
+     1
+    ]
+   },
+   {
+    "id": "4_0",
+    "bottom": [
+     4,
+     0
+    ]
+   },
+   {
+    "id": "5_0",
+    "bottom": [
+     5,
+     0
+    ]
+   },
+   {
+    "id": "4_1",
+    "bottom": [
+     4,
+     1
+    ]
+   },
+   {
+    "id": "5_1",
+    "bottom": [
+     5,
+     1
+    ]
+   },
+   {
+    "id": "6_0",
+    "bottom": [
+     6,
+     0
+    ]
+   },
+   {
+    "id": "7_0",
+    "bottom": [
+     7,
+     0
+    ]
+   },
+   {
+    "id": "6_1",
+    "bottom": [
+     6,
+     1
+    ]
+   },
+   {
+    "id": "7_1",
+    "bottom": [
+     7,
+     1
+    ]
+   },
+   {
+    "id": "8_0",
+    "bottom": [
+     8,
+     0
+    ]
+   },
+   {
+    "id": "9_0",
+    "bottom": [
+     9,
+     0
+    ]
+   },
+   {
+    "id": "8_1",
+    "bottom": [
+     8,
+     1
+    ]
+   },
+   {
+    "id": "9_1",
+    "bottom": [
+     9,
+     1
+    ]
+   },
+   {
+    "id": "10_0",
+    "bottom": [
+     10,
+     0
+    ]
+   },
+   {
+    "id": "11_0",
+    "bottom": [
+     11,
+     0
+    ]
+   },
+   {
+    "id": "11_1",
+    "bottom": [
+     11,
+     1
+    ]
+   }
+  ]
+ },
+ "prefabs": {
+  "canopy_gap_w": {
+   "_comment": "2x2 overlay: a trail into the canopy, the wall to the east (Route 14)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:0_0"
+     },
+     {
+      "overlay": "lent:1_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:0_1"
+     },
+     {
+      "overlay": "lent:1_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "stone_arch": {
+   "_comment": "2x2 overlay: a Rootkin stone arch (open)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:2_0"
+     },
+     {
+      "overlay": "lent:3_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:2_1"
+     },
+     {
+      "overlay": "lent:3_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "stone_arch_mist": {
+   "_comment": "2x2 overlay: a Rootkin stone arch (mist)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:4_0"
+     },
+     {
+      "overlay": "lent:5_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:4_1"
+     },
+     {
+      "overlay": "lent:5_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "stone_arch_vines": {
+   "_comment": "2x2 overlay: a Rootkin stone arch (vines)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:6_0"
+     },
+     {
+      "overlay": "lent:7_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:6_1"
+     },
+     {
+      "overlay": "lent:7_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "scrub_gap": {
+   "_comment": "2x2 overlay: a cleft into the dry scrub, the wall to the north (Routes 23, 16)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:8_0"
+     },
+     {
+      "overlay": "lent:9_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:8_1"
+     },
+     {
+      "overlay": "lent:9_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "claw_stump": {
+   "_comment": "1x1 overlay: a clawed stump (Route 23)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:10_0"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "charred_stake": {
+   "_comment": "1x2 overlay: a charred stake, glowing tip (Route 16)",
+   "rows": [
+    [
+     {
+      "overlay": "lent:11_0"
+     }
+    ],
+    [
+     {
+      "overlay": "lent:11_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  }
+ },
+ "placements": {
+  "Route14": {
+   "tileset": "orleans_route_b",
+   "open": [
+    [
+     "canopy_gap_w",
+     25,
+     30
+    ]
+   ],
+   "sealed": "the canopy as built",
+   "trigger": [
+    [
+     26,
+     30
+    ],
+    [
+     26,
+     31
+    ]
+   ],
+   "opens": "story ch7 (the flood clears); the lair is night-only inside"
+  },
+  "Route23": {
+   "tileset": "orleans_route_dry",
+   "open": [
+    [
+     "scrub_gap",
+     22,
+     1
+    ],
+    [
+     "claw_stump",
+     21,
+     3
+    ]
+   ],
+   "sealed": "the feather notch at x 22-23 filled with the dry scrub block",
+   "trigger": [
+    [
+     22,
+     1
+    ],
+    [
+     23,
+     1
+    ]
+   ],
+   "opens": "story 45 (post-game); Ursaluna inside at night"
+  },
+  "Route7": {
+   "tileset": "orleans_route",
+   "open": [
+    [
+     "stone_arch",
+     34,
+     1
+    ]
+   ],
+   "sealed": [
+    [
+     "stone_arch_vines",
+     34,
+     1
+    ]
+   ],
+   "trigger": [
+    [
+     34,
+     2
+    ],
+    [
+     35,
+     2
+    ]
+   ],
+   "opens": "story 45"
+  },
+  "Route11": {
+   "tileset": "orleans_route",
+   "open": [
+    [
+     "stone_arch_mist",
+     28,
+     20
+    ]
+   ],
+   "sealed": [
+    [
+     "stone_arch_vines",
+     28,
+     20
+    ]
+   ],
+   "trigger": [
+    [
+     28,
+     21
+    ],
+    [
+     29,
+     21
+    ]
+   ],
+   "opens": "story 45; the island's cypress goes, the arch stands in its place"
+  },
+  "Route2": {
+   "tileset": "orleans_port",
+   "open": "the map as built (the feather notch at x 24-25, rows 0-1)",
+   "sealed": "the notch filled with the swamp canopy block (primary pieces)",
+   "trigger": [
+    [
+     24,
+     0
+    ],
+    [
+     25,
+     0
+    ]
+   ],
+   "opens": "story 45"
+  },
+  "Route16": {
+   "tileset": "orleans_route_farm",
+   "open": [
+    [
+     "scrub_gap",
+     15,
+     1
+    ],
+    [
+     "charred_stake",
+     17,
+     2
+    ]
+   ],
+   "sealed": "the feather notch at x 14-17 filled with the dry scrub block",
+   "trigger": [
+    [
+     15,
+     1
+    ],
+    [
+     16,
+     1
+    ]
+   ],
+   "opens": "story 45"
+  }
+ }
+}

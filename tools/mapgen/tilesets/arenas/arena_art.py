@@ -291,7 +291,7 @@ def check_families(images, families, label=""):
     bad = []
     for name, im in images:
         for i, t in enumerate(tiles_of(im)):
-            cols = set(c for c in t if c is not None)
+            cols = set(gba(c) for c in t if c is not None)
             if not cols:
                 continue
             if not any(cols <= f for f in fam.values()):
