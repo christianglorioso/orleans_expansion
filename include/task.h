@@ -30,6 +30,7 @@ void TaskDummy(u8 taskId);
 void SetTaskFuncWithFollowupFunc(u8 taskId, TaskFunc func, TaskFunc followupFunc);
 void SwitchTaskToFollowupFunc(u8 taskId);
 bool8 FuncIsActiveTask(TaskFunc func);
+u8 GetTaskCount(void);
 u8 FindTaskIdByFunc(TaskFunc func);
 void SetWordTaskArg(u8 taskId, u8 dataElem, u32 value);
 u32 GetWordTaskArg(u8 taskId, u8 dataElem);

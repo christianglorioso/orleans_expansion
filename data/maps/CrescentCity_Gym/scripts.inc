@@ -51,6 +51,8 @@ CrescentCity_Gym_EventScript_Trainer2::
 CrescentCity_Gym_EventScript_Fifolet0::
 	lock
 	faceplayer
+	setvar VAR_0x8004, ACH_FIFOLETS_MAZE
+	special Achievement_UnlockVar8004
 	goto_if_set FLAG_BADGE03_GET, CrescentCity_Gym_EventScript_FifoletAfter
 	trainerbattle_single TRAINER_FIFOLET, CrescentCity_Gym_Text_FifoletIntro, CrescentCity_Gym_Text_FifoletDefeat, CrescentCity_Gym_EventScript_FifoletDefeated, NO_MUSIC
 	goto CrescentCity_Gym_EventScript_FifoletAfter

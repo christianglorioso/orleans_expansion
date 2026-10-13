@@ -655,3 +655,7 @@ gSpecials::
 	def_special StartBlackJack
 	def_special StartGacha
 	def_special StartDerby
+	def_special Achievement_UnlockVar8004
+	def_special Achievement_CheckAllSpecial
+	def_special Achievement_GetCountSpecial
+	def_special Achievement_ClaimNextReward

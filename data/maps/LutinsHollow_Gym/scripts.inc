@@ -74,6 +74,8 @@ LutinsHollow_Gym_EventScript_Trainer5::
 LutinsHollow_Gym_EventScript_TheReal2::
 	lock
 	faceplayer
+	setvar VAR_0x8004, ACH_LUTINS_MIRAGE
+	special Achievement_UnlockVar8004
 	goto_if_set FLAG_BADGE06_GET, LutinsHollow_Gym_EventScript_LutinAfter
 	trainerbattle_single TRAINER_LUTIN, LutinsHollow_Gym_Text_LutinIntro, LutinsHollow_Gym_Text_LutinDefeat, LutinsHollow_Gym_EventScript_LutinDefeated, NO_MUSIC
 	goto LutinsHollow_Gym_EventScript_LutinAfter

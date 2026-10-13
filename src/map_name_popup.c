@@ -9,6 +9,7 @@
 #include "main.h"
 #include "menu.h"
 #include "map_name_popup.h"
+#include "achievements.h"
 #include "palette.h"
 #include "region_map.h"
 #include "rtc.h"
@@ -363,8 +364,14 @@ enum {
 #define tIncomingPopUp data[3]
 #define tPrintTimer    data[4]
 
+bool8 IsMapNamePopUpWindowActive(void)
+{
+    return FuncIsActiveTask(Task_MapNamePopUpWindow);
+}
+
 void ShowMapNamePopup(void)
 {
+    Achievement_HidePopup();
     if (FlagGet(FLAG_HIDE_MAP_NAME_POPUP) != TRUE)
     {
         if (!FuncIsActiveTask(Task_MapNamePopUpWindow))

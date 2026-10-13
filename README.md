@@ -48,7 +48,7 @@ Pokémon Orleans could not exist without the work of many people. If you build o
 - **SoulGold** by [Eemeliri](https://github.com/Eemeliri/soulgold):
   - the EX vitamins;
   - the overworld and battle speed options and the Fast Intro option;
-  - the achievement system (in progress).
+  - the achievement system (the TROPHIES menu, unlock popups and the polled trophy table; Orleans has its own 100 trophies and placeholder rewards). The easing animation module it uses (`comfy_anim`) is by **Montblanc**, via SoulGold.
   
   The SoulGold project also asks that RHH and the makers of Heart & Soul be credited.
   - Overworld Speedup by **HashtagMarky (Marky)**.

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "achievements.h"
 #include "data.h"
 #include "main.h"
 #include "battle.h"
@@ -1626,6 +1627,7 @@ static void CB2_EndTrainerBattle(void)
         {
             RegisterTrainerInMatchCall();
             SetBattledTrainersFlags();
+            Achievement_OnTrainerBattleWon(TRAINER_BATTLE_PARAM.opponentA);
         }
     }
 }

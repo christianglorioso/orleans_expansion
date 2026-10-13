@@ -24,6 +24,7 @@
 #include "constants/trainer_hill.h"
 #include "constants/trainer_tower.h"
 #include "constants/items.h"
+#include "constants/achievements.h"
 #include "constants/moves.h"
 #include "config/save.h"
 
@@ -254,6 +255,19 @@ struct NPCFollower
 #include "constants/items.h"
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
+// Saved in SaveBlock3 (after the fake clock). Zeroed and stamped when the magic is missing (new game, or a save from before trophies).
+struct AchievementSaveData
+{
+    u32 magic;
+    u8 unlocked[ACHIEVEMENT_UNLOCKED_BYTES];
+    u8 rewardPending[ACHIEVEMENT_UNLOCKED_BYTES]; // unlocked but the reward is not handed over yet
+    u8 popupQueue[ACHIEVEMENT_POPUP_QUEUE_SIZE];  // id + 1, 0 = empty
+    u8 visited[8];                                // map visit bits (routes, shrines, Crescent buildings, islands)
+    u8 reserved[6];
+}; // 56 bytes
+
+#define ACHIEVEMENT_SAVE_MAGIC 0xAC1E0001
+
 struct SaveBlock3
 {
 #if FNPC_ENABLE_NPC_FOLLOWERS
@@ -275,6 +289,8 @@ struct SaveBlock3
     struct SiiRtcInfo fakeRTC;
     u8 fakeRtcMagic[4];
 #endif
+    // Orleans: trophies, appended after the clock (a save without the magic is given an empty, stamped block).
+    struct AchievementSaveData achievements;
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

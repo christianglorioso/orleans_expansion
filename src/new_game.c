@@ -1,4 +1,5 @@
 #include "global.h"
+#include "achievements.h"
 #include "clock.h"
 #include "new_game.h"
 #include "random.h"
@@ -237,6 +238,7 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
+    Achievement_Reset();
     ClearFollowerNPCData();
 }
 

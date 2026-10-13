@@ -8,6 +8,7 @@ CrescentCity_Conservation_EventScript_Lafayette0::
 	lock
 	faceplayer
 	goto_if_lt VAR_ORLEANS_STORY, 14, CrescentCity_Conservation_EventScript_FirstBriefing
+	call Common_EventScript_AchievementRewards
 	call_if_unset FLAG_DEXNAV_OBTAINED, CrescentCity_Conservation_EventScript_GiveDexNav
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_KabutoRevive

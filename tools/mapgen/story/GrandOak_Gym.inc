@@ -13,6 +13,8 @@ GrandOak_Gym_EventScript_AromaLady2::
 	end
 
 GrandOak_Gym_EventScript_Magnolia3::
+	setvar VAR_0x8004, ACH_MAGNOLIAS_GARDEN
+	special Achievement_UnlockVar8004
 	trainerbattle_single TRAINER_MAGNOLIA, GrandOak_Gym_Text_MagnoliaIntro, GrandOak_Gym_Text_MagnoliaDefeat, GrandOak_Gym_EventScript_MagnoliaDefeated, NO_MUSIC
 	call_if_unset FLAG_RECEIVED_GARDEN_SHEARS, GrandOak_Gym_EventScript_GiveRewards
 	msgbox GrandOak_Gym_Text_MagnoliaPostBattle, MSGBOX_DEFAULT

@@ -6,6 +6,7 @@
 #include "battle_environment.h"
 #include "battle_pyramid.h"
 #include "battle_util.h"
+#include "achievements.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_setup.h"
@@ -8882,6 +8883,8 @@ void ActivateMegaEvolution(enum BattlerId battler)
     gLastUsedItem = gBattleMons[battler].item;
     SetActiveGimmick(battler, GIMMICK_MEGA);
     SetGimmickAsActivated(battler, GIMMICK_MEGA);
+    if (GetBattlerSide(battler) == B_SIDE_PLAYER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+        Achievement_OnMegaEvolved(); // Orleans: trophy "Bond Beyond Limits"
 
     if (TryBattleFormChange(battler, FORM_CHANGE_BATTLE_MEGA_EVOLUTION_MOVE, ability))
     {

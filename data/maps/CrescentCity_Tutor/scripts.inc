@@ -55,6 +55,8 @@ CrescentCity_Tutor_EventScript_TeachMove:
 	call MoveTutor_EventScript_OpenBox
 	goto_if_eq VAR_RESULT, FALSE, CrescentCity_Tutor_EventScript_TutorDeclined
 	removeitem ITEM_HEART_SCALE
+	setvar VAR_0x8004, ACH_LESSONS_LEARNED
+	special Achievement_UnlockVar8004
 	msgbox CrescentCity_Tutor_Text_Taught, MSGBOX_DEFAULT
 	release
 	end

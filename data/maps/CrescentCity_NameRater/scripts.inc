@@ -18,6 +18,8 @@ CrescentCity_NameRater_EventScript_NameRater0::
 	msgbox CrescentCity_NameRater_Text_NewName, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CrescentCity_NameRater_EventScript_Declined
 	call Common_EventScript_NameReceivedPartyMon
+	setvar VAR_0x8004, ACH_A_NAME_OF_ITS_OWN
+	special Achievement_UnlockVar8004
 	msgbox CrescentCity_NameRater_Text_Done, MSGBOX_DEFAULT
 	release
 	end

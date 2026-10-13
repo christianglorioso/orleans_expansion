@@ -1,4 +1,5 @@
 #include "global.h"
+#include "achievements.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
@@ -913,6 +914,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
+    Achievement_OnMapEntered();
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
@@ -1634,6 +1636,7 @@ static void InitOverworldBgs_NoResetHeap(void)
 
 void CleanupOverworldWindowsAndTilemaps(void)
 {
+    Achievement_HidePopup();
     ClearMirageTowerPulseBlendEffect();
     FreeAllOverworldWindowBuffers();
     TRY_FREE_AND_SET_NULL(gOverworldTilemapBuffer_Bg3);
@@ -1852,6 +1855,7 @@ static void OverworldBasic(void)
 {
     ScriptContext_RunScript();
     RunTasks();
+    Achievement_TryShowQueuedPopup();
     AnimateSprites();
     CameraUpdate();
     UpdateCameraPanning();

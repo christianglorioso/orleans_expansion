@@ -163,6 +163,17 @@ bool8 FuncIsActiveTask(TaskFunc func)
     return FALSE;
 }
 
+// Orleans (achievement popup): how many task slots are in use
+u8 GetTaskCount(void)
+{
+    u8 i, count = 0;
+
+    for (i = 0; i < NUM_TASKS; i++)
+        if (gTasks[i].isActive == TRUE)
+            count++;
+    return count;
+}
+
 u8 FindTaskIdByFunc(TaskFunc func)
 {
     s32 i;

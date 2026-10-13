@@ -2,6 +2,7 @@
 // Called from scripts with `special`; VAR_0x8004 = party slot, VAR_0x8005 = stat (0 HP, 1 Atk, 2 Def, 3 SpA, 4 SpD, 5 Spe),
 // VAR_0x8006 = mode. The answer is in VAR_RESULT. Costs and menus live in the scripts (tools/mapgen/story/CrescentCity_*.inc).
 #include "global.h"
+#include "achievements.h"
 #include "pokemon.h"
 #include "event_data.h"
 #include "overworld.h"
@@ -51,6 +52,7 @@ void OrleansSvc_ChangeEv(void)
     SetMonData(mon, sEvData[stat], &next);
     CalculateMonStats(mon);
     gSpecialVar_Result = 1;
+    Achievement_Unlock(ACH_TRAINING_DAY);
 }
 
 // Sets the stat's IV to 31. VAR_RESULT: 1 if it changed, 0 if it already was 31
@@ -66,6 +68,7 @@ void OrleansSvc_MaxIv(void)
     SetMonData(mon, sIvData[stat], &iv);
     CalculateMonStats(mon);
     gSpecialVar_Result = 1;
+    Achievement_Unlock(ACH_BORN_READY);
 }
 
 // Friendship to 255. VAR_RESULT: 1 if it changed, 0 if it already was 255 (or the slot is empty / an Egg)
@@ -80,6 +83,7 @@ void OrleansSvc_MaxFriendship(void)
         return;
     SetMonData(mon, MON_DATA_FRIENDSHIP, &friendship);
     gSpecialVar_Result = 1;
+    Achievement_Unlock(ACH_BEST_FRIENDS);
 }
 
 // The Route 5 fishing tournament: the score is the number of fishing bites (GAME_STAT_FISHING_ENCOUNTERS, +1 per bite).
