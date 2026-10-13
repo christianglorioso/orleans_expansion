@@ -154,8 +154,6 @@ LANDS_END = {
         "LOCALID_LANDS_END_KID": {"text": T("My dad says the pavilion's rain is a", "puzzle. I just get wet.")},
         "LOCALID_LANDS_END_SHRIMPER": {"text": T("Shrimp run in the rain. I love", "Heron's pavilion. Business!")},
     },
-    # the pavilion door's approach cell: the Andrew / Jayden scene (story 36) plays here, not map-wide
-    "triggers": [{"x": 27, "y": 35, "elevation": 0, "var": "VAR_ORLEANS_STORY", "value": 36, "script": "LandsEnd_EventScript_Scene"}],
 }
 
 # ---------------------------------------------------------------------------------------------- the rooms

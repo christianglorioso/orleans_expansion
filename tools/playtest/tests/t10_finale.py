@@ -22,6 +22,51 @@ def menu_choice(b, down):
     b.frames(20)
 
 
+def fill_boxes(b):
+    """party and all boxes full (426 Pokemon): the next gift cannot be given"""
+    from bot import enum_value
+    sp = enum_value("species.h", "SPECIES_RATTATA")
+    for _ in range(430):
+        b.call("ScriptGiveMon", sp, 5, 0)
+
+
+def free_boxes(b, n=6):
+    for i in range(n):
+        b.call("ZeroBoxMonAt", 0, i)
+
+
+def fill_items_pocket(b):
+    """30 distinct Items-pocket entries: nothing more fits"""
+    for item in range(13, 160):
+        b.give_item(item, 1)
+
+
+def has_space(b, name):
+    from bot import enum_value
+    return bool(b.call("CheckBagHasSpace", enum_value("items.h", name), 1) & 0xFF)
+
+
+def make_room(b, name):
+    for item in range(13, 160):
+        if has_space(b, name):
+            return True
+        b.call("RemoveBagItem", item, 1)
+    return has_space(b, name)
+
+
+def top_up(b):
+    """fill the Items pocket again"""
+    for item in range(13, 160):
+        b.give_item(item, 1)
+
+
+def clear_ceremony(b):
+    for f in ("FLAG_RECEIVED_LEGENDARY", "FLAG_RECEIVED_LEGENDARY_ORB", "FLAG_ROUTE25_OPEN", "FLAG_KYOGRE_CALMED", "FLAG_GROUDON_CALMED"):
+        b.set_flag(f, False)
+    b.set_var("VAR_ORLEANS_LEGENDARY_PICK", 0)
+    b.set_var("VAR_OLD_WATER_CEREMONY", 0)
+
+
 def mash_until(b, cond, n=200):
     for _ in range(n):
         if cond():
@@ -42,6 +87,34 @@ def run(b, t):
               "FLAG_DUST_STORMS_LIFTED", "FLAG_HIDE_OLD_WATER_TUPELO"):
         b.set_flag(f, True)
     b.set_flag("FLAG_HIDE_OLD_WATER_TUPELO", False)
+
+    # ---------------------------------------------------------------- B2: party and boxes full at the ceremony: no soft-lock, Tupelo retries
+    fill_boxes(b)
+    b.set_flag("FLAG_ROUTE25_OPEN", True)
+    b.set_var("VAR_ORLEANS_STORY", 40)
+    b.set_var("VAR_OLD_WATER_CEREMONY", 1)
+    b.warp("OldWater", 22, 32)
+    b.frames(40)
+    menu_choice(b, 0)
+    b.advance_text(200)
+    b.frames(30)
+    t.check("ceremony with party and boxes full: control returns (pending var 3), no legendary, no pick",
+            b.var("VAR_OLD_WATER_CEREMONY") == 3 and not b.flag("FLAG_RECEIVED_LEGENDARY") and b.var("VAR_ORLEANS_LEGENDARY_PICK") == 0 and b.script_status() == 2
+            and b.var("VAR_ORLEANS_STORY") == 40, "var=%d pick=%d story=%d script=%d" % (b.var("VAR_OLD_WATER_CEREMONY"), b.var("VAR_ORLEANS_LEGENDARY_PICK"), b.var("VAR_ORLEANS_STORY"), b.script_status()))
+    free_boxes(b)
+    b.warp("Route1", 10, 9)
+    b.warp("OldWater", 24, 30)
+    b.face("U")
+    b.press("A", 4, 30)
+    menu_choice(b, 1)                                   # GROUDON this time
+    mash_until(b, lambda: b.map_name() == "Route8", 160)
+    b.frames(30)
+    t.check("with room made, Tupelo retries the gift: Groudon, story 41", b.flag("FLAG_RECEIVED_LEGENDARY") and b.var("VAR_ORLEANS_LEGENDARY_PICK") == 2 and b.var("VAR_ORLEANS_STORY") == 41,
+            "pick=%d story=%d at %s" % (b.var("VAR_ORLEANS_LEGENDARY_PICK"), b.var("VAR_ORLEANS_STORY"), b.where()))
+    free_boxes(b, 12)
+    clear_ceremony(b)
+    b.set_flag("FLAG_ROUTE25_OPEN", False)
+    b.set_var("VAR_ORLEANS_STORY", 39)
 
     # ---------------------------------------------------------------- the dive spot needs the gear AND the telling
     b.set_var("VAR_ORLEANS_STORY", 39)
@@ -105,11 +178,39 @@ def run(b, t):
     t.check("both raids done: story 40, FLAG_ROUTE25_OPEN, the ceremony at the Old Water", b.flag("FLAG_GROUDON_CALMED") and b.flag("FLAG_ROUTE25_OPEN")
             and b.var("VAR_ORLEANS_STORY") == 40 and b.map_name() == "OldWater", "story=%d at %s" % (b.var("VAR_ORLEANS_STORY"), b.where()))
 
-    # ---------------------------------------------------------------- F.4 the ceremony: the player takes Kyogre
-    menu_choice(b, 0)
-    mash_until(b, lambda: b.map_name() == "Route8", 120)
+    # ---------------------------------------------------------------- F.4 the ceremony: B re-asks, a refused confirmation re-asks, a full Items pocket
+    fill_items_pocket(b)
+    for _ in range(80):
+        if any("ultichoice" in str(x) for x in b.active_tasks()):
+            break
+        b.press("A", 4, 30)
+    b.frames(20)
+    b.press("B", 4, 30)
+    b.frames(30)
+    t.check("B at the pick does not choose (the menu stays, no legendary)", any("ultichoice" in str(x) for x in b.active_tasks()) and not b.flag("FLAG_RECEIVED_LEGENDARY"))
+    b.press("A", 4, 30)                                   # KYOGRE highlighted: the confirmation
+    b.frames(20)
+    b.press("DOWN", 6, 14)                                # NO
+    b.press("A", 4, 30)
+    b.frames(30)
+    t.check("answering NO at the confirmation asks again (no legendary)", not b.flag("FLAG_RECEIVED_LEGENDARY") and b.var("VAR_ORLEANS_LEGENDARY_PICK") == 0,
+            "pick=%d" % b.var("VAR_ORLEANS_LEGENDARY_PICK"))
+    menu_choice(b, 0)                                     # KYOGRE, then YES
+    b.advance_text(200)
+    b.frames(30)
+    t.check("a full Items pocket at the orb: control returns (pending var 3), the legendary was given, no orb, story 40",
+            b.var("VAR_OLD_WATER_CEREMONY") == 3 and b.flag("FLAG_RECEIVED_LEGENDARY") and not b.flag("FLAG_RECEIVED_LEGENDARY_ORB") and b.var("VAR_ORLEANS_STORY") == 40
+            and b.script_status() == 2, "var=%d story=%d script=%d" % (b.var("VAR_OLD_WATER_CEREMONY"), b.var("VAR_ORLEANS_STORY"), b.script_status()))
+    make_room(b, "ITEM_BLUE_ORB")
+    b.warp("Route1", 10, 9)
+    b.warp("OldWater", 24, 30)
+    b.face("U")
+    b.press("A", 4, 30)
+    mash_until(b, lambda: b.map_name() == "Route8", 160)
     b.frames(40)
-    t.check("ceremony: Kyogre and its Blue Orb for the player (Jayden gets Groudon), story 41, Tupelo's boat to Route 8",
+    b.shot("orb_retry")
+    t.note("orb retry: %s tupelo_hidden=%s ceremony=%d space=%s tasks=%s" % (b.where(), b.flag("FLAG_HIDE_CER_TUPELO"), b.var("VAR_OLD_WATER_CEREMONY"), has_space(b, "ITEM_BLUE_ORB"), b.active_tasks()[:4]))
+    t.check("with room made, Tupelo gives the Blue Orb: pick Kyogre, story 41, Tupelo's boat to Route 8",
             b.var("VAR_ORLEANS_LEGENDARY_PICK") == 1 and b.flag("FLAG_RECEIVED_LEGENDARY") and has_item(b, "ITEM_BLUE_ORB")
             and b.var("VAR_ORLEANS_STORY") == 41 and b.map_name() == "Route8", "pick=%d story=%d at %s" % (b.var("VAR_ORLEANS_LEGENDARY_PICK"), b.var("VAR_ORLEANS_STORY"), b.where()))
     b.shot("ceremony_done")
@@ -125,6 +226,19 @@ def run(b, t):
             b.var("VAR_ORLEANS_STORY") == 42 and b.flag("FLAG_HIDE_SHRINE_CAMILLE") and b.flag("FLAG_HIDE_SHRINE_ANDREW")
             and not b.flag("FLAG_HIDE_SHRINE_RAYQUAZA") and not b.flag("FLAG_HIDE_SHRINE_JAYDEN"), "story=%d" % b.var("VAR_ORLEANS_STORY"))
     b.shot("shrine_steps_done")
+
+    # ---------------------------------------------------------------- the singing stone gives an owed Swampertite (from story 43 on)
+    make_room(b, "ITEM_SWAMPERTITE")
+    b.set_var("VAR_ORLEANS_STORY", 43)
+    b.set_flag("FLAG_RECEIVED_SWAMPERTITE", False)
+    b.warp("OldestShrine", 14, 13)                     # the shrine keeper (14, 12) hands over the owed stone
+    b.interact("U", 60)
+    t.check("the singing stone gives the Swampertite (own flag, in the bag)", b.flag("FLAG_RECEIVED_SWAMPERTITE") and has_item(b, "ITEM_SWAMPERTITE"))
+    b.call("RemoveBagItem", 315, 1)                   # ITEM_SWAMPERTITE: back to a full pocket for the raid below
+    top_up(b)
+    b.set_flag("FLAG_RECEIVED_SWAMPERTITE", False)
+    b.set_var("VAR_ORLEANS_STORY", 42)
+    b.warp("Route24", 34, 8)
 
     # ---------------------------------------------------------------- F.6 the Rayquaza raid, the Swampertite, the epilogue
     b.set_flag("FLAG_RECEIVED_SWAMPERTITE", False)
@@ -157,7 +271,7 @@ def run(b, t):
     b.shot("finale_end")
     seen["cb2"] = b.callback2_name()
     seen["where"] = b.where()
-    t.check("the raid is won (2 v 1 with Jayden): the Swampertite was given", seen["swamp"], str(seen))
+    t.check("a full Items pocket does not stop the ending: the raid is won, the stone is owed (not given)", not seen["swamp"], str(seen))
     t.check("the epilogue reached the game clear (Hall of Fame and the credits) with the story at 44-45", seen["credits"] and seen["story"] >= 44, str(seen))
 
     # ---------------------------------------------------------------- static: the new route trainers

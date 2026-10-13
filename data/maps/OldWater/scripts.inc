@@ -18,6 +18,7 @@ OldWater_OnTransition:
 	setflag FLAG_HIDE_CER_TUPELO
 	setflag FLAG_HIDE_CER_JAYDEN
 	setflag FLAG_HIDE_CER_WREN
+	call_if_eq VAR_OLD_WATER_CEREMONY, 3, OldWater_EventScript_ShowCerTupelo
 	end
 
 OldWater_OnFrameTable:
@@ -229,6 +230,7 @@ OldWater_Text_ChoiceNotYet:
 OldWater_EventScript_Ceremony::
 	goto_if_lt VAR_ORLEANS_STORY, 40, OldWater_EventScript_CeremonySkip
 	lockall
+	setvar VAR_OLD_WATER_CEREMONY, 3
 	clearflag FLAG_HIDE_CER_KYOGRE
 	clearflag FLAG_HIDE_CER_GROUDON
 	clearflag FLAG_HIDE_CER_TUPELO
@@ -251,8 +253,10 @@ OldWater_EventScript_CeremonySkip:
 OldWater_EventScript_CerChoose:
 	goto_if_set FLAG_RECEIVED_LEGENDARY, OldWater_EventScript_CerOrb
 	msgbox OldWater_Text_CerAsk, MSGBOX_DEFAULT
-	dynmultichoice 1, 1, FALSE, 2, 0, DYN_MULTICHOICE_CB_NONE, OldWater_Text_ChoiceKyogre, OldWater_Text_ChoiceGroudon
-	goto_if_eq VAR_RESULT, 1, OldWater_EventScript_PickGroudon
+	dynmultichoice 1, 1, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, OldWater_Text_ChoiceKyogre, OldWater_Text_ChoiceGroudon
+	goto_if_eq VAR_RESULT, 1, OldWater_EventScript_SureGroudon
+	msgbox OldWater_Text_SureKyogre, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OldWater_EventScript_CerChoose
 	setvar VAR_ORLEANS_LEGENDARY_PICK, 1
 	givemon SPECIES_KYOGRE, 60
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, OldWater_EventScript_CerNoRoom
@@ -268,6 +272,11 @@ OldWater_EventScript_KyogreToPC:
 	msgbox OldWater_Text_GotKyogre, MSGBOX_DEFAULT
 	msgbox OldWater_Text_JaydenK, MSGBOX_DEFAULT
 	goto OldWater_EventScript_CerOrb
+
+OldWater_EventScript_SureGroudon:
+	msgbox OldWater_Text_SureGroudon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OldWater_EventScript_CerChoose
+	goto OldWater_EventScript_PickGroudon
 
 OldWater_EventScript_PickGroudon:
 	setvar VAR_ORLEANS_LEGENDARY_PICK, 2
@@ -286,6 +295,15 @@ OldWater_EventScript_GroudonToPC:
 	msgbox OldWater_Text_JaydenG, MSGBOX_DEFAULT
 	goto OldWater_EventScript_CerOrb
 
+OldWater_EventScript_CerBagFull:
+	msgbox OldWater_Text_BagFull, MSGBOX_DEFAULT
+	releaseall
+	end
+
+OldWater_EventScript_ShowCerTupelo:
+	clearflag FLAG_HIDE_CER_TUPELO
+	return
+
 OldWater_EventScript_CerNoRoom:
 	setvar VAR_ORLEANS_LEGENDARY_PICK, 0
 	msgbox OldWater_Text_NoRoom, MSGBOX_DEFAULT
@@ -297,13 +315,13 @@ OldWater_EventScript_CerOrb:
 	msgbox OldWater_Text_OrbGive, MSGBOX_DEFAULT
 	goto_if_eq VAR_ORLEANS_LEGENDARY_PICK, 2, OldWater_EventScript_RedOrb
 	giveitem ITEM_BLUE_ORB
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_eq VAR_RESULT, FALSE, OldWater_EventScript_CerBagFull
 	setflag FLAG_RECEIVED_LEGENDARY_ORB
 	goto OldWater_EventScript_CerEnd
 
 OldWater_EventScript_RedOrb:
 	giveitem ITEM_RED_ORB
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_eq VAR_RESULT, FALSE, OldWater_EventScript_CerBagFull
 	setflag FLAG_RECEIVED_LEGENDARY_ORB
 	goto OldWater_EventScript_CerEnd
 
@@ -332,6 +350,7 @@ OldWater_EventScript_SetStory41:
 OldWater_EventScript_CerTupelo::
 	lock
 	faceplayer
+	goto_if_eq VAR_OLD_WATER_CEREMONY, 3, OldWater_EventScript_CerChoose
 	goto_if_ne VAR_OLD_WATER_CEREMONY, 1, OldWater_EventScript_CerIdle
 	goto OldWater_EventScript_CerChoose
 
@@ -394,6 +413,18 @@ OldWater_Text_OrbGive:
 	.string "TUPELO: And its orb. It carries the\n"
 	.string "sea, or the land. Hold it on the\p"
 	.string "legendary and the old power wakes.$"
+
+OldWater_Text_SureKyogre:
+	.string "TUPELO: KYOGRE, the sea. You are\n"
+	.string "sure?$"
+
+OldWater_Text_SureGroudon:
+	.string "TUPELO: GROUDON, the land. You are\n"
+	.string "sure?$"
+
+OldWater_Text_BagFull:
+	.string "TUPELO: Your bag is full. Make room,\n"
+	.string "then speak to me. I will wait.$"
 
 OldWater_Text_NoRoom:
 	.string "TUPELO: Your party and boxes are\n"

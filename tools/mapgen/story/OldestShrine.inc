@@ -40,6 +40,12 @@ OldestShrine_EventScript_Arrival::
 	trainerbattle_no_intro TRAINER_ORLEANS_CAMILLE_SHRINE, OldestShrine_Text_CamilleDefeat
 OldestShrine_EventScript_CamilleDone:
 	msgbox OldestShrine_Text_CamilleAfter, MSGBOX_DEFAULT
+	clearflag FLAG_HIDE_SHRINE_JAYDEN
+	addobject LOCALID_OLDEST_SHRINE_JAYDEN
+	msgbox OldestShrine_Text_JaydenHeal, MSGBOX_DEFAULT
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
 	msgbox OldestShrine_Text_Andrew1, MSGBOX_DEFAULT
 	closemessage
 	goto_if_defeated TRAINER_ORLEANS_ANDREW, OldestShrine_EventScript_AndrewDone
@@ -56,9 +62,7 @@ OldestShrine_EventScript_AndrewDone:
 	removeobject LOCALID_OLDEST_SHRINE_CAMILLE
 	removeobject LOCALID_OLDEST_SHRINE_ANDREW
 	clearflag FLAG_HIDE_SHRINE_RAYQUAZA
-	clearflag FLAG_HIDE_SHRINE_JAYDEN
 	addobject LOCALID_OLDEST_SHRINE_RAYQUAZA
-	addobject LOCALID_OLDEST_SHRINE_JAYDEN
 	special HealPlayerParty
 	fadescreen FADE_FROM_BLACK
 	goto_if_eq VAR_ORLEANS_LEGENDARY_PICK, 2, OldestShrine_EventScript_JaydenArrivesK
@@ -102,6 +106,7 @@ OldestShrine_EventScript_JaydenIdle:
 
 OldestShrine_EventScript_RayCalm:
 	call OldestShrine_EventScript_Rewards
+	goto_if_lt VAR_ORLEANS_STORY, 44, OldestShrine_EventScript_Epilogue
 	msgbox OldestShrine_Text_RayIdle, MSGBOX_DEFAULT
 	release
 	end
@@ -190,15 +195,19 @@ OldestShrine_EventScript_Rewards:
 	goto_if_set FLAG_RECEIVED_SWAMPERTITE, OldestShrine_EventScript_RewardsDone
 	msgbox OldestShrine_Text_Swampertite, MSGBOX_DEFAULT
 	giveitem ITEM_SWAMPERTITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	goto_if_eq VAR_RESULT, FALSE, OldestShrine_EventScript_StoneOwed
 	setflag FLAG_RECEIVED_SWAMPERTITE
 OldestShrine_EventScript_RewardsDone:
 	return
 
+@ a full Items pocket never gates the ending: the stone waits on the singing stone (any time from story 43: the shrine keeper hands it over)
+OldestShrine_EventScript_StoneOwed:
+	msgbox OldestShrine_Text_StoneOwed, MSGBOX_DEFAULT
+	return
+
 @ ---------------------------------------------------------------- F.7 the epilogue (story 43 -> 44 -> 45): dawn, the party in Crescent City, the credits
-@ A bag-full Swampertite is retried by talking to Rayquaza; the epilogue only runs after the stone is in the bag.
+@ The Swampertite never gates the ending: a bag-full stone is retried at the shrine keeper (OldestShrine_EventScript_Npc0).
 OldestShrine_EventScript_Epilogue:
-	goto_if_unset FLAG_RECEIVED_SWAMPERTITE, OldestShrine_EventScript_EpilogueLater
 	fadescreen FADE_TO_WHITE
 	fadescreen FADE_FROM_WHITE
 	msgbox OldestShrine_Text_Dawn, MSGBOX_DEFAULT
@@ -229,8 +238,17 @@ OldestShrine_EventScript_SetStory45:
 	setvar VAR_ORLEANS_STORY, 45
 	return
 
-OldestShrine_EventScript_Stone::
-	msgbox OldestShrine_Text_StoneIdle, MSGBOX_SIGN
+OldestShrine_EventScript_Npc0::
+	lockall
+	goto_if_lt VAR_ORLEANS_STORY, 43, OldestShrine_EventScript_StoneQuiet
+	goto_if_set FLAG_RECEIVED_SWAMPERTITE, OldestShrine_EventScript_StoneQuiet
+	call OldestShrine_EventScript_Rewards
+	releaseall
+	end
+
+OldestShrine_EventScript_StoneQuiet:
+	msgbox OldestShrine_Text_StoneIdle, MSGBOX_DEFAULT
+	releaseall
 	end
 
 @ ---------------------------------------------------------------- text
@@ -330,8 +348,20 @@ OldestShrine_Text_TheEnd:
 	.string "The telling is sung.\n"
 	.string "And the Long One keeps watch.$"
 
+OldestShrine_Text_JaydenHeal:
+	.string "JAYDEN runs up the steps. You look\n"
+	.string "rough. Hold still. He patches up\p"
+	.string "your whole party. Every POKéMON\n"
+	.string "perks up.$"
+
+OldestShrine_Text_StoneOwed:
+	.string "The stone gave up a gift, but your\n"
+	.string "bag is full. The shrine keeper keeps\p"
+	.string "it for you. Come back.$"
+
 OldestShrine_Text_StoneIdle:
-	.string "The stone hums, quietly.$"
+	.string "The shrine keeper smiles. The stone\n"
+	.string "hums, for anyone who listens.$"
 
 OldestShrine_Text_RayIdle:
 	.string "RAYQUAZA is calm. It watches the\n"

@@ -249,17 +249,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 27,
-      "y": 35,
-      "elevation": 0,
-      "var": "VAR_ORLEANS_STORY",
-      "var_value": "36",
-      "script": "LandsEnd_EventScript_Scene"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

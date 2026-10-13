@@ -61,7 +61,7 @@
 // ---------------------------------------------------------------------------------------------
 #define FLAG_ITEM_ISLE_MARAIS_POTION       0x20
 #define FLAG_ITEM_ISLE_MARAIS_POKE_BALL    0x21
-#define FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE  0x22
+#define FLAG_ORLEANS_POOL_950                            0x22
 #define FLAG_ITEM_ROUTE1_POTION          0x23
 #define FLAG_ITEM_ROUTE1_POKE_BALL       0x24
 #define FLAG_ITEM_ROUTE1_ORAN_BERRY      0x25

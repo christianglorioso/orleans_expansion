@@ -120,7 +120,8 @@ ROUTE22 = {
 # ---------------------------------------------------------------------------------------------- the Oldest Shrine (outdoors)
 OLDEST_SHRINE = {
     "patch_objects": {
-        "LOCALID_OLDEST_SHRINE_NPC_0": {"text": T("The stone hums, if you stand close.", "Don't stand too close.")},
+        # the shrine keeper: the Swampertite waits with her when the bag was full (story >= 43)
+        "LOCALID_OLDEST_SHRINE_NPC_0": {"custom": True},
         "LOCALID_OLDEST_SHRINE_NPC_1": {"text": T("They say the shrine is older than", "the telling. Older than the water.")},
     },
     "add_objects": [

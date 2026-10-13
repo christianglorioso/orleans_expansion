@@ -104,10 +104,11 @@ def run(b, t):
     b.set_var("VAR_LANDS_END_SCENE", 0)
     b.set_var("VAR_OLD_WATER_TELLING", 0)
     b.set_flag("FLAG_DUST_STORMS_LIFTED", False)
-    b.warp("LandsEnd", 27, 36)                       # just outside the pavilion door: stepping onto the approach cell plays the scene
-    b.frames(20)
-    b.step("U")
-    b.frames(40)
+    b.goto(10, 14)                                   # leave by the gym's door mat, as a player does: the scene plays wherever the player stands
+    b.press("DOWN", 8, 8)
+    b.press("DOWN", 8, 8)
+    b.press("DOWN", 8, 8)                            # (the door mat is an arrow warp: pressed down while standing on it)
+    b.frames(60)
     b.advance_text(200)
     for _ in range(60):
         if b.var("VAR_ORLEANS_STORY") >= 39:

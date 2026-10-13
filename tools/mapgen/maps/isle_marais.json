@@ -298,13 +298,6 @@
       "y": 11,
       "flag": "FLAG_ITEM_ISLE_MARAIS_POKE_BALL",
       "_note": "9. Poke Ball"
-    },
-    {
-      "item": "ITEM_SWAMPERTITE",
-      "x": 31,
-      "y": 18,
-      "flag": "FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE",
-      "_note": "6. Swampertite (levee breach, after gym 6; gating not scripted yet)"
     }
   ],
   "hidden_items": [

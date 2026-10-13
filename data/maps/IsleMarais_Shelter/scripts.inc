@@ -7,7 +7,6 @@ IsleMarais_Shelter_OnTransition:
 	setrespawn HEAL_LOCATION_ISLE_MARAIS
 	goto_if_set FLAG_ORLEANS_GAME_STARTED, IsleMarais_Shelter_OnTransitionEnd
 	setflag FLAG_ORLEANS_GAME_STARTED
-	setflag FLAG_ITEM_ISLE_MARAIS_SWAMPERTITE  @ hidden until the post-game (cleared after the Rayquaza finale)
 	@ everyone who turns up later in the story starts hidden
 	setflag FLAG_HIDE_SHELTER_TOTODILE
 	setflag FLAG_HIDE_SHELTER_CHIKORITA
