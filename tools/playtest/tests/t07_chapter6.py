@@ -110,9 +110,15 @@ def run(b, t):
 
     # ---------------------------------------------------------------- the zydeco band: Exploudite at night only, after badge 6
     b.set_flag("FLAG_RECEIVED_EXPLOUDITE", False)
+    b.set_flag("FLAG_BADGE06_GET", True)
+    b.set_clock(12)                                  # the in-game clock (fake RTC): midday
     talk(b, "CampCocodrie_DancePorch", "ZydecoBand0", "D")
-    got = b.flag("FLAG_RECEIVED_EXPLOUDITE")
-    t.check("the band either gives the stone (night) or says to come at night (day), never both", (got and has_item(b, "ITEM_EXPLOUDITE")) or not got, "got=%s" % got)
+    t.check("by day the band gives nothing", not b.flag("FLAG_RECEIVED_EXPLOUDITE") and not has_item(b, "ITEM_EXPLOUDITE"))
+    b.set_clock(22)                                  # night
+    talk(b, "CampCocodrie_DancePorch", "ZydecoBand0", "D")
+    t.check("at night the band gives the Exploudite", b.flag("FLAG_RECEIVED_EXPLOUDITE") and has_item(b, "ITEM_EXPLOUDITE"),
+            "got=%s" % b.flag("FLAG_RECEIVED_EXPLOUDITE"))
+    b.set_clock(12)
 
     # ---------------------------------------------------------------- the Mega stone vendor opens at story 30 (the shop menu appears)
     b.set_var("VAR_ORLEANS_STORY", 30)

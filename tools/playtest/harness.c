@@ -1,10 +1,13 @@
 /* Headless mGBA harness for the Orleans playtest bot.
  * Line protocol on stdin; one reply line per command on stdout ("OK ..." or "ERR ...").
- * Build: tools/playtest/build_harness.sh       Run: harness ROM.gba [unix_time]
+ * Build: tools/playtest/build_harness.sh       Run: harness ROM.gba [unix_time [save.sav]]
+ * (unix_time is the emulated hardware RTC; the Orleans ROM runs on its own in-game clock (fake RTC), so it ignores it.
+ *  save.sav, if given, is loaded as the cartridge's flash save, so a save made by another build can be continued.)
  * Commands:
  *   frames N | press KEYS HOLD [RELEASE] | hold KEYS | release
  *   read8|read16|read32 ADDR | readblock ADDR LEN | write8|write16|write32 ADDR VAL
  *   shot PATH.ppm | hash | nonblack (count of non-black pixels) | savestate PATH | loadstate PATH | reset | rtc UNIXSECS
+ *   dumpsave PATH   (writes the cartridge flash save, 128 KiB, to a file: what a real console keeps in battery RAM)
  *   call ADDR [r0 r1 r2 r3]   (calls a ROM function, thumb if ADDR odd; replies with r0)
  *   safepoint ADDR  (function entry used as the clean point for call; set once after boot)
  *   framecount | quit
@@ -42,6 +45,8 @@ static unsigned W, H;
 static uint32_t keys_held;
 static uint64_t total_frames;
 static char *romPath;
+static char *savePath;
+static struct VFile *savVf;
 
 static int keyBit(const char *n) {
     static const char *names[] = {"A","B","SELECT","START","RIGHT","LEFT","UP","DOWN","R","L"};
@@ -72,7 +77,20 @@ static int bootCore(void) {
     core->setVideoBuffer(core, vbuf, W);
     core->setAudioBufferSize(core, 1024);
     if (!mCoreLoadFile(core, romPath)) return -2;
-    struct VFile *sav = VFileMemChunk(NULL, 0);
+    struct VFile *sav = NULL;
+    if (savePath) {
+        FILE *f = fopen(savePath, "rb");
+        if (!f) return -3;
+        fseek(f, 0, SEEK_END); long n = ftell(f); fseek(f, 0, SEEK_SET);
+        void *buf = malloc(n);
+        if (fread(buf, 1, n, f) != (size_t) n) { fclose(f); free(buf); return -3; }
+        fclose(f);
+        sav = VFileMemChunk(buf, n);
+        free(buf);
+    } else {
+        sav = VFileMemChunk(NULL, 0);
+    }
+    savVf = sav;
     core->loadSave(core, sav);
     total_frames = 0;
     return 0;
@@ -190,6 +208,7 @@ static int callFn(uint32_t addr, uint32_t a0, uint32_t a1, uint32_t a2, uint32_t
 int main(int argc, char **argv) {
     if (argc < 2) { fprintf(stderr, "usage: harness ROM [unix_time]\n"); return 2; }
     romPath = argv[1];
+    if (argc > 3) savePath = argv[3];
     mLogFilterInit(&quietFilter); mLogFilterSet(&quietFilter, "gba.bios", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "gba.memory", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "gba.dma", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "gba.video", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "gba.io", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "gba", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); mLogFilterSet(&quietFilter, "core", mLOG_FATAL | mLOG_ERROR | mLOG_GAME_ERROR); quietLogger.filter = &quietFilter; mLogSetDefaultLogger(&quietLogger);
     int r = bootCore();
     if (r) { printf("ERR boot %d\n", r); return 1; }
@@ -232,6 +251,17 @@ int main(int argc, char **argv) {
         else if (!strcmp(cmd, "loadstate") && a1) printf(loadState(a1) ? "ERR loadstate\n" : "OK\n");
         else if (!strcmp(cmd, "reset")) { core->reset(core); keys_held = 0; total_frames = 0; printf("OK\n"); }
         else if (!strcmp(cmd, "rtc") && a1) { setRtc(atoll(a1)); printf("OK\n"); }
+        else if (!strcmp(cmd, "dumpsave") && a1) {
+            ssize_t n = savVf->size(savVf);
+            uint8_t *buf = malloc(n);
+            savVf->seek(savVf, 0, SEEK_SET);
+            ssize_t got = savVf->read(savVf, buf, n);
+            FILE *f = fopen(a1, "wb");
+            if (!f || got != n) printf("ERR dumpsave\n");
+            else { fwrite(buf, 1, n, f); printf("OK %zd\n", n); }
+            if (f) fclose(f);
+            free(buf);
+        }
         else if (!strcmp(cmd, "framecount")) printf("OK %llu\n", (unsigned long long) total_frames);
         else if (!strcmp(cmd, "regs")) { struct ARMCore *c = core->cpu; printf("OK pc=%08x cpsr=%08x halted=%d r0=%08x r1=%08x lr=%08x sp=%08x\n", (uint32_t) c->gprs[15], c->cpsr.packed, c->halted, c->gprs[0], c->gprs[1], c->gprs[14], c->gprs[13]); }
         else if (!strcmp(cmd, "runto") && a1) {

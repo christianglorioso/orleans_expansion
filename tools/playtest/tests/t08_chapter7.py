@@ -3,8 +3,8 @@ order, locked mirrors, the shutter), Cayenne (badge 7, TM Overheat, Charizardite
 (a partner battle, story 34), the rougarou (night only) and its Lycanrocite, and static checks of the route trainers."""
 from bot import map_data
 
-DAY = 1760000000            # 08:53: morning (not night)
-NIGHT = DAY + 14 * 3600     # 22:53: night
+DAY = 12                    # in-game hour: day (the clock is the fake RTC, see bot.set_clock)
+NIGHT = 22                  # night (20:00-06:00)
 MIRRORS = {"A": (30, 4, 31, 4, "L"), "B": (32, 4, 31, 4, "R"), "C": (32, 8, 31, 8, "R"), "D": (30, 10, 31, 10, "L"),
            "E": (29, 10, 28, 10, "R"), "F": (26, 10, 27, 10, "L")}   # sign x, y, standing x, y, facing
 SOLUTION = {"A": 3, "B": 1, "C": 0, "D": 1, "E": 3, "F": 2}   # OrleansSvc in src/orleans_services.c
@@ -30,8 +30,8 @@ def has_item(b, name):
     return bool(b.call("CheckBagHasItem", enum_value("items.h", name), 1) & 0xFF)
 
 
-def set_time(b, secs):
-    b.h.cmd("rtc %d" % secs)
+def set_time(b, hour):
+    b.set_clock(hour)
     b.frames(30)
 
 

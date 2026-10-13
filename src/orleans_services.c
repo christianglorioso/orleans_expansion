@@ -96,6 +96,12 @@ void OrleansSvc_IsNight(void)
     gSpecialVar_Result = (GetTimeOfDay() == TIME_NIGHT);
 }
 
+// VAR_RESULT: 1 if the current time of day is VAR_0x8004 (0 morning, 1 day, 2 evening, 3 night = the TimeOfDay enum); the rest spots use it
+void OrleansSvc_IsTimeOfDay(void)
+{
+    gSpecialVar_Result = (GetTimeOfDay() == gSpecialVar_0x8004);
+}
+
 // ---- Redfield's mill yard trial (Chapter 7). Six mirrors (0-5 = A-F in tools/mapgen/story_data_ch7.py), each turned to one of four facings
 // (0 north-east, 1 north-west, 2 south-west, 3 south-east), two bits apiece in VAR_REDFIELD_MIRRORS. Three sundials, lit in order by a
 // pair of mirrors each: dial 1 (FLAG_REDFIELD_SUN1) by D and E, dial 2 (SUN2) by B and C, dial 3 (SUN3) by A and F. A lit dial's mirrors

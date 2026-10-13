@@ -28,8 +28,11 @@ It writes `~/.cache/orleans_playtest/harness`. Python needs Pillow. The ROM must
 
 - `harness.c`: loads the ROM, runs frames, reads/writes memory, takes screenshots, save states; line protocol on stdin/stdout
   (`frames N`, `press KEYS HOLD [REL]`, `read8/16/32`, `write8/16/32`, `shot`, `hash`, `nonblack`, `savestate`, `loadstate`,
-  `reset`, `rtc`, `regs`, `runto`, `call ADDR r0..r3`). The RTC is fixed (default 1760000000, Oct 2025) and advances
-  deterministically with emulated time, so runs reproduce. `call` runs a ROM function from a clean point in the main loop
+  `reset`, `rtc`, `dumpsave PATH`, `regs`, `runto`, `call ADDR r0..r3`). `harness ROM [unix_time [save.sav]]`: the optional .sav is loaded as
+  the cartridge's flash save (a save from another build), `dumpsave` writes the flash image out. The emulated hardware RTC (`rtc`) is no longer
+  used by the game: since 2026-10-13 the ROM runs on its own in-game clock (fake RTC, Gen 9 ratio: 20 game seconds per second of play, a day = 72
+  minutes), kept in the save. Tests set it with `b.set_clock(hour, minute, day)` (calls `RtcCalcLocalTimeOffset`), read it with `b.clock()` /
+  `b.clock_seconds()` / `b.time_of_day()` (0 morning, 1 day, 2 evening, 3 night; boundaries 6/10/19/20). `call` runs a ROM function from a clean point in the main loop
   (entry of `PlayTimeCounter_Update`), then restores all registers.
 - `bot.py`: `Bot` wraps it. Symbols from the link map + `readelf`, constants from the real preprocessor (`gcc -E -dM`, cached in `out/`).
   - read: `var(name)`, `flag(name)`, `map_name()`, `pos()`, `where()`, `script_status()` (0 running, 1 waiting, 2 done), `in_battle()`, `active_tasks()`
@@ -67,6 +70,9 @@ Map names are the directory names in `data/maps` (`Route3`, `CrescentCity`, ...)
 | t01_slice | Mom's gifts, leaving the shelter, Wingull trigger, Lafayette's Pokedex, Jayden at the landing and the canoe (story 0 to 5) |
 | t02_chapter2 | Storm's Edge arrival, Crescent arrival, the floodwater gate at Crescent's south exit (message + turn back, several columns, open after the badge flag) |
 | t03_jayden_bridge | Jayden on the Route 3 bridge (all five trigger rows) |
+| t12_healers | every healer's nurse restores the party and the script ends; a whiteout respawns at a healer |
+| t13_clock | the in-game clock: new game at 08:00, 20 game seconds per second, midnight rollover, time-of-day boundaries; the rest spots (all 13 healer rooms: menu opens, B backs out) and Rest until MORNING / DAY / EVENING / NIGHT (clock, heal, "already", CANCEL); Redfield mirrors (night: nothing, rest until morning: they turn), Ursaluna Bloodmoon and the rougarou (night only), the day/night tint; `FakeRtc_MigrateSave` on a save without a clock |
+| t13b_oldsave | a real save from the previous (real-RTC) build, `fixtures/old_build.sav` (git-ignored; made with that ROM through the START menu, `dumpsave`), is continued on this ROM: same place, story, flags, party, a morning clock, and a save/continue round trip keeps the clock |
 | t_transitions | SLOW (about 4 min, `run_all.py --slow` or name it). Walks the player across all 34 connections in both directions (10 cells before to 10 after, a frame per step, Surf forced on water), detects blocked passages / seam flips / black cells, and grades the border view along every unconnected edge. Output: `out/<run>/t_transitions/{filmstrips,pairs,joins,edges}`, `summary.txt`, `results.json` |
 | t_edges | every outdoor map: warp next to each connection seam and open edge, screenshot (about 335 shots, 8 contact sheets) |
 

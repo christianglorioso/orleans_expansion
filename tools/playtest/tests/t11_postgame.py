@@ -5,8 +5,8 @@ from pathlib import Path
 
 from bot import map_data, ROOT
 
-DAY = 1760000000
-NIGHT = DAY + 14 * 3600
+DAY = 12                    # in-game hours on the fake clock (bot.set_clock)
+NIGHT = 22
 
 
 def has_item(b, name):
@@ -14,8 +14,8 @@ def has_item(b, name):
     return bool(b.call("CheckBagHasItem", enum_value("items.h", name), 1) & 0xFF)
 
 
-def set_time(b, secs):
-    b.h.cmd("rtc %d" % secs)
+def set_time(b, hour):
+    b.set_clock(hour)
     b.frames(30)
 
 

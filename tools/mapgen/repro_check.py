@@ -70,6 +70,18 @@ def main(argv):
         print(f"{kind:6s} {msg}")
         bad += kind != "ok"
     print(f"{len(files)} maps, {bad} drifting")
+    if not argv:  # interiors: the rest spots (interior_rest.py) must be exactly what build_interior.py writes
+        import interior_rest
+        rooms = {**interior_rest.REST, **interior_rest.VANILLA}
+        rbad = 0
+        for name, cells in sorted(rooms.items()):
+            have = [(e["x"], e["y"]) for e in json.load(open(os.path.join("data", "maps", name, "map.json"), encoding="utf-8")).get("bg_events", [])
+                    if e.get("script") == interior_rest.SCRIPT]
+            if have != list(cells):
+                print(f"DRIFT  {name}: rest spots {have} committed, {list(cells)} generated")
+                rbad += 1
+        print(f"{len(rooms)} healer rooms, {rbad} rest-spot drifts")
+        bad += rbad
     return 1 if bad else 0
 
 

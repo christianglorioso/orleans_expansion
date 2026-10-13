@@ -377,8 +377,9 @@ Redfield_Text_CayenneAfter:
 	.string "seventh verse is told. Go on.$"
 
 Redfield_Text_MirrorNight:
-	.string "The mirrors only throw lamplight\n"
-	.string "after dark. Come back by day.$"
+	.string "The mirrors need daylight to work.\n"
+	.string "Rest at the POKéMON CENTER until\p"
+	.string "morning, then come back.$"
 
 Redfield_Text_MirrorDone:
 	.string "The mirrors stay put. The mill is\n"
@@ -434,7 +435,9 @@ Redfield_Text_DialLit:
 	.string "needle's shadow stands at noon.$"
 
 Redfield_Text_DialNight:
-	.string "A sundial, cold in the lamplight.$"
+	.string "A sundial, cold in the lamplight.\p"
+	.string "It needs daylight. Rest at the\n"
+	.string "POKéMON CENTER until morning.$"
 
 Redfield_Text_WrenCall1:
 	.string "WREN: There you are! I've run up the\n"

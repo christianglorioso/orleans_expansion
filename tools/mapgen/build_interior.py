@@ -24,6 +24,7 @@ import interiors as mock  # noqa: E402
 from event_scripts import include_map_scripts  # noqa: E402
 from interior_rooms import ROOMS, STYLES  # noqa: E402
 import story_overlay  # noqa: E402
+import interior_rest  # noqa: E402
 
 TS = os.path.join(HERE, "tilesets")
 WALL_ELEV = 3
@@ -264,10 +265,15 @@ def build(room, door_warps):
     lp = "data/layouts/layouts.json"
     L = json.load(open(lp))
     lid = "LAYOUT_" + room["const"][4:]
-    L["layouts"] = [l for l in L["layouts"] if l.get("id") != lid]
-    L["layouts"].append({"id": lid, "name": f"{name}_Layout", "width": w, "height": h,
-                         "primary_tileset": room.get("primary", "gTileset_OrleansBuilding"), "secondary_tileset": room["secondary"],
-                         "border_filepath": f"{d}/border.bin", "blockdata_filepath": f"{d}/map.bin"})
+    entry = {"id": lid, "name": f"{name}_Layout", "width": w, "height": h,
+             "primary_tileset": room.get("primary", "gTileset_OrleansBuilding"), "secondary_tileset": room["secondary"],
+             "border_filepath": f"{d}/border.bin", "blockdata_filepath": f"{d}/map.bin"}
+    # replace in place: a layout's position is its numeric id, which saves store (mapLayoutId), so a rerun must not move it
+    at = [i for i, l in enumerate(L["layouts"]) if l.get("id") == lid]
+    if at:
+        L["layouts"][at[0]] = entry
+    else:
+        L["layouts"].append(entry)
     with open(lp, "w", newline="\n") as f:
         json.dump(L, f, indent=2)
         f.write("\n")
@@ -339,13 +345,17 @@ def build(room, door_warps):
     os.makedirs(md, exist_ok=True)
     mp = f"{md}/map.json"
     old = json.load(open(mp)) if os.path.exists(mp) else {}
+    # rest spots (interior_rest.py): sign events on a bed / cot / bench; the previous run's are dropped first so a rerun does not duplicate them
+    taken_cells = {(o["x"], o["y"]) for o in objs} | {(x, y) for x, y in exits} | {(w_["x"], w_["y"]) for w_ in warps}
+    rest = interior_rest.rest_events(name, lambda x, y: walkable(grid, x, y, exits), taken_cells)
+    bg = interior_rest.without_rest(story_overlay.interior_events(room.get("mockup"), "bg_events", old.get("bg_events", []))) + rest
     dump(mp, {"id": room["const"], "name": name, "layout": lid, "music": room.get("music", "MUS_RG_PALLET"),
               "region_map_section": room["mapsec"], "requires_flash": False, "weather": "WEATHER_NONE",
               "map_type": "MAP_TYPE_INDOOR", "allow_cycling": False, "allow_escaping": False, "allow_running": True,
               "show_map_name": False, "battle_scene": "MAP_BATTLE_SCENE_NORMAL", "connections": None,
               "object_events": objs, "warp_events": warps,
               "coord_events": story_overlay.interior_events(room.get("mockup"), "coord_events", old.get("coord_events", [])),
-              "bg_events": story_overlay.interior_events(room.get("mockup"), "bg_events", old.get("bg_events", []))})
+              "bg_events": bg})
     write_scripts(f"{md}/scripts.inc", name, scripts)
     include_map_scripts(".", name)
     return grid, exits
@@ -405,6 +415,8 @@ def main(args):
                 for x, v in enumerate(row):
                     im.paste(t.metatile(v & 0x3FF), (x * 16, y * 16))
             im.save(os.path.join(preview, room["map"] + ".png"))
+    for n in interior_rest.apply_vanilla("."):
+        print(f"{n}: rest spots added")
     # tell the exterior specs where each door leads
     for spec_name, doors in links.items():
         p = os.path.join(HERE, "maps", spec_name)

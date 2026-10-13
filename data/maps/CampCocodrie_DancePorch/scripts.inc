@@ -33,7 +33,9 @@ CampCocodrie_DancePorch_EventScript_BandDone:
 	end
 
 CampCocodrie_DancePorch_Text_BandDay:
-	.string "BAND: We play at night. The\naccordion gets lonesome by day.$"
+	.string "BAND: We play at night. The\naccordion gets lonesome by day.\p"
+	.string "Can't wait? Rest at the POKéMON\n"
+	.string "CENTER until night.$"
 
 CampCocodrie_DancePorch_Text_BandEarly:
 	.string "BAND: Tonight we play for the\nbrothers. Play louder after a hard\p"

@@ -5,6 +5,7 @@
     b.press("A"); b.walk("RRDD"); b.warp("CrescentCity", 40, 60); b.shot("here")
     b.var("VAR_ORLEANS_STORY"); b.set_var("VAR_ORLEANS_STORY", 11); b.flag("FLAG_BADGE06_GET")
 
+The in-game clock is the fake RTC saved in the ROM: b.set_clock(hour, minute), b.clock(), b.time_of_day() (see "the in-game clock" below).
 Symbols come from the build's link map (plus readelf for the thumb bit), constants from include/constants/*.h.
 Direct memory writes are used for test setup only; flags/vars are set through the game's own FlagSet/VarSet
 (the harness can call ROM functions), so the SaveBlock layout never has to be hard-coded.
@@ -178,11 +179,13 @@ class Maps:
 
 # --------------------------------------------------------------------------- harness process
 class Harness:
-    def __init__(self, rom, rtc=None, log=None):
+    def __init__(self, rom, rtc=None, log=None, save=None):
         cmd = "%s %s" % (HARNESS_CMD, wsl_path(rom))
         self.log = open(log, "w") if log else subprocess.DEVNULL
-        if rtc:
-            cmd += " %d" % rtc
+        if rtc or save:
+            cmd += " %d" % (rtc or 1760000000)
+        if save:
+            cmd += " " + wsl_path(save)
         self.p = subprocess.Popen(["wsl.exe", "-d", WSL_DISTRO, "--", "bash", "-c", cmd],
                                   stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self.log,
                                   text=True, bufsize=1)
@@ -217,7 +220,7 @@ class GameCrash(Exception):
 
 # --------------------------------------------------------------------------- the bot
 class Bot:
-    def __init__(self, run="adhoc", rom=ROM, rtc=1760000000, out_dir=None):
+    def __init__(self, run="adhoc", rom=ROM, rtc=1760000000, out_dir=None, save=None):
         self.rom = Path(rom)
         self.sha = rom_sha1(self.rom)
         self.out = Path(out_dir) if out_dir else OUT / run
@@ -226,7 +229,7 @@ class Bot:
         self.syms = Symbols(self.sha)
         self.consts = Consts()
         self.maps = Maps()
-        self.h = Harness(self.rom, rtc, log=self.out / "harness.log")
+        self.h = Harness(self.rom, rtc, log=self.out / "harness.log", save=save)   # save: a .sav (flash image) from another run/build
         # ROM functions are called from a clean point in the main loop (see harness.c callFn)
         self.h.cmd("safepoint %d" % self.syms["PlayTimeCounter_Update"])
         self.force_win = True    # battle autopilot shortcut (see Bot.fight); set False to really play the fights
@@ -722,6 +725,42 @@ def _boot_flow(b, shot_every=0):
 
 
 Bot.new_game = lambda self, shot_every=0: _boot_flow(self, shot_every)
+
+
+# --------------------------------------------------------------------------- the in-game clock
+# The ROM runs on the fake RTC (OW_USE_FAKE_RTC, Gen 9 ratio): the clock lives in the save (SaveBlock3.fakeRTC) and advances 20 game seconds per
+# second of play (one day = 72 minutes), whatever the emulator's own RTC says. Tests set it directly through the game's own function.
+TIMES_OF_DAY = ("morning", "day", "evening", "night")   # the TimeOfDay enum order; boundaries (Gen 8+): 6, 10, 19, 20
+CLOCK_SECONDS_PER_SECOND = 20
+
+
+def _bot_set_clock(self, hour, minute=0, day=0):
+    """put the in-game clock at day:hour:minute (test setup; RtcCalcLocalTimeOffset also zeroes the local offset so the clock reads exactly this)"""
+    self.call("RtcCalcLocalTimeOffset", day, hour, minute, 0)
+    self.frames(2)
+
+
+def _bot_clock(self):
+    """(day, hour, minute, second) of the local clock, recomputed from the fake RTC"""
+    self.call("RtcCalcLocalTime")
+    g = self.sym("gLocalTime")
+    return self.rs16(g), self.r8(g + 2), self.r8(g + 3), self.r8(g + 4)
+
+
+def _bot_clock_seconds(self):
+    d, h, m, s = self.clock()
+    return ((d * 24 + h) * 60 + m) * 60 + s
+
+
+def _bot_time_of_day(self):
+    """0 morning, 1 day, 2 evening, 3 night, as the engine's GetTimeOfDay says"""
+    return self.call("GetTimeOfDay") & 0xFF
+
+
+Bot.set_clock = _bot_set_clock
+Bot.clock = _bot_clock
+Bot.clock_seconds = _bot_clock_seconds
+Bot.time_of_day = _bot_time_of_day
 
 
 def contact_sheet(shots, path, cols=6, thumb=(240, 160)):

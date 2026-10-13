@@ -1946,8 +1946,8 @@ void CB2_NewGame(void)
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
 #if OW_USE_FAKE_RTC
-    // Wall clock now track local time so we set it to 10AM to match initial wall clock time
-    RtcCalcLocalTimeOffset(0, 10, 0, 0);
+    // Orleans: a new game starts at 08:00, in the morning (ORLEANS_START_HOUR), on day 0 of the in-game clock
+    RtcCalcLocalTimeOffset(0, ORLEANS_START_HOUR, 0, 0);
 #endif
 }
 
@@ -2120,6 +2120,7 @@ void CB2_ContinueSavedGame(void)
     if (gSaveFileStatus == SAVE_STATUS_ERROR)
         ResetWinStreaks();
 
+    FakeRtc_MigrateSave(); // Orleans: a save from before the in-game clock gets one
     LoadSaveblockMapHeader();
     ClearDiveAndHoleWarps();
     trainerHillMapId = GetCurrentTrainerHillMapId();

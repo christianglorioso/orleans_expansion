@@ -256,9 +256,6 @@ struct NPCFollower
 
 struct SaveBlock3
 {
-#if OW_USE_FAKE_RTC
-    struct SiiRtcInfo fakeRTC;
-#endif
 #if FNPC_ENABLE_NPC_FOLLOWERS
     struct NPCFollower NPCfollower;
 #endif
@@ -271,6 +268,12 @@ struct SaveBlock3
     u8 dexNavChain;
 #if APRICORN_TREE_COUNT > 0
     u8 apricornTrees[NUM_APRICORN_TREE_BYTES];
+#endif
+#if OW_USE_FAKE_RTC
+    // Orleans: kept LAST (the fields above sit where they did in saves made before the fake clock) and followed by a magic marker; a save without
+    // the marker predates the clock and is given a fresh one on load (FakeRtc_MigrateSave).
+    struct SiiRtcInfo fakeRTC;
+    u8 fakeRtcMagic[4];
 #endif
 }; /* max size 1624 bytes */
 

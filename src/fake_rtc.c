@@ -7,8 +7,13 @@
 #include "fake_rtc.h"
 #include "event_data.h"
 #include "script.h"
+#include "constants/vars.h"
 
 static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t1, struct Time *t2);
+
+#if OW_USE_FAKE_RTC
+static const u8 sFakeRtcMagic[4] = {0x0C, 0x10, 0xC4, 0x5A};
+#endif
 
 void FakeRtc_Reset(void)
 {
@@ -18,6 +23,26 @@ void FakeRtc_Reset(void)
     gSaveBlock3Ptr->fakeRTC.month = gGen3Epoch.month;
     gSaveBlock3Ptr->fakeRTC.day = gGen3Epoch.day;
     gSaveBlock3Ptr->fakeRTC.dayOfWeek = gGen3Epoch.dayOfWeek;
+    memcpy(gSaveBlock3Ptr->fakeRtcMagic, sFakeRtcMagic, sizeof(sFakeRtcMagic));
+#endif
+}
+
+// Orleans: a save made before the in-game clock existed has no marker (or random bytes) where the clock now lives. Give it a clock that
+// reads ORLEANS_START_HOUR on day 0 and reset the local-time offset, VAR_DAYS and the berry timer so the daily/berry updates start clean.
+// Called when a saved game is continued; a save that already carries the marker (any save made on the clock build) is left alone.
+void FakeRtc_MigrateSave(void)
+{
+#if OW_USE_FAKE_RTC
+    struct SiiRtcInfo *rtc = &gSaveBlock3Ptr->fakeRTC;
+
+    if (memcmp(gSaveBlock3Ptr->fakeRtcMagic, sFakeRtcMagic, sizeof(sFakeRtcMagic)) == 0
+     && rtc->month >= 1 && rtc->month <= 12 && rtc->day >= 1 && rtc->day <= 31 && rtc->hour < 24 && rtc->minute < 60 && rtc->second < 60)
+        return;
+
+    // the same call a new game makes: clock = day 0, ORLEANS_START_HOUR:00 (sets the fake RTC and the save's local-time offset together)
+    RtcCalcLocalTimeOffset(0, ORLEANS_START_HOUR, 0, 0);
+    gSaveBlock2Ptr->lastBerryTreeUpdate = gLocalTime;
+    VarSet(VAR_DAYS, 0);
 #endif
 }
 

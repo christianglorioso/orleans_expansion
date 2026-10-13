@@ -3,7 +3,11 @@
 
 #include "siirtc.h"
 
+// A new game (and a save from before the clock existed) starts at this hour: morning.
+#define ORLEANS_START_HOUR 8
+
 void FakeRtc_Reset(void);
+void FakeRtc_MigrateSave(void);
 struct SiiRtcInfo* FakeRtc_GetCurrentTime(void);
 void FakeRtc_GetRawInfo(struct SiiRtcInfo *rtc);
 void FakeRtc_AdvanceTimeBy(u32 days, u32 hours, u32 minutes, u32 seconds);

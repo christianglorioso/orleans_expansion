@@ -45,6 +45,15 @@ pitch as the outdoor mockups, and their key colours are registered in extract.py
 floors, `C` counter, `b` bed, `s` shelf, `p` planter, `h` hedge, `E` exit...), so a reviewed interior
 can be extracted and built like an outdoor map. Edit the `INTERIORS` table to change them.
 
+### Rest spots (healers)
+
+Every healer room (the Pokemon Centers, the Isle Marais shelter, the Battle Frontier Center, the Camp Cocodrie nurse cabin, the Old Water healer
+and rest house) has sign-type bg events on a bed / cot / cushion running `Common_EventScript_RestSpot` (data/scripts/orleans_rest.inc: "Rest
+until MORNING / DAY / EVENING / NIGHT / CANCEL", `fwdtime` to the engine's hour boundaries, heal, fade). The cells live in `interior_rest.py`
+(`REST` for generated rooms, `VANILLA` for the Frontier Center); `build_interior.py` writes them (dropping its previous ones first) and checks
+each cell has a free neighbour to stand on, `repro_check.py` compares the committed map.json files with the table. They cost no art and no object
+slot; keep them away from the nurse's counter.
+
 ## Tilesets: composing instead of using sources directly
 
 HnS (Heart & Soul) Johto/Kanto and FRLG sets on disk use FireRed's 640-tile primary layout, which
