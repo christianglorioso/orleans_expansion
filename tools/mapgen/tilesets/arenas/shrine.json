@@ -158,135 +158,243 @@
   ]
  },
  "pieces": {
-  "berm_N": {
+  "berm_C": {
    "x": 0,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key N (0011), on grass"
+   "comment": "ridge bank, corner key C (1111), on grass (the crest fill)"
   },
-  "berm_S": {
+  "berm_N": {
    "x": 1,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key S (1100), on grass"
+   "comment": "ridge bank, corner key N (0011), on grass"
   },
-  "berm_W": {
+  "berm_S": {
    "x": 2,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key W (0101), on grass"
+   "comment": "ridge bank, corner key S (1100), on grass"
   },
-  "berm_E": {
+  "berm_W": {
    "x": 3,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key E (1010), on grass"
+   "comment": "ridge bank, corner key W (0101), on grass"
   },
-  "berm_inNW": {
+  "berm_E": {
    "x": 4,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key inNW (0111), on grass"
+   "comment": "ridge bank, corner key E (1010), on grass"
   },
-  "berm_inNE": {
+  "berm_inNW": {
    "x": 5,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key inNE (1011), on grass"
+   "comment": "ridge bank, corner key inNW (0111), on grass"
   },
-  "berm_inSW": {
+  "berm_inNE": {
    "x": 6,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key inSW (1101), on grass"
+   "comment": "ridge bank, corner key inNE (1011), on grass"
   },
-  "berm_inSE": {
+  "berm_inSW": {
    "x": 7,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key inSE (1110), on grass"
+   "comment": "ridge bank, corner key inSW (1101), on grass"
   },
-  "berm_landSE": {
+  "berm_inSE": {
    "x": 8,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key landSE (0001), on grass"
+   "comment": "ridge bank, corner key inSE (1110), on grass"
   },
-  "berm_landSW": {
+  "berm_landSE": {
    "x": 9,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key landSW (0010), on grass"
+   "comment": "ridge bank, corner key landSE (0001), on grass"
   },
-  "berm_landNE": {
+  "berm_landSW": {
    "x": 10,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key landNE (0100), on grass"
+   "comment": "ridge bank, corner key landSW (0010), on grass"
   },
-  "berm_landNW": {
+  "berm_landNE": {
    "x": 11,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key landNW (1000), on grass"
+   "comment": "ridge bank, corner key landNE (0100), on grass"
   },
-  "berm_sTLBR": {
+  "berm_landNW": {
    "x": 12,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key sTLBR (0110), on grass"
+   "comment": "ridge bank, corner key landNW (1000), on grass"
   },
-  "berm_sTRBL": {
+  "berm_sTLBR": {
    "x": 13,
    "y": 0,
    "w": 1,
    "h": 1,
    "kind": "opaque",
    "walk": [],
-   "comment": "ridge berm, corner key sTRBL (1001), on grass"
+   "comment": "ridge bank, corner key sTLBR (0110), on grass"
   },
-  "mound_S": {
+  "berm_sTRBL": {
    "x": 14,
    "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge bank, corner key sTRBL (1001), on grass"
+  },
+  "mound_N": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key N (0011): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_W": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key W (0101): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_E": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key E (1010): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_inNW": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key inNW (0111): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_inNE": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key inNE (1011): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_inSW": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key inSW (1101): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_inSE": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key inSE (1110): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_landSE": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key landSE (0001): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_landSW": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key landSW (0010): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_sTLBR": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key sTLBR (0110): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_sTRBL": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound, corner key sTRBL (1001): flat walkable top (its C is ekat:grass)"
+  },
+  "mound_S": {
+   "x": 10,
+   "y": 1,
    "w": 1,
    "h": 1,
    "kind": "opaque",
@@ -294,8 +402,8 @@
    "comment": "platform mound S: the slope runs to the cell's foot (the face goes on in the cell below)"
   },
   "mound_landNE": {
-   "x": 15,
-   "y": 0,
+   "x": 11,
+   "y": 1,
    "w": 1,
    "h": 1,
    "kind": "opaque",
@@ -303,7 +411,7 @@
    "comment": "platform mound landNE: the slope runs to the cell's foot (the face goes on in the cell below)"
   },
   "mound_landNW": {
-   "x": 0,
+   "x": 12,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -312,7 +420,7 @@
    "comment": "platform mound landNW: the slope runs to the cell's foot (the face goes on in the cell below)"
   },
   "mound_face": {
-   "x": 1,
+   "x": 13,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -321,7 +429,7 @@
    "comment": "platform mound face extension 'face' (build.py corners() 'face' rule: under S / landNE / landNW)"
   },
   "mound_face_l": {
-   "x": 2,
+   "x": 14,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -330,7 +438,7 @@
    "comment": "platform mound face extension 'face_l' (build.py corners() 'face' rule: under S / landNE / landNW)"
   },
   "mound_face_r": {
-   "x": 3,
+   "x": 15,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -339,8 +447,8 @@
    "comment": "platform mound face extension 'face_r' (build.py corners() 'face' rule: under S / landNE / landNW)"
   },
   "mound_steps": {
-   "x": 4,
-   "y": 1,
+   "x": 0,
+   "y": 2,
    "w": 2,
    "h": 2,
    "kind": "opaque",
@@ -364,9 +472,158 @@
    ],
    "comment": "2x2 steps up the mound's south face: row 0 in place of two mound_S, row 1 of two mound_face; walkable"
   },
-  "live_oak": {
+  "shell_C": {
+   "x": 2,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: C"
+  },
+  "shell_N": {
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: N"
+  },
+  "shell_S": {
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: S"
+  },
+  "shell_W": {
+   "x": 5,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: W"
+  },
+  "shell_E": {
    "x": 6,
-   "y": 1,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: E"
+  },
+  "shell_NW": {
+   "x": 7,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: NW"
+  },
+  "shell_NE": {
+   "x": 8,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: NE"
+  },
+  "shell_SW": {
+   "x": 9,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: SW"
+  },
+  "shell_SE": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "ceremonial shell road (crushed shell on grass), cell-based like the Johto path: SE"
+  },
+  "egret_post": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 2,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "1x2 an egret standing on an old cedar post in the water (overlay on Ekat water), blocking"
+  },
+  "shell_scatter": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "kind": "overlay",
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "1x1 oyster and clam shells scattered on the grass by the shore (overlay on grass), walkable"
+  },
+  "live_oak": {
+   "x": 0,
+   "y": 4,
    "w": 4,
    "h": 3,
    "kind": "overlay",
@@ -374,8 +631,8 @@
    "comment": "4x3 a live oak with Spanish moss (overlay on grass): blocking; the top row is canopy (could be drawn over the player)"
   },
   "cedar_post": {
-   "x": 10,
-   "y": 1,
+   "x": 4,
+   "y": 4,
    "w": 1,
    "h": 2,
    "kind": "overlay",
@@ -383,8 +640,8 @@
    "comment": "1x2 a carved red-cedar post (overlay on grass), blocking"
   },
   "cedar_post_bird": {
-   "x": 11,
-   "y": 1,
+   "x": 5,
+   "y": 4,
    "w": 1,
    "h": 2,
    "kind": "overlay",
@@ -392,8 +649,8 @@
    "comment": "1x2 a cedar post topped by a carved egret, blocking"
   },
   "stone_tall": {
-   "x": 12,
-   "y": 1,
+   "x": 6,
+   "y": 4,
    "w": 1,
    "h": 2,
    "kind": "overlay",
@@ -401,8 +658,8 @@
    "comment": "1x2 a standing stone, spiral-carved, blocking"
   },
   "stone_small": {
-   "x": 13,
-   "y": 1,
+   "x": 7,
+   "y": 4,
    "w": 1,
    "h": 1,
    "kind": "overlay",
@@ -410,8 +667,8 @@
    "comment": "1x1 a small standing stone, blocking"
   },
   "singing_stone": {
-   "x": 14,
-   "y": 1,
+   "x": 8,
+   "y": 4,
    "w": 2,
    "h": 2,
    "kind": "overlay",
@@ -419,7 +676,7 @@
    "comment": "2x2 the singing stone (bored through, spiral-carved, offerings at its foot), blocking"
   },
   "landing": {
-   "x": 0,
+   "x": 10,
    "y": 4,
    "w": 4,
    "h": 4,
@@ -475,282 +732,429 @@
    ],
    "metatiles": [
     {
-     "id": "berm_N",
+     "id": "berm_C",
      "bottom": [
       0,
+      0
+     ]
+    },
+    {
+     "id": "berm_N",
+     "bottom": [
+      1,
       0
      ]
     },
     {
      "id": "berm_S",
      "bottom": [
-      1,
+      2,
       0
      ]
     },
     {
      "id": "berm_W",
      "bottom": [
-      2,
+      3,
       0
      ]
     },
     {
      "id": "berm_E",
      "bottom": [
-      3,
+      4,
       0
      ]
     },
     {
      "id": "berm_inNW",
      "bottom": [
-      4,
+      5,
       0
      ]
     },
     {
      "id": "berm_inNE",
      "bottom": [
-      5,
+      6,
       0
      ]
     },
     {
      "id": "berm_inSW",
      "bottom": [
-      6,
+      7,
       0
      ]
     },
     {
      "id": "berm_inSE",
      "bottom": [
-      7,
+      8,
       0
      ]
     },
     {
      "id": "berm_landSE",
      "bottom": [
-      8,
+      9,
       0
      ]
     },
     {
      "id": "berm_landSW",
      "bottom": [
-      9,
+      10,
       0
      ]
     },
     {
      "id": "berm_landNE",
      "bottom": [
-      10,
+      11,
       0
      ]
     },
     {
      "id": "berm_landNW",
      "bottom": [
-      11,
+      12,
       0
      ]
     },
     {
      "id": "berm_sTLBR",
      "bottom": [
-      12,
+      13,
       0
      ]
     },
     {
      "id": "berm_sTRBL",
      "bottom": [
-      13,
-      0
-     ]
-    },
-    {
-     "id": "mound_S",
-     "bottom": [
       14,
       0
      ]
     },
     {
-     "id": "mound_landNE",
+     "id": "mound_N",
      "bottom": [
       15,
       0
      ]
     },
     {
-     "id": "mound_landNW",
+     "id": "mound_W",
      "bottom": [
       0,
+      1
+     ]
+    },
+    {
+     "id": "mound_E",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "mound_inNW",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "mound_inNE",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "mound_inSW",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "mound_inSE",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "mound_landSE",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "mound_landSW",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "mound_sTLBR",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "mound_sTRBL",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "mound_S",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "mound_landNE",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "mound_landNW",
+     "bottom": [
+      12,
       1
      ]
     },
     {
      "id": "mound_face",
      "bottom": [
-      1,
+      13,
       1
      ]
     },
     {
      "id": "mound_face_l",
      "bottom": [
-      2,
+      14,
       1
      ]
     },
     {
      "id": "mound_face_r",
      "bottom": [
-      3,
+      15,
       1
      ]
     },
     {
      "id": "mound_steps_0_0",
      "bottom": [
-      4,
-      1
+      0,
+      2
      ]
     },
     {
      "id": "mound_steps_1_0",
      "bottom": [
-      5,
-      1
+      1,
+      2
      ]
     },
     {
      "id": "mound_steps_0_1",
+     "bottom": [
+      0,
+      3
+     ]
+    },
+    {
+     "id": "mound_steps_1_1",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "shell_C",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "shell_N",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "shell_S",
      "bottom": [
       4,
       2
      ]
     },
     {
-     "id": "mound_steps_1_1",
+     "id": "shell_W",
      "bottom": [
       5,
+      2
+     ]
+    },
+    {
+     "id": "shell_E",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "shell_NW",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "shell_NE",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "shell_SW",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "shell_SE",
+     "bottom": [
+      10,
       2
      ]
     },
     {
      "id": "landing_0_0",
      "bottom": [
-      0,
+      10,
       4
      ]
     },
     {
      "id": "landing_1_0",
      "bottom": [
-      1,
+      11,
       4
      ]
     },
     {
      "id": "landing_2_0",
      "bottom": [
-      2,
+      12,
       4
      ]
     },
     {
      "id": "landing_3_0",
      "bottom": [
-      3,
+      13,
       4
      ]
     },
     {
      "id": "landing_0_1",
      "bottom": [
-      0,
+      10,
       5
      ]
     },
     {
      "id": "landing_1_1",
      "bottom": [
-      1,
+      11,
       5
      ]
     },
     {
      "id": "landing_2_1",
      "bottom": [
-      2,
+      12,
       5
      ]
     },
     {
      "id": "landing_3_1",
      "bottom": [
-      3,
+      13,
       5
      ]
     },
     {
      "id": "landing_0_2",
      "bottom": [
-      0,
+      10,
       6
      ]
     },
     {
      "id": "landing_1_2",
      "bottom": [
-      1,
+      11,
       6
      ]
     },
     {
      "id": "landing_2_2",
      "bottom": [
-      2,
+      12,
       6
      ]
     },
     {
      "id": "landing_3_2",
      "bottom": [
-      3,
+      13,
       6
      ]
     },
     {
      "id": "landing_0_3",
      "bottom": [
-      0,
+      10,
       7
      ]
     },
     {
      "id": "landing_1_3",
      "bottom": [
-      1,
+      11,
       7
      ]
     },
     {
      "id": "landing_2_3",
      "bottom": [
-      2,
+      12,
       7
      ]
     },
     {
      "id": "landing_3_3",
      "bottom": [
-      3,
+      13,
       7
      ]
     }
@@ -771,111 +1175,6 @@
    "overlay_only": true,
    "metatiles": [
     {
-     "id": "6_1",
-     "bottom": [
-      6,
-      1
-     ]
-    },
-    {
-     "id": "7_1",
-     "bottom": [
-      7,
-      1
-     ]
-    },
-    {
-     "id": "8_1",
-     "bottom": [
-      8,
-      1
-     ]
-    },
-    {
-     "id": "9_1",
-     "bottom": [
-      9,
-      1
-     ]
-    },
-    {
-     "id": "6_2",
-     "bottom": [
-      6,
-      2
-     ]
-    },
-    {
-     "id": "7_2",
-     "bottom": [
-      7,
-      2
-     ]
-    },
-    {
-     "id": "8_2",
-     "bottom": [
-      8,
-      2
-     ]
-    },
-    {
-     "id": "9_2",
-     "bottom": [
-      9,
-      2
-     ]
-    },
-    {
-     "id": "6_3",
-     "bottom": [
-      6,
-      3
-     ]
-    },
-    {
-     "id": "7_3",
-     "bottom": [
-      7,
-      3
-     ]
-    },
-    {
-     "id": "8_3",
-     "bottom": [
-      8,
-      3
-     ]
-    },
-    {
-     "id": "9_3",
-     "bottom": [
-      9,
-      3
-     ]
-    },
-    {
-     "id": "10_1",
-     "bottom": [
-      10,
-      1
-     ]
-    },
-    {
-     "id": "10_2",
-     "bottom": [
-      10,
-      2
-     ]
-    },
-    {
-     "id": "11_1",
-     "bottom": [
-      11,
-      1
-     ]
-    },
-    {
      "id": "11_2",
      "bottom": [
       11,
@@ -883,10 +1182,10 @@
      ]
     },
     {
-     "id": "12_1",
+     "id": "11_3",
      "bottom": [
-      12,
-      1
+      11,
+      3
      ]
     },
     {
@@ -897,38 +1196,164 @@
      ]
     },
     {
-     "id": "13_1",
+     "id": "0_4",
      "bottom": [
-      13,
-      1
+      0,
+      4
      ]
     },
     {
-     "id": "14_1",
+     "id": "1_4",
      "bottom": [
-      14,
-      1
+      1,
+      4
      ]
     },
     {
-     "id": "15_1",
+     "id": "2_4",
      "bottom": [
-      15,
-      1
+      2,
+      4
      ]
     },
     {
-     "id": "14_2",
+     "id": "3_4",
      "bottom": [
-      14,
-      2
+      3,
+      4
      ]
     },
     {
-     "id": "15_2",
+     "id": "0_5",
      "bottom": [
-      15,
-      2
+      0,
+      5
+     ]
+    },
+    {
+     "id": "1_5",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "2_5",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "3_5",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "0_6",
+     "bottom": [
+      0,
+      6
+     ]
+    },
+    {
+     "id": "1_6",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "2_6",
+     "bottom": [
+      2,
+      6
+     ]
+    },
+    {
+     "id": "3_6",
+     "bottom": [
+      3,
+      6
+     ]
+    },
+    {
+     "id": "4_4",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "4_5",
+     "bottom": [
+      4,
+      5
+     ]
+    },
+    {
+     "id": "5_4",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "5_5",
+     "bottom": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "6_4",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "6_5",
+     "bottom": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "7_4",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "8_4",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "9_4",
+     "bottom": [
+      9,
+      4
+     ]
+    },
+    {
+     "id": "8_5",
+     "bottom": [
+      8,
+      5
+     ]
+    },
+    {
+     "id": "9_5",
+     "bottom": [
+      9,
+      5
      ]
     }
    ],
@@ -942,7 +1367,7 @@
    "apply_on": "R.",
    "elev": 3,
    "collision": 1,
-   "C": "ekat:grass",
+   "C": "osh:berm_C",
    "_comment": "the low ridges (grid char R, on grass '.'): blocking berms; keep R two cells from marsh / water / paths (no transition art for those)",
    "N": "osh:berm_N",
    "S": "osh:berm_S",
@@ -967,20 +1392,20 @@
    "collision": 1,
    "C": "ekat:grass",
    "_comment": "the platform mound (grid char M): the berm's pieces with the tall south face; its top (C) is plain walkable grass: give the edge tiles collision (the corner set's 'collision' blocks C too, so set the top back to 0 or use a terrain char for it)",
-   "N": "osh:berm_N",
+   "N": "osh:mound_N",
    "S": "osh:mound_S",
-   "W": "osh:berm_W",
-   "E": "osh:berm_E",
-   "inNW": "osh:berm_inNW",
-   "inNE": "osh:berm_inNE",
-   "inSW": "osh:berm_inSW",
-   "inSE": "osh:berm_inSE",
-   "landSE": "osh:berm_landSE",
-   "landSW": "osh:berm_landSW",
+   "W": "osh:mound_W",
+   "E": "osh:mound_E",
+   "inNW": "osh:mound_inNW",
+   "inNE": "osh:mound_inNE",
+   "inSW": "osh:mound_inSW",
+   "inSE": "osh:mound_inSE",
+   "landSE": "osh:mound_landSE",
+   "landSW": "osh:mound_landSW",
    "landNE": "osh:mound_landNE",
    "landNW": "osh:mound_landNW",
-   "sTLBR": "osh:berm_sTLBR",
-   "sTRBL": "osh:berm_sTRBL",
+   "sTLBR": "osh:mound_sTLBR",
+   "sTRBL": "osh:mound_sTRBL",
    "face": {
     "face": "osh:mound_face",
     "face_l": "osh:mound_face_l",
@@ -1021,49 +1446,83 @@
     ]
    ]
   },
+  "egret_post": {
+   "_comment": "1x2 an egret standing on an old cedar post in the water (overlay on Ekat water), blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:11_2"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:11_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "shell_scatter": {
+   "_comment": "1x1 oyster and clam shells scattered on the grass by the shore (overlay on grass), walkable",
+   "rows": [
+    [
+     {
+      "overlay": "osho:12_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
   "live_oak": {
    "_comment": "4x3 a live oak with Spanish moss (overlay on grass): blocking; the top row is canopy (could be drawn over the player)",
    "rows": [
     [
      {
-      "overlay": "osho:6_1"
+      "overlay": "osho:0_4"
      },
      {
-      "overlay": "osho:7_1"
+      "overlay": "osho:1_4"
      },
      {
-      "overlay": "osho:8_1"
+      "overlay": "osho:2_4"
      },
      {
-      "overlay": "osho:9_1"
+      "overlay": "osho:3_4"
      }
     ],
     [
      {
-      "overlay": "osho:6_2"
+      "overlay": "osho:0_5"
      },
      {
-      "overlay": "osho:7_2"
+      "overlay": "osho:1_5"
      },
      {
-      "overlay": "osho:8_2"
+      "overlay": "osho:2_5"
      },
      {
-      "overlay": "osho:9_2"
+      "overlay": "osho:3_5"
      }
     ],
     [
      {
-      "overlay": "osho:6_3"
+      "overlay": "osho:0_6"
      },
      {
-      "overlay": "osho:7_3"
+      "overlay": "osho:1_6"
      },
      {
-      "overlay": "osho:8_3"
+      "overlay": "osho:2_6"
      },
      {
-      "overlay": "osho:9_3"
+      "overlay": "osho:3_6"
      }
     ]
    ],
@@ -1075,12 +1534,12 @@
    "rows": [
     [
      {
-      "overlay": "osho:10_1"
+      "overlay": "osho:4_4"
      }
     ],
     [
      {
-      "overlay": "osho:10_2"
+      "overlay": "osho:4_5"
      }
     ]
    ],
@@ -1092,12 +1551,12 @@
    "rows": [
     [
      {
-      "overlay": "osho:11_1"
+      "overlay": "osho:5_4"
      }
     ],
     [
      {
-      "overlay": "osho:11_2"
+      "overlay": "osho:5_5"
      }
     ]
    ],
@@ -1109,12 +1568,12 @@
    "rows": [
     [
      {
-      "overlay": "osho:12_1"
+      "overlay": "osho:6_4"
      }
     ],
     [
      {
-      "overlay": "osho:12_2"
+      "overlay": "osho:6_5"
      }
     ]
    ],
@@ -1126,7 +1585,7 @@
    "rows": [
     [
      {
-      "overlay": "osho:13_1"
+      "overlay": "osho:7_4"
      }
     ]
    ],
@@ -1138,18 +1597,18 @@
    "rows": [
     [
      {
-      "overlay": "osho:14_1"
+      "overlay": "osho:8_4"
      },
      {
-      "overlay": "osho:15_1"
+      "overlay": "osho:9_4"
      }
     ],
     [
      {
-      "overlay": "osho:14_2"
+      "overlay": "osho:8_5"
      },
      {
-      "overlay": "osho:15_2"
+      "overlay": "osho:9_5"
      }
     ]
    ],

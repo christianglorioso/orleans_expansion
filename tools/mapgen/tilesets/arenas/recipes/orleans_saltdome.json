@@ -812,86 +812,93 @@
      ]
     },
     {
-     "id": "crystal_big_0_0",
+     "id": "lantern_fallen",
      "bottom": [
       7,
+      10
+     ]
+    },
+    {
+     "id": "crystal_big_0_0",
+     "bottom": [
+      8,
       10
      ]
     },
     {
      "id": "crystal_big_1_0",
      "bottom": [
-      8,
+      9,
       10
      ]
     },
     {
      "id": "crystal_big_0_1",
      "bottom": [
-      7,
+      8,
       11
      ]
     },
     {
      "id": "crystal_big_1_1",
      "bottom": [
-      8,
+      9,
       11
      ]
     },
     {
      "id": "salt_blocks_0_0",
      "bottom": [
-      9,
+      10,
       10
      ]
     },
     {
      "id": "salt_blocks_1_0",
      "bottom": [
-      10,
+      11,
       10
      ]
     },
     {
      "id": "spall",
      "bottom": [
-      11,
+      12,
       10
      ]
     },
     {
      "id": "adit_0_0",
      "bottom": [
-      12,
+      13,
       10
      ]
     },
     {
      "id": "adit_1_0",
      "bottom": [
-      13,
+      14,
       10
      ]
     },
     {
      "id": "adit_2_0",
      "bottom": [
-      14,
+      15,
       10
      ]
     },
     {
      "id": "adit_0_1",
      "bottom": [
-      12,
+      13,
       11
      ]
     },
     {
      "id": "adit_1_1",
      "bottom": [
-      13,
+      14,
       11
      ],
      "behavior": "MB_SOUTH_ARROW_WARP"
@@ -899,7 +906,7 @@
     {
      "id": "adit_2_1",
      "bottom": [
-      14,
+      15,
       11
      ]
     }

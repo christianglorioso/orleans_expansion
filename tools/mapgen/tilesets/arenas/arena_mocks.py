@@ -240,9 +240,14 @@ def temple_mock(state="closed"):
     m.put("coral", 17, 13)
     m.put("rubble", 17, 17)
     m.put("rubble", 9, 16)
+    m.put("kelp_tall", 1, 16)
+    m.put("coral", 12, 17)
+    m.put("light_pool", 15, 14)        # a shaft of light falling beside the bell
     # the entry: the dive pool, and the room's south edge
     for x in range(1, W - 1):
-        m.put("void", x, H - 1)
+        m.put("wall_s", x, H - 1)          # the room's outer wall closes the south side
+    m.put("wall_sw", 0, H - 1)
+    m.put("wall_se", W - 1, H - 1)
     m.put("dive_pool", 8, H - 3)
     m.obj("kyogre", 9, 5, "Kyogre (raid object, KYOGRE_FRONT) on the dais")
     m.obj("player", 9, 6, "player's stand cell to face Kyogre", face_up=True)
@@ -254,6 +259,7 @@ def temple_mock(state="closed"):
         "Kyogre stands at (9,5) on the dais; the player faces it from (9,6).",
         "Entry: the dive pool (8-10, 18-19): arrive on (9,18), exit by walking south into (9,19).",
         "Suggested map weather: WEATHER_UNDERWATER_BUBBLES (rising bubbles) for the underwater feel.",
+        "Row 20 is the room's south wall (wall_s, corners wall_sw / wall_se), not a void; the map's border block should be void.",
     ]
     return m
 
@@ -328,6 +334,10 @@ def cathedral_mock():
     m.put("crystal_big", 3, 13)
     m.put("crystal", 1, 4)
     m.put("crystal", 21, 5)
+    m.put("crystal_big", 2, 3)          # the top corners of the nave, dressed alike
+    m.put("crystal_big", 19, 3)
+    m.put("lantern_fallen", 5, 4)
+    m.put("lantern_fallen", 17, 5)
     m.put("crystal", 18, 10)
     m.put("salt_blocks", 19, 17)
     m.put("spall", 1, 19)
@@ -384,10 +394,26 @@ def shrine_design():
                 cells.append((x, y))
         return cells
 
-    for (rxx, ryy, a0, a1) in SHRINE_RIDGES:
-        for (x, y) in arc(rxx, ryy, a0, a1):          # the west half, mirrored
-            if x > 17 or (15 <= x <= 19 and y > 15):
-                continue                    # the aisle
+    for (r0, r1, amax) in SHRINE_RIDGES:      # bands of an ellipse round the plaza (x-units; y stretched by ASPECT)
+        for y in range(H):
+            for x in range(18):
+                dx, dy = x + 0.5 - 17.5, (y + 0.5 - 12.5) * SHRINE_ASPECT
+                rho, ang = math.hypot(dx, dy), math.degrees(math.atan2(dy, dx))
+                if r0 <= rho < r1 and 90 <= ang <= amax and not (15 <= x <= 19 and y > 15):
+                    g[y][x] = g[y][34 - x] = "R"
+    # tidy the west half (then mirror): join diagonal-only steps (they draw as beads), drop one-cell spurs (knobs)
+    R = {(x, y) for y in range(H) for x in range(18) if g[y][x] == "R"}
+    for (x, y) in sorted(R):
+        for dx in (-1, 1):
+            if (x + dx, y + 1) in R and (x + dx, y) not in R and (x, y + 1) not in R:
+                R.add((x, y + 1))
+    R = {(x, y) for (x, y) in R if sum((x + dx, y + dy) in R for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))) >= 2}
+    for y in range(H):
+        for x in range(18):
+            if g[y][x] == "R":
+                g[y][x] = g[y][34 - x] = "."
+    for (x, y) in R:
+        if not (15 <= x <= 19 and y > 15):
             g[y][x] = g[y][34 - x] = "R"
     for (x0, y0, w, h) in SHRINE_MARSH:     # small marsh groves (cypress) between the mound and the shore
         for y in range(y0, y0 + h):
@@ -397,7 +423,8 @@ def shrine_design():
     return g
 
 
-SHRINE_RIDGES = [(7.8, 5.6, 90, 164), (10.7, 8.2, 90, 174)]     # (rx, ry, from, to degrees) about (17.5, 12.5)
+SHRINE_RIDGES = [(5.6, 7.5, 172), (9.7, 11.4, 177)]   # (inner, outer radius, how far round) about (17.5, 12.5)
+SHRINE_ASPECT = 1.35
 SHRINE_MARSH = [(7, 8, 5, 4)]                                   # west groves; mirrored east
 
 
@@ -484,12 +511,12 @@ def shrine_mock():
                     problems.append((x, y, "".join(cs)))
             elif "M" in cs:
                 key = CORNER_KEYS[bits(lambda c: c == "M")]
-                n = "ekat:grass" if key == "C" else (f"osh:mound_{key}" if key in ("S", "landNE", "landNW") else f"osh:berm_{key}")
+                n = "ekat:grass" if key == "C" else f"osh:mound_{key}"
                 if "R" in cs:
                     problems.append((x, y, "".join(cs)))
             elif "R" in cs:
                 key = CORNER_KEYS[bits(lambda c: c == "R")]
-                n = "ekat:grass" if key == "C" else f"osh:berm_{key}"
+                n = f"osh:berm_{key}"
             else:
                 n = "ekat:grass"
             if n == "ekat:grass" and "M" not in cs:      # the mound's face extension (build.py's 'face' rule)
@@ -537,17 +564,64 @@ def shrine_mock():
     put_piece("mound_steps", 16, 10)
     put_piece("singing_stone", 16, 6)
     put_piece("landing", 15, 22)
-    for (nm, x, y) in [("cedar_post_bird", 11, 11), ("cedar_post", 10, 13), ("cedar_post", 12, 15),
-                       ("stone_tall", 14, 18), ("stone_small", 14, 21), ("stone_tall", 6, 13), ("stone_small", 12, 7)]:
+    # the ceremonial shell road: from the landing's head up the aisle and across the plaza to the steps
+    for y in range(12, 22):
+        put_piece("shell_W", 16, y)
+        put_piece("shell_E", 17, y)
+    for (nm, x, y) in [("cedar_post_bird", 14, 12), ("cedar_post", 12, 13), ("stone_tall", 6, 13),
+                       ("stone_tall", 14, 18), ("stone_small", 12, 7), ("stone_small", 13, 22)]:
         put_piece(nm, x, y)
         put_piece(nm, 33 - x, y)
+    for (x, y) in ((12, 23), (21, 23), (10, 22)):
+        if g[y][x] == "." and names[y][x] == "ekat:grass":
+            put_piece("shell_scatter", x, y)
+
+    # the two islets in the bottom corners (Route 25's marsh banks): scenery only. Rows 27-31 are the seam band
+    # (primary pieces only): a small cypress clump and marsh plants there; reeds, cattails, knees, a log and the
+    # egret post (secondary) only on rows <= 26, all off the channel to the landing (x 12-22).
+    def water_free(x, y):
+        return 0 <= x < W and 0 <= y < H and names[y][x] == "ekat:water_C" and g[y][x] == "~"
+
+    for (x, y) in ((4, 28), (28, 28)):
+        put_cypress(x, y, small=True)
+    for (x, y, k) in ((3, 30, 1), (6, 31, 3), (7, 29, 1), (31, 30, 3), (27, 31, 1), (32, 29, 3)):
+        if names[y][x] in ("ekat:marsh_C", "ekat:marsh_plants1", "ekat:marsh_plants3"):
+            img.paste(ts.metatile(mp[f"ekat:marsh_plants{k}"]), (x * 16, y * 16))
+            names[y][x] = f"ekat:marsh_plants{k}"
+
+    def put_meta(name, x, y):
+        img.paste(ts.metatile(mpb[name]), (x * 16, y * 16))
+        names[y][x] = name
+
+    for (x, y) in ((9, 24), (26, 24)):                  # cattails (1x2)
+        if water_free(x, y) and water_free(x, y + 1):
+            put_meta("patch:ovl_wpr_2_0__ekat_water_C", x, y)
+            put_meta("patch:ovl_wpr_3_0__ekat_water_C", x, y + 1)
+    for (x, y, k) in ((7, 25, 0), (11, 26, 1), (24, 26, 0), (28, 25, 1)):   # cypress knees
+        if water_free(x, y):
+            put_meta(f"patch:ovl_wpr_{k}_0__ekat_water_C", x, y)
+    if water_free(9, 26) and water_free(10, 26):        # a drifted log against the west islet
+        put_meta("ekat:waterlog_0", 9, 26)
+        put_meta("ekat:waterlog_1", 10, 26)
+    for (x, y) in ((23, 24), (11, 24)):                 # egrets on old posts
+        if water_free(x, y) and water_free(x, y + 1):
+            p_ = art["egret_post"]
+            crop = sheet.crop((p_["x"] * 16, p_["y"] * 16, (p_["x"] + 1) * 16, (p_["y"] + 2) * 16))
+            px_ = crop.load()
+            for j in range(crop.height):
+                for i in range(crop.width):
+                    if px_[i, j][:3] == (255, 0, 255):
+                        px_[i, j] = (0, 0, 0, 0)
+            img.alpha_composite(crop, (x * 16, y * 16))
+            names[y][x], names[y + 1][x] = "egret_post[0,0]", "egret_post[0,1]"
+            break
     objs = [("rayquaza", 16, 9, "Rayquaza (raid object) on the mound, before the singing stone", False),
             ("player", 16, 10, "the player on the top step, facing Rayquaza (the raid)", True),
             ("jayden", 17, 10, "Jayden beside the player (2 v 1)", True),
-            ("keeper", 13, 13, "the shrine keeper (NPC_0)", False),
-            ("local", 20, 13, "NPC_1", False),
+            ("keeper", 15, 14, "the shrine keeper (NPC_0), beside the shell road", False),
+            ("local", 18, 14, "NPC_1, beside the shell road", False),
             ("camille", 16, 23, "Camille holds the landing steps", False),
-            ("andrew", 17, 20, "Andrew at the head of the steps, in the aisle", False),
+            ("andrew", 17, 20, "Andrew at the head of the steps, on the shell road in the aisle", False),
             ("item", 17, 24, "Dragoninite on the landing (post-game)", False)]
     for o in sorted(objs, key=lambda o: o[2]):
         paste_sprite(img, o[0], o[1], o[2], o[4])
@@ -704,8 +778,10 @@ def main():
         "36 x 32 (the map's size), on orleans_route_b. Only the island and 2 cells round it are redrawn: the feathered water,",
         "the Surf-barrier cypress and Route 25's banks (rows 27-31, the seam band: primary only) are the built map's.",
         "Symmetric earthwork: terrain cell x mirrors to 34 - x; steps, singing stone and landing centre on the line between tiles 16|17.",
-        "Platform mound (grid 'M', cells 13-21 x 7-10), steps (16-17, 10-11); two C-shaped ridges (grid 'R') opening north, aisle 15-19.",
-        "Rayquaza (16,9) before the singing stone; player (16,10) + Jayden (17,10) on the top step; keeper (13,13), NPC_1 (20,13);",
+        "Platform mound (grid 'M', cells 13-21 x 7-10), steps (16-17, 10-11); two raised C-shaped banks (grid 'R', two cells thick)",
+        "opening north, aisle x 15-19; the shell road (shell_W/E, x 16-17, rows 12-21) runs from the landing's head to the steps.",
+        "Bottom islets: cypress clump + marsh plants in the seam band (primary), cattails/knees/log/egret post above it (rows <= 26).",
+        "Rayquaza (16,9) before the singing stone; player (16,10) + Jayden (17,10) on the top step; keeper (15,14), NPC_1 (18,14);",
         "Camille (16,23) on the landing, Andrew (17,20) at its head in the aisle; Dragoninite (17,24); landing 4x4 at (15-18, 22-25).",
         f"New art on orleans_route_b: ~{est['tiles']} new 8x8 tiles (route_b holds 96/512 today), {est['palettes']} palettes "
         f"(its slots 8 and 11 are empty); autotile conflicts in this mock: {len(problems)}.",
@@ -718,7 +794,8 @@ def main():
         "metatiles": [" ".join(n or "?" for n in r) for r in names],
         "objects": [{"sprite": o[0], "x": o[1], "y": o[2], "label": o[3]} for o in objs],
         "placements": "see arena_mocks.shrine_mock(): live_oak (7,4)+(23,4), cypress_small_marsh (8,8)+(24,8), "
-                      "mound_steps (16,10), singing_stone (16,6), landing (15,22), posts/stones mirrored x -> 33 - x",
+                      "mound_steps (16,10), singing_stone (16,6), landing (15,22), shell road x 16-17 rows 12-21, "
+                      "posts/stones mirrored x -> 33 - x, islet dressing as listed in the notes",
         "notes": notes, "autotile_conflicts": problems})
 
     review_sheet(stats, bad, est)
@@ -818,8 +895,10 @@ def berm_patch(grass):
             for c in ("M", "R"):
                 if c in cs:
                     key = CORNER_KEYS["".join("1" if q == c else "0" for q in cs)]
-                    if key != "C":
-                        n = (f"mound_{key}" if c == "M" and key in ("S", "landNE", "landNW") else f"berm_{key}")
+                    if c == "R":
+                        n = f"berm_{key}"
+                    elif key != "C":
+                        n = f"mound_{key}"
             if n is None and "M" not in cs:
                 nn, ne = ch(x, y - 1) == "M", ch(x + 1, y - 1) == "M"
                 n = "mound_face" if nn and ne else ("mound_face_r" if nn else ("mound_face_l" if ne else None))

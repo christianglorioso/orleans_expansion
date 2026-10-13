@@ -1094,7 +1094,7 @@
     ]
    ],
    "walk": [],
-   "comment": "2x2 timber cribbing (square-set), blocking"
+   "comment": "2x2 mine cribbing: a square crib of round logs in alternating courses, cut ends lighter, blocking"
   },
   "lantern_post": {
    "x": 5,
@@ -1125,8 +1125,21 @@
    "walk": [],
    "comment": "1x1 a cluster of salt crystals, blocking"
   },
-  "crystal_big": {
+  "lantern_fallen": {
    "x": 7,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:lantern_fallen"
+    ]
+   ],
+   "walk": [],
+   "comment": "1x1 a mine lantern knocked over on the floor, blocking"
+  },
+  "crystal_big": {
+   "x": 8,
    "y": 10,
    "w": 2,
    "h": 2,
@@ -1144,7 +1157,7 @@
    "comment": "2x2 a big cluster of salt crystals, blocking"
   },
   "salt_blocks": {
-   "x": 9,
+   "x": 10,
    "y": 10,
    "w": 2,
    "h": 1,
@@ -1158,7 +1171,7 @@
    "comment": "2x1 cut salt blocks, blocking"
   },
   "spall": {
-   "x": 11,
+   "x": 12,
    "y": 10,
    "w": 1,
    "h": 1,
@@ -1171,7 +1184,7 @@
    "comment": "1x1 salt spall, blocking"
   },
   "adit": {
-   "x": 12,
+   "x": 13,
    "y": 10,
    "w": 3,
    "h": 2,

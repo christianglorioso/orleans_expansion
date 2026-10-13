@@ -122,16 +122,47 @@ def corner_region(bits, w=1, h=1, extra_rows=0, ro=7, ri=5):
     return m
 
 
-def berm_tile(bits, face_h=6, rows=1):
-    """Draw a berm piece (rows=1) or a mound piece with its extension (rows=2, face_h ~ 22)."""
+def ridge_inside(m, x, y, i, j):
+    """Colour of a pixel on a ridge (inside the bank's region): the lit lip on the north, a lit west slope, a
+    shaded east slope, a two-tone south slope eight pixels deep, the sunlit crest between."""
+    def dist(dx, dy, lim):
+        return next((d for d in range(1, lim + 1) if (x + dx * d, y + dy * d) not in m), None)
+    dn, ds = dist(0, -1, 3), dist(0, 1, 8)
+    dw, de = dist(-1, 0, 5), dist(1, 0, 5)
+    if dn == 1:
+        return LP
+    if ds is not None:                       # the near (south) slope: lighter high up, darker low down
+        if ds <= 2:
+            return SL2 if (i + j) % 3 else SL3
+        if ds <= 5:
+            return SL2 if (i + j) % 2 else SL1
+        return SL1 if (i + 2 * j) % 3 else GD
+    if dn == 2:
+        return GL
+    if dw is not None:                       # west slope, in the light
+        return GL if dw <= 2 or (i + j) % 2 == 0 else grass_px(i, j)
+    if de is not None:                       # east slope, in shade
+        return SL1 if de <= 2 else (GD if (i + j) % 2 == 0 else SL1)
+    if dn == 3:
+        return GL if (i + j) % 2 == 0 else grass_px(i, j)
+    return GL if (i + j) % 2 == 0 and (i + 3 * j) % 4 != 0 else grass_px(i, j)     # the sunlit crest
+
+
+def berm_tile(bits, face_h=6, rows=1, style="mound"):
+    """Draw a corner-set piece: style 'mound' (flat walkable top, rows=2 with face_h ~22 for the tall south face) or
+    'ridge' (a raised bank: crest, lip, slopes inside, a two-tone face below)."""
     m = corner_region(bits, extra_rows=16 * (rows - 1))
     cv = Canvas(1, rows)
+    if style == "ridge":
+        face_h = 7
     for j in range(16 * rows):
         for i in range(16):
             p = (i + 16, j + 16)
             x, y = p
             c = grass_px(i, j)
-            if p in m:
+            if p in m and style == "ridge":
+                c = ridge_inside(m, x, y, i, j)
+            elif p in m:
                 near = min([d for d in range(1, 6) if any(q not in m for q in ((x, y - d), (x - d, y), (x + d, y),
                                                                                (x, y + d)))] or [9])
                 if (x, y - 1) not in m:
@@ -146,7 +177,12 @@ def berm_tile(bits, face_h=6, rows=1):
                     c = GL
             else:
                 k = next((k for k in range(1, face_h + 1) if (x, y - k) in m), None)
-                if k is not None:
+                if k is not None and style == "ridge":
+                    n = hashn(i, j, 14)
+                    c = SL3 if k <= 4 else (SL3 if n < 0.6 else E3)        # the bank's foot, in shadow
+                    if k == 1:
+                        c = SL2
+                elif k is not None:
                     t = k / face_h
                     n = hashn(i, j, 12 if rows == 1 else 13)
                     if t <= 0.2:
@@ -510,6 +546,110 @@ def landing():
     return cv
 
 
+def shell_px(x, y):
+    """Crushed-shell road: pale shell grit with chips of grey, a few ochre and dark fragments; 16 px period."""
+    n = hashn(x % 16, y % 16, 41)
+    if n < 0.10:
+        return ST3
+    if n < 0.14:
+        return ST2
+    if n < 0.16:
+        return OC
+    if n > 0.97:
+        return GL
+    return ST4
+
+
+def shell_path(key):
+    """A cell of the shell road (cell-based 3x3 like the Johto path; key = which sides are the road's edge): the grit
+    runs to the cell's edge on the road's inner sides; on an edge side it stops 3-4 px in, with a darker trodden rim
+    and grass tufts creeping over."""
+    cv = Canvas(1, 1)
+    edges = {"N": "n", "S": "s", "W": "w", "E": "e", "NW": "nw", "NE": "ne", "SW": "sw", "SE": "se", "C": ""}[key]
+    wob = [3, 4, 4, 3, 3, 4, 3, 3, 4, 4, 3, 4, 3, 3, 4, 3]
+    for j in range(16):
+        for i in range(16):
+            inset = []
+            if "n" in edges:
+                inset.append(j - wob[i])
+            if "s" in edges:
+                inset.append(15 - j - wob[(i + 5) % 16])
+            if "w" in edges:
+                inset.append(i - wob[j])
+            if "e" in edges:
+                inset.append(15 - i - wob[(j + 7) % 16])
+            d = min(inset) if inset else 99
+            if d < 0:
+                c = grass_px(i, j)
+                if d == -1 and hashn(i, j, 5) < 0.4:
+                    c = GD
+            elif d == 0:
+                c = ST2 if hashn(i, j, 3) < 0.6 else ST3
+            elif d == 1:
+                c = ST3
+            else:
+                c = shell_px(i, j)
+            cv.put(i, j, c)
+    return cv
+
+
+def shell_scatter():
+    """1x1 shells on the grass: two oyster shells (grey, ruffled), a white clam, a few chips."""
+    cv = Canvas(1, 1)
+    for (x, y) in [(3, 9), (4, 9), (5, 9), (4, 10), (5, 10), (3, 10)]:
+        cv.put(x, y, ST3)
+    cv.put(3, 9, ST2)
+    cv.put(5, 11, ST1)
+    cv.put(4, 11, ST1)
+    for (x, y) in [(10, 5), (11, 5), (10, 6), (11, 6), (12, 6)]:
+        cv.put(x, y, ST4)
+    cv.put(12, 7, ST2)
+    cv.put(11, 7, ST2)
+    for (x, y) in [(8, 12), (12, 11), (7, 4), (13, 13)]:
+        cv.put(x, y, ST4)
+    cv.put(9, 12, OC)
+    return cv
+
+
+def egret_post():
+    """1x2 an egret on a weathered cedar post standing in the water: the post's waterline ripples, a white egret
+    with its S-curved neck and yellow-ochre bill."""
+    cv = Canvas(1, 2)
+    for j in range(13, 30):
+        cv.put(6, j, CD3)
+        cv.put(7, j, CD2)
+        cv.put(8, j, CD2)
+        cv.put(9, j, CD1)
+        cv.put(5, j, INK)
+        cv.put(10, j, INK)
+    cv.hline(6, 9, 12, CD3)
+    cv.hline(5, 10, 11, INK)
+    for x in (6, 8):
+        cv.put(x, 18, CD1)
+    for x in range(3, 13):
+        cv.put(x, 30, RP if x % 2 else WA)
+    cv.hline(4, 11, 29, RP)
+    cv.put(6, 29, CD1)
+    cv.put(9, 29, CD1)
+    # the egret: body on the post, tail to the east, neck curving up, bill pointing west
+    body = [(6, 9), (7, 9), (8, 9), (9, 9), (10, 9), (7, 8), (8, 8), (9, 8), (10, 8), (11, 9), (8, 10), (9, 10)]
+    neck = [(6, 7), (5, 6), (5, 5), (6, 4), (6, 3), (5, 2), (4, 2)]
+    for (x, y) in body + neck:
+        cv.put(x, y, ST4)
+    for (x, y) in [(9, 9), (10, 9), (9, 10)]:
+        cv.put(x, y, ST3)
+    cv.put(2, 2, OC)
+    cv.put(3, 2, OC)
+    cv.put(8, 11, INK)                      # legs
+    cv.put(8, 12, INK) if False else None
+    for (x, y) in [(5, 9), (5, 8), (6, 8), (6, 10), (7, 10), (10, 10), (11, 10), (12, 9), (11, 8), (10, 7), (9, 7),
+                   (8, 7), (7, 7), (7, 6), (6, 5), (7, 5), (7, 4), (7, 3), (6, 1), (5, 1), (4, 1), (3, 1), (1, 2),
+                   (2, 3), (3, 3), (4, 3), (4, 4), (4, 5), (4, 6), (5, 7)]:
+        if cv.get(x, y) is None:
+            cv.put(x, y, INK)
+    return cv
+
+
 # ---------------------------------------------------------------- the sheet, json
 def build():
     sh = Sheet(16)
@@ -520,9 +660,13 @@ def build():
         meta[name] = {"kind": kind, "walk": walk, "comment": comment}
 
     for bits, key in CORNER_KEYS.items():
-        if key == "C":
+        add("berm_" + key, berm_tile(bits, style="ridge"), "opaque",
+            comment=f"ridge bank, corner key {key} ({bits}), on grass" + (" (the crest fill)" if key == "C" else ""))
+    for bits, key in CORNER_KEYS.items():
+        if key in ("C", "S", "landNE", "landNW"):
             continue
-        add("berm_" + key, berm_tile(bits), "opaque", comment=f"ridge berm, corner key {key} ({bits}), on grass")
+        add("mound_" + key, berm_tile(bits), "opaque",
+            comment=f"platform mound, corner key {key} ({bits}): flat walkable top (its C is ekat:grass)")
     for bits, key in (("1100", "S"), ("0100", "landNE"), ("1000", "landNW")):
         tall = berm_tile(bits, face_h=22, rows=2)
         add("mound_" + key, tall.crop(0, 0, 1, 1), "opaque",
@@ -533,6 +677,13 @@ def build():
             comment=f"platform mound face extension '{k}' (build.py corners() 'face' rule: under S / landNE / landNW)")
     add("mound_steps", mound_steps(), "opaque", walk=True,
         comment="2x2 steps up the mound's south face: row 0 in place of two mound_S, row 1 of two mound_face; walkable")
+    for key in ("C", "N", "S", "W", "E", "NW", "NE", "SW", "SE"):
+        add("shell_" + key, shell_path(key), "opaque", walk=True,
+            comment=f"ceremonial shell road (crushed shell on grass), cell-based like the Johto path: {key}")
+    add("egret_post", egret_post(), "overlay", comment="1x2 an egret standing on an old cedar post in the water "
+                                                         "(overlay on Ekat water), blocking")
+    add("shell_scatter", shell_scatter(), "overlay", walk=True, comment="1x1 oyster and clam shells scattered on the grass by "
+                                                             "the shore (overlay on grass), walkable")
     add("live_oak", live_oak(), "overlay", comment="4x3 a live oak with Spanish moss (overlay on grass): blocking; the top "
                                                    "row is canopy (could be drawn over the player)")
     add("cedar_post", cedar_post(False), "overlay", comment="1x2 a carved red-cedar post (overlay on grass), blocking")
@@ -574,13 +725,15 @@ def write(sh, meta):
         if m["kind"] == "overlay" or name in ("landing", "mound_steps"):
             prefabs[name] = {"_comment": m["comment"], "rows": rows, "door": None, "passable": walk}
     keys = [k for k in CORNER_KEYS.values() if k != "C"]
-    berm = {"kind": "corners", "connects": "R", "apply_on": "R.", "elev": 3, "collision": 1, "C": "ekat:grass",
+    berm = {"kind": "corners", "connects": "R", "apply_on": "R.", "elev": 3, "collision": 1, "C": "osh:berm_C",
             "_comment": "the low ridges (grid char R, on grass '.'): blocking berms; keep R two cells from marsh / water "
                         "/ paths (no transition art for those)"}
     berm.update({k: f"osh:berm_{k}" for k in keys})
     mound = dict(berm, connects="M", apply_on="M.", _comment="the platform mound (grid char M): the berm's pieces with "
                  "the tall south face; its top (C) is plain walkable grass: give the edge tiles collision (the corner "
                  "set's 'collision' blocks C too, so set the top back to 0 or use a terrain char for it)")
+    mound.update({k: f"osh:mound_{k}" for k in keys})
+    mound["C"] = "ekat:grass"
     mound.update({"S": "osh:mound_S", "landNE": "osh:mound_landNE", "landNW": "osh:mound_landNW",
                   "face": {"face": "osh:mound_face", "face_l": "osh:mound_face_l", "face_r": "osh:mound_face_r"}})
     doc = {

@@ -267,6 +267,27 @@ def side_wall(right=False):
     return cv
 
 
+def south_wall(corner=None):
+    """The room's south wall seen from above (its top: dark rubble, lit along its north edge, toward the room), and
+    its two corners with the side walls (corner 'sw' / 'se': lit only in the corner toward the room)."""
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            n = hashn(j, i, 11)
+            cv.put(i, j, T1 if ((i // 4 + j // 4) % 2 or n < 0.4) else T2)
+    band = {0: T1, 1: T3, 2: T4, 3: T2}            # distance from the room -> colour (the side walls' order)
+    for j in range(16):
+        for i in range(16):
+            if corner is None:
+                d = j
+            else:
+                dx = (15 - i) if corner == "sw" else i
+                d = max(dx, j)
+            if d in band:
+                cv.put(i, j, band[d] if not (corner is None and d == 2 and i % 6 == 0) else T3)
+    return cv
+
+
 def medallion():
     """3x3 centre of the back wall over the altar (rows cap, frieze, base): a great carved disc of waves around the
     spiral, rising over the cap, faintly lit by the seal's glow, coral at its foot."""
@@ -916,6 +937,9 @@ def build():
     add("base_kelp", wall_base("kelp", 3), comment="back wall, row 2: kelp against the wall")
     add("side_l", side_wall(False), comment="left side wall (its lit edge faces the room)")
     add("side_r", side_wall(True), comment="right side wall")
+    add("wall_s", south_wall(), comment="the room's south wall seen from above (blocking), under the bottom row of floor")
+    add("wall_sw", south_wall("sw"), comment="south-west corner (south wall meets the left side wall)")
+    add("wall_se", south_wall("se"), comment="south-east corner (south wall meets the right side wall)")
     add("medallion", medallion(), comment="3x3 centre of the back wall over the altar (rows cap, frieze, base)")
     add("div_cap", divider_cap(), comment="dividing wall, row 0: its top (lit lips both sides; water north of it)")
     add("div_cap_b", divider_cap(1), comment="dividing wall, row 0: with a coral and a barnacle")

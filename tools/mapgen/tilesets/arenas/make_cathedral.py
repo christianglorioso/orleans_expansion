@@ -603,49 +603,65 @@ def cart():
 
 
 def cribbing():
-    """2x2 timber cribbing: a square crib of logs stacked in alternating courses, holding up the roof in a side aisle.
-    The top shows the last course as a square frame; the front shows the courses: a long log, then two log ends."""
+    """2x2 mine cribbing: a square crib of round logs notched together in alternating courses, the way roof supports
+    are built in old mines. Each east-west log runs past the corners and shows its pale cut end; between them the
+    north-south logs show only their cut ends at the corners, with the next log back in the shadow between. The top
+    course is seen from above: two side logs lying over the back log, the dark hollow of the crib between."""
     cv = Canvas(2, 2)
     put_tex(cv, floor_px)
-    x0, x1 = 3, 28
 
-    def log_h(y, a, b):
-        cv.hline(a, b, y, TB3)
-        cv.rect(a, y + 1, b - a + 1, 2, TB2)
-        cv.hline(a, b, y + 3, TB0)
-        cv.vline(a - 1, y, y + 3, TB0)
-        cv.vline(b + 1, y, y + 3, TB0)
-        for x in range(a + 3, b, 7):
-            cv.put(x, y + 2, TB1)
+    def log_ew(y, x0, x1, dark=False):
+        rows = [TB3, TB2, TB2, TB1, TB0] if not dark else [TB1, TB1, TB0, TB0, INK]
+        for k, c in enumerate(rows):
+            cv.hline(x0, x1, y + k, c)
+        if not dark:
+            for x in range(x0 + 3, x1 - 1, 5):
+                cv.put(x, y + 2, TB1)              # bark checks
+                cv.put(x + 1, y + 1, TB3)
+        cv.hline(x0, x1, y - 1, INK) if not dark else None
+        cv.hline(x0, x1, y + 5, INK) if not dark else None
 
-    def log_end(cx, cy):
-        cv.ellipse(cx, cy, 2.6, 2.1, TB0)
-        cv.ellipse(cx, cy, 1.8, 1.4, TB3)
-        cv.put(int(cx), int(cy), TB1)
+    def end(x, y):
+        """A cut log end, 4 x 5: dark ring, pale face, the heart."""
+        cv.rect(x, y, 4, 5, TB1)
+        cv.rect(x + 1, y + 1, 2, 3, TB3)
+        cv.put(x + 1, y + 1, LY2)
+        cv.put(x + 2, y + 2, TB2)
+        for (px, py) in [(x, y), (x + 3, y), (x, y + 4), (x + 3, y + 4)]:
+            cv.put(px, py, INK)
+        cv.vline(x - 1, y + 1, y + 3, INK)
+        cv.vline(x + 4, y + 1, y + 3, INK)
+        cv.hline(x + 1, x + 2, y - 1, INK)
+        cv.hline(x + 1, x + 2, y + 5, INK)
 
-    # the dark inside of the crib, seen between the courses
-    cv.rect(x0, 6, x1 - x0 + 1, 22, SA0)
-    # front courses, bottom up
-    y = 25
-    k = 0
-    while y >= 13:
-        if k % 2 == 0:
-            log_h(y, x0, x1)
+    # soft shadow at the foot
+    for x in range(1, 31):
+        cv.put(x, 30, SA1 if 2 < x < 29 else SA2)
+    # front courses, bottom up: east-west logs (with their cut ends past the corners) alternating with gaps where
+    # the north-south logs show their ends and the back log sits in shadow
+    for y, kind in ((25, "log"), (20, "gap"), (15, "log"), (10, "gap")):
+        if kind == "log":
+            log_ew(y, 4, 27)
+            end(0, y)
+            end(28, y)
         else:
-            for cx in (x0 + 2, x1 - 2):
-                log_end(cx, y + 2)
-        y -= 4
-        k += 1
-    # the top course: a square frame (front and back logs, the side logs' tops)
-    log_h(3, x0, x1)
-    for cx in (x0 + 1, x1 - 2):
-        cv.rect(cx - 1, 6, 4, 6, TB2)
-        cv.vline(cx - 1, 6, 11, TB3)
-        cv.vline(cx + 2, 6, 11, TB0)
-    log_h(10, x0, x1)
-    cv.hline(x0 - 1, x1 + 1, 29, INK)
-    for x in range(x0, x1 + 1, 2):
-        cv.put(x, 28, SA1)
+            cv.rect(6, y, 20, 5, SA0)
+            log_ew(y, 6, 25, dark=True)
+            end(3, y)
+            end(25, y)
+    # the top course from above: the back log, the two side logs over it, the hollow between
+    cv.rect(8, 4, 16, 6, SA0)
+    log_ew(1, 4, 27)
+    end(0, 1)
+    end(28, 1)
+    for x0 in (3, 25):
+        cv.rect(x0, 2, 4, 9, TB2)
+        cv.vline(x0, 2, 10, TB3)
+        cv.vline(x0 + 3, 2, 10, TB1)
+        cv.vline(x0 - 1, 2, 10, INK)
+        cv.vline(x0 + 4, 2, 10, INK)
+        cv.put(x0 + 1, 5, TB1)
+        cv.put(x0 + 2, 8, TB1)
     return cv
 
 def lantern_post():
@@ -856,6 +872,32 @@ def aisle_px(i, j):
     return c
 
 
+def lantern_fallen():
+    """1x1 a mine lantern knocked over on the salt floor: the cage on its side, the glass cracked, a little pool of
+    light spilled from it."""
+    cv = Canvas(1, 1)
+    put_tex(cv, floor_px)
+    for j in range(16):
+        for i in range(16):
+            if ((i - 9) / 6.5) ** 2 + ((j - 10) / 4.0) ** 2 < 1.0 and (i + j) % 2 == 0:
+                cv.put(i, j, SA5)
+    cv.rect(4, 7, 7, 5, IR1)                        # the cage lying east-west
+    cv.rect(5, 8, 4, 3, LY2)
+    cv.put(6, 9, LY1)
+    cv.put(8, 8, SA4)                               # the crack
+    cv.vline(11, 6, 12, IR1)                        # the base, tipped
+    cv.vline(3, 8, 10, IR1)                         # the top cap
+    cv.put(2, 9, IR1)
+    cv.put(1, 8, IR1)                               # the bail handle
+    cv.put(1, 7, IR1)
+    cv.hline(4, 11, 12, SA1)
+    for (x, y) in [(12, 9), (13, 11), (12, 12), (7, 13)]:
+        cv.put(x, y, LY1)
+    cv.put(13, 6, SA4)
+    cv.put(14, 7, SA5)
+    return cv
+
+
 def void():
     return Canvas(1, 1, fill=INK)
 
@@ -914,9 +956,11 @@ def build():
     add("chandelier", cb, walk=True, top=ct, comment="3x2 a salt-crystal chandelier over the aisle: the aisle and its "
         "light are the bottom layer (walkable), the chandelier the top layer (drawn over the player); place it across "
         "the aisle's three columns")
-    add("cribbing", cribbing(), comment="2x2 timber cribbing (square-set), blocking")
+    add("cribbing", cribbing(), comment="2x2 mine cribbing: a square crib of round logs in alternating courses, "
+                                        "cut ends lighter, blocking")
     add("lantern_post", lantern_post(), comment="1x2 a timber post with a lantern, blocking")
     add("crystal", crystal(False), comment="1x1 a cluster of salt crystals, blocking")
+    add("lantern_fallen", lantern_fallen(), comment="1x1 a mine lantern knocked over on the floor, blocking")
     add("crystal_big", crystal(True), comment="2x2 a big cluster of salt crystals, blocking")
     add("salt_blocks", salt_blocks(), comment="2x1 cut salt blocks, blocking")
     add("spall", spall(), comment="1x1 salt spall, blocking")

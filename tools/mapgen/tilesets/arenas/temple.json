@@ -380,9 +380,48 @@
    "walk": [],
    "comment": "right side wall"
   },
-  "medallion": {
+  "wall_s": {
    "x": 11,
    "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "dt:wall_s"
+    ]
+   ],
+   "walk": [],
+   "comment": "the room's south wall seen from above (blocking), under the bottom row of floor"
+  },
+  "wall_sw": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "dt:wall_sw"
+    ]
+   ],
+   "walk": [],
+   "comment": "south-west corner (south wall meets the left side wall)"
+  },
+  "wall_se": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "dt:wall_se"
+    ]
+   ],
+   "walk": [],
+   "comment": "south-east corner (south wall meets the right side wall)"
+  },
+  "medallion": {
+   "x": 0,
+   "y": 1,
    "w": 3,
    "h": 3,
    "rows": [
@@ -406,8 +445,8 @@
    "comment": "3x3 centre of the back wall over the altar (rows cap, frieze, base)"
   },
   "div_cap": {
-   "x": 14,
-   "y": 0,
+   "x": 3,
+   "y": 1,
    "w": 1,
    "h": 1,
    "rows": [
@@ -419,8 +458,8 @@
    "comment": "dividing wall, row 0: its top (lit lips both sides; water north of it)"
   },
   "div_cap_b": {
-   "x": 15,
-   "y": 0,
+   "x": 4,
+   "y": 1,
    "w": 1,
    "h": 1,
    "rows": [
@@ -432,8 +471,8 @@
    "comment": "dividing wall, row 0: with a coral and a barnacle"
   },
   "div_face": {
-   "x": 0,
-   "y": 3,
+   "x": 5,
+   "y": 1,
    "w": 1,
    "h": 1,
    "rows": [
@@ -445,8 +484,8 @@
    "comment": "dividing wall, row 1: its south face"
   },
   "div_face_coral": {
-   "x": 1,
-   "y": 3,
+   "x": 6,
+   "y": 1,
    "w": 1,
    "h": 1,
    "rows": [
@@ -458,8 +497,8 @@
    "comment": "dividing wall, row 1: coral"
   },
   "div_face_kelp": {
-   "x": 2,
-   "y": 3,
+   "x": 7,
+   "y": 1,
    "w": 1,
    "h": 1,
    "rows": [
@@ -471,8 +510,8 @@
    "comment": "dividing wall, row 1: kelp"
   },
   "door_closed": {
-   "x": 3,
-   "y": 3,
+   "x": 8,
+   "y": 1,
    "w": 3,
    "h": 2,
    "rows": [
@@ -491,8 +530,8 @@
    "comment": "3x2 sealed door in the dividing wall (rows cap, face): the spiral seal glows; all cells block. Sing Heron's verse at the middle cell of row 1."
   },
   "door_open": {
-   "x": 6,
-   "y": 3,
+   "x": 11,
+   "y": 1,
    "w": 3,
    "h": 2,
    "rows": [
@@ -520,8 +559,8 @@
    "comment": "3x2 the door opened (map state): the slab sunk, the passage (middle column) walkable; the lintel over the passage is the top layer (drawn over the player)"
   },
   "water": {
-   "x": 12,
-   "y": 3,
+   "x": 3,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -533,8 +572,8 @@
    "comment": "deep water (blocking: the moat)"
   },
   "water_glint": {
-   "x": 13,
-   "y": 3,
+   "x": 4,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -546,8 +585,8 @@
    "comment": "deep water with a glint of the altar's light"
   },
   "water_shadow": {
-   "x": 14,
-   "y": 3,
+   "x": 5,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -559,8 +598,8 @@
    "comment": "deep water under a wall base or a platform's south face"
   },
   "water_kelp": {
-   "x": 15,
-   "y": 3,
+   "x": 6,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -572,8 +611,8 @@
    "comment": "deep water with kelp"
   },
   "plat_C": {
-   "x": 0,
-   "y": 5,
+   "x": 7,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -590,8 +629,8 @@
    "comment": "altar island / causeway cell, edge C (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_N": {
-   "x": 1,
-   "y": 5,
+   "x": 8,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -608,8 +647,8 @@
    "comment": "altar island / causeway cell, edge N (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_S": {
-   "x": 2,
-   "y": 5,
+   "x": 9,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -626,8 +665,8 @@
    "comment": "altar island / causeway cell, edge S (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_W": {
-   "x": 3,
-   "y": 5,
+   "x": 10,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -644,8 +683,8 @@
    "comment": "altar island / causeway cell, edge W (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_E": {
-   "x": 4,
-   "y": 5,
+   "x": 11,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -662,8 +701,8 @@
    "comment": "altar island / causeway cell, edge E (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_NW": {
-   "x": 5,
-   "y": 5,
+   "x": 12,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -680,8 +719,8 @@
    "comment": "altar island / causeway cell, edge NW (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_NE": {
-   "x": 6,
-   "y": 5,
+   "x": 13,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -698,8 +737,8 @@
    "comment": "altar island / causeway cell, edge NE (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_SW": {
-   "x": 7,
-   "y": 5,
+   "x": 14,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -716,8 +755,8 @@
    "comment": "altar island / causeway cell, edge SW (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_SE": {
-   "x": 8,
-   "y": 5,
+   "x": 15,
+   "y": 4,
    "w": 1,
    "h": 1,
    "rows": [
@@ -734,8 +773,8 @@
    "comment": "altar island / causeway cell, edge SE (flagstone top; N/W/E lit lip, S stone face into the water)"
   },
   "plat_iNW": {
-   "x": 9,
-   "y": 5,
+   "x": 0,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -752,8 +791,8 @@
    "comment": "altar island / causeway cell, edge iNW (flagstone top; N/W/E lit lip, S stone face into the water; concave corner)"
   },
   "plat_iNE": {
-   "x": 10,
-   "y": 5,
+   "x": 1,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -770,8 +809,8 @@
    "comment": "altar island / causeway cell, edge iNE (flagstone top; N/W/E lit lip, S stone face into the water; concave corner)"
   },
   "plat_iSW": {
-   "x": 11,
-   "y": 5,
+   "x": 2,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -788,8 +827,8 @@
    "comment": "altar island / causeway cell, edge iSW (flagstone top; N/W/E lit lip, S stone face into the water; concave corner)"
   },
   "plat_iSE": {
-   "x": 12,
-   "y": 5,
+   "x": 3,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -806,8 +845,8 @@
    "comment": "altar island / causeway cell, edge iSE (flagstone top; N/W/E lit lip, S stone face into the water; concave corner)"
   },
   "dais": {
-   "x": 13,
-   "y": 5,
+   "x": 4,
+   "y": 6,
    "w": 3,
    "h": 2,
    "rows": [
@@ -826,8 +865,8 @@
    "comment": "3x2 Kyogre's dais (blocking); Kyogre's object stands on its middle bottom cell"
   },
   "tide_bowl": {
-   "x": 0,
-   "y": 7,
+   "x": 7,
+   "y": 6,
    "w": 1,
    "h": 2,
    "rows": [
@@ -842,8 +881,8 @@
    "comment": "1x2 a tide bowl of glowing water on a pillar (blocking)"
   },
   "floor": {
-   "x": 1,
-   "y": 7,
+   "x": 8,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -860,8 +899,8 @@
    "comment": "hall flagstones"
   },
   "floor_crack": {
-   "x": 2,
-   "y": 7,
+   "x": 9,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -878,8 +917,8 @@
    "comment": "hall flagstones: crack"
   },
   "floor_shells": {
-   "x": 3,
-   "y": 7,
+   "x": 10,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -896,8 +935,8 @@
    "comment": "hall flagstones: shells"
   },
   "floor_sand": {
-   "x": 4,
-   "y": 7,
+   "x": 11,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -914,8 +953,8 @@
    "comment": "hall flagstones: sand"
   },
   "floor_kelp": {
-   "x": 5,
-   "y": 7,
+   "x": 12,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -932,8 +971,8 @@
    "comment": "hall flagstones: kelp"
   },
   "floor_bubbles": {
-   "x": 6,
-   "y": 7,
+   "x": 13,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -950,8 +989,8 @@
    "comment": "hall flagstones: bubbles"
   },
   "floor_b": {
-   "x": 7,
-   "y": 7,
+   "x": 14,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -968,8 +1007,8 @@
    "comment": "hall flagstones, second wear pattern"
   },
   "floor_c": {
-   "x": 8,
-   "y": 7,
+   "x": 15,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -986,8 +1025,8 @@
    "comment": "hall flagstones, third wear pattern"
   },
   "floor_d": {
-   "x": 9,
-   "y": 7,
+   "x": 0,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1004,8 +1043,8 @@
    "comment": "hall flagstones, fourth wear pattern"
   },
   "light_pool": {
-   "x": 10,
-   "y": 7,
+   "x": 1,
+   "y": 8,
    "w": 2,
    "h": 2,
    "rows": [
@@ -1039,8 +1078,8 @@
    "comment": "2x2 a pool of caustic light on the paving (walkable)"
   },
   "column": {
-   "x": 12,
-   "y": 7,
+   "x": 3,
+   "y": 8,
    "w": 1,
    "h": 3,
    "rows": [
@@ -1058,8 +1097,8 @@
    "comment": "1x3 a standing column (capital, fluted shaft, coral base), blocking"
   },
   "column_broken": {
-   "x": 13,
-   "y": 7,
+   "x": 4,
+   "y": 8,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1074,8 +1113,8 @@
    "comment": "1x2 a broken column, ragged top, blocking"
   },
   "column_stump": {
-   "x": 14,
-   "y": 7,
+   "x": 5,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1087,8 +1126,8 @@
    "comment": "1x1 a column stump, blocking"
   },
   "column_fallen": {
-   "x": 0,
-   "y": 10,
+   "x": 6,
+   "y": 8,
    "w": 3,
    "h": 1,
    "rows": [
@@ -1102,8 +1141,8 @@
    "comment": "3x1 a column drum lying on the floor, blocking"
   },
   "capital_fallen": {
-   "x": 3,
-   "y": 10,
+   "x": 9,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1115,8 +1154,8 @@
    "comment": "1x1 a fallen capital, blocking"
   },
   "tide_pool": {
-   "x": 4,
-   "y": 10,
+   "x": 10,
+   "y": 8,
    "w": 2,
    "h": 2,
    "rows": [
@@ -1133,8 +1172,8 @@
    "comment": "2x2 a tide pool sunk in the floor (blocking)"
   },
   "tide_pool_w": {
-   "x": 6,
-   "y": 10,
+   "x": 12,
+   "y": 8,
    "w": 3,
    "h": 2,
    "rows": [
@@ -1153,8 +1192,8 @@
    "comment": "3x2 a wider tide pool (blocking)"
   },
   "coral": {
-   "x": 9,
-   "y": 10,
+   "x": 15,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1166,8 +1205,8 @@
    "comment": "1x1 a coral cluster on the floor, blocking"
   },
   "kelp_tall": {
-   "x": 10,
-   "y": 10,
+   "x": 0,
+   "y": 11,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1182,8 +1221,8 @@
    "comment": "1x2 tall kelp from a rock, blocking"
   },
   "rubble": {
-   "x": 11,
-   "y": 10,
+   "x": 1,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1195,8 +1234,8 @@
    "comment": "1x1 fallen stones, blocking"
   },
   "bell": {
-   "x": 12,
-   "y": 10,
+   "x": 2,
+   "y": 11,
    "w": 2,
    "h": 2,
    "rows": [
@@ -1213,8 +1252,8 @@
    "comment": "2x2 the sunken bell, half buried in the silt, blocking"
   },
   "dive_pool": {
-   "x": 0,
-   "y": 12,
+   "x": 4,
+   "y": 11,
    "w": 3,
    "h": 2,
    "rows": [
