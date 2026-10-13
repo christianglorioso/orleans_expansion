@@ -160,9 +160,15 @@ LandsEnd_Gym_EventScript_Heron0::
 	lock
 	faceplayer
 	goto_if_set FLAG_BADGE08_GET, LandsEnd_Gym_EventScript_HeronAfter
+	goto_if_lt VAR_ORLEANS_STORY, 35, LandsEnd_Gym_EventScript_HeronRaid
 	goto_if_unset FLAG_HERON_TRIAL_DONE, LandsEnd_Gym_EventScript_HeronNotYet
 	trainerbattle_single TRAINER_HERON, LandsEnd_Gym_Text_HeronIntro, LandsEnd_Gym_Text_HeronDefeat, LandsEnd_Gym_EventScript_HeronDefeated, NO_MUSIC
 	goto LandsEnd_Gym_EventScript_HeronAfter
+	end
+
+LandsEnd_Gym_EventScript_HeronRaid:
+	msgbox LandsEnd_Gym_Text_Raid, MSGBOX_DEFAULT
+	release
 	end
 
 LandsEnd_Gym_EventScript_HeronNotYet:
@@ -175,7 +181,7 @@ LandsEnd_Gym_EventScript_HeronDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	setflag FLAG_BADGE08_GET
-	call_if_eq VAR_ORLEANS_STORY, 35, LandsEnd_Gym_EventScript_SetStory36
+	call_if_lt VAR_ORLEANS_STORY, 36, LandsEnd_Gym_EventScript_SetStory36
 	msgbox LandsEnd_Gym_Text_BadgeInfo, MSGBOX_DEFAULT
 	call LandsEnd_Gym_EventScript_GiveRewards
 	release
@@ -221,43 +227,43 @@ LandsEnd_Gym_EventScript_HeronAfter:
 LandsEnd_Gym_Text_Verse1:
 	.string "Carved on the panel:\n"
 	.string "The water rose, and the land was\p"
-	.string "afraid. The people built walls\n"
-	.string "against what they did not know.$"
+	.string "afraid...$"
 
 LandsEnd_Gym_Text_Verse2:
 	.string "Carved on the panel:\n"
 	.string "The sky split open, and light ran\p"
 	.string "down the wires of the world. The\n"
 	.string "Long One lay down in the river bed,\p"
-	.string "and the people heard it sing.$"
+	.string "and the people heard it sing...$"
 
 LandsEnd_Gym_Text_Verse3:
 	.string "Carved on the panel:\n"
-	.string "Lamps burned over the water to lead\p"
-	.string "the drowned home. The Long One\n"
-	.string "kept every one of them lit.$"
+	.string "The lamps went out on the water, and\p"
+	.string "the lost wandered in the dark. The\n"
+	.string "Long One breathed, and one light\p"
+	.string "rose, and the lost went home.$"
 
 LandsEnd_Gym_Text_Verse4:
 	.string "Carved on the panel:\n"
 	.string "The first net, the first boat. The\p"
-	.string "river was a road, and a gift. The\n"
-	.string "wind carried the songs along it.$"
+	.string "river was never a wall. It was a\n"
+	.string "road, and it carried the people\p"
+	.string "home.$"
 
 LandsEnd_Gym_Text_Verse5:
 	.string "Carved on the panel:\n"
-	.string "The people ate together, and the\p"
-	.string "land was fed. A tie, they said:\n"
-	.string "no pot is greater than the table.$"
+	.string "The people ate together. And the\p"
+	.string "land was fed.$"
 
 LandsEnd_Gym_Text_Verse6:
 	.string "Carved on the panel:\n"
 	.string "What the water shows is not the\p"
 	.string "water. The Long One only looked\n"
-	.string "drowned. It was keeping watch.$"
+	.string "drowned.$"
 
 LandsEnd_Gym_Text_Verse7:
 	.string "Carved on the panel:\n"
-	.string "The field burned and the people\p"
+	.string "The field burned, and the people\p"
 	.string "wept. Then the green came back\n"
 	.string "through the ash, taller than before.$"
 
@@ -314,6 +320,12 @@ LandsEnd_Gym_Text_FishermanDefeat:
 LandsEnd_Gym_Text_FishermanAfter:
 	.string "HERON's rain feeds the moat. I\n"
 	.string "feed the herons. Fair trade.$"
+
+LandsEnd_Gym_Text_Raid:
+	.string "HERON: Smoke over the OLD WATER, I\n"
+	.string "hear. The telling can't wait.\p"
+	.string "Settle that first. A girl is\n"
+	.string "waiting at the mill in REDFIELD.$"
 
 LandsEnd_Gym_Text_NotYet:
 	.string "HERON: The rain won't pause for the\n"

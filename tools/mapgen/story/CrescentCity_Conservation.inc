@@ -145,14 +145,17 @@ CrescentCity_Conservation_EventScript_KabutoRevive:
 	msgbox CrescentCity_Conservation_Text_FossilFound, MSGBOX_DEFAULT
 	givemon SPECIES_KABUTO, 40
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, CrescentCity_Conservation_EventScript_KabutoNoRoom
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, CrescentCity_Conservation_EventScript_KabutoToPC
 	removeitem ITEM_DOME_FOSSIL
 	setflag FLAG_KABUTO_REVIVED
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, CrescentCity_Conservation_EventScript_KabutoToPC
 	msgbox CrescentCity_Conservation_Text_FossilDone, MSGBOX_DEFAULT
 	release
 	end
 
 CrescentCity_Conservation_EventScript_KabutoToPC:
+	removeitem ITEM_DOME_FOSSIL
+	setflag FLAG_KABUTO_REVIVED
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KABUTO
 	call Common_EventScript_TransferredToPC
 	msgbox CrescentCity_Conservation_Text_FossilDone, MSGBOX_DEFAULT
 	release

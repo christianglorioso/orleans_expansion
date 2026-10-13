@@ -462,6 +462,32 @@ def lands_end():
           f"Land's End: Andrew {(a['x'], a['y'])} and Jayden {(j['x'], j['y'])} stand beside the gym door's approach cell {(door[0], door[1] + 1)}, hidden by their flags")
 
 
+def verse_panels():
+    """Chapter 8 S2: every carved panel quotes the verse its Singer sang, verbatim from the leader's own text (sentence by sentence)."""
+    import re
+    import story_data_ch8 as c8
+    BS = chr(92)
+
+    def norm(t):
+        return re.sub(r"\s+", " ", t.replace(BS + "n", " ").replace(BS + "p", " ").replace("$", "").replace("BOTH: ", "").replace("THIBODEAUX: ", "")).strip()
+
+    def block(path, label):
+        src = open(path, encoding="utf-8").read()
+        i = src.index(label + ":")
+        j = src.index('$"', i)
+        return norm("".join(re.findall(r'\.string "(.*?)"', src[i:j + 2])))
+    srcs = {1: ("GrandOak_Gym", "FirstVerse"), 2: ("StormsEdge_Gym", "SecondVerse"), 3: ("CrescentCity_Gym", "ThirdVerse"),
+            4: ("PointeRouge_Gym", "FourthVerse"), 5: ("CampCocodrie_Gym", "FifthVerse"), 6: ("LutinsHollow_Gym", "SixthVerse"), 7: ("Redfield_Gym", "SeventhVerse")}
+    bad = []
+    for v, (f, l) in srcs.items():
+        gym = block(f"tools/mapgen/story/{f}.inc", f"{f}_Text_{l}")
+        panel = block("tools/mapgen/story/LandsEnd_Gym.inc", f"LandsEnd_Gym_Text_Verse{v}").replace("Carved on the panel: ", "")
+        for sent in re.split(r"(?<=[.!?])\s+", panel):
+            if sent and sent not in gym:
+                bad.append(f"verse {v}: {sent!r}")
+    check(not bad, f"Land's End panels: all seven carved verses are verbatim from the Singers' own texts ({bad})")
+
+
 def trainers_vs_triggers():
     """A trainer who spots the player on a flag-trigger cell takes over (the approach/battle runs instead of the coord event), and the player
     then stands ON the cell and walks on: a gate leak. So no trainer's line of sight may cover a cell that carries a flag trigger."""
@@ -539,6 +565,7 @@ if __name__ == "__main__":
     lutins_hollow()
     redfield_mill()
     lands_end()
+    verse_panels()
     trainers_vs_triggers()
     world_gates()
     pointe_rouge_east()

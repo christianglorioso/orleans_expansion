@@ -95,6 +95,7 @@ CrescentCity_Gym_EventScript_GiveMimikyu:
 	goto CrescentCity_Gym_EventScript_Verse
 
 CrescentCity_Gym_EventScript_MimikyuToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MIMIKYU
 	call Common_EventScript_TransferredToPC
 	msgbox CrescentCity_Gym_Text_MimikyuReceived, MSGBOX_DEFAULT
 CrescentCity_Gym_EventScript_Verse:

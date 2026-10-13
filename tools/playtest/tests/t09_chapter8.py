@@ -43,6 +43,24 @@ def run(b, t):
     for f in ("FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_RECEIVED_HM_SURF"):
         b.set_flag(f, True)
 
+    # ---------------------------------------------------------------- sequence break: Land's End reached (by Surf) before the raid, story 33
+    b.set_var("VAR_ORLEANS_STORY", 33)
+    b.set_var("VAR_LANDS_END_ARRIVAL", 0)
+    b.set_flag("FLAG_BADGE08_GET", False)
+    b.warp("LandsEnd", 3, 20)
+    b.frames(60)
+    t.check("at story 33 the arrival changes nothing (story 33, still armed)", b.var("VAR_ORLEANS_STORY") == 33 and b.var("VAR_LANDS_END_ARRIVAL") == 0,
+            "story=%d var=%d" % (b.var("VAR_ORLEANS_STORY"), b.var("VAR_LANDS_END_ARRIVAL")))
+    talk(b, "LandsEnd_Gym", "Heron0", "D", 300)
+    t.check("Heron refuses at story 33 (no badge, story stays 33)", not b.flag("FLAG_BADGE08_GET") and b.var("VAR_ORLEANS_STORY") == 33)
+    b.set_var("VAR_ORLEANS_STORY", 34)               # the raid is done later
+    b.warp("Route20", 20, 12)
+    b.warp("LandsEnd", 3, 20)
+    b.frames(40)
+    b.advance_text(120)
+    t.check("the raid done later: Land's End's arrival still sets story 35", b.var("VAR_ORLEANS_STORY") == 35 and b.var("VAR_LANDS_END_ARRIVAL") == 1,
+            "story=%d" % b.var("VAR_ORLEANS_STORY"))
+
     # ---------------------------------------------------------------- 8.1 arrival (story 34 -> 35)
     b.set_var("VAR_ORLEANS_STORY", 34)
     b.set_var("VAR_LANDS_END_ARRIVAL", 0)
@@ -83,7 +101,9 @@ def run(b, t):
     b.set_var("VAR_LANDS_END_SCENE", 0)
     b.set_var("VAR_OLD_WATER_TELLING", 0)
     b.set_flag("FLAG_DUST_STORMS_LIFTED", False)
-    b.warp("LandsEnd", 27, 35)                       # coming out of the pavilion
+    b.warp("LandsEnd", 27, 36)                       # just outside the pavilion door: stepping onto the approach cell plays the scene
+    b.frames(20)
+    b.step("U")
     b.frames(40)
     b.advance_text(200)
     for _ in range(60):
@@ -104,6 +124,7 @@ def run(b, t):
     talk(b, "CrescentCity_Conservation", "Lafayette0", "D", 300)
     t.check("Lafayette revives the Dome Fossil: a Kabuto, the fossil used", b.flag("FLAG_KABUTO_REVIVED") and not has_item(b, "ITEM_DOME_FOSSIL"),
             "flag=%s" % b.flag("FLAG_KABUTO_REVIVED"))
+    t.check("the Kabuto went to the party (room there), not the PC", b.party_count() == before + 1, "%d -> %d" % (before, b.party_count()))
 
     # ---------------------------------------------------------------- the route trainers
     for name, n in (("Route18", 4), ("Route19", 4), ("Route20", 4), ("Route21", 4), ("Route22", 3)):

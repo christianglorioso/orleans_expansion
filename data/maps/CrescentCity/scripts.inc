@@ -119,6 +119,7 @@ CrescentCity_EventScript_ParadeAfterQuaxly:
 	end
 
 CrescentCity_EventScript_ParadeToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_QUAXLY
 	call Common_EventScript_TransferredToPC
 	msgbox CrescentCity_Text_ParadeReceived, MSGBOX_DEFAULT
 	release

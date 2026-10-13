@@ -5,8 +5,8 @@ LandsEnd_MapScripts::
 
 @ Land's End (Chapter 8). Story: 35 arrived (this frame script, once: VAR_LANDS_END_ARRIVAL; from 34), 36 Heron beaten (LandsEnd_Gym),
 @ 37 Andrew named and Jayden battle 5 (his first Mega), 38 Rayquaza wakes (the dust storms lift: FLAG_DUST_STORMS_LIFTED), 39 the full telling
-@ at the Old Water (OldWater_SongHouse). Andrew and Jayden wait in front of the pavilion only while the story is 36: coming out of the gym
-@ plays the scene (VAR_LANDS_END_SCENE), and a blackout in the battle replays it.
+@ at the Old Water (OldWater_SongHouse). Andrew and Jayden wait in front of the pavilion only while the story is 36: the coord trigger on the
+@ door's approach cell (27, 35) plays the scene (VAR_LANDS_END_SCENE records it), and a blackout in the battle replays it.
 
 LandsEnd_OnTransition:
 	setflag FLAG_HIDE_LANDS_END_ANDREW
@@ -21,12 +21,14 @@ LandsEnd_EventScript_ShowPair:
 
 LandsEnd_OnFrameTable:
 	map_script_2 VAR_LANDS_END_ARRIVAL, 0, LandsEnd_EventScript_Arrival
-	map_script_2 VAR_LANDS_END_SCENE, 0, LandsEnd_EventScript_Scene
 	.2byte 0
 
-@ ---------------------------------------------------------------- 8.1 arrival (story 34 -> 35); a debug warp below story 34 plays nothing
+@ ---------------------------------------------------------------- 8.1 arrival (story 34 -> 35); the respawn point moves from story 33 on
+@ (Surf lets a player in before the raid: at 33 nothing but the respawn happens and the arrival stays armed, so the scene still plays,
+@ and 34 -> 35 is still set, once the raid is done); a debug warp below story 33 plays nothing
 LandsEnd_EventScript_Arrival::
-	goto_if_lt VAR_ORLEANS_STORY, 34, LandsEnd_EventScript_ArrivalSkip
+	goto_if_lt VAR_ORLEANS_STORY, 33, LandsEnd_EventScript_ArrivalSkip
+	goto_if_eq VAR_ORLEANS_STORY, 33, LandsEnd_EventScript_ArrivalEarly
 	lockall
 	setvar VAR_LANDS_END_ARRIVAL, 1
 	setrespawn HEAL_LOCATION_LANDS_END
@@ -36,6 +38,10 @@ LandsEnd_EventScript_Arrival::
 	end
 
 LandsEnd_EventScript_ArrivalSkip:
+	end
+
+LandsEnd_EventScript_ArrivalEarly:
+	setrespawn HEAL_LOCATION_LANDS_END
 	end
 
 LandsEnd_EventScript_SetStory35:

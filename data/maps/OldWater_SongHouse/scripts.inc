@@ -210,6 +210,7 @@ OldWater_SongHouse_EventScript_Wren1::
 	end
 
 OldWater_SongHouse_EventScript_WrenToPC:
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_ROCKRUFF_OWN_TEMPO
 	call Common_EventScript_TransferredToPC
 	msgbox OldWater_SongHouse_Text_WrenGiven, MSGBOX_DEFAULT
 	release

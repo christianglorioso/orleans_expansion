@@ -449,7 +449,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint
 
 Pelipper
-Level: 53
+Level: 50
 Ability: Drizzle
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Hurricane
@@ -458,7 +458,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Protect
 
 Politoed
-Level: 53
+Level: 50
 Ability: Drizzle
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Hydro Pump
@@ -467,7 +467,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Perish Song
 
 Archaludon
-Level: 54
+Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Flash Cannon
 - Draco Meteor
@@ -475,7 +475,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Body Press
 
 Floatzel
-Level: 54
+Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Wave Crash
 - Ice Fang
@@ -483,7 +483,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Crunch
 
 Seismitoad
-Level: 54
+Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Hydro Pump
 - Earth Power
@@ -491,7 +491,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Toxic
 
 Gyarados @ Gyaradosite
-Level: 55
+Level: 53
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Waterfall
 - Dragon Dance

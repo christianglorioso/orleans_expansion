@@ -102,12 +102,12 @@ EXTRA_PARTIES = [
          team=[("Whiscash", 51), ("Barbaracle", 51), ("Kingler-Orleanian", 52)]),
     # Heron (gym 8, Rain): Drizzle on Pelipper and Politoed, the Gyarados holds Gyaradosite
     dict(const="TRAINER_HERON", name="HERON", cls="Leader", pic="Leader Juan", sex="Female", music="Female",
-         team=[("Pelipper", 53, ["Hurricane", "Scald", "Roost", "Protect"], {"ability": "Drizzle"}),
-               ("Politoed", 53, ["Hydro Pump", "Ice Beam", "Earth Power", "Perish Song"], {"ability": "Drizzle"}),
-               ("Archaludon", 54, ["Flash Cannon", "Draco Meteor", "Electro Shot", "Body Press"]),
-               ("Floatzel", 54, ["Wave Crash", "Ice Fang", "Aqua Jet", "Crunch"]),
-               ("Seismitoad", 54, ["Hydro Pump", "Earth Power", "Sludge Wave", "Toxic"]),
-               ("Gyarados", 55, ["Waterfall", "Dragon Dance", "Crunch", "Ice Fang"], {"item": "Gyaradosite"})],
+         team=[("Pelipper", 50, ["Hurricane", "Scald", "Roost", "Protect"], {"ability": "Drizzle"}),
+               ("Politoed", 50, ["Hydro Pump", "Ice Beam", "Earth Power", "Perish Song"], {"ability": "Drizzle"}),
+               ("Archaludon", 51, ["Flash Cannon", "Draco Meteor", "Electro Shot", "Body Press"]),
+               ("Floatzel", 51, ["Wave Crash", "Ice Fang", "Aqua Jet", "Crunch"]),
+               ("Seismitoad", 52, ["Hydro Pump", "Earth Power", "Sludge Wave", "Toxic"]),
+               ("Gyarados", 53, ["Waterfall", "Dragon Dance", "Crunch", "Ice Fang"], {"item": "Gyaradosite"})],
          ai="Check Bad Move / Try To Faint", iv=30),
     # Jayden battle 5 (Land's End): his first Mega Evolution (the starter's final stage, one variant per starter like battles 2-4)
     dict(const="TRAINER_ORLEANS_JAYDEN_LANDS_END_CHIKORITA", name="JAYDEN", cls="Rival", pic="Brendan", sex="Male", music="Male",
@@ -154,6 +154,8 @@ LANDS_END = {
         "LOCALID_LANDS_END_KID": {"text": T("My dad says the pavilion's rain is a", "puzzle. I just get wet.")},
         "LOCALID_LANDS_END_SHRIMPER": {"text": T("Shrimp run in the rain. I love", "Heron's pavilion. Business!")},
     },
+    # the pavilion door's approach cell: the Andrew / Jayden scene (story 36) plays here, not map-wide
+    "triggers": [{"x": 27, "y": 35, "elevation": 0, "var": "VAR_ORLEANS_STORY", "value": 36, "script": "LandsEnd_EventScript_Scene"}],
 }
 
 # ---------------------------------------------------------------------------------------------- the rooms
