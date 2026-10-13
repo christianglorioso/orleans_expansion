@@ -29,6 +29,7 @@ import weather_plan  # noqa: E402
 
 TS = os.path.join(HERE, "tilesets")
 WALL_ELEV = 3
+BLACK = "jb:008"   # the building primary's black surround metatile (the border block of every interior)
 
 
 def load_mapping(*names):
@@ -271,7 +272,9 @@ def build(room, door_warps):
     d = f"data/layouts/{name}"
     os.makedirs(d, exist_ok=True)
     open(f"{d}/map.bin", "wb").write(struct.pack(f"<{w * h}H", *[v for row in grid for v in row]))
-    border = M[room["border"]] if room.get("border") else grid[0][0] & 0x3FF
+    # the camera margin past a room's edge shows the layout's 2x2 border block tiled forever: black, as in vanilla interiors (the building
+    # primary's jb:008 is a solid black metatile); a room may name another with "border"
+    border = M[room.get("border", BLACK)]
     open(f"{d}/border.bin", "wb").write(struct.pack("<4H", *[block(border, 1, 0)] * 4))
     lp = "data/layouts/layouts.json"
     L = json.load(open(lp))
