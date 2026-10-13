@@ -17,8 +17,8 @@
     },
     {
       "prefab": "sign",
-      "x": 43,
-      "y": 24,
+      "x": 38,
+      "y": 7,
       "label": "Sign"
     },
     {
@@ -114,13 +114,13 @@
       "id": "RouteSign1",
       "x": 43,
       "y": 6,
-      "text": "LANTERN MINE\nTunnels abandoned. Enter at your own risk."
+      "text": "LANTERN MINE\nTunnels abandoned.\\pEnter at your own risk."
     },
     {
       "id": "RouteSign2",
-      "x": 43,
-      "y": 24,
-      "text": "SALT-DOME CAVERN\nA deep shaft. Something sleeps below."
+      "x": 38,
+      "y": 7,
+      "text": "SALT-DOME CAVERN\nA deep shaft. Something sleeps."
     }
   ],
   "exits": [

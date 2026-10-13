@@ -439,3 +439,17 @@ in memory), `feather_preview.py <dir> <maps>` (in-memory picture, pending pieces
   last water a surfer reaches lies behind scenery. `surf_check.py` proves it on the built bins (corners beside a connection are left to the join).
 - Levee ends in open water (spec `"levee_caps": true`, Storm's Edge) use the rounded jetty nose (`make_levee_caps.render_caps`).
 - Gates: story gate / storm trigger lines are not terrain (`LINE_TRIGGER`); every other event, warp, bg and coord cell in the committed map.json is protected.
+
+## Event lints (fix B, 2026-10-13)
+- `elev_lint.py` (also run by `check.py`): every hidden item and sign must be faceable at its elevation. The engine compares a bg_event's elevation with the
+  PLAYER's (1 on water, 3 on land, 4 on a bridge); 0 = ELEVATION_TRANSITION matches any, 15 does NOT. `build.py Builder.event_elevation` derives it from the
+  layout (land neighbour -> 3, only water -> 1, else 0); a spec/overlay value wins (`patch_signs {"RouteSign1": {"elevation": 0}}`). It also fails a map with more
+  than 15 objects inside one camera window (the player takes one of the 16 slots).
+- `sight_lint.py [-v]`: every sight trainer must be able to spot a player somewhere (static port of trainer_see.c: the first cells must be free and not an
+  elevation mismatch). A stationary NPC's elevation is its CELL's (the map.json value is overwritten at spawn), so `build.py sight_cells()` gives the cell under a
+  land trainer that looks over water elevation 0. Rock in the first cell: move or turn the trainer in `story_overlay.SIGHT_FIXES`.
+- Hidden Heart Scales (`story_overlay.HEART_SCALES`, flags from `flag_pool.py claim --hidden`); the Arena lobby's BP clerks are two object events in
+  `data/maps/BattleFrontier_BattleArenaLobby/map.json` (the Exchange Corner's own scripts).
+- Crescent City's floodwater is a map state: `crescent_flood.py` (water pieces over rows 63-65 of the Route 14 connection, rows 64-65 collide) written into the
+  spec's `states`; `CrescentCity_OnLoad` calls `StateFlooded` while FLAG_BADGE06_GET is clear; the trigger row is y 63. `crop_render_state.py` draws a state.
+

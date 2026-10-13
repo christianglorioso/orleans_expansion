@@ -181,7 +181,7 @@ FEATURES = {
     "route_15": {
         "share": 0,        # encounter cane only in the mockup's clearings
         "walls": True,     # the rest is blocking cane wall (dry_finish), a dry verge along the roads
-        "signs": [(6, 5, "SUNKEN CANE CO.\nHarvest burn at dusk. Mind the smoke.")],
+        "signs": [(6, 5, "SUNKEN CANE CO.\nHarvest burn at dusk. Mind smoke.")],
         "hidden": [("ITEM_NUGGET", "at the field's edge")],
     },
     "route_16": {
@@ -235,7 +235,7 @@ FEATURES = {
                   ("sunken_ruin_l", 27, 6, "Sunken ruin", {"on": "~", "reach": 3}),
                   ("shipwreck", 34, 13, "Shipwreck", {"on": "~", "reach": 2}),
                   ("temple_gate", 4, 21, "Drowned temple gate", {"reach": 3})],
-        "signs": [(3, 23, "DROWNED TEMPLE\nDive here. Diving Gear required.")],
+        "signs": [(3, 23, "DROWNED TEMPLE\nDive at the door. Gear needed.")],
         "hidden": [("ITEM_BIG_PEARL", "in the shipwreck", 36, 16, {"water": True})],
     },
     "route_23": {
@@ -260,8 +260,8 @@ FEATURES = {
         "rock_wall": {"mouths": [("Dry cave", "cave_mouth", (8, 8)), ("Salt-dome cavern", "cave_mouth", (40, 21)),
                                  ("Abandoned mine tunnels (Lantern)", "mine_mouth", (46, 6))],
                       "scree": 0.1},    # the dark east face and the dry cave's block are rock_wall (dry_cliffs)
-        "signs": [(43, 6, "LANTERN MINE\nTunnels abandoned. Enter at your own risk."),
-                  (43, 24, "SALT-DOME CAVERN\nA deep shaft. Something sleeps below.")],
+        "signs": [(43, 6, "LANTERN MINE\nTunnels abandoned.\\pEnter at your own risk."),
+                  (38, 7, "SALT-DOME CAVERN\nA deep shaft. Something sleeps.")],
         "hidden": [("ITEM_HARD_STONE", "in a mine tunnel")],
     },
     "route_25": {

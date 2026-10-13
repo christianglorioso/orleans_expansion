@@ -24,7 +24,7 @@ LandsEnd_SaltCathedral_EventScript_NotYet:
 LandsEnd_SaltCathedral_EventScript_Exit::
 	lockall
 	fadescreen FADE_TO_BLACK
-	warpsilent MAP_ORLEANS_ROUTE24, 34, 7
+	warpsilent MAP_ORLEANS_ROUTE24, 39, 7
 	waitstate
 	releaseall
 	end

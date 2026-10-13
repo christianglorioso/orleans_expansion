@@ -480,6 +480,32 @@ class Builder:
             self.blocks[y][x] = (self.blocks[y][x] & ~0x0C00) | (1 << 10)
         import borders
         borders.apply(self)  # the inward walls and their edge cells (borders.py)
+        self.sight_cells()
+
+    def sight_cells(self):
+        """A stationary NPC's elevation is the elevation of the cell it stands on (the engine overwrites the template value when the object
+        spawns), and a trainer's sight check treats an elevation mismatch as a wall. So a trainer on land (elevation 3) looking over water
+        (elevation 1) is blind to a surfing player (ch8_2 NIT-1: Germain; Route 6's fisherman, Route 19's sailor and boy). The cell under
+        such a trainer gets elevation 0 (ELEVATION_TRANSITION: matches every elevation); nobody can stand there anyway. sight_lint.py proves it."""
+        face = {"UP": (0, -1), "DOWN": (0, 1), "LEFT": (-1, 0), "RIGHT": (1, 0)}
+        for o in self.spec.get("objects", []):
+            d = face.get(str(o.get("move", "")).rsplit("_", 1)[-1])
+            if not o.get("sight") or d is None:
+                continue
+            x, y = o["x"], o["y"]
+            if not (0 <= x < self.w and 0 <= y < self.h):
+                continue
+            own = self.blocks[y][x] >> ELEVATION_SHIFT
+            if own in (0, 15):
+                continue
+            for dist in range(1, int(o["sight"]) + 1):   # along the line until a wall: any walkable cell of another elevation blinds the trainer
+                nx, ny = x + d[0] * dist, y + d[1] * dist
+                if not (0 <= nx < self.w and 0 <= ny < self.h) or (self.blocks[ny][nx] >> COLLISION_SHIFT) & 3:
+                    break
+                ne = self.blocks[ny][nx] >> ELEVATION_SHIFT
+                if ne not in (0, 15) and ne != own:
+                    self.blocks[y][x] &= 0x0FFF
+                    break
 
     def states(self):
         """Alternative looks a map script swaps in with setmetatile (spec "states": {name: [cells]}, e.g. Storm's
@@ -688,6 +714,23 @@ class Builder:
             json.dump(layouts, f, indent=2)
             f.write("\n")
 
+    def event_elevation(self, x, y, explicit=None):
+        """Elevation for a bg_event (hidden item, sign) at (x, y). The engine compares it with the PLAYER's elevation, so it must match the
+        walkable neighbour the player faces it from: 3 on land, 1 on surfable water, 4 on a bridge deck. An explicit spec value wins; else
+        the neighbours decide (a land neighbour -> 3; else the one value they share; else 0 = ELEVATION_TRANSITION, matches any player elevation). elev_lint.py proves the result."""
+        if explicit is not None:
+            return explicit
+        els = set()
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < self.w and 0 <= ny < self.h:
+                v = self.blocks[ny][nx]
+                if (v >> COLLISION_SHIFT) & 3 == 0 and (v >> ELEVATION_SHIFT) not in (0, 15):
+                    els.add(v >> ELEVATION_SHIFT)
+        if not els or 3 in els:
+            return 3     # reachable on foot: the usual land value (also keeps every existing event as it was)
+        return next(iter(els)) if len(els) == 1 else 0
+
     def write_events(self, root):
         name = self.spec["map"]
         mp = os.path.join(root, "data/maps", name, "map.json")
@@ -714,6 +757,12 @@ class Builder:
                          "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": it["item"],
                          "script": "Common_EventScript_FindItem", "flag": it["flag"]})
         m["object_events"] = objs
+        try:   # the approved overworld weather (weather_plan.py) survives a rebuild
+            import weather_plan
+            if weather_plan.header(name):
+                m["weather"] = weather_plan.header(name)
+        except ImportError:
+            pass
         # trigger tiles: run a (hand-written) script when the player steps on them while var == value (a flag id in "var" is
         # tested as a flag: it fires while the flag equals "value"; NEVER "var": "0", that is TRIGGER_RUN_IMMEDIATELY and
         # freezes on any msgbox). "elevation" (default 3) must match the player's elevation on the cell: 4 on bridges (deck
@@ -724,10 +773,10 @@ class Builder:
             for t in self.spec.get("triggers", [])
         ]
         m["bg_events"] = [
-            {"type": "hidden_item", "x": h["x"], "y": h["y"], "elevation": 3, "item": h["item"], "flag": h["flag"]}
+            {"type": "hidden_item", "x": h["x"], "y": h["y"], "elevation": self.event_elevation(h["x"], h["y"], h.get("elevation")), "item": h["item"], "flag": h["flag"]}
             for h in self.spec.get("hidden_items", [])
         ] + [
-            {"type": "sign", "x": g["x"], "y": g["y"], "elevation": g.get("elevation", 3), "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+            {"type": "sign", "x": g["x"], "y": g["y"], "elevation": self.event_elevation(g["x"], g["y"], g.get("elevation")), "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
              "script": f"{name}_EventScript_{g['id']}"}
             for g in self.spec.get("signs", [])
         ]

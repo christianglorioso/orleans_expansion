@@ -116,10 +116,10 @@ OVERLAY = {
         # inside the Route 14 connection (x 39-66) runs the same script, which turns the player back. The trigger's "var" is a
         # FLAG id, which the engine tests as a flag: it fires while FLAG_BADGE06_GET is clear (value 0) and turns itself off at
         # gym 6. (NEVER "var": "0": that is TRIGGER_RUN_IMMEDIATELY and freezes on a msgbox.) A later chapter replaces this
-        # with the real water state.
+        # with the real water state (fix B: crescent_flood.py).
         "triggers": [
-            {"x": x, "y": 65, "elevation": e, "var": "FLAG_BADGE06_GET", "value": 0, "script": "CrescentCity_EventScript_FloodedRoad"}
-            for x in range(39, 67) for e in (3, 1)  # the whole connection (Route 14 is 28 wide); elevation 1 = a surfer on the water
+            {"x": x, "y": 63, "elevation": 3, "var": "FLAG_BADGE06_GET", "value": 0, "script": "CrescentCity_EventScript_FloodedRoad"}
+            for x in range(39, 67)  # the whole connection (Route 14 is 28 wide), on the water's bank row (the water itself is rows 64-65)
         ],
     },
 }
@@ -315,6 +315,38 @@ def _merge_gates():
 
 
 _merge_gates()
+
+# ---------------------------------------------------------------------------------------------- trainer sight fixes (fix B, audit ch8_2 N2 + sight_lint.py)
+# A rock or wall in the first cell blinds a trainer: those are moved or turned so their line is open. (A land trainer looking over water is
+# fixed in build.py's sight_cells(): the cell under it gets elevation 0, the engine ignores a spawned NPC's template elevation.)
+# sight_lint.py proves every sight trainer can spot a player somewhere.
+SIGHT_FIXES = {
+    "Route11": {"LOCALID_ORLEANS_ROUTE11_TRAINER_0": {"move": FACE + "LEFT"}},                      # a rock stood right below him (43, 6): look along the water
+    "Route18": {"LOCALID_ORLEANS_ROUTE18_TRAINER_7": {"move": FACE + "RIGHT"}},                      # the rock formation stood right above her
+    "Route22": {"LOCALID_ORLEANS_ROUTE22_TRAINER_1": {"x": 28, "y": 14}},                            # Leontine: the rock at (27, 14) blinded her
+    "Route25": {"LOCALID_ORLEANS_ROUTE25_TRAINER_2": {"x": 14}},                                     # Genevieve: the rock at (13, 16)
+}
+for _m, _f in SIGHT_FIXES.items():
+    OVERLAY.setdefault(_m, {}).setdefault("patch_objects", {})
+    for _lid, _fields in _f.items():
+        OVERLAY[_m]["patch_objects"].setdefault(_lid, {}).update(_fields)
+
+# the Route 22 ruin sign stands on the island's shore and is read by swimmers from the water (elevation 1) as well as from land: 0 matches both (ch8_2 S3)
+OVERLAY.setdefault("Route22", {}).setdefault("patch_signs", {})["RouteSign1"] = {"elevation": 0}
+
+# ---------------------------------------------------------------------------------------------- Heart Scales (fix B, ch3_2 R1)
+# The move tutor (CrescentCity_Tutor) charges one HEART SCALE a lesson and says they "wash up on the flats", but no scale existed anywhere.
+# Six hidden ones on shores and flats (the shop sells more: fix C). Flags are hidden-item flags from flag_pool.py (>= 0x1F4).
+HEART_SCALES = [
+    ("Route2", 14, 18, "FLAG_HIDDEN_HEART_SCALE_ROUTE2", "the lake bank below the road"),
+    ("Route3", 23, 13, "FLAG_HIDDEN_HEART_SCALE_ROUTE3", "the mud flats south of the bridge"),
+    ("Route5", 37, 14, "FLAG_HIDDEN_HEART_SCALE_ROUTE5", "the lakeshore"),
+    ("Route9", 29, 7, "FLAG_HIDDEN_HEART_SCALE_ROUTE9", "the marsh shore"),
+    ("Route12", 11, 38, "FLAG_HIDDEN_HEART_SCALE_ROUTE12", "the shallows"),
+    ("StormsEdge", 29, 14, "FLAG_HIDDEN_HEART_SCALE_STORMS_EDGE", "the harbour shingle"),
+]
+for _m, _x, _y, _flag, _note in HEART_SCALES:
+    OVERLAY.setdefault(_m, {}).setdefault("add_hidden", []).append({"x": _x, "y": _y, "item": "ITEM_HEART_SCALE", "flag": _flag, "_note": _note})
 
 # ---------------------------------------------------------------------------------------------- NPC lines that were leaked spec notes
 import story_data_npc_text as _npct  # noqa: E402

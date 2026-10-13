@@ -235,6 +235,8 @@ def main(args):
                                 for dx in (0, 1) for dy in (0, 1))]
         if edge:
             problems.append(f"{bld['label']} at ({bld['x']},{bld['y']}) crosses its patch edge at {edge[:4]}")
+    import elev_lint  # a hidden item or sign the player cannot face at its own elevation (ch8_2 N1)
+    problems += [f"elevation: {p}" for p in elev_lint.lint([b.spec["map"]])]
     print(f"gameplay problems: {len(problems)}")
     for p in problems:
         print("  " + p)

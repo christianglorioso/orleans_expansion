@@ -203,8 +203,8 @@ SPRITE_OVERRIDES = {
     ("CampCocodrie_BaitShack", 0): "FISHERMAN", ("CampCocodrie_Cabin4", 0): "WOMAN_4", ("CampCocodrie_Gym", 2): "MAN_4",
     ("CampCocodrie_DancePorch", 0): "BARD", ("CampCocodrie_DancePorch", 1): "WOMAN_3",
     ("LutinsHollow_Herbalist", 0): "OLD_WOMAN", ("LutinsHollow_Pokecenter", 1): "WOMAN_3",
-    ("LutinsHollow_Gym", 0): "MAN_5", ("LutinsHollow_Gym", 1): "MAN_5", ("LutinsHollow_Gym", 2): "MAN_5",   # the four lutins look alike
-    ("LutinsHollow_Gym", 3): "MAN_5", ("LutinsHollow_Gym", 6): "WOMAN_4",
+    ("LutinsHollow_Gym", 0): "HEX_MANIAC", ("LutinsHollow_Gym", 1): "HEX_MANIAC", ("LutinsHollow_Gym", 2): "HEX_MANIAC",   # the four lutins look alike: Lutin is a woman (all four, so the sprite does not give the real one away)
+    ("LutinsHollow_Gym", 3): "HEX_MANIAC", ("LutinsHollow_Gym", 6): "WOMAN_4",
     ("Redfield_Gym", 3): "MAN_4", ("LandsEnd_Gym", 3): "WOMAN_4",
     ("LandsEnd_Lookout", 0): "SAILOR", ("LandsEnd_House4", 0): "OLD_MAN",
 }

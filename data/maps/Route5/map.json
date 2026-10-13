@@ -138,6 +138,14 @@
       "flag": "FLAG_ROUTE5_HIDDEN_SUN_STONE"
     },
     {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 14,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_HEART_SCALE_ROUTE5"
+    },
+    {
       "type": "sign",
       "x": 39,
       "y": 1,

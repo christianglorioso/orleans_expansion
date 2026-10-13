@@ -138,15 +138,15 @@
     },
     {
       "type": "sign",
-      "x": 43,
-      "y": 24,
+      "x": 38,
+      "y": 7,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route24_EventScript_RouteSign2"
     },
     {
       "type": "sign",
-      "x": 34,
+      "x": 39,
       "y": 6,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

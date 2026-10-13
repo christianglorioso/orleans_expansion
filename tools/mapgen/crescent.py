@@ -34,6 +34,7 @@ needed: build, compose, build), runs check.py and draws the review sheet maps/00
 build_interior.py (or pass --relink) so the rooms' exits point at the right door warps. Note: build.py rewrites
 data/layouts/layouts.json; never run it while another tool writes that file.
 """
+import crescent_flood
 import json
 import os
 import subprocess
@@ -692,6 +693,7 @@ def write(c):
             "layout_dir": "data/layouts/CrescentCity", "tileset": CFG, "mockup": "../orleans_maps/04_crescent_city.png",
             "grid": KEY + ".grid.txt", "edits": [], "buildings": c.buildings, "objects": c.objects, "surf_only": [],
             "items": [], "hidden_items": [], "signs": c.signs,
+            "states": crescent_flood.STATES,   # the floodwater on the Route 14 road until badge 6 (CrescentCity_OnLoad)
             "levee_phase": [8, 12],  # shifts the riprap so the north run's corner onto the east bank has no stone-edge seam
             "exits": [{"name": "Route 3 causeway (west)", "cells": [[0, 43], [0, 44]]},
                       {"name": "Route 14 levee road (south)", "cells": [[38 + OX, 65], [39 + OX, 65]]},

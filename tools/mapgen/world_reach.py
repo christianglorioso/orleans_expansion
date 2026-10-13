@@ -89,6 +89,9 @@ def blockers(name, flags):
         var = str(c.get("var", ""))
         if var.startswith("FLAG_") and str(c.get("var_value", "0")) == "0" and var not in flags:
             out.add((c["x"], c["y"]))
+    if name == "CrescentCity" and "FLAG_BADGE06_GET" not in flags:   # the floodwater state (crescent_flood.py): rows 64-65 are water nobody crosses
+        import crescent_flood
+        out |= {(c["x"], c["y"]) for c in crescent_flood.cells() if c["collision"]}
     return out
 
 

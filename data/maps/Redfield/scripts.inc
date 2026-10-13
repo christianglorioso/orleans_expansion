@@ -569,7 +569,7 @@ Redfield_EventScript_SignTown::
 	end
 
 Redfield_Text_SignTown:
-	.string "REDFIELD\nSugarcane and pepper country. Mill road west to Route 17.$"
+	.string "REDFIELD\nSugarcane and pepper country.\pMill road west to Route 17.$"
 
 Redfield_EventScript_SignMill::
 	msgbox Redfield_Text_SignMill, MSGBOX_SIGN

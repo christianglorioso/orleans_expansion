@@ -1,7 +1,7 @@
 Route22_MapScripts::
 	.byte 0
 
-@ The dive spot (Chapter 9, F.1): stand on the islet's east tip (13, 20) facing the water (14, 20). Needs the Diving Gear (Heron, gym 8) and
+@ The dive spot (Chapter 9, F.1): Surf up to the ruin door and face it from the water at (5, 24). Needs the Diving Gear (Heron, gym 8) and
 @ the telling (story >= 39); it leads down to the Drowned Temple's Tide Hall (Kyogre's raid arena).
 Route22_EventScript_DiveSpot::
 	lockall
@@ -26,8 +26,8 @@ Route22_EventScript_DiveNotYet:
 	end
 
 Route22_Text_DiveNoGear:
-	.string "The water past the islet is dark and\n"
-	.string "deep. Without gear, you'd never\p"
+	.string "The water before the door is dark\n"
+	.string "and deep. Without gear, you'd never\p"
 	.string "come back up.$"
 
 Route22_Text_DiveNotYet:

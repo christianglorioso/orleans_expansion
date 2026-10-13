@@ -123,7 +123,7 @@ ROOMS = [
     room(GO, CONS, map="GrandOak_Gym", const="MAP_GRAND_OAK_GYM", door_label="Gym: glass conservatory", mockup="grand_oak_gym",
          music="MUS_GYM",
          people=[("guide", "MAGNOLIA's waiting at the heart\\nof the maze. Don't get lost!"),
-                 ("gardener", "", {"custom": True, "sight": 2}),
+                 ("gardener", "", {"custom": True, "sight": 2, "face": "LEFT"}),   # faces along the corridor (down was a hedge: sight_lint)
                  ("aroma lady", "", {"custom": True, "sight": 2}),
                  ("magnolia", "", {"custom": True})]),
     # ---------------- The Old Water

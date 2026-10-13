@@ -1608,13 +1608,13 @@
       "id": "SignTown",
       "x": 3,
       "y": 16,
-      "text": "REDFIELD\nSugarcane and pepper country. Mill road west to Route 17."
+      "text": "REDFIELD\nSugarcane and pepper country.\\pMill road west to Route 17."
     },
     {
       "id": "SignMill",
       "x": 28,
       "y": 16,
-      "text": "REDFIELD SUGAR MILL\nCayenne's mill yard. Mind the mirrors: it only\nworks by day."
+      "text": "REDFIELD SUGAR MILL\nCayenne's mill yard.\\pThe mirrors only work by day."
     },
     {
       "id": "SignSundial",

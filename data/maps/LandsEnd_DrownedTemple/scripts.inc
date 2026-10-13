@@ -39,7 +39,7 @@ LandsEnd_DrownedTemple_EventScript_NotYet:
 LandsEnd_DrownedTemple_EventScript_Exit::
 	lockall
 	fadescreen FADE_TO_BLACK
-	warpsilent MAP_ORLEANS_ROUTE22, 13, 20
+	warpsilent MAP_ORLEANS_ROUTE22, 5, 24
 	waitstate
 	releaseall
 	end

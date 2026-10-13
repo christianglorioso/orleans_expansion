@@ -281,8 +281,8 @@ def dress(t):
 
 def signs(t):
     for sid, x, y, text in (
-            ("SignTown", 3, 16, "REDFIELD\nSugarcane and pepper country. Mill road west to Route 17."),
-            ("SignMill", 28, 16, "REDFIELD SUGAR MILL\nCayenne's mill yard. Mind the mirrors: it only\nworks by day."),
+            ("SignTown", 3, 16, "REDFIELD\nSugarcane and pepper country.\\pMill road west to Route 17."),
+            ("SignMill", 28, 16, "REDFIELD SUGAR MILL\nCayenne's mill yard.\\pThe mirrors only work by day."),
             ("SignSundial", 13, 28, "THE GREAT SUNDIAL\nRedfield keeps its time by the sun."),
             ("SignWorks", 24, 33, "PEPPER-SAUCE BOTTLING WORKS\nBottled hot. Tour the line any day."),
             ("SignLanding", 43, 27, "ROUTE 18 RIVER LANDING\nBoats cross to the east bank.")):

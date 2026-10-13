@@ -108,6 +108,7 @@ LandsEnd_EventScript_JaydenDone:
 
 @ 8.5: the storm cinematic; the dust storms on Route 23 lift (the Pointe Rouge gate keys on FLAG_DUST_STORMS_LIFTED); a Pelipper brings Tupelo's note
 LandsEnd_EventScript_RayquazaWakes:
+	setflag FLAG_PREVENT_OVERWORLD_SPEEDUP @ storm cinematic: 1x (cleared on the next map load)
 	fadescreen FADE_TO_WHITE
 	playse SE_THUNDER
 	waitse
@@ -258,7 +259,7 @@ LandsEnd_EventScript_SignWest::
 	end
 
 LandsEnd_Text_SignWest:
-	.string "LAND'S END\nWest: the Route 20 boat to the heron rookery.$"
+	.string "LAND'S END\nWest: Route 20, by Surf.$"
 
 LandsEnd_EventScript_SignPavilion::
 	msgbox LandsEnd_Text_SignPavilion, MSGBOX_SIGN

@@ -568,12 +568,12 @@
 #define FLAG_CAMP_HIDDEN_PEAT_BLOCK                      (FLAG_HIDDEN_ITEMS_START + 0x06) // Orleans Ch5: hidden Peat Block at the camp
 #define FLAG_ROUTE11_HIDDEN_ICE_STONE                    (FLAG_HIDDEN_ITEMS_START + 0x07) // Orleans Ch6: hidden Ice Stone on Route 11
 #define FLAG_ROUTE19_HIDDEN_DOME_FOSSIL                  (FLAG_HIDDEN_ITEMS_START + 0x08) // Chapter 8: hidden Dome Fossil on Route 19's tidal flats
-#define FLAG_ORLEANS_POOL_184                           (FLAG_HIDDEN_ITEMS_START + 0x09)
-#define FLAG_ORLEANS_POOL_185                           (FLAG_HIDDEN_ITEMS_START + 0x0A)
-#define FLAG_ORLEANS_POOL_186                           (FLAG_HIDDEN_ITEMS_START + 0x0B)
-#define FLAG_ORLEANS_POOL_187                           (FLAG_HIDDEN_ITEMS_START + 0x0C)
-#define FLAG_ORLEANS_POOL_188                           (FLAG_HIDDEN_ITEMS_START + 0x0D)
-#define FLAG_ORLEANS_POOL_189                           (FLAG_HIDDEN_ITEMS_START + 0x0E)
+#define FLAG_HIDDEN_HEART_SCALE_ROUTE2                   (FLAG_HIDDEN_ITEMS_START + 0x09) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
+#define FLAG_HIDDEN_HEART_SCALE_ROUTE3                   (FLAG_HIDDEN_ITEMS_START + 0x0A) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
+#define FLAG_HIDDEN_HEART_SCALE_ROUTE5                   (FLAG_HIDDEN_ITEMS_START + 0x0B) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
+#define FLAG_HIDDEN_HEART_SCALE_ROUTE9                   (FLAG_HIDDEN_ITEMS_START + 0x0C) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
+#define FLAG_HIDDEN_HEART_SCALE_ROUTE12                  (FLAG_HIDDEN_ITEMS_START + 0x0D) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
+#define FLAG_HIDDEN_HEART_SCALE_STORMS_EDGE              (FLAG_HIDDEN_ITEMS_START + 0x0E) // Orleans fix B: hidden Heart Scales on the shores (move tutor)
 #define FLAG_ORLEANS_POOL_190                           (FLAG_HIDDEN_ITEMS_START + 0x0F)
 #define FLAG_ORLEANS_POOL_191                           (FLAG_HIDDEN_ITEMS_START + 0x10)
 #define FLAG_ORLEANS_POOL_192                           (FLAG_HIDDEN_ITEMS_START + 0x11)

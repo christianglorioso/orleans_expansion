@@ -164,15 +164,19 @@ def crescent():
     m = json.load(open("data/maps/CrescentCity/map.json"))
     ev = [(c["x"], c["y"], c["elevation"]) for c in m["coord_events"] if "FloodedRoad" in c["script"]]
     trig = [(x, y) for x, y, _ in ev]
-    g = Grid("CrescentCity")
-    check(bool(trig), f"Crescent City: {len(ev)} floodwater trigger events in the bottom row")
+    import crescent_flood   # the floodwater state (fix B): rows 64-65 of the connection are water (collision) until badge 6, the trigger row is 63
+    flood = {(c["x"], c["y"]): (1, 3) for c in crescent_flood.cells() if c["collision"]}
+    g = Grid("CrescentCity", raised=flood)
+    check(bool(trig) and all(y == 63 for _, y in trig), f"Crescent City: {len(ev)} floodwater trigger events on the bank row 63")
     reach = g.fill([(3, 43), (3, 44)], stop=trig)
-    south = sorted(x for (x, y) in reach if y == g.h - 1 and 39 <= x <= 66)
-    check(not south, f"Crescent City: with the triggers blocked no bottom-row cell inside the Route 14 connection is reachable (found {south})")
-    # every standable cell of the connection (water included: a surfer is at the water's elevation) has a trigger at its own elevation
-    stand = [(x, g.mb[(g.h - 1) * g.w + x] >> 12) for x in range(39, 67) if not (g.mb[(g.h - 1) * g.w + x] >> 10) & 3]
-    unc = [(x, e) for x, e in stand if not any(tx == x and ty == g.h - 1 and te in (e, 0) for tx, ty, te in ev)]
-    check(not unc, f"Crescent City: every standable bottom-row cell in x 39-66 (surf included) is a trigger at its elevation (uncovered: {unc})")
+    south = sorted((x, y) for (x, y) in reach if y >= 63 and 39 <= x <= 66)
+    check(not south, f"Crescent City: with the triggers blocked and the water in, no cell of rows 63-65 inside the Route 14 connection is reachable (found {south})")
+    # every standable cell of the bank row (a surfer is at the water's elevation) has a trigger at its own elevation
+    stand = [(x, g.cell(x, 63)[1]) for x in range(39, 67) if g.cell(x, 63)[0] == 0]
+    unc = [(x, e) for x, e in stand if not any(tx == x and ty == 63 and te in (e, 0) for tx, ty, te in ev)]
+    check(not unc, f"Crescent City: every standable bank-row cell in x 39-66 is a trigger at its elevation (uncovered: {unc})")
+    open_ = Grid("CrescentCity").fill([(3, 43), (3, 44)])
+    check(any(y == 65 and 39 <= x <= 66 for x, y in open_), "Crescent City: without the water and triggers the road IS open (sanity)")
 
 
 def crescent_doors():
@@ -361,8 +365,8 @@ def world_gates():
     want40 = want38 | {"Route25", "OldestShrine"}
     check(s40 == want40, f"story 40 (both raids done, FLAG_ROUTE25_OPEN): Route 25 and the Oldest Shrine open, and only then (extra {sorted(s40 - want40)}, missing {sorted(want40 - s40)})")
     r40 = W.reach(starts, {"FLAG_ROUTE6_DEBRIS_CLEARED", "FLAG_BADGE05_GET", "FLAG_BADGE06_GET", "FLAG_BADGE07_GET", "FLAG_BADGE08_GET", "FLAG_DUST_STORMS_LIFTED"})
-    check((13, 20) in r40.get("Route22", ()) and (34, 7) in r40.get("Route24", ()),
-          "the dive spot's standing cell Route 22 (13, 20) and the shaft's Route 24 (34, 7) are reachable by story 38 (before the raids)")
+    check((5, 24) in r40.get("Route22", ()) and (39, 7) in r40.get("Route24", ()),
+          "the dive spot's standing cell Route 22 (5, 24) and the shaft's Route 24 (39, 7) are reachable by story 38 (before the raids)")
 
 
 def camp_cocodrie():

@@ -108,13 +108,15 @@ def _patch(m):
 ROUTE23 = {"patch_objects": _patch("Route23")}
 ROUTE24 = {
     "patch_objects": _patch("Route24"),
-    # the cracked shaft in the rock wall (the way down to the Salt Cathedral): press A facing it from (34, 7); the Lantern lights the way
-    "signs": [{"id": "SaltShaft", "x": 34, "y": 6, "text": "", "custom": True}],
+    # the cracked shaft in the rock wall (the way down to the Salt Cathedral): press A facing it from (39, 7); the Lantern lights the way
+    # (fix B: the trigger sits on the visible dome door, the sign beside it)
+    "signs": [{"id": "SaltShaft", "x": 39, "y": 6, "text": "", "custom": True}],
 }
 ROUTE25 = {"patch_objects": _patch("Route25")}
 ROUTE22 = {
-    # the dive spot at the end of Route 22: stand on the islet's east tip (13, 20) facing the water (14, 20)
-    "signs": [{"id": "DiveSpot", "x": 14, "y": 20, "elevation": 1, "text": "", "custom": True}],  # the islet is at water level (elevation 1)
+    # the dive spot: Surf up to the ruin door and face it from the water cell (5, 24); the trigger is the door's water cell (5, 23), elevation 1
+    # (a surfer's elevation). The Route 22 sign (2, 23) is elevation 0 (any) so it reads from the water too (fix B, ch8_2 S3)
+    "signs": [{"id": "DiveSpot", "x": 5, "y": 23, "elevation": 1, "text": "", "custom": True}],
 }
 
 # ---------------------------------------------------------------------------------------------- the Oldest Shrine (outdoors)

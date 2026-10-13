@@ -624,7 +624,7 @@
       "type": "hidden_item",
       "x": 21,
       "y": 14,
-      "elevation": 3,
+      "elevation": 1,
       "item": "ITEM_MAX_REVIVE",
       "flag": "FLAG_UNUSED_0x2A3"
     }

@@ -292,7 +292,7 @@ def marsh(t):
 
 def signs(t):
     for sid, x, y, text in (
-            ("SignWest", 2, 14, "LAND'S END\nWest: the Route 20 boat to the heron rookery."),
+            ("SignWest", 2, 14, "LAND'S END\nWest: Route 20, by Surf."),
             ("SignPavilion", 24, 35, "THE RAIN PAVILION\nSeven carved verses. Mind the rain.")):
         if not t.have("sign") or (x, y) in t.occ and (x, y) not in t.walk:
             t.skipped.append(("sign", x, y))

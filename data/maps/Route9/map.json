@@ -107,6 +107,14 @@
       "flag": "FLAG_UNUSED_0x297"
     },
     {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_HEART_SCALE_ROUTE9"
+    },
+    {
       "type": "sign",
       "x": 18,
       "y": 11,

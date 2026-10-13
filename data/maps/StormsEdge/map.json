@@ -276,6 +276,14 @@
       "flag": "FLAG_HIDDEN_ITEM_STORMS_EDGE_PIER"
     },
     {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 14,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_HEART_SCALE_STORMS_EDGE"
+    },
+    {
       "type": "sign",
       "x": 13,
       "y": 15,

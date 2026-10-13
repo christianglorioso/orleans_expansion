@@ -81,6 +81,6 @@ Route15_EventScript_RouteSign1::
 	end
 
 Route15_Text_RouteSign1:
-	.string "SUNKEN CANE CO.\nHarvest burn at dusk. Mind the smoke.$"
+	.string "SUNKEN CANE CO.\nHarvest burn at dusk. Mind smoke.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

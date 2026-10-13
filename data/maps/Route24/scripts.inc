@@ -2,7 +2,7 @@ Route24_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route24_OnTransitionPG
 	.byte 0
 
-@ The cracked shaft (Chapter 9, F.2): stand below it at (34, 7) facing up. Needs the Lantern (Fifolet) and the telling (story >= 39); it leads
+@ The cracked shaft (Chapter 9, F.2): stand below the dome's door at (39, 7) facing up. Needs the Lantern (Fifolet) and the telling (story >= 39); it leads
 @ down to the Salt Cathedral (Groudon's raid arena).
 Route24_EventScript_SaltShaft::
 	lockall
@@ -133,13 +133,13 @@ Route24_EventScript_RouteSign1::
 	end
 
 Route24_Text_RouteSign1:
-	.string "LANTERN MINE\nTunnels abandoned. Enter at your own risk.$"
+	.string "LANTERN MINE\nTunnels abandoned.\pEnter at your own risk.$"
 
 Route24_EventScript_RouteSign2::
 	msgbox Route24_Text_RouteSign2, MSGBOX_SIGN
 	end
 
 Route24_Text_RouteSign2:
-	.string "SALT-DOME CAVERN\nA deep shaft. Something sleeps below.$"
+	.string "SALT-DOME CAVERN\nA deep shaft. Something sleeps.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

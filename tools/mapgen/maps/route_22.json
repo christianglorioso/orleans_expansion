@@ -142,8 +142,8 @@
       10
     ],
     [
-      27,
-      13
+      28,
+      14
     ],
     [
       15,
@@ -169,7 +169,7 @@
       "id": "RouteSign1",
       "x": 2,
       "y": 23,
-      "text": "DROWNED TEMPLE\nDive here. Diving Gear required."
+      "text": "DROWNED TEMPLE\nDive at the door. Gear needed."
     }
   ],
   "exits": []
