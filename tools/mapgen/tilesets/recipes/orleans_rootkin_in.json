@@ -954,6 +954,49 @@
         }
       ],
       "group_rule": "fewest"
+    },
+    {
+      "name": "ec",
+      "type": "image",
+      "image": "tools/mapgen/tilesets/interior_caps/caps_rootkin.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "metatiles": [
+        {
+          "id": "rk_top_L",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "rk_top_R",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "rk_foot_L",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "rk_foot_R",
+          "bottom": [
+            3,
+            0
+          ]
+        }
+      ]
     }
   ]
 }

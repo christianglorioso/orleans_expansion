@@ -1,4 +1,6 @@
 {
+"sig": null,
+"content": null,
 "tileset": "gTileset_OrleansConservatory",
 "kind": "secondary",
 "backdrop": [
@@ -30,7 +32,12 @@
 "cg:437": 529,
 "cg:438": 530,
 "cg:439": 531,
-"cg:46E": 532
+"cg:46E": 532,
+"ec:cv_top0_L": 536,
+"ec:cv_top0_R": 537,
+"ec:cv_top1_L": 538,
+"ec:cv_top1_R": 539,
+"ec:cv_foot": 540
 },
 "palettes": null,
 "tiles": {}

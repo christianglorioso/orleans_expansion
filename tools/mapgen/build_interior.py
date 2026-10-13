@@ -169,6 +169,58 @@ def mockup_room(room):
     return grid, exits, spots
 
 
+# ------------------------------------------------------------------ wall end caps
+def cap_names(grid, tileset, M):
+    """Wall-end pieces (tilesets/interior_caps, own art): {(x, y): mapping name} for the cells of this room that end a wall bar or a
+    wall column. The rule is make_caps.placements(): generic rooms cap the two ends of the top wall row (jb:0A8) and of the lower row
+    (jb:0B0) where the next cell is off the map or the black surround; Rootkin huts cap the four corners of the plank frame (rk:side);
+    the Shelter pillar and the Church side cap the top and bottom of both edge columns; the conservatory caps the glass roof's ends
+    and both bottom corners. A piece keeps the collision and elevation of the cell it replaces. Nothing is placed in a tileset whose
+    composed mapping has no pieces yet."""
+    H, W = len(grid), len(grid[0])
+    g = [[v & 0x3FF for v in row] for row in grid]
+    out = {}
+    black = {M[n] for n in ("jb:000", "jb:008") if n in M}
+
+    def ends_of_run(y, ident, left, right):
+        # an end is a wall cell whose neighbour is off the map or black (not a machine or shelf on the wall)
+        for x in range(W):
+            if g[y][x] != ident:
+                continue
+            if x == 0 or g[y][x - 1] in black:
+                out[(x, y)] = left
+            elif x == W - 1 or g[y][x + 1] in black:
+                out[(x, y)] = right
+
+    def column(ident, top, foot, x, side):
+        ys = [y for y in range(H) if g[y][x] == ident]
+        if ys:
+            out[(x, min(ys))] = f"{top}_{side}"
+            out[(x, max(ys))] = f"{foot}_{side}"
+
+    if tileset == "orleans_interior" and "ec:gen_top_L" in M and "jb:0A8" in M and g[0][0] == M["jb:0A8"]:
+        ends_of_run(0, M["jb:0A8"], "ec:gen_top_L", "ec:gen_top_R")
+        ends_of_run(1, M["jb:0B0"], "ec:gen_foot_L", "ec:gen_foot_R")
+    elif tileset == "orleans_rootkin_in" and "ec:rk_top_L" in M:
+        for x, sd in ((0, "L"), (W - 1, "R")):
+            column(M["rk:side"], "ec:rk_top", "ec:rk_foot", x, sd)
+    elif tileset == "orleans_hall" and "ec:ch_top_L" in M:
+        for name, pre in (("th:44D", "es:sh"), ("cw:side", "ec:ch")):
+            if g[0][0] == M[name]:
+                for x, sd in ((0, "L"), (W - 1, "R")):
+                    column(M[name], pre + "_top", pre + "_foot", x, sd)
+    elif tileset == "orleans_conservatory" and "ec:cv_foot" in M:
+        out[(0, 0)], out[(W - 1, 0)] = "ec:cv_top0_L", "ec:cv_top0_R"
+        out[(0, 1)], out[(W - 1, 1)] = "ec:cv_top1_L", "ec:cv_top1_R"
+        out[(0, H - 1)] = out[(W - 1, H - 1)] = "ec:cv_foot"
+    return out
+
+
+def place_caps(grid, tileset, M):
+    for (x, y), n in cap_names(grid, tileset, M).items():
+        grid[y][x] = (grid[y][x] & ~0x3FF) | M[n]
+
+
 # ------------------------------------------------------------------ events and files
 # Interior NPC sprites. gfx_for(text, kind, map, index): an explicit {"gfx": ...} option wins (checked by the caller), then
 # SPRITE_OVERRIDES[(map, index)], then SPRITE_BY_KIND[kind] (the role word of the room's people list), then a role word found in
@@ -268,6 +320,8 @@ def build(room, door_warps):
                     grid[y][x] = (grid[y][x] & ~0x3FF & ~0xC00) | M[b]
     for name_, x, y, coll in room.get("stamps", []):
         grid[y][x] = block(M[name_], coll, grid[y][x] >> 12)
+    if not room.get("no_caps"):
+        place_caps(grid, room["tileset"], M)
     # layout files
     d = f"data/layouts/{name}"
     os.makedirs(d, exist_ok=True)

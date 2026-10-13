@@ -85,7 +85,7 @@
       "primary_layers": 3,
       "ids": [
         "405",
-                "40D",
+        "40D",
         "415",
         "41D",
         "425",
@@ -97,6 +97,56 @@
         "438",
         "439",
         "46E"
+      ]
+    },
+    {
+      "name": "ec",
+      "type": "image",
+      "image": "tools/mapgen/tilesets/interior_caps/caps_conservatory.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "metatiles": [
+        {
+          "id": "cv_top0_L",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cv_top0_R",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "cv_top1_L",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "cv_top1_R",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "cv_foot",
+          "bottom": [
+            4,
+            0
+          ]
+        }
       ]
     }
   ]

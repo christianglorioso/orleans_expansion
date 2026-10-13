@@ -1,4 +1,6 @@
 {
+"sig": null,
+"content": null,
 "tileset": "gTileset_OrleansRootkinIn",
 "kind": "secondary",
 "backdrop": [
@@ -99,7 +101,11 @@
 "rk:bedrollm_R": 598,
 "rk:net_L": 599,
 "rk:net_M": 600,
-"rk:net_R": 601
+"rk:net_R": 601,
+"ec:rk_top_L": 608,
+"ec:rk_top_R": 609,
+"ec:rk_foot_L": 610,
+"ec:rk_foot_R": 611
 },
 "palettes": null,
 "tiles": {}

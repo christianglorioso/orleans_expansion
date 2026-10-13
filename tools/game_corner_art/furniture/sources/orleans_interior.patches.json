@@ -45,42 +45,48 @@
   "id": "gc_counter_L",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:counter_L"
+   "art": "gc_gold:counter_L",
+   "behavior": "MB_COUNTER"
   }
  },
  {
   "id": "gc_case_L",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:case_L"
+   "art": "gc_gold:case_L",
+   "behavior": "MB_COUNTER"
   }
  },
  {
   "id": "gc_counter_M",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:counter_M"
+   "art": "gc_gold:counter_M",
+   "behavior": "MB_COUNTER"
   }
  },
  {
   "id": "gc_case_M",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:case_M"
+   "art": "gc_gold:case_M",
+   "behavior": "MB_COUNTER"
   }
  },
  {
   "id": "gc_counter_R",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:counter_R"
+   "art": "gc_gold:counter_R",
+   "behavior": "MB_COUNTER"
   }
  },
  {
   "id": "gc_case_R",
   "overlay": {
    "base": "pc:0CC",
-   "art": "gc_gold:case_R"
+   "art": "gc_gold:case_R",
+   "behavior": "MB_COUNTER"
   }
  },
  {

@@ -109,6 +109,26 @@ def people(spec):
     return out, pos
 
 
+# Game Corner furniture (own art, tools/game_corner_art/furniture, composed into gTileset_OrleansInterior as overlay patches): where each
+# piece goes in the 21x14 hall. Every cell blocks; the signs, the clerks and the attendant keep their cells (story_data_gamecorner.py).
+GC_PLACES = {"gacha_basic": (2, 2), "gacha_great": (4, 2), "gacha_ultra": (6, 2), "gacha_master": (8, 2), "bj": (8, 7),
+             "derby": (12, 2), "case_L": (17, 3), "case_M": (18, 3), "case_R": (19, 3),
+             "counter_L": (2, 8), "counter_M": (3, 8), "counter_R": (4, 8)}
+
+
+def game_corner_stamps():
+    import json
+    import os
+    f = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "game_corner_art", "furniture", "furniture.json"),
+                       encoding="utf-8"))["pieces"]
+    out = []
+    for piece, (ox, oy) in GC_PLACES.items():
+        for cx, cy, name, _ in f[piece]["cells"]:
+            # the attendant stands on the window's upper row (13,2): that one cell is floor, the rest of the piece blocks
+            out.append((name, ox + cx, oy + cy, 0 if (ox + cx, oy + cy) == (13, 2) else 1))
+    return out
+
+
 def world_rooms(room):
     rooms = []
     for key, spec in mock.INTERIORS.items():
@@ -123,6 +143,8 @@ def world_rooms(room):
         ppl, pos = story_overlay.interior_people(key, ppl, pos)  # the story pass swaps a room's people
         r = room(base, GENERIC, map=name, const="MAP_" + re.sub(r"(?<!^)(?=[A-Z])", "_", name).upper().replace("__", "_"),
                  mockup=key, people=ppl, positions=pos, title=spec["title"])
+        if key == "crescent_city_game_corner":
+            r["stamps"] = game_corner_stamps()
         if any(p[0] == "clerk" for p in ppl):
             r["mart"] = MART_LATE if key in LATE_MARTS else MART
         if key in UPSTAIRS:

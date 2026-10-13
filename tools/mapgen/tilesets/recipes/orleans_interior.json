@@ -150,7 +150,573 @@
           "behavior": "MB_POND_WATER"
         }
       ]
+    },
+    {
+      "name": "ec",
+      "type": "image",
+      "image": "tools/mapgen/tilesets/interior_caps/caps_interior.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "metatiles": [
+        {
+          "id": "gen_top_L",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "gen_top_R",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "gen_foot_L",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "gen_foot_R",
+          "bottom": [
+            3,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_red",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_red.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "gacha_basic_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "gacha_basic_1",
+          "bottom": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_blue",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_blue.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "gacha_great_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "gacha_great_1",
+          "bottom": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_gold",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_gold.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "gacha_ultra_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "gacha_ultra_1",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "counter_L",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "case_L",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "counter_M",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "case_M",
+          "bottom": [
+            4,
+            0
+          ]
+        },
+        {
+          "id": "counter_R",
+          "bottom": [
+            5,
+            0
+          ]
+        },
+        {
+          "id": "case_R",
+          "bottom": [
+            6,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_purple",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_purple.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "gacha_master_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "gacha_master_1",
+          "bottom": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_table",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_table.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "bj_0_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "bj_1_0",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "bj_2_0",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "bj_3_0",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "bj_0_1",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "bj_1_1",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "bj_2_1",
+          "bottom": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": "bj_3_1",
+          "bottom": [
+            3,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "gc_derby",
+      "type": "image",
+      "image": "tools/game_corner_art/furniture/gc_derby.png",
+      "transparent": [
+        [
+          255,
+          0,
+          255
+        ]
+      ],
+      "group_rule": "fewest",
+      "overlay_only": true,
+      "metatiles": [
+        {
+          "id": "derby_0_0",
+          "bottom": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "derby_1_0",
+          "bottom": [
+            1,
+            0
+          ]
+        },
+        {
+          "id": "derby_2_0",
+          "bottom": [
+            2,
+            0
+          ]
+        },
+        {
+          "id": "derby_3_0",
+          "bottom": [
+            3,
+            0
+          ]
+        },
+        {
+          "id": "derby_0_1",
+          "bottom": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "derby_1_1",
+          "bottom": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "derby_2_1",
+          "bottom": [
+            2,
+            1
+          ]
+        },
+        {
+          "id": "derby_3_1",
+          "bottom": [
+            3,
+            1
+          ]
+        }
+      ]
     }
   ],
-  "patches": []
+  "patches": [
+    {
+      "id": "gc_gacha_basic_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_red:gacha_basic_0"
+      }
+    },
+    {
+      "id": "gc_gacha_basic_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_red:gacha_basic_1"
+      }
+    },
+    {
+      "id": "gc_gacha_great_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_blue:gacha_great_0"
+      }
+    },
+    {
+      "id": "gc_gacha_great_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_blue:gacha_great_1"
+      }
+    },
+    {
+      "id": "gc_gacha_ultra_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:gacha_ultra_0"
+      }
+    },
+    {
+      "id": "gc_gacha_ultra_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:gacha_ultra_1"
+      }
+    },
+    {
+      "id": "gc_counter_L",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:counter_L",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_case_L",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:case_L",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_counter_M",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:counter_M",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_case_M",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:case_M",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_counter_R",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:counter_R",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_case_R",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_gold:case_R",
+        "behavior": "MB_COUNTER"
+      }
+    },
+    {
+      "id": "gc_gacha_master_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_purple:gacha_master_0"
+      }
+    },
+    {
+      "id": "gc_gacha_master_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_purple:gacha_master_1"
+      }
+    },
+    {
+      "id": "gc_bj_0_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_0_0"
+      }
+    },
+    {
+      "id": "gc_bj_1_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_1_0"
+      }
+    },
+    {
+      "id": "gc_bj_2_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_2_0"
+      }
+    },
+    {
+      "id": "gc_bj_3_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_3_0"
+      }
+    },
+    {
+      "id": "gc_bj_0_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_0_1"
+      }
+    },
+    {
+      "id": "gc_bj_1_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_1_1"
+      }
+    },
+    {
+      "id": "gc_bj_2_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_2_1"
+      }
+    },
+    {
+      "id": "gc_bj_3_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_table:bj_3_1"
+      }
+    },
+    {
+      "id": "gc_derby_0_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_0_0"
+      }
+    },
+    {
+      "id": "gc_derby_1_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_1_0"
+      }
+    },
+    {
+      "id": "gc_derby_2_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_2_0"
+      }
+    },
+    {
+      "id": "gc_derby_3_0",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_3_0"
+      }
+    },
+    {
+      "id": "gc_derby_0_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_0_1"
+      }
+    },
+    {
+      "id": "gc_derby_1_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_1_1"
+      }
+    },
+    {
+      "id": "gc_derby_2_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_2_1"
+      }
+    },
+    {
+      "id": "gc_derby_3_1",
+      "overlay": {
+        "base": "pc:0CC",
+        "art": "gc_derby:derby_3_1"
+      }
+    }
+  ]
 }
