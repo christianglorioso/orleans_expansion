@@ -2578,8 +2578,8 @@
     {
       "id": "LAYOUT_CRESCENT_CITY_GAME_CORNER",
       "name": "CrescentCity_GameCorner_Layout",
-      "width": 17,
-      "height": 12,
+      "width": 21,
+      "height": 14,
       "primary_tileset": "gTileset_OrleansBuilding",
       "secondary_tileset": "gTileset_OrleansInterior",
       "border_filepath": "data/layouts/CrescentCity_GameCorner/border.bin",

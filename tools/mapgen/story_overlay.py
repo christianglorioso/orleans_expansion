@@ -352,6 +352,8 @@ for _m, _x, _y, _flag, _note in HEART_SCALES:
 import story_data_npc_text as _npct  # noqa: E402
 
 _npct.merge(INTERIOR)
+import story_data_gamecorner as _gc  # noqa: E402
+INTERIOR.update(_gc.GAME_CORNER)  # the Game Corner's people and machines (its scripts: story/CrescentCity_GameCorner.inc)
 
 # ---------------------------------------------------------------------------------------------- application
 def apply(spec):

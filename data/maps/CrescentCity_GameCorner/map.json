@@ -15,9 +15,23 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_CLERK0",
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_COIN_CLERK0",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 14,
+      "x": 3,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrescentCity_GameCorner_EventScript_CoinClerk0",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_PRIZE_CLERK1",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "x": 18,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -25,47 +39,140 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CrescentCity_GameCorner_EventScript_Clerk0",
+      "script": "CrescentCity_GameCorner_EventScript_PrizeClerk1",
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_CLERK1",
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 14,
-      "y": 8,
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_DEALER2",
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 9,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CrescentCity_GameCorner_EventScript_Clerk1",
+      "script": "CrescentCity_GameCorner_EventScript_Dealer2",
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_GAMBLER2",
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_DERBY_ATTENDANT3",
+      "graphics_id": "OBJ_EVENT_GFX_BARD",
+      "x": 13,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrescentCity_GameCorner_EventScript_DerbyAttendant3",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_GAMBLER4",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 10,
-      "y": 5,
+      "x": 15,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CrescentCity_GameCorner_EventScript_Gambler2",
+      "script": "CrescentCity_GameCorner_EventScript_Gambler4",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CRESCENT_CITY_GAME_CORNER_REGULAR5",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrescentCity_GameCorner_EventScript_Regular5",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 11,
+      "x": 10,
+      "y": 13,
       "elevation": 3,
       "dest_map": "MAP_CRESCENT_CITY",
       "dest_warp_id": "11"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_GachaBasic"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_GachaGreat"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_GachaUltra"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_GachaMaster"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 8,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_Blackjack"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 8,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_Blackjack"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_Derby"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 3,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrescentCity_GameCorner_EventScript_Derby"
+    }
+  ]
 }

@@ -212,15 +212,21 @@ def world(house, maze):
         "notes": ["The vendor sells stones after gym 6 (the charm from Tupelo)."],
         "exits": []}
     R["crescent_city_game_corner"] = {
-        "title": "Game Corner", "subtitle": "Crescent City · downtown market",
-        "size": (17, 12), "floor": "carpet",
-        "shapes": [("metal", 2, 3, 1, 3, "slots"), ("metal", 5, 3, 1, 3, "slots"), ("metal", 8, 3, 1, 3, "slots"),
-                   ("metal", 2, 7, 1, 3, "slots"), ("metal", 5, 7, 1, 3, "slots"), ("metal", 8, 7, 1, 3, "slots"),
-                   ("counter", 12, 3, 4, 1, "prize\ncounter"), ("counter", 12, 7, 4, 1, "coin\ncounter")],
-        "markers": [("shop", 14, 2, "Prize counter: TMs, a rare Pokémon, decorations"),
-                    ("shop", 14, 8, "Coin exchange"), ("npc", 10, 5, "Gambler: the third slot pays out after a storm")],
-        "notes": ["Slots and the roulette tables; prizes include apartment decorations."],
-        "exits": [(8, 11, "Exit")]}
+        "title": "Game Corner", "subtitle": "Crescent City · downtown market · riverboat casino hall",
+        "size": (21, 14), "floor": "carpet",
+        "shapes": [("rug", 6, 5, 8, 6),
+                   ("metal", 2, 2, 1, 2, "gacha basic"), ("metal", 4, 2, 1, 2, "gacha great"),
+                   ("metal", 6, 2, 1, 2, "gacha ultra"), ("metal", 8, 2, 1, 2, "gacha master"),
+                   ("counter", 12, 3, 4, 1, "derby window"), ("counter", 17, 3, 3, 1, "prize counter"),
+                   ("counter", 8, 7, 4, 2, "blackjack table"), ("counter", 2, 8, 3, 1, "coin counter"),
+                   ("plant", 1, 12, 1, 1), ("plant", 19, 12, 1, 1)],
+        "markers": [("shop", 3, 7, "Coin clerk: 50 coins for 1,000 (and the Coin Case)"),
+                    ("shop", 18, 2, "Prize counter: Heart Scales, stones, balls, TMs for coins"),
+                    ("npc", 9, 6, "Dealer: the Blackjack table"), ("npc", 13, 2, "Derby attendant: the Derby window"),
+                    ("npc", 15, 9, "Gambler: capsule machines"), ("npc", 5, 6, "Regular: the capsule machines")],
+        "notes": ["Blackjack, the capsule machines (Gacha: first-stage starters) and the Derby (Doduo, Dodrio, Rattata, Feebas).",
+                  "Coin clerk sells coins and the Coin Case; the prize counter sells items for coins."],
+        "exits": [(10, 13, "Exit")]}
     R["crescent_city_name_rater"] = house(
         "Name Rater", "Crescent City · downtown market · free",
         [("service", 5, 4, "Name Rater: renames Pokémon for free")],
