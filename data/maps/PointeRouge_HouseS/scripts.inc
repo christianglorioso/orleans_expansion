@@ -8,6 +8,6 @@ PointeRouge_HouseS_EventScript_Man0::
 	end
 
 PointeRouge_HouseS_Text_Man0:
-	.string "There's a strange stone in the\nsmokestack yard. Heavy. Hums.$"
+	.string "There's a strange stone near the\nold ice plant. Heavy. Hums.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

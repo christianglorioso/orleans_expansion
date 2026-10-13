@@ -40,6 +40,8 @@ ROUTE5 = {
         "LOCALID_ORLEANS_ROUTE5_TRAINER_8": trainer("OBJ_EVENT_GFX_CAMPER", "LEFT", 4),         # (39, 21) Raoul
         "LOCALID_ORLEANS_ROUTE5_TRAINER_9": trainer("OBJ_EVENT_GFX_PICNICKER", "UP", 4),        # (25, 24) Solange
     },
+    # the rod is handed out once, after the refinery (story 19+), not to all comers (audit ch4 N1)
+    "patch_signs": {"RouteSign1": {"text": "ANGLER'S SHACK\nGood Rod for those who earn it."}},
     "patch_items": {
         "FLAG_UNUSED_0x27A": {"item": "ITEM_TM_AGILITY", "flag": "FLAG_ROUTE5_ITEM_AGILITY", "_comment": "TM069 on the pier"},
     },
@@ -56,7 +58,7 @@ POINTE_ROUGE = {
         "LOCALID_POINTE_ROUGE_WORKER": {"custom": True},
         "LOCALID_POINTE_ROUGE_CHEMIST": {"custom": True},
         "LOCALID_POINTE_ROUGE_SAILOR": {"custom": True},
-        "LOCALID_POINTE_ROUGE_ANGLER": {"text": T("The big ones hide under the bridges.", "KINGFISHER says the river is a gift.")},
+        "LOCALID_POINTE_ROUGE_ANGLER": {"text": T("The big ones hide under the bridges.", "KINGFISHER says the river is a road.")},
         "LOCALID_POINTE_ROUGE_CLERK": {"text": T("The legislature is in session.", "Thirty-four floors of arguing!")},
         "LOCALID_POINTE_ROUGE_KID": {"text": T("The magnolias smell like lemons!", "I counted forty-one of them.")},
         "LOCALID_POINTE_ROUGE_RETIREE": {"text": T("Fifty years I've watched barges pass", "this bench. Never the same twice.")},
@@ -86,7 +88,7 @@ POINTE_ROUGE = {
 ROOMS = {
     "pointe_rouge_gym": {
         "opts": {0: {"custom": True, "gfx": "OBJ_EVENT_GFX_MAN_1"},
-                 1: {"custom": True, "sight": 3, "face": "LEFT", "gfx": "OBJ_EVENT_GFX_BOY_2"},
+                 1: {"custom": True, "sight": 3, "face": "RIGHT", "gfx": "OBJ_EVENT_GFX_GIRL_2"},   # Perrine (a woman; the rafters run east of her)
                  2: {"custom": True, "sight": 3, "face": "LEFT", "gfx": "OBJ_EVENT_GFX_FISHERMAN"},
                  3: {"custom": True, "gfx": "OBJ_EVENT_GFX_MAN_4"}},
         # two nets hang across the gaps (6, 7) and (14, 7) in the net-rack wall: the only ways to Kingfisher's rafters. They are
@@ -131,18 +133,18 @@ ROOMS = {
         "opts": {0: {"custom": True}, 1: {"custom": True}},
     },
     "pointe_rouge_pokecenter": {
-        "texts": {1: T("Something's wrong at the plant. They", "sent every one of us home."),
+        "texts": {1: T("That refinery shapes the air here.", "Breathe through your sleeve."),
                   2: T("The Route 5 tournament decides who", "may face KINGFISHER.")},
     },
     "pointe_rouge_house_nw": {
-        "texts": {0: T("Forty years at the refinery. I never", "saw a leak like this one."),
+        "texts": {0: T("Forty years at the refinery. Every", "leak teaches you something."),
                   1: T("I want to be a Bird Keeper like", "KINGFISHER when I grow up!")},
     },
     "pointe_rouge_house_ne": {
         "texts": {0: T("These trophies are all from the", "river tournament. None are mine.")},
     },
     "pointe_rouge_house_s": {
-        "texts": {0: T("There's a strange stone in the", "smokestack yard. Heavy. Hums.")},
+        "texts": {0: T("There's a strange stone near the", "old ice plant. Heavy. Hums.")},
     },
     "pointe_rouge_capitol_lobby": {
         "texts": {0: T("The observation deck is open to the", "public. Elevator's on the right."),

@@ -13,6 +13,7 @@ CrescentCity_RiverboatTerminal_EventScript_TicketClerk0::
 	msgbox CrescentCity_RiverboatTerminal_Text_Boarding, MSGBOX_DEFAULT
 	closemessage
 	call_if_lt VAR_ORLEANS_STORY, 18, CrescentCity_RiverboatTerminal_EventScript_SetReached
+	setrespawn HEAL_LOCATION_POINTE_ROUGE
 	fadescreen FADE_TO_BLACK
 	warp MAP_ORLEANS_ROUTE4, 19, 43
 	waitstate

@@ -8,7 +8,7 @@ PointeRouge_HouseNw_EventScript_Father0::
 	end
 
 PointeRouge_HouseNw_Text_Father0:
-	.string "Forty years at the refinery. I never\nsaw a leak like this one.$"
+	.string "Forty years at the refinery. Every\nleak teaches you something.$"
 
 PointeRouge_HouseNw_EventScript_Daughter1::
 	msgbox PointeRouge_HouseNw_Text_Daughter1, MSGBOX_NPC

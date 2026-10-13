@@ -59,8 +59,8 @@ PointeRouge_TackleShop_Text_RegistrarClosed:
 PointeRouge_TackleShop_Text_RegistrarOpen:
 	.string "REGISTRAR: Entries go through the\n"
 	.string "angler at the Route 5 shack.\p"
-	.string "Fish five bites out of the lake\n"
-	.string "and KINGFISHER will battle you.$"
+	.string "Five bites out of the lake, and\n"
+	.string "KINGFISHER will battle you.$"
 
 PointeRouge_TackleShop_Text_RegistrarWon:
 	.string "REGISTRAR: Winner! The boathouse is\n"

@@ -157,8 +157,8 @@ PointeRouge_Text_ChemistLeak:
 
 PointeRouge_Text_ChemistAfter:
 	.string "CHEMIST: Column two is steady\n"
-	.string "again. I'll buy you something\p"
-	.string "nice. Later. When I can feel my\n"
+	.string "again. Thank you, truly.\p"
+	.string "Now if I could just feel my\n"
 	.string "hands.$"
 
 PointeRouge_Text_KingfisherFouled:
@@ -186,10 +186,10 @@ PointeRouge_Text_KingfisherWon:
 	.string "the right gust and fly up to me.$"
 
 PointeRouge_Text_KingfisherBeaten:
-	.string "KINGFISHER: The river's road is\n"
-	.string "open to you now. Take the verse\p"
-	.string "to the Old Water. TUPELO will want\n"
-	.string "to hear how the wind sounds.$"
+	.string "KINGFISHER: The boathouse has a\n"
+	.string "back stair. Faster than a flight.\p"
+	.string "The river's road is open to you.\n"
+	.string "Take the verse to TUPELO.$"
 
 PointeRouge_Text_SailorOffer:
 	.string "SAILOR: The riverboat sails for\n"

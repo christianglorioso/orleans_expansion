@@ -385,7 +385,7 @@ def world(house, maze):
         ["Quiet house; old trophies on the shelves."])
     R["pointe_rouge_house_s"] = house(
         "House (south)", "Pointe Rouge · Weezing fan",
-        [("npc", 4, 4, "Man: the smokestack yard has a strange stone (Weezingite, post-game)")],
+        [("npc", 4, 4, "Man: a strange stone near the old ice plant (Crabominite, post-game; Weezingite is in the Blacksnake base)")],
         ["Ordinary house by the rail yards."])
     R["pointe_rouge_gym"] = {
         "title": "Pointe Rouge Gym: Riverfront Boathouse", "subtitle": "Gym 4 · Kingfisher (Tailwind Flying)",

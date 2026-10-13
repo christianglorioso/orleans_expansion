@@ -22,6 +22,6 @@ CrescentCity_PokecenterWaterfront_EventScript_Deckhand1::
 	end
 
 CrescentCity_PokecenterWaterfront_Text_Deckhand1:
-	.string "The riverboat to POINTE ROUGE leaves\nfrom the terminal next door.$"
+	.string "The riverboat to POINTE ROUGE leaves\nfrom the terminal, west of here.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

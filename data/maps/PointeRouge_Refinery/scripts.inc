@@ -200,7 +200,7 @@ PointeRouge_Refinery_Text_PoisonDefeat:
 
 PointeRouge_Refinery_Text_PoisonAfter:
 	.string "RITA says the marsh deserves what\n"
-	.string "it gets. I just open valves.$"
+	.string "it gets. I only opened valves.$"
 
 PointeRouge_Refinery_Text_GroundIntro:
 	.string "Nobody walks the floor unless\n"
@@ -235,9 +235,9 @@ PointeRouge_Refinery_Text_Showdown1:
 PointeRouge_Refinery_Text_Showdown2:
 	.string "JAYDEN: CAMILLE. ...Wait. You said\n"
 	.string "the marsh, not the town. You\p"
-	.string "said it was just the marsh!\n"
-	.string "CAMILLE: Quiet, boy. Prove\p"
-	.string "you're worth the team's name.\n"
+	.string "said it was just the marsh!\p"
+	.string "CAMILLE: Quiet, boy. Prove\n"
+	.string "you're worth the team's name.\p"
 	.string "Show them how a Blacksnake bites.$"
 
 PointeRouge_Refinery_Text_JaydenDefeat:

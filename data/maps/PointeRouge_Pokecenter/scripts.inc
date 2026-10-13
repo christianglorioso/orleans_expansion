@@ -22,7 +22,7 @@ PointeRouge_Pokecenter_EventScript_RefineryWorker1::
 	end
 
 PointeRouge_Pokecenter_Text_RefineryWorker1:
-	.string "Something's wrong at the plant. They\nsent every one of us home.$"
+	.string "That refinery shapes the air here.\nBreathe through your sleeve.$"
 
 PointeRouge_Pokecenter_EventScript_Angler2::
 	msgbox PointeRouge_Pokecenter_Text_Angler2, MSGBOX_NPC

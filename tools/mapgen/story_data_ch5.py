@@ -12,7 +12,7 @@ TRAINERS = [
     dict(m="Route6", n=0, const="TRAINER_ORLEANS_ROUTE6_SWIMMER", name="TRISTAN", cls="Swimmer M", pic="Swimmer M", sex="Male", music="Swimmer",
          gfx=SW, face="LEFT", sight=4, team=[("Tentacruel", 31), ("Wailmer", 31), ("Floatzel", 32)],
          intro=T("The lake's mine! I swim it every", "morning. Race you, with POKéMON!"),
-         defeat=T("Outswum."), after=T("The current bends east. It wants to", "carry you to the camp.")),
+         defeat=T("Outswum."), after=T("The current bends west. It wants to", "carry you to the camp.")),
     dict(m="Route6", n=2, const="TRAINER_ORLEANS_ROUTE6_FISHERMAN", name="DESIRE", cls="Fisherman", pic="Fisherman", sex="Male", music="Hiker",
          gfx="OBJ_EVENT_GFX_FISHERMAN", face="DOWN", sight=4, team=[("Whiscash", 31), ("Quagsire", 32), ("Gyarados", 32)],
          intro=T("Fishing the old drowned road. The", "big ones sleep on the pavement."),
@@ -188,7 +188,7 @@ ROOMS = {
     },
     "camp_cocodrie_cabin_1": {"opts": {0: {"custom": True}}},
     "camp_cocodrie_cabin_2": {"texts": {0: T("The Krokorok pen's out back. The", "brothers raised every one by hand.")}},
-    "camp_cocodrie_cabin_3": {"texts": {0: T("I run the airboat. When the lake", "road opens I'll take you across.")}},
+    "camp_cocodrie_cabin_3": {"texts": {0: T("I run the airboat. It hauls shrimp,", "not people. Your POKéMON can swim.")}},
     "camp_cocodrie_cabin_4": {"opts": {0: {"custom": True}}},
     "camp_cocodrie_dance_porch": {
         "opts": {0: {"custom": True}},

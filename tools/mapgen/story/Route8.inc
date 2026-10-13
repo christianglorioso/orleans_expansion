@@ -21,8 +21,7 @@ Route8_Movement_TurnBack:
 Route8_Text_WaterGate:
 	.string "The channel north boils under a wall\n"
 	.string "of storm. Nothing can cross it.\p"
-	.string "Not until the two great ones are\n"
-	.string "calmed.$"
+	.string "Not yet.$"
 
 @ --- route trainers (gen_route_trainers.py) ---
 Route8_EventScript_Trainer0::

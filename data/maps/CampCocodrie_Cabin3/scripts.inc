@@ -8,6 +8,6 @@ CampCocodrie_Cabin3_EventScript_Captain0::
 	end
 
 CampCocodrie_Cabin3_Text_Captain0:
-	.string "I run the airboat. When the lake\nroad opens I'll take you across.$"
+	.string "I run the airboat. It hauls shrimp,\nnot people. Your POKéMON can swim.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

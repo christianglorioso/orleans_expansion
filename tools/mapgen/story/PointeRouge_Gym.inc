@@ -235,8 +235,8 @@ PointeRouge_Gym_Text_BirdDefeat:
 	.string "my birds ever did.$"
 
 PointeRouge_Gym_Text_BirdAfter:
-	.string "The centre fan is the quiet one.\n"
-	.string "It only wakes in the middle.$"
+	.string "He opens with TAILWIND, every\n"
+	.string "time. Hit his birds first.$"
 
 PointeRouge_Gym_Text_FishIntro:
 	.string "Here for the boss? You fish a\n"

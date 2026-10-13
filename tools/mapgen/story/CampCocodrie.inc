@@ -187,8 +187,8 @@ CampCocodrie_Text_BrothersCook:
 CampCocodrie_Text_BrothersReady:
 	.string "BOUDREAUX: The pots are judged.\n"
 	.string "THIBODEAUX: And we were both right.\p"
-	.string "BOUDREAUX: Come in. Battle us,\n"
-	.string "both of us, at once.$"
+	.string "BOUDREAUX: Go on in. We'll be right\n"
+	.string "behind you. Both of us, at once.$"
 
 CampCocodrie_Text_BrothersBeaten:
 	.string "BOUDREAUX: Two cooks, one pot, and\n"
@@ -212,7 +212,7 @@ CampCocodrie_Text_FishermanShrimp:
 
 CampCocodrie_Text_FishermanAfter:
 	.string "GASTON: The shrimp's yours. The\n"
-	.string "airboat dock's open any time.$"
+	.string "dock's open any time.$"
 
 CampCocodrie_Text_OkraNotAsked:
 	.string "Neat rows of okra. Somebody's\n"

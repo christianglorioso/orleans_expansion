@@ -118,7 +118,7 @@ Route5_Text_AnglerNo:
 	.string "aren't going anywhere.$"
 
 Route5_Text_WeighinShort:
-	.string "{STR_VAR_1} bites. Not five yet.\n"
+	.string "{STR_VAR_1} so far. Not five yet.\n"
 	.string "ANGLER: Back to the water!$"
 
 Route5_Text_WeighinWin:
@@ -134,7 +134,7 @@ Route5_Text_WeighinKingfisher:
 
 Route5_Text_AnglerAfter:
 	.string "ANGLER: A winner's lake. Fish all\n"
-	.string "you like. KINGFISHER's waiting.$"
+	.string "you like.$"
 
 Route5_Text_FishermanIntro:
 	.string "I'm in the tournament. Not the\n"
@@ -205,7 +205,7 @@ Route5_EventScript_RouteSign1::
 	end
 
 Route5_Text_RouteSign1:
-	.string "ANGLER'S SHACK\nGood Rod handed out to all comers.$"
+	.string "ANGLER'S SHACK\nGood Rod for those who earn it.$"
 
 Route5_EventScript_RouteSign2::
 	msgbox Route5_Text_RouteSign2, MSGBOX_SIGN
