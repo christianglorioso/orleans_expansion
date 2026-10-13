@@ -1508,5 +1508,8 @@
    ]
   ]
  },
- "route_2": {}
+ "route_2": {
+    "drop": [[15, 20], [37, 24]],
+    "dropped": [{"prefab": "pirogue", "x": 15, "y": 20, "label": "Fishing boat"}, {"prefab": "waterlog", "x": 37, "y": 24, "label": "Water prop"}]
+  }
 }

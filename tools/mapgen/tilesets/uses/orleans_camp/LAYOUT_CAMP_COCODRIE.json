@@ -358,6 +358,8 @@
 "patch:ovl_mag_10__ekat_grass",
 "patch:ovl_mag_11__ekat_grass",
 "patch:ovl_mag_12__ekat_grass",
+"patch:ovl_wpr_0_0__ekat_water_C",
+"patch:ovl_wpr_1_0__ekat_water_C",
 "patch:reeds_marsh",
 "patch:reeds_top_marsh"
 ]

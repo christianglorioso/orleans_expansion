@@ -1,6 +1,6 @@
 """Clean GBA-accurate render of a map plus its camera margin (no annotations), for before/after review.
 
-usage (from the decomp root):  python tools/mapgen/edge_render.py <out.png> [--scale 2] [--margin] <map_stem> [more stems]
+usage (from the decomp root):  python tools/mapgen/edge_render.py <out.png | out_{}.png> [--scale 2] <map_stem> [more stems]   ({} = the stem)
 Draws gba_view.World.backup (the engine's backup layout: border blocks, neighbour strips drawn with THIS map's tilesets) cropped to the
 map + the camera margin (7 W/E, 5 N/S), at --scale (default 2).  Several stems are written as <out>_<stem>.png when out has no {}.
 """
@@ -34,7 +34,7 @@ def main(argv):
         rest = rest[2:]
     wd = gv.World()
     for stem in rest:
-        p = out if len(rest) == 1 else out.replace(".png", f"_{stem}.png")
+        p = out.format(stem) if "{}" in out else out if len(rest) == 1 else out.replace(".png", f"_{stem}.png")
         render(wd, stem, scale).save(p)
         print("wrote", p)
 

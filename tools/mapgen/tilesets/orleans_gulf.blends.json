@@ -1117,5 +1117,40 @@
    "M": "ekat:mud_N",
    "land": "ekat:mud_C"
   }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_6_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:6_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_7_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:7_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_7_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:7_0"
+  }
  }
 ]

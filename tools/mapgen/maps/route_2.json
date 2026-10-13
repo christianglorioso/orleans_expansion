@@ -41,12 +41,6 @@
       "label": "Transmission tower"
     },
     {
-      "prefab": "pirogue",
-      "x": 15,
-      "y": 20,
-      "label": "Fishing boat"
-    },
-    {
       "prefab": "wire_span",
       "x": 0,
       "y": 3,
@@ -315,12 +309,6 @@
       "x": 34,
       "y": 13,
       "label": "Sign"
-    },
-    {
-      "prefab": "waterlog",
-      "x": 37,
-      "y": 24,
-      "label": "Water prop"
     },
     {
       "prefab": "boulder",

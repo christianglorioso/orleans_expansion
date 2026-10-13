@@ -791,5 +791,75 @@
   "id": "bk_swamp_out_SW_f819ccaa",
   "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SW_f819ccaa.png",
   "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "ovl_lmk_15_8__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "lmk:15_8"
+  }
+ },
+ {
+  "id": "ovl_lmk_6_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:6_5"
+  }
+ },
+ {
+  "id": "ovl_lmk_6_6__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:6_6"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_6_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:6_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_7_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:7_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_lmk_15_7__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "lmk:15_7"
+  }
  }
 ]

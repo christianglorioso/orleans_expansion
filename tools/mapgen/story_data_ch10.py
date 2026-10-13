@@ -15,7 +15,7 @@ def spec(x):
 # key, map, species const, species gfx name, level, (x, y), note
 STATICS = [
     dict(key="RAIKOU", map="Route2", sp="RAIKOU", level=60, at=(25, 14)),
-    dict(key="ZAPDOS", map="StormsEdge", sp="ZAPDOS", level=60, at=(22, 16)),
+    dict(key="ZAPDOS", map="StormsEdge", sp="ZAPDOS", level=60, at=(22, 20)),
     dict(key="ENTEI", map="Route16", sp="ENTEI", level=60, at=(18, 10)),
     dict(key="MOLTRES", map="Route17", sp="MOLTRES", level=60, at=(23, 14)),
     dict(key="SUICUNE", map="Route11", sp="SUICUNE", level=60, at=(29, 20)),

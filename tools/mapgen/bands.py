@@ -32,7 +32,7 @@ DEPTH = {"N": 7, "S": 7, "W": 7, "E": 8}
 # neighbour has its columns 0..7 drawn in that neighbour, so its band must be 8 wide (the 8th column showed as garbage / magenta while
 # the camera scrolls).  Prototype 2026-10-13: only the maps listed here are widened (Route 17 for the Route 16 / 17 join); every
 # W-joined map has the same hole (see edge_feather report), widen by adding keys (each needs a rebuild of its generator).
-W8 = {"route_17"}
+W8 = {k for k in world.OUTDOOR if k != "pointe_rouge"}   # every W-joined map except Pointe Rouge (its rails job owns that band)
 SIDE = {"right": "E", "left": "W", "down": "S", "up": "N"}
 OPP = {"E": "W", "W": "E", "N": "S", "S": "N"}
 _cache = {}

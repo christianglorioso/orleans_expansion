@@ -48,8 +48,8 @@ WORLD = [
     ("route_1", "left", "old_water", -15, "hidden channel (opens after the trust event), water to water"),
     # ---- west coast: Grand Oak - Route 2 - Storm's Edge - Route 3 - Crescent City
     ("grand_oak", "right", "route_2", 5, "road to road: Grand Oak E rows 13-15 / Route 2 W rows 8-10"),
-    ("route_2", "right", "storms_edge", -1, "road: Route 2 E rows 10-12 / Storm's Edge W rows 12-13 (2 of 3 cells)"),
-    ("storms_edge", "right", "route_3", 1, "causeway: Storm's Edge E rows 12-13 / Route 3 W rows 11-12"),
+    ("route_2", "right", "storms_edge", -5, "road: Route 2 E rows 10-12 / Storm's Edge W rows 16-17 (2 of 3 cells; the map has 4 lake rows above since the edge-feather rollout)"),
+    ("storms_edge", "right", "route_3", 5, "causeway: Storm's Edge E rows 16-17 / Route 3 W rows 11-12"),
     ("route_3", "right", "crescent_city", -32, "causeway: Route 3 E rows 11-12 / Crescent City W rows 43-44"),
     # ---- the Basin boat chain, east to west: Crescent City - 6 - 7 - 8 - 9 - Camp Cocodrie (Route 25 north off Route 8)
     ("route_6", "right", "crescent_city", 12, "basin canal: Route 6 E row 12 / Crescent W water rows 0-1 (upper)"),

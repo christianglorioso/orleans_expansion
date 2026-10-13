@@ -57,5 +57,8 @@
 "patch:ovl_lmk_4_11__ekat_water_C",
 "patch:ovl_lmk_4_9__ekat_water_C",
 "patch:ovl_lmk_6_5__ekat_water_C",
-"patch:ovl_lmk_6_6__ekat_water_C"
+"patch:ovl_lmk_6_6__ekat_water_C",
+"patch:ovl_wpr_0_0__ekat_water_C",
+"patch:ovl_wpr_2_0__ekat_water_C",
+"patch:ovl_wpr_3_0__ekat_water_C"
 ]

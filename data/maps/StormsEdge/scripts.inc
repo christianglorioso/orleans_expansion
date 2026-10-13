@@ -285,26 +285,26 @@ StormsEdge_Text_SignSubstation:
 	.string "STORM'S EDGE SUBSTATION\nDANGER: HIGH VOLTAGE. GYM INSIDE.$"
 
 StormsEdge_EventScript_StateBridgeRaised::
-	setmetatile 24, 11, 0x271, TRUE
-	setmetatile 24, 12, 0x272, TRUE
-	setmetatile 24, 13, 0x273, TRUE
-	setmetatile 24, 14, 0x274, TRUE
-	setmetatile 27, 11, 0x275, TRUE
-	setmetatile 27, 12, 0x276, TRUE
-	setmetatile 27, 13, 0x277, TRUE
-	setmetatile 27, 14, 0x278, TRUE
-	setmetatile 25, 11, 0x033, FALSE
-	setmetatile 25, 12, 0x033, FALSE
-	setmetatile 25, 13, 0x033, FALSE
-	setmetatile 25, 14, 0x033, FALSE
-	setmetatile 26, 11, 0x033, FALSE
-	setmetatile 26, 12, 0x033, FALSE
-	setmetatile 26, 13, 0x033, FALSE
-	setmetatile 26, 14, 0x033, FALSE
-	setmetatile 23, 12, 0x279, TRUE
-	setmetatile 23, 13, 0x27A, TRUE
-	setmetatile 28, 12, 0x27B, TRUE
-	setmetatile 28, 13, 0x27C, TRUE
+	setmetatile 24, 15, 0x26D, TRUE
+	setmetatile 24, 16, 0x26E, TRUE
+	setmetatile 24, 17, 0x26F, TRUE
+	setmetatile 24, 18, 0x270, TRUE
+	setmetatile 27, 15, 0x271, TRUE
+	setmetatile 27, 16, 0x272, TRUE
+	setmetatile 27, 17, 0x273, TRUE
+	setmetatile 27, 18, 0x274, TRUE
+	setmetatile 25, 15, 0x033, FALSE
+	setmetatile 25, 16, 0x033, FALSE
+	setmetatile 25, 17, 0x033, FALSE
+	setmetatile 25, 18, 0x033, FALSE
+	setmetatile 26, 15, 0x033, FALSE
+	setmetatile 26, 16, 0x033, FALSE
+	setmetatile 26, 17, 0x033, FALSE
+	setmetatile 26, 18, 0x033, FALSE
+	setmetatile 23, 16, 0x275, TRUE
+	setmetatile 23, 17, 0x276, TRUE
+	setmetatile 28, 16, 0x277, TRUE
+	setmetatile 28, 17, 0x278, TRUE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---

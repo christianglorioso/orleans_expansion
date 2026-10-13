@@ -12,6 +12,7 @@ The levee is drawn from distance fields, so it bends round corners on its own:
         ordinary shore through a scatter of stones rather than a hard line
 """
 import math
+import os
 
 WATER = "~I"
 NARROW, LONG = 7, 14          # a channel cell: water run across it at most NARROW, along it at least LONG
@@ -25,7 +26,7 @@ REACH = 2                     # levee ground: land within this many cells of cha
 MAPS = {"route_4", "storms_edge", "redfield"}
 # where on a map (cells x0, y0, x1, y1); maps not listed: anywhere. Storm's Edge: the river above the town
 # bridge (below it the river opens into the harbour, whose shores, like the lighthouse inlet's, stay natural)
-AREAS = {"storms_edge": (0, 0, 32, 12)}  # x0 <= x < x1: storms_edge.py's river is 5 wide (x 24-28)
+AREAS = {"storms_edge": (0, 0, 32, 11)}  # x0 <= x < x1: storms_edge.py's river is 5 wide (x 24-28)
 
 # one palette: the swamp grass and water the levee meets, plus its own slope, earth, stone and foam
 GRASS = [(104, 144, 96), (120, 160, 104), (136, 176, 128)]
@@ -205,10 +206,18 @@ def _stone(x, y, keep=None):
     return True, (-1 if u < -1.5 else 1 if u > 1.8 else 0)
 
 
+CAPS = False   # set per map by borders.prepare (LEVEE_CAP_MAPS): where a levee run ends in open water its head gets the rounded jetty nose (make_levee_caps.render_caps)
+
+
 def render(grid, bank, base, blocked=frozenset()):
     """{(x, y): 16x16 RGBA overlay} for every cell the levee changes (clear where the ground shows through).
     base(x, y) gives the cell as drawn without it. bank is the levee ground (the 'B' cells); the water cells
     beside it get the riprap. blocked: bridge and dock footprints, where a run ends."""
+    if CAPS:
+        import sys as _sys
+        _sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "sources", "orleans_custom"))
+        import make_levee_caps
+        return make_levee_caps.render_caps(grid, bank, base, blocked)
     import numpy as np
     from PIL import Image
     h, w = len(grid), len(grid[0])
@@ -383,8 +392,17 @@ def _grass_index(x, y):
     return _GRASS_TILE[y % 16][x % 16]
 
 
+REACH_FOR = {}   # per map: levee ground this many cells from the channel water (default REACH); Storm's Edge: tile budget (the lake-end heads are all distinct cells)
+
+
 def mark(grid, blocked=frozenset(), key=None):
-    cells = bank_cells(grid, blocked)
+    global REACH
+    keep_reach = REACH
+    REACH = REACH_FOR.get(key, REACH)
+    try:
+        cells = bank_cells(grid, blocked)
+    finally:
+        REACH = keep_reach
     if key in AREAS:
         x0, y0, x1, y1 = AREAS[key]
         cells = {(x, y) for x, y in cells if x0 <= x < x1 and y0 <= y < y1}

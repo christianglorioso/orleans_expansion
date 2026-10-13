@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_STORMS_EDGE",
-      "offset": -1,
+      "offset": -5,
       "direction": "left"
     },
     {

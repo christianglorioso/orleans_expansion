@@ -43,11 +43,14 @@
 "patch:ovl_lmk_15_5__ekat_water_C",
 "patch:ovl_lmk_15_6__ekat_water_C",
 "patch:ovl_lmk_15_7__ekat_water_C",
+"patch:ovl_lmk_15_7__ekat_water_weeds1",
 "patch:ovl_lmk_15_8__ekat_water_C",
 "patch:ovl_lmk_1_12__ekat_water_C",
 "patch:ovl_lmk_1_13__ekat_water_C",
 "patch:ovl_lmk_5_10__ekat_water_C",
 "patch:ovl_lmk_5_9__ekat_water_C",
+"patch:ovl_lmk_6_5__ekat_water_C",
+"patch:ovl_lmk_6_6__ekat_water_C",
 "patch:ovl_lmk_7_0__ekat_grass",
 "patch:ovl_lmk_7_1__ekat_grass",
 "patch:ovl_lmk_7_2__ekat_grass",
@@ -59,5 +62,10 @@
 "patch:ovl_lmk_9_0__ekat_grass",
 "patch:ovl_lmk_9_1__ekat_grass",
 "patch:ovl_lmk_9_2__ekat_grass",
-"patch:ovl_lmk_9_3__ekat_grass__door"
+"patch:ovl_lmk_9_3__ekat_grass__door",
+"patch:ovl_wpr_4_0__ekat_water_C",
+"patch:ovl_wpr_5_0__ekat_water_C",
+"patch:ovl_wpr_5_0__ekat_water_weeds1",
+"patch:ovl_wpr_6_0__ekat_water_C",
+"patch:ovl_wpr_7_0__ekat_water_C"
 ]

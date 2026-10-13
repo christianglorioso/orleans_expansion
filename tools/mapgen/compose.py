@@ -1303,12 +1303,15 @@ def compose(recipe_path):
     bank = TileBank(reserve_blank=not secondary)
     tile_map = {}
     out_mts, out_attrs = [], []
-    for p in picked:
+    inv_names = {i: n for n, i in names.items()} if isinstance(names, dict) else {}
+    trace = []                                   # COMPOSE_TRACE=1: the tiles each metatile added to the bank (the biggest eaters first)
+    for pi, p in enumerate(picked):
         if not p:
             out_mts.append([0] * 8)
             out_attrs.append(0)
             continue
         entries, attr = p
+        bank0 = len(bank.tiles)
         new = []
         for tkey, pkey, h, v in entries:
             if (tkey, pkey) in reuse:
@@ -1339,6 +1342,27 @@ def compose(recipe_path):
             new.append(t | ((h ^ th) << 10) | ((v ^ tv) << 11) | (slot << 12))
         out_mts.append(new)
         out_attrs.append(attr)
+        trace.append((len(bank.tiles) - bank0, inv_names.get(pi, "?")))
+    if os.environ.get("COMPOSE_TRACE"):
+        by = {}
+        for n_, nm in trace:
+            k = nm.split("__")[0] if nm.startswith("patch:ovl") else nm.split(":")[0] + ":" + nm.split(":")[-1].split("_")[0]
+            by[k] = by.get(k, 0) + n_
+        print("tile cost by group:", sorted(by.items(), key=lambda kv: -kv[1])[:25])
+        top = {}
+        for n_, nm in trace:
+            k = nm.split(":")[0] + (":" + nm.split(":")[1].split("_")[0] if nm.startswith("patch:") else "")
+            top[k] = top.get(k, 0) + n_
+        print("tile cost by family:", sorted(top.items(), key=lambda kv: -kv[1])[:30])
+        ov = {}
+        for n_, nm in trace:
+            if nm.startswith("patch:ovl_"):
+                k = "ovl_" + nm.split("_")[1]
+                ov[k] = ov.get(k, 0) + n_
+        print("overlay cost by art:", sorted(ov.items(), key=lambda kv: -kv[1]))
+        print("ALL:", [(n_, nm) for n_, nm in trace if n_])
+        if os.environ.get("COMPOSE_TRACE") == "2":
+            print("pieces:", [(n_, nm) for n_, nm in trace if n_ and (nm.startswith("patch:ovl_wpr") or "cypress_small" in nm or "lmk_15_" in nm or "lmk_6_" in nm or "waterlog" in nm or "snag" in nm or "lv_" in nm and n_ > 3)])
     if len(bank.tiles) > MAX_TILES:
         raise SystemExit(f"{len(bank.tiles)} tiles needed; the limit is {MAX_TILES}")
 

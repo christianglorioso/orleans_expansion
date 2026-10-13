@@ -9,7 +9,7 @@ def run(b, t):
 
     # --- 2.3 Storm's Edge arrival frame script (story 8 or 9 -> 10)
     b.set_var("VAR_ORLEANS_STORY", 9)
-    arrived = b.warp("StormsEdge", 5, 20)
+    arrived = b.warp("StormsEdge", 5, 24)
     t.check("warp into Storm's Edge", arrived, b.where())
     b.frames(30)
     b.shot("storms_edge_arrival")

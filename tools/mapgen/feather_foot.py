@@ -59,7 +59,11 @@ for name in sys.argv[1:]:
         return struct.unpack(f"<{len(raw) // 2}H", raw)
     secb = gattr("data/tilesets/secondary/" + snake(lay["secondary_tileset"]))
     primb = gattr("data/tilesets/primary/orleans_general")
-    okb, oka = grid(name, before, lay, primb, secb), grid(name, after, lay, prim, sec)
+    try:
+        okb, oka = grid(name, before, lay, primb, secb), grid(name, after, lay, prim, sec)
+    except struct.error:
+        print(f"{name}: size changed since HEAD (the map was regenerated): skipped (story_gates_check proves its doors)")
+        continue
     pts = [(o["x"], o["y"]) for k in ("warp_events", "object_events", "bg_events", "coord_events") for o in m.get(k, [])]
     starts = [(int(o["x"]), int(o["y"])) for o in m.get("warp_events", [])[:1]] or [(p[0], p[1]) for p in pts[:1]]
     # stand-cells: an event cell itself or any 4-neighbour

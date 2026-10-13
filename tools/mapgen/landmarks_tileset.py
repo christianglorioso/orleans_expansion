@@ -36,4 +36,6 @@ def apply(r, c, skip=SKIP):
         if name in skip:
             continue
         c["prefabs"][name] = dict(json.loads(json.dumps(pf)), _lmk=True)
+    import water_props_tileset          # the Surf-barrier water props ride along with the landmarks (water_props_tileset.py)
+    water_props_tileset.apply(r, c)
     return True

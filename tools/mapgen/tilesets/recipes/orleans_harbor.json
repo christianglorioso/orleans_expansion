@@ -5291,6 +5291,78 @@
      ]
     }
    ]
+  },
+  {
+   "name": "wpr",
+   "type": "image",
+   "image": "tools/mapgen/sources/orleans_custom/water_props_sheet.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "overlay_only": true,
+   "_comment": "Surf-barrier water props (own art, make_water_barriers.py), overlays on open water.",
+   "metatiles": [
+    {
+     "id": "0_0",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "1_0",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "2_0",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "3_0",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "4_0",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "5_0",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "6_0",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "7_0",
+     "bottom": [
+      7,
+      0
+     ]
+    }
+   ]
   }
  ],
  "recolor": [

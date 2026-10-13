@@ -505,5 +505,33 @@
   "id": "bk_swamp_out_SW_f819ccaa",
   "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SW_f819ccaa.png",
   "attr_of": "ekat:marsh_C"
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_2_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:2_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_3_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:3_0"
+  }
  }
 ]

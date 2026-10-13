@@ -148,7 +148,7 @@ def reach(starts, flags=frozenset()):
 
 # where the player can stand at the stages the gates are tested for (all on land the player legally reaches by story order)
 STARTS = {
-    "west": [("CrescentCity", (3, 43)), ("Route3", (10, 11)), ("StormsEdge", (5, 20)), ("GrandOak", (10, 10)), ("IsleMarais", (10, 10)),
+    "west": [("CrescentCity", (3, 43)), ("Route3", (10, 11)), ("StormsEdge", (5, 24)), ("GrandOak", (10, 10)), ("IsleMarais", (10, 10)),
              ("Route1", (12, 20)), ("OldWater", (24, 30)), ("Route2", (10, 10))],
     "pointe": [("Route4", (19, 43)), ("PointeRouge", (22, 44)), ("Route5", (30, 24))],
 }

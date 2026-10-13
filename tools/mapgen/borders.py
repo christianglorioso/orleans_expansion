@@ -99,7 +99,7 @@ def terrain_agrees(b, style, side, spans):
 
 
 ENABLED = True
-FEATHER_MAPS = {"isle_marais", "storms_edge", "route_16"}   # the edge-transition pass (feather.py) runs on these (prototype); roll out by adding keys
+FEATHER_MAPS = set(STYLE)   # the edge-transition pass (feather.py) runs on every outdoor map (rollout 2026-10-13)
 NO_DRY_WALL = {"route_17"}   # shares Capital (Redfield), which has no tiles to spare
 DRY_WALLS = True     # dry scrub: a 2-cell wall (+ edge cells) along every unconnected edge of the dry maps: events / exits shorten it
 WATER_WALLS = False   # water borders: 2 cells of water laid over a land edge (grid edit, no art): off, it flooded reachable cells
@@ -112,6 +112,8 @@ WALLS = False     # inward walls (d >= 2) and baked edge cells over other ground
 
 
 def prepare(b, key):
+    import levee
+    levee.CAPS = bool(b.spec.get("levee_caps"))      # spec flag: levee ends in open water get the approved rounded jetty nose (commit 577fe08f4f, JET 1)
     b.border_style = STYLE.get(key) if ENABLED else ("swamp" if b.spec.get("walls") else None)
     b.border_log, b.border_conflicts = [], []
     b.border_names = None
@@ -310,7 +312,7 @@ def prepare(b, key):
 
 
 def _parity(face, x, y):
-    return None if face.startswith("in_") else (x & 1 if face in "SN" else y & 1)
+    return None if face.startswith(("in_", "out_")) else (x & 1 if face in "SN" else y & 1)
 
 
 def edge_base(b, x, y, mapping_inv):
@@ -338,6 +340,7 @@ def apply(b):
     for n, v in build.MAPPING.items():
         inv.setdefault(v, n)
     names = BLOCK[style]
+    strict = bands.strict_cells(b.key)
     for (x, y) in sorted(b.wall):
         b.blocks[y][x] = build.block(build.hx(names[(x & 1) + (y & 1) * 2]), 1, 3)
     for (x, y), face in sorted(b.edge.items()):
@@ -346,13 +349,21 @@ def apply(b):
             terr, under = "dry", "dry:0_0"
         par = _parity(face, x, y)
         suffix = "" if par is None else f"_{par}"
-        if terr in ("marsh", "water") and style == "swamp":
+        if face.startswith("out_"):                    # outer corners are always baked (art: make_border_corners.py)
+            if (x, y) in strict and not (terr == "grass" and style == "swamp"):
+                continue                               # a baked piece is a secondary patch: not in a seam band (swamp-on-grass 'bdg_' is the primary's)
+            nm = bake(b, build, inv, style, face, par, x, y, terr, under)
+            if nm is None:
+                continue
+        elif terr in ("marsh", "water") and style == "swamp":
             nm = f"bd:swamp_{face}_{terr}{suffix}"
         elif terr == "dry" and style == "dry":
             nm = f"bd:dry_{face}_dry{suffix}"
         elif not (WALLS or getattr(b, "feather_bake", False)) and not (terr == "grass" and style == "swamp"):
             continue            # not a canonical ground: no overhang here (the border block meets it)
         else:
+            if (x, y) in strict and not (terr == "grass" and style == "swamp"):
+                continue
             nm = bake(b, build, inv, style, face, par, x, y, terr, under)
             if nm is None:
                 continue

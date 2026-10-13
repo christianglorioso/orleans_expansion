@@ -403,7 +403,8 @@
 "patch:ovl_ccw_wh_wall9_32__ekat_grass": 900,
 "patch:ovl_ccw_wh_wall9_70__ekat_grass": 901,
 "patch:ovl_ccw_wh_wall9_80__ekat_grass": 902,
-"patch:ovl_ccw_wh_wall9_82__ekat_grass": 903
+"patch:ovl_ccw_wh_wall9_82__ekat_grass": 903,
+"patch:ovl_ccw_sign_00__ekat_water_W": 904
 },
 "palettes": null,
 "tiles": {}

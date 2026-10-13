@@ -12,69 +12,69 @@
     {
       "prefab": "pokecenter",
       "x": 14,
-      "y": 5,
+      "y": 9,
       "label": "Pokémon Center (generator) (storms_edge_pokecenter)",
       "interior": "MAP_STORMS_EDGE_POKECENTER"
     },
     {
       "prefab": "mart",
       "x": 38,
-      "y": 5,
+      "y": 9,
       "label": "Poké Mart (storms_edge_mart)",
       "interior": "MAP_STORMS_EDGE_MART"
     },
     {
       "prefab": "substation",
       "x": 2,
-      "y": 1,
+      "y": 5,
       "label": "Storm's Edge Gym: Substation (storms_edge_gym)",
       "interior": "MAP_STORMS_EDGE_GYM"
     },
     {
       "prefab": "stilt_house",
       "x": 1,
-      "y": 17,
+      "y": 21,
       "label": "Stilt House (west) (storms_edge_house_w)",
       "interior": "MAP_STORMS_EDGE_HOUSE_W"
     },
     {
       "prefab": "stilt_house",
       "x": 6,
-      "y": 17,
+      "y": 21,
       "label": "Stilt House (centre) (storms_edge_house_c)",
       "interior": "MAP_STORMS_EDGE_HOUSE_C"
     },
     {
       "prefab": "brick_shop",
       "x": 14,
-      "y": 15,
+      "y": 19,
       "label": "Seafood Market (storms_edge_seafood_market)",
       "interior": "MAP_STORMS_EDGE_SEAFOOD_MARKET"
     },
     {
       "prefab": "stilt_house",
       "x": 35,
-      "y": 17,
+      "y": 21,
       "label": "Stilt House (east) (storms_edge_house_e)",
       "interior": "MAP_STORMS_EDGE_HOUSE_E"
     },
     {
       "prefab": "lighthouse",
       "x": 41,
-      "y": 28,
+      "y": 32,
       "label": "Lighthouse (storms_edge_lighthouse)",
       "interior": "MAP_STORMS_EDGE_LIGHTHOUSE"
     },
     {
       "prefab": "emblem",
       "x": 6,
-      "y": 5,
+      "y": 9,
       "label": "Gym emblem"
     },
     {
       "prefab": "pier",
       "x": 22,
-      "y": 11,
+      "y": 15,
       "label": "Bridge",
       "rows": [
         [
@@ -221,7 +221,7 @@
     {
       "prefab": "quay",
       "x": 0,
-      "y": 22,
+      "y": 26,
       "label": "Quay",
       "rows": [
         [
@@ -611,7 +611,7 @@
     {
       "prefab": "quay",
       "x": 32,
-      "y": 22,
+      "y": 26,
       "label": "Quay",
       "rows": [
         [
@@ -779,7 +779,7 @@
     {
       "prefab": "quay",
       "x": 10,
-      "y": 24,
+      "y": 28,
       "label": "Pier",
       "rows": [
         [
@@ -1034,7 +1034,7 @@
     {
       "prefab": "fence",
       "x": 0,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1045,50 +1045,6 @@
     {
       "prefab": "fence",
       "x": 0,
-      "y": 1,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 0,
-      "y": 2,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 0,
-      "y": 3,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 0,
-      "y": 4,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F4"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 0,
       "y": 5,
       "label": "Fence",
       "rows": [
@@ -1156,6 +1112,50 @@
       "prefab": "fence",
       "x": 0,
       "y": 11,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F4"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 0,
+      "y": 12,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F4"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 0,
+      "y": 13,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F4"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 0,
+      "y": 14,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F4"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 0,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1166,7 +1166,7 @@
     {
       "prefab": "fence",
       "x": 1,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1177,7 +1177,7 @@
     {
       "prefab": "fence",
       "x": 1,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1188,7 +1188,7 @@
     {
       "prefab": "fence",
       "x": 2,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1199,7 +1199,7 @@
     {
       "prefab": "fence",
       "x": 2,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1210,7 +1210,7 @@
     {
       "prefab": "fence",
       "x": 3,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1221,7 +1221,7 @@
     {
       "prefab": "fence",
       "x": 3,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1232,7 +1232,7 @@
     {
       "prefab": "fence",
       "x": 4,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1243,7 +1243,7 @@
     {
       "prefab": "fence",
       "x": 4,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1254,7 +1254,7 @@
     {
       "prefab": "fence",
       "x": 5,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1265,7 +1265,7 @@
     {
       "prefab": "fence",
       "x": 6,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1276,7 +1276,7 @@
     {
       "prefab": "fence",
       "x": 7,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1287,7 +1287,7 @@
     {
       "prefab": "fence",
       "x": 8,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1298,7 +1298,7 @@
     {
       "prefab": "fence",
       "x": 8,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1309,7 +1309,7 @@
     {
       "prefab": "fence",
       "x": 9,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1320,7 +1320,7 @@
     {
       "prefab": "fence",
       "x": 9,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1331,7 +1331,7 @@
     {
       "prefab": "fence",
       "x": 10,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1342,7 +1342,7 @@
     {
       "prefab": "fence",
       "x": 10,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
@@ -1353,7 +1353,7 @@
     {
       "prefab": "fence",
       "x": 11,
-      "y": 0,
+      "y": 4,
       "label": "Fence",
       "rows": [
         [
@@ -1364,55 +1364,11 @@
     {
       "prefab": "fence",
       "x": 11,
-      "y": 11,
+      "y": 15,
       "label": "Fence",
       "rows": [
         [
           "0FD"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 12,
-      "y": 0,
-      "label": "Fence",
-      "rows": [
-        [
-          "0EE"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 12,
-      "y": 1,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F5"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 12,
-      "y": 2,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F5"
-        ]
-      ]
-    },
-    {
-      "prefab": "fence",
-      "x": 12,
-      "y": 3,
-      "label": "Fence",
-      "rows": [
-        [
-          "0F5"
         ]
       ]
     },
@@ -1423,7 +1379,7 @@
       "label": "Fence",
       "rows": [
         [
-          "0F5"
+          "0EE"
         ]
       ]
     },
@@ -1500,6 +1456,50 @@
       "label": "Fence",
       "rows": [
         [
+          "0F5"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 12,
+      "y": 12,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F5"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 12,
+      "y": 13,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F5"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 12,
+      "y": 14,
+      "label": "Fence",
+      "rows": [
+        [
+          "0F5"
+        ]
+      ]
+    },
+    {
+      "prefab": "fence",
+      "x": 12,
+      "y": 15,
+      "label": "Fence",
+      "rows": [
+        [
           "136"
         ]
       ]
@@ -1507,55 +1507,55 @@
     {
       "prefab": "gantry_l",
       "x": 1,
-      "y": 1,
+      "y": 5,
       "label": "Gantry"
     },
     {
       "prefab": "fence_wires_l",
       "x": 1,
-      "y": 0,
+      "y": 4,
       "label": "Line over the fence"
     },
     {
       "prefab": "cabinet_l",
       "x": 1,
-      "y": 5,
+      "y": 9,
       "label": "Switch cabinet"
     },
     {
       "prefab": "gantry_r",
       "x": 11,
-      "y": 1,
+      "y": 5,
       "label": "Gantry"
     },
     {
       "prefab": "fence_wires_r",
       "x": 11,
-      "y": 0,
+      "y": 4,
       "label": "Line over the fence"
     },
     {
       "prefab": "cabinet_r",
       "x": 11,
-      "y": 5,
+      "y": 9,
       "label": "Switch cabinet"
     },
     {
       "prefab": "fence_sign",
       "x": 3,
-      "y": 11,
+      "y": 15,
       "label": "Danger sign"
     },
     {
       "prefab": "fence_sign",
       "x": 9,
-      "y": 11,
+      "y": 15,
       "label": "Danger sign"
     },
     {
       "prefab": "downed_line",
       "x": 19,
-      "y": 0,
+      "y": 4,
       "label": "Downed line",
       "rows": [
         [
@@ -1761,145 +1761,133 @@
     {
       "prefab": "generator",
       "x": 14,
-      "y": 4,
+      "y": 8,
       "label": "Generator"
     },
     {
       "prefab": "lamp",
       "x": 13,
-      "y": 9,
+      "y": 13,
       "label": "Lamp"
     },
     {
       "prefab": "lamp",
       "x": 35,
-      "y": 9,
+      "y": 13,
       "label": "Lamp"
     },
     {
       "prefab": "lamp",
       "x": 44,
-      "y": 9,
+      "y": 13,
       "label": "Lamp"
     },
     {
       "prefab": "bench",
       "x": 36,
-      "y": 8,
+      "y": 12,
       "label": "Bench"
     },
     {
       "prefab": "barrel",
       "x": 45,
-      "y": 10,
+      "y": 14,
       "label": "Barrel"
     },
     {
       "prefab": "crates",
       "x": 45,
-      "y": 9,
+      "y": 13,
       "label": "Crates"
     },
     {
       "prefab": "crates",
       "x": 13,
-      "y": 19,
+      "y": 23,
       "label": "Crates"
     },
     {
       "prefab": "barrel",
       "x": 13,
-      "y": 18,
+      "y": 22,
       "label": "Barrel"
     },
     {
       "prefab": "crates",
       "x": 20,
-      "y": 19,
+      "y": 23,
       "label": "Crates"
-    },
-    {
-      "prefab": "trap",
-      "x": 9,
-      "y": 19,
-      "label": "Trap"
     },
     {
       "prefab": "crates",
       "x": 31,
-      "y": 19,
+      "y": 23,
       "label": "Crates"
     },
     {
       "prefab": "barrel",
       "x": 34,
-      "y": 19,
+      "y": 23,
       "label": "Barrel"
-    },
-    {
-      "prefab": "trap",
-      "x": 34,
-      "y": 18,
-      "label": "Trap"
     },
     {
       "prefab": "bench",
       "x": 44,
-      "y": 35,
+      "y": 39,
       "label": "Bench"
     },
     {
       "prefab": "bench",
       "x": 43,
-      "y": 22,
+      "y": 26,
       "label": "Bench"
     },
     {
-      "prefab": "waterlog",
+      "prefab": "cypress_small_water",
       "x": 4,
-      "y": 29,
-      "label": "Water prop"
-    },
-    {
-      "prefab": "waterlog",
-      "x": 30,
-      "y": 31,
-      "label": "Water prop"
-    },
-    {
-      "prefab": "snag_water",
-      "x": 23,
-      "y": 27,
-      "label": "Water prop"
-    },
-    {
-      "prefab": "snag_water",
-      "x": 16,
       "y": 33,
       "label": "Water prop"
     },
     {
-      "prefab": "waterlog",
-      "x": 36,
+      "prefab": "cypress_small_water",
+      "x": 30,
       "y": 35,
+      "label": "Water prop"
+    },
+    {
+      "prefab": "cypress_small_water",
+      "x": 23,
+      "y": 31,
+      "label": "Water prop"
+    },
+    {
+      "prefab": "cypress_small_water",
+      "x": 16,
+      "y": 37,
+      "label": "Water prop"
+    },
+    {
+      "prefab": "cypress_small_water",
+      "x": 36,
+      "y": 39,
       "label": "Water prop"
     },
     {
       "prefab": "sign",
       "x": 13,
-      "y": 11,
+      "y": 15,
       "label": "Sign"
     },
     {
       "prefab": "sign",
       "x": 46,
-      "y": 14,
+      "y": 18,
       "label": "Sign"
     },
     {
       "prefab": "sign",
       "x": 42,
-      "y": 25,
+      "y": 29,
       "label": "Sign"
     }
   ],
@@ -1908,7 +1896,7 @@
       "id": "LOCALID_STORMS_EDGE_ECLAIR",
       "gfx": "OBJ_EVENT_GFX_WORKER_F",
       "x": 8,
-      "y": 10,
+      "y": 14,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
       "text": "ECLAIR: The whole grid tripped when\nthe storm hit. Help me bring it back\\pand we'll talk about a badge."
     },
@@ -1916,7 +1904,7 @@
       "id": "LOCALID_STORMS_EDGE_BRIDGE_TENDER",
       "gfx": "OBJ_EVENT_GFX_WORKER_M",
       "x": 21,
-      "y": 14,
+      "y": 18,
       "move": "MOVEMENT_TYPE_FACE_UP",
       "text": "The surge fried the bridge motor.\nShe stays up till the power's back."
     },
@@ -1924,7 +1912,7 @@
       "id": "LOCALID_STORMS_EDGE_FISHERMAN",
       "gfx": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 11,
-      "y": 32,
+      "y": 36,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
       "text": "After a blow the fish crowd the\nriver mouth. Got a rod, kid?"
     },
@@ -1932,7 +1920,7 @@
       "id": "LOCALID_STORMS_EDGE_LINEMAN",
       "gfx": "OBJ_EVENT_GFX_MAN_2",
       "x": 17,
-      "y": 3,
+      "y": 7,
       "move": "MOVEMENT_TYPE_FACE_RIGHT",
       "text": "Three poles down in one night.\nStay clear of those wires!"
     },
@@ -1940,7 +1928,7 @@
       "id": "LOCALID_STORMS_EDGE_KID",
       "gfx": "OBJ_EVENT_GFX_LITTLE_BOY",
       "x": 16,
-      "y": 10,
+      "y": 14,
       "move": "MOVEMENT_TYPE_WANDER_AROUND",
       "text": "The Pokémon Center runs on a\ngenerator now. Chug chug chug!"
     },
@@ -1948,7 +1936,7 @@
       "id": "LOCALID_STORMS_EDGE_FISHMONGER",
       "gfx": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 13,
-      "y": 17,
+      "y": 21,
       "move": "MOVEMENT_TYPE_FACE_RIGHT",
       "text": "Shrimp's cheap today. Half the\nboats are still tied up."
     },
@@ -1956,7 +1944,7 @@
       "id": "LOCALID_STORMS_EDGE_SAILOR",
       "gfx": "OBJ_EVENT_GFX_SAILOR",
       "x": 42,
-      "y": 21,
+      "y": 25,
       "move": "MOVEMENT_TYPE_FACE_LEFT",
       "text": "The surge came right up to the\nstilts. That's what they're for!"
     },
@@ -1964,7 +1952,7 @@
       "id": "LOCALID_STORMS_EDGE_GRANNY",
       "gfx": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 4,
-      "y": 15,
+      "y": 19,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
       "text": "We raised our houses after the last\nbig storm. Saved us again."
     },
@@ -1972,7 +1960,7 @@
       "id": "LOCALID_STORMS_EDGE_KEEPER",
       "gfx": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 44,
-      "y": 30,
+      "y": 34,
       "move": "MOVEMENT_TYPE_FACE_LEFT",
       "text": "My lamp's been dark since the storm.\nShips can't find the mouth at night."
     },
@@ -1980,7 +1968,7 @@
       "id": "LOCALID_STORMS_EDGE_DECKHAND",
       "gfx": "OBJ_EVENT_GFX_SAILOR",
       "x": 30,
-      "y": 14,
+      "y": 18,
       "move": "MOVEMENT_TYPE_FACE_LEFT",
       "text": "The bridge motor's fried. Nothing\ncrosses till the grid is back."
     },
@@ -1988,7 +1976,7 @@
       "id": "LOCALID_STORMS_EDGE_BOY",
       "gfx": "OBJ_EVENT_GFX_BOY_1",
       "x": 42,
-      "y": 17,
+      "y": 21,
       "move": "MOVEMENT_TYPE_WANDER_AROUND",
       "text": "Eclair's crew hasn't left the\nsubstation in days. It hums!"
     }
@@ -1997,7 +1985,7 @@
   "items": [
     {
       "x": 11,
-      "y": 8,
+      "y": 12,
       "item": "ITEM_RAICHUNITE_X",
       "flag": "FLAG_UNUSED_0x28F",
       "_comment": "Mega Stone (mockup 3): meant to be found after the grid is restored (story pass)"
@@ -2006,7 +1994,7 @@
   "hidden_items": [
     {
       "x": 10,
-      "y": 27,
+      "y": 31,
       "item": "ITEM_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_STORMS_EDGE_PIER"
     }
@@ -2015,25 +2003,25 @@
     {
       "id": "SignWest",
       "x": 13,
-      "y": 11,
+      "y": 15,
       "text": "STORM'S EDGE\nThe port at the river's mouth."
     },
     {
       "id": "SignEast",
       "x": 46,
-      "y": 14,
+      "y": 18,
       "text": "STORM'S EDGE\nWest: the drawbridge. East: Route 3."
     },
     {
       "id": "SignLighthouse",
       "x": 42,
-      "y": 25,
+      "y": 29,
       "text": "STORM'S EDGE LIGHT\nKeep off the rocks below."
     },
     {
       "id": "SignSubstation",
       "x": 3,
-      "y": 11,
+      "y": 15,
       "text": "STORM'S EDGE SUBSTATION\nDANGER: HIGH VOLTAGE. GYM INSIDE."
     }
   ],
@@ -2041,129 +2029,138 @@
     "BridgeRaised": [
       {
         "x": 24,
-        "y": 11,
+        "y": 15,
         "overlay": "sbr:0_0",
         "collision": 1
       },
       {
         "x": 24,
-        "y": 12,
+        "y": 16,
         "overlay": "sbr:0_1",
         "collision": 1
       },
       {
         "x": 24,
-        "y": 13,
+        "y": 17,
         "overlay": "sbr:0_2",
         "collision": 1
       },
       {
         "x": 24,
-        "y": 14,
+        "y": 18,
         "overlay": "sbr:0_3",
         "collision": 1
       },
       {
         "x": 27,
-        "y": 11,
+        "y": 15,
         "overlay": "sbr:1_0",
         "collision": 1
       },
       {
         "x": 27,
-        "y": 12,
+        "y": 16,
         "overlay": "sbr:1_1",
         "collision": 1
       },
       {
         "x": 27,
-        "y": 13,
+        "y": 17,
         "overlay": "sbr:1_2",
         "collision": 1
       },
       {
         "x": 27,
-        "y": 14,
+        "y": 18,
         "overlay": "sbr:1_3",
         "collision": 1
       },
       {
         "x": 25,
-        "y": 11,
+        "y": 15,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 25,
-        "y": 12,
+        "y": 16,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 25,
-        "y": 13,
+        "y": 17,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 25,
-        "y": 14,
+        "y": 18,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 26,
-        "y": 11,
+        "y": 15,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 26,
-        "y": 12,
+        "y": 16,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 26,
-        "y": 13,
+        "y": 17,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 26,
-        "y": 14,
+        "y": 18,
         "tile": "terrain",
         "collision": 0
       },
       {
         "x": 23,
-        "y": 12,
+        "y": 16,
         "overlay": "sbr:2_0",
         "layer": "normal",
         "collision": 1
       },
       {
         "x": 23,
-        "y": 13,
+        "y": 17,
         "overlay": "sbr:2_1",
         "layer": "normal",
         "collision": 1
       },
       {
         "x": 28,
-        "y": 12,
+        "y": 16,
         "overlay": "sbr:3_0",
         "layer": "normal",
         "collision": 1
       },
       {
         "x": 28,
-        "y": 13,
+        "y": 17,
         "overlay": "sbr:3_1",
         "layer": "normal",
         "collision": 1
       }
     ]
+  },
+  "levee_caps": true,
+  "feather": {
+    "shore_pins": {
+      "N": {
+        "21": 4,
+        "31": 4
+      }
+    }
   },
   "exits": [
     {
@@ -2171,11 +2168,11 @@
       "cells": [
         [
           0,
-          12
+          16
         ],
         [
           0,
-          13
+          17
         ]
       ]
     },
@@ -2184,11 +2181,11 @@
       "cells": [
         [
           49,
-          12
+          16
         ],
         [
           49,
-          13
+          17
         ]
       ]
     }

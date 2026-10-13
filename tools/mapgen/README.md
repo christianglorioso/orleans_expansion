@@ -412,3 +412,21 @@ committed `data/layouts/<Map>/map.bin`. Run it after adding an item, object or t
 `band_rules.py`) keep event cells open and nudge props away from them, so an event on a prop or border wall silently changes the terrain on the next
 build. Verse-gate trigger lines carry `"gate": true` and are ignored by those generators. If a map drifts: move the event, regenerate, commit the bin.
 
+## Edge feather pass (`feather.py`, 2026-10-13; the brief is edge_feather_plan.md, gitignored)
+Every map blends into its border instead of ending in a straight line. It runs inside `borders.prepare / apply` (so `repro_check` reproduces it); `borders.FEATHER_MAPS`
+lists the maps (every outdoor map when `EDGE_FEATHER_ALL=1`, the rollout switch; `bands.W8` follows it). Debug: `feather_dbg.py <map> [--ascii]`, `feather_all.py` (all maps,
+in memory), `feather_preview.py <dir> <maps>` (in-memory picture, pending pieces show as the plain tile), `edge_render.py` (clean GBA render of the built bins),
+`surf_check.py [--views DIR]` (Surf viewpoints of the built bins), `feather_foot.py <Map>..` (on-foot connectivity vs git HEAD).
+- **Canopy / scrub maps** (swamp, dry): the wall is a union of aligned 2x2 blocks (the edge art needs its faces on a fixed parity; an odd map's last row / column is always wall)
+  whose depth along each unconnected stretch wanders 0..2 blocks (1..5 cells with the overhang cell). A hill climb picks the profile: no wall on events, doors, exits, paths,
+  trainer sight lines, structures, landmarks, story cells or the seam zone (3 cells beside a connected overlap; dry maps also never in a strict band, their scrub is not primary);
+  terrain boundaries under an overhang are avoided, runs are at most 2 blocks. Edge cells = faces S/N/E/W, inner corners, OUTER corners (all art approved): grounds the set has no
+  piece for are baked (`borders.bake`, `bk_` / `bdg_`, two-pass like the blends), mud / churchyard keep their own overhang (commit 577fe08f4f). Props under the wall go and
+  decor is regrown nearby (`regrow`: same ground, a cell clear of the wall; a lost marsh grove grows a small marsh patch where there is room).
+- **Water maps**: land (grass, marsh, mud) recedes 4-6 cells so a lake / sea shoreline wanders (spec `"feather": {"shore_pins": {"N": {x: max depth}}}` pins it, Storm's Edge's
+  levee heads); then the Surf barrier (below).
+- **Surf barrier** (user rule: every Surf-reachable cell is a viewpoint): water meeting an unconnected edge is sealed 1-3 cells short of it with a wandering chain of blocking
+  scenery (palette per tileset: swamp = cypress, logs, snags, knees, cattails; sea = pilings, logs, snags, rocks, ledge; `water_props_tileset.py` adds the new pieces), so the
+  last water a surfer reaches lies behind scenery. `surf_check.py` proves it on the built bins (corners beside a connection are left to the join).
+- Levee ends in open water (spec `"levee_caps": true`, Storm's Edge) use the rounded jetty nose (`make_levee_caps.render_caps`).
+- Gates: story gate / storm trigger lines are not terrain (`LINE_TRIGGER`); every other event, warp, bg and coord cell in the committed map.json is protected.

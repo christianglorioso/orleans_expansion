@@ -101,13 +101,13 @@ def storms_edge():
     raised = {}
     for st in spec["states"]["BridgeRaised"]:  # barriers and leaves block; the gap is plain water
         raised[(st["x"], st["y"])] = (1, 1) if st.get("tile") == "terrain" else (1, 3)
-    west_src = [(0, y) for y in range(38)]
     g_up = Grid("StormsEdge", raised=raised)
     g_dn = Grid("StormsEdge")
+    west_src = [(0, y) for y in range(g_up.h)]
+    exits = [tuple(c) for e in spec["exits"] for c in e["cells"] if c[0] == 49]      # the Route 3 causeway cells (x 49), wherever the road runs
     doors = {w["dest_map"]: (w["x"], w["y"] + 1) for w in g_up.m["warp_events"]}
     east_targets = {"Mart door": doors["MAP_STORMS_EDGE_MART"], "lighthouse door": doors["MAP_STORMS_EDGE_LIGHTHOUSE"],
-                    "east house door": doors["MAP_STORMS_EDGE_HOUSE_E"], "Route 3 exit (49,12)": (49, 12),
-                    "Route 3 exit (49,13)": (49, 13)}
+                    "east house door": doors["MAP_STORMS_EDGE_HOUSE_E"], **{f"Route 3 exit {c}": c for c in exits}}
     west_targets = {"gym door": doors["MAP_STORMS_EDGE_GYM"], "Center door": doors["MAP_STORMS_EDGE_POKECENTER"],
                     "west house door": doors["MAP_STORMS_EDGE_HOUSE_W"], "centre house door": doors["MAP_STORMS_EDGE_HOUSE_C"],
                     "seafood market door": doors["MAP_STORMS_EDGE_SEAFOOD_MARKET"]}

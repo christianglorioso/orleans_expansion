@@ -1839,7 +1839,7 @@
       "id": "LAYOUT_STORMS_EDGE",
       "name": "StormsEdge_Layout",
       "width": 50,
-      "height": 38,
+      "height": 44,
       "primary_tileset": "gTileset_OrleansGeneral",
       "secondary_tileset": "gTileset_OrleansPort",
       "border_filepath": "data/layouts/StormsEdge/border.bin",

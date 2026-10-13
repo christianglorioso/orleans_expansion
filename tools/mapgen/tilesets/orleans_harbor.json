@@ -3979,6 +3979,97 @@
    "door": null,
    "passable": [],
    "_lmk": true
+  },
+  "wp_knees_a": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:0_0"
+     }
+    ]
+   ],
+   "_wpr": true
+  },
+  "wp_knees_b": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:1_0"
+     }
+    ]
+   ],
+   "_wpr": true
+  },
+  "wp_cattails": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:2_0"
+     }
+    ],
+    [
+     {
+      "overlay": "wpr:3_0"
+     }
+    ]
+   ],
+   "_wpr": true
+  },
+  "wp_rock_a": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:4_0"
+     }
+    ]
+   ],
+   "_wpr": true
+  },
+  "wp_rock_b": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:5_0"
+     }
+    ]
+   ],
+   "_wpr": true
+  },
+  "wp_rock_ledge": {
+   "_comment": "Surf-barrier prop (water_props_tileset.py).",
+   "door": null,
+   "passable": [],
+   "rows": [
+    [
+     {
+      "overlay": "wpr:6_0"
+     },
+     {
+      "overlay": "wpr:7_0"
+     }
+    ]
+   ],
+   "_wpr": true
   }
  },
  "variants": {
