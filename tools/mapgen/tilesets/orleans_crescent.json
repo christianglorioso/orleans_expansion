@@ -1786,7 +1786,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -1795,6 +1796,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    4
    ]
   },
   "fac_dome": {
@@ -1859,7 +1864,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -1868,6 +1874,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    3
    ]
   },
   "fac_palace": {
@@ -1915,7 +1925,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -1924,6 +1935,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    2
    ]
   },
   "fac_arena": {
@@ -1984,7 +1999,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -1993,6 +2009,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    3
    ]
   },
   "fac_factory": {
@@ -2040,7 +2060,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -2049,6 +2070,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    2
    ]
   },
   "fac_pike": {
@@ -2101,7 +2126,8 @@
       "overlay": "ccs:fac_tower_14"
      },
      {
-      "overlay": "ccs:fac_tower_24"
+      "overlay": "ccs:fac_tower_24",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_tower_34"
@@ -2110,6 +2136,10 @@
       "overlay": "ccs:fac_tower_44"
      }
     ]
+   ],
+   "door": [
+    2,
+    3
    ]
   },
   "fac_pyramid": {
@@ -2170,7 +2200,8 @@
       "overlay": "ccs:fac_pyramid_13"
      },
      {
-      "overlay": "ccs:fac_pyramid_23"
+      "overlay": "ccs:fac_pyramid_23",
+      "behavior": "MB_NON_ANIMATED_DOOR"
      },
      {
       "overlay": "ccs:fac_pyramid_33"
@@ -2179,6 +2210,10 @@
       "overlay": "ccs:fac_pyramid_43"
      }
     ]
+   ],
+   "door": [
+    2,
+    3
    ]
   },
   "block_dept": {

@@ -19,13 +19,13 @@ FACE = "MOVEMENT_TYPE_FACE_"
 
 # ---------------------------------------------------------------------------------------------- the city (outdoors)
 CRESCENT = {
-    # the Arena's door is a sign, not a warp: say so (audit pg N1)
-    "patch_signs": {"FrontierSign": {"text": "BATTLE FRONTIER\nOpen to champions only.\\pBATTLE ARENA: face its door,\npress A."}},
+    # the seven halls' doors are warps (crescent.py), the sign lists them
+    "patch_signs": {"FrontierSign": {"text": "BATTLE FRONTIER\nOpen to champions only.\\pTOWER  DOME  PALACE  ARENA\nFACTORY  PIKE  PYRAMID"}},
     "patch_objects": {
         # Lafayette waits at the conservation center's door while the story is 13 (Crescent's OnTransition hides him otherwise)
         "LOCALID_CRESCENT_CITY_LAFAYETTE": {"custom": True, "gfx": "OBJ_EVENT_GFX_SCIENTIST_1", "flag": "FLAG_HIDE_CRESCENT_LAFAYETTE"},
         "LOCALID_CRESCENT_CITY_PARADE_LEADER": {"custom": True, "gfx": "OBJ_EVENT_GFX_BARD"},
-        "LOCALID_CRESCENT_CITY_FRONTIER_GUARD": {"text": T("The Battle Frontier district opens", "after the Rayquaza finale.")},
+        "LOCALID_CRESCENT_CITY_FRONTIER_GUARD": {"text": T("The seven halls of the FRONTIER", "open after the Rayquaza finale.")},
         "LOCALID_CRESCENT_CITY_PARK_STROLLER": {"text": T("The magnolias here came from GRAND", "OAK, years ago. They took.")},
         "LOCALID_CRESCENT_CITY_MOURNER": {"text": T("The old tombs flooded to the lids.", "We rebuilt every one by hand.")},
         "LOCALID_CRESCENT_CITY_SHOPPER": {"text": T("The department store has three", "floors. Mind the second, it's TMs.")},

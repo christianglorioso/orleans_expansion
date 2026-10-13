@@ -107,6 +107,6 @@ ROOMS = {
     "lutins_hollow_herbalist": {"opts": {1: {"custom": True}}},
 }
 
-# the Battle Frontier: the plaza opens when the guard steps aside (story 45); the Battle Arena (the one facility with a built hall) leads to the vanilla
-# Arena lobby by script (BattleFrontier_BattleArenaLobby's exit mat comes back by a coord event); the other six stay shut
-FRONTIER = {"signs": [{"id": "FrontierArena", "x": 25, "y": 49, "text": "", "custom": True}]}
+# the Battle Frontier: the plaza opens when the guard steps aside (story 45). The seven halls' doors are real warps into the vanilla lobbies (crescent.py
+# FAC_LOBBY) and every lobby exit is a warp retargeted to the door in front of it (frontier_wire.py), so nothing here is a script
+FRONTIER = {}

@@ -421,6 +421,10 @@ FAC = (("Battle Tower (post-game)", "fac_tower", -12), ("Battle Dome (post-game)
        ("Battle Palace (post-game)", "fac_palace", 2), ("Battle Arena (post-game)", "fac_arena", 9),
        ("Battle Factory (post-game)", "fac_factory", 16), ("Battle Pike (post-game)", "fac_pike", 23),
        ("Battle Pyramid (post-game)", "fac_pyramid", 30))
+FAC_LOBBY = {"fac_tower": "MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY", "fac_dome": "MAP_BATTLE_FRONTIER_BATTLE_DOME_LOBBY",
+             "fac_palace": "MAP_BATTLE_FRONTIER_BATTLE_PALACE_LOBBY", "fac_arena": "MAP_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY",
+             "fac_factory": "MAP_BATTLE_FRONTIER_BATTLE_FACTORY_LOBBY", "fac_pike": "MAP_BATTLE_FRONTIER_BATTLE_PIKE_LOBBY",
+             "fac_pyramid": "MAP_BATTLE_FRONTIER_BATTLE_PYRAMID_LOBBY"}
 FAC_DOOR = (52, 51, 50, 49, 50, 51, 52)  # each facility's door row: a shallow bay, the Arena at its head
 
 
@@ -434,7 +438,8 @@ def frontier(c):
     c.fence([(x, 45) for x in range(-14, 37)] + [(36, y) for y in range(46, 66)] + [(-14, y) for y in range(46, 66)],
             gaps=gate)
     for (label, prefab, x), door in zip(FAC, FAC_DOOR):
-        c.closed(label, x, door + 1 - c.size(prefab)[1], prefab)  # every facility's door on its row, facing the plaza
+        # every facility's door on its row, facing the plaza; the door is a real warp into the vanilla lobby (the Hoenn facility halls are kept)
+        c.put(prefab, x, door + 1 - c.size(prefab)[1], label, interior=FAC_LOBBY[prefab])
     # the plaza: from each facility's front (and the alley beside it, down from the shallower neighbour's front)
     top = {}
     for i, ((_, _, x), door) in enumerate(zip(FAC, FAC_DOOR)):
@@ -652,6 +657,10 @@ def build_all():
     c.npc("PARADE_LEADER", "OBJ_EVENT_GFX_MAN_1", 24, 12, "(Second-line parade leader: placeholder.)")
     c.npc("LAFAYETTE", "OBJ_EVENT_GFX_MAN_1", 43, 42, "(Lafayette: placeholder.)")
     townsfolk(c)
+    # the Frontier doors come last in the building list: build_interior.py numbers the Crescent door warps in this order, so no town room's exit
+    # warp moves when the seven facility doors open
+    fac = {label for label, _, _ in FAC}
+    c.buildings.sort(key=lambda b: b["label"] in fac)
     validate(c)
     return c
 

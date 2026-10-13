@@ -578,12 +578,3 @@ BattleFrontier_BattleArenaLobby_Text_PleaseAcceptBattlePoints:
 	.string "My dear challenger, in recognition of\n"
 	.string "your indefatigable spirit, please\l"
 	.string "accept these Battle Point(s).$"
-
-@ Orleans (Chapter 10): the exit mat leaves for Crescent City's Frontier plaza (the coord event on the mat runs before the vanilla warp)
-BattleFrontier_BattleArenaLobby_EventScript_ExitToCrescent::
-	lockall
-	fadescreen FADE_TO_BLACK
-	warpsilent MAP_CRESCENT_CITY, 25, 50
-	waitstate
-	releaseall
-	end

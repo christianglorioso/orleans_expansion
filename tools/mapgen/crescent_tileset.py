@@ -163,6 +163,14 @@ def apply(r, c):
         if p.get("passable"):
             pf["passable"] = p["passable"]
         c["prefabs"][name] = pf
+    # the Battle Frontier's facilities (the post-game, Chapter 10): the hall's one door is the middle cell of the bottom row (the art's door), a
+    # non-animated door like every other building's, so the plaza leads into each facility's lobby (crescent.py gives each its lobby as "interior")
+    for name in [n for n in idx["pieces"] if n.startswith("fac_")]:
+        pf = c["prefabs"][name]
+        row = pf["rows"][-1]
+        dx = len(row) // 2
+        row[dx] = dict(row[dx], behavior=DOOR)
+        pf["door"] = [dx, len(pf["rows"]) - 1]
     def stack(name, parts, comment=None):
         """A prefab of several row blocks stacked top to bottom (prefab names or literal rows), its door carried
         down by the rows above it."""

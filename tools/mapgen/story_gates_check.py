@@ -538,16 +538,26 @@ def finale_rooms():
 
 
 def frontier_gate():
-    """Chapter 10: the Battle Frontier plaza (Crescent City, south of Canal Avenue) is sealed by its fence and the guard in the one-tile gate; the Arena door's
-    standing cell (25, 50) is inside, and every post-game object stands on a walkable cell hidden by its own flag."""
+    """Chapter 10: the Battle Frontier plaza (Crescent City, south of Canal Avenue) is sealed by its fence and the guard in the one-tile gate; the seven halls'
+    doors (real warps into the vanilla lobbies) and the cell in front of each are inside, and every facility exit leads back to its own door (frontier_wire.py);
+    every post-game object stands on a walkable cell hidden by its own flag."""
+    import frontier_wire as fw
     cc = Grid("CrescentCity")
     guard = next(o for o in cc.m["object_events"] if o.get("local_id") == "LOCALID_CRESCENT_CITY_FRONTIER_GUARD")
     src = [(48, 21)]
     r_closed = cc.fill(src)
     cc2 = Grid("CrescentCity", remove_objects=("LOCALID_CRESCENT_CITY_FRONTIER_GUARD",))
     r_open = cc2.fill(src)
-    check(guard["flag"] == "FLAG_UNUSED_0x2D9" and (25, 50) not in r_closed and (25, 50) in r_open,
-          "Crescent City: the Frontier plaza (Arena door cell (25, 50)) is reachable only once the guard is gone (FLAG_UNUSED_0x2D9)")
+    fronts = {}
+    for n, (lobby, _) in fw.FACILITIES.items():
+        ws = [w for w in cc.m["warp_events"] if w["dest_map"] == lobby]
+        if len(ws) == 1:
+            fronts[n] = (ws[0]["x"], ws[0]["y"] + 1)
+    check(guard["flag"] == "FLAG_UNUSED_0x2D9" and len(fronts) == 7 and not any(c in r_closed for c in fronts.values()) and all(c in r_open for c in fronts.values()),
+          f"Crescent City: the Frontier plaza (the seven halls' doors, standing cells {sorted(fronts.values())}) is reachable only once the guard is gone (FLAG_UNUSED_0x2D9)")
+    bad = fw.stray()
+    check(not bad and all(cc.walk(*c) for c in fronts.values()),
+          f"Battle Frontier: every exit of the seven facilities (lobby mats, stray warps) returns to its own Crescent plaza door; none leaves for a Hoenn map ({bad})")
     import story_data_ch10 as c10
     bad = []
     for (m, key, kind, flag, gfx, (x, y), s) in c10.all_objects():

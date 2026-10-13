@@ -144,15 +144,15 @@
       "x": 12,
       "y": 9,
       "elevation": 3,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CRESCENT_CITY",
+      "dest_warp_id": "20"
     },
     {
       "x": 13,
       "y": 9,
       "elevation": 3,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CRESCENT_CITY",
+      "dest_warp_id": "20"
     },
     {
       "x": 6,

@@ -214,19 +214,16 @@ def run(b, t):
     b.set_var("VAR_ORLEANS_STORY", 45)
     other_map(b)
     b.warp("CrescentCity", 25, 50)
-    b.face("U")
-    b.press("A", 4, 20)
-    for _ in range(60):
-        if b.map_name() == "BattleFrontier_BattleArenaLobby":
-            break
-        b.press("A", 4, 30)
-    b.frames(40)
-    t.check("the Battle Arena's door leads to the Arena lobby", b.map_name() == "BattleFrontier_BattleArenaLobby", b.where())
+    b.step("U")
+    b.frames(60)
+    b.settle()
+    t.check("the Battle Arena's door (a real warp) leads to the Arena lobby", b.map_name() == "BattleFrontier_BattleArenaLobby", b.where())
     b.advance_text(30)
-    b.press("DOWN", 8, 8)
-    b.press("DOWN", 8, 8)
-    b.frames(160)
-    t.check("the lobby's exit mat returns to the Frontier plaza in Crescent City", b.map_name() == "CrescentCity" and b.pos() == (25, 50), b.where())
+    b.goto(7, 12)    # the mat is a door tile: the warp fires when the player walks down off it
+    if b.map_name() == "BattleFrontier_BattleArenaLobby":
+        b.step("D")
+    b.frames(120)
+    t.check("the lobby's exit mat returns to the Frontier plaza in Crescent City, in front of the Arena", b.map_name() == "CrescentCity" and b.pos()[0] == 25 and b.pos()[1] in (49, 50), b.where())
 
     # ---------------------------------------------------------------- hotfix 2026-10-13: the ice plant guard steps aside at story 45 (Articuno's door)
     b.set_flag("FLAG_HIDE_POINTE_ICE_GUARD", False)

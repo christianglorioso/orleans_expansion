@@ -507,36 +507,9 @@ CrescentCity_Text_PGStillGalarMoltres:
 
 @ --- end post-game ---
 
-@ The Battle Frontier (Chapter 10): the plaza opens at story 45 (the guard steps aside, FLAG_UNUSED_0x2D9). The Battle Arena's door is a sign on the
-@ building's door cell (25, 49), faced from (25, 50); it warps to the vanilla Arena lobby, whose exit mat comes back here by a coord event.
-CrescentCity_EventScript_FrontierArena::
-	lockall
-	goto_if_lt VAR_ORLEANS_STORY, 45, CrescentCity_EventScript_FrontierArenaClosed
-	msgbox CrescentCity_Text_ArenaOpen, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, CrescentCity_EventScript_FrontierArenaNo
-	closemessage
-	fadescreen FADE_TO_BLACK
-	warpsilent MAP_BATTLE_FRONTIER_BATTLE_ARENA_LOBBY, 7, 11
-	waitstate
-	releaseall
-	end
-
-CrescentCity_EventScript_FrontierArenaNo:
-	releaseall
-	end
-
-CrescentCity_EventScript_FrontierArenaClosed:
-	msgbox CrescentCity_Text_ArenaClosed, MSGBOX_DEFAULT
-	releaseall
-	end
-
-CrescentCity_Text_ArenaClosed:
-	.string "The Battle Arena is closed. The\n"
-	.string "district opens after the finale.$"
-
-CrescentCity_Text_ArenaOpen:
-	.string "BATTLE ARENA. Three rounds, a judge\n"
-	.string "and no time to think. Step in?$"
+@ The Battle Frontier (Chapter 10): the plaza opens at story 45 (the guard steps aside, FLAG_UNUSED_0x2D9). Each of the seven halls' doors is a real warp
+@ (crescent.py: every facility's "interior" is its vanilla lobby); each lobby's exits are warps retargeted to the same door (frontier_wire.py), so every way out
+@ lands back here in front of the building.
 
 @ the couple on the plaza (audit pg S2): waiting for the Frontier before the ending, and a line about the Arena after it
 CrescentCity_EventScript_FrontierPair::
@@ -557,8 +530,10 @@ CrescentCity_Text_FrontierPair:
 	.string "open. Any year now.$"
 
 CrescentCity_Text_FrontierPairOpen:
-	.string "It opened! The BATTLE ARENA first.\n"
-	.string "The rest are closed for renovation.$"
+	.string "It opened! All seven halls, from the\n"
+	.string "TOWER to the PYRAMID.\p"
+	.string "They say the ARENA is rough. And the\n"
+	.string "PIKE is worse.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -567,7 +542,7 @@ CrescentCity_EventScript_FrontierGuard::
 	end
 
 CrescentCity_Text_FrontierGuard:
-	.string "The Battle Frontier district opens\nafter the Rayquaza finale.$"
+	.string "The seven halls of the FRONTIER\nopen after the Rayquaza finale.$"
 
 CrescentCity_EventScript_Painter::
 	msgbox CrescentCity_Text_Painter, MSGBOX_NPC
@@ -728,7 +703,7 @@ CrescentCity_EventScript_FrontierSign::
 	end
 
 CrescentCity_Text_FrontierSign:
-	.string "BATTLE FRONTIER\nOpen to champions only.\pBATTLE ARENA: face its door,\npress A.$"
+	.string "BATTLE FRONTIER\nOpen to champions only.\pTOWER  DOME  PALACE  ARENA\nFACTORY  PIKE  PYRAMID$"
 
 CrescentCity_EventScript_LeveeSign::
 	msgbox CrescentCity_Text_LeveeSign, MSGBOX_SIGN

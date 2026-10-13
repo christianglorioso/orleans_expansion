@@ -182,11 +182,13 @@
     },
     {
       "id": "HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
-      "x": 3,
-      "y": 52,
-      "respawn_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
-      "respawn_npc": "LOCALID_FRONTIER_NURSE"
+      "map": "MAP_CRESCENT_CITY",
+      "x": 25,
+      "y": 50,
+      "respawn_map": "MAP_CRESCENT_CITY_POKECENTER_QUARTER",
+      "respawn_npc": "LOCALID_CRESCENT_CITY_POKECENTER_QUARTER_NURSE0",
+      "respawn_x": 7,
+      "respawn_y": 4
     },
     {
       "id": "HEAL_LOCATION_PALLET_TOWN",
@@ -352,9 +354,13 @@
     },
     {
       "id": "HEAL_LOCATION_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "x": 28,
-      "y": 36
+      "map": "MAP_CRESCENT_CITY",
+      "x": 11,
+      "y": 52,
+      "respawn_map": "MAP_CRESCENT_CITY_POKECENTER_QUARTER",
+      "respawn_npc": "LOCALID_CRESCENT_CITY_POKECENTER_QUARTER_NURSE0",
+      "respawn_x": 7,
+      "respawn_y": 4
     },
     {
       "id": "HEAL_LOCATION_ISLE_MARAIS",

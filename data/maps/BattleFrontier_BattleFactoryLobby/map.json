@@ -101,15 +101,15 @@
       "x": 9,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CRESCENT_CITY",
+      "dest_warp_id": "24"
     },
     {
       "x": 10,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_BATTLE_FRONTIER_OUTSIDE_WEST",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CRESCENT_CITY",
+      "dest_warp_id": "24"
     }
   ],
   "coord_events": [],
