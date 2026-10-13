@@ -290,7 +290,7 @@ INTERIORS = {
     "isle_marais_house_w": house(
         "House (west)", "Isle Marais · neighbours · the cabin west of the church path",
         [("npc", 4, 5, "Old fisherman: stories about the shrimp boats"),
-         ("event", 7, 3, "Window: view of the stranded shrimp boat")],
+         ("event", 7, 3, "Window: view of the channel")],
         ["Exterior: Shady Forest cabin (3x4)."], size=(9, 8)),
     "isle_marais_house_e": house(
         "House (east)", "Isle Marais · neighbours · the cabin by the barn path",

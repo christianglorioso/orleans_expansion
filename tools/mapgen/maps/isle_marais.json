@@ -66,18 +66,6 @@
       "label": "Pier"
     },
     {
-      "prefab": "boat",
-      "x": 8,
-      "y": 22,
-      "label": "Shrimp boat (fishing spot 11)"
-    },
-    {
-      "prefab": "boat",
-      "x": 19,
-      "y": 24,
-      "label": "Shrimp boat (stranded)"
-    },
-    {
       "prefab": "cypress_marsh",
       "x": 1,
       "y": 0,
@@ -280,8 +268,8 @@
       "x": 11,
       "y": 21,
       "move": "MOVEMENT_TYPE_FACE_DOWN",
-      "text": "The shrimp boat's stuck, but the\\nMAGIKARP are still biting.",
-      "_note": "11. Old Rod fishing spot by the stranded boat"
+      "text": "The levee's broke, but the\\nMAGIKARP are still biting.",
+      "_note": "11. Old Rod fishing spot at the south shore"
     }
   ],
   "items": [

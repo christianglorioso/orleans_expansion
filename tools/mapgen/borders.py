@@ -99,6 +99,7 @@ def terrain_agrees(b, style, side, spans):
 
 
 ENABLED = True
+FEATHER_MAPS = {"isle_marais", "storms_edge", "route_16"}   # the edge-transition pass (feather.py) runs on these (prototype); roll out by adding keys
 NO_DRY_WALL = {"route_17"}   # shares Capital (Redfield), which has no tiles to spare
 DRY_WALLS = True     # dry scrub: a 2-cell wall (+ edge cells) along every unconnected edge of the dry maps: events / exits shorten it
 WATER_WALLS = False   # water borders: 2 cells of water laid over a land edge (grid edit, no art): off, it flooded reachable cells
@@ -143,6 +144,10 @@ def prepare(b, key):
     for bd in spec.get("buildings", []):     # a building or walkway is never under a wall: the wall gives way
         if br.is_structure(b, bd):
             keep_open |= {(x, y) for x, y, _ in br.prefab_cells(b, bd)}
+    if key in FEATHER_MAPS:       # the edge-transition pass (feather.py): an organic wall / shoreline instead of a straight one
+        import feather
+        if feather.prepare(b, key, style, sp, keep_open, strict_all):
+            return
     if style == "water" and (not (WALLS or WATER_WALLS) or key in NO_WATER_WALL):
         return
     if style == "water":
@@ -337,13 +342,15 @@ def apply(b):
         b.blocks[y][x] = build.block(build.hx(names[(x & 1) + (y & 1) * 2]), 1, 3)
     for (x, y), face in sorted(b.edge.items()):
         terr, under = edge_base(b, x, y, inv)
+        if style == "dry" and terr == "grass" and b.grid[y][x] == "d":   # the dry ground shares its metatile with the primary grass
+            terr, under = "dry", "dry:0_0"
         par = _parity(face, x, y)
         suffix = "" if par is None else f"_{par}"
         if terr in ("marsh", "water") and style == "swamp":
             nm = f"bd:swamp_{face}_{terr}{suffix}"
         elif terr == "dry" and style == "dry":
             nm = f"bd:dry_{face}_dry{suffix}"
-        elif not WALLS and not (terr == "grass" and style == "swamp"):
+        elif not (WALLS or getattr(b, "feather_bake", False)) and not (terr == "grass" and style == "swamp"):
             continue            # not a canonical ground: no overhang here (the border block meets it)
         else:
             nm = bake(b, build, inv, style, face, par, x, y, terr, under)

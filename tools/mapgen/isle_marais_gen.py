@@ -329,7 +329,11 @@ def write(t, out, proposal=False):
         spec["_proposal"] = True
     spec["edits"] = []
     spec["_edits"] = "No edits: the grid is final (isle_marais_gen.py wrote it from the original in isle_marais.base.*)."
-    spec["buildings"] = spec["buildings"] + t.new
+    spec["buildings"] = [b for b in spec["buildings"] + t.new if b.get("prefab") != "boat"]   # user 2026-10-13: the sailboats go
+    for o in spec.get("objects", []):
+        if o.get("id") == "LOCALID_ISLE_MARAIS_FISHERMAN":
+            o["text"] = "The levee's broke, but the\nMAGIKARP are still biting."
+            o["_note"] = "11. Old Rod fishing spot at the south shore"
     spec.pop("_channel", None)
     spec.pop("_east_swamp", None)
     spec["_comment"] = "Isle Marais, polished by isle_marais_gen.py (edit that, not this file)."

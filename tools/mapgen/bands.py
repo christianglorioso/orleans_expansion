@@ -28,6 +28,11 @@ ROOT = world.ROOT
 # the engine draws a 16 x 16 window and copies 7 rows (8 columns east) of the neighbour: cells past the 5 visible rows are drawn with the OLD
 # tileset when the player crosses and stay stale (black) until scrolled over (in-engine walk test: Pointe Rouge -> Route 4)
 DEPTH = {"N": 7, "S": 7, "W": 7, "E": 8}
+# The engine copies 8 columns of the neighbour onto an EAST margin (MAP_OFFSET_W = 15): a map whose WEST edge is joined to a western
+# neighbour has its columns 0..7 drawn in that neighbour, so its band must be 8 wide (the 8th column showed as garbage / magenta while
+# the camera scrolls).  Prototype 2026-10-13: only the maps listed here are widened (Route 17 for the Route 16 / 17 join); every
+# W-joined map has the same hole (see edge_feather report), widen by adding keys (each needs a rebuild of its generator).
+W8 = {"route_17"}
 SIDE = {"right": "E", "left": "W", "down": "S", "up": "N"}
 OPP = {"E": "W", "W": "E", "N": "S", "S": "N"}
 _cache = {}
@@ -70,7 +75,7 @@ ALONG = {"N": 7, "S": 7, "W": 5, "E": 5}
 
 def side_cells(key, side, lo, hi):
     w, h = info()[key]["w"], info()[key]["h"]
-    d = DEPTH[side]
+    d = 8 if (side == "W" and key in W8) else DEPTH[side]
     length = w if side in "NS" else h
     lo, hi = max(0, lo - ALONG[side]), min(length, hi + ALONG[side])
     cells = set()
