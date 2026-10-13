@@ -652,3 +652,4 @@ gSpecials::
 	def_special StarterBall_Prepare
 	def_special StarterBall_ShowPic
 	def_special OrleansDex_CheckBaseComplete
+	def_special StartBlackJack
