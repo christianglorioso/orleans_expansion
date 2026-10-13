@@ -347,13 +347,6 @@
     },
     {
       "x": 12,
-      "y": 46,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "Route1_EventScript_TooDangerous"
-    },
-    {
-      "x": 12,
       "y": 44,
       "var": "VAR_ORLEANS_STORY",
       "value": 3,
@@ -375,13 +368,6 @@
     },
     {
       "x": 13,
-      "y": 46,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "Route1_EventScript_TooDangerous"
-    },
-    {
-      "x": 13,
       "y": 44,
       "var": "VAR_ORLEANS_STORY",
       "value": 3,
@@ -399,13 +385,6 @@
       "y": 46,
       "var": "VAR_ORLEANS_STORY",
       "value": 1,
-      "script": "Route1_EventScript_TooDangerous"
-    },
-    {
-      "x": 14,
-      "y": 46,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
       "script": "Route1_EventScript_TooDangerous"
     },
     {

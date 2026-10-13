@@ -193,7 +193,8 @@ IsleMarais_Shelter_EventScript_ReceivedStarter:
 	setflag FLAG_HIDE_SHELTER_LAFAYETTE
 	clearflag FLAG_HIDE_ROUTE1_LAFAYETTE
 	fadescreen FADE_FROM_BLACK
-	setvar VAR_ORLEANS_STORY, 2
+	@ the Wingull scene on the shelter steps was cut (playtest): the pick leads straight to Lafayette on Route 1 (story 3)
+	setvar VAR_ORLEANS_STORY, 3
 	release
 	end
 

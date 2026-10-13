@@ -323,50 +323,7 @@
       "_note": "the player's house stays boarded until gym 1 (IsleMarais_OnLoad); the hand-written script checks FLAG_BADGE01_GET"
     }
   ],
-  "triggers": [
-    {
-      "x": 22,
-      "y": 5,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "x": 21,
-      "y": 5,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "x": 23,
-      "y": 5,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "x": 21,
-      "y": 6,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "x": 22,
-      "y": 6,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    },
-    {
-      "x": 23,
-      "y": 6,
-      "var": "VAR_ORLEANS_STORY",
-      "value": 2,
-      "script": "IsleMarais_EventScript_DisplacedWingull"
-    }
-  ],
+  "triggers": [],
   "_comment": "Isle Marais, polished by isle_marais_gen.py (edit that, not this file).",
   "feather": {
     "keep_groves": true
