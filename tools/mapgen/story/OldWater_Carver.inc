@@ -40,8 +40,7 @@ OldWater_Carver_Text_Plain:
 
 OldWater_Carver_Text_Gives:
 	.string "CARVER: TUPELO's word: six verses.\nI carved this the night the storm\p"
-	.string "came, and kept it unfinished.\nHold out your hands.\p"
-	.string "{PLAYER} received the CYPRESS CHARM!$"
+	.string "came, and kept it unfinished.\nHold out your hands.$"
 
 OldWater_Carver_Text_Explain:
 	.string "CARVER: The charm listens to the\nstones. A POKéMON holding a MEGA\p"

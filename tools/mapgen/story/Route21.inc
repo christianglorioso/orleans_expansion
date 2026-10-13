@@ -67,7 +67,7 @@ Route21_Text_Route21Swimmer2Defeat:
 	.string "Not today.$"
 
 Route21_Text_Route21Swimmer2After:
-	.string "You need the diving gear. HERON\nhas it, they say.$"
+	.string "The temple door is on ROUTE 22.\nFace it from the water.$"
 
 Route21_Text_Route21Swimmer3Intro:
 	.string "Another traveler. The Gulf is\nbusy this year.$"

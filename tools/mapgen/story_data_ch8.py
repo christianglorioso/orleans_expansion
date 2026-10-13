@@ -74,7 +74,7 @@ TRAINERS = [
     dict(m="Route21", n=5, const="TRAINER_ORLEANS_ROUTE21_SWIMMER_2", name="BAPTISTINE", cls="Swimmer F", pic="Swimmer F", sex="Female", music="Swimmer",
          gfx=SWF, face="DOWN", sight=4, team=[("Araquanid", 50), ("Cloyster", 51), ("Gyarados", 51)],
          intro=T("Everyone wants the temple.", "Few can reach it."), defeat=T("Not today."),
-         after=T("You need the diving gear. HERON", "has it, they say.")),
+         after=T("The temple door is on ROUTE 22.", "Face it from the water.")),
     dict(m="Route21", n=6, const="TRAINER_ORLEANS_ROUTE21_SWIMMER_3", name="MAXENCE", cls="Swimmer M", pic="Swimmer M", sex="Male", music="Swimmer",
          gfx=SW, face="UP", sight=4, team=[("Kingler-Orleanian", 50), ("Barbaracle", 51), ("Seismitoad", 51)],
          intro=T("Another traveler. The Gulf is", "busy this year."), defeat=T("Crabbed."),
@@ -91,7 +91,7 @@ TRAINERS = [
     dict(m="Route22", n=2, const="TRAINER_ORLEANS_ROUTE22_SWIMMER_2", name="CASIMIR", cls="Swimmer M", pic="Swimmer M", sex="Male", music="Swimmer",
          gfx=SW, face="DOWN", sight=4, team=[("Sharpedo", 52), ("Seismitoad", 52), ("Archaludon", 52)],
          intro=T("This is as far as the sea lets", "you go. For now."), defeat=T("Beached."),
-         after=T("When the telling's complete, the", "water will let you through.")),
+         after=T("The water lets the singers through.", "It's letting you.")),
 ]
 
 EXTRA_PARTIES = [

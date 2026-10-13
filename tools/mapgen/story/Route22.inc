@@ -79,6 +79,6 @@ Route22_Text_Route22Swimmer2Defeat:
 	.string "Beached.$"
 
 Route22_Text_Route22Swimmer2After:
-	.string "When the telling's complete, the\nwater will let you through.$"
+	.string "The water lets the singers through.\nIt's letting you.$"
 
 @ --- end route trainers ---

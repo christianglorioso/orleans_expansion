@@ -316,7 +316,29 @@ Redfield_EventScript_GoToOldWater:
 	releaseall
 	end
 
+@ ---------------------------------------------------------------- the boatman (audit ch7 S2: his line follows the fallen span)
+Redfield_EventScript_Boatman::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE07_GET, Redfield_EventScript_BoatmanAfter
+	msgbox Redfield_Text_Boatman, MSGBOX_DEFAULT
+	release
+	end
+
+Redfield_EventScript_BoatmanAfter:
+	msgbox Redfield_Text_BoatmanAfter, MSGBOX_DEFAULT
+	release
+	end
+
 @ ---------------------------------------------------------------- text
+Redfield_Text_Boatman:
+	.string "A fallen span cuts the road east.\n"
+	.string "The mill's song will clear it.$"
+
+Redfield_Text_BoatmanAfter:
+	.string "The span's down. The river road\n"
+	.string "runs east to LAND'S END.$"
+
 Redfield_Text_Arrival1:
 	.string "Sugar and smoke. REDFIELD's cane\n"
 	.string "runs to the sky, and a brick chimney\p"

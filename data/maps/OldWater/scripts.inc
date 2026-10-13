@@ -180,7 +180,7 @@ OldWater_Text_Grunt2:
 	.string "and the kid!$"
 
 OldWater_Text_DefeatA:
-	.string "My CROBAT...$"
+	.string "My whole team...$"
 
 OldWater_Text_DefeatB:
 	.string "That's not what we were promised.$"

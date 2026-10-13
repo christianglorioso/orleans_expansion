@@ -21,5 +21,5 @@ Redfield_RitasOffice_Text_Before:
 
 Redfield_RitasOffice_Text_After:
 	.string "RECRUITER: She left. Out the back,\n"
-	.string "the pamphlets still on her desk.$"
+	.string "her teacup still warm.$"
 

@@ -154,9 +154,9 @@ LandsEnd_Text_Andrew1:
 	.string "Let's hear the telling whole.$"
 
 LandsEnd_Text_Telling:
-	.string "HERON steps to the pavilion door and\n"
-	.string "recites the telling, all eight\p"
-	.string "verses, in a voice the rain obeys.\n"
+	.string "HERON recites the telling from the\n"
+	.string "pavilion, all eight verses, in a\p"
+	.string "voice the rain obeys.\n"
 	.string "The Long One lay down to guard.$"
 
 LandsEnd_Text_Andrew2:

@@ -86,7 +86,7 @@ TRAINERS = [
          after=T("Smoke rises, birds follow. It's", "an old trick.")),
     dict(m="Route17", n=5, const="TRAINER_ORLEANS_ROUTE17_COOLTRAINER", name="VIVIANE", cls="Cooltrainer", pic="Cooltrainer F", sex="Female", music="Female",
          gfx="OBJ_EVENT_GFX_BEAUTY", face="DOWN", sight=4, team=[("Delphox", 45), ("Raichu", 45), ("Sylveon", 46)],
-         intro=T("Two badges short of the next", "town. Let's see yours!"), defeat=T("You've earned them."),
+         intro=T("Six badges, and the next town", "wants a seventh. Let's see yours!"), defeat=T("You've earned them."),
          after=T("A sunny day, a sunny gym. It's", "a hard combination.")),
     dict(m="Route17", n=6, const="TRAINER_ORLEANS_ROUTE17_HIKER", name="ROMAIN", cls="Hiker", pic="Hiker", sex="Male", music="Hiker",
          gfx="OBJ_EVENT_GFX_HIKER", face="LEFT", sight=4, team=[("Gigalith", 45), ("Coalossal", 45), ("Mamoswine", 46)],
@@ -186,7 +186,7 @@ REDFIELD = {
         "LOCALID_REDFIELD_FARMHAND": {"text": T("Cane's ready to cut. Don't wander", "into the rows. You'll get lost.")},
         "LOCALID_REDFIELD_PICKER": {"text": T("Peppers by the bushel. Dry, dry", "weather: the best kind for heat.")},
         "LOCALID_REDFIELD_KEEPER": {"text": T("The great sundial's older than the", "mill. It has never been wrong.")},
-        "LOCALID_REDFIELD_BOATMAN": {"text": T("East of here the road's cut by a", "fallen span. It clears with the mill's song.")},
+        "LOCALID_REDFIELD_BOATMAN": {"custom": True},   # two states (story/Redfield.inc): before and after the span is gone
     },
     "add_objects": [
         # Wren stands outside the mill door once the badge is won (story 33), until the raid is defended
@@ -202,7 +202,7 @@ REDFIELD = {
         {"x": 30, "y": 14, "elevation": 0, "var": "VAR_ORLEANS_STORY", "value": 31, "script": "Redfield_EventScript_RitaGate"},
     ],
     "patch_signs": {
-        "SignMill": {"text": "REDFIELD SUGAR MILL\nCayenne's mill yard. The mirrors only\nwork by day."},
+        "SignMill": {"text": "REDFIELD SUGAR MILL\nCayenne's mill yard.\\pMirrors work by daylight only."},
     },
     "signs": _mirror_signs(),
 }

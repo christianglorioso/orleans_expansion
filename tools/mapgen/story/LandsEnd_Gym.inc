@@ -192,28 +192,35 @@ LandsEnd_Gym_EventScript_SetStory36:
 	return
 
 @ The TM, the stone and the gear each have their own flag (set once really in the bag), so a full bag can't lose them; Heron retries on a talk.
+@ The gear comes before the stone: the finale needs it, and a full Items pocket (the stone) must not delay it (audit ch8 NIT-2).
 LandsEnd_Gym_EventScript_GiveRewards:
-	goto_if_set FLAG_RECEIVED_TM082_SCALD, LandsEnd_Gym_EventScript_StoneReward
+	goto_if_set FLAG_RECEIVED_TM082_SCALD, LandsEnd_Gym_EventScript_GearReward
 	msgbox LandsEnd_Gym_Text_TakeThis, MSGBOX_DEFAULT
 	giveitem ITEM_TM_SCALD
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM082_SCALD
 	msgbox LandsEnd_Gym_Text_ScaldInfo, MSGBOX_DEFAULT
 	msgbox LandsEnd_Gym_Text_EighthVerse, MSGBOX_DEFAULT
-LandsEnd_Gym_EventScript_StoneReward:
-	goto_if_set FLAG_RECEIVED_GYARADOSITE, LandsEnd_Gym_EventScript_GearReward
-	msgbox LandsEnd_Gym_Text_TakeThisToo, MSGBOX_DEFAULT
-	giveitem ITEM_GYARADOSITE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_RECEIVED_GYARADOSITE
-	msgbox LandsEnd_Gym_Text_StoneInfo, MSGBOX_DEFAULT
 LandsEnd_Gym_EventScript_GearReward:
-	goto_if_set FLAG_RECEIVED_DIVING_GEAR, LandsEnd_Gym_EventScript_RewardsDone
+	goto_if_set FLAG_RECEIVED_DIVING_GEAR, LandsEnd_Gym_EventScript_StoneReward
 	msgbox LandsEnd_Gym_Text_TakeThisThree, MSGBOX_DEFAULT
 	giveitem ITEM_DIVING_GEAR
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_DIVING_GEAR
 	msgbox LandsEnd_Gym_Text_GearInfo, MSGBOX_DEFAULT
+LandsEnd_Gym_EventScript_StoneReward:
+	goto_if_set FLAG_RECEIVED_GYARADOSITE, LandsEnd_Gym_EventScript_RewardsDone
+	msgbox LandsEnd_Gym_Text_TakeThisToo, MSGBOX_DEFAULT
+	giveitem ITEM_GYARADOSITE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_GYARADOSITE
+	goto_if_unset FLAG_RECEIVED_CYPRESS_CHARM, LandsEnd_Gym_EventScript_StoneNoCharm
+	msgbox LandsEnd_Gym_Text_StoneInfo, MSGBOX_DEFAULT
+	return
+
+@ without the charm (the carver's, in the Old Water) the stone is dead weight: say where it is (audit ch8 S2, same pattern as Redfield's)
+LandsEnd_Gym_EventScript_StoneNoCharm:
+	msgbox LandsEnd_Gym_Text_StoneInfoNoCharm, MSGBOX_DEFAULT
 LandsEnd_Gym_EventScript_RewardsDone:
 	return
 
@@ -371,6 +378,12 @@ LandsEnd_Gym_Text_EighthVerse:
 LandsEnd_Gym_Text_TakeThisToo:
 	.string "HERON: And this. My GYARADOSITE.\n"
 	.string "It was my mother's. Use it kindly.$"
+
+LandsEnd_Gym_Text_StoneInfoNoCharm:
+	.string "HERON: The CARVER at the OLD WATER\n"
+	.string "has the charm. Without it this is\p"
+	.string "only a stone. Hold it on a GYARADOS\n"
+	.string "after.$"
 
 LandsEnd_Gym_Text_StoneInfo:
 	.string "HERON: Hold it on a GYARADOS and the\n"

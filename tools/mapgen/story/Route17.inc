@@ -42,7 +42,7 @@ Route17_Text_Route17BirdKeeperAfter:
 	.string "Smoke rises, birds follow. It's\nan old trick.$"
 
 Route17_Text_Route17CooltrainerIntro:
-	.string "Two badges short of the next\ntown. Let's see yours!$"
+	.string "Six badges, and the next town\nwants a seventh. Let's see yours!$"
 
 Route17_Text_Route17CooltrainerDefeat:
 	.string "You've earned them.$"

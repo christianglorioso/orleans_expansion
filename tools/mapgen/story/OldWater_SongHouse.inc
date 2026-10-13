@@ -143,8 +143,8 @@ OldWater_SongHouse_EventScript_TupeloCarving:
 
 OldWater_SongHouse_Text_TupeloCarving:
 	.string "TUPELO: You found a carving under\nthe city? Show me. Tell me.\p"
-	.string "The old word we sing as 'lay\ndown'... the carvers meant 'laid\p"
-	.string "low'. Sunk, not rested. We have\nbeen singing a drowning.\p"
+	.string "The old word we sing as 'lay\ndown'... the wood says 'laid\p"
+	.string "low'. Sunk, not rested. Have we\nbeen singing a drowning?\p"
 	.string "Keep walking. The next Singer\nwill know what to do with it.$"
 
 @ ---------------------------------------------------------------- Ch4 beat 4.6: the midpoint visit (story 21 -> 22)
@@ -187,8 +187,21 @@ OldWater_SongHouse_EventScript_SetStory22:
 	return
 
 OldWater_SongHouse_EventScript_TupeloLater:
+	goto_if_set FLAG_BADGE07_GET, OldWater_SongHouse_EventScript_TupeloLater7
+	goto_if_set FLAG_BADGE06_GET, OldWater_SongHouse_EventScript_TupeloLater6
 	goto_if_set FLAG_BADGE05_GET, OldWater_SongHouse_EventScript_TupeloLater5
 	msgbox OldWater_SongHouse_Text_TupeloLater, MSGBOX_DEFAULT
+	release
+	end
+
+@ Ch6/Ch7 (audit ch6 S2/NF3): the count follows the highest badge, so Tupelo never says "five" to a player who has sung six or seven
+OldWater_SongHouse_EventScript_TupeloLater6:
+	msgbox OldWater_SongHouse_Text_TupeloLater6, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloLater7:
+	msgbox OldWater_SongHouse_Text_TupeloLater7, MSGBOX_DEFAULT
 	release
 	end
 
@@ -284,7 +297,7 @@ OldWater_SongHouse_Text_Verse4C:
 OldWater_SongHouse_Text_Verse4D:
 	.string "TUPELO: But a road you can't walk is\nonly a picture. The Rootkin stand\p"
 	.string "on the water. Take this, and teach\nit to a POKéMON that can carry you.\p"
-	.string "It is SURF. Mind the currents.$"
+	.string "It is SURF. Mind the currents.\nPSYDUCK and WOOPER take to it.$"
 
 OldWater_SongHouse_Text_Verse4E:
 	.string "TUPELO: The way west is open now.\nThe old songs say it opens, one\p"
@@ -320,6 +333,18 @@ OldWater_SongHouse_Text_WrenBattleAfter:
 
 OldWater_SongHouse_Text_WrenNoRematch:
 	.string "WREN: Anytime. The song house is\nalways open.$"
+
+OldWater_SongHouse_Text_TupeloLater6:
+	.string "TUPELO: Six verses. The Long One\n"
+	.string "only looked drowned. It was\p"
+	.string "holding something up. I hear the\n"
+	.string "river in it. Two more to bring.$"
+
+OldWater_SongHouse_Text_TupeloLater7:
+	.string "TUPELO: Seven verses. The mill sang\n"
+	.string "back and the river heard it.\p"
+	.string "One more waits at the edge of the\n"
+	.string "Gulf. HERON keeps it at LAND'S END.$"
 
 OldWater_SongHouse_Text_TupeloLater5:
 	.string "TUPELO: Five verses. The people ate\n"
@@ -388,15 +413,42 @@ OldWater_SongHouse_EventScript_TellingEntry::
 OldWater_SongHouse_EventScript_TellingSkip:
 	end
 
+@ story 38+ (audit ch8 S1, fin S1): the line follows the finale. 39 names both entrances; one calmed; both calmed; the shrine; after the ending.
 OldWater_SongHouse_EventScript_TupeloTold:
+	goto_if_ge VAR_ORLEANS_STORY, 45, OldWater_SongHouse_EventScript_TupeloPost
+	goto_if_ge VAR_ORLEANS_STORY, 41, OldWater_SongHouse_EventScript_TupeloShrine
+	goto_if_ge VAR_ORLEANS_STORY, 40, OldWater_SongHouse_EventScript_TupeloBoth
+	goto_if_set FLAG_KYOGRE_CALMED, OldWater_SongHouse_EventScript_TupeloOne
+	goto_if_set FLAG_GROUDON_CALMED, OldWater_SongHouse_EventScript_TupeloOne
 	msgbox OldWater_SongHouse_Text_Told, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloOne:
+	msgbox OldWater_SongHouse_Text_ToldOne, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloBoth:
+	msgbox OldWater_SongHouse_Text_ToldBoth, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloShrine:
+	msgbox OldWater_SongHouse_Text_ToldShrine, MSGBOX_DEFAULT
+	release
+	end
+
+OldWater_SongHouse_EventScript_TupeloPost:
+	msgbox OldWater_SongHouse_Text_ToldPost, MSGBOX_DEFAULT
 	release
 	end
 
 OldWater_SongHouse_Text_Telling1:
 	.string "The song house is full of lamplight.\n"
-	.string "Eight panels, eight verses, and\p"
-	.string "TUPELO waiting under them with WREN.$"
+	.string "Four panels on the wall, eight\p"
+	.string "verses in the room. TUPELO waits\n"
+	.string "with WREN.$"
 
 OldWater_SongHouse_Text_Telling2:
 	.string "TUPELO: Eight Singers, eight verses.\n"
@@ -407,7 +459,7 @@ OldWater_SongHouse_Text_Telling2:
 OldWater_SongHouse_Text_Telling3:
 	.string "TUPELO: Not to destroy. To calm.\n"
 	.string "The Long One lay down to guard,\p"
-	.string "TUPELO: not to die. It is awake now.\n"
+	.string "not to die. It is awake now.\n"
 	.string "Your song will settle it.$"
 
 OldWater_SongHouse_Text_Telling4:
@@ -423,5 +475,25 @@ OldWater_SongHouse_Text_Telling5:
 	.string "temple door. The gear is the key.$"
 
 OldWater_SongHouse_Text_Told:
-	.string "TUPELO: The telling is whole. Wake\n"
-	.string "KYOGRE and GROUDON, then come back.$"
+	.string "TUPELO: The telling is whole. Two\n"
+	.string "sleepers must be calmed first.\p"
+	.string "KYOGRE lies behind the ruin door\n"
+	.string "on ROUTE 22. Face it from the water.\p"
+	.string "GROUDON waits in the cave below the\n"
+	.string "ridge on ROUTE 24. Then come back.$"
+
+OldWater_SongHouse_Text_ToldOne:
+	.string "TUPELO: One sleeper is calm. The\n"
+	.string "other still waits. Go on.$"
+
+OldWater_SongHouse_Text_ToldBoth:
+	.string "TUPELO: Both sleepers are calm. The\n"
+	.string "river is waiting for you.$"
+
+OldWater_SongHouse_Text_ToldShrine:
+	.string "TUPELO: The Long One waits at the\n"
+	.string "OLDEST SHRINE. Go at dawn.$"
+
+OldWater_SongHouse_Text_ToldPost:
+	.string "TUPELO: The telling is sung. The\n"
+	.string "river listens. Sit, any time.$"

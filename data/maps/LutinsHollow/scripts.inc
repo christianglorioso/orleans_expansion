@@ -182,9 +182,9 @@ LutinsHollow_Text_JaydenAfter:
 
 LutinsHollow_Text_WrenAfter:
 	.string "WREN: {PLAYER}, LUTIN is inside,\n"
-	.string "behind the moss. I'll stay with him.\p"
-	.string "The telling has two more verses\n"
-	.string "to find. And he's listening now.$"
+	.string "behind the moss. I'll stay with\p"
+	.string "JAYDEN. Hers is the sixth verse.\n"
+	.string "Two more wait after it.$"
 
 LutinsHollow_Text_GymUsher:
 	.string "PUPIL: The gym's closed to anyone\n"

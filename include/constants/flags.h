@@ -183,7 +183,7 @@
 #define FLAG_CAUGHT_LUGIA                    0x91
 #define FLAG_CAUGHT_HO_OH                    0x92
 #define FLAG_RECEIVED_EXPLOUDITE                         0x93 // Orleans Ch6: Delphoxite (riddler) / Exploudite (zydeco band) received
-#define FLAG_VERSE6_HEARD                                0x94 // Orleans Ch6: Tupelo sang verse 6 / the carver gave the cypress-wood charm (the Mega Evolution key item)
+#define FLAG_VERSE6_HEARD                                0x94 // Orleans Ch6: Tupelo sang verse 6 (shown once)
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
 #define FLAG_RECEIVED_CYPRESS_CHARM                      0x96 // Orleans Ch6: Tupelo sang verse 6 / the carver gave the cypress-wood charm (the Mega Evolution key item)
 #define FLAG_RECEIVED_CASTFORM               0x97

@@ -52,7 +52,7 @@
 #define VAR_POINTE_FAN_STEP                              0x4020 // Orleans Ch4: gym tailwind fan sequence progress (0-3)
 #define VAR_REPEL_STEP_COUNT                             0x4021
 #define VAR_ICE_STEP_COUNT                               0x4022
-#define VAR_STARTER_MON                                  0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
+#define VAR_STARTER_MON                                  0x4023 // 0=Totodile, 1=Chikorita, 2=Fuecoco (the player's pick)
 #define VAR_MIRAGE_RND_H                                 0x4024 // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_MIRAGE_RND_L                                 0x4025 // Unused if OW_USE_DAILY_SEED_FOR_VANILLA_VARIABLES is TRUE
 #define VAR_SECRET_BASE_MAP                              0x4026
@@ -102,9 +102,9 @@
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_ROUTE4_ARRIVAL                               0x4051 // Orleans Ch4: 0 until the riverboat arrival scene on Route 4 has played, then 1
 #define VAR_CAMP_ARRIVAL                                 0x4052 // Orleans Ch5: 0 until the Camp Cocodrie arrival scene has played, then 1
-#define VAR_HOLLOW_ARRIVAL                               0x4053 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
+#define VAR_HOLLOW_ARRIVAL                               0x4053 // Orleans Ch6: 0 until the hollow's arrival scene has played, then 1
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_HOLLOW_RIDDLES                               0x4055 // Orleans Ch6: 0 until the hollow's arrival scene played / riddles answered (0-3)
+#define VAR_HOLLOW_RIDDLES                               0x4055 // Orleans Ch6: riddles answered in the hollow (0-3)
 #define VAR_REDFIELD_ARRIVAL                             0x4056 // Chapter 7: Redfield arrival scene (0 = not yet seen)
 #define VAR_REDFIELD_RAID_CALL                           0x4057 // Chapter 7: Wren calls the player to the Old Water raid (0 = not yet)
 #define VAR_REDFIELD_MIRRORS                             0x4058 // Chapter 7: mill yard mirror facings, 2 bits each (6 mirrors)

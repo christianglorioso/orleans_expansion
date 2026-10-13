@@ -33,6 +33,9 @@ DOWN = {"crescent_city_dept_2f": (14, 2), "crescent_city_dept_3f": (14, 2), "poi
         "storms_edge_lighthouse_gallery": (1, 2)}
 MART = ["ITEM_POKE_BALL", "ITEM_GREAT_BALL", "ITEM_POTION", "ITEM_SUPER_POTION", "ITEM_ANTIDOTE",
         "ITEM_PARALYZE_HEAL", "ITEM_AWAKENING", "ITEM_REPEL"]
+# Redfield and Land's End are visited at levels 44-57: a late-game shelf (audit ch7 N6 / ch8 N3)
+MART_LATE = MART + ["ITEM_ULTRA_BALL", "ITEM_HYPER_POTION", "ITEM_REVIVE", "ITEM_FULL_HEAL", "ITEM_MAX_REPEL"]
+LATE_MARTS = ("redfield_mart", "lands_end_marine_supply")
 GENERIC = dict(style="generic", tileset="orleans_interior", secondary="gTileset_OrleansInterior")
 
 
@@ -121,7 +124,7 @@ def world_rooms(room):
         r = room(base, GENERIC, map=name, const="MAP_" + re.sub(r"(?<!^)(?=[A-Z])", "_", name).upper().replace("__", "_"),
                  mockup=key, people=ppl, positions=pos, title=spec["title"])
         if any(p[0] == "clerk" for p in ppl):
-            r["mart"] = MART
+            r["mart"] = MART_LATE if key in LATE_MARTS else MART
         if key in UPSTAIRS:
             r["door_label"] = None
             r["no_door"] = True  # an upper floor: no street door, only its stairs

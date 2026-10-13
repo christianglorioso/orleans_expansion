@@ -32,12 +32,18 @@ LutinsHollow_Gym_EventScript_ALutin3::
 @ an illusion: it unravels into moss and the player is carried back to the door
 LutinsHollow_Gym_EventScript_FalseLutin:
 	lockall
+	goto_if_set FLAG_BADGE06_GET, LutinsHollow_Gym_EventScript_FalseLutinSpent
 	msgbox LutinsHollow_Gym_Text_FalseLutin, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_LUTINS_HOLLOW_GYM, 10, 14
 	waitstate
+	releaseall
+	end
+
+LutinsHollow_Gym_EventScript_FalseLutinSpent:
+	msgbox LutinsHollow_Gym_Text_FalseLutinSpent, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -125,6 +131,10 @@ LutinsHollow_Gym_Text_FalseLutin:
 	.string "apart like wet moss. A hundred\p"
 	.string "green threads fall away, and the\n"
 	.string "curtains carry you back to the door.$"
+
+LutinsHollow_Gym_Text_FalseLutinSpent:
+	.string "The false LUTIN only smiles, a green\n"
+	.string "thread of moss. It lets you pass.$"
 
 LutinsHollow_Gym_Text_GuideHint:
 	.string "GUIDE: Four LUTINS stand behind the\n"
