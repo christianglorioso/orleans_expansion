@@ -1,0 +1,1224 @@
+{
+ "_comment": "The Oldest Shrine's own art (make_shrine.py): piece -> sheet cells (16 px), kind (opaque metatile or overlay drawn over the ground), walkable cells. 'sources' are compose sources for the orleans_route_b recipe (opaque 'osh', overlay-only 'osho'), 'autotile' the corner sets for its tileset config, 'prefabs' the overlay pieces + the landing and steps as prefabs.",
+ "png": "shrine.png",
+ "families": {
+  "EARTH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    128,
+    80
+   ],
+   [
+    72,
+    104,
+    64
+   ],
+   [
+    56,
+    80,
+    56
+   ],
+   [
+    168,
+    200,
+    136
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    160,
+    120,
+    80
+   ],
+   [
+    120,
+    88,
+    64
+   ],
+   [
+    80,
+    64,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    200,
+    208,
+    176
+   ]
+  ],
+  "STONE": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    88,
+    88,
+    80
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    80,
+    112,
+    64
+   ],
+   [
+    96,
+    56,
+    40
+   ],
+   [
+    136,
+    80,
+    56
+   ],
+   [
+    176,
+    112,
+    72
+   ],
+   [
+    216,
+    168,
+    72
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    152,
+    192,
+    184
+   ]
+  ]
+ },
+ "pieces": {
+  "berm_N": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key N (0011), on grass"
+  },
+  "berm_S": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key S (1100), on grass"
+  },
+  "berm_W": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key W (0101), on grass"
+  },
+  "berm_E": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key E (1010), on grass"
+  },
+  "berm_inNW": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key inNW (0111), on grass"
+  },
+  "berm_inNE": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key inNE (1011), on grass"
+  },
+  "berm_inSW": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key inSW (1101), on grass"
+  },
+  "berm_inSE": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key inSE (1110), on grass"
+  },
+  "berm_landSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key landSE (0001), on grass"
+  },
+  "berm_landSW": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key landSW (0010), on grass"
+  },
+  "berm_landNE": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key landNE (0100), on grass"
+  },
+  "berm_landNW": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key landNW (1000), on grass"
+  },
+  "berm_sTLBR": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key sTLBR (0110), on grass"
+  },
+  "berm_sTRBL": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "ridge berm, corner key sTRBL (1001), on grass"
+  },
+  "mound_S": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound S: the slope runs to the cell's foot (the face goes on in the cell below)"
+  },
+  "mound_landNE": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound landNE: the slope runs to the cell's foot (the face goes on in the cell below)"
+  },
+  "mound_landNW": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound landNW: the slope runs to the cell's foot (the face goes on in the cell below)"
+  },
+  "mound_face": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound face extension 'face' (build.py corners() 'face' rule: under S / landNE / landNW)"
+  },
+  "mound_face_l": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound face extension 'face_l' (build.py corners() 'face' rule: under S / landNE / landNW)"
+  },
+  "mound_face_r": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "opaque",
+   "walk": [],
+   "comment": "platform mound face extension 'face_r' (build.py corners() 'face' rule: under S / landNE / landNW)"
+  },
+  "mound_steps": {
+   "x": 4,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "kind": "opaque",
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "2x2 steps up the mound's south face: row 0 in place of two mound_S, row 1 of two mound_face; walkable"
+  },
+  "live_oak": {
+   "x": 6,
+   "y": 1,
+   "w": 4,
+   "h": 3,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "4x3 a live oak with Spanish moss (overlay on grass): blocking; the top row is canopy (could be drawn over the player)"
+  },
+  "cedar_post": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "1x2 a carved red-cedar post (overlay on grass), blocking"
+  },
+  "cedar_post_bird": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "1x2 a cedar post topped by a carved egret, blocking"
+  },
+  "stone_tall": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "1x2 a standing stone, spiral-carved, blocking"
+  },
+  "stone_small": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "1x1 a small standing stone, blocking"
+  },
+  "singing_stone": {
+   "x": 14,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "kind": "overlay",
+   "walk": [],
+   "comment": "2x2 the singing stone (bored through, spiral-carved, offerings at its foot), blocking"
+  },
+  "landing": {
+   "x": 0,
+   "y": 4,
+   "w": 4,
+   "h": 4,
+   "kind": "opaque",
+   "walk": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "comment": "4x4 the landing steps (opaque; row 0 on the plaza's grass, row 3 over the water): columns 1-2 walkable, the cheek walls block; replaces the placeholder dock"
+  }
+ },
+ "sources": [
+  {
+   "name": "osh",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/arenas/shrine.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "metatiles": [
+    {
+     "id": "berm_N",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "berm_S",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "berm_W",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "berm_E",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "berm_inNW",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "berm_inNE",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "berm_inSW",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "berm_inSE",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "berm_landSE",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "berm_landSW",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "berm_landNE",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "berm_landNW",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "berm_sTLBR",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "berm_sTRBL",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "mound_S",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "mound_landNE",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "mound_landNW",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "mound_face",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "mound_face_l",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "mound_face_r",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "mound_steps_0_0",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "mound_steps_1_0",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "mound_steps_0_1",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "mound_steps_1_1",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "landing_0_0",
+     "bottom": [
+      0,
+      4
+     ]
+    },
+    {
+     "id": "landing_1_0",
+     "bottom": [
+      1,
+      4
+     ]
+    },
+    {
+     "id": "landing_2_0",
+     "bottom": [
+      2,
+      4
+     ]
+    },
+    {
+     "id": "landing_3_0",
+     "bottom": [
+      3,
+      4
+     ]
+    },
+    {
+     "id": "landing_0_1",
+     "bottom": [
+      0,
+      5
+     ]
+    },
+    {
+     "id": "landing_1_1",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "landing_2_1",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "landing_3_1",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "landing_0_2",
+     "bottom": [
+      0,
+      6
+     ]
+    },
+    {
+     "id": "landing_1_2",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "landing_2_2",
+     "bottom": [
+      2,
+      6
+     ]
+    },
+    {
+     "id": "landing_3_2",
+     "bottom": [
+      3,
+      6
+     ]
+    },
+    {
+     "id": "landing_0_3",
+     "bottom": [
+      0,
+      7
+     ]
+    },
+    {
+     "id": "landing_1_3",
+     "bottom": [
+      1,
+      7
+     ]
+    },
+    {
+     "id": "landing_2_3",
+     "bottom": [
+      2,
+      7
+     ]
+    },
+    {
+     "id": "landing_3_3",
+     "bottom": [
+      3,
+      7
+     ]
+    }
+   ],
+   "_comment": "opaque pieces: the ridge berm and mound sets, the mound steps, the landing"
+  },
+  {
+   "name": "osho",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/arenas/shrine.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "overlay_only": true,
+   "metatiles": [
+    {
+     "id": "6_1",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "7_1",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "8_1",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "9_1",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "6_2",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "7_2",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "8_2",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "9_2",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "6_3",
+     "bottom": [
+      6,
+      3
+     ]
+    },
+    {
+     "id": "7_3",
+     "bottom": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "8_3",
+     "bottom": [
+      8,
+      3
+     ]
+    },
+    {
+     "id": "9_3",
+     "bottom": [
+      9,
+      3
+     ]
+    },
+    {
+     "id": "10_1",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "10_2",
+     "bottom": [
+      10,
+      2
+     ]
+    },
+    {
+     "id": "11_1",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "11_2",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "12_1",
+     "bottom": [
+      12,
+      1
+     ]
+    },
+    {
+     "id": "12_2",
+     "bottom": [
+      12,
+      2
+     ]
+    },
+    {
+     "id": "13_1",
+     "bottom": [
+      13,
+      1
+     ]
+    },
+    {
+     "id": "14_1",
+     "bottom": [
+      14,
+      1
+     ]
+    },
+    {
+     "id": "15_1",
+     "bottom": [
+      15,
+      1
+     ]
+    },
+    {
+     "id": "14_2",
+     "bottom": [
+      14,
+      2
+     ]
+    },
+    {
+     "id": "15_2",
+     "bottom": [
+      15,
+      2
+     ]
+    }
+   ],
+   "_comment": "overlays (live oak, cedar posts, standing stones, singing stone), drawn over whatever ground"
+  }
+ ],
+ "autotile": {
+  "berm": {
+   "kind": "corners",
+   "connects": "R",
+   "apply_on": "R.",
+   "elev": 3,
+   "collision": 1,
+   "C": "ekat:grass",
+   "_comment": "the low ridges (grid char R, on grass '.'): blocking berms; keep R two cells from marsh / water / paths (no transition art for those)",
+   "N": "osh:berm_N",
+   "S": "osh:berm_S",
+   "W": "osh:berm_W",
+   "E": "osh:berm_E",
+   "inNW": "osh:berm_inNW",
+   "inNE": "osh:berm_inNE",
+   "inSW": "osh:berm_inSW",
+   "inSE": "osh:berm_inSE",
+   "landSE": "osh:berm_landSE",
+   "landSW": "osh:berm_landSW",
+   "landNE": "osh:berm_landNE",
+   "landNW": "osh:berm_landNW",
+   "sTLBR": "osh:berm_sTLBR",
+   "sTRBL": "osh:berm_sTRBL"
+  },
+  "mound": {
+   "kind": "corners",
+   "connects": "M",
+   "apply_on": "M.",
+   "elev": 3,
+   "collision": 1,
+   "C": "ekat:grass",
+   "_comment": "the platform mound (grid char M): the berm's pieces with the tall south face; its top (C) is plain walkable grass: give the edge tiles collision (the corner set's 'collision' blocks C too, so set the top back to 0 or use a terrain char for it)",
+   "N": "osh:berm_N",
+   "S": "osh:mound_S",
+   "W": "osh:berm_W",
+   "E": "osh:berm_E",
+   "inNW": "osh:berm_inNW",
+   "inNE": "osh:berm_inNE",
+   "inSW": "osh:berm_inSW",
+   "inSE": "osh:berm_inSE",
+   "landSE": "osh:berm_landSE",
+   "landSW": "osh:berm_landSW",
+   "landNE": "osh:mound_landNE",
+   "landNW": "osh:mound_landNW",
+   "sTLBR": "osh:berm_sTLBR",
+   "sTRBL": "osh:berm_sTRBL",
+   "face": {
+    "face": "osh:mound_face",
+    "face_l": "osh:mound_face_l",
+    "face_r": "osh:mound_face_r"
+   }
+  }
+ },
+ "prefabs": {
+  "mound_steps": {
+   "_comment": "2x2 steps up the mound's south face: row 0 in place of two mound_S, row 1 of two mound_face; walkable",
+   "rows": [
+    [
+     "osh:mound_steps_0_0",
+     "osh:mound_steps_1_0"
+    ],
+    [
+     "osh:mound_steps_0_1",
+     "osh:mound_steps_1_1"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "live_oak": {
+   "_comment": "4x3 a live oak with Spanish moss (overlay on grass): blocking; the top row is canopy (could be drawn over the player)",
+   "rows": [
+    [
+     {
+      "overlay": "osho:6_1"
+     },
+     {
+      "overlay": "osho:7_1"
+     },
+     {
+      "overlay": "osho:8_1"
+     },
+     {
+      "overlay": "osho:9_1"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:6_2"
+     },
+     {
+      "overlay": "osho:7_2"
+     },
+     {
+      "overlay": "osho:8_2"
+     },
+     {
+      "overlay": "osho:9_2"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:6_3"
+     },
+     {
+      "overlay": "osho:7_3"
+     },
+     {
+      "overlay": "osho:8_3"
+     },
+     {
+      "overlay": "osho:9_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "cedar_post": {
+   "_comment": "1x2 a carved red-cedar post (overlay on grass), blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:10_1"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:10_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "cedar_post_bird": {
+   "_comment": "1x2 a cedar post topped by a carved egret, blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:11_1"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:11_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "stone_tall": {
+   "_comment": "1x2 a standing stone, spiral-carved, blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:12_1"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:12_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "stone_small": {
+   "_comment": "1x1 a small standing stone, blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:13_1"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "singing_stone": {
+   "_comment": "2x2 the singing stone (bored through, spiral-carved, offerings at its foot), blocking",
+   "rows": [
+    [
+     {
+      "overlay": "osho:14_1"
+     },
+     {
+      "overlay": "osho:15_1"
+     }
+    ],
+    [
+     {
+      "overlay": "osho:14_2"
+     },
+     {
+      "overlay": "osho:15_2"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "landing": {
+   "_comment": "4x4 the landing steps (opaque; row 0 on the plaza's grass, row 3 over the water): columns 1-2 walkable, the cheek walls block; replaces the placeholder dock",
+   "rows": [
+    [
+     "osh:landing_0_0",
+     "osh:landing_1_0",
+     "osh:landing_2_0",
+     "osh:landing_3_0"
+    ],
+    [
+     "osh:landing_0_1",
+     "osh:landing_1_1",
+     "osh:landing_2_1",
+     "osh:landing_3_1"
+    ],
+    [
+     "osh:landing_0_2",
+     "osh:landing_1_2",
+     "osh:landing_2_2",
+     "osh:landing_3_2"
+    ],
+    [
+     "osh:landing_0_3",
+     "osh:landing_1_3",
+     "osh:landing_2_3",
+     "osh:landing_3_3"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ]
+   ]
+  }
+ }
+}

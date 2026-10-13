@@ -1,0 +1,1207 @@
+{
+ "_comment": "The Salt Cathedral (Groudon's arena): piece -> sheet cell rectangle (16 px cells), the metatile names per cell ('sc:<id>' in the composed tileset gTileset_OrleansSaltDome), walkable cells (everything else should block), notes. Made by make_cathedral.py.",
+ "png": "cathedral.png",
+ "source": "sc",
+ "tileset": "gTileset_OrleansSaltDome",
+ "families": {
+  "SALT": [
+   [
+    32,
+    32,
+    40
+   ],
+   [
+    72,
+    72,
+    88
+   ],
+   [
+    112,
+    112,
+    128
+   ],
+   [
+    152,
+    152,
+    160
+   ],
+   [
+    192,
+    192,
+    192
+   ],
+   [
+    224,
+    224,
+    216
+   ],
+   [
+    248,
+    248,
+    240
+   ],
+   [
+    184,
+    168,
+    168
+   ],
+   [
+    128,
+    120,
+    128
+   ],
+   [
+    176,
+    208,
+    232
+   ],
+   [
+    232,
+    240,
+    248
+   ],
+   [
+    224,
+    184,
+    200
+   ]
+  ],
+  "MINE": [
+   [
+    32,
+    32,
+    40
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    104,
+    72,
+    48
+   ],
+   [
+    144,
+    104,
+    64
+   ],
+   [
+    184,
+    144,
+    96
+   ],
+   [
+    64,
+    64,
+    72
+   ],
+   [
+    152,
+    88,
+    56
+   ],
+   [
+    248,
+    192,
+    80
+   ],
+   [
+    248,
+    240,
+    176
+   ],
+   [
+    72,
+    72,
+    88
+   ],
+   [
+    112,
+    112,
+    128
+   ],
+   [
+    152,
+    152,
+    160
+   ],
+   [
+    192,
+    192,
+    192
+   ],
+   [
+    224,
+    224,
+    216
+   ],
+   [
+    248,
+    248,
+    240
+   ]
+  ],
+  "HEAT": [
+   [
+    32,
+    32,
+    40
+   ],
+   [
+    88,
+    24,
+    32
+   ],
+   [
+    160,
+    40,
+    32
+   ],
+   [
+    216,
+    88,
+    40
+   ],
+   [
+    248,
+    152,
+    56
+   ],
+   [
+    248,
+    216,
+    104
+   ],
+   [
+    248,
+    248,
+    200
+   ],
+   [
+    200,
+    152,
+    136
+   ],
+   [
+    232,
+    200,
+    168
+   ],
+   [
+    160,
+    112,
+    112
+   ],
+   [
+    72,
+    72,
+    88
+   ],
+   [
+    112,
+    112,
+    128
+   ],
+   [
+    152,
+    152,
+    160
+   ],
+   [
+    192,
+    192,
+    192
+   ],
+   [
+    224,
+    224,
+    216
+   ]
+  ]
+ },
+ "pieces": {
+  "void": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:void"
+    ]
+   ],
+   "walk": [],
+   "comment": "outside the mine (black)"
+  },
+  "cap": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:cap"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 0: the dark overhang of the face"
+  },
+  "cap_b": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:cap_b"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 0: with a glint of crystal"
+  },
+  "face_hi": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_hi"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 1: the cut face, strata and cutter grooves"
+  },
+  "face_hi_vein": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_hi_vein"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 1: a crystal vein"
+  },
+  "face_hi_drill": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_hi_drill"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 1: drill holes"
+  },
+  "face_lo": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_lo"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 2: spall at the foot"
+  },
+  "face_lo_crystal": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_lo_crystal"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 2: a crystal cluster"
+  },
+  "face_lo_vein": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:face_lo_vein"
+    ]
+   ],
+   "walk": [],
+   "comment": "back wall, row 2: a crystal vein"
+  },
+  "side_l": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:side_l"
+    ]
+   ],
+   "walk": [],
+   "comment": "left side wall"
+  },
+  "side_r": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:side_r"
+    ]
+   ],
+   "walk": [],
+   "comment": "right side wall"
+  },
+  "rim_s": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:rim_s"
+    ]
+   ],
+   "walk": [],
+   "comment": "the room's south edge (floor drops into darkness), blocking"
+  },
+  "timber_set": {
+   "x": 12,
+   "y": 0,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "sc:timber_set_0_0",
+     "sc:timber_set_1_0",
+     "sc:timber_set_2_0"
+    ],
+    [
+     "sc:timber_set_0_1",
+     "sc:timber_set_1_1",
+     "sc:timber_set_2_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "3x2 a timber set braced against the face (rows 1-2 of the back wall), lantern"
+  },
+  "heart": {
+   "x": 0,
+   "y": 2,
+   "w": 7,
+   "h": 3,
+   "rows": [
+    [
+     "sc:heart_0_0",
+     "sc:heart_1_0",
+     "sc:heart_2_0",
+     "sc:heart_3_0",
+     "sc:heart_4_0",
+     "sc:heart_5_0",
+     "sc:heart_6_0"
+    ],
+    [
+     "sc:heart_0_1",
+     "sc:heart_1_1",
+     "sc:heart_2_1",
+     "sc:heart_3_1",
+     "sc:heart_4_1",
+     "sc:heart_5_1",
+     "sc:heart_6_1"
+    ],
+    [
+     "sc:heart_0_2",
+     "sc:heart_1_2",
+     "sc:heart_2_2",
+     "sc:heart_3_2",
+     "sc:heart_4_2",
+     "sc:heart_5_2",
+     "sc:heart_6_2"
+    ]
+   ],
+   "walk": [],
+   "comment": "7x3 the hot glowing heart in the back wall (rows 0-2), blocking"
+  },
+  "dais": {
+   "x": 7,
+   "y": 2,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "sc:dais_0_0",
+     "sc:dais_1_0",
+     "sc:dais_2_0"
+    ],
+    [
+     "sc:dais_0_1",
+     "sc:dais_1_1",
+     "sc:dais_2_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "3x2 Groudon's dais of standing salt (blocking); Groudon stands on its middle bottom cell"
+  },
+  "floor": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:floor"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor"
+  },
+  "floor_crack": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:floor_crack"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor: crack"
+  },
+  "floor_crystals": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:floor_crystals"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor: crystals"
+  },
+  "floor_dust": {
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:floor_dust"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor: dust"
+  },
+  "floor_b": {
+   "x": 14,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:floor_b"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor, second grain"
+  },
+  "warm": {
+   "x": 15,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "salt floor lit by the heart"
+  },
+  "warm_core": {
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_core"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the hottest floor (orange flecks)"
+  },
+  "warm_seam": {
+   "x": 1,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_seam"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "warm floor, a glowing seam east-west"
+  },
+  "warm_seam_v": {
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_seam_v"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "warm floor, a glowing seam north-south"
+  },
+  "warm_glaze": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_glaze"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "warm floor, salt glazed by heat"
+  },
+  "warm_fade_s": {
+   "x": 4,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_fade_s"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the glow's edge: warm fading out toward S"
+  },
+  "warm_fade_w": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_fade_w"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the glow's edge: warm fading out toward W"
+  },
+  "warm_fade_e": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_fade_e"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the glow's edge: warm fading out toward E"
+  },
+  "warm_fade_sw": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_fade_sw"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the glow's edge: warm fading out toward SW"
+  },
+  "warm_fade_se": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:warm_fade_se"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the glow's edge: warm fading out toward SE"
+  },
+  "aisle_w": {
+   "x": 9,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:aisle_w"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the polished processional aisle, w column (3 wide)"
+  },
+  "aisle_c": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:aisle_c"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the polished processional aisle, c column (3 wide)"
+  },
+  "aisle_e": {
+   "x": 11,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:aisle_e"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the polished processional aisle, e column (3 wide)"
+  },
+  "pillar": {
+   "x": 12,
+   "y": 5,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "sc:pillar_0_0",
+     "sc:pillar_1_0"
+    ],
+    [
+     "sc:pillar_0_1",
+     "sc:pillar_1_1"
+    ],
+    [
+     "sc:pillar_0_2",
+     "sc:pillar_1_2"
+    ]
+   ],
+   "walk": [],
+   "comment": "2x3 a carved salt pillar, blocking"
+  },
+  "pillar_timber": {
+   "x": 14,
+   "y": 5,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "sc:pillar_timber_0_0",
+     "sc:pillar_timber_1_0"
+    ],
+    [
+     "sc:pillar_timber_0_1",
+     "sc:pillar_timber_1_1"
+    ],
+    [
+     "sc:pillar_timber_0_2",
+     "sc:pillar_timber_1_2"
+    ]
+   ],
+   "walk": [],
+   "comment": "2x3 a salt pillar with a timber collar and a hung lantern, blocking"
+  },
+  "rail_v": {
+   "x": 0,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:rail_v"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "rails north-south"
+  },
+  "rail_h": {
+   "x": 1,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:rail_h"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "rails east-west"
+  },
+  "rail_end": {
+   "x": 2,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:rail_end"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "comment": "the end of the track: a timber stop block (track runs south)"
+  },
+  "rail_ne": {
+   "x": 3,
+   "y": 8,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:rail_ne_0_0",
+     "sc:rail_ne_1_0"
+    ],
+    [
+     "sc:rail_ne_0_1",
+     "sc:rail_ne_1_1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "2x2 a quarter turn of track joining north and east (the cell inside the turn is plain floor)"
+  },
+  "rail_nw": {
+   "x": 5,
+   "y": 8,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:rail_nw_0_0",
+     "sc:rail_nw_1_0"
+    ],
+    [
+     "sc:rail_nw_0_1",
+     "sc:rail_nw_1_1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "2x2 a quarter turn of track joining north and west (the cell inside the turn is plain floor)"
+  },
+  "rail_se": {
+   "x": 7,
+   "y": 8,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:rail_se_0_0",
+     "sc:rail_se_1_0"
+    ],
+    [
+     "sc:rail_se_0_1",
+     "sc:rail_se_1_1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "2x2 a quarter turn of track joining south and east (the cell inside the turn is plain floor)"
+  },
+  "rail_sw": {
+   "x": 9,
+   "y": 8,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:rail_sw_0_0",
+     "sc:rail_sw_1_0"
+    ],
+    [
+     "sc:rail_sw_0_1",
+     "sc:rail_sw_1_1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "2x2 a quarter turn of track joining south and west (the cell inside the turn is plain floor)"
+  },
+  "cart": {
+   "x": 11,
+   "y": 8,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "sc:cart_0_0"
+    ],
+    [
+     "sc:cart_0_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "1x2 a salt cart on north-south rails, blocking"
+  },
+  "chandelier": {
+   "x": 12,
+   "y": 8,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "sc:chandelier_0_0",
+     "sc:chandelier_1_0",
+     "sc:chandelier_2_0"
+    ],
+    [
+     "sc:chandelier_0_1",
+     "sc:chandelier_1_1",
+     "sc:chandelier_2_1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "comment": "3x2 a salt-crystal chandelier over the aisle: the aisle and its light are the bottom layer (walkable), the chandelier the top layer (drawn over the player); place it across the aisle's three columns"
+  },
+  "cribbing": {
+   "x": 3,
+   "y": 10,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:cribbing_0_0",
+     "sc:cribbing_1_0"
+    ],
+    [
+     "sc:cribbing_0_1",
+     "sc:cribbing_1_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "2x2 timber cribbing (square-set), blocking"
+  },
+  "lantern_post": {
+   "x": 5,
+   "y": 10,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "sc:lantern_post_0_0"
+    ],
+    [
+     "sc:lantern_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "1x2 a timber post with a lantern, blocking"
+  },
+  "crystal": {
+   "x": 6,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:crystal"
+    ]
+   ],
+   "walk": [],
+   "comment": "1x1 a cluster of salt crystals, blocking"
+  },
+  "crystal_big": {
+   "x": 7,
+   "y": 10,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "sc:crystal_big_0_0",
+     "sc:crystal_big_1_0"
+    ],
+    [
+     "sc:crystal_big_0_1",
+     "sc:crystal_big_1_1"
+    ]
+   ],
+   "walk": [],
+   "comment": "2x2 a big cluster of salt crystals, blocking"
+  },
+  "salt_blocks": {
+   "x": 9,
+   "y": 10,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "sc:salt_blocks_0_0",
+     "sc:salt_blocks_1_0"
+    ]
+   ],
+   "walk": [],
+   "comment": "2x1 cut salt blocks, blocking"
+  },
+  "spall": {
+   "x": 11,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "sc:spall"
+    ]
+   ],
+   "walk": [],
+   "comment": "1x1 salt spall, blocking"
+  },
+  "adit": {
+   "x": 12,
+   "y": 10,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "sc:adit_0_0",
+     "sc:adit_1_0",
+     "sc:adit_2_0"
+    ],
+    [
+     "sc:adit_0_1",
+     "sc:adit_1_1",
+     "sc:adit_2_1"
+    ]
+   ],
+   "walk": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "comment": "3x2 the timbered adit the shaft comes down to, set in the south rim: row 0 middle = the arrival cell, row 1 middle = the exit (walk south into the dark: exit coord event / arrow warp); the rest blocks",
+   "exit": [
+    1,
+    1
+   ]
+  }
+ }
+}
