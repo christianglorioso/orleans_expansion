@@ -90,6 +90,7 @@ static void AnimateAchievementsBackground(void);
 EWRAM_DATA static u16 sAchievementCursor = 0;
 EWRAM_DATA static u16 sAchievementTop = 0;
 EWRAM_DATA static bool8 sShowReward = FALSE;
+EWRAM_DATA static bool8 sIconsPending = FALSE;
 EWRAM_DATA static u8 sListBallIconSpriteIds[ACHIEVEMENTS_VISIBLE_ROWS] = {};
 EWRAM_DATA static struct SpriteTemplate sListBallIconTemplates[ACHIEVEMENTS_VISIBLE_ROWS] = {};
 EWRAM_DATA static u8 sListCursorAnimId = 0;
@@ -323,6 +324,7 @@ void CB2_InitAchievementsMenuWithCallback(MainCallback callback)
     sAchievementCursor = 0;
     sAchievementTop = 0;
     sShowReward = FALSE;
+    sIconsPending = TRUE; // the ball icons are made on the first menu frame (see CB2_AchievementsMenu)
     sListCursorAnimId = INVALID_COMFY_ANIM;
     sListCursorY = ACHIEVEMENTS_TEXT_Y(0);
     sScrollIndicatorArrowPairId = TASK_NONE;
@@ -346,6 +348,13 @@ static void VBlankCB_AchievementsMenu(void)
 
 static void CB2_AchievementsMenu(void)
 {
+    // The Start menu runs this init from inside a field frame; the rest of that frame still touches sprite slots (a sprite made there could be
+    // destroyed under us: the 4th ball icon vanished), so the icons are created now, on the menu's own first frame.
+    if (sIconsPending)
+    {
+        sIconsPending = FALSE;
+        DrawList();
+    }
     RunTasks();
     //AnimateAchievementsBackground();
     UpdateListCursorAnimation();
@@ -496,6 +505,7 @@ static void CreateListBallIcon(u8 row, const struct Achievement *achievement)
     spriteSheet.size = ACHIEVEMENTS_BALL_ICON_SIZE;
     spriteSheet.tag = tag;
     LoadCompressedSpriteSheet(&spriteSheet);
+    ProcessSpriteCopyRequests(); // the copy is queued; do it now so the next sheet cannot reuse the buffer
 
     spritePalette.data = sBallIconGfxByTier[tier].palette;
     spritePalette.tag = tag;
@@ -644,7 +654,8 @@ static void DrawList(void)
 
         if (sAchievementCursor == sAchievementTop + i)
             DrawListCursor(i);
-        CreateListBallIcon(i, achievement);
+        if (!sIconsPending)
+            CreateListBallIcon(i, achievement);
         AddTextPrinterParameterized3(WIN_LIST, FONT_SMALL, ACHIEVEMENTS_NAME_X, textY, sColor_DarkGray, TEXT_SKIP_DRAW, achievement->name);
         PrintAchievementProgress(achievement, textY);
     }

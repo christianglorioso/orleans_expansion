@@ -410,6 +410,7 @@ static u8 CreateAchievementPopupIcon(enum AchievementTier tier)
     spriteSheet.size = ACHIEVEMENT_POPUP_ICON_SIZE;
     spriteSheet.tag = ACHIEVEMENT_POPUP_ICON_TAG;
     LoadCompressedSpriteSheet(&spriteSheet);
+    ProcessSpriteCopyRequests(); // the copy is queued; do it now so the next sheet cannot reuse the buffer
 
     spritePalette.data = sBallIconGfxByTier[tier].palette;
     spritePalette.tag = ACHIEVEMENT_POPUP_ICON_TAG;

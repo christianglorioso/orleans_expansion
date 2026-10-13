@@ -75,7 +75,7 @@ ROWS = [
     (54, "Exploration", "INTO_THE_BASIN", "Into the Basin", "Reach Camp Cocodrie.", ("story", 23), POKE, "revise"),
     (55, "Exploration", "ACROSS_THE_LAKE", "Across the Lake", "Reach Lutin's Hollow.", ("story", 27), POKE, "revise"),
     (56, "Exploration", "DELTA_BOUND", "Delta Bound", "Reach Land's End.", ("story", 35), POKE, "revise"),
-    (57, "Exploration", "THE_OPEN_GULF", "The Open Gulf", "Reach Kyogre's drowned temple across the Gulf.", ("flag", "FLAG_TEMPLE_DOOR_OPEN"), GREAT, "revise"),
+    (57, "Exploration", "THE_OPEN_GULF", "The Open Gulf", "Enter Kyogre's drowned temple across the Gulf.", ("pred", "TempleVisited"), GREAT, "revise"),
     (58, "Exploration", "LAND_HO", "Land Ho", "Find your first optional island.", ("soon",), POKE, "soon"),
     (59, "Exploration", "ISLAND_HOPPER", "Island Hopper", "Find every optional island.", ("soon",), GREAT, "soon"),
     (60, "Exploration", "THE_OLD_WATER", "The Old Water", "Discover the Old Water.", ("story", 5), POKE, "live"),

@@ -2635,6 +2635,7 @@ static void ResumeMap(bool32 a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
     TryStartMirageTowerPulseBlendEffect();
+    Achievement_OnMapEntered();
 }
 
 static void InitObjectEventsLink(void)

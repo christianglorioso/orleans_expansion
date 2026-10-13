@@ -340,10 +340,10 @@ static const struct Achievement sAchievements[] =
         .description = COMPOUND_STRING("Reach Land's End."),
     },
     {
-        .id = ACH_THE_OPEN_GULF, .category = ACH_CAT_EXPLORATION, .tier = ACH_TIER_SILVER, .trigger = ACH_TRIG_FLAG,
-        .arg = FLAG_TEMPLE_DOOR_OPEN, .value = 0, .predicate = NULL,
+        .id = ACH_THE_OPEN_GULF, .category = ACH_CAT_EXPLORATION, .tier = ACH_TIER_SILVER, .trigger = ACH_TRIG_PRED,
+        .arg = 0, .value = 0, .predicate = Achievement_PredicateTempleVisited,
         .name = COMPOUND_STRING("The Open Gulf"),
-        .description = COMPOUND_STRING("Reach Kyogre's drowned temple across\nthe Gulf."),
+        .description = COMPOUND_STRING("Enter Kyogre's drowned temple across\nthe Gulf."),
     },
     {
         .id = ACH_LAND_HO, .category = ACH_CAT_EXPLORATION, .tier = ACH_TIER_BRONZE, .trigger = ACH_TRIG_SOON,

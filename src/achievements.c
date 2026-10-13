@@ -40,6 +40,7 @@ enum
     VISIT_OLDEST_SHRINE = 26,
     VISIT_CRESCENT_FIRST = 27, // 17 buildings, 27..43
     VISIT_ISLAND_FIRST = 44,   // reserved for the optional islands (4)
+    VISIT_DROWNED_TEMPLE = 48,
 };
 
 static const u16 sCrescentMaps[] =
@@ -130,6 +131,8 @@ void Achievement_OnMapEntered(void)
     for (i = 0; i < ARRAY_COUNT(sCrescentMaps); i++)
         if (sCrescentMaps[i] == map)
             SetVisited(VISIT_CRESCENT_FIRST + i);
+    if (map == MAP_LANDS_END_DROWNED_TEMPLE)
+        SetVisited(VISIT_DROWNED_TEMPLE);
     if (map == MAP_OLD_WATER)
         SetVisited(VISIT_OLD_WATER);
     else if (map == MAP_OLDEST_SHRINE)
@@ -235,6 +238,11 @@ static bool32 Achievement_PredicateShrinesVisited(void)
         if (!Visited(sShrineBits[i]))
             return FALSE;
     return TRUE;
+}
+
+static bool32 Achievement_PredicateTempleVisited(void)
+{
+    return Visited(VISIT_DROWNED_TEMPLE);
 }
 
 static bool32 Achievement_PredicateRoutesVisited(void)

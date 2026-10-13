@@ -112,6 +112,15 @@ def run(b, t):
     t.check("'coming soon' entries do not unlock", not unlocked(b, IDS["ZOO"]))
     t.check("an unrelated trophy stayed locked", not unlocked(b, IDS["DEFEAT_FIFOLET"]))
 
+    # ---- The Open Gulf: entering the Drowned Temple map (not a script flag)
+    t.check("The Open Gulf is locked before the temple", not unlocked(b, 56))
+    home = (b.map_name(), *b.pos())
+    b.warp("LandsEnd_DrownedTemple", 5, 5)
+    b.frames(200)
+    t.check("entering the Drowned Temple unlocks The Open Gulf", unlocked(b, 56), b.where())
+    b.warp(*home)
+    b.frames(400)
+
     # ---- the START menu entry
     b.set_flag("FLAG_SYS_POKEDEX_GET")
     b.set_flag("FLAG_SYS_POKEMON_GET")
