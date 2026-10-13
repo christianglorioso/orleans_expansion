@@ -1,15 +1,22 @@
 #ifndef GUARD_CONFIG_DEXNAV_H
 #define GUARD_CONFIG_DEXNAV_H
 
-#define DEXNAV_ENABLED                FALSE  // Whether or not DexNav is enabled. If TRUE, flags/vars below must all be non-zero
-#define USE_DEXNAV_SEARCH_LEVELS      FALSE  /* WARNING: POSSIBLY EXCEEDS SAVEBLOCK SPACE! REQUIRES 1 BYTE PER SPECIES */
+#define DEXNAV_ENABLED                TRUE  // Whether or not DexNav is enabled. If TRUE, flags/vars below must all be non-zero
 
-// Flag/var defines
-#define DN_FLAG_SEARCHING             0 // Searching for mon
-#define DN_FLAG_DEXNAV_GET            0 // DexNav shows in start menu
-#define DN_FLAG_DETECTOR_MODE         0 // Allow player to find hidden mons
-#define DN_VAR_SPECIES                0 // Registered DexNav species
-#define DN_VAR_STEP_COUNTER           0 // Steps for finding hidden Pokémon
+// Search level storage modes
+#define DEXNAV_SEARCH_LEVELS_DISABLED            FALSE
+#define DEXNAV_SEARCH_LEVELS_PER_SPECIES         TRUE // Requires NUM_SPECIES bytes in SaveBlock3 (does not fit in Orleans: SaveBlock3 has 1624 bytes in all)
+#define DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES  2    // Uses one saved var; changing targets resets the level (SoulGold's mode)
+
+#define USE_DEXNAV_SEARCH_LEVELS      DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+
+// Flag/var defines (Orleans: claimed through tools/mapgen/flag_pool.py)
+#define DN_FLAG_SEARCHING             FLAG_DEXNAV_SEARCHING // Searching for mon
+#define DN_FLAG_DEXNAV_GET            FLAG_DEXNAV_OBTAINED // DexNav shows in start menu (Lafayette gives it)
+#define DN_FLAG_DETECTOR_MODE         FLAG_DN_HIDDEN_MODE // Allow player to find hidden mons
+#define DN_VAR_SPECIES                VAR_DEXNAV_SPECIES // Registered DexNav species
+#define DN_VAR_SEARCH_LEVEL           VAR_DEXNAV_SEARCH_LEVEL // Search level for the registered species
+#define DN_VAR_STEP_COUNTER           VAR_DEXNAV_STEP_COUNTER // Steps for finding hidden Pokémon
 
 // Search parameters
 #define DEXNAV_TIMEOUT                  15  // 15 seconds is the time out. Max of 1092 seconds allowed

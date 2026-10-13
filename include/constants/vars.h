@@ -125,9 +125,9 @@
 #define VAR_ORLEANS_POOL_020                            0x4067
 #define VAR_ORLEANS_POOL_021                            0x4068
 #define VAR_ORLEANS_POOL_022                            0x4069
-#define VAR_ORLEANS_POOL_023                            0x406A
-#define VAR_ORLEANS_POOL_024                            0x406B
-#define VAR_ORLEANS_POOL_025                            0x406C
+#define VAR_DEXNAV_SPECIES                               0x406A // DexNav registered species
+#define VAR_DEXNAV_SEARCH_LEVEL                          0x406B // DexNav search level of the registered species
+#define VAR_DEXNAV_STEP_COUNTER                          0x406C // DexNav hidden-Pokemon step counter
 #define VAR_ORLEANS_POOL_026                            0x406D
 #define VAR_ORLEANS_POOL_027                            0x406E
 #define VAR_ROUTE116_STATE                               0x406F

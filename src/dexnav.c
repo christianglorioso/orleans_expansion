@@ -65,6 +65,13 @@ STATIC_ASSERT(DN_FLAG_SEARCHING != 0, DNFlagSearching_Must_Not_Be_Zero);
 STATIC_ASSERT(DN_FLAG_DETECTOR_MODE != 0, DNFlagDetectorMode_Must_Not_Be_Zero);
 STATIC_ASSERT(DN_VAR_SPECIES != 0, DNVarSpecies_Must_Not_Be_Zero);
 STATIC_ASSERT(DN_VAR_STEP_COUNTER != 0, DNVarStepCounter_Must_Not_Be_Zero);
+STATIC_ASSERT(USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_DISABLED
+           || USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_PER_SPECIES
+           || USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES,
+           InvalidDexNavSearchLevelMode);
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+STATIC_ASSERT(DN_VAR_SEARCH_LEVEL != 0, DNVarSearchLevel_Must_Not_Be_Zero);
+#endif
 #endif
 
 // Defines
@@ -777,15 +784,30 @@ static void LoadSearchIconData(void)
     LoadCompressedSpriteSheetUsingHeap(&sHiddenMonIconSpriteSheet);
 }
 
+// Orleans: search levels in SoulGold's REGISTERED_SPECIES mode (Eemeliri/soulgold): one saved var holds the level of the registered species;
+// registering or searching another species starts again at level 0 and resets the chain. (Per-species levels need NUM_SPECIES bytes of SaveBlock3.)
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+static bool8 IsRegisteredDexNavSpecies(u16 species)
+{
+    return (VarGet(DN_VAR_SPECIES) & DEXNAV_MASK_SPECIES) == species;
+}
+
+static void ResetRegisteredDexNavProgress(void)
+{
+    VarSet(DN_VAR_SEARCH_LEVEL, 0);
+    gSaveBlock3Ptr->dexNavChain = 0;
+}
+#endif
+
 static u8 GetSearchLevel(enum Species species)
 {
-    u8 searchLevel;
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    searchLevel = gSaveBlock3Ptr->dexNavSearchLevels[species];
-#else
-    searchLevel = 0;
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_PER_SPECIES
+    return gSaveBlock3Ptr->dexNavSearchLevels[species];
+#elif USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+    if (IsRegisteredDexNavSpecies(species))
+        return min(VarGet(DN_VAR_SEARCH_LEVEL), 255);
 #endif
-    return searchLevel;
+    return 0;
 }
 
 static void SetUpDexNavSearch(void)
@@ -837,6 +859,11 @@ static void DexNavSearchBail(const u8 *script)
 
 static bool8 InitDexNavSearch(enum Species species, u32 environment)
 {
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+    if (!IsRegisteredDexNavSpecies(species))
+        ResetRegisteredDexNavProgress();
+#endif
+
     sDexNavSearchDataPtr = AllocZeroed(sizeof(struct DexNavSearch));
     if (sDexNavSearchDataPtr == NULL)
     {
@@ -2432,6 +2459,10 @@ static void Task_DexNavMain(u8 taskId)
 
         if (species != SPECIES_NONE)
         {
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+            if (!IsRegisteredDexNavSpecies(species))
+                ResetRegisteredDexNavProgress();
+#endif
             PrintSearchableSpecies(species);
             //PlaySE(SE_DEX_SEARCH);
             PlayCry_Script(species, 0);
@@ -2453,6 +2484,12 @@ static void Task_DexNavMain(u8 taskId)
         }
         else
         {
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+            // a manual search counts for the search level and the chain like an R-button search; another species starts a new chain
+            if (!IsRegisteredDexNavSpecies(species))
+                ResetRegisteredDexNavProgress();
+            VarSet(DN_VAR_SPECIES, ((sDexNavUiDataPtr->environment << 14) | species));
+#endif
             gSpecialVar_0x8000 = species;
             gSpecialVar_0x8001 = sDexNavUiDataPtr->environment;
             gSpecialVar_0x8002 = (sDexNavUiDataPtr->cursorRow == ROW_HIDDEN) ? TRUE : FALSE;
@@ -2651,9 +2688,16 @@ u32 CalculateDexNavShinyRolls(void)
 
 void TryIncrementSpeciesSearchLevel()
 {
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_PER_SPECIES
     if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
         gSaveBlock3Ptr->dexNavSearchLevels[gDexNavSpecies]++;
+#elif USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+    u16 searchLevel = VarGet(DN_VAR_SEARCH_LEVEL);
+
+    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER
+     && IsRegisteredDexNavSpecies(gDexNavSpecies)
+     && searchLevel < 255)
+        VarSet(DN_VAR_SEARCH_LEVEL, searchLevel + 1);
 #endif
 }
 
@@ -2667,6 +2711,14 @@ void ResetDexNavSearch(void)
 
 void IncrementDexNavChain(void)
 {
+#if USE_DEXNAV_SEARCH_LEVELS == DEXNAV_SEARCH_LEVELS_REGISTERED_SPECIES
+    if (!IsRegisteredDexNavSpecies(gDexNavSpecies))
+    {
+        gSaveBlock3Ptr->dexNavChain = 0;
+        return;
+    }
+#endif
+
     if (gSaveBlock3Ptr->dexNavChain < DEXNAV_CHAIN_MAX)
         gSaveBlock3Ptr->dexNavChain++;
 }

@@ -142,3 +142,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Orleans additions
 - The OW SPEED option (extra sprite and camera updates in the overworld callback) is HashtagMarky's "Overworld Speedup", ported from [SoulGold](https://github.com/Eemeliri/soulgold) by Eemeliri.
 - The BATTLE SPEED option (the battle tick loop, its safety gating and the battle-frame RNG handling) is Pokeabbie's battle speed-up, with the later hardening rewrite from [SoulGold](https://github.com/Eemeliri/soulgold) by Eemeliri. The intro-slide helper and the runtime FAST INTRO option follow SoulGold's too.
+- DexNav is the [RHH](https://github.com/rh-hideout/pokeemerald-expansion) expansion implementation.

@@ -8,6 +8,7 @@ CrescentCity_Conservation_EventScript_Lafayette0::
 	lock
 	faceplayer
 	goto_if_lt VAR_ORLEANS_STORY, 14, CrescentCity_Conservation_EventScript_FirstBriefing
+	call_if_unset FLAG_DEXNAV_OBTAINED, CrescentCity_Conservation_EventScript_GiveDexNav
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_KabutoRevive
 @ Every unclaimed tier is given in order (10 species, 15, 25), each only once, however many species he is told about at a time.
@@ -86,6 +87,7 @@ CrescentCity_Conservation_EventScript_Progress15:
 
 CrescentCity_Conservation_EventScript_FirstBriefing:
 	msgbox CrescentCity_Conservation_Text_Inside, MSGBOX_DEFAULT
+	call CrescentCity_Conservation_EventScript_GiveDexNav
 	setvar VAR_ORLEANS_STORY, 14
 	setflag FLAG_HIDE_CRESCENT_LAFAYETTE
 	release
@@ -222,3 +224,32 @@ CrescentCity_Conservation_Text_FossilDone:
 CrescentCity_Conservation_Text_FossilNoRoom:
 	.string "LAFAYETTE: Your party and your boxes\n"
 	.string "are full. Make room and come back.$"
+
+@ Orleans: the DexNav (config/dexnav.h, DN_FLAG_DEXNAV_GET = FLAG_DEXNAV_OBTAINED): Lafayette gives it at the first briefing (story 13), or on the
+@ next visit for a player already past it. It adds a DEXNAV entry to the START menu.
+CrescentCity_Conservation_EventScript_GiveDexNav:
+	msgbox CrescentCity_Conservation_Text_DexNavGive, MSGBOX_DEFAULT
+	setflag FLAG_DEXNAV_OBTAINED
+	playfanfare MUS_OBTAIN_ITEM
+	message CrescentCity_Conservation_Text_DexNavGot
+	waitmessage
+	waitfanfare
+	msgbox CrescentCity_Conservation_Text_DexNavHow, MSGBOX_DEFAULT
+	return
+
+CrescentCity_Conservation_Text_DexNavGive:
+	.string "LAFAYETTE: One more thing. Counting\n"
+	.string "species by hand is slow work.\p"
+	.string "This is a DEXNAV, a field kit tuned\n"
+	.string "to the wild tables of this region.\p"
+	.string "It tells you what lives where, and\n"
+	.string "can track a species you pick.$"
+
+CrescentCity_Conservation_Text_DexNavGot:
+	.string "{PLAYER} received the DEXNAV!$"
+
+CrescentCity_Conservation_Text_DexNavHow:
+	.string "LAFAYETTE: It is in your START menu.\n"
+	.string "Pick a species, press R to register.\p"
+	.string "Then walk the grass. Sneak up on it\n"
+	.string "and the rare ones show themselves.$"
