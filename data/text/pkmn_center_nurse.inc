@@ -15,7 +15,9 @@ gText_RestoredPkmnToFullHealth::
 	.string "to full health.$"
 
 gText_WeHopeToSeeYouAgain::
-	.string "We hope to see you again!$"
+	.string "We hope to see you again!\p"
+	.string "The beds are free. Rest on one to\n"
+	.string "pass the time of day.$"
 
 gText_WelcomeCutShort::
 	.string "Hello, and welcome to\n"
@@ -48,4 +50,6 @@ gText_ThankYouForWaiting::
 	.string "Thank you for waiting.$"
 
 gText_WeHopeToSeeYouAgain2::
-	.string "We hope to see you again!$"
+	.string "We hope to see you again!\p"
+	.string "The beds are free. Rest on one to\n"
+	.string "pass the time of day.$"

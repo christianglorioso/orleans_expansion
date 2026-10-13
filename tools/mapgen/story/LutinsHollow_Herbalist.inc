@@ -34,6 +34,9 @@ LutinsHollow_Herbalist_EventScript_Apprentice1::
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, LutinsHollow_Herbalist_EventScript_ApprenticeNoRoom
 	setflag FLAG_RECEIVED_FLOETTE_EF
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, LutinsHollow_Herbalist_EventScript_ApprenticeToPC
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox LutinsHollow_Herbalist_Text_FloetteGiven, MSGBOX_DEFAULT
+	waitfanfare
 	goto LutinsHollow_Herbalist_EventScript_ApprenticeStone
 
 LutinsHollow_Herbalist_EventScript_ApprenticeToPC:
@@ -68,6 +71,10 @@ LutinsHollow_Herbalist_EventScript_ApprenticeSeed:
 LutinsHollow_Herbalist_Text_Seed:
 	.string "The Floette seed is for later. It\n"
 	.string "wakes after the great storm.$"
+
+LutinsHollow_Herbalist_Text_FloetteGiven:
+	.string "{PLAYER} received FLOETTE from the\n"
+	.string "apprentice!$"
 
 LutinsHollow_Herbalist_Text_Woke:
 	.string "The seed woke! After the great storm\n"

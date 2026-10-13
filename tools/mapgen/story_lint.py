@@ -63,11 +63,41 @@ def check(path, label, n, text):
     return out
 
 
+def lint_object_cap():
+    """Object limits (audit ch4 NEW1): a map holds at most 64 object templates, and the game keeps at most 16 objects alive at once
+    (OBJECT_EVENTS_COUNT; slot 0 is the player), so no 19x12 window (the spawn area around the camera) may hold more than 15 of a
+    map's objects, hidden ones included (a flag only hides after the object is spawned). Extra ones silently never appear and a
+    script that applymovements one hangs."""
+    import json
+    out = []
+    for path in sorted(glob.glob(os.path.join(HERE, "..", "..", "data", "maps", "*", "map.json"))):
+        try:
+            objs = json.load(open(path, encoding="utf-8")).get("object_events", [])
+        except (OSError, ValueError):
+            continue
+        name = os.path.basename(os.path.dirname(path))
+        if not re.match(r"^(IsleMarais|GrandOak|OldWater|StormsEdge|CrescentCity|PointeRouge|CampCocodrie|LutinsHollow|Redfield|LandsEnd|"
+                        r"Route([1-9]|1\d|2[0-5])$|OldestShrine)", name):
+            continue   # the Hoenn leftovers (Frontier, Route 111...) are vanilla
+        if len(objs) > 64:
+            out.append(f"{name}: {len(objs)} object templates (max 64)")
+        pts = [(o["x"], o["y"]) for o in objs]
+        worst = 0
+        for x0, _ in pts:
+            for _, y0 in pts:
+                worst = max(worst, sum(1 for x, y in pts if x0 <= x < x0 + 19 and y0 <= y < y0 + 12))
+        if worst > 15:
+            out.append(f"{name}: {worst} objects inside one 19x12 window (max 15: slot 0 is the player)")
+    return out
+
+
 def main(argv):
     files = argv or sorted(glob.glob(os.path.join(HERE, "story", "*.inc")))
     bad = []
     for f in files:
         bad += lint(f)
+    if not argv:
+        bad += lint_object_cap()
     for p in bad:
         print(p)
     print(f"{len(files)} files, {len(bad)} problems")
