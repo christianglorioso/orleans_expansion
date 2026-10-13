@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_STORMS_EDGE_HOUSE_W_MOTHER0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
       "x": 3,
       "y": 4,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_STORMS_EDGE_HOUSE_W_CHILD1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 7,
       "y": 5,
       "elevation": 3,

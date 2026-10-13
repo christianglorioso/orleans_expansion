@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_REDFIELD_POKECENTER_NURSE0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_REDFIELD_POKECENTER_CANE_CUTTER1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 2,
       "y": 5,
       "elevation": 3,
@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_REDFIELD_POKECENTER_HIKER2",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 12,
       "y": 5,
       "elevation": 3,

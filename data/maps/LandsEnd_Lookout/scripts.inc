@@ -8,6 +8,6 @@ LandsEnd_Lookout_EventScript_Watchman0::
 	end
 
 LandsEnd_Lookout_Text_Watchman0:
-	.string "logs every storm since he was\na boy$"
+	.string "I've logged every storm since I was\na boy. None sat still like this one.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

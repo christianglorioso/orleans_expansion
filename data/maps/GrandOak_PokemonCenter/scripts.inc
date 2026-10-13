@@ -29,6 +29,6 @@ GrandOak_PokemonCenter_EventScript_Volunteer2::
 	end
 
 GrandOak_PokemonCenter_Text_Volunteer2:
-	.string "The shelter in ISLE MARAIS still\nneeds supplies, if you're heading back.$"
+	.string "The ISLE MARAIS shelter still needs\nsupplies, if you're heading back.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

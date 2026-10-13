@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_DEPT2F_CLERK0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 12,
       "y": 3,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_DEPT2F_CLERK1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 3,
       "y": 5,
       "elevation": 3,
@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_DEPT2F_SHOPPER2",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 8,
       "y": 9,
       "elevation": 3,

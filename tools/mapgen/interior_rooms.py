@@ -88,7 +88,7 @@ ROOMS = [
                  (PH1, 12, 7, 1, 2, 10, 7),    # potted plant
                  (PH1, 8, 8, 3, 2, 4, 8)],     # exit mat and door frame
          people=[("neighbour", "Could you check on the levee crew?\\nThey've been out there since dawn."),
-                 ("child", "I saw a weird POKéMON on ROUTE 1!\\nI'd trade a POKé BALL to see it again.")],
+                 ("child", "I saw a weird POKéMON on ROUTE 1!\\nI'd give a POKé BALL to see it.")],
          positions=[(3, 7), (1, 6)]),
     room(IM, HOME, map="IsleMarais_HouseW", const="MAP_ISLE_MARAIS_HOUSE_W", door_label="House (west)",
          crop=(0, 0, 11, 10),
@@ -103,7 +103,7 @@ ROOMS = [
     # ---------------- Grand Oak (Magnolia's town)
     room(GO, SERV, map="GrandOak_PokemonCenter", const="MAP_GRAND_OAK_POKEMON_CENTER", door_label="Pokemon Center", music="MUS_POKE_CENTER",
          people=[("nurse", ""), ("traveller", "MAGNOLIA's gym uses Grassy Terrain.\\nBug, Flying or Poison types help."),
-                 ("volunteer", "The shelter in ISLE MARAIS still\\nneeds supplies, if you're heading back.")],
+                 ("volunteer", "The ISLE MARAIS shelter still needs\\nsupplies, if you're heading back.")],
          positions=[None, (3, 6), (10, 7)]),
     room(GO, SERV, map="GrandOak_Mart", const="MAP_GRAND_OAK_MART", door_label="Poke Mart", music="MUS_POKE_MART",
          people=[("clerk", ""), ("shopper", "RITA's people bought out every\\nSUPER POTION in town.")],

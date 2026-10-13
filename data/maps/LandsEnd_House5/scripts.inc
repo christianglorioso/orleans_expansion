@@ -8,6 +8,6 @@ LandsEnd_House5_EventScript_Trader0::
 	end
 
 LandsEnd_House5_Text_Trader0:
-	.string "swaps a Relicanth for a\nClamperl$"
+	.string "I've wanted a CLAMPERL since I was\na boy. My RELICANTH misses the deep.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

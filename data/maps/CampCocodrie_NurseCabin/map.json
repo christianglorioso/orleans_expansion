@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CAMP_COCODRIE_NURSE_CABIN_NURSE0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 5,
       "y": 2,
       "elevation": 3,

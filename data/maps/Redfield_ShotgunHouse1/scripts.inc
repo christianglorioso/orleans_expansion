@@ -8,13 +8,13 @@ Redfield_ShotgunHouse1_EventScript_Grandmother0::
 	end
 
 Redfield_ShotgunHouse1_Text_Grandmother0:
-	.string "the cane fields were greener\nbefore the storm$"
+	.string "The cane fields were greener before\nthe storm. They'll be green again.$"
 
 Redfield_ShotgunHouse1_EventScript_Grandson1::
 	msgbox Redfield_ShotgunHouse1_Text_Grandson1, MSGBOX_NPC
 	end
 
 Redfield_ShotgunHouse1_Text_Grandson1:
-	.string "wants a Charmander more than\nanything$"
+	.string "I want a CHARMANDER more than\nanything. I'd name him Pepper!$"
 
 @ --- mapgen: generated NPC scripts (end) ---

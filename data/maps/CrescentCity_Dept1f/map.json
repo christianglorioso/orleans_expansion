@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_DEPT1F_RECEPTIONIST0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_LINK_RECEPTIONIST",
       "x": 2,
       "y": 2,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_DEPT1F_CLERK1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 9,
       "y": 4,
       "elevation": 3,

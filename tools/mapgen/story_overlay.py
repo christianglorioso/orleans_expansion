@@ -311,6 +311,11 @@ def _merge_gates():
 
 _merge_gates()
 
+# ---------------------------------------------------------------------------------------------- NPC lines that were leaked spec notes
+import story_data_npc_text as _npct  # noqa: E402
+
+_npct.merge(INTERIOR)
+
 # ---------------------------------------------------------------------------------------------- application
 def apply(spec):
     """Layer the story pass onto a spec (in place; returns it). A map with no overlay is returned unchanged."""

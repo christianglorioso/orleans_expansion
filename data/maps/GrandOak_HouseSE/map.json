@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_GRAND_OAK_HOUSE_SE_RECRUIT0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
       "x": 4,
       "y": 4,
       "elevation": 3,

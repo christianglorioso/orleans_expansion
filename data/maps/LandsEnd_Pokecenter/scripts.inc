@@ -29,6 +29,6 @@ LandsEnd_Pokecenter_EventScript_Hiker2::
 	end
 
 LandsEnd_Pokecenter_Text_Hiker2:
-	.string "the last stop before the open\nGulf$"
+	.string "Last stop before the open Gulf.\nStock up. Nothing sells out there.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

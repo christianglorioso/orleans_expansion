@@ -30,6 +30,6 @@ LandsEnd_MarineSupply_EventScript_Diver1::
 	end
 
 LandsEnd_MarineSupply_Text_Diver1:
-	.string "the Drowned Temple's door\nwon't open for just anyone$"
+	.string "The DROWNED TEMPLE's door won't open\nfor just anyone. It wants a song.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

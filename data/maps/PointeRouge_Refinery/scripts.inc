@@ -264,8 +264,8 @@ PointeRouge_Refinery_Text_CamilleRetreat:
 	.string "Every pipe is a road for the\p"
 	.string "water. RITA's flood is coming.\n"
 	.string "Remember my face. Boy. We go.\p"
-	.string "JAYDEN: ...Right. Yes. Coming.\n"
-	.string "(He looks back at you, once.)$"
+	.string "JAYDEN: ...Right. Yes. Coming.\p"
+	.string "He looks back at you, once.$"
 
 PointeRouge_Refinery_Text_Afterwards:
 	.string "The runoff is stopped. The control\n"

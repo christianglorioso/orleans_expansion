@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_STORMS_EDGE_MART_CLERK0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 2,
       "y": 3,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_STORMS_EDGE_MART_SHOPPER1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
       "x": 8,
       "y": 6,
       "elevation": 3,

@@ -8,6 +8,6 @@ Redfield_House1_EventScript_Farmer0::
 	end
 
 Redfield_House1_Text_Farmer0:
-	.string "the pepper rows love this heat$"
+	.string "The pepper rows love this heat. The\nhotter the sun, the hotter the jar.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

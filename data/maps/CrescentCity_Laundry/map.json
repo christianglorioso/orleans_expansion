@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_LAUNDRY_OWNER0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
       "x": 2,
       "y": 6,
       "elevation": 3,

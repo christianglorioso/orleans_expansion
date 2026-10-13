@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_STORMS_EDGE_HOUSE_E_TRADER0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 5,
       "y": 3,
       "elevation": 3,

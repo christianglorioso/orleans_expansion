@@ -8,6 +8,6 @@ LandsEnd_House1_EventScript_Shrimper0::
 	end
 
 LandsEnd_House1_Text_Shrimper0:
-	.string "the boats go out at dawn,\nstorm or not$"
+	.string "The boats go out at dawn, storm or\nnot. The shrimp don't wait for us.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

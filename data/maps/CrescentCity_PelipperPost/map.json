@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_PELIPPER_POST_CLERK0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
       "x": 4,
       "y": 2,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_PELIPPER_POST_PELIPPER_HANDLER1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 10,
       "y": 6,
       "elevation": 3,

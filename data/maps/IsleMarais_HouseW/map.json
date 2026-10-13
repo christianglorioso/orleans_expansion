@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_ISLE_MARAIS_HOUSE_W_FISHERMAN0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 5,
       "y": 4,
       "elevation": 3,

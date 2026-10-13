@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_ISLE_MARAIS_HOUSE_E_BABY0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
       "x": 2,
       "y": 4,
       "elevation": 3,

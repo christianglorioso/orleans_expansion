@@ -157,19 +157,68 @@ def mockup_room(room):
 
 
 # ------------------------------------------------------------------ events and files
-def gfx_for(text, kind):
-    t = text.lower()
-    for key, g in (("nurse", "OBJ_EVENT_GFX_NURSE"), ("clerk", "OBJ_EVENT_GFX_MART_EMPLOYEE"), ("mother", "OBJ_EVENT_GFX_MOM"),
-                   ("magnolia", "OBJ_EVENT_GFX_WOMAN_4"), ("tupelo", "OBJ_EVENT_GFX_OLD_MAN"), ("wren", "OBJ_EVENT_GFX_GIRL_3"),
-                   ("lafayette", "OBJ_EVENT_GFX_SCIENTIST_1"), ("priest", "OBJ_EVENT_GFX_MANIAC"), ("child", "OBJ_EVENT_GFX_LITTLE_BOY"),
-                   ("grandmother", "OBJ_EVENT_GFX_OLD_WOMAN"), ("grandson", "OBJ_EVENT_GFX_LITTLE_BOY"), ("fisherman", "OBJ_EVENT_GFX_FISHERMAN"),
-                   ("baby", "OBJ_EVENT_GFX_WOMAN_2"), ("healer", "OBJ_EVENT_GFX_WOMAN_5"), ("trader", "OBJ_EVENT_GFX_MAN_3"),
-                   ("carver", "OBJ_EVENT_GFX_MAN_2"), ("boatman", "OBJ_EVENT_GFX_SAILOR"), ("gardener", "OBJ_EVENT_GFX_WOMAN_2"),
-                   ("aroma lady", "OBJ_EVENT_GFX_WOMAN_1"), ("accordion", "OBJ_EVENT_GFX_MAN_1"), ("dancer", "OBJ_EVENT_GFX_TWIN"),
-                   ("guide", "OBJ_EVENT_GFX_MAN_4"), ("shrimper", "OBJ_EVENT_GFX_OLD_MAN"), ("recruit", "OBJ_EVENT_GFX_MAN_1")):
-        if key in t:
-            return g
-    return {"heal": "OBJ_EVENT_GFX_WOMAN_5", "shop": "OBJ_EVENT_GFX_MART_EMPLOYEE", "trainer": "OBJ_EVENT_GFX_YOUNGSTER"}.get(kind, "OBJ_EVENT_GFX_WOMAN_2")
+# Interior NPC sprites. gfx_for(text, kind, map, index): an explicit {"gfx": ...} option wins (checked by the caller), then
+# SPRITE_OVERRIDES[(map, index)], then SPRITE_BY_KIND[kind] (the role word of the room's people list), then a role word found in
+# the spec text, then the fallback by marker kind. Every id must be a non-NULL Emerald graphics id (gfx_null_check.py) and
+# each map stays far inside the 16 OBJ palette slots (npc_sprites.py palettes). Nurses are always the Pokemon Center nurse and
+# Mart clerks the Mart employee; shop-less "clerks" (cafe, salon...) are overridden below so they look like what they are.
+G = "OBJ_EVENT_GFX_"
+SPRITE_BY_KIND = {
+    "nurse": "NURSE", "clerk": "MART_EMPLOYEE", "mother": "WOMAN_5", "lafayette": "SCIENTIST_1", "magnolia": "WOMAN_4",
+    "tupelo": "OLD_MAN", "wren": "GIRL_3", "priest": "EXPERT_M", "ringer": "OLD_MAN", "parishioner": "OLD_WOMAN",
+    "neighbour": "WOMAN_1", "old neighbour": "OLD_WOMAN", "old neighbours": "OLD_WOMAN", "child": "LITTLE_BOY", "kid": "LITTLE_BOY",
+    "grandmother": "OLD_WOMAN", "grandson": "LITTLE_BOY", "daughter": "LITTLE_GIRL", "boy": "BOY_1", "baby": "WOMAN_1",
+    "fisherman": "FISHERMAN", "old fisherman": "OLD_MAN", "shrimper": "FISHERMAN", "angler": "FISHERMAN", "oldtimer": "OLD_MAN",
+    "boatman": "SAILOR", "deckhand": "SAILOR", "captain": "SAILOR", "watchman": "OLD_MAN", "old diver": "OLD_MAN", "diver": "SWIMMER_M",
+    "healer": "WOMAN_5", "apprentice": "GIRL_2", "helper": "GIRL_2", "volunteer": "WOMAN_4", "gardener": "WOMAN_4",
+    "aroma lady": "WOMAN_1", "traveller": "WOMAN_3", "shopper": "WOMAN_3", "woman": "WOMAN_3", "regular": "POKEFAN_F",
+    "tourist": "POKEFAN_F", "parade fan": "BOY_2", "client": "WOMAN_3", "owner": "WOMAN_1", "landlady": "WOMAN_5",
+    "trader": "MAN_3", "collector": "GENTLEMAN", "carver": "MAN_2", "guide": "MAN_4", "gym guide": "MAN_4", "recruit": "MAN_2",
+    "accordion": "MAN_1", "dancer": "WOMAN_3", "zydeco band": "BARD", "choir singer": "LASS", "receptionist": "LINK_RECEPTIONIST",
+    "tour guide": "GENTLEMAN", "old man": "OLD_MAN", "refinery worker": "WORKER_M", "lineworker": "WORKER_M", "father": "WORKER_M",
+    "man": "MAN_2", "keeper": "SAILOR", "forecaster": "REPORTER_F", "scientist": "SCIENTIST_1", "hiker": "HIKER", "cane cutter": "POKEFAN_M",
+    "foreman": "WORKER_M", "taster": "WORKER_F", "sundial keeper": "EXPERT_F", "farmer": "FAT_MAN", "birdwatcher": "CAMPER",
+    "wrangler": "CAMPER", "smoker": "FAT_MAN", "riddler": "PSYCHIC_M", "gambler": "MAN_2", "handler": "MAN_4",
+    "pelipper handler": "MAN_4", "tournament registrar": "MAN_2", "day care": "OLD_MAN", "ticket clerk": "MAN_1",
+    "name rater": "MAN_3", "move tutor": "MAN_2", "ev coach": "BLACK_BELT", "iv judge": "EXPERT_F",
+}
+SPRITE_OVERRIDES = {
+    ("IsleMarais_Shelter", 0): "MOM", ("IsleMarais_PlayersHouse", 0): "MOM",
+    ("IsleMarais_Shelter", 4): "WOMAN_1",                       # Rita's recruiter (the shelter's second one is the accordion man)
+    ("IsleMarais_HouseEastmost", 0): "OLD_MAN",                 # forty years on the water
+    ("IsleMarais_HouseNE", 0): "WOMAN_1", ("IsleMarais_HouseNE", 1): "LITTLE_GIRL",
+    ("GrandOak_Gym", 0): "MAN_4", ("GrandOak_Gym", 1): "BUG_CATCHER",   # straw-hat gardener trainer
+    ("GrandOak_Nursery", 0): "WOMAN_4", ("GrandOak_Nursery", 1): "GIRL_2",
+    ("OldWater_Healer", 0): "OLD_WOMAN",                        # the herbal healer: not a Pokemon Center nurse
+    ("OldWater_Trader", 1): "LITTLE_GIRL",
+    ("StormsEdge_Mart", 1): "MAN_2",
+    ("StormsEdge_SeafoodMarket", 0): "COOK", ("StormsEdge_HouseW", 0): "WOMAN_5", ("StormsEdge_HouseW", 1): "LITTLE_GIRL",
+    ("StormsEdge_Lighthouse", 0): "SAILOR",
+    ("CrescentCity_Cafe", 0): "COOK", ("CrescentCity_Salon", 0): "BEAUTY", ("CrescentCity_IceCream", 0): "MART_EMPLOYEE",
+    ("CrescentCity_IceCream", 1): "LITTLE_GIRL", ("CrescentCity_PelipperPost", 0): "MYSTERY_GIFT_MAN",
+    ("CrescentCity_Trades", 1): "WOMAN_5", ("CrescentCity_DayCare", 0): "OLD_MAN", ("CrescentCity_DayCare", 1): "OLD_WOMAN",
+    ("CrescentCity_Conservation", 1): "SCIENTIST_2", ("CrescentCity_Dept3f", 2): "GENTLEMAN",
+    ("PointeRouge_TackleShop", 0): "FISHERMAN", ("PointeRouge_HouseNw", 0): "WORKER_M",
+    ("CampCocodrie_BaitShack", 0): "FISHERMAN", ("CampCocodrie_Cabin4", 0): "WOMAN_4", ("CampCocodrie_Gym", 2): "MAN_4",
+    ("CampCocodrie_DancePorch", 0): "BARD", ("CampCocodrie_DancePorch", 1): "WOMAN_3",
+    ("LutinsHollow_Herbalist", 0): "OLD_WOMAN", ("LutinsHollow_Pokecenter", 1): "WOMAN_3",
+    ("LutinsHollow_Gym", 0): "MAN_5", ("LutinsHollow_Gym", 1): "MAN_5", ("LutinsHollow_Gym", 2): "MAN_5",   # the four lutins look alike
+    ("LutinsHollow_Gym", 3): "MAN_5", ("LutinsHollow_Gym", 6): "WOMAN_4",
+    ("Redfield_Gym", 3): "MAN_4", ("LandsEnd_Gym", 3): "WOMAN_4",
+    ("LandsEnd_Lookout", 0): "SAILOR", ("LandsEnd_House4", 0): "OLD_MAN",
+}
+TEXT_WORDS = (("nurse", "NURSE"), ("clerk", "MART_EMPLOYEE"), ("priest", "EXPERT_M"), ("fisherman", "FISHERMAN"), ("sailor", "SAILOR"),
+              ("grandmother", "OLD_WOMAN"), ("grandson", "LITTLE_BOY"), ("child", "LITTLE_BOY"))
+
+
+def gfx_for(text, kind, name=None, idx=None):
+    g = SPRITE_OVERRIDES.get((name, idx)) or SPRITE_BY_KIND.get(kind.lower())
+    if not g:
+        t = text.lower()
+        g = next((v for k, v in TEXT_WORDS if k in t), None)
+    if not g:
+        g = {"heal": "WOMAN_5", "shop": "MART_EMPLOYEE", "trainer": "YOUNGSTER"}.get(kind, "WOMAN_3")
+    return g if g.startswith(G) else G + g
 
 
 def walkable(grid, x, y, exits):
@@ -270,7 +319,7 @@ def build(room, door_warps):
         lid_ = f"LOCALID_{room['const'][4:]}_{kind.upper().replace(' ', '_')}{i}"
         # opts: "gfx" overrides the sprite (e.g. OBJ_EVENT_GFX_SPECIES(TOTODILE)), "sight": n makes a trainer,
         # "face" sets the facing direction (DOWN, UP, LEFT, RIGHT)
-        objs.append({"local_id": lid_, "graphics_id": opts.get("gfx", gfx_for(text, kind)), "x": sx, "y": sy, "elevation": 3,
+        objs.append({"local_id": lid_, "graphics_id": opts.get("gfx", gfx_for(text, kind, name, i)), "x": sx, "y": sy, "elevation": 3,
                      "movement_type": f"MOVEMENT_TYPE_FACE_{opts.get('face', 'DOWN')}", "movement_range_x": 0, "movement_range_y": 0,
                      "trainer_type": "TRAINER_TYPE_NORMAL" if opts.get("sight") else "TRAINER_TYPE_NONE",
                      "trainer_sight_or_berry_tree_id": str(opts.get("sight", 0)), "script": sid,

@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_OLD_WATER_CANOE_DOCKS_BOATMAN0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 4,
       "y": 5,
       "elevation": 3,

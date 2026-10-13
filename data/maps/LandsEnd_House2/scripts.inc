@@ -8,6 +8,6 @@ LandsEnd_House2_EventScript_Birdwatcher0::
 	end
 
 LandsEnd_House2_Text_Birdwatcher0:
-	.string "the herons on Route 20 nest in\nthe old pilings$"
+	.string "The herons on Route 20 nest in the\nold pilings. Don't startle them.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

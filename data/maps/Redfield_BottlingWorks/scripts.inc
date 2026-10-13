@@ -15,6 +15,6 @@ Redfield_BottlingWorks_EventScript_Taster1::
 	end
 
 Redfield_BottlingWorks_Text_Taster1:
-	.string "gives a Spicy Berry blend\n(Tamato Berries)$"
+	.string "Taste the new blend? TAMATO BERRY,\nground fine. Hot enough for you?$"
 
 @ --- mapgen: generated NPC scripts (end) ---

@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_STORMS_EDGE_LIGHTHOUSE_KEEPER0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 7,
       "y": 6,
       "elevation": 3,

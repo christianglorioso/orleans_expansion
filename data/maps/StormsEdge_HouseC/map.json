@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_STORMS_EDGE_HOUSE_C_OLD_FISHERMAN0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 4,
       "y": 3,
       "elevation": 3,

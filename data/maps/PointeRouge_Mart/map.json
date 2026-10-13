@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_POINTE_ROUGE_MART_CLERK0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 2,
       "y": 3,
       "elevation": 3,

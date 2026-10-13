@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_REDFIELD_HOUSE2_BOY0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 5,
       "y": 3,
       "elevation": 3,

@@ -29,6 +29,6 @@ Redfield_Pokecenter_EventScript_Hiker2::
 	end
 
 Redfield_Pokecenter_Text_Hiker2:
-	.string "the dry country north of here\nis going to dust$"
+	.string "Heading north? The dry country is\nturning to dust. Take water.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

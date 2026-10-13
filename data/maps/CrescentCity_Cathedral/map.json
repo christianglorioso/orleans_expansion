@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CRESCENT_CITY_CATHEDRAL_PRIEST0",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 9,
       "y": 3,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "local_id": "LOCALID_CRESCENT_CITY_CATHEDRAL_CHOIR_SINGER1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 4,
       "y": 9,
       "elevation": 3,
