@@ -187,7 +187,7 @@
     {
       "local_id": "LOCALID_POINTE_ROUGE_SHOPPER",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 44,
+      "x": 43,
       "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -201,8 +201,8 @@
     {
       "local_id": "LOCALID_POINTE_ROUGE_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 53,
-      "y": 14,
+      "x": 50,
+      "y": 39,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,

@@ -22,9 +22,9 @@ Layout (x right, y down), following the mockup (review round 2, 2026-10-12: less
     south         tackle shop and old ice plant on lawns off Laurel Street; a house with a path to the levee road;
                   Kingfisher's boathouse gym standing on the quay (x 40-46) with its dock; lawns, benches facing flower
                   beds; the dock walk (x 37-38)
-    quay          four jib cranes along the city quay (x 46-47) with crate clusters beside them; the ferry pier (x 48-53,
-                  rows 14-15) off the foot of the drive with Crescent's riverboat lying across its end like the bar of a T
-                  (x 54-56, rows 11-17), a sailor on the pier end; surf lane x 57-59
+    quay          four jib cranes along the city quay (x 46-47) with crate clusters beside them; Crescent's
+                  riverboat moored at the gym's dock (the lower pier, below the south bridge), lying across its tip like
+                  the bar of a T (x 51-53, rows 36-42), a sailor on the pier end; surf lane x 54-56
     river         the Emerald River (x 48-59), a stone quay along the city bank; two stone arch bridges carry
                   the roads to Route 23 (rows 5-6 and 26-27; the south one is Tornadus's span)
     east bank     the riverside walk, magnolia pairs, and organic patches of tall grass south of the lower bridge
@@ -140,8 +140,6 @@ def terrain(t):
     S(43, 5, 2, 2)          # ... widening to meet the north bridge
     S(44, 8, 1, 6)          # loading bays beside the cranes (the drive is 4 wide there)
     S(44, 20, 1, 6)
-    if FERRY:
-        S(44, 14, 1, 2)     # the ferry landing: the drive widens at the pier's foot
     S(26, 26, 22, 2)        # Laurel Street, on to the south bridge (its deck rows are 26-27)
     S(41, 28, 7, 6)         # the north apron of the working quay
     S(40, 34, 7, 1)         # (the boathouse's roof row stands on paving, not lawn)
@@ -211,21 +209,18 @@ def buildings(t):
     gx, gy = BUILDINGS["pointe_rouge_gym"]
     t.place("dock", gx + 8, gy + 5, "Dock", ground=None)
     if FERRY:
-        ferry_pier(t)
+        ferry_pier(t, gx + 8, gy + 5)
 
 
-FERRY_Y = 14            # the ferry pier's rows (14-15): out from the quay at the foot of the drive, between the bridges
-FERRY_DOCKS = (48, 51)   # two 3x2 dock pieces: the pier (the T's stem) is x 48-53
-BOAT_X = 54             # the riverboat's west column: it lies across the pier's end (the T's bar), rows 11-17
+BOAT_DX = 3             # the riverboat's west column is the column after the dock's last one (dock x .. x+2): a T
 
 
-def ferry_pier(t):
-    """The ferry terminal: a single plank pier off the west quay (the gym's dock piece, repeated), ending in Crescent
-    City's riverboat moored north-south across the pier's end, a T (the boat runs between the two cities). Open water
-    east of it (x 57-59) keeps a Surf lane between the bridges."""
-    for x in FERRY_DOCKS:
-        t.place("dock", x, FERRY_Y, "Ferry pier", ground=None)
-    t.place("steamboat_ns_s", BOAT_X, FERRY_Y - 3, "Riverboat", ground=None)  # centred on the pier: its middle row is row 14
+def ferry_pier(t, dock_x, dock_y):
+    """The ferry berth: Crescent City's riverboat moored north-south across the tip of the gym's dock (the lower pier,
+    below the southern bridge), a T: the boat runs between the two cities. The old upper ferry pier is gone (user,
+    2026-10-13); the open water east of the boat (x 54-56) keeps a Surf lane."""
+    # the boat's middle row (row 3 of its 7) is the dock's first row
+    t.place("steamboat_ns_s", dock_x + BOAT_DX, dock_y - 3, "Riverboat", ground=None)
 
 
 def refinery_works(t):
@@ -473,7 +468,7 @@ def dress(t):
     for dx in range(3):
         D("roses", 33 + dx, 35)
     # --- the riverside bench on the city bank, facing the street
-    D("bench", 42, 16) if FERRY else D("bench", 43, 15)
+    D("bench", 43, 15)
     # --- south-west lawn: trees, a bench facing a flower bed
     D("magnolia", 26, 39)
     D("magnolia", 28, 39)
@@ -555,11 +550,11 @@ def people(t):
          "Kingfisher's POKéMON fly so fast\nthey ripple the river!"),
         ("POKEFAN", "OBJ_EVENT_GFX_POKEFAN_M", 64, 29, "MOVEMENT_TYPE_FACE_LEFT",
          "On windy days something huge\ncircles the truss bridge..."),
-        ("SHOPPER", "OBJ_EVENT_GFX_WOMAN_2", 44 if FERRY else 43, 16, "MOVEMENT_TYPE_FACE_LEFT",
+        ("SHOPPER", "OBJ_EVENT_GFX_WOMAN_2", 43, 16, "MOVEMENT_TYPE_FACE_LEFT",
          "The Mart's stocked for the session.\nEvery lawmaker wants Potions."),
     ]
-    if FERRY:  # Crescent's riverboat has only a sailor on its quay saying where it sails: the same here, on the pier
-        folk.append(("SAILOR", "OBJ_EVENT_GFX_SAILOR", 53, 14, "MOVEMENT_TYPE_FACE_RIGHT",
+    if FERRY:  # Crescent's riverboat has only a sailor on its quay saying where it sails: the same here, at the tip of the lower pier
+        folk.append(("SAILOR", "OBJ_EVENT_GFX_SAILOR", BUILDINGS["pointe_rouge_gym"][0] + 10, BUILDINGS["pointe_rouge_gym"][1] + 5, "MOVEMENT_TYPE_FACE_RIGHT",
                      "SAILOR: The riverboat sails for\nCrescent City from this pier."))
     for name, gfx, x, y, move, text in folk:
         on_dock = any(b["prefab"] in ("dock", "quay") and 0 <= x - b["x"] < (3 if b["prefab"] == "dock" else 1)
@@ -580,7 +575,7 @@ REVIEW_AREAS = [  # (title, x0, y0, x1, y1) in tiles: the zoomed crops of the re
     ("5/7. South: house path, gym on the quay, cranes", 24, 30, 50, 48),
     ("10. East bank: tall grass", 50, 24, 66, 48),
     ("East bank north: benches, tree pairs", 56, 4, 66, 28),
-    ("12. Ferry pier and Crescent's riverboat", 38, 8, 62, 26),
+    ("12. Lower pier and Crescent's riverboat", 38, 30, 62, 46),
     ("Rose planters (were flower beds): Capitol, south lawn", 25, 12, 41, 19),
     ("Rail yard: tracks end at the yard lane (no buffer stops)", 12, 36, 22, 47),
 ]

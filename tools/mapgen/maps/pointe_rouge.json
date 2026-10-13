@@ -100,21 +100,9 @@
       "label": "Dock"
     },
     {
-      "prefab": "dock",
-      "x": 48,
-      "y": 14,
-      "label": "Ferry pier"
-    },
-    {
-      "prefab": "dock",
-      "x": 51,
-      "y": 14,
-      "label": "Ferry pier"
-    },
-    {
       "prefab": "steamboat_ns_s",
-      "x": 54,
-      "y": 11,
+      "x": 51,
+      "y": 36,
       "label": "Riverboat"
     },
     {
@@ -2365,8 +2353,8 @@
     },
     {
       "prefab": "bench",
-      "x": 42,
-      "y": 16,
+      "x": 43,
+      "y": 15,
       "label": "Bench"
     },
     {
@@ -2490,10 +2478,22 @@
       "label": "Quay"
     },
     {
+      "prefab": "quay_wall",
+      "x": 48,
+      "y": 14,
+      "label": "Quay wall"
+    },
+    {
       "prefab": "quay",
       "x": 47,
       "y": 15,
       "label": "Quay"
+    },
+    {
+      "prefab": "quay_wall",
+      "x": 48,
+      "y": 15,
+      "label": "Quay wall"
     },
     {
       "prefab": "quay",
@@ -2948,7 +2948,7 @@
     {
       "id": "LOCALID_POINTE_ROUGE_SHOPPER",
       "gfx": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 44,
+      "x": 43,
       "y": 16,
       "move": "MOVEMENT_TYPE_FACE_LEFT",
       "text": "The Mart's stocked for the session.\nEvery lawmaker wants Potions."
@@ -2956,8 +2956,8 @@
     {
       "id": "LOCALID_POINTE_ROUGE_SAILOR",
       "gfx": "OBJ_EVENT_GFX_SAILOR",
-      "x": 53,
-      "y": 14,
+      "x": 50,
+      "y": 39,
       "move": "MOVEMENT_TYPE_FACE_RIGHT",
       "text": "SAILOR: The riverboat sails for\nCrescent City from this pier."
     }
