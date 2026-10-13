@@ -26,10 +26,53 @@ CrescentCity_Conservation_EventScript_Tally:
 	release
 	end
 
+	goto CrescentCity_Conservation_EventScript_CharmPhase
+
+@ Orleans: the SHINY CHARM for the finished regional dex (BASE species only: forms with their own number, Megas and mythicals do not count; see src/orleans_dex.c).
+@ Once only (FLAG_LAFAYETTE_SHINY_CHARM, set only after the item is really in the bag).
+CrescentCity_Conservation_EventScript_CharmPhase:
+	goto_if_set FLAG_LAFAYETTE_SHINY_CHARM, CrescentCity_Conservation_EventScript_Done
+	special OrleansDex_CheckBaseComplete
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_CharmGive
+	buffernumberstring STR_VAR_2, VAR_0x8005
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox CrescentCity_Conservation_Text_CharmProgress, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Conservation_EventScript_CharmGive:
+	buffernumberstring STR_VAR_3, VAR_0x8006
+	msgbox CrescentCity_Conservation_Text_CharmOffer, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_LAFAYETTE_SHINY_CHARM
+	msgbox CrescentCity_Conservation_Text_CharmGiven, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Conservation_EventScript_Done:
 CrescentCity_Conservation_EventScript_Progress:
 	msgbox CrescentCity_Conservation_Text_Progress, MSGBOX_DEFAULT
 	release
 	end
+CrescentCity_Conservation_Text_CharmProgress:
+	.string "LAFAYETTE: {STR_VAR_1}. Keep going!\n"
+	.string "The apartment is yours.\p"
+	.string "I have one more thing, for when the\n"
+	.string "whole regional dex is logged:\p"
+	.string "{STR_VAR_2} of {STR_VAR_3} so far.\n"
+	.string "Forms and Megas don't count.$"
+
+CrescentCity_Conservation_Text_CharmOffer:
+	.string "LAFAYETTE: All {STR_VAR_3} of them!\n"
+	.string "Every species in the region, logged.\p"
+	.string "I never thought I'd see it. Please,\n"
+	.string "take my SHINY CHARM.$"
+
+CrescentCity_Conservation_Text_CharmGiven:
+	.string "LAFAYETTE: It makes rare colours\n"
+	.string "easier to find. They're out there.$"
+
 
 CrescentCity_Conservation_EventScript_Progress10:
 	msgbox CrescentCity_Conservation_Text_Progress10, MSGBOX_DEFAULT

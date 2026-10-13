@@ -230,7 +230,7 @@ INTERIORS = {
             ("stage", 6, 2, 10, 2, "stage → supply table"),
             ("counter", 7, 4, 8, 1, "supply table"),
             ("counter", 1, 3, 3, 1, "nurse"), ("bed", 1, 4, 1, 2), ("bed", 3, 4, 1, 2),
-            ("counter", 17, 2, 4, 1, "field station"), ("shelf", 19, 3, 2, 2, "PC /\nlab kit"),
+            ("counter", 16, 2, 5, 1, "field station: the three starter balls"), ("shelf", 19, 3, 2, 2, "PC /\nlab kit"),
             ("bed", 3, 7, 1, 2), ("bed", 5, 7, 1, 2), ("bed", 7, 7, 1, 2),
             ("bed", 14, 7, 1, 2), ("bed", 16, 7, 1, 2), ("bed", 18, 7, 1, 2),
             ("bed", 3, 10, 1, 2), ("bed", 5, 10, 1, 2), ("bed", 16, 10, 1, 2), ("bed", 18, 10, 1, 2),

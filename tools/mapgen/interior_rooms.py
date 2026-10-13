@@ -40,14 +40,14 @@ ROOMS = [
                  ("recruit", "We've got hot food and good news.\\nTake a pamphlet, friend."),
                  ("fisherman", "", {"custom": True}),
                  ("accordion", "Someone still plays that old\\naccordion every evening.", {"custom": True}),
-                 # the starter pick (story steps 2-3): three rescued Pokémon at the field station, Jayden and Wren
-                 ("totodile", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_SPECIES(TOTODILE)", "flag": "FLAG_HIDE_SHELTER_TOTODILE"}),
-                 ("chikorita", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_SPECIES(CHIKORITA)", "flag": "FLAG_HIDE_SHELTER_CHIKORITA"}),
-                 ("fuecoco", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_SPECIES(FUECOCO)", "flag": "FLAG_HIDE_SHELTER_FUECOCO"}),
+                 # the starter pick (story steps 2-3): three Poké Balls on the field-station table (top right), Jayden and Wren
+                 ("totodile", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_ITEM_BALL", "flag": "FLAG_HIDE_SHELTER_TOTODILE"}),
+                 ("chikorita", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_ITEM_BALL", "flag": "FLAG_HIDE_SHELTER_CHIKORITA"}),
+                 ("fuecoco", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_ITEM_BALL", "flag": "FLAG_HIDE_SHELTER_FUECOCO"}),
                  ("jayden", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_BOY_1", "flag": "FLAG_HIDE_SHELTER_JAYDEN", "face": "RIGHT"}),
                  ("wren", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_GIRL_3", "flag": "FLAG_HIDE_SHELTER_WREN", "face": "LEFT"})],
          mart=["ITEM_POTION", "ITEM_POKE_BALL", "ITEM_ANTIDOTE", "ITEM_PARALYZE_HEAL"],
-         positions=[(6, 9), (18, 5), (2, 4), (10, 3), (3, 13), (13, 12), (5, 2), (15, 6), (17, 6), (19, 6), (13, 6), (20, 5)],
+         positions=[(6, 9), (18, 5), (2, 4), (10, 3), (3, 13), (13, 12), (5, 2), (16, 2), (17, 2), (18, 2), (13, 6), (20, 5)],
          stamps=[("patch:accordion", 5, 1, 1)]),
     room(IM, HOME, map="IsleMarais_PlayersHouse", const="MAP_ISLE_MARAIS_PLAYERS_HOUSE", door_label="Player's house (damaged)",
          # ground floor: kitchen, TV and window on the back wall, stairs up in the corner, the table on its

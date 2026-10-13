@@ -649,3 +649,6 @@ gSpecials::
 	def_special OrleansSvc_MirrorFacing
 	def_special OrleansSvc_MirrorRight
 	def_special OrleansSvc_MirrorCheck
+	def_special StarterBall_Prepare
+	def_special StarterBall_ShowPic
+	def_special OrleansDex_CheckBaseComplete

@@ -56,6 +56,7 @@
 | ITEM_STARAPTITE | Mega/primal form SPECIES_STARAPTOR_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SUDOWOODITE | Mega/primal form SPECIES_SUDOWOODO_ORLEANIAN_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_SUN_STONE | evolution of SPECIES_GLOOM | hidden in Route5 (+1 more) |
+| ITEM_SHINY_CHARM | 3 shiny rolls instead of 1 (Lafayette, every base species of the regional dex caught) | given in CrescentCity_Conservation |
 | ITEM_SWAMPERTITE | Mega/primal form SPECIES_SWAMPERT_MEGA | given in OldestShrine |
 | ITEM_TANGROWTHITE | Mega/primal form SPECIES_TANGROWTH_ORLEANIAN_MEGA | sold in CrescentCity_Dept3f |
 | ITEM_THUNDER_STONE | evolution of SPECIES_PIKACHU | hidden in Route2 (+4 more) |

@@ -987,6 +987,15 @@ static void Task_PokemonPicWindow(u8 taskId)
     }
 }
 
+static bool8 sPicShiny;
+static u32 sPicPersonalityXor; // (personality ^ 0x8000): zero keeps the vanilla 0x8000
+
+void ScriptMenu_SetPicShiny(bool8 shiny, u32 personality)
+{
+    sPicShiny = shiny;
+    sPicPersonalityXor = personality ^ 0x8000;
+}
+
 bool8 ScriptMenu_ShowPokemonPic(enum Species species, u8 x, u8 y)
 {
     u8 taskId;
@@ -998,7 +1007,7 @@ bool8 ScriptMenu_ShowPokemonPic(enum Species species, u8 x, u8 y)
     }
     else
     {
-        spriteId = CreateMonSprite_PicBox(species, x * 8 + 40, y * 8 + 40, 0);
+        spriteId = CreateMonSprite_FieldMove(species, sPicShiny, 0x8000 ^ sPicPersonalityXor, x * 8 + 40, y * 8 + 40, 0);  // Orleans: shiny palette for the starter balls
         taskId = CreateTask(Task_PokemonPicWindow, 0x50);
         gTasks[taskId].tWindowId = CreateWindowFromRect(x, y, 8, 8);
         gTasks[taskId].tState = 0;

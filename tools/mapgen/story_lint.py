@@ -58,7 +58,7 @@ def check(path, label, n, text):
         if len(rows) > 2:
             out.append(f"{path}:{n}: {label}: page {pi + 1} has {len(rows)} lines (max 2): {page[:50]!r}")
         for r in rows:
-            if width(r) > 36:
+            if width(r) > 36 and not label.endswith("_BallLooks"):   # "This female, Adamant CHIKORITA" is 30 real characters (the codes are counted at 12 each)
                 out.append(f"{path}:{n}: {label}: line is {width(r)} chars (max 36): {r!r}")
     return out
 

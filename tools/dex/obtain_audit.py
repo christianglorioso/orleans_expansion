@@ -55,7 +55,7 @@ def required_items(species):
     for it, why in (("ITEM_HEARTHFLAME_MASK", "Ogerpon (Hearthflame Mask)"), ("ITEM_WELLSPRING_MASK", "Ogerpon (Wellspring Mask)"),
                     ("ITEM_CORNERSTONE_MASK", "Ogerpon (Cornerstone Mask)"), ("ITEM_BLUE_ORB", "Primal Kyogre"), ("ITEM_RED_ORB", "Primal Groudon"),
                     ("ITEM_MEGA_RING", "every Mega Evolution (the Cypress Charm)"), ("ITEM_DIVING_GEAR", "the Drowned Temple dive"),
-                    ("ITEM_LANTERN", "the Salt Cathedral shaft")):
+                    ("ITEM_LANTERN", "the Salt Cathedral shaft"), ("ITEM_SHINY_CHARM", "3 shiny rolls instead of 1 (Lafayette, every base species of the regional dex caught)")):
         need.setdefault(it, why)
     return need
 
@@ -96,6 +96,8 @@ def sources():
 def main():
     sp = dex_species()
     need = required_items(sp)
+    for n in ("HP_UP", "PROTEIN", "IRON", "CALCIUM", "ZINC", "CARBOS"):  # SoulGold's EX vitamins (max the stat's EV)
+        need[f"ITEM_{n}_EX"] = "EX vitamin (SoulGold port)"
     src = sources()
     missing = []
     for it in sorted(need):

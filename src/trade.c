@@ -4570,7 +4570,11 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     u8 mailNum;
     struct Pokemon *pokemon = &gParties[B_TRAINER_OPPONENT_A][0];
 
-    CreateMon(pokemon, inGameTrade->species, level, inGameTrade->personality, OTID_STRUCT_PRESET(inGameTrade->otId));
+    u32 tradePersonality = inGameTrade->personality;
+    // Orleans: the Alolan trades roll nature, gender and ability slot when the trade happens (a save before it + a soft reset re-rolls); the IVs stay the fixed 20s
+    if (whichInGameTrade >= INGAME_TRADE_ALOLAN_RAICHU)
+        tradePersonality = GetMonPersonality(inGameTrade->species, MON_GENDER_RANDOM, NATURE_RANDOM, RANDOM_UNOWN_LETTER);
+    CreateMon(pokemon, inGameTrade->species, level, tradePersonality, OTID_STRUCT_PRESET(inGameTrade->otId));
     GiveMonInitialMoveset(pokemon);
 
     SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);

@@ -146,6 +146,10 @@ def main(args):
                 problems.append(f"{o['local_id']} stands on a blocked tile ({o['x']},{o['y']})")
             elif not any((o["x"] + dx, o["y"] + dy) in seen or (o["x"] + 2 * dx, o["y"] + 2 * dy) in seen
                          for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):  # two away = talking across a counter
+            if room.get("arena") and not walk(o["x"], o["y"]):
+                continue  # the legendary stands on its dais (a blocked cell: the player faces it from the cell below, checked in story_gates_check.py)
+            if o["graphics_id"] == "OBJ_EVENT_GFX_ITEM_BALL" and not walk(o["x"], o["y"]) and walk(o["x"], o["y"] + 1):
+                continue  # a Poke Ball on a table (the shelter's starters): faced from the floor cell below
                 if room.get("gated"):
                     notes.append(f"{o['local_id']} is behind the puzzle (expected)")
                 else:

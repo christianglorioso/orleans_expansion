@@ -112,42 +112,51 @@ IsleMarais_Shelter_EventScript_FishermanAfterRod:
 @ Jayden takes the one with the advantage, Wren's people raise the third.
 IsleMarais_Shelter_EventScript_Totodile7::
 	lock
-	faceplayer
-	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
-	msgbox IsleMarais_Shelter_Text_TotodileLooks, MSGBOX_DEFAULT
-	msgbox IsleMarais_Shelter_Text_LookAfterIt, MSGBOX_YESNO
+	setvar VAR_0x8004, 0
+	call IsleMarais_Shelter_EventScript_StarterBallLook
 	goto_if_eq VAR_RESULT, NO, IsleMarais_Shelter_EventScript_NotYet
 	setvar VAR_STARTER_MON, 0
 	removeobject LOCALID_ISLE_MARAIS_SHELTER_TOTODILE7
 	setflag FLAG_HIDE_SHELTER_TOTODILE
-	givemon SPECIES_TOTODILE, 5
+	special StarterBall_Prepare
+	givemon SPECIES_TOTODILE, 5, nature=VAR_0x8005, abilityNum=VAR_0x8006, gender=VAR_0x8007, shinyMode=VAR_0x8008
+	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
 	goto IsleMarais_Shelter_EventScript_ReceivedStarter
 
 IsleMarais_Shelter_EventScript_Chikorita8::
 	lock
-	faceplayer
-	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
-	msgbox IsleMarais_Shelter_Text_ChikoritaLooks, MSGBOX_DEFAULT
-	msgbox IsleMarais_Shelter_Text_LookAfterIt, MSGBOX_YESNO
+	setvar VAR_0x8004, 1
+	call IsleMarais_Shelter_EventScript_StarterBallLook
 	goto_if_eq VAR_RESULT, NO, IsleMarais_Shelter_EventScript_NotYet
 	setvar VAR_STARTER_MON, 1
 	removeobject LOCALID_ISLE_MARAIS_SHELTER_CHIKORITA8
 	setflag FLAG_HIDE_SHELTER_CHIKORITA
-	givemon SPECIES_CHIKORITA, 5
+	special StarterBall_Prepare
+	givemon SPECIES_CHIKORITA, 5, nature=VAR_0x8005, abilityNum=VAR_0x8006, gender=VAR_0x8007, shinyMode=VAR_0x8008
+	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
 	goto IsleMarais_Shelter_EventScript_ReceivedStarter
 
 IsleMarais_Shelter_EventScript_Fuecoco9::
 	lock
-	faceplayer
-	bufferspeciesname STR_VAR_1, SPECIES_FUECOCO
-	msgbox IsleMarais_Shelter_Text_FuecocoLooks, MSGBOX_DEFAULT
-	msgbox IsleMarais_Shelter_Text_LookAfterIt, MSGBOX_YESNO
+	setvar VAR_0x8004, 2
+	call IsleMarais_Shelter_EventScript_StarterBallLook
 	goto_if_eq VAR_RESULT, NO, IsleMarais_Shelter_EventScript_NotYet
 	setvar VAR_STARTER_MON, 2
 	removeobject LOCALID_ISLE_MARAIS_SHELTER_FUECOCO9
 	setflag FLAG_HIDE_SHELTER_FUECOCO
-	givemon SPECIES_FUECOCO, 5
+	special StarterBall_Prepare
+	givemon SPECIES_FUECOCO, 5, nature=VAR_0x8005, abilityNum=VAR_0x8006, gender=VAR_0x8007, shinyMode=VAR_0x8008
+	bufferspeciesname STR_VAR_1, SPECIES_FUECOCO
 	goto IsleMarais_Shelter_EventScript_ReceivedStarter
+
+@ Looking at a ball (VAR_0x8004 = 0/1/2): the personality is rolled the FIRST time that ball is looked at in this session (RAM only, never saved,
+@ so a save made before choosing + a soft reset re-rolls) and shown: sprite in its real palette (shiny if it rolled shiny), then the confirm.
+IsleMarais_Shelter_EventScript_StarterBallLook:
+	special StarterBall_ShowPic
+	msgbox IsleMarais_Shelter_Text_BallLooks, MSGBOX_DEFAULT
+	msgbox IsleMarais_Shelter_Text_LookAfterIt, MSGBOX_YESNO
+	hidemonpic
+	return
 
 IsleMarais_Shelter_EventScript_NotYet:
 	release
@@ -274,7 +283,9 @@ IsleMarais_Shelter_Text_RescuersArrive:
 	.string "the flooded district!\p"
 	.string "LAFAYETTE: Bring them here.\n"
 	.string "{PLAYER}, could you give me a hand\p"
-	.string "settling them?$"
+	.string "settling them?\p"
+	.string "They're in POKé BALLS on the table\n"
+	.string "in the corner. Take a look at each.$"
 
 IsleMarais_Shelter_Text_MotherGoOn:
 	.string "MOM: Go on, the PROFESSOR\n"
@@ -290,8 +301,10 @@ IsleMarais_Shelter_Text_LafayetteWaiting:
 	.string "I've set up here until they're back.$"
 
 IsleMarais_Shelter_Text_LafayettePick:
-	.string "LAFAYETTE: They're cold and scared.\n"
-	.string "See if one of them takes to you.$"
+	.string "LAFAYETTE: They're resting in the\n"
+	.string "POKé BALLS on the table, up here.\p"
+	.string "Look at each one. See if one of\n"
+	.string "them takes to you.$"
 
 IsleMarais_Shelter_Text_FishermanDrying:
 	.string "FISHERMAN: Just in to dry off. The\n"
@@ -316,17 +329,9 @@ IsleMarais_Shelter_Text_FishermanAfterRod:
 	.string "Rain never stops out here. The\n"
 	.string "slimy kinds, SLIGGOO, love it.$"
 
-IsleMarais_Shelter_Text_TotodileLooks:
-	.string "TOTODILE is shivering, but it\n"
-	.string "snaps its jaws at you, curious.$"
-
-IsleMarais_Shelter_Text_ChikoritaLooks:
-	.string "CHIKORITA's leaf is drooping, but\n"
-	.string "it nudges your hand.$"
-
-IsleMarais_Shelter_Text_FuecocoLooks:
-	.string "FUECOCO is soaked through. It\n"
-	.string "puffs a tiny flame at you.$"
+IsleMarais_Shelter_Text_BallLooks:
+	.string "This {STR_VAR_2}{STR_VAR_3} {STR_VAR_1}\n"
+	.string "peeks out of its POKé BALL.$"
 
 IsleMarais_Shelter_Text_LookAfterIt:
 	.string "Will you look after {STR_VAR_1}?$"

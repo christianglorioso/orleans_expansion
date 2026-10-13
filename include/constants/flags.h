@@ -331,10 +331,10 @@
 #define FLAG_CRESCENT_WREN_IN_BASE                       0x121 // Orleans ch3: Wren went into the Blacksnake base at story 16; she no longer waits at the Drowned Ward gate
 #define FLAG_ORLEANS_POOL_142                           0x122
 #define FLAG_RECEIVED_SS_TICKET              0x123
-#define FLAG_ORLEANS_POOL_143                           0x124
-#define FLAG_ORLEANS_POOL_144                           0x125
-#define FLAG_ORLEANS_POOL_145                           0x126
-#define FLAG_ORLEANS_POOL_146                           0x127
+#define FLAG_DERBY_RESET                                 0x124 // Game Corner Derby: the race for the day has been generated (clear to roll a new one)
+#define FLAG_DERBY_NICKNAME                              0x125 // Game Corner Derby: the racers' nicknames have been generated
+#define FLAG_LAFAYETTE_SHINY_CHARM                       0x126 // Orleans: Lafayette's Shiny Charm (every base species of the regional dex caught) was given
+#define FLAG_DEXNAV_SEARCHING                            0x127 // DexNav: searching / obtained (Start menu entry) / hidden-Pokemon detector mode
 #define FLAG_PETALBURG_MART_EXPANDED_ITEMS   0x128
 #define FLAG_ORLEANS_POOL_147                           0x129
 #define FLAG_RECEIVED_BELDUM                 0x12A

@@ -87,10 +87,11 @@ static const u8 sText_WildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} f
 static const u8 sText_TwoWildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME} fled!"); //not in gen 5+, replaced with match was forfeited text
 static const u8 sText_PlayerDefeatedLinkTrainerTrainer1[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS}!\p");
 static const u8 sText_OpponentMon1Appeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
-static const u8 sText_WildPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
-static const u8 sText_LegendaryPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
-static const u8 sText_WildPkmnAppearedPause[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!{PAUSE 127}");
-static const u8 sText_TwoWildPkmnAppeared[] = _("Oh! A wild {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME} appeared!\p");
+// Orleans: wild intros name the gender and nature ({B_BUFF1} / {B_BUFF2} hold "male, Adamant " built by BufferWildDescription)
+static const u8 sText_WildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p");
+static const u8 sText_LegendaryPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!\p");
+static const u8 sText_WildPkmnAppearedPause[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nappeared!{PAUSE 127}");
+static const u8 sText_TwoWildPkmnAppeared[] = _("A wild {B_BUFF1}{B_OPPONENT_MON1_NAME}\nand {B_BUFF2}{B_OPPONENT_MON2_NAME} appeared!\p");
 static const u8 sText_GhostAppearedCantId[] = _("The GHOST appeared!\pDarn!\nThe GHOST can't be ID'd!\p");
 static const u8 sText_TheGhostAppeared[] = _("The GHOST appeared!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("You are challenged by {B_TRAINER1_NAME_WITH_CLASS}!\p");
@@ -2425,6 +2426,33 @@ static const u8 sRecordedBattleTextSpeeds[] = {8, 4, 1, 0};
 void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
 {
     s32 i;
+// Orleans: legend raid opponents use TRAINER_CLASS_PKMN_TRAINER_2 (unused by vanilla trainers, name emptied in battle_main.c)
+static bool32 IsOrleansLegendBattle(void)
+{
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
+        return FALSE;
+    return GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_CLASS_PKMN_TRAINER_2;
+}
+
+// Orleans: "male, Adamant " / "female, Adamant " / "Adamant " (genderless) for the wild intro
+static void BufferWildDescription(u8 *dst, enum BattlerId battler)
+{
+    struct Pokemon *mon = GetBattlerMon(battler);
+    u8 *end = dst;
+
+    switch (GetMonGender(mon))
+    {
+    case MON_MALE:
+        end = StringCopy(end, COMPOUND_STRING("male, "));
+        break;
+    case MON_FEMALE:
+        end = StringCopy(end, COMPOUND_STRING("female, "));
+        break;
+    }
+    end = StringCopy(end, gNaturesInfo[GetNature(mon)].name);
+    StringCopy(end, COMPOUND_STRING(" "));
+}
+
     const u8 *stringPtr = NULL;
 
     gBattleMsgDataPtr = (struct BattleMsgData *)(&gBattleResources->bufferA[battler][4]);
@@ -2509,6 +2537,9 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
             else if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
                 stringPtr = sText_TheGhostAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+            BufferWildDescription(gBattleTextBuff1, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
+            if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
+                BufferWildDescription(gBattleTextBuff2, GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
                 stringPtr = sText_LegendaryPkmnAppeared;
             else if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
                 stringPtr = sText_TwoWildPkmnAppeared;
