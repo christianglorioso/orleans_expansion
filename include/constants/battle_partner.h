@@ -13,6 +13,9 @@
 #define PARTNER_JAYDEN_FUECOCO_GROUDON 8
 #define PARTNER_JAYDEN_TOTODILE_KYOGRE 9
 #define PARTNER_JAYDEN_TOTODILE_GROUDON 10
-#define PARTNER_COUNT 11
+#define PARTNER_WREN_BASE_CHIKORITA 11  // Orleans: Wren beside the player in the Blacksnake base (story 16), low level, one per starter line
+#define PARTNER_WREN_BASE_FUECOCO 12
+#define PARTNER_WREN_BASE_TOTODILE 13
+#define PARTNER_COUNT 14
 
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

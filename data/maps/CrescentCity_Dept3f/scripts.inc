@@ -1,7 +1,7 @@
 CrescentCity_Dept3f_MapScripts::
 	.byte 0
 
-@ Third floor: the Mega Stone vendor (his stock opens with the cypress charm, story 30: nothing to sell before it; the stock is in VendorOpen) and the vitamin
+@ Third floor: the Mega Stone vendor (his stock opens with the cypress charm: nothing to sell before it; the stock is in VendorOpen) and the vitamin
 @ clerk (Rare Candy only after the eighth badge).
 CrescentCity_Dept3f_EventScript_Clerk0::
 	lock
@@ -11,7 +11,7 @@ CrescentCity_Dept3f_EventScript_Clerk0::
 	release
 	end
 
-@ Chapter 6: with the cypress charm (story 30) the vendor sells the Mega Stones that have no place in the world (21 of them, 12000 each;
+@ Chapter 6: with the cypress charm the vendor sells the Mega Stones that have no place in the world (21 of them, 12000 each;
 @ every stone the plan places or rewards is NOT sold: Gengarite, Scizorite, Raichunite X/Y, Fearowite, Kleavorite, Delphoxite, Exploudite, Quaquavalite, Chandelurite, Scovillainite, Swampertite, Lycanrocite, Dragoninite, Weezingite, Crabominite, Charizardite Y, Gyaradosite).
 CrescentCity_Dept3f_EventScript_VendorOpen:
 	message gText_HowMayIServeYou
@@ -90,12 +90,6 @@ CrescentCity_Dept3f_Text_VendorClosed:
 	.string "I can't sell one without the\n"
 	.string "cypress charm. They'd just sit\p"
 	.string "in your bag. Come back with it.$"
-
-CrescentCity_Dept3f_Text_VendorLater:
-	.string "MEGA STONE VENDOR: The charm's with\n"
-	.string "you? Then the stones are, too.\p"
-	.string "The cases are still being\n"
-	.string "unpacked. Come back soon.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

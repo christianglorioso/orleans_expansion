@@ -222,3 +222,63 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 Arbok
 Level: 56
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
+
+=== PARTNER_WREN_BASE_CHIKORITA ===
+Name: WREN
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Wingull
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Roselia-Orleanian
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Bayleef
+Level: 22
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== PARTNER_WREN_BASE_FUECOCO ===
+Name: WREN
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Wingull
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Roselia-Orleanian
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Fuecoco
+Level: 22
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+=== PARTNER_WREN_BASE_TOTODILE ===
+Name: WREN
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+Wingull
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Roselia-Orleanian
+Level: 21
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Croconaw
+Level: 22
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe

@@ -181,6 +181,7 @@ def _merge_ch3():
             cc.setdefault(key, {}).update(_c3.CRESCENT[key])
         else:
             cc.setdefault(key, []).extend(_c3.CRESCENT.get(key, []))
+    cc.setdefault("patch_signs", {}).update(_c3.CRESCENT.get("patch_signs", {}))
     OVERLAY["Route4"] = _c3.ROUTE4
     for k, v in _c3.ROOMS.items():
         INTERIOR[k] = v

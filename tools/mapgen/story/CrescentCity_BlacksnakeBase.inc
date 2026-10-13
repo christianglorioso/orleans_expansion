@@ -4,8 +4,9 @@ CrescentCity_BlacksnakeBase_MapScripts::
 
 @ Team Blacksnake's base in the Drowned Ward (act 1), cleared with Wren after gym 3 (story 16 -> 17). Wren stands inside only while
 @ the story is 16; the lieutenant is hidden for good once beaten (FLAG_HIDE_CRESCENT_LIEUTENANT).
-@ (Proposed: Wren doesn't fight; she holds the hall while the player takes the three grunts and the lieutenant one at a time.
-@ A partner/multi battle needs engine support that isn't in yet: see the plan's open questions.)
+@ Rene and Marcel are single battles on sight. The lieutenant and her guard Louise are the first PARTNER battle (plan 3.6): talk to
+@ either and WREN steps in beside the player (multi_fixed_2_vs_2, PARTNER_WREN_BASE_<starter>, low-level, by the starter line that
+@ neither the player nor Jayden took). A loss offers TRY AGAIN / NOT YET; the carving stays guarded until ODETTE is beaten.
 CrescentCity_BlacksnakeBase_OnTransition:
 	call CrescentCity_BlacksnakeBase_EventScript_PGSetup
 	setflag FLAG_HIDE_CRESCENT_BASE_WREN
@@ -27,15 +28,67 @@ CrescentCity_BlacksnakeBase_EventScript_Trainer1::
 	end
 
 CrescentCity_BlacksnakeBase_EventScript_Trainer2::
-	trainerbattle_single TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER, CrescentCity_BlacksnakeBase_Text_WaterIntro, CrescentCity_BlacksnakeBase_Text_WaterDefeat
-	msgbox CrescentCity_BlacksnakeBase_Text_WaterAfter, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER, CrescentCity_BlacksnakeBase_EventScript_WaterAfter
+	goto CrescentCity_BlacksnakeBase_EventScript_PairStart
+
+CrescentCity_BlacksnakeBase_EventScript_WaterAfter:
+	msgbox CrescentCity_BlacksnakeBase_Text_WaterAfter, MSGBOX_DEFAULT
+	release
 	end
 
-@ RITA's lieutenant: she retreats after the battle (and is gone from then on)
+@ RITA's lieutenant and her guard LOUISE: the partner battle with WREN. The lieutenant retreats after it (and is gone from then on)
 CrescentCity_BlacksnakeBase_EventScript_AdminRitas3::
-	trainerbattle_single TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT, CrescentCity_BlacksnakeBase_Text_LieutenantIntro, CrescentCity_BlacksnakeBase_Text_LieutenantDefeat, CrescentCity_BlacksnakeBase_EventScript_LieutenantRetreats
-	msgbox CrescentCity_BlacksnakeBase_Text_LieutenantAfter, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT, CrescentCity_BlacksnakeBase_EventScript_LieutenantAfterTalk
+	goto CrescentCity_BlacksnakeBase_EventScript_PairStart
+
+CrescentCity_BlacksnakeBase_EventScript_LieutenantAfterTalk:
+	msgbox CrescentCity_BlacksnakeBase_Text_LieutenantAfter, MSGBOX_DEFAULT
+	release
 	end
+
+CrescentCity_BlacksnakeBase_EventScript_PairStart:
+	msgbox CrescentCity_BlacksnakeBase_Text_PairIntro, MSGBOX_DEFAULT
+	closemessage
+CrescentCity_BlacksnakeBase_EventScript_PairBattle:
+	call_if_eq VAR_STARTER_MON, 0, CrescentCity_BlacksnakeBase_EventScript_PairFuecoco
+	call_if_eq VAR_STARTER_MON, 1, CrescentCity_BlacksnakeBase_EventScript_PairTotodile
+	call_if_eq VAR_STARTER_MON, 2, CrescentCity_BlacksnakeBase_EventScript_PairChikorita
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_WON, CrescentCity_BlacksnakeBase_EventScript_PairLost
+	settrainerflag TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER
+	settrainerflag TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT
+	special HealPlayerParty
+	goto CrescentCity_BlacksnakeBase_EventScript_LieutenantRetreats
+
+@ Wren raised the starter that neither the player (0 Totodile, 1 Chikorita, 2 Fuecoco) nor Jayden took
+CrescentCity_BlacksnakeBase_EventScript_PairFuecoco:
+	multi_fixed_2_vs_2 TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER, CrescentCity_BlacksnakeBase_Text_WaterDefeat, TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT, CrescentCity_BlacksnakeBase_Text_LieutenantDefeat, PARTNER_WREN_BASE_FUECOCO
+	return
+
+CrescentCity_BlacksnakeBase_EventScript_PairTotodile:
+	multi_fixed_2_vs_2 TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER, CrescentCity_BlacksnakeBase_Text_WaterDefeat, TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT, CrescentCity_BlacksnakeBase_Text_LieutenantDefeat, PARTNER_WREN_BASE_TOTODILE
+	return
+
+CrescentCity_BlacksnakeBase_EventScript_PairChikorita:
+	multi_fixed_2_vs_2 TRAINER_ORLEANS_CRESCENT_BASE_GRUNT_WATER, CrescentCity_BlacksnakeBase_Text_WaterDefeat, TRAINER_ORLEANS_CRESCENT_BASE_LIEUTENANT, CrescentCity_BlacksnakeBase_Text_LieutenantDefeat, PARTNER_WREN_BASE_CHIKORITA
+	return
+
+@ a loss: heal, then TRY AGAIN or NOT YET (B = not yet)
+CrescentCity_BlacksnakeBase_EventScript_PairLost:
+	special HealPlayerParty
+	msgbox CrescentCity_BlacksnakeBase_Text_PairRetry, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CrescentCity_BlacksnakeBase_EventScript_PairAgain
+	msgbox CrescentCity_BlacksnakeBase_Text_PairNotYet, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_BlacksnakeBase_EventScript_PairAgain:
+	closemessage
+	goto CrescentCity_BlacksnakeBase_EventScript_PairBattle
 
 CrescentCity_BlacksnakeBase_EventScript_LieutenantRetreats::
 	msgbox CrescentCity_BlacksnakeBase_Text_LieutenantRetreat, MSGBOX_DEFAULT
@@ -120,10 +173,6 @@ CrescentCity_BlacksnakeBase_Text_DarkAfter:
 	.string "I've seen my house floating off.\p"
 	.string "He's not wrong. Not all wrong.$"
 
-CrescentCity_BlacksnakeBase_Text_WaterIntro:
-	.string "The flooded hall is ours! Nobody\n"
-	.string "crosses the water without paying!$"
-
 CrescentCity_BlacksnakeBase_Text_WaterDefeat:
 	.string "Washed out!$"
 
@@ -131,12 +180,6 @@ CrescentCity_BlacksnakeBase_Text_WaterAfter:
 	.string "I only joined for the hot meals.\n"
 	.string "...And a bed. And someone to ask\p"
 	.string "where I'd been all day.$"
-
-CrescentCity_BlacksnakeBase_Text_LieutenantIntro:
-	.string "ODETTE: RITA warned me about a\n"
-	.string "meddling child. She said you'd be\p"
-	.string "polite and in the way. Both true.\n"
-	.string "Let's see how in the way you are!$"
 
 CrescentCity_BlacksnakeBase_Text_LieutenantDefeat:
 	.string "ODETTE: Tch. Not what I was paid\n"
@@ -153,14 +196,30 @@ CrescentCity_BlacksnakeBase_Text_LieutenantAfter:
 	.string "This was only the first ward.$"
 
 CrescentCity_BlacksnakeBase_Text_WrenHold:
-	.string "WREN: I'll hold the hall. You\n"
-	.string "take them one at a time, fair?\p"
-	.string "The carving's at the back. Don't\n"
-	.string "let them pull it apart.$"
+	.string "WREN: The lieutenant and her guard\n"
+	.string "stand in front of the carving.\p"
+	.string "Talk to them and I'll step in\n"
+	.string "beside you. Together, like I said.$"
 
 CrescentCity_BlacksnakeBase_Text_WrenLook:
-	.string "WREN: That's the last of them.\n"
-	.string "Look at the carving. Please.$"
+	.string "WREN: The lieutenant's gone. Look\n"
+	.string "at the carving. Please.$"
+
+CrescentCity_BlacksnakeBase_Text_PairIntro:
+	.string "ODETTE: RITA warned me about a\n"
+	.string "meddling child. Polite, in the way.\p"
+	.string "LOUISE: The flooded hall is ours!\n"
+	.string "Nobody crosses without paying!\p"
+	.string "WREN: Two of you? Then two of us.\n"
+	.string "Ready, {PLAYER}?$"
+
+CrescentCity_BlacksnakeBase_Text_PairRetry:
+	.string "WREN: Again. Together this time.\n"
+	.string "Ready?$"
+
+CrescentCity_BlacksnakeBase_Text_PairNotYet:
+	.string "WREN: Then get stronger and come\n"
+	.string "back. I'll hold the hall.$"
 
 CrescentCity_BlacksnakeBase_Text_CarvingGuarded:
 	.string "A Rootkin carving, propped against\n"
@@ -181,12 +240,12 @@ CrescentCity_BlacksnakeBase_Text_Carving2:
 	.string "after it, fresh and pale.$"
 
 CrescentCity_BlacksnakeBase_Text_Carving3:
-	.string "WREN: That's wrong. Those words\n"
-	.string "go on. “Laid down to guard.” I\p"
-	.string "know them by heart. Somebody\n"
-	.string "chipped off the rest, on purpose.\p"
-	.string "So that it says “laid low.”\n"
-	.string "That the Long One was killed.$"
+	.string "WREN: That can't be all of it.\n"
+	.string "The line doesn't stop at “low.”\p"
+	.string "Somebody chipped the rest away,\n"
+	.string "on purpose. So it would read\p"
+	.string "“laid low.” That the Long One\n"
+	.string "was killed.$"
 
 CrescentCity_BlacksnakeBase_Text_WrenGoes:
 	.string "WREN gathers the carving in her\n"

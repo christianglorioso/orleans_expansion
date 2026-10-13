@@ -326,9 +326,9 @@
 #define FLAG_HIDE_KYOGRE_RAID                            0x11C // Chapter 9 (the finale): raid arenas, the ceremony actors, the shrine scenes and rewards
 #define FLAG_FINALE_NEVER_SET                            0x11D // Chapter 9: a flag that is never set (coord events on the raid rooms' exit mats fire while it is clear)
 #define FLAG_HIDE_POINTE_ICE_GUARD                       0x11E // Orleans hotfix: Pointe Rouge ice plant guard hidden from story 45 (set in PGSetup)
-#define FLAG_ORLEANS_POOL_139                           0x11F
-#define FLAG_ORLEANS_POOL_140                           0x120
-#define FLAG_ORLEANS_POOL_141                           0x121
+#define FLAG_RECEIVED_VANILLITE                          0x11F // Vanillite bought at the ice cream stand; Lafayette's Beldum gift after the shrine
+#define FLAG_RECEIVED_BELDUM_GIFT                        0x120 // Vanillite bought at the ice cream stand; Lafayette's Beldum gift after the shrine
+#define FLAG_CRESCENT_WREN_IN_BASE                       0x121 // Orleans ch3: Wren went into the Blacksnake base at story 16; she no longer waits at the Drowned Ward gate
 #define FLAG_ORLEANS_POOL_142                           0x122
 #define FLAG_RECEIVED_SS_TICKET              0x123
 #define FLAG_ORLEANS_POOL_143                           0x124

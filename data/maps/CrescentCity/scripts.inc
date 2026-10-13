@@ -23,7 +23,9 @@ CrescentCity_EventScript_ShowLafayette:
 	return
 
 CrescentCity_EventScript_ShowWren:
+	goto_if_set FLAG_CRESCENT_WREN_IN_BASE, CrescentCity_EventScript_ShowWrenDone
 	clearflag FLAG_HIDE_CRESCENT_WREN
+CrescentCity_EventScript_ShowWrenDone:
 	return
 
 CrescentCity_EventScript_ShowUsher:
@@ -209,6 +211,7 @@ CrescentCity_EventScript_Wren::
 	msgbox CrescentCity_Text_WrenGate2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_HIDE_CRESCENT_WREN
+	setflag FLAG_CRESCENT_WREN_IN_BASE
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_CRESCENT_CITY_WREN
 	warp MAP_CRESCENT_CITY_BLACKSNAKE_BASE, 0
@@ -281,10 +284,10 @@ CrescentCity_Text_LafayetteBrief3:
 	.string "find you an apartment. Come in!$"
 
 CrescentCity_Text_Speech1:
-	.string "As you step away, a voice carries\n"
-	.string "across the market square.\p"
-	.string "A man in a grey coat stands on a\n"
-	.string "crate. A crowd has gathered.$"
+	.string "A voice carries across the market\n"
+	.string "square, loud enough to hear from\p"
+	.string "here. A man in a grey coat stands\n"
+	.string "on a crate. A crowd has gathered.$"
 
 CrescentCity_Text_Speech2:
 	.string "“The bayou is wounded, friends.\n"
@@ -521,9 +524,27 @@ CrescentCity_Text_ArenaOpen:
 	.string "BATTLE ARENA. Three rounds, a judge\n"
 	.string "and no time to think. Step in?$"
 
-CrescentCity_Text_OtherClosed:
-	.string "Closed for renovation. The BATTLE\n"
-	.string "ARENA is open.$"
+@ the couple on the plaza (audit pg S2): waiting for the Frontier before the ending, and a line about the Arena after it
+CrescentCity_EventScript_FrontierPair::
+	lock
+	faceplayer
+	goto_if_ge VAR_ORLEANS_STORY, 45, CrescentCity_EventScript_FrontierPairOpen
+	msgbox CrescentCity_Text_FrontierPair, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_EventScript_FrontierPairOpen:
+	msgbox CrescentCity_Text_FrontierPairOpen, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Text_FrontierPair:
+	.string "We're waiting for the Frontier to\n"
+	.string "open. Any year now.$"
+
+CrescentCity_Text_FrontierPairOpen:
+	.string "It opened! The BATTLE ARENA first.\n"
+	.string "The rest are closed for renovation.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -588,7 +609,7 @@ CrescentCity_EventScript_Sailor::
 	end
 
 CrescentCity_Text_Sailor:
-	.string "The riverboat for POINTE ROUGE\nleaves from the terminal, south.$"
+	.string "The riverboat for POINTE ROUGE\nleaves from the terminal, west.$"
 
 CrescentCity_EventScript_Fisherman::
 	msgbox CrescentCity_Text_Fisherman, MSGBOX_NPC
@@ -646,13 +667,6 @@ CrescentCity_EventScript_FrontierJogger::
 CrescentCity_Text_FrontierJogger:
 	.string "I'm training for the Frontier.\nFour laps of the plaza, daily.$"
 
-CrescentCity_EventScript_FrontierPair::
-	msgbox CrescentCity_Text_FrontierPair, MSGBOX_NPC
-	end
-
-CrescentCity_Text_FrontierPair:
-	.string "We're waiting for the Frontier to\nopen. Any year now.$"
-
 CrescentCity_EventScript_FrontierFan::
 	msgbox CrescentCity_Text_FrontierFan, MSGBOX_NPC
 	end
@@ -700,7 +714,7 @@ CrescentCity_EventScript_FrontierSign::
 	end
 
 CrescentCity_Text_FrontierSign:
-	.string "BATTLE FRONTIER\nOpen to champions only.$"
+	.string "BATTLE FRONTIER\nOpen to champions only.\pBATTLE ARENA: face its door,\npress A.$"
 
 CrescentCity_EventScript_LeveeSign::
 	msgbox CrescentCity_Text_LeveeSign, MSGBOX_SIGN

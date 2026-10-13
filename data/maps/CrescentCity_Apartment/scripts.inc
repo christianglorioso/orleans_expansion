@@ -1,8 +1,8 @@
 CrescentCity_Apartment_MapScripts::
 	.byte 0
 
-@ The landlady hands over the keys once 25 species are contributed (FLAG_APARTMENT_UNLOCKED). The secret-base-style decoration
-@ system is not built yet (plan: open question 3.x): the apartment is the room itself for now.
+@ The landlady hands over the keys once 25 species are contributed (FLAG_APARTMENT_UNLOCKED). The apartment is the room itself: no
+@ secret-base decoration system (the text promises none; audit ch3 S3).
 CrescentCity_Apartment_EventScript_Landlady0::
 	lock
 	faceplayer
@@ -23,10 +23,10 @@ CrescentCity_Apartment_Text_Locked:
 	.string "city says. Ask LAFAYETTE.$"
 
 CrescentCity_Apartment_Text_Open:
-	.string "LANDLADY: The keys are yours. Put\n"
-	.string "your desks and your dolls where\p"
-	.string "you like. Make it a little\n"
-	.string "secret base.$"
+	.string "LANDLADY: The keys are yours. It's\n"
+	.string "a quiet room with a good view.\p"
+	.string "Take your time. Nobody will\n"
+	.string "hurry you here.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

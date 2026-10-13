@@ -110,7 +110,13 @@ CrescentCity_Gym_EventScript_MimikyuNoRoom:
 
 CrescentCity_Gym_EventScript_FifoletAfter:
 	call CrescentCity_Gym_EventScript_GiveRewards
+	goto_if_ge VAR_ORLEANS_STORY, 17, CrescentCity_Gym_EventScript_FifoletPostLate
 	msgbox CrescentCity_Gym_Text_FifoletPost, MSGBOX_DEFAULT
+	release
+	end
+
+CrescentCity_Gym_EventScript_FifoletPostLate:
+	msgbox CrescentCity_Gym_Text_FifoletPostLate, MSGBOX_DEFAULT
 	release
 	end
 
@@ -212,6 +218,11 @@ CrescentCity_Gym_Text_ThirdVerse:
 	.string "and the lost wandered in the dark.\p"
 	.string "The Long One breathed, and one\n"
 	.string "light rose, and the lost went home.”$"
+
+CrescentCity_Gym_Text_FifoletPostLate:
+	.string "FIFOLET: The riverboat sails for\n"
+	.string "POINTE ROUGE. The BADGE is the\p"
+	.string "pass. Keep the lamps lit out there.$"
 
 CrescentCity_Gym_Text_FifoletPost:
 	.string "FIFOLET: A girl from the swamp\n"

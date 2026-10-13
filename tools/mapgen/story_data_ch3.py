@@ -19,6 +19,8 @@ FACE = "MOVEMENT_TYPE_FACE_"
 
 # ---------------------------------------------------------------------------------------------- the city (outdoors)
 CRESCENT = {
+    # the Arena's door is a sign, not a warp: say so (audit pg N1)
+    "patch_signs": {"FrontierSign": {"text": "BATTLE FRONTIER\nOpen to champions only.\\pBATTLE ARENA: face its door,\npress A."}},
     "patch_objects": {
         # Lafayette waits at the conservation center's door while the story is 13 (Crescent's OnTransition hides him otherwise)
         "LOCALID_CRESCENT_CITY_LAFAYETTE": {"custom": True, "gfx": "OBJ_EVENT_GFX_SCIENTIST_1", "flag": "FLAG_HIDE_CRESCENT_LAFAYETTE"},
@@ -29,7 +31,7 @@ CRESCENT = {
         "LOCALID_CRESCENT_CITY_SHOPPER": {"text": T("The department store has three", "floors. Mind the second, it's TMs.")},
         "LOCALID_CRESCENT_CITY_QUARTER_GENT": {"text": T("The second line parade comes through", "here at noon. Mind the brass.")},
         "LOCALID_CRESCENT_CITY_QUARTER_LASS": {"text": T("I came for the music. Stayed for", "the beignets.")},
-        "LOCALID_CRESCENT_CITY_SAILOR": {"text": T("The riverboat for POINTE ROUGE", "leaves from the terminal, south.")},
+        "LOCALID_CRESCENT_CITY_SAILOR": {"text": T("The riverboat for POINTE ROUGE", "leaves from the terminal, west.")},
         "LOCALID_CRESCENT_CITY_FISHERMAN": {"text": T("Catfish the size of a door in the", "Emerald River. Truly.")},
         "LOCALID_CRESCENT_CITY_STROLLER": {"text": T("The conservation center is the best", "zoo I ever saw. And I've seen two.")},
         "LOCALID_CRESCENT_CITY_OLD_MAN": {"text": T("These levees held through two", "storms. Three, if you count mine.")},
@@ -40,7 +42,7 @@ CRESCENT = {
         "LOCALID_CRESCENT_CITY_PARK_KID": {"text": T("I saw something red in the long", "grass! Maybe it was a flower.")},
         "LOCALID_CRESCENT_CITY_CONSERVATION_KID": {"text": T("There's a real alligator inside!", "It looked at me. I looked back.")},
         "LOCALID_CRESCENT_CITY_FRONTIER_JOGGER": {"text": T("I'm training for the Frontier.", "Four laps of the plaza, daily.")},
-        "LOCALID_CRESCENT_CITY_FRONTIER_PAIR": {"text": T("We're waiting for the Frontier to", "open. Any year now.")},
+        "LOCALID_CRESCENT_CITY_FRONTIER_PAIR": {"custom": True},   # two states (story/CrescentCity.inc): before and after the ending
         "LOCALID_CRESCENT_CITY_FRONTIER_FAN": {"text": T("One day I'll battle at the Dome.", "One day. Soon.")},
         "LOCALID_CRESCENT_CITY_PICNICKER": {"text": T("The levee breeze is lovely. The", "ants are less lovely.")},
     },
@@ -98,7 +100,7 @@ ROOMS = {
     "crescent_city_gym": {
         "opts": {0: {"custom": True, "gfx": "OBJ_EVENT_GFX_HEX_MANIAC"},
                  1: {"custom": True, "sight": 3, "face": "DOWN", "gfx": "OBJ_EVENT_GFX_HEX_MANIAC"},
-                 2: {"custom": True, "sight": 3, "face": "RIGHT", "gfx": "OBJ_EVENT_GFX_PSYCHIC_M"},
+                 2: {"custom": True, "sight": 3, "face": "RIGHT", "gfx": "OBJ_EVENT_GFX_HEX_MANIAC"},   # Lucille (Psychic, Pic F)
                  3: {"custom": True, "gfx": "OBJ_EVENT_GFX_MAN_4"}},
         # the five lights (mockup switches; two blue on the true way, three orange on the loops that tempt): stepping on one runs its script while the badge is not earned
         "coord_events": [
@@ -117,7 +119,7 @@ ROOMS = {
     "crescent_city_blacksnake_base": {
         "opts": {0: {"custom": True, "sight": 3, "face": "DOWN", "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M"},
                  1: {"custom": True, "sight": 3, "face": "RIGHT", "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_M"},
-                 2: {"custom": True, "sight": 3, "face": "LEFT", "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_F"},
+                 2: {"custom": True, "face": "LEFT", "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_F"},   # Louise: the lieutenant's guard, the partner battle (talk to start)
                  3: {"custom": True, "face": "LEFT", "gfx": "OBJ_EVENT_GFX_AQUA_MEMBER_F", "flag": "FLAG_HIDE_CRESCENT_LIEUTENANT"},
                  4: {"custom": True, "gfx": "OBJ_EVENT_GFX_GIRL_3", "face": "UP", "flag": "FLAG_HIDE_CRESCENT_BASE_WREN"}},
         "bg_events": [
@@ -195,6 +197,6 @@ ROOMS = {
                   2: T("The second line passes right by", "here. You can hear it start.")},
     },
     "crescent_city_pokecenter_waterfront": {
-        "texts": {1: T("The riverboat to POINTE ROUGE leaves", "from the terminal next door.")},
+        "texts": {1: T("The riverboat to POINTE ROUGE leaves", "from the terminal, west of here.")},
     },
 }
