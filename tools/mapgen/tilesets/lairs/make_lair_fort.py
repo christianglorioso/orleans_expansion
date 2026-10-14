@@ -40,20 +40,24 @@ FE1, FE2, Y1, Y2, GLS = (112, 120, 128), (64, 72, 80), (248, 224, 128), (200, 16
 CR, CRD, GOLD, GOLDD, BLU = (200, 56, 56), (136, 32, 40), (224, 184, 72), (168, 128, 48), (72, 104, 176)
 
 FAMILIES = {
+    "TRACK": [G, GD, GL, SH, W1, W2, W3, INK, (112, 80, 80), (144, 104, 96), (160, 128, 120), WDB, WDD, (176, 144, 104), FE1],
+    "PAVILION": [(96, 136, 136), (72, 112, 112), (176, 144, 104), WDB, WDD, W1, W2, W3, INK, FE1, FE2, GLS, Y1, Y2, SILL],
+    "STAND": [G, GD, GL, SH, WDB, WDD, (176, 144, 104), FE1, FE2, INK, Y1, Y2, GOLDD, W1, CR],
     "BRICK": [G, GD, GL, SH, BR1, BR2, BR3, MOR, DK1, DK0, SILL, IVY1, IVY2, INK],
     "GLOW": [BR1, BR2, BR3, MOR, DK1, DK0, IVY2, INK, V1, V2, V3, G, GD, SH, SILL],
     "FLOOR": [G, GD, GL, SH, T1, T2, T3, TR, TB, INK, BR2, MOR],
     "BAND": [T1, T2, T3, SH, W1, W2, W3, CU1, CU2, CU3, WDB, WDD, INK, IVY1, GD],
+    "BANDD": [(176, 144, 104), WDB, WDD, W1, W2, W3, CU1, CU2, CU3, INK, IVY1, GD, SH],
     "IRON": [G, GD, GL, SH, FE1, FE2, INK, Y1, Y2, GLS, WDB, WDD, SILL, BR2, MOR],
     "CAROUSEL": [G, GD, GL, SH, W1, W2, W3, CR, CRD, GOLD, GOLDD, BLU, INK],
 }
 
 
-def grass_cv(w=1, h=1):
+def grass_cv(w=1, h=1, bg=None):
     cv = Canvas(w, h)
     for j in range(cv.h):
         for i in range(cv.w):
-            cv.put(i, j, GRASS(i, j))
+            cv.put(i, j, (bg or GRASS)(i, j))
     return cv
 
 
@@ -176,13 +180,13 @@ def floor_style(i, j, inside, d):
     return T1 if hashn(i // 2, j // 2, 723) > 0.25 else T2
 
 
-def bandstand():
+def bandstand(bg=None):
     """4x3 the bandstand: an octagon of white posts with fretwork under a verdigris dome, its finial, a raised floor and steps at the
     front; a hole in the dome, ivy up one post. It stands on the dance floor (plain terrazzo under it)."""
     cv = Canvas(4, 3)
     for j in range(48):
         for i in range(64):
-            cv.put(i, j, T1 if hashn(i // 2, j // 2, 723) > 0.25 else T2)
+            cv.put(i, j, bg(i, j) if bg else (T1 if hashn(i // 2, j // 2, 723) > 0.25 else T2))
     cx = 32
     # the raised floor and its skirt
     for j in range(32, 44):
@@ -210,7 +214,7 @@ def bandstand():
         cv.put(x, 17, W1 if x % 2 else W3)
     for j in range(18, 31):
         for i in range(10, 55):
-            if cv.get(i, j) in (T1, T2):
+            if (j >= 18 and i >= 10 and i < 55 and cv.get(i, j) not in (W1, W2, W3, INK, IVY1, GD)):
                 cv.put(i, j, WDD if j > 28 else (WDB if (i + j) % 7 == 0 else WDD))   # the floor seen under the roof
     # the dome
     for j in range(2, 16):
@@ -241,9 +245,9 @@ def bandstand():
     return cv
 
 
-def lamp():
+def lamp(bg=None):
     """1x2 a cast-iron lamp post of the pleasure garden, its glass globe broken."""
-    cv = grass_cv(1, 2)
+    cv = grass_cv(1, 2, bg)
     cv.rect(6, 10, 4, 20, FE2)
     cv.vline(6, 10, 29, FE1)
     cv.vline(5, 10, 29, INK)
@@ -257,13 +261,13 @@ def lamp():
     cv.put(10, 5, INK)
     cv.hline(5, 10, 10, INK)
     cv.put(8, 1, FE2)
-    cv.hline(4, 12, 31, SH)
+    cv.hline(4, 12, 31, SH if not bg else PL3)
     return cv
 
 
-def festoon():
+def festoon(bg=None):
     """1x1 a string of dead bulbs sagging across the dance floor's edge (overhead: walkable)."""
-    cv = grass_cv()
+    cv = grass_cv(1, 1, bg)
     for i in range(16):
         y = 4 + round(3 * math.sin(math.pi * i / 15))
         cv.put(i, y, INK)
@@ -341,6 +345,204 @@ def shot():
     return cv
 
 
+# ---------------------------------------------------------------- revision 3: the other two Galarian lairs
+# Galarian Zapdos: the Bush Track (off Route 14, east): a Cajun "bush track", a straight dirt strip in the country where match races are
+# run between two horses, a plank starting gate at one end, a judge's stand at the finish, benches, hay. The track is the primary's mud.
+# Galarian Articuno: the Milneburg pavilion (off Route 10, by Surf): a jazz-age dance pavilion out on the lake on its pilings, where bands
+# played on the camps' weekends: a plank deck with a white railing, the bandstand, cafe tables, lamps, dead festoons, a gramophone.
+MUD = None
+PL1, PL2, PL3 = (176, 144, 104), (136, 104, 72), (88, 64, 48)          # the pavilion's planks (PL2, PL3 = WDB, WDD)
+WA, WA_D = (96, 136, 136), (72, 112, 112)
+MUD1, MUD2, MUD3 = (112, 80, 80), (144, 104, 96), (160, 128, 120)       # the primary's mud (the track)
+
+
+def _mud_tex():
+    from lair_kit_b2 import pcell, tex_from
+    return tex_from(pcell("ekat:mud_C"))
+
+
+def plank_tex(i, j):
+    """The pavilion's deck: boards running east-west, 4 px wide, butt joints staggered, a nail head here and there."""
+    row = j // 4
+    if j % 4 == 3:
+        return PL3
+    if (i + row * 6) % 16 == 0:
+        return PL3
+    c = PL1 if j % 4 == 0 else PL2
+    if (i * 3 + row * 5) % 23 == 0:
+        c = PL3
+    return c
+
+
+def deck_style(i, j, inside, d):
+    """The deck on the lake (inside = planks): a white railing along its rim, posts every 8 px; outside, the water, the deck's shadow
+    and the tops of its pilings showing under the south edge."""
+    near = min(v for v in (d["dn"], d["ds"], d["dw"], d["de"], 9) if v is not None)
+    if not inside:
+        if d["dn"] is not None and d["dn"] <= 2:
+            return WA_D if d["dn"] == 1 else (PL3 if i % 8 in (3, 4) else WA_D)   # the deck's shadow, a piling's head
+        return WA
+    if near == 1:
+        return INK
+    if near == 2:
+        return W1 if (d["dn"] == 2 or d["dw"] == 2) else W2                    # the top rail
+    if near == 3:
+        along = i if (d["dn"] == 3 or d["ds"] == 3) else j
+        return W3 if along % 8 == 0 else plank_tex(i, j)                       # the posts
+    return plank_tex(i, j)
+
+
+def table():
+    """1x1 a little round cafe table on the deck, two bentwood chairs, an empty glass."""
+    cv = grass_cv(1, 1, plank_tex)
+    for (i, j) in ellipse_body(8, 7, 4.2, 3.2):
+        cv.put(i, j, W1 if j < 7 else W2)
+    ink_outline(cv, ellipse_body(8, 7, 4.2, 3.2), INK, only_clear=False)
+    cv.vline(8, 10, 13, FE2)
+    cv.hline(6, 10, 14, FE2)
+    for x in (1, 13):
+        cv.rect(x, 6, 2, 6, FE2)
+        cv.hline(x - 1, x + 2, 9, FE1)
+    cv.put(9, 6, GLS)
+    cv.put(9, 5, GLS)
+    return cv
+
+
+def gramophone():
+    """1x1 a gramophone left on a crate, its brass horn turned to the empty floor."""
+    cv = grass_cv(1, 1, plank_tex)
+    cv.rect(3, 8, 10, 6, WDB)
+    cv.hline(3, 12, 8, PL1)
+    cv.hline(2, 13, 14, INK)
+    cv.rect(5, 6, 6, 2, WDD)
+    cv.vline(8, 2, 6, FE2)
+    for k in range(7):
+        r = 1 + k * 0.6
+        cv.put(round(8 + k), round(2 - k * 0.3), Y2)
+        cv.put(round(8 + k), round(2 + r), Y2)
+        cv.vline(round(8 + k), round(2 - k * 0.3), round(2 + r), Y1 if k > 4 else Y2)
+    return cv
+
+
+def piling():
+    """1x1 old pilings standing out of the lake where the deck has gone (blocking)."""
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, WA if (i * 3 + j * 5) % 29 else WA_D)
+    for (x, y) in [(3, 4), (11, 6), (6, 11)]:
+        for (i, j) in ellipse_body(x, y, 2.2, 1.8):
+            cv.put(i, j, PL1 if i < x else PL2)
+        cv.put(x, y, PL3)
+        for k in range(3):
+            cv.put(x - 1 + k, y + 2, WA_D)
+    return cv
+
+
+def rail(kind):
+    """1x1 the track's white rail on the grass: 'h' running east-west (two rails, a post every 8 px), 'end' a corner post."""
+    cv = grass_cv()
+    if kind == "h":
+        cv.hline(0, 15, 6, W1)
+        cv.hline(0, 15, 7, W3)
+        cv.hline(0, 15, 10, W1)
+        cv.hline(0, 15, 11, W3)
+        for x in (3, 11):
+            cv.rect(x, 4, 2, 10, W1)
+            cv.vline(x + 1, 4, 13, W2)
+            cv.put(x, 14, SH)
+            cv.put(x + 1, 14, SH)
+    else:
+        cv.hline(0, 7, 6, W1)
+        cv.hline(0, 7, 7, W3)
+        cv.hline(0, 7, 10, W1)
+        cv.hline(0, 7, 11, W3)
+        cv.rect(7, 3, 3, 11, W1)
+        cv.vline(9, 3, 13, W2)
+        cv.hline(6, 10, 2, INK)
+    return cv
+
+
+def start_gate():
+    """3x2 the starting gate across the track's west end: a plank frame of two stalls, their gates shut, a rope across the top."""
+    mud = _mud_tex()
+    cv = grass_cv(3, 2, mud)
+    for x in (4, 20, 36):
+        cv.rect(x, 2, 4, 28, WDB)
+        cv.vline(x, 2, 29, PL1)
+        cv.vline(x + 3, 2, 29, WDD)
+        cv.hline(x - 1, x + 4, 1, INK)
+    for x0 in (8, 24):
+        for y in (8, 16, 24):
+            cv.hline(x0, x0 + 11, y, PL1)
+            cv.hline(x0, x0 + 11, y + 1, WDD)
+    cv.line(4, 3, 40, 3, FE1)
+    for i in range(2, 44):
+        cv.put(i, 30, MUD1)
+    return cv
+
+
+def judge_stand():
+    """2x3 the judge's stand at the finish: a little raised box of planks under a tin roof, a ladder, a bell."""
+    cv = grass_cv(2, 3)
+    cv.rect(4, 2, 24, 8, FE1)
+    cv.hline(3, 28, 1, INK)
+    cv.hline(3, 28, 10, INK)
+    for i in range(4, 28, 3):
+        cv.vline(i, 2, 9, FE2)
+    cv.rect(6, 11, 20, 12, WDB)
+    cv.hline(6, 25, 11, PL1)
+    cv.rect(9, 13, 14, 5, INK)
+    for x in (6, 25):
+        cv.vline(x, 11, 45, WDD)
+        cv.vline(x + 1, 23, 45, WDB)
+    for y in range(26, 45, 4):
+        cv.hline(14, 18, y, PL1)
+    cv.vline(14, 23, 45, WDD)
+    cv.vline(18, 23, 45, WDD)
+    cv.rect(24, 12, 3, 3, Y2)
+    cv.hline(5, 27, 46, SH)
+    return cv
+
+
+def finish_post():
+    """1x2 the finish post: a white post, a red disc at its head."""
+    cv = grass_cv(1, 2)
+    cv.rect(7, 10, 3, 20, W1)
+    cv.vline(9, 10, 29, W3)
+    cv.vline(6, 10, 29, INK)
+    cv.vline(10, 10, 29, INK)
+    for (i, j) in ellipse_body(8.5, 6, 4.5, 4.5):
+        cv.put(i, j, CR if (i - 8) ** 2 + (j - 6) ** 2 > 4 else W1)
+    ink_outline(cv, ellipse_body(8.5, 6, 4.5, 4.5), INK, only_clear=False)
+    cv.hline(5, 12, 30, SH)
+    return cv
+
+
+def benches():
+    """2x1 plank benches for the crowd along the rail."""
+    cv = grass_cv(2, 1)
+    for y in (3, 9):
+        cv.rect(2, y, 28, 3, PL1)
+        cv.hline(2, 29, y + 2, WDD)
+        for x in (4, 27):
+            cv.vline(x, y + 3, y + 5, WDD)
+    return cv
+
+
+def hay():
+    """1x1 a hay bale, twine round it."""
+    cv = grass_cv()
+    cv.rect(2, 4, 12, 9, Y2)
+    cv.hline(2, 13, 4, Y1)
+    cv.hline(2, 13, 12, GOLDD)
+    for x in (5, 10):
+        cv.vline(x, 4, 12, GOLDD)
+    cv.hline(1, 14, 13, INK)
+    cv.hline(2, 13, 14, SH)
+    return cv
+
+
 def build():
     P = Pieces("lf")
     P.add("rampart", rampart(False), comment="1x2 the north rampart (grassed top, brick face), blocking", lair="galar")
@@ -356,6 +558,22 @@ def build():
     P.add("carousel_horse", carousel_horse(), comment="2x1 a fallen carousel horse, blocking", lair="galar")
     P.add("cannon", cannon(), comment="2x1 an old iron cannon, blocking", lair="galar")
     P.add("shot", shot(), comment="1x1 a pyramid of shot, blocking", lair="galar")
+    # revision 3: Galarian Zapdos' bush track and Galarian Articuno's lakefront pavilion
+    for k in ("h", "end"):
+        P.add(f"rail_{k}", rail(k), comment=f"1x1 the track's white rail ({k}), blocking", lair="galar_zapdos")
+    P.add("start_gate", start_gate(), comment="3x2 the starting gate on the track, blocking", lair="galar_zapdos")
+    P.add("judge_stand", judge_stand(), comment="2x3 the judge's stand at the finish, blocking", lair="galar_zapdos")
+    P.add("finish_post", finish_post(), comment="1x2 the finish post, blocking", lair="galar_zapdos")
+    P.add("benches", benches(), comment="2x1 benches for the crowd, blocking", lair="galar_zapdos")
+    P.add("hay", hay(), comment="1x1 a hay bale, blocking", lair="galar_zapdos")
+    P.add_set("deck", dual_set(deck_style, ro=4, ri=4, wob=0), walk=True, comment="the pavilion's deck on the lake, railed",
+              lair="galar_articuno")
+    P.add("bandstand_d", bandstand(plank_tex), comment="4x3 the bandstand on the pavilion's deck, blocking", lair="galar_articuno")
+    P.add("lamp_d", lamp(plank_tex), comment="1x2 a lamp post on the deck, blocking", lair="galar_articuno")
+    P.add("festoon_d", festoon(plank_tex), walk=True, comment="1x1 dead bulbs over the deck (walkable)", lair="galar_articuno")
+    P.add("table", table(), comment="1x1 a cafe table and two chairs on the deck, blocking", lair="galar_articuno")
+    P.add("gramophone", gramophone(), comment="1x1 a gramophone on a crate, blocking", lair="galar_articuno")
+    P.add("piling", piling(), comment="1x1 old pilings in the lake, blocking", lair="galar_articuno")
     return P
 
 

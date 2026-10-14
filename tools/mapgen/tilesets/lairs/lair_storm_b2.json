@@ -2069,6 +2069,48 @@
    "walk": [],
    "lair": "thundurus",
    "comment": "1x3 a line pole split by lightning, blocking"
+  },
+  "fence_h": {
+   "x": 15,
+   "y": 11,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:fence_h"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x1 a post-and-wire fence (east-west), blocking"
+  },
+  "fence_v": {
+   "x": 0,
+   "y": 14,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:fence_v"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x1 a post-and-wire fence (north-south), blocking"
+  },
+  "stone_pile": {
+   "x": 1,
+   "y": 14,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:stone_pile"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x1 a stockpile of riprap stone, blocking"
   }
  }
 }

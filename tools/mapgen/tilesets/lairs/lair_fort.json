@@ -3,6 +3,237 @@
  "png": "lair_fort.png",
  "tileset": "gTileset_OrleansLairFort",
  "families": {
+  "TRACK": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    200,
+    184
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    112,
+    80,
+    80
+   ],
+   [
+    144,
+    104,
+    96
+   ],
+   [
+    160,
+    128,
+    120
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    176,
+    144,
+    104
+   ],
+   [
+    112,
+    120,
+    128
+   ]
+  ],
+  "PAVILION": [
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    72,
+    112,
+    112
+   ],
+   [
+    176,
+    144,
+    104
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    200,
+    184
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    112,
+    120,
+    128
+   ],
+   [
+    64,
+    72,
+    80
+   ],
+   [
+    176,
+    200,
+    200
+   ],
+   [
+    248,
+    224,
+    128
+   ],
+   [
+    200,
+    160,
+    64
+   ],
+   [
+    152,
+    152,
+    120
+   ]
+  ],
+  "STAND": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    176,
+    144,
+    104
+   ],
+   [
+    112,
+    120,
+    128
+   ],
+   [
+    64,
+    72,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    248,
+    224,
+    128
+   ],
+   [
+    200,
+    160,
+    64
+   ],
+   [
+    168,
+    128,
+    48
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    56,
+    56
+   ]
+  ],
   "BRICK": [
    [
     120,
@@ -289,6 +520,73 @@
     104,
     144,
     96
+   ]
+  ],
+  "BANDD": [
+   [
+    176,
+    144,
+    104
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    200,
+    184
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    120,
+    176,
+    152
+   ],
+   [
+    80,
+    136,
+    120
+   ],
+   [
+    48,
+    88,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    80,
+    112,
+    96
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    96,
+    128,
+    88
    ]
   ],
   "IRON": [
@@ -933,6 +1231,516 @@
    "walk": [],
    "lair": "galar",
    "comment": "1x1 a pyramid of shot, blocking"
+  },
+  "rail_h": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:rail_h"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "1x1 the track's white rail (h), blocking"
+  },
+  "rail_end": {
+   "x": 4,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:rail_end"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "1x1 the track's white rail (end), blocking"
+  },
+  "start_gate": {
+   "x": 5,
+   "y": 5,
+   "w": 3,
+   "h": 2,
+   "rows": [
+    [
+     "lf:start_gate_0_0",
+     "lf:start_gate_1_0",
+     "lf:start_gate_2_0"
+    ],
+    [
+     "lf:start_gate_0_1",
+     "lf:start_gate_1_1",
+     "lf:start_gate_2_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "3x2 the starting gate on the track, blocking"
+  },
+  "judge_stand": {
+   "x": 8,
+   "y": 5,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "lf:judge_stand_0_0",
+     "lf:judge_stand_1_0"
+    ],
+    [
+     "lf:judge_stand_0_1",
+     "lf:judge_stand_1_1"
+    ],
+    [
+     "lf:judge_stand_0_2",
+     "lf:judge_stand_1_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "2x3 the judge's stand at the finish, blocking"
+  },
+  "finish_post": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:finish_post_0_0"
+    ],
+    [
+     "lf:finish_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "1x2 the finish post, blocking"
+  },
+  "benches": {
+   "x": 11,
+   "y": 5,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lf:benches_0_0",
+     "lf:benches_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "2x1 benches for the crowd, blocking"
+  },
+  "hay": {
+   "x": 13,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:hay"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "1x1 a hay bale, blocking"
+  },
+  "deck_C": {
+   "x": 14,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (C)"
+  },
+  "deck_N": {
+   "x": 15,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (N)"
+  },
+  "deck_S": {
+   "x": 0,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (S)"
+  },
+  "deck_W": {
+   "x": 1,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (W)"
+  },
+  "deck_E": {
+   "x": 2,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (E)"
+  },
+  "deck_inNW": {
+   "x": 3,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (inNW)"
+  },
+  "deck_inNE": {
+   "x": 4,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (inNE)"
+  },
+  "deck_inSW": {
+   "x": 5,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (inSW)"
+  },
+  "deck_inSE": {
+   "x": 6,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (inSE)"
+  },
+  "deck_landSE": {
+   "x": 7,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (landSE)"
+  },
+  "deck_landSW": {
+   "x": 8,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (landSW)"
+  },
+  "deck_landNE": {
+   "x": 9,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (landNE)"
+  },
+  "deck_landNW": {
+   "x": 10,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (landNW)"
+  },
+  "deck_sTLBR": {
+   "x": 11,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (sTLBR)"
+  },
+  "deck_sTRBL": {
+   "x": 12,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:deck_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "the pavilion's deck on the lake, railed (sTRBL)"
+  },
+  "bandstand_d": {
+   "x": 0,
+   "y": 9,
+   "w": 4,
+   "h": 3,
+   "rows": [
+    [
+     "lf:bandstand_d_0_0",
+     "lf:bandstand_d_1_0",
+     "lf:bandstand_d_2_0",
+     "lf:bandstand_d_3_0"
+    ],
+    [
+     "lf:bandstand_d_0_1",
+     "lf:bandstand_d_1_1",
+     "lf:bandstand_d_2_1",
+     "lf:bandstand_d_3_1"
+    ],
+    [
+     "lf:bandstand_d_0_2",
+     "lf:bandstand_d_1_2",
+     "lf:bandstand_d_2_2",
+     "lf:bandstand_d_3_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "4x3 the bandstand on the pavilion's deck, blocking"
+  },
+  "lamp_d": {
+   "x": 4,
+   "y": 9,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:lamp_d_0_0"
+    ],
+    [
+     "lf:lamp_d_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "1x2 a lamp post on the deck, blocking"
+  },
+  "festoon_d": {
+   "x": 5,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:festoon_d"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "1x1 dead bulbs over the deck (walkable)"
+  },
+  "table": {
+   "x": 6,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:table"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "1x1 a cafe table and two chairs on the deck, blocking"
+  },
+  "gramophone": {
+   "x": 7,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:gramophone"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "1x1 a gramophone on a crate, blocking"
+  },
+  "piling": {
+   "x": 8,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:piling"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "1x1 old pilings in the lake, blocking"
   }
  }
 }

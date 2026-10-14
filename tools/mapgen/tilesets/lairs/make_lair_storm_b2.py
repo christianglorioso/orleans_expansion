@@ -560,6 +560,46 @@ def struck_pole():
     return cv
 
 
+def fence(kind):
+    """1x1 a post-and-wire fence on the grass below the levee: 'h' running east-west, 'v' north-south (revision 3)."""
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, GRASS(i, j))
+    if kind == "h":
+        cv.hline(0, 15, 6, S1)
+        cv.hline(0, 15, 10, S1)
+        for x in (2, 10):
+            cv.rect(x, 3, 2, 10, WB1)
+            cv.vline(x + 1, 3, 12, WB0)
+            cv.put(x, 13, SH)
+            cv.put(x + 1, 13, SH)
+    else:
+        cv.vline(6, 0, 15, S1)
+        cv.vline(9, 0, 15, S1)
+        for y in (2, 10):
+            cv.rect(6, y, 4, 3, WB1)
+            cv.hline(6, 9, y + 2, WB0)
+    return cv
+
+
+def stone_pile():
+    """1x1 a stockpile of riprap stone waiting at the levee's foot (revision 3)."""
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, GRASS(i, j))
+    for (x, y, r) in [(4, 11, 3.0), (9, 11, 3.2), (13, 12, 2.4), (6, 7, 2.8), (11, 6, 2.6), (8, 3, 2.2)]:
+        b = ellipse_body(x, y, r, r * 0.75)
+        for (i, j) in b:
+            if 0 <= i < 16 and 0 <= j < 16:
+                cv.put(i, j, STONE_L if j < y - 0.5 else (STONE if j < y + 1 else STONE_D))
+        for (i, j) in b:
+            if (i, j + 1) not in b and 0 <= i < 16 and j + 1 < 16:
+                cv.put(i, j + 1, OUTL)
+    return cv
+
+
 # ---------------------------------------------------------------- the sheet
 def build():
     P = RK.build()                                                      # batch 1 first: same order, same cells, same ids
@@ -593,6 +633,9 @@ def build():
     P.add("sandbags", sandbags(), comment="2x1 sandbags on the crown, blocking", lair="thundurus")
     P.add("mile_post", mile_post(), comment="1x1 a levee mile marker, blocking", lair="thundurus")
     P.add("struck_pole", struck_pole(), comment="1x3 a line pole split by lightning, blocking", lair="thundurus")
+    P.add("fence_h", fence("h"), comment="1x1 a post-and-wire fence (east-west), blocking", lair="thundurus")
+    P.add("fence_v", fence("v"), comment="1x1 a post-and-wire fence (north-south), blocking", lair="thundurus")
+    P.add("stone_pile", stone_pile(), comment="1x1 a stockpile of riprap stone, blocking", lair="thundurus")
     return P
 
 

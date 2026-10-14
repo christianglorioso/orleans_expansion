@@ -303,6 +303,55 @@ def sally_port_w(bricked):
     return cv
 
 
+def bush_gate_e(shut):
+    """2x2 the way to the bush track (wall east): a trail into the canopy through a split-rail gate, a horseshoe nailed over it for
+    luck; open (the rails slid back) or shut (the rails across the mouth)."""
+    cv = Canvas(2, 2)
+    hollow(cv, "e")
+    trail(cv, "e")
+    for y0 in (3, 22):                                                   # the gate posts, north and south of the trail
+        cv.rect(13, y0, 3, 9, WD2)
+        cv.vline(13, y0, y0 + 8, WD3)
+        cv.vline(15, y0, y0 + 8, WD1)
+        cv.hline(12, 16, y0 - 1, INK)
+    for (x, y) in [(13, 4), (14, 3), (15, 4), (13, 5), (15, 5)]:
+        cv.put(x, y, (200, 200, 184))                                    # the horseshoe
+    if shut:
+        for y in (12, 16, 20):
+            cv.hline(12, 26, y, WD3)
+            cv.hline(12, 26, y + 1, WD1)
+    else:
+        for y in (12, 16):
+            cv.hline(4, 12, y, WD3)
+            cv.hline(4, 12, y + 1, WD1)
+    return cv
+
+
+def pier_stub(shut):
+    """2x2 a stub of the old pavilion's pier standing in the lake (Route 10, by Surf): open, a run of planks on its pilings heading north
+    into the mist, a lamp post at its head; shut, only the pilings (the planks long gone)."""
+    cv = Canvas(2, 2)
+    WA_D = (72, 112, 112)
+    for (x, y) in [(3, 2), (26, 2), (3, 26), (26, 26), (3, 14), (26, 14)]:
+        cv.rect(x, y, 4, 4, WD2)
+        cv.hline(x, x + 3, y, WD3)
+        cv.hline(x - 1, x + 4, y + 4, WA_D)
+    if not shut:
+        for j in range(0, 30):
+            for i in range(6, 26):
+                c = WD3 if j % 4 == 0 else (WD1 if j % 4 == 3 else WD2)
+                if (i + (j // 4) * 5) % 13 == 0:
+                    c = WD1
+                cv.put(i, j, c)
+            cv.put(5, j, INK)
+            cv.put(26, j, INK)
+        for i in range(6, 26):
+            cv.put(i, 30, WA_D)
+        cv.rect(22, 0, 2, 10, (64, 72, 80))
+        cv.rect(21, 0, 4, 3, (232, 216, 96))
+    return cv
+
+
 def mill_door_ajar():
     """1x2 the mill's plank double door standing ajar, firelight glowing in the gap (Route 17; optional)."""
     cv = Canvas(1, 2)
@@ -331,15 +380,24 @@ PLACEMENTS = {
                 "trigger": [[26, 22], [26, 23]], "heading": "east", "back": [24, 22, "LEFT"], "opens": "story 45"},
     "Route13_E": {"tileset": "orleans_route", "lair": "zarude", "open": [["liana_gap_e", 26, 25]], "sealed": [["liana_curtain_e", 26, 25]],
                   "trigger": [[27, 25], [27, 26]], "heading": "east", "back": [26, 26, "LEFT"], "opens": "story 45"},
-    "Route13_W": {"tileset": "orleans_route", "lair": "ogerpon", "open": [["courir_gap_w", 0, 25]], "sealed": [["liana_curtain_w", 0, 25]],
+    "Route13_W": {"tileset": "orleans_route", "lair": "ogerpon", "open": [["courir_gap_w_bright", 0, 25]], "sealed": [["liana_curtain_w", 0, 25]],
+                  "fallback_open": [["courir_gap_w", 0, 25]],
+                  "note": "courir_gap_w_bright keeps the Courir ribbons bright (approved: spend palette room on the route set, whose 7 slots "
+                          "are all in use, so compose must repack them); courir_gap_w is the snapped fallback that needs none",
                   "trigger": [[0, 25], [0, 26]], "heading": "west", "back": [2, 25, "RIGHT"], "opens": "story 45"},
     "Route3": {"tileset": "orleans_crescent", "lair": "tornadus",
                "open": "the marsh notch as built (x 27-28, rows 1-2); optional wind_gap_n at (27,0) only if 16 Crescent tiles are freed",
                "sealed": "the notch filled with the swamp canopy block (rows 0-1, primary pieces), bd:swamp_S_marsh_X on row 2",
                "trigger": [[27, 1], [28, 1]], "heading": "north", "back": [27, 2, "DOWN"], "opens": "story 45",
                "note": "Crescent is full (510/512 tiles): no new art by default, as Raikou's Route 2"},
-    "Route14": {"tileset": "orleans_route_b", "lair": "galar", "open": [["sally_port_w", 0, 7]], "sealed": [["sally_port_w_bricked", 0, 7]],
+    "Route14": {"tileset": "orleans_route_b", "lair": "galar_moltres", "open": [["sally_port_w", 0, 7]], "sealed": [["sally_port_w_bricked", 0, 7]],
                 "trigger": [[0, 7], [0, 8]], "heading": "west", "back": [2, 7, "RIGHT"], "opens": "story 45"},
+    "Route14_E": {"tileset": "orleans_route_b", "lair": "galar_zapdos", "open": [["bush_gate_e", 26, 19]], "sealed": [["bush_gate_e_shut", 26, 19]],
+                  "trigger": [[27, 19], [27, 20]], "heading": "east", "back": [25, 19, "LEFT"], "opens": "story 45"},
+    "Route10": {"tileset": "orleans_route", "lair": "galar_articuno", "open": [["pier_stub", 30, 12]], "sealed": [["pier_pilings", 30, 12]],
+                "trigger": [[30, 12], [31, 12]], "heading": "north", "back": [30, 13, "DOWN"], "opens": "story 45",
+                "note": "reached by Surf: in the open state the four plank cells must be walkable land (collision 0, a normal ground "
+                        "behaviour, not water) so the player can step off the water onto them; the warp fires on the north row"},
     "Route17": {"tileset": "orleans_capital", "lair": "moltres", "open": "the mill door as built, its warp live (optionally mill_door_ajar at (33,8), 5 tiles, only if Capital frees them: 508/512)",
                 "sealed": "the mill door as built, no warp (a 'barred' message)", "trigger": [[33, 9]], "heading": "north",
                 "back": [33, 10, "DOWN"], "opens": "story 45"},
@@ -395,6 +453,9 @@ SNAP = {  # piece -> (route, x, y) where it stands (its colours are snapped into
     "levee_steps_e_log": ("Route12", 25, 22), "liana_gap_e": ("Route13", 26, 25), "liana_curtain_e": ("Route13", 26, 25),
     "courir_gap_w": ("Route13", 0, 25), "liana_curtain_w": ("Route13", 0, 25), "wind_gap_n": ("Route3", 27, 0),
     "sally_port_w": ("Route14", 0, 7), "sally_port_w_bricked": ("Route14", 0, 7), "mill_door_ajar": ("Route17", 33, 8),
+    "bush_gate_e": ("Route14", 26, 19), "bush_gate_e_shut": ("Route14", 26, 19), "pier_stub": ("Route10", 30, 12),
+    "pier_pilings": ("Route10", 30, 12),
+    # courir_gap_w_bright is NOT snapped: the user chose to spend palette room on Route 13's set to keep its ribbons bright
 }
 
 
@@ -422,6 +483,15 @@ def build_raw():
     P.add("wind_gap_n", wind_gap_n(), walk=[[0, 0], [1, 0], [0, 1], [1, 1]], comment="2x2 overlay: a trail into the canopy (north), a windsock (Route 3)", lair="tornadus")
     P.add("sally_port_w", sally_port_w(False), walk=[[0, 0], [0, 1], [1, 0], [1, 1]], comment="2x2 overlay: the fort's sally port in the canopy (west) (Route 14)", lair="galar")
     P.add("sally_port_w_bricked", sally_port_w(True), comment="2x2 overlay: the sally port bricked up and grown over (sealed)", lair="galar")
+    P.add("courir_gap_w_bright", liana_gap("w", False, courir=True), walk=[[0, 0], [0, 1]],
+          comment="2x2 overlay: courir_gap_w with its ribbons in their own bright colours (unsnapped: needs palette room on the route set)",
+          lair="ogerpon")
+    P.add("bush_gate_e", bush_gate_e(False), walk=[[1, 0], [1, 1], [0, 0], [0, 1]], comment="2x2 overlay: a trail into the canopy (east) "
+          "through an open split-rail gate, a horseshoe over it (Route 14, Galarian Zapdos)", lair="galar_zapdos")
+    P.add("bush_gate_e_shut", bush_gate_e(True), comment="2x2 overlay: the same, the rails across it (sealed)", lair="galar_zapdos")
+    P.add("pier_stub", pier_stub(False), walk=[[0, 0], [1, 0], [0, 1], [1, 1]], comment="2x2 overlay: a stub of the old pavilion's pier "
+          "in the lake, planks on pilings, a lamp (Route 10, by Surf; Galarian Articuno)", lair="galar_articuno")
+    P.add("pier_pilings", pier_stub(True), comment="2x2 overlay: only the pilings (sealed)", lair="galar_articuno")
     P.add("mill_door_ajar", mill_door_ajar(), walk=[[0, 1]], comment="1x2 overlay: the mill door ajar, firelight (Route 17, optional)", lair="moltres")
     return P
 

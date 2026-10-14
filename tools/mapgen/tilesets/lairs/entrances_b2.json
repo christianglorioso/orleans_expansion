@@ -249,9 +249,97 @@
    "lair": "galar",
    "comment": "2x2 overlay: the sally port bricked up and grown over (sealed)"
   },
-  "mill_door_ajar": {
+  "courir_gap_w_bright": {
    "x": 12,
    "y": 2,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "2x2 overlay: courir_gap_w with its ribbons in their own bright colours (unsnapped: needs palette room on the route set)"
+  },
+  "bush_gate_e": {
+   "x": 14,
+   "y": 2,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "lair": "galar_zapdos",
+   "comment": "2x2 overlay: a trail into the canopy (east) through an open split-rail gate, a horseshoe over it (Route 14, Galarian Zapdos)"
+  },
+  "bush_gate_e_shut": {
+   "x": 0,
+   "y": 4,
+   "w": 2,
+   "h": 2,
+   "walk": [],
+   "lair": "galar_zapdos",
+   "comment": "2x2 overlay: the same, the rails across it (sealed)"
+  },
+  "pier_stub": {
+   "x": 2,
+   "y": 4,
+   "w": 2,
+   "h": 2,
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "lair": "galar_articuno",
+   "comment": "2x2 overlay: a stub of the old pavilion's pier in the lake, planks on pilings, a lamp (Route 10, by Surf; Galarian Articuno)"
+  },
+  "pier_pilings": {
+   "x": 4,
+   "y": 4,
+   "w": 2,
+   "h": 2,
+   "walk": [],
+   "lair": "galar_articuno",
+   "comment": "2x2 overlay: only the pilings (sealed)"
+  },
+  "mill_door_ajar": {
+   "x": 6,
+   "y": 4,
    "w": 1,
    "h": 2,
    "walk": [
@@ -677,10 +765,150 @@
     ]
    },
    {
+    "id": "13_2",
+    "bottom": [
+     13,
+     2
+    ]
+   },
+   {
     "id": "12_3",
     "bottom": [
      12,
      3
+    ]
+   },
+   {
+    "id": "13_3",
+    "bottom": [
+     13,
+     3
+    ]
+   },
+   {
+    "id": "14_2",
+    "bottom": [
+     14,
+     2
+    ]
+   },
+   {
+    "id": "15_2",
+    "bottom": [
+     15,
+     2
+    ]
+   },
+   {
+    "id": "14_3",
+    "bottom": [
+     14,
+     3
+    ]
+   },
+   {
+    "id": "15_3",
+    "bottom": [
+     15,
+     3
+    ]
+   },
+   {
+    "id": "0_4",
+    "bottom": [
+     0,
+     4
+    ]
+   },
+   {
+    "id": "1_4",
+    "bottom": [
+     1,
+     4
+    ]
+   },
+   {
+    "id": "0_5",
+    "bottom": [
+     0,
+     5
+    ]
+   },
+   {
+    "id": "1_5",
+    "bottom": [
+     1,
+     5
+    ]
+   },
+   {
+    "id": "2_4",
+    "bottom": [
+     2,
+     4
+    ]
+   },
+   {
+    "id": "3_4",
+    "bottom": [
+     3,
+     4
+    ]
+   },
+   {
+    "id": "2_5",
+    "bottom": [
+     2,
+     5
+    ]
+   },
+   {
+    "id": "3_5",
+    "bottom": [
+     3,
+     5
+    ]
+   },
+   {
+    "id": "4_4",
+    "bottom": [
+     4,
+     4
+    ]
+   },
+   {
+    "id": "5_4",
+    "bottom": [
+     5,
+     4
+    ]
+   },
+   {
+    "id": "4_5",
+    "bottom": [
+     4,
+     5
+    ]
+   },
+   {
+    "id": "5_5",
+    "bottom": [
+     5,
+     5
+    ]
+   },
+   {
+    "id": "6_4",
+    "bottom": [
+     6,
+     4
+    ]
+   },
+   {
+    "id": "6_5",
+    "bottom": [
+     6,
+     5
     ]
    }
   ]
@@ -1129,17 +1357,175 @@
    "door": null,
    "passable": []
   },
-  "mill_door_ajar": {
-   "_comment": "1x2 overlay: the mill door ajar, firelight (Route 17, optional)",
+  "courir_gap_w_bright": {
+   "_comment": "2x2 overlay: courir_gap_w with its ribbons in their own bright colours (unsnapped: needs palette room on the route set)",
    "rows": [
     [
      {
       "overlay": "le2:12_2"
+     },
+     {
+      "overlay": "le2:13_2"
      }
     ],
     [
      {
       "overlay": "le2:12_3"
+     },
+     {
+      "overlay": "le2:13_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  },
+  "bush_gate_e": {
+   "_comment": "2x2 overlay: a trail into the canopy (east) through an open split-rail gate, a horseshoe over it (Route 14, Galarian Zapdos)",
+   "rows": [
+    [
+     {
+      "overlay": "le2:14_2"
+     },
+     {
+      "overlay": "le2:15_2"
+     }
+    ],
+    [
+     {
+      "overlay": "le2:14_3"
+     },
+     {
+      "overlay": "le2:15_3"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  },
+  "bush_gate_e_shut": {
+   "_comment": "2x2 overlay: the same, the rails across it (sealed)",
+   "rows": [
+    [
+     {
+      "overlay": "le2:0_4"
+     },
+     {
+      "overlay": "le2:1_4"
+     }
+    ],
+    [
+     {
+      "overlay": "le2:0_5"
+     },
+     {
+      "overlay": "le2:1_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "pier_stub": {
+   "_comment": "2x2 overlay: a stub of the old pavilion's pier in the lake, planks on pilings, a lamp (Route 10, by Surf; Galarian Articuno)",
+   "rows": [
+    [
+     {
+      "overlay": "le2:2_4"
+     },
+     {
+      "overlay": "le2:3_4"
+     }
+    ],
+    [
+     {
+      "overlay": "le2:2_5"
+     },
+     {
+      "overlay": "le2:3_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ]
+  },
+  "pier_pilings": {
+   "_comment": "2x2 overlay: only the pilings (sealed)",
+   "rows": [
+    [
+     {
+      "overlay": "le2:4_4"
+     },
+     {
+      "overlay": "le2:5_4"
+     }
+    ],
+    [
+     {
+      "overlay": "le2:4_5"
+     },
+     {
+      "overlay": "le2:5_5"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": []
+  },
+  "mill_door_ajar": {
+   "_comment": "1x2 overlay: the mill door ajar, firelight (Route 17, optional)",
+   "rows": [
+    [
+     {
+      "overlay": "le2:6_4"
+     }
+    ],
+    [
+     {
+      "overlay": "le2:6_5"
      }
     ]
    ],
@@ -1327,7 +1713,7 @@
    "lair": "ogerpon",
    "open": [
     [
-     "courir_gap_w",
+     "courir_gap_w_bright",
      0,
      25
     ]
@@ -1339,6 +1725,14 @@
      25
     ]
    ],
+   "fallback_open": [
+    [
+     "courir_gap_w",
+     0,
+     25
+    ]
+   ],
+   "note": "courir_gap_w_bright keeps the Courir ribbons bright (approved: spend palette room on the route set, whose 7 slots are all in use, so compose must repack them); courir_gap_w is the snapped fallback that needs none",
    "trigger": [
     [
      0,
@@ -1383,7 +1777,7 @@
   },
   "Route14": {
    "tileset": "orleans_route_b",
-   "lair": "galar",
+   "lair": "galar_moltres",
    "open": [
     [
      "sally_port_w",
@@ -1415,6 +1809,77 @@
     "RIGHT"
    ],
    "opens": "story 45"
+  },
+  "Route14_E": {
+   "tileset": "orleans_route_b",
+   "lair": "galar_zapdos",
+   "open": [
+    [
+     "bush_gate_e",
+     26,
+     19
+    ]
+   ],
+   "sealed": [
+    [
+     "bush_gate_e_shut",
+     26,
+     19
+    ]
+   ],
+   "trigger": [
+    [
+     27,
+     19
+    ],
+    [
+     27,
+     20
+    ]
+   ],
+   "heading": "east",
+   "back": [
+    25,
+    19,
+    "LEFT"
+   ],
+   "opens": "story 45"
+  },
+  "Route10": {
+   "tileset": "orleans_route",
+   "lair": "galar_articuno",
+   "open": [
+    [
+     "pier_stub",
+     30,
+     12
+    ]
+   ],
+   "sealed": [
+    [
+     "pier_pilings",
+     30,
+     12
+    ]
+   ],
+   "trigger": [
+    [
+     30,
+     12
+    ],
+    [
+     31,
+     12
+    ]
+   ],
+   "heading": "north",
+   "back": [
+    30,
+    13,
+    "DOWN"
+   ],
+   "opens": "story 45",
+   "note": "reached by Surf: in the open state the four plank cells must be walkable land (collision 0, a normal ground behaviour, not water) so the player can step off the water onto them; the warp fires on the north row"
   },
   "Route17": {
    "tileset": "orleans_capital",

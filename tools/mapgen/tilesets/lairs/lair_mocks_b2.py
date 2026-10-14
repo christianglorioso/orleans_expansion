@@ -155,13 +155,16 @@ def zapdos(P):
 
 def thundurus(P):
     base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), "r": ("ls:riprap0", False), "n": ("ls:slope_n0", False),
-            "c": ("ls:crown0", True), "s": ("ls:slope_s0", True), "t": ("ls:toe0", True), "x": ("ls:scorch_C", True)}
-    sets = [("x", set_res("ls", "scorch", (".",)), True)]
+            "c": ("ls:crown0", True), "s": ("ls:slope_s0", True), "t": ("ls:toe0", True), "x": ("ls:scorch_C", True),
+            "o": ("P:ekat:water_C", False)}
+    sets = [("x", set_res("ls", "scorch", (".",)), True),
+            ("o", lambda k, o: f"P:ekat:water_{k}" if o <= {"."} else None, False)]   # the borrow pit (the river '~' stays plain)
     m = LairMapB2(20, 16, base, sets, {"ls": P}, wall_style="swamp")
-    frame_b2(m, "w", 5, n=[2] + [1] * 8 + [2], s=[2, 1, 2, 1, 1, 1, 1, 1, 1, 2], w=[2, 1, 1, 1, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 2, 1, 2])
+    frame_b2(m, "w", 5, n=[2] + [1] * 8 + [2], s=[2, 1, 2, 1, 1, 1, 1, 1, 1, 2], w=[2, 1, 1, 1, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 1, 1, 2])
     for (row, ch) in [(2, "~"), (3, "~"), (4, "r"), (5, "n"), (6, "c"), (7, "s"), (8, "t")]:
         m.rect(ch, 0, row, 20, 1)
-    m.disc("x", 7.4, 12.0, 1.6, 0.9)                      # where the last bolt came down
+    m.disc("x", 16.0, 11.4, 1.2, 0.9)                     # where the last bolt came down
+    m.disc("o", 7.0, 11.6, 2.0, 1.1)                      # the borrow pit the levee's earth was dug from, filled with rain
     m.reserved |= set([(10, 6), (10, 7), (3, 10), (4, 10), (5, 10), (6, 10), (7, 10), (8, 10), (9, 10), (10, 10), (10, 9), (10, 8)])
     m.resolve()
     m.fixed = {}
@@ -171,7 +174,15 @@ def thundurus(P):
             for b in ("riprap", "slope_n", "crown", "slope_s", "toe"):
                 if n == f"ls:{b}0" and x & 1:
                     m.fixed[(x, y)] = f"ls:{b}1"
-    place(m, P, "ls", [(12, 9, "shack"), (15, 9, "bell_post"), (4, 9, "struck_pole"), (8, 12, "glass")], "thundurus")
+    place(m, P, "ls", [(12, 9, "shack"), (15, 9, "bell_post"), (16, 8, "struck_pole"), (16, 12, "glass"), (10, 11, "stone_pile"),
+                       (11, 12, "stone_pile"), (3, 11, "fence_v"), (4, 12, "fence_h")], "thundurus")
+    for x in range(5, 10):
+        if free(m, x, 9) and (x, 9) not in m.reserved and (x, 9) not in occupied(m):
+            m.prop("ls", "fence_h", x, 9)                 # a fence along the levee's foot
+    m.resolve()
+    for (x, y) in [(5, 11), (7, 12)]:
+        if m.names[y][x] == "P:ekat:water_C" and (x, y) not in occupied(m):
+            pp(m, "ekat:water_lily", x, y)
     for (x, y, n) in [(4, 6, "sandbags"), (14, 6, "sandbags"), (7, 6, "mile_post")]:
         m.prop("ls", n, x, y)                             # on the crown road (a band, not plain ground: placed by hand)
     m.obj("thundurus", 10, 6, "Thundurus (post-game) on the levee crown")
@@ -181,7 +192,8 @@ def thundurus(P):
         "20x16, unconnected, swamp canopy over the river and the woods (irregular to the south), the way in from the WEST (rows 10-11),",
         "as the Route 12 steps head east. The levee crown above the river in a thunderstorm, in the in-game levee's colours: riprap at",
         "the waterline, the shaded river face, the shell-and-gravel crown road, the lit landward slope. The watchman's shack with its",
-        "storm lantern lit, the crevasse bell, sandbags, a mile marker, a line pole split by lightning and the scorch where it struck.",
+        "storm lantern lit, the crevasse bell, sandbags, a mile marker, a line pole split by lightning and the scorch where it struck;",
+        "at the levee's foot a fence, the borrow pit its earth was dug from (rain-filled, lily pads), stockpiled riprap stone.",
         "Thundurus at (10,6) on the crown, the player at (10,7).",
     ]
     return m
@@ -197,54 +209,25 @@ def place(m, P, prefix, items, label, ground="."):
     Cells in m.reserved (the encounter, the stand cell, the arrival and the exits) are never covered. Every cell must hold the
     terrain the prop is drawn on (`ground`, or a 4th item element), so no prop shows a square of the wrong ground round it."""
     reserved = set(getattr(m, "reserved", set()))
+    m.resolve()
+    occ = occupied(m)
+
+    def plain(cx, cy, need):
+        """the cell holds `need` as its plain base metatile (no transition under it), off the wall's edge, not under a prop"""
+        return (m.g[cy][cx] == need and m.names[cy][cx] == m.base[need][0] and (cx, cy) not in m.wall and not m.edge_cell(cx, cy)
+                and (cx, cy) not in occ)
     for it in items:
         x, y, n = it[:3]
         need = it[3] if len(it) > 3 else ground
         cv = P.items[n]["cv"]
         for (dx, dy) in OFFSETS:
             cells = [(x + dx + i, y + dy + j) for i in range(cv.cw) for j in range(cv.ch)]
-            if all(0 <= cx < m.W and 0 <= cy < m.H and m.g[cy][cx] == need and free(m, cx, cy, need)
-                   and (cx, cy) not in reserved for (cx, cy) in cells):
+            if all(0 <= cx < m.W and 0 <= cy < m.H and plain(cx, cy, need) and (cx, cy) not in reserved for (cx, cy) in cells):
                 m.prop(prefix, n, x + dx, y + dy)
+                occ |= set(cells)
                 break
         else:
             print(f"{label}: no room for {n} near {(x, y)}")
-
-def galar(P):
-    base = {".": ("P:ekat:grass", True), "f": ("lf:floor_C", True)}
-    sets = [("f", set_res("lf", "floor", (".",)), True)]
-    m = LairMapB2(20, 16, base, sets, {"lf": P}, wall_style="swamp")
-    frame_b2(m, "e", 4, n=[2] + [1] * 8 + [2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 1, 2, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 1, 2, 2])
-    m.disc("f", 10.0, 9.0, 6.2, 3.3)                      # the old dance floor round the bandstand
-    m.reserved |= set([(6, 5), (6, 6), (10, 9), (10, 10), (15, 9), (15, 10), (16, 8), (17, 8)])
-    m.resolve()
-    m.prop("lf", "casemate_glow", 5, 3)
-    m.prop("lf", "rampart", 7, 3)
-    m.prop("lf", "rampart_ivy", 8, 3)
-    m.prop("lf", "casemate", 9, 3)
-    m.prop("lf", "rampart_ivy", 11, 3)
-    m.prop("lf", "rampart", 12, 3)
-    m.prop("lf", "casemate", 13, 3)
-    m.prop("lf", "bandstand", 8, 6)
-    place(m, P, "lf", [(16, 3, "pier"), (16, 5, "pier"), (3, 9, "lamp"), (16, 10, "lamp"), (7, 12, "cannon"), (5, 12, "carousel_horse"),
-                       (9, 12, "shot"), (4, 5, "rubble"), (3, 4, "rubble")], "galar")
-    for (x, y) in [(4, 9), (16, 11), (15, 5), (4, 8)]:
-        if free(m, x, y):
-            m.prop("lf", "festoon", x, y)
-    m.obj("moltres_g", 6, 5, "Galarian Moltres (post-game) before its casemate")
-    m.obj("articuno_g", 10, 9, "Galarian Articuno (post-game) on the bandstand steps")
-    m.obj("zapdos_g", 15, 9, "Galarian Zapdos (post-game) strutting on the dance floor")
-    m.obj("player", 10, 10, "the player before the bandstand, facing north (Moltres: stand (6,6); Zapdos: stand (15,10))")
-    m.weather = "WEATHER_SHADE (the woods have closed over the fort; the day/night tint makes it at dusk)"
-    m.notes = [
-        "20x16, unconnected, an irregular swamp canopy wall; the way in from the EAST (rows 8-9), as the Route 14 sally port faces west.",
-        "Spanish Fort: an old brick fort in the marsh south of the city, turned jazz-age pleasure garden, then abandoned. The north",
-        "rampart with its arched casemates (brick of the Drowned Ward); on the parade ground the bandstand under its verdigris dome,",
-        "the cracked terrazzo dance floor, lamp posts with broken globes, strings of dead bulbs, a fallen carousel horse, a cannon.",
-        "The three Galarian birds keep it like a band that never left: Moltres in the dark casemate (violet embers) at (6,5),",
-        "Articuno on the bandstand steps at (10,9), Zapdos on the dance floor at (15,9). Stand cells (6,6), (10,10), (15,10).",
-    ]
-    return m
 
 
 # ---------------------------------------------------------------- Moltres: the sugarhouse (lm, on the interiors' primary)
@@ -331,9 +314,11 @@ ENTRANCES = {
     "landorus": ("Route23_S", "Route23", (20, 31, 16, 9), [("ovl", "field_gate_shut", 27, 38)], [("ovl", "field_gate", 27, 38)]),
     "thundurus": ("Route12", "Route12", (14, 16, 14, 12), [("ovl", "levee_steps_e_log", 25, 22)], [("ovl", "levee_steps_e", 25, 22)]),
     "zarude": ("Route13_E", "Route13", (14, 19, 14, 12), [("ovl", "liana_curtain_e", 26, 25)], [("ovl", "liana_gap_e", 26, 25)]),
-    "ogerpon": ("Route13_W", "Route13", (0, 19, 14, 12), [("ovl", "liana_curtain_w", 0, 25)], [("ovl", "courir_gap_w", 0, 25)]),
+    "ogerpon": ("Route13_W", "Route13", (0, 19, 14, 12), [("ovl", "liana_curtain_w", 0, 25)], [("ovl", "courir_gap_w_bright", 0, 25)]),
     "tornadus": ("Route3", "Route3", (18, 0, 18, 12), [("fill", "swamp_marsh", 27, 0, 2, 2)], []),
-    "galar": ("Route14", "Route14", (0, 2, 14, 12), [("ovl", "sally_port_w_bricked", 0, 7)], [("ovl", "sally_port_w", 0, 7)]),
+    "galar_moltres": ("Route14", "Route14", (0, 2, 14, 12), [("ovl", "sally_port_w_bricked", 0, 7)], [("ovl", "sally_port_w", 0, 7)]),
+    "galar_zapdos": ("Route14_E", "Route14", (14, 13, 14, 12), [("ovl", "bush_gate_e_shut", 26, 19)], [("ovl", "bush_gate_e", 26, 19)]),
+    "galar_articuno": ("Route10", "Route10", (22, 6, 16, 12), [("ovl", "pier_pilings", 30, 12)], [("ovl", "pier_stub", 30, 12)]),
     "moltres": ("Route17", "Route17", (26, 2, 16, 11), [], []),
 }
 
@@ -355,13 +340,20 @@ ENTRANCE_NOTES = {
                "Sealed: a curtain of lianas. Open from story 45: the lianas pulled aside, a trail into the trees.",
                "Walking east into (27,25) or (27,26) warps to the Deep Wood; it returns to (26,26) facing west."],
     "ogerpon": ["Route 13, the bay in the west canopy at rows 25-26, across the road from Ogerpon's old cell.",
-                "Sealed: a curtain of lianas. Open from story 45: a trail into the trees, a ribbon-stake in the Courir's colours.",
+                "Sealed: a curtain of lianas. Open from story 45: a trail into the trees, a ribbon-stake in the Courir's own bright colours",
+                "(courir_gap_w_bright: approved to spend palette room on the route set; courir_gap_w is the snapped fallback).",
                 "Walking west into (0,25) or (0,26) warps to the Courir glade; it returns to (2,25) facing east."],
     "tornadus": ["Route 3, the marsh notch in the north canopy at x 27-28 (rows 1-2), just east of the rest area's dirt spur.",
                  "Route 3 is on the Crescent tileset, which is full (510/512 tiles): no new art, as Raikou's Route 2. Sealed: the notch filled",
                  "with the canopy block (primary pieces). Open from story 45: the notch as built; walking north onto (27,1) or (28,1) warps to",
                  "the Wind's Eye (it returns to (27,2) facing south). wind_gap_n (a windsock, the leaves combed east) is drawn if 16 tiles free up."],
-    "galar": ["Route 14, the bay in the west canopy at rows 7-8, the first on the way south out of Crescent City (outside the seam band).",
+    "galar_zapdos": ["Route 14, the bay in the east canopy at rows 19-20 (x 26-27), just north of the east pond; the rougarou's trail",
+                     "is 11 rows further south on the same wall. Sealed: a split-rail gate, its rails across the trail. Open from story 45: the",
+                     "rails slid back, a horseshoe nailed over it. Walking east into (27,19) or (27,20) warps to the Bush Track; back to (25,19)."],
+    "galar_articuno": ["Route 10 (a boat route east of the city), out in the open water at (30-31, 12-13): a stub of the old pavilion's",
+                       "pier. Sealed: only its pilings. Open from story 45: its planks on the pilings and a lamp; Surf to it, step onto the",
+                       "planks (they must be walkable land) and walk north onto (30,12) or (31,12) to reach the pavilion; back to (30,13)."],
+    "galar_moltres": ["Route 14, the bay in the west canopy at rows 7-8, the first on the way south out of Crescent City (outside the seam band).",
               "Sealed: the old fort's gate bricked up and grown over. Open from story 45: the brick piers, the trail between them.",
               "Walking west into (0,7) or (0,8) warps to Spanish Fort; it returns to (2,7) facing east."],
     "moltres": ["Route 17, the plank door of the sugar mill with the chimney (cell 33,9), the path already runs to it.",
@@ -756,7 +748,7 @@ def mesprit(P):
 def azelf(P):
     base = {"d": ("P:dry:0_0", True), ".": ("P:ekat:grass", True), "p": ("lh:spring_C", False), "k": ("lh:crack_C", True),
             "w": ("lh:straw_C", True)}
-    sets = [("p", set_res("lh", "spring", (".",)), False), (".", lambda k, o: f"lh:green_{k}" if o <= {"d"} else None, True),
+    sets = [("p", set_res("lh", "spring", (".",)), False), (".", lambda k, o: "P:ekat:grass" if k == "C" else (f"lh:green_{k}" if o <= {"d"} else None), True),
             ("k", set_res("lh", "crack", ("d",)), True), ("w", set_res("lh", "straw", ("d",)), True)]
     m = LairMapB2(20, 16, base, sets, {"lh": P}, wall_style="lh", fill="d")
     frame_b2(m, "s", 5, n=[2, 1, 1, 1, 1, 1, 1, 1, 2, 2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 2, 1, 1, 1, 1, 2], e=[2, 1, 1, 1, 2, 1, 1, 2])
@@ -786,45 +778,6 @@ def azelf(P):
     ]
     return m
 
-
-def zarude(P):
-    m = woods_map(P)
-    m.fill_ch = "t"
-    frame_b2(m, "w", 4, n=[2, 2, 2, 1, 1, 1, 1, 2, 2, 2], s=[2, 2, 1, 1, 1, 1, 1, 1, 2, 2], w=[2, 2, 1, 1, 1, 1, 2, 2], e=[2, 2, 1, 2, 1, 1, 2, 2])
-    clump(m, (2, 5), (7, 4))                              # the canopy pushing in
-    for y in range(m.H):                                  # undergrowth everywhere in the shade ...
-        for x in range(m.W):
-            m.g[y][x] = "t"
-    for x in range(0, 11):                                # ... but the trail in from the west to the tree
-        for y in (8, 9):
-            m.g[y][x] = "."
-    m.rect(".", 8, 7, 5, 3)                               # and the trodden ground before the bower
-    m.rect("~", 8, 10, 5, 2)                              # a black-water slough
-    m.reserved |= set([(10, 7), (10, 8), (9, 8), (8, 8), (7, 8), (6, 8), (5, 8), (4, 8), (3, 8)])
-    m.resolve()
-    m.prop("lj", "great_cypress", 8, 3)
-    m.resolve()
-    for y in range(9, 13):
-        k = {"P:ekat:water_N": "N", "P:ekat:water_C": "C", "P:ekat:water_S": "S"}.get(m.names[y][10])
-        if k:
-            m.prop("lj", f"log_bridge_{k}", 10, y)
-    place(m, P, "lj", [(12, 8, "larder")], "zarude", ground=".")
-    place(m, P, "lj", [(6, 6, "palmetto_t"), (13, 8, "palmetto_t"), (7, 6, "fern_t"), (4, 7, "roots_a"),
-                       (5, 6, "roots_b"), (12, 5, "roots_a"), (14, 6, "undergrowth"), (5, 4, "undergrowth"), (4, 5, "palmetto_t"),
-                       (15, 10, "undergrowth"), (6, 12, "fern_t"), (16, 8, "palmetto_t"), (5, 11, "palmetto_t"), (13, 12, "fern_t"),
-                       (3, 6, "fern_t"), (15, 4, "lianas_t"), (6, 10, "lianas_t"), (14, 11, "palmetto_t"), (16, 12, "fern_t"),
-                       (13, 4, "undergrowth"), (7, 4, "roots_b"), (3, 11, "undergrowth"), (12, 9, "roots_b")], "zarude", ground="t")
-    m.obj("zarude", 10, 7, "Zarude (post-game) before its bower in the great cypress")
-    m.obj("player", 10, 8, "the player, facing north")
-    m.weather = "WEATHER_SHADE (the deep wood's gloom)"
-    m.notes = [
-        "20x16, unconnected; the swamp canopy pushes in deep and irregular from every side, with clumps of it standing inside; the way",
-        "in from the WEST (rows 8-9), as the Route 13 trail heads east. The Deep Wood: tall grass and undergrowth in the shade, roots",
-        "crawling, palmettos and ferns, curtains of lianas; a black-water slough with a fallen trunk across it. At its head the giant",
-        "buttressed cypress, Zarude's bower of woven vines in its hollow, the troop's larder beside it.",
-        "Zarude at (10,7) before the bower, the player at (10,8).",
-    ]
-    return m
 
 
 def ogerpon(P):
@@ -894,6 +847,148 @@ def tornadus(P):
     return m
 
 
+# ---------------------------------------------------------------- revision 3: a lair for each Galarian bird (lf)
+def galar_moltres(P):
+    base = {".": ("P:ekat:grass", True), "f": ("lf:floor_C", True)}
+    sets = [("f", set_res("lf", "floor", (".",)), True)]
+    m = LairMapB2(20, 16, base, sets, {"lf": P}, wall_style="swamp")
+    frame_b2(m, "e", 4, n=[2] + [1] * 8 + [2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 1, 2, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 1, 2, 2])
+    m.reserved |= {(10, 6), (10, 7)} | {(x, 8) for x in range(11, 18)} | {(x, 7) for x in range(11, 18)}
+    m.disc("f", 9.6, 8.6, 5.6, 2.8)                       # the parade ground's old paving, broken
+    m.resolve()
+    m.prop("lf", "rampart", 5, 3)
+    m.prop("lf", "rampart_ivy", 6, 3)
+    m.prop("lf", "casemate", 7, 3)
+    m.prop("lf", "casemate_glow", 9, 3)
+    m.prop("lf", "casemate", 11, 3)
+    m.prop("lf", "rampart_ivy", 13, 3)
+    m.prop("lf", "rampart", 14, 3)
+    place(m, P, "lf", [(16, 3, "pier"), (3, 5, "pier"), (4, 11, "cannon"), (13, 11, "cannon"), (15, 11, "shot"), (3, 9, "lamp"),
+                       (16, 9, "lamp"), (7, 12, "carousel_horse"), (3, 4, "rubble"), (16, 6, "rubble"), (12, 12, "rubble"), (4, 7, "festoon"),
+                       (15, 5, "festoon")], "galar_moltres")
+    for (x, y) in [(7, 7), (12, 9), (6, 10)]:
+        if m.names[y][x] == "lf:floor_C" and (x, y) not in occupied(m):
+            pass
+    m.obj("moltres_g", 10, 6, "Galarian Moltres (post-game) before the casemate where its dark fire smoulders")
+    m.obj("player", 10, 7, "the player, facing north")
+    m.weather = "WEATHER_SHADE (the woods closed over the fort; best at night, the violet embers glowing)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall; the way in from the EAST (rows 8-9), as the Route 14 sally port faces west.",
+        "Spanish Fort, for Galarian Moltres alone: an old brick fort in the marsh south of the city (the Drowned Ward's brick), its",
+        "north rampart a row of arched casemates, violet embers smouldering in the dark of the middle one where Moltres keeps its fire.",
+        "The parade ground's broken paving, two old cannon and their shot, ruined piers, rubble, dead lamps and bulb strings from the",
+        "pleasure garden it became, a carousel horse fallen in the grass. Moltres at (10,6), the player at (10,7).",
+    ]
+    return m
+
+
+def galar_zapdos(P):
+    mud_keys = {n.split("ekat:mud_")[1] for n in PRIM if n.startswith("ekat:mud_")}
+    base = {".": ("P:ekat:grass", True), "m": ("P:ekat:mud_C", True)}
+    sets = [("m", lambda k, o: f"P:ekat:mud_{k}" if o <= {"."} and k in mud_keys else None, True)]
+    m = LairMapB2(20, 16, base, sets, {"lf": P}, wall_style="swamp")
+    frame_b2(m, "w", 4, n=[2, 1, 1, 2, 1, 1, 1, 1, 2, 2], s=[2, 2, 1, 1, 1, 2, 1, 1, 1, 2], w=[2, 1, 1, 1, 1, 1, 1, 2], e=[2, 1, 2, 1, 1, 1, 2, 2])
+    m.rect("m", 0, 7, 18, 3)                              # the track: a straight dirt strip, west to east
+    m.reserved |= {(12, 8), (12, 9)} | {(x, 8) for x in range(1, 12)}
+    m.resolve()
+    place(m, P, "lf", [(13, 2, "judge_stand"), (15, 3, "finish_post"), (6, 3, "benches"), (9, 3, "benches"), (4, 12, "benches"),
+                       (8, 12, "benches"), (12, 12, "hay"), (13, 12, "hay"), (16, 11, "hay"), (3, 5, "hay")], "galar_zapdos")
+    m.resolve()
+    occ = occupied(m)
+    for x in range(3, 18):                                # the white rail along both sides of the track
+        for y in (5, 11):
+            if m.names[y][x] == "P:ekat:grass" and not m.edge_cell(x, y) and (x, y) not in occ and (x, y) not in m.reserved:
+                m.prop("lf", "rail_h", x, y)
+    m.prop("lf", "start_gate", 3, 7)
+    m.obj("zapdos_g", 12, 8, "Galarian Zapdos (post-game) on the track, ready to run")
+    m.obj("player", 12, 9, "the player at the track's edge, facing north")
+    m.weather = "WEATHER_NONE (a hot, still afternoon in the country)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall; the way in from the WEST, along the track (rows 8-9), as the Route 14",
+        "gate faces east. The Bush Track, for Galarian Zapdos: a Cajun bush track, a straight dirt strip (the primary's mud) where",
+        "match races are run in the country, a plank starting gate at its west end, white rails along both sides, the judge's",
+        "stand and the finish post at the east end, plank benches, hay. Zapdos at (12,8) on the track, the player at (12,9).",
+    ]
+    return m
+
+
+def galar_articuno(P):
+    base = {"~": ("P:ekat:water_C", False), "k": ("lf:deck_C", True)}
+    sets = [("k", set_res("lf", "deck", ("~",)), True)]
+    m = LairMapB2(20, 16, base, sets, {"lf": P}, wall_style="swamp", fill="~")
+    frame_b2(m, "s", 5, n=[2, 2, 1, 1, 1, 1, 1, 2, 2, 2], s=[2, 1, 1, 2, 1, 1, 2, 1, 1, 2], w=[2, 2, 1, 1, 1, 1, 2, 2], e=[2, 1, 1, 1, 2, 2, 1, 2])
+    m.clear_chars = {"k"}
+    m.rect("k", 4, 3, 12, 7)                              # the pavilion's deck out on the lake
+    m.rect("k", 10, 9, 2, 7)                              # and its pier running south to the mooring
+    m.reserved |= {(10, 7), (10, 8)} | {(x, y) for x in (10, 11) for y in range(9, 16)}
+    m.resolve()
+    gap = [(x, y) for x in (10, 11) for y in range(10, 16) if m.names[y][x] != "lf:deck_C"]
+    m.fixed = {c: "lf:deck_C" for c in gap}               # the pier's planks through the wall's gap (over its water edge cells)
+    m.walk_fix = {c: True for c in gap}
+    m.prop("lf", "bandstand_d", 8, 4)
+    place(m, P, "lf", [(5, 4, "lamp_d", "k"), (14, 4, "lamp_d", "k"), (5, 7, "table", "k"), (7, 8, "table", "k"), (13, 7, "table", "k"),
+                       (14, 8, "gramophone", "k"), (6, 5, "festoon_d", "k"), (13, 5, "festoon_d", "k"), (8, 7, "festoon_d", "k")],
+          "galar_articuno")
+    for (x, y) in [(2, 10), (16, 11), (3, 3), (17, 4), (7, 11), (14, 12)]:
+        if m.g[y][x] == "~" and not m.edge_cell(x, y) and (x, y) not in occupied(m) and all(
+                m.ch(x + dx, y + dy) == "~" for dx in (0, 1) for dy in (0, 1)):
+            m.prop("lf", "piling", x, y)
+    m.obj("articuno_g", 10, 7, "Galarian Articuno (post-game) on the bandstand's steps")
+    m.obj("player", 10, 8, "the player on the dance floor, facing north")
+    m.weather = "WEATHER_FOG_HORIZONTAL (mist on the lake)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall standing in the lake; reached by Surf from Route 10's pier stub, the way",
+        "in from the south along the pavilion's own pier (rows 13-15 are its planks over the water). The Milneburg pavilion, for",
+        "Galarian Articuno: a jazz-age dance pavilion out on the lake on its pilings, where bands played the camps' weekends: a",
+        "railed plank deck, the bandstand under its verdigris dome, cafe tables, lamps, dead bulb strings, a gramophone left playing",
+        "to nobody; old pilings where the deck has gone. Articuno at (10,7), the player at (10,8).",
+    ]
+    return m
+
+
+def zarude(P):
+    m = woods_map(P)
+    m.fill_ch = "t"
+    frame_b2(m, "w", 4, n=[2, 2, 2, 1, 1, 1, 1, 2, 2, 2], s=[2, 2, 1, 1, 1, 1, 1, 1, 2, 2], w=[2, 2, 1, 1, 1, 1, 2, 2], e=[2, 2, 1, 2, 1, 1, 2, 2])
+    clump(m, (2, 5), (7, 4))                              # the canopy pushing in
+    for y in range(m.H):                                  # undergrowth in irregular drifts: smooth noise, not rows
+        for x in range(m.W):
+            v = (K.hashn(x // 2, y // 2, 731) * 0.6 + K.hashn(x, y, 732) * 0.25 + K.hashn((x + 1) // 3, (y + 1) // 3, 733) * 0.4)
+            m.g[y][x] = "t" if v > 0.52 else "."
+    for x in range(0, 11):                                # the trail in from the west to the tree
+        for y in (8, 9):
+            m.g[y][x] = "."
+    m.rect(".", 8, 7, 5, 3)                               # and the trodden ground before the bower
+    m.rect("~", 8, 10, 5, 2)                              # a black-water slough
+    m.reserved |= set([(10, 7), (10, 8), (9, 8), (8, 8), (7, 8), (6, 8), (5, 8), (4, 8), (3, 8)])
+    m.resolve()
+    m.prop("lj", "great_cypress", 8, 3)
+    m.resolve()
+    for y in range(9, 13):
+        k = {"P:ekat:water_N": "N", "P:ekat:water_C": "C", "P:ekat:water_S": "S"}.get(m.names[y][10])
+        if k:
+            m.prop("lj", f"log_bridge_{k}", 10, y)
+    place(m, P, "lj", [(12, 8, "larder")], "zarude")
+    place(m, P, "lj", [(6, 6, "palmetto_t"), (13, 8, "palmetto_t"), (7, 6, "fern_t"), (4, 7, "roots_a"), (5, 6, "roots_b"), (12, 5, "roots_a"),
+                       (14, 6, "undergrowth"), (5, 4, "undergrowth"), (4, 5, "palmetto_t"), (15, 10, "undergrowth"), (6, 12, "fern_t"),
+                       (16, 8, "palmetto_t"), (5, 11, "palmetto_t"), (13, 12, "fern_t"), (3, 6, "fern_t"), (15, 4, "lianas_t"),
+                       (6, 10, "lianas_t"), (14, 11, "palmetto_t"), (16, 12, "fern_t"), (13, 4, "undergrowth"), (7, 4, "roots_b"),
+                       (3, 11, "undergrowth")], "zarude", ground="t")
+    place(m, P, "lj", [(3, 10, "palmetto"), (14, 9, "palmetto"), (5, 5, "palmetto"), (12, 4, "lianas"), (16, 6, "palmetto"),
+                       (4, 12, "palmetto"), (7, 12, "fern_w"), (15, 12, "fern_w")], "zarude")
+    m.obj("zarude", 10, 7, "Zarude (post-game) before its bower in the great cypress")
+    m.obj("player", 10, 8, "the player, facing north")
+    m.weather = "WEATHER_SHADE (the deep wood's gloom)"
+    m.notes = [
+        "20x16, unconnected; the swamp canopy pushes in deep and irregular from every side, with clumps of it standing inside; the way",
+        "in from the WEST (rows 8-9), as the Route 13 trail heads east. The Deep Wood: tall grass and undergrowth in irregular drifts",
+        "under the shade, roots crawling, palmettos and ferns, curtains of lianas; a black-water slough with a fallen trunk across it.",
+        "At its head the giant buttressed cypress, Zarude's bower of woven vines in its hollow, the troop's larder beside it.",
+        "Zarude at (10,7) before the bower, the player at (10,8).",
+    ]
+    return m
+
+
 # ---------------------------------------------------------------- the pipeline
 TILESETS = [  # (art script, module, recipe dir, sheet, prefix, primary dir, lairs, extends batch 1?)
     ("make_lair_trio.py", "make_lair_trio", "orleans_lair_trio", "lair_trio.png", "lt", "orleans_general",
@@ -916,7 +1011,9 @@ LAIRS = [  # (key, title, builder, prefix of its pieces)
     ("zarude", "Zarude's Deep Wood, off Route 13", "zarude", "lj"),
     ("ogerpon", "Ogerpon's Courir glade, off Route 13", "ogerpon", "lj"),
     ("tornadus", "Tornadus in the Wind's Eye, off Route 3", "tornadus", "lj"),
-    ("galar", "The Galarian birds at Spanish Fort, off Route 14", "galar", "lf"),
+    ("galar_moltres", "Galarian Moltres at Spanish Fort, off Route 14 (west)", "galar_moltres", "lf"),
+    ("galar_zapdos", "Galarian Zapdos at the Bush Track, off Route 14 (east)", "galar_zapdos", "lf"),
+    ("galar_articuno", "Galarian Articuno at the Milneburg pavilion, off Route 10 (by Surf)", "galar_articuno", "lf"),
     ("moltres", "Moltres in the sugarhouse of the Route 17 mill", "moltres", "lm"),
     ("landorus", "Landorus: the Field That Always Bears, off Route 23", "landorus", "lh"),
 ]
@@ -930,7 +1027,9 @@ ENTRY = {
     "zarude": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route13 (26,26), facing west"},
     "ogerpon": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route13 (2,25), facing east"},
     "tornadus": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route3 (27,2), facing south"},
-    "galar": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route14 (2,7), facing east"},
+    "galar_moltres": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route14 (2,7), facing east"},
+    "galar_zapdos": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route14 (25,19), facing west"},
+    "galar_articuno": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route10 (30,13), facing south (on the pier stub's planks)"},
     "moltres": {"arrive": [9, 12], "exit": [[9, 13]], "to": "Route17 (33,10), facing south (the mill door)"},
     "landorus": {"arrive": [10, 13], "exit": [[10, 14], [11, 14]], "to": "Route23 (27,37), facing north"},
 }
@@ -945,7 +1044,9 @@ BEFORE = {
     "zarude": "Before story 45 the Route 13 trail east is a curtain of lianas; afterwards the lianas are parted.",
     "ogerpon": "Before story 45 the Route 13 trail west is a curtain of lianas; afterwards a Courir flag marks it, open.",
     "tornadus": "Before story 45 the Route 3 gap in the canopy is overgrown (the canopy as built); afterwards a wind-bent trail opens.",
-    "galar": "Before story 45 the Route 14 sally port is bricked up and overgrown; afterwards the brick has fallen in and it is open.",
+    "galar_moltres": "Before story 45 the Route 14 sally port is bricked up and overgrown; afterwards the brick has fallen in and it is open.",
+    "galar_zapdos": "Before story 45 the Route 14 gate's rails are across the trail; afterwards they are slid back.",
+    "galar_articuno": "Before story 45 only the pier stub's pilings stand in Route 10's water; afterwards its planks are back (walkable).",
     "moltres": "Before story 45 the mill door is barred (a locked-door message: heat comes through the planks); afterwards the bar is off.",
     "landorus": "Before story 45 the Route 23 field gate is shut and chained; afterwards it stands open.",
 }
