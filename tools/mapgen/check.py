@@ -147,7 +147,7 @@ def main(args):
     for y in range(b.h):
         for x in range(b.w):
             n = tname(x, y)
-            if n.startswith(OBJECT_PREFIXES) or n.startswith(("ekat:", "patch:blend_", "patch:lv_", "patch:ap_", "dry:")):
+            if n.startswith(OBJECT_PREFIXES) or n.startswith(("ekat:", "patch:blend_", "patch:lv_", "patch:ap_", "dry:", "pss:")):
                 continue  # dry:* are the dry set's own edge pieces: they carry their dark grass outline
             off = [c for c in ts.metatile(b.blocks[y][x] & 0x3FF).getdata() if grassy(c)]
             if len(off) >= 4:
