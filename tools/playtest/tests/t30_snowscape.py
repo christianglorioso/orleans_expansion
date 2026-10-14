@@ -114,10 +114,24 @@ def run(b, t):
     b.press("A", 6, 10)
     b.frames(120)
     t.check("TROPHIES opens", "AchievementsMenu" in b.callback2_name(), b.callback2_name())
-    for page in range(7):             # every page, cursor 20 rows down (the Collection page holds the Legend rows)
-        for _ in range(20):
-            b.press("DOWN", 4, 6)
-        b.frames(20)
-        b.shot("page%d_row20" % page)
+    # no trophy description clips in the footer panel: walk every row of every page, find the right-most text pixel (white on the blue panel)
+    from PIL import Image
+    widest = []
+    for page in range(7):
+        seen = set()
+        for row in range(60):
+            b.frames(8)
+            png = b.shot("p%d_r%d" % (page, row))
+            im = Image.open(png).convert("RGB")
+            h = hash(im.tobytes())
+            if h in seen:
+                break
+            seen.add(h)
+            xs = [x for y in range(250, 316) for x in range(0, 480) if min(im.getpixel((x, y))) > 200]
+            widest.append((max(xs) if xs else 0, str(png)))
+            b.press("DOWN", 4, 12)
         b.press("RIGHT", 4, 20)
         b.frames(30)
+    widest.sort(reverse=True)
+    t.note("widest footer lines: %s" % widest[:8])
+    t.check("no trophy footer line reaches the panel edge (widest text pixel x=%d of 480)" % widest[0][0], widest[0][0] < 452, widest[:3])

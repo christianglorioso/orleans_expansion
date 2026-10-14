@@ -36,6 +36,11 @@ mismatches = []
 info = []
 
 
+# Deliberate fix-phase decisions (D9) that differ from the sheet, exactly these and nothing else:
+DELIBERATE_EGG = {"Budew": ["MOVE_BULLET_SEED", "MOVE_POWER_WHIP"]}      # the sheet lists these two as Roselia egg moves; breeding/relearner use the base species
+DELIBERATE_LEVELUP = {"Alolan Raichu": [("MOVE_DOUBLE_KICK", 9), ("MOVE_SWIFT", 15), ("MOVE_ZIPPY_ZAP", 20), ("MOVE_SPLISHY_SPLASH", 36), ("MOVE_WILD_CHARGE", 50)]}  # Pikachu's pre-evolution relearn
+
+
 def bad(section, msg):
     mismatches.append(f"[{section}] {msg}")
 
@@ -178,10 +183,11 @@ def main():
     for r in rows:
         p = r["ptr_lv"]
         want_lv = sorted((m, l) for l, m in r["levelup"])
+        want_lv = sorted(want_lv + DELIBERATE_LEVELUP.get(r["name"], []))
         if lv.get(p) is None or sorted(lv[p]) != want_lv:
             bad("level-up", f"{r['name']}: built {len(lv.get(p) or [])} moves vs sheet {len(want_lv)}")
         if r["ptr_egg"] and "None" not in r["ptr_egg"]:
-            if sorted(eg.get(r["ptr_egg"], [])) != sorted(r["egg"]):
+            if sorted(eg.get(r["ptr_egg"], [])) != sorted(r["egg"] + DELIBERATE_EGG.get(r["name"], [])):
                 bad("egg", f"{r['name']}: built {sorted(eg.get(r['ptr_egg'], []))[:4]}.. vs sheet {sorted(r['egg'])[:4]}..")
         got = set(tc.get(r["ptr_tm"], []))
         want_t = set(r["tm"]) | set(r["tutor"])
