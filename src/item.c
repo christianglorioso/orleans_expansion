@@ -309,6 +309,16 @@ static bool32 NONNULL BagPocket_AddItem(struct BagPocket *pocket, enum Item item
 {
     u32 itemLookupIndex, itemAddIndex = 0;
 
+    // Orleans: reusable TMs (I_REUSABLE_TMS) are one-per-player; a gift or prize of a TM already in the bag is absorbed, never stacked
+    if (pocket->id == POCKET_TM_HM && GetItemImportance(itemId))
+    {
+        for (itemLookupIndex = 0; itemLookupIndex < pocket->capacity; itemLookupIndex++)
+        {
+            if (BagPocket_GetSlotData(pocket, itemLookupIndex).itemId == itemId)
+                return TRUE;
+        }
+    }
+
     // First, check that there is a free slot for this item
     u16 *tempPocketSlotQuantities = AllocZeroed(sizeof(u16) * pocket->capacity);
 

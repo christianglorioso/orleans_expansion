@@ -355,6 +355,13 @@ bool32 IsPlayerTextSpeedInstant(void)
     return GetPlayerTextSpeed() == OPTIONS_TEXT_SPEED_INSTANT;
 }
 
+// Orleans: the text printers live in the heap; when the heap is reset (MoveSaveBlocks_ResetHeap) the list must be dropped with it, or the next
+// DeactivateAllTextPrinters frees blocks that no longer exist (a warp during a message corrupted the heap and crashed).
+void ResetTextPrinterList(void)
+{
+    sFirstTextPrinter = NULL;
+}
+
 void DeactivateAllTextPrinters(void)
 {
     struct TextPrinter *currentPrinter = sFirstTextPrinter;

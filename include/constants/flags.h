@@ -339,8 +339,8 @@
 #define FLAG_DEXNAV_OBTAINED                             0x129 // DexNav: searching / obtained (Start menu entry) / hidden-Pokemon detector mode
 #define FLAG_RECEIVED_BELDUM                 0x12A
 #define FLAG_DN_HIDDEN_MODE                              0x12B // DexNav: searching / obtained (Start menu entry) / hidden-Pokemon detector mode
-#define FLAG_ORLEANS_POOL_149                           0x12C
-#define FLAG_ORLEANS_POOL_150                           0x12D
+#define FLAG_EXP_SHARE_ON                                0x12C // Exp. Share key item toggle (I_EXP_SHARE_FLAG; set = party-wide Exp on)
+#define FLAG_LAFAYETTE_EXP_SHARE                         0x12D // Lafayette gave the Exp. Share (ch3)
 #define FLAG_ORLEANS_POOL_151                           0x12E
 #define FLAG_HAS_MATCH_CALL                  0x12F
 #define FLAG_ADDED_MATCH_CALL_TO_POKENAV     0x130

@@ -277,6 +277,25 @@ int main(int argc, char **argv) {
             }
             printf("OK %s pc=%08x lr=%08x r0=%08x r1=%08x sp=%08x\n", hit ? "HIT" : "MISS", (uint32_t) c->gprs[15], c->gprs[14], c->gprs[0], c->gprs[1], c->gprs[13]);
         }
+        else if (!strcmp(cmd, "stepto") && a1) {
+            /* step instruction by instruction until ADDR (thumb entry) is about to run, at most N frames; prints lr, sp and 48 stack words */
+            uint32_t target = strtoul(a1, 0, 0) & ~1u; uint64_t maxf = a2 ? strtoull(a2, 0, 0) : 60; struct ARMCore *c = core->cpu;
+            uint32_t startFc = core->frameCounter(core); int hit = 0; core->setKeys(core, keys_held);
+            static uint32_t ring[8192]; unsigned ri = 0; while (core->frameCounter(core) - startFc < maxf && !hit) { core->step(core); ring[ri++ & 8191] = (uint32_t) c->gprs[15] - 4; if ((uint32_t) c->gprs[15] == target + 4 && c->cpsr.t) hit = 1; } if (hit) { printf("RING"); for (unsigned i = 0; i < 8192; i++) printf(" %08x", ring[(ri + i) & 8191]); printf("%c", 10); }
+            total_frames += core->frameCounter(core) - startFc;
+            printf("OK %s lr=%08x sp=%08x r0=%08x r1=%08x r2=%08x r3=%08x stack", hit ? "HIT" : "MISS", c->gprs[14], c->gprs[13], c->gprs[0], c->gprs[1], c->gprs[2], c->gprs[3]);
+            for (int i = 0; i < 48; i++) printf(" %08x", core->busRead32(core, c->gprs[13] + 4 * i));
+            printf("\n");
+        }
+        else if (!strcmp(cmd, "watchring") && a1 && a2) {
+            /* step until the 32-bit word at ADDR changes (at most N frames); prints the last 8192 executed pcs (RING ...) then OK CHG old new sp */
+            uint32_t wa = strtoul(a1, 0, 0); uint64_t maxf = strtoull(a2, 0, 0); struct ARMCore *c = core->cpu; static uint32_t ring[8192]; unsigned ri = 0; int hit = 0;
+            uint32_t startFc = core->frameCounter(core); uint32_t old = core->busRead32(core, wa); core->setKeys(core, keys_held);
+            while (core->frameCounter(core) - startFc < maxf && !hit) { core->step(core); ring[ri++ & 8191] = (uint32_t) c->gprs[15]; if (core->busRead32(core, wa) != old) hit = 1; }
+            total_frames += core->frameCounter(core) - startFc;
+            printf("RING"); for (unsigned i = 0; i < 8192; i++) printf(" %08x", ring[(ri + i) & 8191]); printf("%c", 10);
+            printf("OK %s old=%08x new=%08x sp=%08x r0=%08x r1=%08x r2=%08x r3=%08x lr=%08x%c", hit ? "CHG" : "NONE", old, core->busRead32(core, wa), c->gprs[13], c->gprs[0], c->gprs[1], c->gprs[2], c->gprs[3], c->gprs[14], 10);
+        }
         else if (!strcmp(cmd, "trace") && a1) {
             /* per-instruction run for N frames with a ring buffer of the last 4096 pcs/sps; stops at a wild pc or the reset vector.
                prints the trail (oldest first) to the file in a2 (or stdout summary) */

@@ -10,6 +10,7 @@ CrescentCity_Conservation_EventScript_Lafayette0::
 	goto_if_lt VAR_ORLEANS_STORY, 14, CrescentCity_Conservation_EventScript_FirstBriefing
 	call Common_EventScript_AchievementRewards
 	call_if_unset FLAG_DEXNAV_OBTAINED, CrescentCity_Conservation_EventScript_GiveDexNav
+	call_if_unset FLAG_LAFAYETTE_EXP_SHARE, CrescentCity_Conservation_EventScript_GiveExpShare
 	checkitem ITEM_DOME_FOSSIL
 	goto_if_eq VAR_RESULT, TRUE, CrescentCity_Conservation_EventScript_KabutoRevive
 @ After the shrine fight (story 43+) Lafayette hands over the BELDUM that splintered off Andrew's Mega Metagross (once).
@@ -92,6 +93,7 @@ CrescentCity_Conservation_EventScript_Progress15:
 CrescentCity_Conservation_EventScript_FirstBriefing:
 	msgbox CrescentCity_Conservation_Text_Inside, MSGBOX_DEFAULT
 	call CrescentCity_Conservation_EventScript_GiveDexNav
+	call CrescentCity_Conservation_EventScript_GiveExpShare
 	setvar VAR_ORLEANS_STORY, 14
 	setflag FLAG_HIDE_CRESCENT_LAFAYETTE
 	release
@@ -287,3 +289,34 @@ CrescentCity_Conservation_Text_DexNavHow:
 	.string "Pick a species, press R to register.\p"
 	.string "Then walk the grass. Sneak up on it\n"
 	.string "and the rare ones show themselves.$"
+
+@ Orleans: the EXP. SHARE (key item, I_EXP_SHARE_ITEM GEN_6; toggled from the bag, FLAG_EXP_SHARE_ON = I_EXP_SHARE_FLAG). Lafayette hands it over in chapter 3,
+@ right after the DexNav (the first visit inside, or the next one for a player already past it). The flag is set only once it is really in the bag.
+CrescentCity_Conservation_EventScript_GiveExpShare:
+	msgbox CrescentCity_Conservation_Text_ExpShareGive, MSGBOX_DEFAULT
+	giveitem ITEM_EXP_SHARE
+	goto_if_eq VAR_RESULT, FALSE, CrescentCity_Conservation_EventScript_ExpShareNoRoom
+	setflag FLAG_LAFAYETTE_EXP_SHARE
+	msgbox CrescentCity_Conservation_Text_ExpShareHow, MSGBOX_DEFAULT
+	return
+
+CrescentCity_Conservation_EventScript_ExpShareNoRoom:
+	msgbox CrescentCity_Conservation_Text_ExpShareNoRoom, MSGBOX_DEFAULT
+	return
+
+CrescentCity_Conservation_Text_ExpShareGive:
+	.string "LAFAYETTE: And a loan from the lab.\n"
+	.string "A young trainer with one strong\p"
+	.string "partner and five sleepers learns\n"
+	.string "slowly. This is an EXP. SHARE.$"
+
+CrescentCity_Conservation_Text_ExpShareHow:
+	.string "LAFAYETTE: Open it from your BAG's\n"
+	.string "key items to switch it on or off.\p"
+	.string "While it is on, the whole party\n"
+	.string "learns from every battle.\p"
+	.string "A good keeper raises all of them.$"
+
+CrescentCity_Conservation_Text_ExpShareNoRoom:
+	.string "LAFAYETTE: Your bag is full. Make\n"
+	.string "room and come see me again.$"

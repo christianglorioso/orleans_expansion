@@ -71,10 +71,16 @@ def register(b, species, env=0):
     b.set_var("VAR_DEXNAV_SPECIES", enum_value("species.h", species) | (env << 14))
 
 
-def start_search(b):
-    b.press("R", 6, 20)
-    b.frames(30)
-    return b.flag("FLAG_DEXNAV_SEARCHING")
+def start_search(b, tries=8):
+    """R starts the search; the tile pick is random and can come up empty ("It couldn't be found nearby"): dismiss the message and try again"""
+    for i in range(tries):
+        b.press("R", 6, 20)
+        b.frames(30)
+        if b.flag("FLAG_DEXNAV_SEARCHING"):
+            return True
+        b.advance_text(20)
+        b.frames(7 * (i + 1))                      # a different random state each try
+    return False
 
 
 def creep_onto_target(b):

@@ -273,9 +273,6 @@ struct SaveBlock3
 #if FNPC_ENABLE_NPC_FOLLOWERS
     struct NPCFollower NPCfollower;
 #endif
-#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
-    u8 itemFlags[ITEM_FLAGS_COUNT];
-#endif
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
     u8 dexNavSearchLevels[NUM_SPECIES];
 #endif
@@ -291,6 +288,11 @@ struct SaveBlock3
 #endif
     // Orleans: trophies, appended after the clock (a save without the magic is given an empty, stamped block).
     struct AchievementSaveData achievements;
+    // Orleans: first-pickup item descriptions (OW_SHOW_ITEM_DESCRIPTIONS), kept LAST so every field above stays where older saves have it.
+    // A save without these bits just shows each description once more.
+#if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME
+    u8 itemFlags[ITEM_FLAGS_COUNT];
+#endif
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

@@ -129,8 +129,9 @@ def run(b, t):
     # --- the coin clerk: the Coin Case on the first visit, then 50 coins for 1,000
     b.call("AddMoney", money_ptr(b), 5000)
     m0 = money(b)
-    b.warp(MAP, 3, 8)
-    b.press("UP", 2, 14)
+    b.warp(MAP, 3, 9)                         # the clerk (3,7) is behind the counter cell (3,8), which is blocked: stand below it
+    b.press("UP", 2, 14)                      # only turns: (3,8) is a blocked counter cell
+    t.check("standing at (3,9) below the counter, the counter cell blocks the step", b.pos() == (3, 9), b.where())
     t.check("no Coin Case before the clerk", bag(b, "ITEM_COIN_CASE") == 0, "")
     b.press("A", 4, 20)
     for _ in range(14):
@@ -138,7 +139,7 @@ def run(b, t):
         if bag(b, "ITEM_COIN_CASE") and b.script_status() == 1:
             break
         b.press("A", 4, 20)
-    t.check("the clerk gave the Coin Case", bag(b, "ITEM_COIN_CASE") == 1, b.where())
+    t.check("the clerk answers across the counter and gave the Coin Case", bag(b, "ITEM_COIN_CASE") == 1, b.where())
     for _ in range(12):                       # the sale menu: the first entry (50 coins) is the default
         b.press("A", 4, 30)
         b.frames(20)

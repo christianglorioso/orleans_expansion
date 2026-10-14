@@ -150,6 +150,8 @@ static bool32 StartWildBattleWithOWE_CheckDoubleBattle(struct ObjectEvent *owe, 
 static bool32 CheckCurrentWildMonHeaderForOWE(bool32 shouldSpawnWaterMons);
 static u32 GetOldestActiveOWESlot(bool32 forceRemove);
 static u32 GetNextOWESpawnSlot(void);
+static u32 CountFreeObjectEventSlots(void);
+static u32 CountPendingObjectEventTemplates(void);
 static enum Species GetSpeciesByOWESpawnSlot(u32 spawnSlot);
 static bool32 TrySelectTileForOWE(s32* outX, s32* outY);
 static void SetSpeciesInfoForOWE(struct InfoOWE *info, u32 x, u32 y);
@@ -287,6 +289,14 @@ void UpdateOverworldWildEncounter(void)
 
     infoOWE.localId = GetLocalIdByOWESpawnSlot(spawnSlot);
     infoOWE.category = OWE_CATEGORY_UNDEFINED;
+
+    // a new object event slot is needed unless this OWE slot's previous occupant is replaced; keep the free slots for the map's own objects
+    if (GetObjectEventIdByLocalId(infoOWE.localId) >= OBJECT_EVENTS_COUNT
+     && CountFreeObjectEventSlots() <= CountPendingObjectEventTemplates() + 1)
+    {
+        SetMinimumOWESpawnTimer();
+        return;
+    }
     SetSpeciesInfoForOWE(&infoOWE, x, y);
 
     if (infoOWE.speciesId == SPECIES_NONE
@@ -738,6 +748,38 @@ static u32 GetOldestActiveOWESlot(bool32 forceRemove)
     }
 
     return GetSpawnSlotByOWELocalId(oldest->localId);
+}
+
+// Orleans: followers (OW_FOLLOWERS_ENABLED) take an object event slot too. A generated OWE may only take the LAST free slots if no story/NPC object of the
+// map is still waiting to scroll into view (the 16 slots are shared); without a free slot the spawn is skipped, never a crash screen.
+static u32 CountFreeObjectEventSlots(void)
+{
+    u32 i, n = 0;
+
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+    {
+        if (!gObjectEvents[i].active)
+            n++;
+    }
+    return n;
+}
+
+static u32 CountPendingObjectEventTemplates(void)
+{
+    u32 i, n = 0;
+
+    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    {
+        const struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
+
+        if (template->localId == 0 || template->localId >= (LOCALID_OW_ENCOUNTER_END - OWE_SPAWNS_MAX + 1))
+            continue;
+        if (template->flagId != 0 && FlagGet(template->flagId))
+            continue;
+        if (GetObjectEventIdByLocalId(template->localId) >= OBJECT_EVENTS_COUNT)
+            n++;
+    }
+    return n;
 }
 
 static u32 GetNextOWESpawnSlot(void)

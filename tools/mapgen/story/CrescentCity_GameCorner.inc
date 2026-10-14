@@ -178,21 +178,29 @@ CrescentCity_GameCorner_EventScript_PrizeRepeatBall:
 
 CrescentCity_GameCorner_EventScript_PrizeTmFacade:
 	setvar VAR_0x8008, ITEM_TM_FACADE
+	checkitem VAR_0x8008
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_GameCorner_EventScript_PrizeHaveTm
 	setvar VAR_0x8009, 400
 	goto CrescentCity_GameCorner_EventScript_PrizeBuy
 
 CrescentCity_GameCorner_EventScript_PrizeTmAerialAce:
 	setvar VAR_0x8008, ITEM_TM_AERIAL_ACE
+	checkitem VAR_0x8008
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_GameCorner_EventScript_PrizeHaveTm
 	setvar VAR_0x8009, 400
 	goto CrescentCity_GameCorner_EventScript_PrizeBuy
 
 CrescentCity_GameCorner_EventScript_PrizeTmSludgeBomb:
 	setvar VAR_0x8008, ITEM_TM_SLUDGE_BOMB
+	checkitem VAR_0x8008
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_GameCorner_EventScript_PrizeHaveTm
 	setvar VAR_0x8009, 400
 	goto CrescentCity_GameCorner_EventScript_PrizeBuy
 
 CrescentCity_GameCorner_EventScript_PrizeTmBrickBreak:
 	setvar VAR_0x8008, ITEM_TM_BRICK_BREAK
+	checkitem VAR_0x8008
+	goto_if_eq VAR_RESULT, TRUE, CrescentCity_GameCorner_EventScript_PrizeHaveTm
 	setvar VAR_0x8009, 400
 	goto CrescentCity_GameCorner_EventScript_PrizeBuy
 
@@ -214,6 +222,11 @@ CrescentCity_GameCorner_EventScript_PrizeBuy:
 
 CrescentCity_GameCorner_EventScript_PrizeNoCoins:
 	msgbox CrescentCity_GameCorner_Text_PrizeNoCoins, MSGBOX_DEFAULT
+	goto CrescentCity_GameCorner_EventScript_PrizeMenu
+
+@ TMs are reusable (I_REUSABLE_TMS): a second copy would waste the coins
+CrescentCity_GameCorner_EventScript_PrizeHaveTm:
+	msgbox CrescentCity_GameCorner_Text_PrizeHaveTm, MSGBOX_DEFAULT
 	goto CrescentCity_GameCorner_EventScript_PrizeMenu
 
 CrescentCity_GameCorner_EventScript_PrizeNoRoom:
@@ -412,6 +425,10 @@ CrescentCity_GameCorner_Text_PrizeConfirm:
 
 CrescentCity_GameCorner_Text_PrizeNoCoins:
 	.string "You don't have enough coins.$"
+
+CrescentCity_GameCorner_Text_PrizeHaveTm:
+	.string "You already have that TM. It never\n"
+	.string "wears out, so one is plenty.$"
 
 CrescentCity_GameCorner_Text_PrizeNoRoom:
 	.string "Your BAG has no room for that.$"

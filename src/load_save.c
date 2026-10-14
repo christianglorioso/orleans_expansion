@@ -12,6 +12,7 @@
 #include "random.h"
 #include "save_location.h"
 #include "script_pokemon_util.h"
+#include "text.h"
 #include "trainer_hill.h"
 #include "wild_encounter_ow.h"
 #include "gba/flash_internal.h"
@@ -130,6 +131,7 @@ void MoveSaveBlocks_ResetHeap(void)
 
     // heap was destroyed in the copying process, so reset it
     InitHeap(gHeap, HEAP_SIZE);
+    ResetTextPrinterList();
 
     // restore interrupt functions
     gMain.hblankCallback = hblankCB;

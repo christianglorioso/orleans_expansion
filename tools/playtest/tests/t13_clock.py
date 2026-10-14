@@ -180,6 +180,7 @@ def run(b, t):
     b.set_clock(22, 0)
     b.warp("Redfield", 31, 10)
     b.interact("L", 120)
+    b.advance_text(40)                                 # the mirror scene (and any sign text) ends before the next warp
     b.frames(20)
     t.check("night: the mirror does not turn", b.var("VAR_REDFIELD_MIRRORS") == 0, b.var("VAR_REDFIELD_MIRRORS"))
     b.shot("mirror_night")
@@ -187,6 +188,7 @@ def run(b, t):
     t.check("rested at Redfield's Center until morning", ok and b.time_of_day() == 0, (b.clock(), b.time_of_day()))
     b.warp("Redfield", 31, 10)
     b.interact("L", 120)
+    b.advance_text(40)                                 # the mirror scene (and any sign text) ends before the next warp
     b.frames(20)
     t.check("after resting until morning the mirror turns", b.var("VAR_REDFIELD_MIRRORS") != 0, b.var("VAR_REDFIELD_MIRRORS"))
     b.shot("mirror_morning")
