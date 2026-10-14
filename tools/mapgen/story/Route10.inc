@@ -85,14 +85,7 @@ Route10_Text_Route10CamperAfter:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route10_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route10_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route10_EventScript_LairOpenB2
-	end
 
-Route10_EventScript_LairOpenB2:
-	call Route10_EventScript_StatePavilionOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route10_EventScript_LairEnterPavilion::
 	lockall
@@ -106,3 +99,32 @@ Route10_Movement_LairFaceUp:
 	face_up
 	step_end
 
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route10_OnLoad:
+	setvar VAR_0x8004, ACH_MIND_AND_WING
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route10_EventScript_LairOpenGalarArticuno
+	end
+
+Route10_EventScript_LairOpenGalarArticuno:
+	call Route10_EventScript_StatePavilionOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route10_EventScript_LairSealGalarArticuno::
+	goto_if_set FLAG_TEMP_1, Route10_EventScript_LairSealEnd
+	msgbox Route10_Text_LairSealGalarArticuno, MSGBOX_SIGN
+	end
+
+Route10_Text_LairSealGalarArticuno:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Psychic and\n"
+	.string "Flying Pokémon.$"
+
+Route10_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "lair_counters.h"
 #include "battle.h"
 #include "battle_arena.h"
 #include "battle_environment.h"
@@ -3029,6 +3030,7 @@ static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
             hpLost = hpBefore - gBattleMons[cv->battlerDef].hp;
             if (hpLost != 0)
                 gBattleStruct->innardsOutHpLost[cv->battlerDef] += hpLost;
+            LairCounters_OnMoveDamage(cv->battlerAtk, cv->battlerDef, cv->move, hpLost, gBattleStruct->moveResultFlags[cv->battlerDef]); // Orleans: trophy counters
 
             gProtectStructs[cv->battlerDef].assuranceDoubled = TRUE;
             gProtectStructs[cv->battlerDef].revengeDoubled |= 1u << cv->battlerAtk;

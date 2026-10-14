@@ -11,15 +11,7 @@ Route14_OnTransition:
 	call Route14_EventScript_StoryWeather
 	end
 
-Route14_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route14_EventScript_LairOpenB2
-	call_if_set FLAG_BADGE06_GET, Route14_EventScript_LairOpen
-	end
 
-Route14_EventScript_LairOpen:
-	call Route14_EventScript_StateRougarouOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route14_EventScript_LairEnter::
 	lockall
@@ -130,11 +122,6 @@ Route14_Text_Route14BlackBeltAfter:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route14_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route14_EventScript_LairOpenB2:
-	call Route14_EventScript_StateSpanishFortOpen
-	call Route14_EventScript_StateBushTrackOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route14_EventScript_LairEnterSpanishFort::
 	lockall
@@ -160,3 +147,74 @@ Route14_Movement_LairFaceRight:
 	face_right
 	step_end
 
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route14_OnLoad:
+	setvar VAR_0x8004, ACH_HUNTERS_JAWS
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route14_EventScript_LairOpenRougarou
+	setvar VAR_0x8004, ACH_NIGHT_WINGS
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route14_EventScript_LairOpenGalarMoltres
+	setvar VAR_0x8004, ACH_FIGHTERS_AND_FLIERS
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route14_EventScript_LairOpenGalarZapdos
+	end
+
+Route14_EventScript_LairOpenRougarou:
+	goto_if_unset FLAG_BADGE06_GET, Route14_EventScript_LairSealDone
+	call Route14_EventScript_StateRougarouOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route14_EventScript_LairOpenGalarMoltres:
+	call Route14_EventScript_StateSpanishFortOpen
+	setflag FLAG_TEMP_2
+	return
+
+Route14_EventScript_LairOpenGalarZapdos:
+	call Route14_EventScript_StateBushTrackOpen
+	setflag FLAG_TEMP_3
+	return
+
+Route14_EventScript_LairSealDone:
+	return
+
+Route14_EventScript_LairSealRougarou::
+	goto_if_set FLAG_TEMP_1, Route14_EventScript_LairSealEnd
+	msgbox Route14_Text_LairSealRougarou, MSGBOX_SIGN
+	end
+
+Route14_Text_LairSealRougarou:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Deal 10,000 damage with biting\n"
+	.string "moves.$"
+
+Route14_EventScript_LairSealGalarMoltres::
+	goto_if_set FLAG_TEMP_2, Route14_EventScript_LairSealEnd
+	msgbox Route14_Text_LairSealGalarMoltres, MSGBOX_SIGN
+	end
+
+Route14_Text_LairSealGalarMoltres:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Dark and Flying\n"
+	.string "Pokémon.$"
+
+Route14_EventScript_LairSealGalarZapdos::
+	goto_if_set FLAG_TEMP_3, Route14_EventScript_LairSealEnd
+	msgbox Route14_Text_LairSealGalarZapdos, MSGBOX_SIGN
+	end
+
+Route14_Text_LairSealGalarZapdos:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Fighting and\n"
+	.string "Flying Pokémon.$"
+
+Route14_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

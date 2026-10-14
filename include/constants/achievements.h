@@ -37,6 +37,8 @@
 #define ACH_RITA_FALLS 25
 #define ACH_ANDREWS_END 26
 #define ACH_SAILORS_CHALLENGE 27
+#define ACH_HUNTERS_JAWS 116
+#define ACH_PSYCHIC_FURY 117
 #define ACH_BATTLE_TOWER_STREAK 28
 #define ACH_BATTLE_DOME_STREAK 29
 #define ACH_BATTLE_PALACE_STREAK 30
@@ -45,6 +47,14 @@
 #define ACH_BATTLE_PIKE_STREAK 33
 #define ACH_BATTLE_PYRAMID_STREAK 34
 #define ACH_FRONTIER_LEGEND 35
+#define ACH_PARALYSIS_PRO 103
+#define ACH_SNOW_SETTER 104
+#define ACH_SUN_SETTER 105
+#define ACH_TAILWIND_RIDER 109
+#define ACH_RAIN_DANCER 110
+#define ACH_SANDSTORM_CALLER 111
+#define ACH_MIST_WEAVER 114
+#define ACH_ROOM_WARPER 115
 #define ACH_COMPLETE_THE_POKEDEX 36
 #define ACH_A_PLACE_OF_YOUR_OWN 37
 #define ACH_ZOO_BAYOU_AND_SWAMP 38
@@ -109,8 +119,38 @@
 #define ACH_MIDNIGHT_WOLF 97
 #define ACH_SPARK_OF_LIFE 98
 #define ACH_FOREVER_FLOWER 99
+#define ACH_WATER_COLLECTOR 100
+#define ACH_FIRE_COLLECTOR 101
+#define ACH_ELECTRIC_COLLECTOR 102
+#define ACH_FIGHTERS_AND_FLIERS 106
+#define ACH_MIND_AND_WING 107
+#define ACH_NIGHT_WINGS 108
+#define ACH_MOSS_AND_SHADOW 112
+#define ACH_MASK_COLLECTOR 113
+#define ACH_LEGEND_HUNTER 118
 
-#define ACH_ID_COUNT 100
+#define ACH_ID_COUNT 119
+
+// lair-unlock capture sets (src/data/lair_capture_sets.h, tools/achievements/lair_sets.py) and battle counters (src/lair_counters.c)
+#define LAIR_SET_WATER 0
+#define LAIR_SET_FIRE 1
+#define LAIR_SET_ELECTRIC 2
+#define LAIR_SET_FIGHTING_FLYING 3
+#define LAIR_SET_PSYCHIC_FLYING 4
+#define LAIR_SET_DARK_FLYING 5
+#define LAIR_SET_GRASS_DARK 6
+#define LAIR_SET_LEGENDS 7
+#define LAIR_COUNTER_PARALYZE 0
+#define LAIR_COUNTER_SNOW 1
+#define LAIR_COUNTER_SUN 2
+#define LAIR_COUNTER_RAIN 3
+#define LAIR_COUNTER_SANDSTORM 4
+#define LAIR_COUNTER_TAILWIND 5
+#define LAIR_COUNTER_MISTY 6
+#define LAIR_COUNTER_TRICK_ROOM 7
+#define LAIR_COUNTER_BITE_DAMAGE 8
+#define LAIR_COUNTER_PSYCHIC_DAMAGE 9
+#define LAIR_COUNTER_COUNT 10
 
 
 enum AchievementId
@@ -148,6 +188,9 @@ enum AchievementTrigger
     ACH_TRIG_DEX_COUNT,// caught species count >= value
     ACH_TRIG_STAT,     // GetGameStat(arg) >= value
     ACH_TRIG_PRED,     // predicate()
+    ACH_TRIG_SET,      // every species of capture set arg (src/data/lair_capture_sets.h) caught
+    ACH_TRIG_COUNTER,  // lair counter arg (src/lair_counters.c) >= value
+    ACH_TRIG_MASKS,    // all three of Ogerpon's mask items collected
 };
 
 #endif // GUARD_CONSTANTS_ACHIEVEMENTS_H

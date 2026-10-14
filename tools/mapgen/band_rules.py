@@ -135,9 +135,9 @@ def prepare(b, key):
             by.setdefault(bd["prefab"], []).append((bd["x"], bd["y"]))
         b.band_log.append("props taken out of the band: " + ", ".join(f"{k} x{len(v)}" for k, v in sorted(by.items())))
         signs = spec.get("signs", [])
-        lost = [g for g in signs if (g["x"], g["y"]) in gone]
+        lost = [g for g in signs if (g["x"], g["y"]) in gone and not g.get("gate")]
         if lost:
-            spec["signs"] = [g for g in signs if (g["x"], g["y"]) not in gone]
+            spec["signs"] = [g for g in signs if (g["x"], g["y"]) not in gone or g.get("gate")]
             b.band_log.append("sign events removed with their signposts: " + ", ".join(f"({g['x']},{g['y']})" for g in lost))
         for coll in ("objects", "items"):
             hit = [o for o in spec.get(coll, []) if (o["x"], o["y"]) in gone]

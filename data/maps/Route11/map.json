@@ -118,6 +118,14 @@
       "elevation": 3,
       "item": "ITEM_ICE_STONE",
       "flag": "FLAG_ROUTE11_HIDDEN_ICE_STONE"
+    },
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 21,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route11_EventScript_LairSealSuicune"
     }
   ]
 }

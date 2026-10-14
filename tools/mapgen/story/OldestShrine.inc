@@ -429,8 +429,41 @@ OldestShrine_EventScript_StoryWeatherDone:
 @ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
 OldestShrine_EventScript_PGSetup:
 	call_if_lt VAR_ORLEANS_STORY, 45, OldestShrine_EventScript_PGHide
+	goto_if_lt VAR_ORLEANS_STORY, 45, OldestShrine_EventScript_PGSetupDone
+	@ Rayquaza's arena opens only once every OTHER legendary is caught (the Legend Hunter trophy); once Rayquaza is caught it stays gone. Re-checked on every map load.
+	setvar VAR_0x8004, SPECIES_RAYQUAZA
+	special Achievement_SpeciesCaughtVar8004
+	goto_if_eq VAR_RESULT, TRUE, OldestShrine_EventScript_PGSetupDone
+	setvar VAR_0x8004, ACH_LEGEND_HUNTER
+	special Achievement_CheckUnlockedVar8004
+	call_if_eq VAR_RESULT, TRUE, OldestShrine_EventScript_PGRayquazaOpen
+	call_if_ne VAR_RESULT, TRUE, OldestShrine_EventScript_PGRayquazaSealed
 OldestShrine_EventScript_PGSetupDone:
 	return
+
+OldestShrine_EventScript_PGRayquazaOpen:
+	clearflag FLAG_PG_RAYQUAZA
+	return
+
+OldestShrine_EventScript_PGRayquazaSealed:
+	setflag FLAG_PG_RAYQUAZA
+	return
+
+@ the seal sign on the cell in front of Rayquaza's dais (16, 10): says what opens the arena while it is sealed, nothing once Rayquaza stands there or is caught
+OldestShrine_EventScript_ArenaSeal::
+	goto_if_lt VAR_ORLEANS_STORY, 45, OldestShrine_EventScript_ArenaSealEnd
+	goto_if_unset FLAG_PG_RAYQUAZA, OldestShrine_EventScript_ArenaSealEnd
+	setvar VAR_0x8004, SPECIES_RAYQUAZA
+	special Achievement_SpeciesCaughtVar8004
+	goto_if_eq VAR_RESULT, TRUE, OldestShrine_EventScript_ArenaSealEnd
+	msgbox OldestShrine_Text_ArenaSeal, MSGBOX_SIGN
+OldestShrine_EventScript_ArenaSealEnd:
+	end
+
+OldestShrine_Text_ArenaSeal:
+	.string "RAYQUAZA's arena is sealed until\n"
+	.string "the game is beaten and the 18\p"
+	.string "other legendaries are caught.$"
 
 OldestShrine_EventScript_PGHide:
 	setflag FLAG_PG_RAYQUAZA

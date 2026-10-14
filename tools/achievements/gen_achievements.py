@@ -74,6 +74,7 @@ rw(75, "Prism Scale", "ITEM_HEART_SCALE", 5, note="Prism Scale is sold in Dept2f
 rw(range(76, 97), "Title and trophy decoration", "ITEM_RARE_CANDY", 2, note=COS)
 rw([97, 98], "5 Heart Scales + PP Up", "ITEM_HEART_SCALE", 5, "ITEM_PP_UP", 1)
 rw(99, "Rotom-themed item", "ITEM_NUGGET", 1, note="the item is undefined: placeholder")
+rw(range(101, 120), "Lair-key trophy (placeholder: the unlock is the reward)", "ITEM_ULTRA_BALL", 5, note="placeholder; the real reward is the lair it opens")
 rw(100, "Floette-themed item", "ITEM_NUGGET", 1, note="the item is undefined: placeholder")
 
 
@@ -95,7 +96,13 @@ def gen_constants():
            "#define ACHIEVEMENT_POPUP_QUEUE_SIZE 6", ""]
     for n, cat, key, *_ in ROWS:
         out.append("#define ACH_%s %d" % (key, n - 1))
-    out += ["", "#define ACH_ID_COUNT %d" % len(ROWS), "", "",
+    out += ["", "#define ACH_ID_COUNT %d" % len(ROWS), "",
+            "// lair-unlock capture sets (src/data/lair_capture_sets.h, tools/achievements/lair_sets.py) and battle counters (src/lair_counters.c)"]
+    for i, k in enumerate(["WATER", "FIRE", "ELECTRIC", "FIGHTING_FLYING", "PSYCHIC_FLYING", "DARK_FLYING", "GRASS_DARK", "LEGENDS"]):
+        out.append("#define LAIR_SET_%s %d" % (k, i))
+    for i, k in enumerate(["PARALYZE", "SNOW", "SUN", "RAIN", "SANDSTORM", "TAILWIND", "MISTY", "TRICK_ROOM", "BITE_DAMAGE", "PSYCHIC_DAMAGE"]):
+        out.append("#define LAIR_COUNTER_%s %d" % (k, i))
+    out += ["#define LAIR_COUNTER_COUNT 10", "", "",
             "enum AchievementId", "{", "    ACH_ID_NONE_ = 0xFF,", "};", "",
             "enum AchievementTier", "{", "    ACH_TIER_BRONZE,", "    ACH_TIER_SILVER,", "    ACH_TIER_GOLD,", "    ACH_TIER_PLATINUM,", "};", "",
             "enum AchievementCategory", "{"]
@@ -110,6 +117,9 @@ def gen_constants():
             "    ACH_TRIG_DEX_COUNT,// caught species count >= value",
             "    ACH_TRIG_STAT,     // GetGameStat(arg) >= value",
             "    ACH_TRIG_PRED,     // predicate()",
+            "    ACH_TRIG_SET,      // every species of capture set arg (src/data/lair_capture_sets.h) caught",
+            "    ACH_TRIG_COUNTER,  // lair counter arg (src/lair_counters.c) >= value",
+            "    ACH_TRIG_MASKS,    // all three of Ogerpon's mask items collected",
             "};", "", "#endif // GUARD_CONSTANTS_ACHIEVEMENTS_H", ""]
     (ROOT / "include/constants/achievements.h").write_text("\n".join(out), encoding="utf-8")
 
@@ -135,6 +145,14 @@ def gen_table():
             t, arg, val = "ACH_TRIG_STAT", trig[1], str(trig[2])
         elif kind == "pred":
             t, pred = "ACH_TRIG_PRED", "Achievement_Predicate" + trig[1]
+        elif kind == "set":
+            t, arg = "ACH_TRIG_SET", "LAIR_SET_" + trig[1]
+        elif kind == "counter":
+            t, arg, val = "ACH_TRIG_COUNTER", "LAIR_COUNTER_" + trig[1], str(trig[2])
+        elif kind == "masks":
+            t = "ACH_TRIG_MASKS"
+        elif kind == "legends":
+            t, arg = "ACH_TRIG_SET", "LAIR_SET_LEGENDS"
         elif kind == "manual":
             t = "ACH_TRIG_MANUAL"
         else:
@@ -177,7 +195,9 @@ def gen_rewards():
 
 
 if __name__ == "__main__":
-    assert len(ROWS) == 100 and [r[0] for r in ROWS] == list(range(1, 101))
+    assert sorted(r[0] for r in ROWS) == list(range(1, len(ROWS) + 1))
+    for r in ROWS:
+        assert len(wrap(r[4]).split("\n")) <= 2, (r[0], r[4])
     gen_constants()
     gen_table()
     p = ROOT / "src/data/achievement_rewards.h"

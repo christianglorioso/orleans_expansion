@@ -432,6 +432,7 @@ def lair_kyogre_arena(b, t):
     b.set_var("VAR_ORLEANS_STORY", 45)
     b.set_var("VAR_ORLEANS_LEGENDARY_PICK", 2)
     b.set_flag("FLAG_PG_KYOGRE_RE", False)
+    b.call("GetSetPokedexFlag", b.call("SpeciesToNationalPokedexNum", SP("RAYQUAZA")) & 0xFFFF, 3)   # 2026-10-14: Kyogre's arena opens once Rayquaza is caught
     b.set_flag("FLAG_TEMPLE_DOOR_OPEN", True)
     b.give_item("ITEM_MASTER_BALL", 3)
     b.warp("LandsEnd_Pokecenter", 7, 5)

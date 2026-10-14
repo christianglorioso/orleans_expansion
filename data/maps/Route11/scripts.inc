@@ -49,14 +49,7 @@ Route11_Text_Route11Swimmer2After:
 
 @ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route11_EventScript_StateSuicuneOpen swaps the
 @ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
-Route11_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route11_EventScript_LairOpen
-	end
 
-Route11_EventScript_LairOpen:
-	call Route11_EventScript_StateSuicuneOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route11_EventScript_LairEnter::
 	lockall
@@ -69,6 +62,35 @@ Route11_EventScript_LairEnter::
 Route11_Movement_LairFaceUp:
 	face_up
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route11_OnLoad:
+	setvar VAR_0x8004, ACH_WATER_COLLECTOR
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route11_EventScript_LairOpenSuicune
+	end
+
+Route11_EventScript_LairOpenSuicune:
+	call Route11_EventScript_StateSuicuneOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route11_EventScript_LairSealSuicune::
+	goto_if_set FLAG_TEMP_1, Route11_EventScript_LairSealEnd
+	msgbox Route11_Text_LairSealSuicune, MSGBOX_SIGN
+	end
+
+Route11_Text_LairSealSuicune:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Water Pokémon.$"
+
+Route11_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

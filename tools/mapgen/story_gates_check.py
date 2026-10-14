@@ -304,8 +304,8 @@ def pointe_gym():
     reach_door = pr2.fill([(39, 27)])
     check((39, 26) in reach_door and (39, 25) in reach_door, "Pointe Rouge, guard gone (story 45+): the ice plant door (39, 25) is reachable from the street")
     ps = open(os.path.join(ROOT, "data", "maps", "PointeRouge", "scripts.inc"), encoding="utf-8").read()
-    check("call_if_ge VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardGone" in ps and "setflag FLAG_HIDE_POINTE_ICE_GUARD" in ps,
-          "Pointe Rouge: PGSetup hides the ice plant guard state-based at story >= 45 (cleared saves are fixed too)")
+    check("setvar VAR_0x8004, ACH_SNOW_SETTER" in ps and "call_if_eq VAR_RESULT, TRUE, PointeRouge_EventScript_IceGuardGone" in ps and "setflag FLAG_HIDE_POINTE_ICE_GUARD" in ps,
+          "Pointe Rouge: PGSetup hides the ice plant guard state-based when story >= 45 AND the Snow Setter trophy is complete (re-checked on every load)")
 
 
 def world_gates():
@@ -481,10 +481,12 @@ def lair_entrances():
         trigs = [c for c in layout(route)[0]["coord_events"] if c.get("script") == script]
         trig = [(c["x"], c["y"]) for c in trigs]
         want = 1 if key == "moltres" else 2
-        check(len(trig) == want and all(c.get("var") == D.TRIG and str(c.get("var_value")) == "1" for c in trigs),
-              f"{route}: the {key} entrance has {want} trigger(s) {trig} armed by {D.TRIG} (a sealed way never has a live one)")
+        check(len(trig) == want and all(c.get("var") == D.GATES[key][1] and str(c.get("var_value")) == "1" for c in trigs),
+              f"{route}: the {key} entrance has {want} trigger(s) {trig} armed by {D.GATES[key][1]} (a sealed way never has a live one)")
         opened = state_cells(route, state)
         g_shut, g_open = Grid(route), Grid(route, raised=opened)
+        sg = [e for e in layout(route)[0]["bg_events"] if e.get("type") == "sign" and (e["x"], e["y"]) == tuple(D.GATES[key][2])]
+        check(len(sg) == 1 and not g_shut.walk(*D.GATES[key][2]), f"{route}: the {key} seal sign {D.GATES[key][2]} stands on a blocked cell of the sealed entrance")
         src = [lair["approach"]]
         if key == "galar_articuno":        # the pier stub stands in the lake: reached by Surf, so the check is on the four plank cells themselves
             cells = [(30, 12), (31, 12), (30, 13), (31, 13)]

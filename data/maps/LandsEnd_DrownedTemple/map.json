@@ -71,6 +71,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "LandsEnd_DrownedTemple_EventScript_TheSealed0"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 6,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LandsEnd_DrownedTemple_EventScript_ArenaSeal"
     }
   ]
 }

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "lair_counters.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_anim_scripts.h"
@@ -2139,6 +2140,7 @@ enum WeatherFailure TryChangeBattleWeather(enum BattlerId battler, u32 battleWea
         ResetParadoxWeatherStat(i);
     }
 
+    LairCounters_OnWeatherSet(battler, battleWeatherId); // Orleans: lair-unlock trophy counters (Battle Frontier, player's side)
     return WEATHER_FAILURE_SUCCESS;
 }
 
@@ -2165,6 +2167,7 @@ bool32 TryChangeBattleTerrain(enum BattlerId battler, enum BattleTerrain terrain
         else
             gFieldTimers.terrainTimer = 5;
         gBattleScripting.battler = battler;
+        LairCounters_OnTerrainSet(battler, terrain);
         return TRUE;
     }
 

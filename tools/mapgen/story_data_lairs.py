@@ -76,8 +76,8 @@ def dry(x, y):
     return f"bd:dry_scrub_{x & 1}{y & 1}"
 
 
-def trig(cells, script, elevation=3):
-    return [{"x": x, "y": y, "elevation": elevation, "var": TRIG, "value": 1, "script": script, "gate": True} for x, y in cells]
+def trig(cells, script, elevation=3, var=TRIG):
+    return [{"x": x, "y": y, "elevation": elevation, "var": var, "value": 1, "script": script, "gate": True} for x, y in cells]
 
 
 ROUTES = {
@@ -217,15 +217,15 @@ ROUTES2 = {
                                                                                 {"x": 32, "y": 2}, {"x": 35, "y": 2}],
                                         "sealed": fill(dry, lambda x: f"bd:dry_S_dry_{x & 1}", 32, 0, 4, 2)},
                           "LandorusOpen": {"open": piece2("field_gate", 27, 38), "sealed": piece2("field_gate_shut", 27, 38, 1)}},
-                "triggers": trig([(33, 1), (34, 1)], "Route23_EventScript_LairEnterAzelf") + trig([(27, 39), (28, 39)], "Route23_EventScript_LairEnterLandorus")},
+                "triggers": trig([(33, 1), (34, 1)], "Route23_EventScript_LairEnterAzelf", var="FLAG_TEMP_2") + trig([(27, 39), (28, 39)], "Route23_EventScript_LairEnterLandorus", var="FLAG_TEMP_3")},
     "Route12": {"gates": {"ThundurusOpen": {"open": piece2("levee_steps_e", 25, 22), "sealed": piece2("levee_steps_e_log", 25, 22, 1)}},
                 "triggers": trig([(26, 22), (26, 23)], "Route12_EventScript_LairEnterThundurus")},
     "Route13": {"gates": {"ZarudeOpen": {"open": piece2("liana_gap_e", 26, 25), "sealed": piece2("liana_curtain_e", 26, 25, 1)},
                           "OgerponOpen": {"open": piece2("courir_gap_w_bright", 0, 25), "sealed": piece2("liana_curtain_w", 0, 25, 1)}},
-                "triggers": trig([(27, 25), (27, 26)], "Route13_EventScript_LairEnterZarude") + trig([(0, 25), (0, 26)], "Route13_EventScript_LairEnterOgerpon")},
+                "triggers": trig([(27, 25), (27, 26)], "Route13_EventScript_LairEnterZarude") + trig([(0, 25), (0, 26)], "Route13_EventScript_LairEnterOgerpon", var="FLAG_TEMP_2")},
     "Route14": {"gates": {"SpanishFortOpen": {"open": piece2("sally_port_w", 0, 7), "sealed": piece2("sally_port_w_bricked", 0, 7, 1)},
                           "BushTrackOpen": {"open": piece2("bush_gate_e", 26, 19), "sealed": piece2("bush_gate_e_shut", 26, 19, 1)}},
-                "triggers": trig([(0, 7), (0, 8)], "Route14_EventScript_LairEnterSpanishFort") + trig([(27, 19), (27, 20)], "Route14_EventScript_LairEnterBushTrack")},
+                "triggers": trig([(0, 7), (0, 8)], "Route14_EventScript_LairEnterSpanishFort", var="FLAG_TEMP_2") + trig([(27, 19), (27, 20)], "Route14_EventScript_LairEnterBushTrack", var="FLAG_TEMP_3")},
     # Route 10: the pier stub stands in open water; open, its four plank cells are walkable ground (behaviour from the art), sealed it is only the pilings
     "Route10": {"gates": {"PavilionOpen": {"open": [dict(c, walk=True) for c in piece2("pier_stub", 30, 12)], "sealed": piece2("pier_pilings", 30, 12, 1)}},
                 "triggers": trig([(30, 12), (31, 12)], "Route10_EventScript_LairEnterPavilion", elevation=0)},   # elevation 0 = any: the plank cells sit on the lake's elevation 1
@@ -247,3 +247,45 @@ for _r, _d in ROUTES2.items():
             _into.setdefault(_k, {}).update(_v)
         else:
             _into.setdefault(_k, []).extend(_v)
+
+
+# ---------------------------------------------------------------------------------------------- the unlock gates (lair_gates.py, map_pass/lair_unlocks_spec.md)
+# Every lair opens only when its trophy (src/data/achievements.h, tools/achievements/achievements_data.py) is complete AND the post-game has begun (story 45);
+# the rougarou keeps its flood condition (FLAG_BADGE06_GET) and Bloodmoon Ursaluna its night-only encounter. The route OnLoad re-evaluates on every map load.
+# key: (trophy constant, the armed-flag the route sets for this lair, the seal sign's cell (the blocked cell in front of the entrance) or None, the hint's requirement text)
+GATES = {
+    "suicune": ("ACH_WATER_COLLECTOR", "FLAG_TEMP_1", (28, 21), "Capture every Water Pokémon."),
+    "entei": ("ACH_FIRE_COLLECTOR", "FLAG_TEMP_1", (15, 2), "Capture every Fire Pokémon."),
+    "raikou": ("ACH_ELECTRIC_COLLECTOR", "FLAG_TEMP_1", (24, 2), "Capture every Electric Pokémon."),
+    "zapdos": ("ACH_PARALYSIS_PRO", None, None, "Paralyze 25 Pokémon in the\nBattle Frontier."),
+    "articuno": ("ACH_SNOW_SETTER", None, None, "Set Snow 25 times in the\nBattle Frontier."),
+    "moltres": ("ACH_SUN_SETTER", "FLAG_TEMP_1", (33, 9), "Set Sun 25 times in the\nBattle Frontier."),
+    "galar_zapdos": ("ACH_FIGHTERS_AND_FLIERS", "FLAG_TEMP_3", (26, 19), "Capture every Fighting and\nFlying Pokémon."),
+    "galar_articuno": ("ACH_MIND_AND_WING", "FLAG_TEMP_1", (30, 13), "Capture every Psychic and\nFlying Pokémon."),
+    "galar_moltres": ("ACH_NIGHT_WINGS", "FLAG_TEMP_2", (1, 7), "Capture every Dark and Flying\nPokémon."),
+    "tornadus": ("ACH_TAILWIND_RIDER", "FLAG_TEMP_1", (27, 2), "Set Tailwind 25 times in the\nBattle Frontier."),
+    "thundurus": ("ACH_RAIN_DANCER", "FLAG_TEMP_1", (25, 22), "Set Rain 25 times in the\nBattle Frontier."),
+    "landorus": ("ACH_SANDSTORM_CALLER", "FLAG_TEMP_3", (27, 38), "Set Sandstorm 25 times in the\nBattle Frontier."),
+    "zarude": ("ACH_MOSS_AND_SHADOW", "FLAG_TEMP_1", (26, 25), "Capture every Grass and Dark\nPokémon."),
+    "ogerpon": ("ACH_MASK_COLLECTOR", "FLAG_TEMP_2", (1, 25), "Collect all of Ogerpon's\nmasks."),
+    "uxie": ("ACH_MIST_WEAVER", None, None, "Set Misty Terrain 10 times in\nthe Battle Frontier."),
+    "mesprit": ("ACH_MIST_WEAVER", "FLAG_TEMP_1", (26, 27), "Set Misty Terrain 10 times in\nthe Battle Frontier."),
+    "azelf": ("ACH_MIST_WEAVER", "FLAG_TEMP_2", (33, 2), "Set Misty Terrain 10 times in\nthe Battle Frontier."),
+    "celebi": ("ACH_ROOM_WARPER", "FLAG_TEMP_1", (34, 2), "Set Trick Room 10 times in the\nBattle Frontier."),
+    "rougarou": ("ACH_HUNTERS_JAWS", "FLAG_TEMP_1", (25, 30), "Deal 10,000 damage with biting\nmoves."),
+    "ursaluna": ("ACH_PSYCHIC_FURY", "FLAG_TEMP_1", (23, 2), "Deal 10,000 super-effective\ndamage with Psychic moves."),
+}
+# the route lairs with a sealed entrance in the route's map.bin: key -> the CamelCase name its scripts use
+CAMEL = {k: "".join(p.title() for p in k.split("_")) for k in GATES}
+
+
+# the seal signs: a custom sign (the script is generated into the route's story file by lair_gates.py) on the blocked cell in front of each sealed entrance;
+# Moltres' mill door already has its MillDoor sign (hand-written, it checks the same gate)
+for _k, (_ach, _arm, _cell, _req) in GATES.items():
+    if _cell is None or _k == "moltres":
+        continue
+    ROUTES.setdefault(LAIRS[_k]["route"], {}).setdefault("signs", []).append(
+        {"id": "LairSeal" + CAMEL[_k], "x": _cell[0], "y": _cell[1], "text": "", "custom": True, "gate": True})
+
+# Rayquaza's arena (the Oldest Shrine's inner chamber, post-game): a seal sign on the cell in front of its dais names what opens it (story/OldestShrine.inc)
+ROUTES.setdefault("OldestShrine", {}).setdefault("signs", []).append({"id": "ArenaSeal", "x": 16, "y": 10, "text": "", "custom": True, "gate": True})

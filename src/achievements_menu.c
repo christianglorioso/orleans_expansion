@@ -20,6 +20,7 @@
 #include "task.h"
 #include "text.h"
 #include "window.h"
+#include "constants/characters.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -420,8 +421,22 @@ static void PrintAchievementProgress(const struct Achievement *achievement, u8 y
     {
         if (progress > target)
             progress = target;
-        ConvertIntToDecimalStringN(gStringVar1, progress, STR_CONV_MODE_LEFT_ALIGN, 4);
-        ConvertIntToDecimalStringN(gStringVar2, target, STR_CONV_MODE_LEFT_ALIGN, 4);
+        if (target >= 1000)
+        {
+            // the damage trophies (10,000): thousands with a tenth, "3.4k/10k", so it fits the column
+            u8 *end = ConvertIntToDecimalStringN(gStringVar1, progress / 1000, STR_CONV_MODE_LEFT_ALIGN, 3);
+
+            *end++ = CHAR_PERIOD;
+            ConvertIntToDecimalStringN(end, (progress % 1000) / 100, STR_CONV_MODE_LEFT_ALIGN, 1);
+            StringAppend(gStringVar1, COMPOUND_STRING("k"));
+            ConvertIntToDecimalStringN(gStringVar2, target / 1000, STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(gStringVar2, COMPOUND_STRING("k"));
+        }
+        else
+        {
+            ConvertIntToDecimalStringN(gStringVar1, progress, STR_CONV_MODE_LEFT_ALIGN, 4);
+            ConvertIntToDecimalStringN(gStringVar2, target, STR_CONV_MODE_LEFT_ALIGN, 4);
+        }
         StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("{STR_VAR_1}/{STR_VAR_2}"));
         PrintListStatusText(gStringVar4, y, sColor_Blue);
     }

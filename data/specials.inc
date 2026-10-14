@@ -658,4 +658,6 @@ gSpecials::
 	def_special Achievement_UnlockVar8004
 	def_special Achievement_CheckAllSpecial
 	def_special Achievement_GetCountSpecial
+	def_special Achievement_CheckUnlockedVar8004
+	def_special Achievement_SpeciesCaughtVar8004
 	def_special Achievement_ClaimNextReward

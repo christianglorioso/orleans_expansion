@@ -103,6 +103,8 @@ def protected(b, key, extras=True):
             for o in d.get(k, []):
                 if k == "coord_events" and LINE_TRIGGER.search(o.get("script", "")):
                     continue            # a gate / storm line is written across the whole route and must not shape the terrain
+                if k == "bg_events" and "_EventScript_LairSeal" in o.get("script", ""):
+                    continue            # a lair seal sign stands on the sealed wall (a gate event: it must not shape the terrain either)
                 P.add((o["x"], o["y"]))
     # cells a script stands an object on (setobjectxy / setobjectxyperm: Route 3's Jayden standoff rows ...): they and their neighbours stay open
     for path in (os.path.join(bands.ROOT, "data", "maps", spec["map"], "scripts.inc"), os.path.join(HERE, "story", spec["map"] + ".inc")):
@@ -487,7 +489,7 @@ def prepare_canopy(b, key, style, sp, keep_open, strict_all, maxb=MAXB):
     if dropped:
         b.spec["buildings"] = keep
         gone = {(x, y) for bd in dropped for x, y, _ in br.prefab_cells(b, bd)}
-        b.spec["signs"] = [g for g in b.spec.get("signs", []) if (g["x"], g["y"]) not in gone]
+        b.spec["signs"] = [g for g in b.spec.get("signs", []) if (g["x"], g["y"]) not in gone or g.get("gate")]  # (a lair seal sign stands on the sealed wall)
         by = {}
         for bd in dropped:
             by[bd["prefab"]] = by.get(bd["prefab"], 0) + 1

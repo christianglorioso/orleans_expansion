@@ -4,6 +4,7 @@
 #include "battle_setup.h"
 #include "event_data.h"
 #include "item.h"
+#include "lair_counters.h"
 #include "money.h"
 #include "pokemon.h"
 #include "pokedex.h"
@@ -278,6 +279,75 @@ static bool32 Achievement_PredicateCrescentVisited(void)
     return TRUE;
 }
 
+// ---- lair unlocks: capture sets, Ogerpon's masks ----
+#include "data/lair_capture_sets.h"
+
+static const struct
+{
+    const u16 *species;
+    u16 count;
+} sLairSets[] =
+{
+    [LAIR_SET_WATER] = { sLairSet_WATER, ARRAY_COUNT(sLairSet_WATER) },
+    [LAIR_SET_FIRE] = { sLairSet_FIRE, ARRAY_COUNT(sLairSet_FIRE) },
+    [LAIR_SET_ELECTRIC] = { sLairSet_ELECTRIC, ARRAY_COUNT(sLairSet_ELECTRIC) },
+    [LAIR_SET_FIGHTING_FLYING] = { sLairSet_FIGHTING_FLYING, ARRAY_COUNT(sLairSet_FIGHTING_FLYING) },
+    [LAIR_SET_PSYCHIC_FLYING] = { sLairSet_PSYCHIC_FLYING, ARRAY_COUNT(sLairSet_PSYCHIC_FLYING) },
+    [LAIR_SET_DARK_FLYING] = { sLairSet_DARK_FLYING, ARRAY_COUNT(sLairSet_DARK_FLYING) },
+    [LAIR_SET_GRASS_DARK] = { sLairSet_GRASS_DARK, ARRAY_COUNT(sLairSet_GRASS_DARK) },
+    [LAIR_SET_LEGENDS] = { sLairSet_LEGENDS, ARRAY_COUNT(sLairSet_LEGENDS) },
+};
+
+static u32 SetCaughtCount(u32 set)
+{
+    u32 i, n = 0;
+
+    if (set >= ARRAY_COUNT(sLairSets))
+        return 0;
+    for (i = 0; i < sLairSets[set].count; i++)
+        if (CaughtSpecies(sLairSets[set].species[i]))
+            n++;
+    return n;
+}
+
+// the poll's check: stops at the first missing species (most sets are incomplete, so this is a handful of dex lookups instead of the whole set every second)
+static bool32 SetAllCaught(u32 set)
+{
+    u32 i;
+
+    if (set >= ARRAY_COUNT(sLairSets))
+        return FALSE;
+    for (i = 0; i < sLairSets[set].count; i++)
+        if (!CaughtSpecies(sLairSets[set].species[i]))
+            return FALSE;
+    return TRUE;
+}
+
+static u32 SetSize(u32 set)
+{
+    return set < ARRAY_COUNT(sLairSets) ? sLairSets[set].count : 0;
+}
+
+// Ogerpon's three mask items. The post-game balls are hidden by their FLAG_PG_* flag until story 45 and flagged again when picked up, so from 45 on the flag means "collected"
+// (the bag is checked too, for a mask that was found some other way).
+static bool32 HasMask(enum Item item, u16 flag)
+{
+    if (VarGet(VAR_ORLEANS_STORY) < 45) // the masks are post-game balls: nothing to scan for before the game is beaten
+        return FALSE;
+    return FlagGet(flag) || CheckBagHasItem(item, 1);
+}
+
+static u32 MaskCount(void)
+{
+    return HasMask(ITEM_WELLSPRING_MASK, FLAG_PG_WELLSPRING_MASK) + HasMask(ITEM_HEARTHFLAME_MASK, FLAG_PG_HEARTHFLAME_MASK)
+         + HasMask(ITEM_CORNERSTONE_MASK, FLAG_PG_CORNERSTONE_MASK);
+}
+
+static bool32 Achievement_PredicateOgerponAndMasks(void)
+{
+    return CaughtSpecies(SPECIES_OGERPON_TEAL) && MaskCount() == 3;
+}
+
 #include "data/achievements.h"
 #include "data/achievement_rewards.h"
 
@@ -374,6 +444,12 @@ static bool32 Evaluate(const struct Achievement *a)
         return GetGameStat(a->arg) >= a->value;
     case ACH_TRIG_PRED:
         return a->predicate != NULL && a->predicate();
+    case ACH_TRIG_SET:
+        return SetAllCaught(a->arg);
+    case ACH_TRIG_COUNTER:
+        return LairCounter_Get(a->arg) >= a->value;
+    case ACH_TRIG_MASKS:
+        return MaskCount() == 3;
     default:
         return FALSE;
     }
@@ -387,6 +463,12 @@ u32 Achievement_GetProgress(const struct Achievement *a)
         return GetCaughtCount();
     if (a->trigger == ACH_TRIG_STAT)
         return GetGameStat(a->arg);
+    if (a->trigger == ACH_TRIG_SET)
+        return SetCaughtCount(a->arg);
+    if (a->trigger == ACH_TRIG_COUNTER)
+        return LairCounter_Get(a->arg);
+    if (a->trigger == ACH_TRIG_MASKS)
+        return MaskCount();
     return Achievement_IsUnlocked(a->id) ? 1 : 0;
 }
 
@@ -394,8 +476,12 @@ u32 Achievement_GetTarget(const struct Achievement *a)
 {
     if (a == NULL)
         return 0;
-    if (a->trigger == ACH_TRIG_DEX_COUNT || a->trigger == ACH_TRIG_STAT)
+    if (a->trigger == ACH_TRIG_DEX_COUNT || a->trigger == ACH_TRIG_STAT || a->trigger == ACH_TRIG_COUNTER)
         return a->value;
+    if (a->trigger == ACH_TRIG_SET)
+        return SetSize(a->arg);
+    if (a->trigger == ACH_TRIG_MASKS)
+        return 3;
     return 1;
 }
 
@@ -569,6 +655,19 @@ void Achievement_UnlockVar8004(void)
 void Achievement_CheckAllSpecial(void)
 {
     Achievement_CheckAll();
+}
+
+// Lair gates (map scripts): VAR_0x8004 = trophy id; re-polls so a trophy earned elsewhere counts, VAR_RESULT = TRUE when it is unlocked
+void Achievement_CheckUnlockedVar8004(void)
+{
+    Achievement_CheckAll();
+    gSpecialVar_Result = Achievement_IsUnlocked(gSpecialVar_0x8004);
+}
+
+// The post-game arenas: VAR_0x8004 = species, VAR_RESULT = registered CAUGHT in the Pokedex (Rayquaza's catch opens Kyogre's and Groudon's arenas)
+void Achievement_SpeciesCaughtVar8004(void)
+{
+    gSpecialVar_Result = CaughtSpecies(gSpecialVar_0x8004);
 }
 
 void Achievement_GetCountSpecial(void)

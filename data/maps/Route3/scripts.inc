@@ -209,14 +209,7 @@ Route3_Text_BridgeAfterwards:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route3_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route3_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route3_EventScript_LairOpenB2
-	end
 
-Route3_EventScript_LairOpenB2:
-	call Route3_EventScript_StateTornadusOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route3_EventScript_LairEnterTornadus::
 	lockall
@@ -229,6 +222,36 @@ Route3_EventScript_LairEnterTornadus::
 Route3_Movement_LairFaceUp:
 	face_up
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route3_OnLoad:
+	setvar VAR_0x8004, ACH_TAILWIND_RIDER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route3_EventScript_LairOpenTornadus
+	end
+
+Route3_EventScript_LairOpenTornadus:
+	call Route3_EventScript_StateTornadusOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route3_EventScript_LairSealTornadus::
+	goto_if_set FLAG_TEMP_1, Route3_EventScript_LairSealEnd
+	msgbox Route3_Text_LairSealTornadus, MSGBOX_SIGN
+	end
+
+Route3_Text_LairSealTornadus:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Tailwind 25 times in the\n"
+	.string "Battle Frontier.$"
+
+Route3_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

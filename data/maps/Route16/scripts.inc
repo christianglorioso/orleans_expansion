@@ -77,14 +77,7 @@ Route16_Text_Route16Picnicker2After:
 
 @ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route16_EventScript_StateEnteiOpen swaps the
 @ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
-Route16_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route16_EventScript_LairOpen
-	end
 
-Route16_EventScript_LairOpen:
-	call Route16_EventScript_StateEnteiOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route16_EventScript_LairEnter::
 	lockall
@@ -97,6 +90,35 @@ Route16_EventScript_LairEnter::
 Route16_Movement_LairFaceUp:
 	face_up
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route16_OnLoad:
+	setvar VAR_0x8004, ACH_FIRE_COLLECTOR
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route16_EventScript_LairOpenEntei
+	end
+
+Route16_EventScript_LairOpenEntei:
+	call Route16_EventScript_StateEnteiOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route16_EventScript_LairSealEntei::
+	goto_if_set FLAG_TEMP_1, Route16_EventScript_LairSealEnd
+	msgbox Route16_Text_LairSealEntei, MSGBOX_SIGN
+	end
+
+Route16_Text_LairSealEntei:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Fire Pokémon.$"
+
+Route16_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

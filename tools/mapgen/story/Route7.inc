@@ -97,14 +97,7 @@ Route7_Text_Route7BirdKeeperAfter:
 
 @ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route7_EventScript_StateCelebiOpen swaps the
 @ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
-Route7_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route7_EventScript_LairOpen
-	end
 
-Route7_EventScript_LairOpen:
-	call Route7_EventScript_StateCelebiOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route7_EventScript_LairEnter::
 	lockall
@@ -117,3 +110,33 @@ Route7_EventScript_LairEnter::
 Route7_Movement_LairFaceUp:
 	face_up
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route7_OnLoad:
+	setvar VAR_0x8004, ACH_ROOM_WARPER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route7_EventScript_LairOpenCelebi
+	end
+
+Route7_EventScript_LairOpenCelebi:
+	call Route7_EventScript_StateCelebiOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route7_EventScript_LairSealCelebi::
+	goto_if_set FLAG_TEMP_1, Route7_EventScript_LairSealEnd
+	msgbox Route7_Text_LairSealCelebi, MSGBOX_SIGN
+	end
+
+Route7_Text_LairSealCelebi:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Trick Room 10 times in the\n"
+	.string "Battle Frontier.$"
+
+Route7_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

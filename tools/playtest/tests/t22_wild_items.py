@@ -135,6 +135,8 @@ def run(b, t):
     b.shot("intro_no_item")
     leave_battle(b)
     # ---- Thief takes it
+    for i in range(1, 9):
+        b.set_flag("FLAG_BADGE0%d_GET" % i)           # a level 40 Totodile without badges sometimes ignores orders (random): the steal must not depend on the RNG
     b.give_mon("SPECIES_TOTODILE", 40)
     for slot in range(4):
         b.set_move(slot, "MOVE_THIEF", 0)          # whichever move the cursor lands on is Thief

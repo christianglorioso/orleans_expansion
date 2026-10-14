@@ -269,6 +269,13 @@ struct AchievementSaveData
 
 #define ACHIEVEMENT_SAVE_MAGIC 0xAC1E0001
 
+// Orleans: battle counters for the lair-unlock trophies (src/lair_counters.c), right after the trophies in SaveBlock3. No save compatibility (zeroed by a new game).
+struct LairCounterSaveData
+{
+    u8 frontier[8];   // paralyze, snow, sun, rain, sandstorm, tailwind, misty terrain, trick room (Battle Frontier only; saturate at 255)
+    u32 damage[2];    // biting-move damage, super-effective Psychic damage (HP actually removed, any battle)
+}; // 16 bytes
+
 struct SaveBlock3
 {
 #if FNPC_ENABLE_NPC_FOLLOWERS
@@ -289,6 +296,7 @@ struct SaveBlock3
 #endif
     // Orleans: trophies, appended after the clock (a save without the magic is given an empty, stamped block).
     struct AchievementSaveData achievements;
+    struct LairCounterSaveData lairCounters;
     // Orleans: first-pickup item descriptions (OW_SHOW_ITEM_DESCRIPTIONS), kept LAST so every field above stays where older saves have it.
     // A save without these bits just shows each description once more.
 #if OW_SHOW_ITEM_DESCRIPTIONS == OW_ITEM_DESCRIPTIONS_FIRST_TIME

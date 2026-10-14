@@ -294,7 +294,7 @@ def prepare(b, key):
             by[bd["prefab"]] += 1
         b.border_log.append("props under the wall taken out: " + ", ".join(f"{k} x{v}" for k, v in sorted(by.items())))
         gone = {(x, y) for bd in dropped for x, y, _ in __import__("band_rules").prefab_cells(b, bd)}
-        spec["signs"] = [g for g in spec.get("signs", []) if (g["x"], g["y"]) not in gone]
+        spec["signs"] = [g for g in spec.get("signs", []) if (g["x"], g["y"]) not in gone or g.get("gate")]  # (a lair seal sign is a gate event: it stands on the sealed wall)
     # the ground under the wall and the edge cells becomes the plain terrain of the style (a road or a wall piece there goes)
     for side, d in depth.items():       # the terrain under a wall is the terrain of the cell it hangs over (no autotile edges inside it)
         for lo, hi in sp[side]:

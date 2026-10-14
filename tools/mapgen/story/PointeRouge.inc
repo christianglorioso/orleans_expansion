@@ -219,12 +219,38 @@ PointeRouge_OnTransitionPG:
 @ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
 PointeRouge_EventScript_PGSetup:
 	call_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_PGHide
-	call_if_ge VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardGone
-	call_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IceGuardHere
+	setvar VAR_0x8004, ACH_SNOW_SETTER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, PointeRouge_EventScript_IceGuardGone
+	call_if_ne VAR_RESULT, TRUE, PointeRouge_EventScript_IceGuardHere
 PointeRouge_EventScript_PGSetupDone:
 	return
 
-@ the ice plant guard steps aside from story 45, state-based so a save that already cleared the game is fixed too
+@ the ice plant guard (Articuno's lair) steps aside once the lair is open: story 45 AND the Snow Setter trophy (Set Snow 25 times in the Battle Frontier). State-based on every
+@ map load, so a save that already cleared the game, or a trophy earned elsewhere, is picked up. Until then he is the padlock, and tells the player what opens it.
+PointeRouge_EventScript_IcePlantGuard::
+	lock
+	faceplayer
+	goto_if_lt VAR_ORLEANS_STORY, 45, PointeRouge_EventScript_IcePlantGuardPadlocked
+	msgbox PointeRouge_Text_IcePlantGuardSealed, MSGBOX_DEFAULT
+	release
+	end
+
+PointeRouge_EventScript_IcePlantGuardPadlocked:
+	msgbox PointeRouge_Text_IcePlantGuard, MSGBOX_DEFAULT
+	release
+	end
+
+PointeRouge_Text_IcePlantGuard:
+	.string "The old ice plant is padlocked.\n"
+	.string "Cold room's off limits. For now.$"
+
+PointeRouge_Text_IcePlantGuardSealed:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Snow 25 times in the\n"
+	.string "Battle Frontier.$"
+
 PointeRouge_EventScript_IceGuardGone:
 	setflag FLAG_HIDE_POINTE_ICE_GUARD
 	return

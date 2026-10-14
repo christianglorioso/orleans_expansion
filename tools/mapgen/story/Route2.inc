@@ -110,14 +110,7 @@ Route2_Text_GuitaristRestored:
 
 @ The legendary lair's way in (story_data_lairs.py, build.py gates()): sealed in map.bin; from story 45 the generated Route2_EventScript_StateRaikouOpen swaps the
 @ open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
-Route2_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route2_EventScript_LairOpen
-	end
 
-Route2_EventScript_LairOpen:
-	call Route2_EventScript_StateRaikouOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route2_EventScript_LairEnter::
 	lockall
@@ -130,3 +123,32 @@ Route2_EventScript_LairEnter::
 Route2_Movement_LairFaceUp:
 	face_up
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route2_OnLoad:
+	setvar VAR_0x8004, ACH_ELECTRIC_COLLECTOR
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route2_EventScript_LairOpenRaikou
+	end
+
+Route2_EventScript_LairOpenRaikou:
+	call Route2_EventScript_StateRaikouOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route2_EventScript_LairSealRaikou::
+	goto_if_set FLAG_TEMP_1, Route2_EventScript_LairSealEnd
+	msgbox Route2_Text_LairSealRaikou, MSGBOX_SIGN
+	end
+
+Route2_Text_LairSealRaikou:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Electric Pokémon.$"
+
+Route2_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

@@ -68,15 +68,7 @@ Route13_OnTransitionPG:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route13_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route13_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route13_EventScript_LairOpenB2
-	end
 
-Route13_EventScript_LairOpenB2:
-	call Route13_EventScript_StateZarudeOpen
-	call Route13_EventScript_StateOgerponOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route13_EventScript_LairEnterZarude::
 	lockall
@@ -102,3 +94,51 @@ Route13_Movement_LairFaceRight:
 	face_right
 	step_end
 
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route13_OnLoad:
+	setvar VAR_0x8004, ACH_MOSS_AND_SHADOW
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route13_EventScript_LairOpenZarude
+	setvar VAR_0x8004, ACH_MASK_COLLECTOR
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route13_EventScript_LairOpenOgerpon
+	end
+
+Route13_EventScript_LairOpenZarude:
+	call Route13_EventScript_StateZarudeOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route13_EventScript_LairOpenOgerpon:
+	call Route13_EventScript_StateOgerponOpen
+	setflag FLAG_TEMP_2
+	return
+
+Route13_EventScript_LairSealZarude::
+	goto_if_set FLAG_TEMP_1, Route13_EventScript_LairSealEnd
+	msgbox Route13_Text_LairSealZarude, MSGBOX_SIGN
+	end
+
+Route13_Text_LairSealZarude:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Capture every Grass and Dark\n"
+	.string "Pokémon.$"
+
+Route13_EventScript_LairSealOgerpon::
+	goto_if_set FLAG_TEMP_2, Route13_EventScript_LairSealEnd
+	msgbox Route13_Text_LairSealOgerpon, MSGBOX_SIGN
+	end
+
+Route13_Text_LairSealOgerpon:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Collect all of Ogerpon's\n"
+	.string "masks.$"
+
+Route13_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

@@ -167,12 +167,15 @@ ROOMS = {
         "people": [("kyogre raid", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_KYOGRE_FRONT", "face": "DOWN", "flag": "FLAG_HIDE_KYOGRE_RAID"})],
         "positions": [(9, 5)],
         # the sealed door's middle cell (9, 10): A facing it from (9, 11); the exit mat (9, 19) leaves by script (to the end of Route 22), the coord event runs before the warp
-        "bg_events": [{"type": "sign", "x": 9, "y": 10, "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH", "script": "LandsEnd_DrownedTemple_EventScript_TheSealed0"}],
+        "bg_events": [{"type": "sign", "x": 9, "y": 10, "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH", "script": "LandsEnd_DrownedTemple_EventScript_TheSealed0"},
+                      # the post-game seal in front of Kyogre's dais: names what opens the arena (Rayquaza caught), see story/LandsEnd_DrownedTemple.inc
+                      {"type": "sign", "x": 9, "y": 6, "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY", "script": "LandsEnd_DrownedTemple_EventScript_ArenaSeal"}],
         "coord_events": [{"type": "trigger", "x": 9, "y": 19, "elevation": 0, "var": "FLAG_FINALE_NEVER_SET", "var_value": "0", "script": "LandsEnd_DrownedTemple_EventScript_Exit"}],
     },
     "lands_end_salt_cathedral": {
         "people": [("groudon raid", "", {"custom": True, "gfx": "OBJ_EVENT_GFX_GROUDON_FRONT", "face": "DOWN", "flag": "FLAG_HIDE_GROUDON_RAID"})],
         "positions": [(11, 4)],
+        "bg_events": [{"type": "sign", "x": 11, "y": 5, "elevation": 3, "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY", "script": "LandsEnd_SaltCathedral_EventScript_ArenaSeal"}],
         "coord_events": [{"type": "trigger", "x": 11, "y": 21, "elevation": 0, "var": "FLAG_FINALE_NEVER_SET", "var_value": "0", "script": "LandsEnd_SaltCathedral_EventScript_Exit"}],
     },
 }

@@ -44,7 +44,11 @@ OldWater_CanoeDocks_Text_BoatmanTupeloFirst:
 	.string "walkways.$"
 
 @ From story 45 the boatman knows the way to Uxie's Knowing Pool (OldWater_KnowingPool, story/OldWater_KnowingPool.inc): a script warp, no change to the town
+@ ...and only with the Mist Weaver trophy (Set Misty Terrain 10 times in the Battle Frontier): the same trophy opens all three pools (Uxie, Mesprit, Azelf). Re-checked at every talk.
 OldWater_CanoeDocks_EventScript_BoatmanPool:
+	setvar VAR_0x8004, ACH_MIST_WEAVER
+	call LairGate_EventScript_Check
+	goto_if_eq VAR_RESULT, FALSE, OldWater_CanoeDocks_EventScript_BoatmanPoolSealed
 	msgbox OldWater_CanoeDocks_Text_BoatmanPoolOffer, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, OldWater_CanoeDocks_EventScript_BoatmanLanding
 	msgbox OldWater_CanoeDocks_Text_BoatmanPoolGo, MSGBOX_DEFAULT
@@ -53,6 +57,16 @@ OldWater_CanoeDocks_EventScript_BoatmanPool:
 	waitstate
 	release
 	end
+
+OldWater_CanoeDocks_EventScript_BoatmanPoolSealed:
+	msgbox OldWater_CanoeDocks_Text_BoatmanPoolSealed, MSGBOX_DEFAULT
+	goto OldWater_CanoeDocks_EventScript_BoatmanLanding
+
+OldWater_CanoeDocks_Text_BoatmanPoolSealed:
+	.string "BOATMAN: The Knowing Pool is shut\n"
+	.string "to everyone. The reeds know it.\p"
+	.string "It needs a trophy: Set Misty\n"
+	.string "Terrain 10 times in the Frontier.$"
 
 OldWater_CanoeDocks_Text_BoatmanPoolOffer:
 	.string "BOATMAN: Want a paddle out to the\n"

@@ -93,8 +93,41 @@ LandsEnd_SaltCathedral_EventScript_PGSetup:
 	call_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_SaltCathedral_EventScript_PGHide
 	goto_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_SaltCathedral_EventScript_PGSetupDone
 	call_if_ne VAR_ORLEANS_LEGENDARY_PICK, 1, LandsEnd_SaltCathedral_EventScript_PGHideGroudonRe
+	goto_if_ne VAR_ORLEANS_LEGENDARY_PICK, 1, LandsEnd_SaltCathedral_EventScript_PGSetupDone
+	@ the GROUDON arena opens once Rayquaza is caught (re-checked on every map load); a caught GROUDON stays gone
+	setvar VAR_0x8004, SPECIES_GROUDON
+	special Achievement_SpeciesCaughtVar8004
+	goto_if_eq VAR_RESULT, TRUE, LandsEnd_SaltCathedral_EventScript_PGSetupDone
+	setvar VAR_0x8004, SPECIES_RAYQUAZA
+	special Achievement_SpeciesCaughtVar8004
+	call_if_eq VAR_RESULT, TRUE, LandsEnd_SaltCathedral_EventScript_ArenaOpen
+	call_if_ne VAR_RESULT, TRUE, LandsEnd_SaltCathedral_EventScript_ArenaSealed
 LandsEnd_SaltCathedral_EventScript_PGSetupDone:
 	return
+
+LandsEnd_SaltCathedral_EventScript_ArenaOpen:
+	clearflag FLAG_PG_GROUDON_RE
+	return
+
+LandsEnd_SaltCathedral_EventScript_ArenaSealed:
+	setflag FLAG_PG_GROUDON_RE
+	return
+
+@ the seal sign on the cell in front of the dais (11, 5): says what opens the arena while it is sealed (the legend is waiting here, Rayquaza not caught yet)
+LandsEnd_SaltCathedral_EventScript_ArenaSeal::
+	goto_if_lt VAR_ORLEANS_STORY, 45, LandsEnd_SaltCathedral_EventScript_ArenaSealEnd
+	goto_if_ne VAR_ORLEANS_LEGENDARY_PICK, 1, LandsEnd_SaltCathedral_EventScript_ArenaSealEnd
+	goto_if_unset FLAG_PG_GROUDON_RE, LandsEnd_SaltCathedral_EventScript_ArenaSealEnd
+	setvar VAR_0x8004, SPECIES_GROUDON
+	special Achievement_SpeciesCaughtVar8004
+	goto_if_eq VAR_RESULT, TRUE, LandsEnd_SaltCathedral_EventScript_ArenaSealEnd
+	msgbox LandsEnd_SaltCathedral_Text_ArenaSeal, MSGBOX_SIGN
+LandsEnd_SaltCathedral_EventScript_ArenaSealEnd:
+	end
+
+LandsEnd_SaltCathedral_Text_ArenaSeal:
+	.string "GROUDON's arena is sealed until\n"
+	.string "RAYQUAZA has been caught.$"
 
 LandsEnd_SaltCathedral_EventScript_PGHide:
 	setflag FLAG_PG_GROUDON_RE

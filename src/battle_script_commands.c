@@ -1,4 +1,5 @@
 #include "global.h"
+#include "lair_counters.h"
 #include "battle.h"
 #include "battle_hold_effects.h"
 #include "battle_message.h"
@@ -1725,6 +1726,7 @@ void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effectBattle
         break;
     case MOVE_EFFECT_PARALYSIS:
         gBattleMons[effectBattler].status1 |= STATUS1_PARALYSIS;
+        LairCounters_OnParalysisSet(battlerAtk, effectBattler);
         gBattlescriptCurrInstr = BattleScript_MoveEffectParalysis;
         break;
     case MOVE_EFFECT_TOXIC:
@@ -6372,6 +6374,7 @@ static void Cmd_settailwind(void)
     {
         gSideStatuses[side] |= SIDE_STATUS_TAILWIND;
         gSideTimers[side].tailwindTimer = (GetConfig(B_TAILWIND_TURNS) >= GEN_5 ? 4 : 3);
+        LairCounters_OnTailwindSet(gBattlerAttacker);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
     else
@@ -7308,6 +7311,8 @@ static void HandleRoomMove(u32 statusFlag, u8 *timer, u8 stringId)
     else
     {
         gFieldStatuses |= statusFlag;
+        if (statusFlag == STATUS_FIELD_TRICK_ROOM)
+            LairCounters_OnTrickRoomSet(gBattlerAttacker);
         *timer = 5;
         gBattleCommunication[MULTISTRING_CHOOSER] = stringId;
     }

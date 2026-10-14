@@ -68,14 +68,7 @@ Route17_OnTransitionPG:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route17_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route17_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route17_EventScript_LairOpenB2
-	end
 
-Route17_EventScript_LairOpenB2:
-	call Route17_EventScript_StateSugarhouseOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route17_EventScript_LairEnterSugarhouse::
 	lockall
@@ -90,12 +83,43 @@ Route17_Movement_LairFaceUp:
 	step_end
 
 
-@ The mill door (33, 9): barred until story 45 (a sign on the door cell, read from the south); from story 45 the cell walks and the trigger above enters.
+@ The mill door (33, 9): barred until the lair is open (story 45 and the Sun Setter trophy; a sign on the door cell, read from the south); once open (FLAG_TEMP_1, armed
+@ by Route17_OnLoad) the cell walks and the trigger enters.
 Route17_EventScript_MillDoor::
-	goto_if_ge VAR_ORLEANS_STORY, 45, Route17_EventScript_LairEnterSugarhouse
+	goto_if_set FLAG_TEMP_1, Route17_EventScript_LairEnterSugarhouse
+	goto_if_lt VAR_ORLEANS_STORY, 45, Route17_EventScript_MillDoorBarred
+	msgbox Route17_Text_MillDoorSealed, MSGBOX_SIGN
+	end
+
+Route17_EventScript_MillDoorBarred:
 	msgbox Route17_Text_MillDoorBarred, MSGBOX_SIGN
 	end
 
 Route17_Text_MillDoorBarred:
 	.string "It's barred. Heat comes through\n"
 	.string "the planks.$"
+
+Route17_Text_MillDoorSealed:
+	.string "Barred. It opens after the game,\n"
+	.string "for the Sun Setter trophy:\p"
+	.string "Set Sun 25 times in the\n"
+	.string "Battle Frontier.$"
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route17_OnLoad:
+	setvar VAR_0x8004, ACH_SUN_SETTER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route17_EventScript_LairOpenMoltres
+	end
+
+Route17_EventScript_LairOpenMoltres:
+	call Route17_EventScript_StateSugarhouseOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route17_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

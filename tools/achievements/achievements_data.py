@@ -114,7 +114,7 @@ ROWS = [
     (93, "Collection", "LEGEND_THUNDURUS", "Legend: Thundurus", "Obtain Thundurus on the lightning-struck cypress island.", ("dex", "SPECIES_THUNDURUS"), ULTRA, "live"),
     (94, "Collection", "LEGEND_LANDORUS", "Legend: Landorus", "Obtain Landorus in the hidden hollow in the dry hills.", ("dex", "SPECIES_LANDORUS"), ULTRA, "live"),
     (95, "Collection", "LEGEND_ZARUDE", "Legend: Zarude", "Obtain Zarude in the overgrown moss forest grove.", ("dex", "SPECIES_ZARUDE"), ULTRA, "live"),
-    (96, "Collection", "LEGEND_OGERPON", "Legend: Ogerpon", "Obtain Ogerpon and find the three other masks.", ("soon",), ULTRA, "soon"),
+    (96, "Collection", "LEGEND_OGERPON", "Legend: Ogerpon", "Obtain Ogerpon and find the three other masks.", ("pred", "OgerponAndMasks"), ULTRA, "live"),
     (97, "Collection", "THE_BLOODMOON", "The Bloodmoon", "Find Ursaluna Bloodmoon, a one-off encounter.", ("dex", "SPECIES_URSALUNA_BLOODMOON"), ULTRA, "live"),
     (98, "Collection", "MIDNIGHT_WOLF", "Midnight Wolf", "Find Lycanroc Midnight, a one-off encounter.", ("dex", "SPECIES_LYCANROC_MIDNIGHT"), ULTRA, "live"),
     (99, "Collection", "SPARK_OF_LIFE", "Spark of Life", "Complete the quest for the base Rotom.", ("dex", "SPECIES_ROTOM"), GREAT, "live"),
@@ -122,3 +122,40 @@ ROWS = [
 ]
 
 CATEGORIES = ["Story", "Battle", "Battle Frontier", "Conservation", "Exploration", "Craft and culture", "Collection"]
+
+
+# ---- 2026-10-14: the lair-unlock trophies (map_pass/lair_unlocks_spec.md). Sheet numbers 101-119 = ids 100-118 (ids never change).
+# Each opens a legendary lair (together with the post-game, story 45); ("set", KEY) = capture every species of tools/achievements/lair_sets.py's set,
+# ("counter", NAME, n) = a SaveBlock3 battle counter (src/lair_counters.c) reaches n, ("masks",) = all three of Ogerpon's mask items, ("legends",) = the 18 others.
+_LAIR_ROWS = [
+    (101, "Collection", "WATER_COLLECTOR", "Water Collector", "Capture every Water Pokémon. Opens Suicune's lair.", ("set", "WATER"), ULTRA, "live"),
+    (102, "Collection", "FIRE_COLLECTOR", "Fire Collector", "Capture every Fire Pokémon. Opens Entei's lair.", ("set", "FIRE"), ULTRA, "live"),
+    (103, "Collection", "ELECTRIC_COLLECTOR", "Electric Collector", "Capture every Electric Pokémon. Opens Raikou's lair.", ("set", "ELECTRIC"), ULTRA, "live"),
+    (104, "Battle Frontier", "PARALYSIS_PRO", "Paralysis Pro", "Paralyze 25 Pokémon in the Battle Frontier. Opens Zapdos' lair.", ("counter", "PARALYZE", 25), ULTRA, "live"),
+    (105, "Battle Frontier", "SNOW_SETTER", "Snow Setter", "Set Snow 25 times in the Battle Frontier. Opens Articuno's lair.", ("counter", "SNOW", 25), ULTRA, "live"),
+    (106, "Battle Frontier", "SUN_SETTER", "Sun Setter", "Set Sun 25 times in the Battle Frontier. Opens Moltres' lair.", ("counter", "SUN", 25), ULTRA, "live"),
+    (107, "Collection", "FIGHTERS_AND_FLIERS", "Fighters and Fliers", "Capture every Fighting and Flying Pokémon. Opens Galarian Zapdos' lair.", ("set", "FIGHTING_FLYING"), ULTRA, "live"),
+    (108, "Collection", "MIND_AND_WING", "Mind and Wing", "Capture every Psychic and Flying Pokémon. Opens Galarian Articuno's lair.", ("set", "PSYCHIC_FLYING"), ULTRA, "live"),
+    (109, "Collection", "NIGHT_WINGS", "Night Wings", "Capture every Dark and Flying Pokémon. Opens Galarian Moltres' lair.", ("set", "DARK_FLYING"), ULTRA, "live"),
+    (110, "Battle Frontier", "TAILWIND_RIDER", "Tailwind Rider", "Set Tailwind 25 times in the Battle Frontier. Opens Tornadus' lair.", ("counter", "TAILWIND", 25), ULTRA, "live"),
+    (111, "Battle Frontier", "RAIN_DANCER", "Rain Dancer", "Set Rain 25 times in the Battle Frontier. Opens Thundurus' lair.", ("counter", "RAIN", 25), ULTRA, "live"),
+    (112, "Battle Frontier", "SANDSTORM_CALLER", "Sandstorm Caller", "Set Sandstorm 25 times in the Battle Frontier. Opens Landorus' lair.", ("counter", "SANDSTORM", 25), ULTRA, "live"),
+    (113, "Collection", "MOSS_AND_SHADOW", "Moss and Shadow", "Capture every Grass and Dark Pokémon. Opens Zarude's lair.", ("set", "GRASS_DARK"), ULTRA, "live"),
+    (114, "Collection", "MASK_COLLECTOR", "Mask Collector", "Collect all of Ogerpon's masks. Opens Ogerpon's lair.", ("masks",), ULTRA, "live"),
+    (115, "Battle Frontier", "MIST_WEAVER", "Mist Weaver", "Set Misty Terrain 10 times in the Battle Frontier. Opens three lairs.", ("counter", "MISTY", 10), ULTRA, "live"),
+    (116, "Battle Frontier", "ROOM_WARPER", "Room Warper", "Set Trick Room 10 times in the Battle Frontier. Opens Celebi's lair.", ("counter", "TRICK_ROOM", 10), ULTRA, "live"),
+    (117, "Battle", "HUNTERS_JAWS", "Hunter's Jaws", "Deal 10,000 damage with biting moves. Opens the rougarou's lair.", ("counter", "BITE_DAMAGE", 10000), ULTRA, "live"),
+    (118, "Battle", "PSYCHIC_FURY", "Psychic Fury", "Deal 10,000 super-effective damage with Psychic moves. Opens Bloodmoon Ursaluna's lair.", ("counter", "PSYCHIC_DAMAGE", 10000), ULTRA, "live"),
+    (119, "Collection", "LEGEND_HUNTER", "Legend Hunter", "Capture the 18 other legendaries. Opens Rayquaza's arena.", ("legends",), MASTER, "live"),
+]
+
+
+def _merge_lair_rows():
+    out = list(ROWS)
+    for row in _LAIR_ROWS:
+        last = max(i for i, r in enumerate(out) if r[1] == row[1])   # after the last row of its category
+        out.insert(last + 1, row)
+    return out
+
+
+ROWS = _merge_lair_rows()

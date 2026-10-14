@@ -32,3 +32,12 @@ Common_Text_AchievementRewardsBagFull:
 	.string "some room and come see me again.\p"
 	.string "I'm holding the rest of your\n"
 	.string "trophy prizes.$"
+
+@ Lair gates (tools/mapgen/lair_gates.py, story_data_lairs.GATES): a legendary lair opens only when its trophy is complete AND the game is beaten (story 45).
+@ In: VAR_0x8004 = the trophy id (ACH_*). Out: VAR_RESULT = TRUE when the lair is open. Re-polls the trophies, so one earned elsewhere counts at once.
+LairGate_EventScript_Check::
+	setvar VAR_RESULT, FALSE
+	goto_if_lt VAR_ORLEANS_STORY, 45, LairGate_EventScript_CheckDone
+	special Achievement_CheckUnlockedVar8004
+LairGate_EventScript_CheckDone:
+	return

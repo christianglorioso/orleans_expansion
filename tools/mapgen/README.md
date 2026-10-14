@@ -513,3 +513,15 @@ The story, trainer and NPC scripts are GENERATED, and the generated files are wh
 `python tools/mapgen/gen_drift_check.py` regenerates all of it into a scratch area and fails on any difference (about 80 s); `--fast` (trainer tables, party files, partners, story splice) is
 what `story_lint.py` runs, so a plain story lint fails on drift. A drifting source is fixed in the SOURCE, then regenerated. `build.py` also supports an object with `"elevation": 0` (an NPC spoken to
 from water and land alike: its cell becomes elevation 0 too, `free_elevation_cells`); a rest-spot cell (`interior_rest.REST`) always blocks, so it is faced and never walked onto.
+
+## Lair unlocks (2026-10-14; `map_pass/lair_unlocks_spec.md`)
+Every raid lair opens only when its trophy is complete AND the game is beaten (story 45); the rougarou also needs the flood down (FLAG_BADGE06_GET), Bloodmoon Ursaluna keeps its night-only encounter.
+- Data: `story_data_lairs.GATES` (lair -> trophy constant, the per-lair armed flag FLAG_TEMP_1..3, the seal sign cell, the hint's requirement). `python tools/mapgen/lair_gates.py` writes each route's gate block
+  (`<Route>_OnLoad` re-checks on EVERY map load via `LairGate_EventScript_Check` in data/scripts/orleans_achievements.inc, the `LairOpen<Name>` arms, the `LairSeal<Name>` sign scripts and their hint texts) between
+  the markers at the end of `story/<Route>.inc`; `--check` fails when a file would change. The seal signs are spec `signs` with `"gate": True` (borders / bands / feather leave them on the sealed wall and the committed
+  map.json's `LairSeal` bg_events no longer steer the terrain: `feather.protected`).
+- Not route entrances (hand-written): the lighthouse stair (Zapdos), the Pointe Rouge ice plant guard (Articuno), the Canoe Docks boatman (Uxie; one Mist Weaver trophy opens Uxie, Mesprit and Azelf), Moltres' mill door
+  (`Route17_EventScript_MillDoor`), Rayquaza's arena (`OldestShrine_EventScript_PGSetup`: Legend Hunter) and the Kyogre / Groudon arenas (`LandsEnd_DrownedTemple` / `_SaltCathedral` `PGSetup`: Rayquaza caught), each with a seal sign.
+- After changing GATES: reset the affected `data/maps/<Route>/map.json` (build.py reads the committed events), `build_all.py`, `story.py`, then `gen_drift_check` and `story_gates_check`.
+- Capture sets: `python tools/achievements/lair_sets.py` regenerates `src/data/lair_capture_sets.h` and `map_pass/lair_unlock_sets.md` (needs tools/dex/out: `tools/dex/pp.sh`).
+

@@ -30,6 +30,7 @@ import story_data_lairs as D  # noqa: E402
 import weather_plan  # noqa: E402
 import t19_starters as S  # noqa: E402
 import t25_boss as B  # noqa: E402
+import lairutil as LU  # noqa: E402
 
 ORDER = ["NONE", "SUNNY_CLOUDS", "SUNNY", "RAIN", "SNOW", "RAIN_THUNDERSTORM", "FOG_HORIZONTAL", "VOLCANIC_ASH", "SANDSTORM", "FOG_DIAGONAL",
          "UNDERWATER", "SHADE", "DROUGHT", "DOWNPOUR", "UNDERWATER_BUBBLES"]     # include/constants/weather.h
@@ -227,6 +228,8 @@ def run(b, t):
     set_time(b, DAY)
     b.set_var("VAR_ORLEANS_STORY", 45)
     b.frames(900)                                  # the trophy popups the story value unlocks must be gone before the first input
+    for ach in LU.lair_trophies().values():        # the lairs open with their trophy AND the post-game (t29_lair_unlocks tests the gates themselves): all earned here
+        LU.set_trophy(b, ach)
     keys = list(CFG)
 
     # ---------------------------------------------------------------- static facts
@@ -245,7 +248,7 @@ def run(b, t):
             if enter_name:
                 rt = map_data(lair["route"])
                 trig = [c for c in rt["coords"] if c["script"] == "%s_EventScript_LairEnter%s" % (lair["route"], enter_name)]
-                t.check("%s: %d entrance trigger(s) for %s, armed by %s" % (lair["route"], len(trig), key, D.TRIG), len(trig) >= 1 and all(c["var"] == D.TRIG for c in trig))
+                t.check("%s: %d entrance trigger(s) for %s, armed by %s" % (lair["route"], len(trig), key, D.GATES[key][1]), len(trig) >= 1 and all(c["var"] == D.GATES[key][1] for c in trig))
             old = OLD_MAP[key]
             ot = map_data(old)
             t.check("%s: the old %s encounter object is gone from the map" % (old, key), not [o for o in ot["objects"] if o.get("flag") == enc_flag(key)])
@@ -253,7 +256,7 @@ def run(b, t):
             route = lair["route"]
             rt = map_data(route)
             trig = [c for c in rt["coords"] if c["script"] == route + "_EventScript_LairEnter"]
-            t.check("%s: two entrance triggers, armed by %s" % (route, D.TRIG), len(trig) == 2 and all(c["var"] == D.TRIG for c in trig))
+            t.check("%s: two entrance triggers, armed by %s" % (route, D.GATES[key][1]), len(trig) == 2 and all(c["var"] == D.GATES[key][1] for c in trig))
             if key != "rougarou":
                 t.check("%s: the old encounter object is gone from the route" % route, not [o for o in rt["objects"] if o.get("flag") == enc_flag(key)])
     rt14 = map_data("Route14")
@@ -326,8 +329,7 @@ def lair_flow(b, t, key, cfg):
                 save_shot(b, key, "%s_sealed_entrance" % key, "ingame_%s_entrance_sealed.png" % key)
     # -- open
     set_open(b, cond, True)
-    if cond[0] == "story":
-        b.set_var("VAR_ORLEANS_STORY", 45)
+    b.set_var("VAR_ORLEANS_STORY", 45)         # (2026-10-14) every lair also needs the post-game, the rougarou's flood flag on top
     other_map(b)
     if kind in ("walk", "surf"):
         ax, ay = approach_of(key)

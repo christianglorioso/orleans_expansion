@@ -235,14 +235,7 @@ Route1_EventScript_StoryWeatherDone:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route1_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route1_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route1_EventScript_LairOpenB2
-	end
 
-Route1_EventScript_LairOpenB2:
-	call Route1_EventScript_StateHeartPoolOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route1_EventScript_LairEnterMesprit::
 	lockall
@@ -256,3 +249,32 @@ Route1_Movement_LairFaceRight:
 	face_right
 	step_end
 
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route1_OnLoad:
+	setvar VAR_0x8004, ACH_MIST_WEAVER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route1_EventScript_LairOpenMesprit
+	end
+
+Route1_EventScript_LairOpenMesprit:
+	call Route1_EventScript_StateHeartPoolOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route1_EventScript_LairSealMesprit::
+	goto_if_set FLAG_TEMP_1, Route1_EventScript_LairSealEnd
+	msgbox Route1_Text_LairSealMesprit, MSGBOX_SIGN
+	end
+
+Route1_Text_LairSealMesprit:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Misty Terrain 10 times in\n"
+	.string "the Battle Frontier.$"
+
+Route1_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

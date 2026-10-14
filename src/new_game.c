@@ -1,4 +1,5 @@
 #include "global.h"
+#include "lair_counters.h"
 #include "achievements.h"
 #include "clock.h"
 #include "new_game.h"
@@ -239,6 +240,7 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     Achievement_Reset();
+    LairCounters_Reset();
     ClearFollowerNPCData();
 }
 

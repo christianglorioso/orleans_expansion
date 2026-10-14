@@ -76,15 +76,7 @@ Route23_EventScript_StoryWeatherDone:
 @ Bloodmoon Ursaluna's lair (Route23_BloodmoonArroyo, story/Route23_BloodmoonArroyo.inc): the arroyo's way in is the cleft in the north scrub (22-23, rows 0-2),
 @ sealed in map.bin; from story 45 the generated Route23_EventScript_StateUrsalunaOpen swaps the open look in on load and arms the entrance trigger
 @ (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
-Route23_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route23_EventScript_LairOpenB2
-	call_if_ge VAR_ORLEANS_STORY, 45, Route23_EventScript_LairOpen
-	end
 
-Route23_EventScript_LairOpen:
-	call Route23_EventScript_StateUrsalunaOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route23_EventScript_LairEnter::
 	lockall
@@ -101,11 +93,6 @@ Route23_Movement_LairFaceUp:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route23_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route23_EventScript_LairOpenB2:
-	call Route23_EventScript_StateAzelfOpen
-	call Route23_EventScript_StateLandorusOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route23_EventScript_LairEnterAzelf::
 	lockall
@@ -126,3 +113,71 @@ Route23_EventScript_LairEnterLandorus::
 Route23_Movement_LairFaceDown:
 	face_down
 	step_end
+
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route23_OnLoad:
+	setvar VAR_0x8004, ACH_PSYCHIC_FURY
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route23_EventScript_LairOpenUrsaluna
+	setvar VAR_0x8004, ACH_MIST_WEAVER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route23_EventScript_LairOpenAzelf
+	setvar VAR_0x8004, ACH_SANDSTORM_CALLER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route23_EventScript_LairOpenLandorus
+	end
+
+Route23_EventScript_LairOpenUrsaluna:
+	call Route23_EventScript_StateUrsalunaOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route23_EventScript_LairOpenAzelf:
+	call Route23_EventScript_StateAzelfOpen
+	setflag FLAG_TEMP_2
+	return
+
+Route23_EventScript_LairOpenLandorus:
+	call Route23_EventScript_StateLandorusOpen
+	setflag FLAG_TEMP_3
+	return
+
+Route23_EventScript_LairSealUrsaluna::
+	goto_if_set FLAG_TEMP_1, Route23_EventScript_LairSealEnd
+	msgbox Route23_Text_LairSealUrsaluna, MSGBOX_SIGN
+	end
+
+Route23_Text_LairSealUrsaluna:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Deal 10,000 super-effective\n"
+	.string "damage with Psychic moves.$"
+
+Route23_EventScript_LairSealAzelf::
+	goto_if_set FLAG_TEMP_2, Route23_EventScript_LairSealEnd
+	msgbox Route23_Text_LairSealAzelf, MSGBOX_SIGN
+	end
+
+Route23_Text_LairSealAzelf:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Misty Terrain 10 times in\n"
+	.string "the Battle Frontier.$"
+
+Route23_EventScript_LairSealLandorus::
+	goto_if_set FLAG_TEMP_3, Route23_EventScript_LairSealEnd
+	msgbox Route23_Text_LairSealLandorus, MSGBOX_SIGN
+	end
+
+Route23_Text_LairSealLandorus:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Sandstorm 25 times in the\n"
+	.string "Battle Frontier.$"
+
+Route23_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---

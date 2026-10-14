@@ -3,7 +3,11 @@
 import re
 from pathlib import Path
 
-from bot import map_data, ROOT
+from bot import map_data, ROOT, enum_value
+
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import lairutil as LU  # noqa: E402
 
 DAY = 12                    # in-game hours on the fake clock (bot.set_clock)
 NIGHT = 22
@@ -147,19 +151,8 @@ def run(b, t):
     t.check("talking to Ursaluna by day: no battle, it slips away (hide flag set)", not battled and b.flag("FLAG_PG_URSALUNA_BM"))
     set_time(b, DAY)
 
-    # ---------------------------------------------------------------- the arena legend only if Jayden took it
-    b.set_var("VAR_ORLEANS_LEGENDARY_PICK", 1)           # the player has Kyogre: Jayden has Groudon -> Groudon's arena
-    b.set_flag("FLAG_PG_GROUDON_RE", False)
-    b.set_flag("FLAG_PG_KYOGRE_RE", False)
-    other_map(b)
-    b.warp("LandsEnd_SaltCathedral", 10, 12)
-    b.frames(30)
-    other_map(b)
-    b.warp("LandsEnd_DrownedTemple", 8, 12)
-    b.frames(30)
-    t.check("with Kyogre the player's, Groudon waits in its cathedral and Kyogre's hall is empty", not b.flag("FLAG_PG_GROUDON_RE") and b.flag("FLAG_PG_KYOGRE_RE"))
-
     # ---------------------------------------------------------------- Rayquaza returns to the stone
+    LU.set_trophy(b, LU.ach_id("ACH_LEGEND_HUNTER"))      # 2026-10-14: Rayquaza's arena opens with the Legend Hunter trophy (all 18 others caught)
     b.set_flag("FLAG_PG_RAYQUAZA", False)
     other_map(b)
     b.warp("OldestShrine", 17, 14)
@@ -174,6 +167,19 @@ def run(b, t):
     b.face("U")
     b.press("A", 4, 20)
     t.check("Rayquaza: after the win it is still standing and fights again", battle_through(b))
+
+    # ---------------------------------------------------------------- the arena legend only if Jayden took it
+    b.call("GetSetPokedexFlag", b.call("SpeciesToNationalPokedexNum", enum_value("species.h", "SPECIES_RAYQUAZA")) & 0xFFFF, 3)   # 2026-10-14: the arenas open once Rayquaza is caught
+    b.set_var("VAR_ORLEANS_LEGENDARY_PICK", 1)           # the player has Kyogre: Jayden has Groudon -> Groudon's arena
+    b.set_flag("FLAG_PG_GROUDON_RE", False)
+    b.set_flag("FLAG_PG_KYOGRE_RE", False)
+    other_map(b)
+    b.warp("LandsEnd_SaltCathedral", 10, 12)
+    b.frames(30)
+    other_map(b)
+    b.warp("LandsEnd_DrownedTemple", 8, 12)
+    b.frames(30)
+    t.check("with Kyogre the player's, Groudon waits in its cathedral and Kyogre's hall is empty", not b.flag("FLAG_PG_GROUDON_RE") and b.flag("FLAG_PG_KYOGRE_RE"))
 
     # ---------------------------------------------------------------- the herbalist's apprentice: the Floette (Eternal Flower) seed
     b.set_flag("FLAG_RECEIVED_FLOETTE_EF", False)
@@ -235,6 +241,7 @@ def run(b, t):
     b.step("U")
     t.check("story 44: the ice plant door cannot be reached", b.map_name() == "PointeRouge" and b.pos() == (39, 27), b.where())
     b.set_var("VAR_ORLEANS_STORY", 45)
+    LU.set_trophy(b, LU.ach_id("ACH_SNOW_SETTER"))        # 2026-10-14: the guard steps aside for story 45 AND the Snow Setter trophy
     b.warp("CrescentCity", 25, 50)
     b.warp("PointeRouge", 39, 27)
     b.frames(30)

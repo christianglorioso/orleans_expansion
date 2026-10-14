@@ -59,6 +59,8 @@ void Achievement_Poll(void);
 void Achievement_UnlockVar8004(void);
 void Achievement_CheckAllSpecial(void);
 void Achievement_GetCountSpecial(void);
+void Achievement_CheckUnlockedVar8004(void); // VAR_RESULT: trophy VAR_0x8004 unlocked (after a fresh poll)
+void Achievement_SpeciesCaughtVar8004(void);  // VAR_RESULT: species VAR_0x8004 is registered caught
 void Achievement_ClaimNextReward(void); // VAR_RESULT: 0 nothing waiting, 1 given (gStringVar4 = message), 2 bag full
 
 void CB2_InitAchievementsMenu(void);

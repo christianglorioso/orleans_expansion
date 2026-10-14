@@ -251,6 +251,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route3_EventScript_RouteSign2"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 2,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route3_EventScript_LairSealTornadus"
     }
   ]
 }

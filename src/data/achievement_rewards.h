@@ -208,4 +208,42 @@ static const struct AchievementReward sAchievementRewards[ACHIEVEMENTS_MAX] =
     [ACH_SPARK_OF_LIFE] = { .item = ITEM_NUGGET, .qty = 1 },
     // #100 Forever Flower. Sheet: Floette-themed item  NOTE: the item is undefined: placeholder
     [ACH_FOREVER_FLOWER] = { .item = ITEM_NUGGET, .qty = 1 },
+    // #117 Hunter's Jaws. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_HUNTERS_JAWS] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #118 Psychic Fury. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_PSYCHIC_FURY] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #104 Paralysis Pro. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_PARALYSIS_PRO] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #105 Snow Setter. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_SNOW_SETTER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #106 Sun Setter. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_SUN_SETTER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #110 Tailwind Rider. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_TAILWIND_RIDER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #111 Rain Dancer. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_RAIN_DANCER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #112 Sandstorm Caller. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_SANDSTORM_CALLER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #115 Mist Weaver. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_MIST_WEAVER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #116 Room Warper. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_ROOM_WARPER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #101 Water Collector. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_WATER_COLLECTOR] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #102 Fire Collector. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_FIRE_COLLECTOR] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #103 Electric Collector. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_ELECTRIC_COLLECTOR] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #107 Fighters and Fliers. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_FIGHTERS_AND_FLIERS] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #108 Mind and Wing. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_MIND_AND_WING] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #109 Night Wings. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_NIGHT_WINGS] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #113 Moss and Shadow. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_MOSS_AND_SHADOW] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #114 Mask Collector. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_MASK_COLLECTOR] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
+    // #119 Legend Hunter. Sheet: (new 2026-10-14) lair-key trophy  NOTE: placeholder, the real reward is the lair it opens
+    [ACH_LEGEND_HUNTER] = { .item = ITEM_ULTRA_BALL, .qty = 5 },
 };

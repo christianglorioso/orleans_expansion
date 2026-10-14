@@ -68,14 +68,7 @@ Route12_OnTransitionPG:
 @ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
 @ Route12_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
 @ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
-Route12_OnLoad:
-	call_if_ge VAR_ORLEANS_STORY, 45, Route12_EventScript_LairOpenB2
-	end
 
-Route12_EventScript_LairOpenB2:
-	call Route12_EventScript_StateThundurusOpen
-	setflag FLAG_TEMP_1
-	return
 
 Route12_EventScript_LairEnterThundurus::
 	lockall
@@ -89,3 +82,32 @@ Route12_Movement_LairFaceRight:
 	face_right
 	step_end
 
+@ --- lair gates (tools/mapgen/lair_gates.py; generated, do not edit) begin ---
+
+@ The lairs' ways in (story_data_lairs.GATES): each opens only when its trophy is complete and the post-game has begun; re-checked on every map load.
+Route12_OnLoad:
+	setvar VAR_0x8004, ACH_RAIN_DANCER
+	call LairGate_EventScript_Check
+	call_if_eq VAR_RESULT, TRUE, Route12_EventScript_LairOpenThundurus
+	end
+
+Route12_EventScript_LairOpenThundurus:
+	call Route12_EventScript_StateThundurusOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route12_EventScript_LairSealThundurus::
+	goto_if_set FLAG_TEMP_1, Route12_EventScript_LairSealEnd
+	msgbox Route12_Text_LairSealThundurus, MSGBOX_SIGN
+	end
+
+Route12_Text_LairSealThundurus:
+	.string "Sealed until the game is beaten,\n"
+	.string "and it needs a trophy:\p"
+	.string "Set Rain 25 times in the\n"
+	.string "Battle Frontier.$"
+
+Route12_EventScript_LairSealEnd:
+	end
+
+@ --- lair gates end ---
