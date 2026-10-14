@@ -29,20 +29,18 @@ def apply(r, c):
     # ---- trims (tile budget): no mud, shrine stone, wooden road bridge, dirt-path corners, headstones, tall grass
     # on marsh, snags, floating logs, reeds or small cypresses
     r["sources"] = [s for s in r["sources"] if s["name"] != "brg"]
-    gone = ("shrine_stone", "grave_grass", "tallgrass_marsh", "path_i", "cypress_small_", "reeds_")
+    gone = ("shrine_stone", "grave_grass")      # (Route 3 shares this tileset since the seams review: its small cypress, reeds, snags, logs, tall grass, dirt-road corners and pier stay in)
     r["patches"] = [p for p in r["patches"] if not p.get("id", "").startswith(gone)]
-    for k in ("shrine", "log", "stump", "snag_water", "waterlog", "cypress_small", "cypress_small_marsh", "reeds_marsh",
-              "cypress_small_water", "cypress"):
+    for k in ("shrine",):
         c["prefabs"].pop(k, None)
     c["autotile"].pop("path", None)
     ekat = next(s for s in r["sources"] if s["name"] == "ekat")
     # marsh never meets water in the city (crescent.py keeps a grass bank between them), so no marsh-water set
     c["autotile"]["water"]["alt_land"] = [a for a in c["autotile"]["water"].get("alt_land", []) if a["chars"] != '"']
-    drop = lambda i: i.startswith(("cypress_small", "waterlog", "waterstump", "snag", "marshwater"))
+    drop = lambda i: i.startswith(("marshwater",))
     ekat["metatiles"] = [m for m in ekat["metatiles"] if not drop(m["id"])]
     # the cypress and reed art is only ever used re-seated on marsh or water: keep it out of the tileset as raw
     # pieces (an overlay-only copy of the sheet that patches can still read)
-    ekat["metatiles"] = [m for m in ekat["metatiles"] if not m["id"].startswith("reeds")]
     patch_only = [m for m in ekat["metatiles"] if m["id"].startswith("cypress_")]
     ekat["metatiles"] = [m for m in ekat["metatiles"] if m not in patch_only]
     r["sources"].insert(1, dict({k: v for k, v in ekat.items() if k != "metatiles"}, name="ekx", overlay_only=True,
@@ -53,14 +51,9 @@ def apply(r, c):
             if isinstance(p.get(k), str) and p[k].startswith("ekat:") and p[k][5:] in ids:
                 p[k] = "ekx:" + p[k][5:]
     # the Olivine dock gives way to our own boardwalk planks (walk_* below)
-    r["patches"] = [p for p in r["patches"] if not p.get("id", "").startswith("pier_")]
-    r["sources"] = [s for s in r["sources"] if s["name"] != "r40"]
-    for k in ("pier", "dock_h"):
-        c["prefabs"].pop(k, None)
-    c["variants"] = {k: v for k, v in c.get("variants", {}).items() if not k.startswith("pier_")}
+    c["prefabs"].pop("dock_h", None)
     c["terrain"].pop("L", None)
-    c["terrain"].pop("G", None)  # the city's tall grass is our own soft long grass, drawn as overlays (pgrass)
-    c["terrain"]["~"]["decor"]["tiles"] = ["ekat:water_lily"]
+    # (tall grass "G" stays: Route 3's encounter grass; the city's own is the soft long grass drawn as overlays, pgrass)
     # dry ground ('D'): the Johto sand patch in the primary (0D3-0E5), for the Frontier plaza (no inner corners:
     # rectangles only). It reuses the "path" autotile slot the city's dirt paths no longer need.
     c["autotile"]["path"] = {"_comment": "Johto sand on grass (primary 0D3-0E5): the Battle Frontier plaza.",
@@ -77,6 +70,32 @@ def apply(r, c):
     w = c["autotile"]["water"]
     w["alt_land"] = [a for a in w.get("alt_land", []) if a["chars"] != "L"]
     w["apply_on"] = w["apply_on"].replace("L", "")
+    # ---- Route 3 shares this tileset (seams review 2026-10-14, user rule: routes accommodate towns): the route family's pieces it
+    # needs, copied from orleans_route. Demand-driven, so Crescent City pays for none of them. Route 3's road is terrain 'R'
+    # (the city's ':' is paving): the spec's "char_map" reads its ':' / '=' as 'R' and its '%' as '='.
+    rr = json.load(open(os.path.join(HERE, "tilesets", "recipes", "orleans_route.json"), encoding="utf-8"))
+    rc = json.load(open(os.path.join(HERE, "tilesets", "orleans_route.json"), encoding="utf-8"))
+    have = {m["id"] for m in ekat["metatiles"]}
+    for m in next(x for x in rr["sources"] if x["name"] == "ekat")["metatiles"]:
+        if m["id"] not in have:
+            ekat["metatiles"].append(m)
+    for x in rr["sources"]:
+        if x["name"] in ("r40",) and not any(y["name"] == x["name"] for y in r["sources"]):
+            r["sources"].append(x)
+    pid = {p_.get("id") for p_ in r["patches"]}
+    for p_ in rr["patches"]:
+        if p_.get("id") not in pid and p_.get("id", "").startswith(("pier_", "cypress_small", "reeds", "path_i", "tallgrass", "snag", "waterlog")):
+            r["patches"].append(p_)
+    for k, v in rc["prefabs"].items():
+        if k in ("pier", "cypress_small", "cypress_small_marsh", "cypress_small_water", "reeds_marsh", "snag_water", "waterlog", "log", "stump", "cypress"):
+            c["prefabs"][k] = v
+    c["prefabs"]["sign_g"] = rc["prefabs"]["sign"]       # the route's plain primary sign (the city's "sign" is its own notice board)
+    c["variants"].update({k: v for k, v in rc.get("variants", {}).items() if k.startswith("pier_")})
+    c["terrain"]["G"] = rc["terrain"]["G"]
+    c["terrain"]["R"] = {"name": "road (route dirt)", "tile": "0D9", "elev": 3, "autotile": "path_g"}
+    c["autotile"]["path_g"] = dict(rc["autotile"]["path"], connects="rR")     # the far bank's walk 'r' and the route's road share the dirt-path autotile
+    c["terrain"]["~"]["decor"] = rc["terrain"]["~"]["decor"]
+
     # Ekat pieces nothing refers to (alternative diagonals, unused plant variations) stay out of the tileset
     import re
     used = set(re.findall(r'ekat:(\w+)', json.dumps(c) + json.dumps(r["patches"])))

@@ -108,6 +108,17 @@ class Builder:
             for j in range(y, y + h):
                 for i in range(x, x + w):
                     self.grid[j][i] = ch
+        for a_, b_ in self.spec.get("char_map", {}).items():      # a route on a town's tileset (Route 3 on Crescent's): the route's grid characters read in the town's alphabet
+            for row in self.grid:
+                for i, c in enumerate(row):
+                    if c == a_:
+                        row[i] = "~" + b_            # marked first, so one mapping never feeds the next
+        for row in self.grid:
+            for i, c in enumerate(row):
+                if len(c) == 2:
+                    row[i] = c[1]
+        for bd_ in self.spec.get("buildings", []):
+            bd_["prefab"] = self.spec.get("prefab_map", {}).get(bd_["prefab"], bd_["prefab"])       # likewise: the route's primary sign is "sign_g" on the city's tileset
         # building footprints from the mockup are just ground: real buildings are prefabs drawn on top,
         # and leaving these marks would stop patch borders being drawn next to them
         for row in self.grid:

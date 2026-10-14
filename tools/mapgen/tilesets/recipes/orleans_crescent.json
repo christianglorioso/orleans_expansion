@@ -235,12 +235,40 @@
      ]
     },
     {
+     "id": "water_weeds1",
+     "bottom": [
+      1,
+      14
+     ]
+    },
+    {
      "id": "water_lily",
      "bottom": [
       3,
       14
      ],
      "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "waterlog_0",
+     "bottom": [
+      5,
+      14
+     ]
+    },
+    {
+     "id": "waterlog_1",
+     "bottom": [
+      6,
+      14
+     ]
+    },
+    {
+     "id": "waterstump",
+     "bottom": [
+      7,
+      14
+     ]
     },
     {
      "id": "water_sTLBR",
@@ -342,6 +370,194 @@
        5,
        3
       ]
+     ]
+    },
+    {
+     "id": "reeds_top",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "reeds",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "snag_top_water",
+     "bottom": [
+      [
+       2,
+       15
+      ],
+      [
+       7,
+       7
+      ]
+     ],
+     "behavior": "MB_NORMAL"
+    },
+    {
+     "id": "tallgrass",
+     "bottom": [
+      0,
+      1
+     ],
+     "behavior": "MB_TALL_GRASS"
+    },
+    {
+     "id": "mud_C",
+     "bottom": [
+      2,
+      10
+     ]
+    },
+    {
+     "id": "cypress_00",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "cypress_10",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "cypress_20",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "cypress_01",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      3
+     ]
+    },
+    {
+     "id": "cypress_11",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      3
+     ]
+    },
+    {
+     "id": "cypress_21",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "cypress_02",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "cypress_12",
+     "bottom": [
+      6,
+      4
+     ]
+    },
+    {
+     "id": "cypress_22",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "cypress_small_00",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_10",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_01",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_11",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_02",
+     "bottom": [
+      5,
+      7
+     ]
+    },
+    {
+     "id": "cypress_small_12",
+     "bottom": [
+      6,
+      7
      ]
     }
    ]
@@ -450,9 +666,74 @@
       7,
       4
      ]
+    },
+    {
+     "id": "cypress_small_00",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_10",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "cypress_small_01",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      5,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_11",
+     "bottom": [
+      0,
+      0
+     ],
+     "top": [
+      6,
+      6
+     ]
+    },
+    {
+     "id": "cypress_small_02",
+     "bottom": [
+      5,
+      7
+     ]
+    },
+    {
+     "id": "cypress_small_12",
+     "bottom": [
+      6,
+      7
+     ]
     }
    ],
    "_comment": "Ekat cypress and reeds, only drawn re-seated."
+  },
+  {
+   "name": "r40",
+   "primary": "johto_general_hns",
+   "secondary": "route_40_hns",
+   "layout": "frlg",
+   "pick_only_for_patches": true
   },
   {
    "name": "johto",
@@ -4139,6 +4420,238 @@
  ],
  "patches": [
   {
+   "id": "pier_3E3_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3E3_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3E3_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E3"
+  },
+  {
+   "id": "pier_3EB_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3EB_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3EB_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3EB"
+  },
+  {
+   "id": "pier_3F3_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3F3_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3F3_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F3"
+  },
+  {
+   "id": "pier_3E0_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E0_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E0_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E0"
+  },
+  {
+   "id": "pier_3E1_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E1_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E1_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E1"
+  },
+  {
+   "id": "pier_3E2_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E2_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E2_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E2"
+  },
+  {
+   "id": "pier_3E8_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E8_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E8_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E8"
+  },
+  {
+   "id": "pier_3E9_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3E9_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3E9_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3E9"
+  },
+  {
+   "id": "pier_3EA_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3EA_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3EA_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3EA"
+  },
+  {
+   "id": "pier_3F0_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F0_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F0_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F0"
+  },
+  {
+   "id": "pier_3F1_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F1_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F1_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F1"
+  },
+  {
+   "id": "pier_3F2_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F2_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F2_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F2"
+  },
+  {
+   "id": "pier_3F8_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F8_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F8_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F8",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3F9",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3F9",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3F9_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3F9"
+  },
+  {
+   "id": "pier_3FA_water_C",
+   "lower": "ekat:water_C",
+   "upper": "r40:3FA",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3FA_water_N",
+   "lower": "ekat:water_N",
+   "upper": "r40:3FA",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pier_3FA_grass",
+   "lower": "ekat:grass",
+   "upper": "r40:3FA"
+  },
+  {
    "id": "cypress_00_marsh",
    "lower": "ekat:marsh_C",
    "upper": "ekx:cypress_00"
@@ -4167,6 +4680,26 @@
    "id": "cypress_21_marsh",
    "lower": "ekat:marsh_C",
    "upper": "ekx:cypress_21"
+  },
+  {
+   "id": "cypress_small_00_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekx:cypress_small_00"
+  },
+  {
+   "id": "cypress_small_10_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekx:cypress_small_10"
+  },
+  {
+   "id": "cypress_small_01_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekx:cypress_small_01"
+  },
+  {
+   "id": "cypress_small_11_marsh",
+   "lower": "ekat:marsh_C",
+   "upper": "ekx:cypress_small_11"
   },
   {
    "id": "cypress_02_marsh",
@@ -4310,6 +4843,140 @@
    ]
   },
   {
+   "id": "cypress_small_02_marsh",
+   "reseat": "ekx:cypress_small_02",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_12_marsh",
+   "reseat": "ekx:cypress_small_12",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "path_iNW",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0D1",
+    "B": "johto:0D8",
+    "q": 0,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iNE",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0D1",
+    "B": "johto:0DA",
+    "q": 1,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iSW",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0E1",
+    "B": "johto:0D8",
+    "q": 2,
+    "grass": "johto:001"
+   }
+  },
+  {
+   "id": "path_iSE",
+   "inner": {
+    "C": "johto:0D9",
+    "A": "johto:0E1",
+    "B": "johto:0DA",
+    "q": 3,
+    "grass": "johto:001"
+   }
+  },
+  {
    "id": "cypress_00_water",
    "lower": "ekat:water_C",
    "upper": "ekx:cypress_00",
@@ -4343,6 +5010,30 @@
    "id": "cypress_21_water",
    "lower": "ekat:water_C",
    "upper": "ekx:cypress_21",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_00_water",
+   "lower": "ekat:water_C",
+   "upper": "ekx:cypress_small_00",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_10_water",
+   "lower": "ekat:water_C",
+   "upper": "ekx:cypress_small_10",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_01_water",
+   "lower": "ekat:water_C",
+   "upper": "ekx:cypress_small_01",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "cypress_small_11_water",
+   "lower": "ekat:water_C",
+   "upper": "ekx:cypress_small_11",
    "behavior": "MB_NORMAL"
   },
   {
@@ -4485,6 +5176,242 @@
      88
     ]
    ]
+  },
+  {
+   "id": "cypress_small_02_water",
+   "reseat": "ekx:cypress_small_02",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "cypress_small_12_water",
+   "reseat": "ekx:cypress_small_12",
+   "base": "ekat:water_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "reeds_top_marsh",
+   "reseat": "ekat:reeds_top",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "reeds_marsh",
+   "reseat": "ekat:reeds",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ]
+  },
+  {
+   "id": "tallgrass_marsh",
+   "reseat": "ekat:tallgrass",
+   "base": "ekat:marsh_C",
+   "colors": [
+    [
+     120,
+     160,
+     104
+    ],
+    [
+     104,
+     144,
+     96
+    ],
+    [
+     110,
+     146,
+     100
+    ],
+    [
+     136,
+     176,
+     128
+    ],
+    [
+     140,
+     178,
+     131
+    ],
+    [
+     122,
+     172,
+     130
+    ],
+    [
+     149,
+     190,
+     157
+    ],
+    [
+     96,
+     128,
+     88
+    ]
+   ],
+   "behavior": "MB_TALL_GRASS"
   },
   {
    "id": "pc_door",

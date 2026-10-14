@@ -4,7 +4,7 @@
   "map_const": "MAP_ORLEANS_ROUTE3",
   "layout": "LAYOUT_ORLEANS_ROUTE3",
   "layout_dir": "data/layouts/Route3",
-  "tileset": "orleans_route",
+  "tileset": "orleans_crescent",
   "mockup": "../orleans_maps/r03_route_3.png",
   "grid": "route_3.grid.txt",
   "edits": [
@@ -367,5 +367,13 @@
         ]
       ]
     }
-  ]
+  ],
+  "char_map": {
+    ":": "R",
+    "=": "R",
+    "%": "="
+  },
+  "prefab_map": {
+    "sign": "sign_g"
+  }
 }

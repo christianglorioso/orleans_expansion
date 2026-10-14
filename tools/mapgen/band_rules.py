@@ -191,7 +191,7 @@ def nudge(b, bd, strict, others):
         if any((x, y) in strict or (x, y) in busy or b.grid[y][x] in "~Iw#" for x, y in moved):
             continue
         # keep one free ring row below it (the door's approach) and not on a road
-        if any(b.grid[y][x] in ":=%&p" for x, y in moved):
+        if any(b.grid[y][x] in ":=%&pR" for x, y in moved):
             continue
         bd["x"] += dx
         bd["y"] += dy
@@ -221,7 +221,7 @@ def relocate(b, bd, strict, others):
             continue
         if any(b.grid[y][x] != g for (x, y), g in zip(moved, grounds)):
             continue
-        if any(b.grid[y][x] in ":=%&p" for x, y in moved):
+        if any(b.grid[y][x] in ":=%&pR" for x, y in moved):
             continue
         for g in b.spec.get("signs", []):
             if (g["x"], g["y"]) in {(x, y) for x, y, _ in cells}:
@@ -319,7 +319,7 @@ def repair(b):
                 new = fb[c]
         if new:
             for (i, j) in win:
-                if b.grid[j][i] != new and b.grid[j][i] not in ':=%&p':   # roads keep their cells
+                if b.grid[j][i] != new and b.grid[j][i] not in ':=%&pR':   # roads keep their cells
                     b.grid[j][i] = new
                     changed = True
     if changed and "d" in terr:

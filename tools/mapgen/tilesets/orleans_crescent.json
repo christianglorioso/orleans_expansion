@@ -31,7 +31,8 @@
    "elev": 1,
    "decor": {
     "tiles": [
-     "ekat:water_lily"
+     "ekat:water_lily",
+     "ekat:water_weeds1"
     ],
     "rate": 0.035,
     "collision": 1,
@@ -87,6 +88,12 @@
    "tile": "ekat:grass",
    "elev": 3
   },
+  "G": {
+   "name": "tall grass (wild encounters)",
+   "tile": "ekat:tallgrass",
+   "elev": 3,
+   "_comment": "Tall grass on plain grass. Marsh and water borders are drawn into G cells where they meet."
+  },
   "T": {
    "name": "tree marker (trees are placed as prefabs)",
    "tile": "ekat:grass",
@@ -105,6 +112,12 @@
   },
   "r": {
    "name": "dirt shore walk",
+   "tile": "0D9",
+   "elev": 3,
+   "autotile": "path_g"
+  },
+  "R": {
+   "name": "road (route dirt)",
    "tile": "0D9",
    "elev": 3,
    "autotile": "path_g"
@@ -195,8 +208,8 @@
    "SE": "0E5"
   },
   "path_g": {
-   "_comment": "Johto dirt path patch on grass (primary 0D0-0E2): the far bank's lakefront walk.",
-   "connects": "r",
+   "_comment": "Johto dirt path patch on grass. Only paths connect; buildings are prefabs drawn on top.",
+   "connects": "rR",
    "NW": "0D0",
    "N": "0D1",
    "NE": "0D2",
@@ -205,10 +218,351 @@
    "E": "0DA",
    "SW": "0E0",
    "S": "0E1",
-   "SE": "0E2"
+   "SE": "0E2",
+   "iNW": "patch:path_iNW",
+   "iNE": "patch:path_iNE",
+   "iSW": "patch:path_iSW",
+   "iSE": "patch:path_iSE"
   }
  },
  "prefabs": {
+  "cypress": {
+   "_comment": "Ekat bald cypress: canopy drawn over the player, roots at the base.",
+   "rows": [
+    [
+     "ekat:cypress_00",
+     "ekat:cypress_10",
+     "ekat:cypress_20"
+    ],
+    [
+     "ekat:cypress_01",
+     "ekat:cypress_11",
+     "ekat:cypress_21"
+    ],
+    [
+     "ekat:cypress_02",
+     "ekat:cypress_12",
+     "ekat:cypress_22"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ]
+   ]
+  },
+  "cypress_small": {
+   "rows": [
+    [
+     "ekat:cypress_small_00",
+     "ekat:cypress_small_10"
+    ],
+    [
+     "ekat:cypress_small_01",
+     "ekat:cypress_small_11"
+    ],
+    [
+     "ekat:cypress_small_02",
+     "ekat:cypress_small_12"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ]
+  },
+  "log": {
+   "rows": [
+    [
+     "ekat:log_0",
+     "ekat:log_1"
+    ]
+   ],
+   "door": null
+  },
+  "stump": {
+   "rows": [
+    [
+     "ekat:stump_top"
+    ],
+    [
+     "ekat:stump"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ]
+  },
+  "pier": {
+   "_comment": "Route 40 (Olivine) plank dock, 3 wide: capped where it meets the street, plank rows, then an end on posts. Each plank is drawn over whatever is beneath it.",
+   "rows": [
+    [
+     {
+      "var": "pier_3E0"
+     },
+     {
+      "var": "pier_3E1"
+     },
+     {
+      "var": "pier_3E2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3E8"
+     },
+     {
+      "var": "pier_3E9"
+     },
+     {
+      "var": "pier_3EA"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F0"
+     },
+     {
+      "var": "pier_3F1"
+     },
+     {
+      "var": "pier_3F2"
+     }
+    ],
+    [
+     {
+      "var": "pier_3F8"
+     },
+     {
+      "var": "pier_3F9"
+     },
+     {
+      "var": "pier_3FA"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ]
+   ]
+  },
   "cypress_marsh": {
    "_comment": "Ekat bald cypress standing in marsh.",
    "rows": [
@@ -245,6 +599,34 @@
    ],
    "on_patch": "\""
   },
+  "cypress_small_marsh": {
+   "rows": [
+    [
+     "patch:cypress_small_00_marsh",
+     "patch:cypress_small_10_marsh"
+    ],
+    [
+     "patch:cypress_small_01_marsh",
+     "patch:cypress_small_11_marsh"
+    ],
+    [
+     "patch:cypress_small_02_marsh",
+     "patch:cypress_small_12_marsh"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "on_patch": "\""
+  },
   "cypress_water": {
    "_comment": "Ekat bald cypress standing in open water; blocks surfing.",
    "rows": [
@@ -267,6 +649,76 @@
    "door": null,
    "elev": 1,
    "on_patch": "~"
+  },
+  "cypress_small_water": {
+   "rows": [
+    [
+     "patch:cypress_small_00_water",
+     "patch:cypress_small_10_water"
+    ],
+    [
+     "patch:cypress_small_01_water",
+     "patch:cypress_small_11_water"
+    ],
+    [
+     "patch:cypress_small_02_water",
+     "patch:cypress_small_12_water"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "on_patch": "~"
+  },
+  "waterlog": {
+   "_comment": "Floating log.",
+   "rows": [
+    [
+     "ekat:waterlog_0",
+     "ekat:waterlog_1"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "on_patch": "~"
+  },
+  "snag_water": {
+   "_comment": "Dead snag in water, top piece from Ekat's grass stump.",
+   "rows": [
+    [
+     "ekat:snag_top_water"
+    ],
+    [
+     "ekat:waterstump"
+    ]
+   ],
+   "door": null,
+   "elev": 1,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "on_patch": "~"
+  },
+  "reeds_marsh": {
+   "_comment": "Tall reeds standing in marsh (2 tall). Place on fully interior marsh tiles.",
+   "rows": [
+    [
+     "patch:reeds_top_marsh"
+    ],
+    [
+     "patch:reeds_marsh"
+    ]
+   ],
+   "door": null,
+   "passable": [
+    [
+     0,
+     0
+    ]
+   ],
+   "on_patch": "\""
   },
   "pokecenter": {
    "_comment": "Vanilla Emerald Pokemon Center (4x4).",
@@ -827,6 +1279,14 @@
      {
       "overlay": "mag:12"
      }
+    ]
+   ]
+  },
+  "sign_g": {
+   "_comment": "Wooden sign (primary 003).",
+   "rows": [
+    [
+     "003"
     ]
    ]
   },
@@ -5486,6 +5946,112 @@
    "_wpr": true
   }
  },
- "variants": {},
+ "variants": {
+  "pier_3E3": {
+   "ekat:grass": "patch:pier_3E3_grass",
+   "ekat:water_C": "patch:pier_3E3_water_C",
+   "ekat:water_N": "patch:pier_3E3_water_N",
+   "land": "patch:pier_3E3_grass",
+   "water": "patch:pier_3E3_water_C"
+  },
+  "pier_3EB": {
+   "ekat:grass": "patch:pier_3EB_grass",
+   "ekat:water_C": "patch:pier_3EB_water_C",
+   "ekat:water_N": "patch:pier_3EB_water_N",
+   "land": "patch:pier_3EB_grass",
+   "water": "patch:pier_3EB_water_C"
+  },
+  "pier_3F3": {
+   "ekat:grass": "patch:pier_3F3_grass",
+   "ekat:water_C": "patch:pier_3F3_water_C",
+   "ekat:water_N": "patch:pier_3F3_water_N",
+   "land": "patch:pier_3F3_grass",
+   "water": "patch:pier_3F3_water_C"
+  },
+  "pier_3E0": {
+   "ekat:grass": "patch:pier_3E0_grass",
+   "ekat:water_C": "patch:pier_3E0_water_C",
+   "ekat:water_N": "patch:pier_3E0_water_N",
+   "land": "patch:pier_3E0_grass",
+   "water": "patch:pier_3E0_water_C"
+  },
+  "pier_3E1": {
+   "ekat:grass": "patch:pier_3E1_grass",
+   "ekat:water_C": "patch:pier_3E1_water_C",
+   "ekat:water_N": "patch:pier_3E1_water_N",
+   "land": "patch:pier_3E1_grass",
+   "water": "patch:pier_3E1_water_C"
+  },
+  "pier_3E2": {
+   "ekat:grass": "patch:pier_3E2_grass",
+   "ekat:water_C": "patch:pier_3E2_water_C",
+   "ekat:water_N": "patch:pier_3E2_water_N",
+   "land": "patch:pier_3E2_grass",
+   "water": "patch:pier_3E2_water_C"
+  },
+  "pier_3E8": {
+   "ekat:grass": "patch:pier_3E8_grass",
+   "ekat:water_C": "patch:pier_3E8_water_C",
+   "ekat:water_N": "patch:pier_3E8_water_N",
+   "land": "patch:pier_3E8_grass",
+   "water": "patch:pier_3E8_water_C"
+  },
+  "pier_3E9": {
+   "ekat:grass": "patch:pier_3E9_grass",
+   "ekat:water_C": "patch:pier_3E9_water_C",
+   "ekat:water_N": "patch:pier_3E9_water_N",
+   "land": "patch:pier_3E9_grass",
+   "water": "patch:pier_3E9_water_C"
+  },
+  "pier_3EA": {
+   "ekat:grass": "patch:pier_3EA_grass",
+   "ekat:water_C": "patch:pier_3EA_water_C",
+   "ekat:water_N": "patch:pier_3EA_water_N",
+   "land": "patch:pier_3EA_grass",
+   "water": "patch:pier_3EA_water_C"
+  },
+  "pier_3F0": {
+   "ekat:grass": "patch:pier_3F0_grass",
+   "ekat:water_C": "patch:pier_3F0_water_C",
+   "ekat:water_N": "patch:pier_3F0_water_N",
+   "land": "patch:pier_3F0_grass",
+   "water": "patch:pier_3F0_water_C"
+  },
+  "pier_3F1": {
+   "ekat:grass": "patch:pier_3F1_grass",
+   "ekat:water_C": "patch:pier_3F1_water_C",
+   "ekat:water_N": "patch:pier_3F1_water_N",
+   "land": "patch:pier_3F1_grass",
+   "water": "patch:pier_3F1_water_C"
+  },
+  "pier_3F2": {
+   "ekat:grass": "patch:pier_3F2_grass",
+   "ekat:water_C": "patch:pier_3F2_water_C",
+   "ekat:water_N": "patch:pier_3F2_water_N",
+   "land": "patch:pier_3F2_grass",
+   "water": "patch:pier_3F2_water_C"
+  },
+  "pier_3F8": {
+   "ekat:grass": "patch:pier_3F8_grass",
+   "ekat:water_C": "patch:pier_3F8_water_C",
+   "ekat:water_N": "patch:pier_3F8_water_N",
+   "land": "patch:pier_3F8_grass",
+   "water": "patch:pier_3F8_water_C"
+  },
+  "pier_3F9": {
+   "ekat:grass": "patch:pier_3F9_grass",
+   "ekat:water_C": "patch:pier_3F9_water_C",
+   "ekat:water_N": "patch:pier_3F9_water_N",
+   "land": "patch:pier_3F9_grass",
+   "water": "patch:pier_3F9_water_C"
+  },
+  "pier_3FA": {
+   "ekat:grass": "patch:pier_3FA_grass",
+   "ekat:water_C": "patch:pier_3FA_water_C",
+   "ekat:water_N": "patch:pier_3FA_water_N",
+   "land": "patch:pier_3FA_grass",
+   "water": "patch:pier_3FA_water_C"
+  }
+ },
  "blends_file": "orleans_crescent.blends.json"
 }

@@ -37,8 +37,8 @@ import bands  # noqa: E402
 FEATHER = {"isle_marais", "storms_edge", "route_16"}
 STUB_MAX = 60                 # patches bigger than this are never turned plain (Redfield's cane fields run across its join with Route 17)
 MAXB = 2                      # canopy depth in 2x2 blocks (0..MAXB): 1..5 cells including the overhang cell
-ROAD = set(":=p%&B")          # grid characters of paths / paving / levee ground: never covered
-LAND = set(".\"dGgLSeqQwysrvp:=%&")
+ROAD = set(":=p%&BR")          # grid characters of paths / paving / levee ground: never covered
+LAND = set(".\"dGgLSeqQwysrvp:=%&R")
 WATERCH = set("~Iw")
 LANDW = set(".\"GgLd")       # ground a water border recedes (land and marsh); never a road, levee or open water
 FACE_DIR = {"UP": (0, -1), "DOWN": (0, 1), "LEFT": (-1, 0), "RIGHT": (1, 0)}

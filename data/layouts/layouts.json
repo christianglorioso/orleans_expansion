@@ -1931,7 +1931,7 @@
       "width": 50,
       "height": 24,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansRoute",
+      "secondary_tileset": "gTileset_OrleansCrescent",
       "border_filepath": "data/layouts/Route3/border.bin",
       "blockdata_filepath": "data/layouts/Route3/map.bin"
     },

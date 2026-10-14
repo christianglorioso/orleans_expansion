@@ -2526,6 +2526,9 @@ def first_pass(entry):
             "mockup": os.path.join(MOCKUPS, mock + ".png").replace(os.sep, "/"), "grid": key + ".grid.txt",
             "edits": [], "buildings": swap_placeholders(buildings, cfg), "objects": objs, "surf_only": surf,
             "items": items, "hidden_items": hidden, "signs": approach_signs + feature_signs, "exits": spec_exits}
+    if key in __import__("town_plans").CHAR_MAP:  # a route on a town's tileset reads its grid characters in the town's alphabet (build.py "char_map")
+        spec["char_map"] = __import__("town_plans").CHAR_MAP[key]
+        spec["prefab_map"] = __import__("town_plans").PREFAB_MAP[key]
     import wedge  # the world's join edits (world_edges.json): edits and prefab drops/adds per map
     wedge.apply_to_spec(spec, key)
     dump(spec_path, spec)

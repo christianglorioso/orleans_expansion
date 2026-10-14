@@ -43,7 +43,7 @@ BLOCK = {"swamp": [f"bd:swamp_canopy_{n}" for n in ("00", "10", "01", "11")],
          "dry": [f"bd:dry_scrub_{n}" for n in ("00", "10", "01", "11")],
          "water": ["ekat:water_C"] * 4}
 AGREE = {"swamp": set('"~Iw'), "water": set("~Iw"), "dry": set("d")}
-WALKABLE_ON = set(".\"dGgL:=pS")          # grid chars a wall may replace
+WALKABLE_ON = set(".\"dGgL:=pSR")          # grid chars a wall may replace
 OPP = {"N": "S", "S": "N", "W": "E", "E": "W"}
 
 
@@ -301,7 +301,7 @@ def prepare(b, key):
             for i in range(lo, hi):
                 x0, y0 = cell_at(b, side, i, d)
                 src = b.grid[y0][x0]
-                if src in "HKPMBT:=%&p":
+                if src in "HKPMBT:=%&pR":
                     src = {"swamp": ".", "dry": "d"}[style]
                 for k in range(d):
                     x, y = cell_at(b, side, i, k)
