@@ -86,28 +86,32 @@ def run(b, t):
             ids[mid] = n
     total = arrived = 0
     report = []
-    for name in names:
-        md, spots = spots_for(name, ids)
-        for side, desc, x, y in spots:
-            cell = nearest_walkable(md, x, y, side)
-            if not cell:
-                t.note("%s %s: no walkable cell near (%d,%d)" % (name, side, x, y))
-                continue
-            total += 1
-            ok = b.warp(name, cell[0], cell[1], timeout_s=15)
-            b.check_alive("warping to %s" % name)
-            label = "%s %s %s @%d,%d" % (name, side, desc, cell[0], cell[1])
-            if ok:
-                arrived += 1
-                b.shot(label)
-                blank = b.nonblack() < 300
-                report.append({"map": name, "side": side, "spot": desc, "cell": cell, "blank": blank})
-                if blank:
-                    t.check("not blank: " + label, False)
-            else:
-                b.shot("NOARRIVE " + label)
-                t.check("arrives: " + label, False, b.where())
-                report.append({"map": name, "side": side, "spot": desc, "cell": cell, "arrived": False})
+    for tag, hour in (("day", 12), ("night", 23)):          # the seams review (2026-10-14): every edge at noon and at night
+        b.set_clock(hour, 0)
+        for name in names:
+            md, spots = spots_for(name, ids)
+            for side, desc, x, y in spots:
+                cell = nearest_walkable(md, x, y, side)
+                if not cell:
+                    if tag == "day":
+                        t.note("%s %s: no walkable cell near (%d,%d)" % (name, side, x, y))
+                    continue
+                total += 1
+                ok = b.warp(name, cell[0], cell[1], timeout_s=15)
+                b.check_alive("warping to %s" % name)
+                b.frames(30)
+                label = "%s %s %s %s @%d,%d" % (tag, name, side, desc, cell[0], cell[1])
+                if ok:
+                    arrived += 1
+                    b.shot(label)
+                    blank = b.nonblack() < 300
+                    report.append({"map": name, "side": side, "spot": desc, "cell": cell, "time": tag, "blank": blank})
+                    if blank:
+                        t.check("not blank: " + label, False)
+                else:
+                    b.shot("NOARRIVE " + label)
+                    t.check("arrives: " + label, False, b.where())
+                    report.append({"map": name, "side": side, "spot": desc, "cell": cell, "time": tag, "arrived": False})
     t.check("every edge spot arrived", arrived == total, "%d/%d" % (arrived, total))
-    t.note("%d maps, %d edge spots screenshotted" % (len(names), arrived))
+    t.note("%d maps, %d edge spots screenshotted (day + night)" % (len(names), arrived))
     Path(b.out, "edges_report.json").write_text(json.dumps(report, indent=1))

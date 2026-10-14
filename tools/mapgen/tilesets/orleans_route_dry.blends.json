@@ -1716,5 +1716,33 @@
    "base": "dry:4_18",
    "art": "lent:9_1"
   }
+ },
+ {
+  "id": "ovl_dry_o_5_5__dry_1_1",
+  "overlay": {
+   "base": "dry:1_1",
+   "art": "dry_o:5_5"
+  }
+ },
+ {
+  "id": "ovl_dry_o_5_5__dry_6_1",
+  "overlay": {
+   "base": "dry:6_1",
+   "art": "dry_o:5_5"
+  }
+ },
+ {
+  "id": "ovl_mag_01__dry_1_2",
+  "overlay": {
+   "base": "dry:1_2",
+   "art": "mag:01"
+  }
+ },
+ {
+  "id": "ovl_mag_02__dry_2_1",
+  "overlay": {
+   "base": "dry:2_1",
+   "art": "mag:02"
+  }
  }
 ]

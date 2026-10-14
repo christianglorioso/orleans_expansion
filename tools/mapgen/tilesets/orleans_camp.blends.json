@@ -2343,5 +2343,89 @@
    "base": "ekat:water_C",
    "art": "wpr:3_0"
   }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_inNE",
+  "overlay": {
+   "base": "ekat:marshwater_inNE",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_inSE",
+  "overlay": {
+   "base": "ekat:marshwater_inSE",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_landNW",
+  "overlay": {
+   "base": "ekat:marshwater_landNW",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_landSW",
+  "overlay": {
+   "base": "ekat:marshwater_landSW",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_marsh_E",
+  "overlay": {
+   "base": "ekat:marsh_E",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_marshwater_E",
+  "overlay": {
+   "base": "ekat:marshwater_E",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_marshwater_landNW",
+  "overlay": {
+   "base": "ekat:marshwater_landNW",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_water_S",
+  "overlay": {
+   "base": "ekat:water_S",
+   "art": "wpr:1_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_1_0__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "wpr:1_0"
+  }
  }
 ]

@@ -875,5 +875,19 @@
    "base": "ekat:water_weeds1",
    "art": "wpr:7_0"
   }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "wpr:5_0"
+  }
  }
 ]

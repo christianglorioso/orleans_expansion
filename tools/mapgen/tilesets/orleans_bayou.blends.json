@@ -339,5 +339,29 @@
   "id": "bk_swamp_E1_d0e443d9",
   "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_d0e443d9.png",
   "attr_of": "ekat:marsh_S"
+ },
+ {
+  "id": "bk_swamp_E0_9c92079a",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E0_9c92079a.png",
+  "attr_of": "ekat:water_S"
+ },
+ {
+  "id": "bk_swamp_W1_80455671",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_80455671.png",
+  "attr_of": "ekat:marshwater_S"
+ },
+ {
+  "id": "bk_swamp_out_SE_0cbfda15",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_SE_0cbfda15.png",
+  "attr_of": "ekat:marshwater_landSW"
+ },
+ {
+  "id": "blend_marsh_S_inSE",
+  "blend": {
+   "A": "ekat:water_S",
+   "B": "ekat:marshwater_S",
+   "M": "ekat:marsh_inSE",
+   "land": "ekat:marsh_C"
+  }
  }
 ]

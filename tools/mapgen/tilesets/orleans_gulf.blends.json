@@ -1166,5 +1166,96 @@
    "base": "ekat:water_weeds1",
    "art": "wpr:4_0"
   }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mudwater_S",
+  "overlay": {
+   "base": "ekat:mudwater_S",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mudwater_inSE",
+  "overlay": {
+   "base": "ekat:mudwater_inSE",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mudwater_inSW",
+  "overlay": {
+   "base": "ekat:mudwater_inSW",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mudwater_landNE",
+  "overlay": {
+   "base": "ekat:mudwater_landNE",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_mudwater_landNW",
+  "overlay": {
+   "base": "ekat:mudwater_landNW",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__blend_mud_S_inSE",
+  "overlay": {
+   "base": "patch:blend_mud_S_inSE",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mud_C",
+  "overlay": {
+   "base": "ekat:mud_C",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mudwater_S",
+  "overlay": {
+   "base": "ekat:mudwater_S",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mudwater_inSW",
+  "overlay": {
+   "base": "ekat:mudwater_inSW",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mudwater_landNE",
+  "overlay": {
+   "base": "ekat:mudwater_landNE",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mudwater_landNW",
+  "overlay": {
+   "base": "ekat:mudwater_landNW",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__blend_mud_S_inSE",
+  "overlay": {
+   "base": "patch:blend_mud_S_inSE",
+   "art": "wpr:4_0"
+  }
  }
 ]

@@ -7,7 +7,15 @@
   "tileset": "orleans_route_dry",
   "mockup": "../orleans_maps/r24_route_24.png",
   "grid": "route_24.grid.txt",
-  "edits": [],
+  "edits": [
+    [
+      "d",
+      0,
+      16,
+      2,
+      12
+    ]
+  ],
   "buildings": [
     {
       "prefab": "sign",

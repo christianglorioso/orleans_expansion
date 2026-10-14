@@ -303,7 +303,7 @@ def prepare(b, key, style, sp, keep_open, strict_all):
     b.feather_missing, b.feather_report = [], []
     if style == "water":
         return prepare_water(b, key, sp, keep_open)
-    return prepare_canopy(b, key, style, sp, keep_open, strict_all)
+    return prepare_canopy(b, key, style, sp, keep_open, strict_all, maxb=b.spec.get("feather", {}).get("maxb", MAXB))
 
 
 def groves(b):
@@ -689,6 +689,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
         return 0
     shapes = {p: prefab_shape(b, p) for p in allp}
     S, owner, mode = set(), {}, {}
+    F = set()                                  # shallow bays (1-2 water rows along an edge): no zone fits, so every cell takes a prop
     for side in "NSWE":
         n, cell = side_geom(b, side)
         for lo, hi in sp[side]:
@@ -714,10 +715,26 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
             cap = [min(maxl, d - 2) if d >= 3 else 0 for d in dl]
             L = relax(want, cap)
             for i in range(lo, hi):
+                if 1 <= dl[i - lo] <= 2 and cell(i, dl[i - lo]) not in water:
+                    for k in range(dl[i - lo]):
+                        F.add(cell(i, k))
+                        owner.setdefault(cell(i, k), (side, i))
+                    mode[(side, i)] = "low"
+            for i in range(lo, hi):
                 for k in range(L[i - lo]):
                     S.add(cell(i, k))
                     owner.setdefault(cell(i, k), (side, i))
 
+    F -= dilate(events or P, 1, w, h)
+    F -= {c for c in F if c in strict_all or c in forbid}      # a seam band takes primary pieces only: no prop there (left to the join)
+    Fend = set()                               # the dual grid draws the land cell beside a strip's end as water too (2 water corners): it takes a prop as well
+    for c in list(F):
+        for nb in ((c[0] + 1, c[1]), (c[0] - 1, c[1]), (c[0], c[1] + 1), (c[0], c[1] - 1)):
+            if (0 <= nb[0] < w and 0 <= nb[1] < h and nb not in water and nb not in F and nb not in blocked and nb not in occupied
+                    and min(nb[0], nb[1], w - 1 - nb[0], h - 1 - nb[1]) == min(c[0], c[1], w - 1 - c[0], h - 1 - c[1])
+                    and nb not in dilate(events or P, 1, w, h) and nb not in forbid and nb not in strict_all):
+                Fend.add(nb)
+    F |= Fend
     S -= dilate(events or P, 2, w, h)        # an event / NPC / item in the water is never sealed in: the barrier keeps two cells away from it
 
     def nbrs(c):
@@ -725,7 +742,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
         return [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)]
 
     def usable(c):
-        return c in water and c not in occupied and c not in forbid
+        return (c in water or c in Fend) and c not in occupied and c not in forbid
 
     s0 = len(S)
     for _ in range(80):                       # S must be sealable: every outside neighbour is blocked already or can take a prop
@@ -741,7 +758,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
         S -= bad
     b.border_log.append(f"feather surf zone: {s0} cells wanted, {len(S)} sealable")
 
-    def fits(p, ax, ay, S, newocc, newblocked, inside_only=False):
+    def fits(p, ax, ay, S, newocc, newblocked, inside_only=False, bank_ok=False):
         """the prop's footprint stands on free water (and on the patch window the prop's rule wants); its passable cells never touch the sealed zone from outside"""
         cells, blk = shapes[p]
         foot = {(ax + i, ay + j) for i, j in cells}
@@ -750,7 +767,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
         if inside_only and any(f not in S for f in foot):
             return None
         win = {(f[0] + dx, f[1] + dy) for f in foot for dx in (0, 1) for dy in (0, 1)}
-        if any(q not in water and 0 <= q[0] < w and 0 <= q[1] < h for q in win):
+        if not bank_ok and any(q not in water and 0 <= q[0] < w and 0 <= q[1] < h for q in win):
             return None
         if any(f in strict_all for f in foot) and not br.prefab_is_primary(b, {"prefab": p, "x": ax, "y": ay}):
             return None
@@ -768,6 +785,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
 
     def solve(S):
         B = {nb for c in S for nb in nbrs(c) if 0 <= nb[0] < w and 0 <= nb[1] < h and nb not in S and nb not in blocked}
+        B |= {c for c in F if c not in blocked}
 
         def okey(c):
             ow = next((owner[q] for q in nbrs(c) if q in owner), ("Z", 0))
@@ -791,7 +809,7 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
                 cells, blk = shapes[p]
                 for (bx, by) in blk:
                     ax, ay = c[0] - bx, c[1] - by
-                    r = fits(p, ax, ay, S, newocc, newblocked)
+                    r = fits(p, ax, ay, S, newocc, newblocked, bank_ok=(c in F and len(shapes[p][0]) == 1))
                     if r is None:
                         continue
                     foot, blkc = r

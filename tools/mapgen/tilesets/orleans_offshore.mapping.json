@@ -90,9 +90,10 @@
 "patch:ovl_wpr_5_0__ekat_water_C": 587,
 "patch:ovl_wpr_6_0__ekat_water_C": 588,
 "patch:ovl_wpr_7_0__ekat_water_C": 589,
-"patch:ovl_wpr_4_0__ekat_water_weeds1": 590,
-"patch:ovl_wpr_6_0__ekat_water_weeds1": 591,
-"patch:ovl_wpr_7_0__ekat_water_weeds1": 592
+"patch:ovl_wpr_6_0__ekat_water_weeds1": 590,
+"patch:ovl_wpr_7_0__ekat_water_weeds1": 591,
+"patch:ovl_wpr_4_0__ekat_water_E": 592,
+"patch:ovl_wpr_5_0__ekat_water_E": 593
 },
 "palettes": null,
 "tiles": {}

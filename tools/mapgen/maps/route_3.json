@@ -7,7 +7,15 @@
   "tileset": "orleans_route",
   "mockup": "../orleans_maps/r03_route_3.png",
   "grid": "route_3.grid.txt",
-  "edits": [],
+  "edits": [
+    [
+      ".",
+      0,
+      21,
+      4,
+      1
+    ]
+  ],
   "buildings": [
     {
       "prefab": "pier",

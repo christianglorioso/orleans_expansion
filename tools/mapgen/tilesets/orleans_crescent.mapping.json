@@ -412,7 +412,21 @@
 "patch:ovl_ccw_wh_wall9_32__ekat_grass": 909,
 "patch:ovl_ccw_wh_wall9_70__ekat_grass": 910,
 "patch:ovl_ccw_wh_wall9_80__ekat_grass": 911,
-"patch:ovl_ccw_wh_wall9_82__ekat_grass": 912
+"patch:ovl_ccw_wh_wall9_82__ekat_grass": 912,
+"patch:ovl_wpr_4_0__ekat_water_C": 913,
+"patch:ovl_wpr_5_0__ekat_water_C": 914,
+"patch:ovl_wpr_5_0__lv_71a1e3e67158": 915,
+"patch:ovl_wpr_6_0__ekat_water_C": 916,
+"patch:ovl_wpr_7_0__ekat_water_C": 917,
+"patch:ovl_wpr_4_0__ekat_water_E": 918,
+"patch:ovl_wpr_4_0__ekat_water_inSW": 919,
+"patch:ovl_wpr_4_0__ekat_grass": 920,
+"patch:ovl_wpr_5_0__ekat_grass": 921,
+"patch:ovl_wpr_5_0__ekat_water_N": 922,
+"patch:ovl_wpr_5_0__ekat_water_W": 923,
+"patch:ovl_wpr_4_0__ekat_water_landNE": 924,
+"patch:ovl_wpr_4_0__ekat_water_landNW": 925,
+"patch:ovl_wpr_6_0__lv_71a1e3e67158": 926
 },
 "palettes": null,
 "tiles": {}

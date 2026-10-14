@@ -2427,5 +2427,131 @@
    "base": "ekat:grass",
    "art": "ccw:wh_wall9_82"
   }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__lv_71a1e3e67158",
+  "overlay": {
+   "base": "patch:lv_71a1e3e67158",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__lv_71a1e3e67158",
+  "overlay": {
+   "base": "patch:lv_71a1e3e67158",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_6_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:6_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_7_0__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "wpr:7_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_inSW",
+  "overlay": {
+   "base": "ekat:water_inSW",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_E",
+  "overlay": {
+   "base": "ekat:water_E",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_N",
+  "overlay": {
+   "base": "ekat:water_N",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_W",
+  "overlay": {
+   "base": "ekat:water_W",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "wpr:5_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_landNE",
+  "overlay": {
+   "base": "ekat:water_landNE",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_landNW",
+  "overlay": {
+   "base": "ekat:water_landNW",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_6_0__lv_71a1e3e67158",
+  "overlay": {
+   "base": "patch:lv_71a1e3e67158",
+   "art": "wpr:6_0"
+  }
  }
 ]

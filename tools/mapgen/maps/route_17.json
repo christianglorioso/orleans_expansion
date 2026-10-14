@@ -7,7 +7,15 @@
   "tileset": "orleans_capital",
   "mockup": "../orleans_maps/r17_route_17.png",
   "grid": "route_17.grid.txt",
-  "edits": [],
+  "edits": [
+    [
+      "d",
+      6,
+      10,
+      4,
+      2
+    ]
+  ],
   "buildings": [
     {
       "prefab": "route_mill",

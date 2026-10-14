@@ -41,6 +41,22 @@ def outdoor_maps():
     return [n for n in names if (ROOT / "data/maps" / n / "map.json").exists()]
 
 
+def quiet(b):
+    """no follower sprite (it would trip the flip detector and clutter the shots): hide it after each warp"""
+    b.set_flag("FLAG_TEMP_HIDE_FOLLOWER")
+    b.frames(20)
+
+
+def drain_popups(b):
+    """the story-value setup unlocks trophies: let their popups run out before the base state is saved"""
+    for _ in range(60):
+        b.frames(30)
+        if "Task_AchievementPopup" not in b.active_tasks():
+            b.frames(60)
+            if "Task_AchievementPopup" not in b.active_tasks():
+                break
+
+
 def setup(b):
     b.new_game()
     b.give_mon("SPECIES_MEWTWO", 100)
@@ -199,6 +215,7 @@ def do_crossing(b, base, X, d, Y, off, outdir, ids):
         res["detail"] = "warp into %s failed (%s)" % (X, b.where())
         return res, None
     b.check_alive("loading " + X)
+    quiet(b)
     grid = Grid(b)
     avoid = static_avoid(b, grid)
     lanes = lane_candidates(b, X, d, Y, off, grid)
@@ -217,6 +234,7 @@ def do_crossing(b, base, X, d, Y, off, outdir, ids):
         if not b.warp(X, start[0], start[1], timeout_s=20):
             continue
         b.check_alive("loading " + X)
+        quiet(b)
         e0 = grid.cells[start][2]
         e0 = player_elev(b) if e0 == 15 else e0
         route = bfs_elev(grid, start, e0, lambda c, e=e: c == e, avoid=avoid)
@@ -323,6 +341,17 @@ def do_crossing(b, base, X, d, Y, off, outdir, ids):
     pp = outdir / "pairs" / ("%s__%s__%s.png" % (X, d, Y))
     pp.parent.mkdir(parents=True, exist_ok=True)
     pair_image(A, B, D_OF[d], wf, pp, "%s>%s front %.0f%% back %.0f%% (ordinary step %.0f%%)" % (X, Y, front * 100, back * 100, base_front * 100))
+    try:                                              # the seam review's own view: 4 full frames around the crossing, 2x
+        sel = [max(0, ci - 3), max(0, ci - 1), ci, min(len(w.frames) - 1, ci + 2)]
+        tiles = [Image.fromarray(w.frames[i]).resize((480, 320), Image.NEAREST) for i in sel]
+        sheet = Image.new("RGB", (960, 640))
+        for k, im in enumerate(tiles):
+            sheet.paste(im, ((k % 2) * 480, (k // 2) * 320))
+        sd = outdir / "shots"
+        sd.mkdir(parents=True, exist_ok=True)
+        sheet.save(sd / ("%s__%s__%s.png" % (X, d, Y)))
+    except Exception:
+        pass
     res["filmstrip"] = str(fs)
     res["pair"] = str(pp)
     return res, w
@@ -464,6 +493,7 @@ def run(b, t):
         (outdir / sub).mkdir(exist_ok=True)
     t.note("ROM sha1 %s" % b.sha)
     missing = setup(b)
+    drain_popups(b)
     if missing:
         t.note("gate flags not defined in this build (skipped): %s" % missing)
     base = outdir / "base.state"

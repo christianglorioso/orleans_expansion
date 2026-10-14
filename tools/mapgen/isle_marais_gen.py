@@ -336,6 +336,7 @@ def write(t, out, proposal=False):
             o["_note"] = "11. Old Rod fishing spot at the south shore"
     spec.pop("_channel", None)
     spec.pop("_east_swamp", None)
+    spec["feather"] = {"maxb": 3}      # seams review 2026-10-14: E/W canopy up to 6 cells deep, no keep_groves (the groves pinned both sides to a straight depth-0 line)
     spec["_comment"] = "Isle Marais, polished by isle_marais_gen.py (edit that, not this file)."
     os.makedirs(out, exist_ok=True)
     with open(os.path.join(out, KEY + ".grid.txt"), "w", encoding="utf-8", newline="\n") as f:

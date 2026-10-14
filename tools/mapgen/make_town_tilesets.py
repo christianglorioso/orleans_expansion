@@ -254,7 +254,7 @@ def make(name):
     if v.get("adopt"):  # routes whose joins with this town must share its secondary tileset (adopt.py)
         sys.path.insert(0, HERE)
         __import__("adopt").apply(r, c, v["adopt"])
-    if not v.get("custom"):            # the Surf-barrier water props (not Crescent City: its tile budget is spent)
+    if True:                           # the Surf-barrier water props (overlay-only: a map pays tiles only for the pieces it places; Crescent City too since the seams review)
         sys.path.insert(0, HERE)
         __import__("water_props_tileset").apply(r, c)
     for path, obj in ((os.path.join(TS, "recipes", f"{name}.json"), r), (os.path.join(TS, f"{name}.json"), c)):

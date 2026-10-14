@@ -74,8 +74,19 @@
 "patch:ovl_wpr_5_0__ekat_water_C": 571,
 "patch:ovl_wpr_6_0__ekat_water_C": 572,
 "patch:ovl_wpr_7_0__ekat_water_C": 573,
-"patch:ovl_wpr_7_0__ekat_water_weeds1": 574,
-"patch:ovl_wpr_4_0__ekat_water_weeds1": 575
+"patch:ovl_wpr_6_0__ekat_water_weeds1": 574,
+"patch:ovl_wpr_4_0__ekat_water_weeds1": 575,
+"patch:ovl_wpr_4_0__ekat_mudwater_S": 576,
+"patch:ovl_wpr_4_0__ekat_mudwater_inSE": 577,
+"patch:ovl_wpr_4_0__ekat_mudwater_inSW": 578,
+"patch:ovl_wpr_4_0__ekat_mudwater_landNE": 579,
+"patch:ovl_wpr_4_0__ekat_mudwater_landNW": 580,
+"patch:ovl_wpr_5_0__ekat_mud_C": 581,
+"patch:ovl_wpr_5_0__ekat_mudwater_S": 582,
+"patch:ovl_wpr_5_0__ekat_mudwater_inSW": 583,
+"patch:ovl_wpr_5_0__ekat_mudwater_landNE": 584,
+"patch:ovl_wpr_5_0__ekat_mudwater_landNW": 585,
+"patch:ovl_wpr_4_0__blend_mud_S_inSE": 586
 },
 "palettes": null,
 "tiles": {}
