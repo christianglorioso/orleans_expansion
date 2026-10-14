@@ -1744,5 +1744,12 @@
    "base": "dry:2_1",
    "art": "mag:02"
   }
+ },
+ {
+  "id": "ovl_dry_o_1_7__dry_0_13",
+  "overlay": {
+   "base": "dry:0_13",
+   "art": "dry_o:1_7"
+  }
  }
 ]

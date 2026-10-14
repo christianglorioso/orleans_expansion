@@ -212,12 +212,12 @@ Route23_Text_RouteSign3:
 	.string "FERTILE HOLLOW\nThe ground is green here, oddly.$"
 
 Route23_EventScript_StateUrsalunaOpen::
-	setmetatile 22, 1, 0x2A8, FALSE
-	setmetatile 23, 1, 0x2AA, FALSE
-	setmetatile 22, 2, 0x2A9, FALSE
-	setmetatile 23, 2, 0x2AB, FALSE
-	setmetatile 21, 2, 0x2A6, TRUE
-	setmetatile 21, 3, 0x2A7, TRUE
+	setmetatile 22, 1, 0x2A7, FALSE
+	setmetatile 23, 1, 0x2A9, FALSE
+	setmetatile 22, 2, 0x2A8, FALSE
+	setmetatile 23, 2, 0x2AA, FALSE
+	setmetatile 21, 2, 0x2A5, TRUE
+	setmetatile 21, 3, 0x2A6, TRUE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---
