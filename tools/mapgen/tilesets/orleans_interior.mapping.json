@@ -75,7 +75,11 @@
 "patch:gc_derby_0_1": 594,
 "patch:gc_derby_1_1": 595,
 "patch:gc_derby_2_1": 596,
-"patch:gc_derby_3_1": 597
+"patch:gc_derby_3_1": 597,
+"patch:shelf_ct_457": 598,
+"patch:shelf_ct_458": 599,
+"patch:shelf_ct_453": 600,
+"patch:shelf_ct_454": 601
 },
 "palettes": null,
 "tiles": {}

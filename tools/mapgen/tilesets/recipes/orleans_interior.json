@@ -717,6 +717,30 @@
         "base": "pc:0CC",
         "art": "gc_derby:derby_3_1"
       }
+    },
+    {
+      "id": "shelf_ct_457",
+      "lower": "mt:457",
+      "upper": "mt:457",
+      "behavior": "MB_COUNTER"
+    },
+    {
+      "id": "shelf_ct_458",
+      "lower": "mt:458",
+      "upper": "mt:458",
+      "behavior": "MB_COUNTER"
+    },
+    {
+      "id": "shelf_ct_453",
+      "lower": "mt:453",
+      "upper": "mt:453",
+      "behavior": "MB_COUNTER"
+    },
+    {
+      "id": "shelf_ct_454",
+      "lower": "mt:454",
+      "upper": "mt:454",
+      "behavior": "MB_COUNTER"
     }
   ]
 }

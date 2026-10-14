@@ -265,10 +265,13 @@ def tm_section(b, t):
     for f in ("FLAG_BADGE01_GET", "FLAG_BADGE02_GET", "FLAG_BADGE03_GET"):
         b.set_flag(f, True)
     b.call("AddMoney", b.save1() + 0x490, 20000)
-    b.warp("CrescentCity_Dept2f", 3, 7)
+    b.warp("CrescentCity_Dept2f", 3, 8)
     b.frames(30)
-    # start the clerk's script directly (its counter row is not talkable in the current interior tileset, see the report)
-    b.call("ScriptContext_SetupScript", b.sym("CrescentCity_Dept2f_EventScript_Clerk1"))
+    # talk to the TM clerk (3, 5) from the real standing cell north of her (a shelf runs along her south side), not by starting her script
+    t.check("walked to the clerk's real standing cell (3, 4)", b.goto(3, 4), b.where())
+    b.face("D")
+    b.press("A", 4, 20)
+    t.check("pressing A facing the clerk starts her script", b.script_status() != 2 or not b.in_overworld(), b.where())
     for _ in range(14):
         b.frames(30)
         if not b.in_overworld():

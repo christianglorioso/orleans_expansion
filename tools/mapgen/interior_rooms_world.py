@@ -143,6 +143,8 @@ def world_rooms(room):
         ppl, pos = story_overlay.interior_people(key, ppl, pos)  # the story pass swaps a room's people
         r = room(base, GENERIC, map=name, const="MAP_" + re.sub(r"(?<!^)(?=[A-Z])", "_", name).upper().replace("__", "_"),
                  mockup=key, people=ppl, positions=pos, title=spec["title"])
+        if key == "crescent_city_dept_2f":  # the TM clerk (3, 5) stands behind the TMs shelf: from the south the shelf cell is her counter
+            r["stamps"] = [("patch:shelf_ct_458", 3, 6, 1)]
         if key == "crescent_city_game_corner":
             r["stamps"] = game_corner_stamps()
         if any(p[0] == "clerk" for p in ppl):
