@@ -17,6 +17,7 @@ Nothing here imports build.py's Builder (it only borrows script_suffix and the e
 """
 import json
 import os
+import re
 import struct
 import sys
 from collections import deque
@@ -39,7 +40,31 @@ WALK_FIX = {"suicune": {(10, 8): True}}
 ELEV = 3
 BEGIN, END = "@ --- mapgen: generated NPC scripts (begin) ---", "@ --- mapgen: generated NPC scripts (end) ---"
 SECONDARY = {"orleans_lairs_wet": "gTileset_OrleansLairsWet", "orleans_lair_rootkin": "gTileset_OrleansLairRootkin",
-             "orleans_lairs_dry": "gTileset_OrleansLairsDry", "orleans_lair_storm": "gTileset_OrleansLairStorm"}
+             "orleans_lairs_dry": "gTileset_OrleansLairsDry", "orleans_lair_storm": "gTileset_OrleansLairStorm",
+             # batch 2
+             "orleans_lair_trio": "gTileset_OrleansLairTrio", "orleans_lair_woods": "gTileset_OrleansLairWoods", "orleans_lair_fort": "gTileset_OrleansLairFort",
+             "orleans_lair_sugarhouse": "gTileset_OrleansLairSugarhouse", "orleans_lair_field": "gTileset_OrleansLairField"}
+BATCH2_DIR = os.path.join(ROOT, "..", "tile_review", "set_pieces", "lairs", "batch2")
+
+
+class JsonMock:
+    """a batch-2 mock read from its json (lair_mocks_b2.py writes <lair>_mock.json): the same surface as the batch-1 mock builders"""
+
+    def __init__(self, key):
+        d = json.load(open(os.path.join(BATCH2_DIR, f"{D.LAIRS[key]['json']}_mock.json"), encoding="utf-8"))
+        self.d = d
+        self.names = [r.split() for r in d["metatiles"]]
+        self.walk = [[c == "." for c in r] for r in d["walk"]]
+        self.H, self.W = len(self.names), len(self.names[0])
+        self.objs = [(o["sprite"], o["x"], o["y"]) for o in d["objects"]]
+        self.problems = d.get("autotile_conflicts", [])
+        self.border = [self.names[0][0], self.names[0][1], self.names[1][0], self.names[1][1]]
+
+    def resolve(self):
+        pass
+
+    def wall_cell(self, x, y):
+        return self.border[(x & 1) + (y & 1) * 2]
 
 
 def const_of(name):
@@ -56,7 +81,7 @@ def block(mid, coll, elev=ELEV):
 
 
 def mappings(lair):
-    gen = json.load(open(os.path.join(HERE, "tilesets", "orleans_general.mapping.json"), encoding="utf-8"))["metatiles"]
+    gen = json.load(open(os.path.join(HERE, "tilesets", lair.get("primary", "orleans_general") + ".mapping.json"), encoding="utf-8"))["metatiles"]
     sec = json.load(open(os.path.join(HERE, "tilesets", lair["tileset"] + ".mapping.json"), encoding="utf-8"))["metatiles"]
     return gen, sec
 
@@ -75,6 +100,8 @@ def art():
 
 def mock_map(key, cache={}):
     """the mock of a lair (any of lair_mocks.LAIRS, Articuno's too), resolved: .names, .walk, .objs, .W, .H"""
+    if key in D.LAIRS2:
+        return JsonMock(key)
     if "art" not in cache:
         cache["art"] = art()
     lair_mocks, mods = cache["art"]
@@ -97,7 +124,7 @@ def objects(key):
     lair = D.LAIRS[key]
     name, const = lair["map"], const_of(lair["map"])
     m = mock_map(key)
-    ex, ey = [(o[1], o[2]) for o in m.objs if o[0] != "player"][0]
+    ex, ey = [(o[1], o[2]) for o in m.objs if o[0] not in ("player", "boatman")][0]
     if key == "rougarou":
         o = dict(D.ROUGAROU, x=ex, y=ey, script=f"{name}_EventScript_Rougarou")
         return [o]
@@ -121,9 +148,13 @@ def layout(key):
         if pre != lair["prefix"]:
             raise SystemExit(f"{key}: cell {n} is not a primary piece nor one of {lair['prefix']}:")
         return sec[n]
+    if key == "zapdos":   # map.bin holds the lamp OUT (the story until FLAG_STORMS_EDGE_GRID_RESTORED); the generated StateLanternLit lights it
+        m.names = [[n.replace("ls:lantern_", "ls:lantern_dark_") if re.match(r"ls:lantern_[0-9]", n) else n for n in row] for row in m.names]
     fix = WALK_FIX.get(key, {})
     words = [[block(mid(m.names[y][x]), 0 if fix.get((x, y), m.walk[y][x]) else 1) for x in range(m.W)] for y in range(m.H)]
     border = [block(mid(m.wall_cell(x, y)), 0, 0) for (x, y) in ((0, 0), (1, 0), (0, 1), (1, 1))]   # border[(x & 1) + (y & 1) * 2]
+    if lair.get("kind") == "interior":       # an interior's camera margin is black, as every interior's (the building primary's solid piece)
+        border = [block(mid("P:jb:008"), 1, 0)] * 4
     return words, border, m
 
 
@@ -137,11 +168,15 @@ def map_json(key):
                      "movement_range_x": 0, "movement_range_y": 0, "trainer_type": "TRAINER_TYPE_NONE", "trainer_sight_or_berry_tree_id": "0",
                      "script": o["script"], "flag": o["flag"]})
     coords = [{"type": "trigger", "x": x, "y": y, "elevation": ELEV, "var": D.TRIG, "var_value": "1", "script": f"{name}_EventScript_Exit"}
-              for (x, y) in D.EXITS]
+              for (x, y) in D.exits(key)]
+    warps = []
+    if lair.get("kind") == "gallery":        # Zapdos' lamp gallery: the stair hatch is the warp, back to the keeper's stair (StormsEdge_Lighthouse warp 1)
+        ax, ay = D.arrive(key)
+        warps = [{"x": ax, "y": ay, "elevation": ELEV, "dest_map": "MAP_STORMS_EDGE_LIGHTHOUSE", "dest_warp_id": "1"}]
     return {"id": const, "name": name, "layout": layout_of(name), "music": lair["music"], "region_map_section": lair["mapsec"],
-            "requires_flash": False, "weather": weather_plan.header(name) or "WEATHER_NONE", "map_type": "MAP_TYPE_ROUTE", "allow_cycling": False, "allow_escaping": False,
+            "requires_flash": False, "weather": weather_plan.header(name) or "WEATHER_NONE", "map_type": "MAP_TYPE_INDOOR" if lair.get("kind") == "interior" else "MAP_TYPE_ROUTE", "allow_cycling": False, "allow_escaping": False,
             "allow_running": True, "show_map_name": False, "battle_scene": "MAP_BATTLE_SCENE_NORMAL", "connections": None,
-            "object_events": objs, "warp_events": [], "coord_events": coords, "bg_events": []}
+            "object_events": objs, "warp_events": warps, "coord_events": coords, "bg_events": []}
 
 
 def layout_entry(key):
@@ -149,8 +184,24 @@ def layout_entry(key):
     name = lair["map"]
     m = mock_map(key)
     d = f"data/layouts/{name}"
-    return {"id": layout_of(name), "name": f"{name}_Layout", "width": m.W, "height": m.H, "primary_tileset": "gTileset_OrleansGeneral",
+    return {"id": layout_of(name), "name": f"{name}_Layout", "width": m.W, "height": m.H, "primary_tileset": "gTileset_OrleansBuilding" if lair.get("primary") == "orleans_building" else "gTileset_OrleansGeneral",
             "secondary_tileset": SECONDARY[lair["tileset"]], "border_filepath": f"{d}/border.bin", "blockdata_filepath": f"{d}/map.bin"}
+
+
+def state_scripts(key):
+    """the generated map-state scripts of a lair: Zapdos' gallery lantern (lit once the grid is restored); [] for the others"""
+    if key != "zapdos":
+        return []
+    lair = D.LAIRS[key]
+    m = mock_map(key)
+    gen, sec = mappings(lair)
+    lines = [f"{lair['map']}_EventScript_StateLanternLit::"]
+    for y in range(m.H):
+        for x in range(m.W):
+            n = m.names[y][x]
+            if re.match(r"ls:lantern_[0-9]", n):
+                lines.append(f"\tsetmetatile {x}, {y}, 0x{sec[n]:03X}, TRUE")
+    return lines + ["\treturn", ""]
 
 
 def dump(path, obj):
@@ -180,7 +231,7 @@ def write(key):
         f.write("\n")
     gp = os.path.join(ROOT, "data", "maps", "map_groups.json")
     G = json.load(open(gp, encoding="utf-8"))
-    if name not in G[GROUP]:
+    if not any(name in v for k, v in G.items() if isinstance(v, list) and k != "group_order"):
         G[GROUP].append(name)                # appended: the other maps' numbers do not move
         dump(gp, G)
     md = os.path.join(ROOT, "data", "maps", name)
@@ -190,6 +241,11 @@ def write(key):
     if not os.path.exists(sp) or BEGIN not in open(sp, encoding="utf-8").read():
         with open(sp, "w", encoding="utf-8", newline="\n") as f:
             f.write(f"{name}_MapScripts::\n\t.byte 0\n\n{BEGIN}\n\n{END}\n")
+    st = state_scripts(key)
+    if st:
+        src = open(sp, encoding="utf-8").read()
+        src = src[:src.index(BEGIN)] + BEGIN + "\n\n" + "\n".join(st) + "\n" + src[src.index(END):]
+        open(sp, "w", encoding="utf-8", newline="\n").write(src)
     from event_scripts import include_map_scripts
     include_map_scripts(ROOT, name)
     import story
@@ -251,13 +307,14 @@ def check(keys=None):
         if L.get(layout_of(name)) != layout_entry(key):
             fail("layouts.json entry drifts from the generator")
         G = json.load(open(os.path.join(ROOT, "data", "maps", "map_groups.json"), encoding="utf-8"))
-        if name not in G[GROUP]:
-            fail(f"not in {GROUP}")
+        if not any(name in v for k, v in G.items() if isinstance(v, list) and k != "group_order"):
+            fail(f"not in any map group")
         # gameplay: arrival, exits, the encounter's neighbour, the player cell of the mock
-        reach = walk_from(words, m.W, m.H, D.ARRIVE)
-        if D.ARRIVE not in reach or (words[D.ARRIVE[1]][D.ARRIVE[0]] >> 10) & 3:
-            fail(f"the arrival cell {D.ARRIVE} does not walk")
-        for e in D.EXITS:
+        arr = D.arrive(key)
+        reach = walk_from(words, m.W, m.H, arr)
+        if arr not in reach or (words[arr[1]][arr[0]] >> 10) & 3:
+            fail(f"the arrival cell {arr} does not walk")
+        for e in D.exits(key):
             if e not in reach:
                 fail(f"the exit cell {e} is not reachable from the arrival cell")
         for o in objects(key):
@@ -268,8 +325,9 @@ def check(keys=None):
             dx, dy = {"U": (0, -1), "D": (0, 1), "L": (-1, 0), "R": (1, 0)}[face]
             if sc not in reach or (sc[0] + dx, sc[1] + dy) != (o["x"], o["y"]):       # the cell the player talks to it from: the bot tests stand there
                 fail(f"{o['id']}: the stand cell {sc} facing {face} is not a reachable neighbour of ({o['x']}, {o['y']})")
-        pc = json.load(open(os.path.join(ROOT, "..", "tile_review", "set_pieces", "lairs", f"{lair['mock']}_mock.json"), encoding="utf-8")) \
-            if os.path.exists(os.path.join(ROOT, "..", "tile_review", "set_pieces", "lairs", f"{lair['mock']}_mock.json")) else None
+        mp_ = (os.path.join(BATCH2_DIR, f"{lair['json']}_mock.json") if key in D.LAIRS2
+               else os.path.join(ROOT, "..", "tile_review", "set_pieces", "lairs", f"{lair['mock']}_mock.json"))
+        pc = json.load(open(mp_, encoding="utf-8")) if os.path.exists(mp_) else None
         if pc and (pc["encounter_cell"] != [objects(key)[0]["x"], objects(key)[0]["y"]]):
             fail(f"the committed mock's encounter cell {pc['encounter_cell']} differs from the object's")
         if m.problems:

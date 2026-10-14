@@ -1,5 +1,6 @@
 Route13_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route13_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route13_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -62,91 +63,44 @@ Route13_Text_Route13BirdKeeperAfter:
 @ --- end route trainers ---
 
 Route13_OnTransitionPG:
-	call Route13_EventScript_PGSetup
 	end
 
-@ --- post-game (gen_postgame.py) ---
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route13_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route13_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route13_EventScript_LairOpenB2
+	end
 
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route13_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route13_EventScript_PGHide
-Route13_EventScript_PGSetupDone:
+Route13_EventScript_LairOpenB2:
+	call Route13_EventScript_StateZarudeOpen
+	call Route13_EventScript_StateOgerponOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route13_EventScript_PGHide:
-	setflag FLAG_PG_ZARUDE
-	setflag FLAG_PG_OGERPON
-	return
-
-Route13_EventScript_PgZarude::
-	lock
-	faceplayer
-	playmoncry SPECIES_ZARUDE, CRY_MODE_ENCOUNTER
-	msgbox Route13_Text_PGZarude, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_ZARUDE, 55
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgZarudeDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgZarudeStill
-	release
+Route13_EventScript_LairEnterZarude::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route13_Movement_LairFaceRight
+	waitmovement 0
+	warp MAP_ROUTE13_DEEP_WOOD, 2, 8
+	waitstate
 	end
 
-Route13_EventScript_PgZarudeStill:
-	msgbox Route13_Text_PGStillZarude, MSGBOX_DEFAULT
-	release
+Route13_EventScript_LairEnterOgerpon::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route13_Movement_LairFaceLeft
+	waitmovement 0
+	warp MAP_ROUTE13_COURIR_GLADE, 17, 8
+	waitstate
 	end
 
-Route13_EventScript_PgZarudeDone:
-	setflag FLAG_PG_ZARUDE
-	removeobject LOCALID_ROUTE13_PG_ZARUDE
-	release
-	end
+Route13_Movement_LairFaceLeft:
+	face_left
+	step_end
 
-Route13_EventScript_PgOgerpon::
-	lock
-	faceplayer
-	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
-	msgbox Route13_Text_PGOgerpon, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_OGERPON_TEAL, 50
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route13_EventScript_PgOgerponDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route13_EventScript_PgOgerponStill
-	release
-	end
-
-Route13_EventScript_PgOgerponStill:
-	msgbox Route13_Text_PGStillOgerpon, MSGBOX_DEFAULT
-	release
-	end
-
-Route13_EventScript_PgOgerponDone:
-	setflag FLAG_PG_OGERPON
-	removeobject LOCALID_ROUTE13_PG_OGERPON
-	release
-	end
-
-Route13_Text_PGZarude:
-	.string "ZARUDE stands before you,\n"
-	.string "vines swaying like a crowd.$"
-
-Route13_Text_PGStillZarude:
-	.string "ZARUDE shakes itself off,\n"
-	.string "still standing its ground.$"
-
-Route13_Text_PGOgerpon:
-	.string "OGERPON stands before you,\n"
-	.string "a mask on its face, dancing.$"
-
-Route13_Text_PGStillOgerpon:
-	.string "OGERPON shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route13_Movement_LairFaceRight:
+	face_right
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -163,5 +117,19 @@ Route13_EventScript_RouteSign2::
 
 Route13_Text_RouteSign2:
 	.string "THE MIST THICKENS\nStay on the path.$"
+
+Route13_EventScript_StateZarudeOpen::
+	setmetatile 26, 25, 0x295, FALSE
+	setmetatile 27, 25, 0x297, FALSE
+	setmetatile 26, 26, 0x296, FALSE
+	setmetatile 27, 26, 0x298, FALSE
+	return
+
+Route13_EventScript_StateOgerponOpen::
+	setmetatile 0, 25, 0x291, FALSE
+	setmetatile 1, 25, 0x293, FALSE
+	setmetatile 0, 26, 0x292, FALSE
+	setmetatile 1, 26, 0x294, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

@@ -19,7 +19,6 @@ StormsEdge_OnLoad:
 StormsEdge_OnTransition:
 	setflag FLAG_VISITED_STORMS_EDGE
 	call StormsEdge_EventScript_StoryWeather
-	call StormsEdge_EventScript_PGSetup
 	call_if_unset FLAG_RESPAWN_STORMS_EDGE_SET, StormsEdge_EventScript_FirstRespawn
 	call_if_unset FLAG_STORMS_EDGE_GRID_RESTORED, StormsEdge_EventScript_HoldRaichuniteX
 	end
@@ -173,51 +172,3 @@ StormsEdge_Text_Keeper:
 StormsEdge_Text_KeeperAfter:
 	.string "The lamp's lit! I could hug that\n"
 	.string "ÉCLAIR. Maybe I will.$"
-
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-StormsEdge_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, StormsEdge_EventScript_PGHide
-StormsEdge_EventScript_PGSetupDone:
-	return
-
-StormsEdge_EventScript_PGHide:
-	setflag FLAG_PG_ZAPDOS
-	return
-
-StormsEdge_EventScript_PgZapdos::
-	lock
-	faceplayer
-	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
-	msgbox StormsEdge_Text_PGZapdos, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_ZAPDOS, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, StormsEdge_EventScript_PgZapdosDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, StormsEdge_EventScript_PgZapdosStill
-	release
-	end
-
-StormsEdge_EventScript_PgZapdosStill:
-	msgbox StormsEdge_Text_PGStillZapdos, MSGBOX_DEFAULT
-	release
-	end
-
-StormsEdge_EventScript_PgZapdosDone:
-	setflag FLAG_PG_ZAPDOS
-	removeobject LOCALID_STORMS_EDGE_PG_ZAPDOS
-	release
-	end
-
-StormsEdge_Text_PGZapdos:
-	.string "ZAPDOS stands before you,\n"
-	.string "crackling with stored lightning.$"
-
-StormsEdge_Text_PGStillZapdos:
-	.string "ZAPDOS shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---

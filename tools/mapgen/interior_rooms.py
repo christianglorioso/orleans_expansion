@@ -326,3 +326,7 @@ for _r in ROOMS:
     if _a:
         _r.update(arena=_a, tileset=_arena.ARENAS_BY_NAME[_a]["tileset"], secondary=_arena.ARENAS_BY_NAME[_a]["secondary"],
                   border=_arena.ARENAS_BY_NAME[_a]["border"])
+
+# Zapdos' lamp gallery is a lair now (20 x 16 on the storm secondary, a MAP_TYPE_ROUTE): lairs.py builds it from the approved mock (story_data_lairs.LAIRS2["zapdos"]).
+# The lighthouse's stair warp (to warp 0 of the gallery) was computed above, so only the room itself leaves the generic builder.
+ROOMS[:] = [_r for _r in ROOMS if _r.get("mockup") != "storms_edge_lighthouse_gallery"]

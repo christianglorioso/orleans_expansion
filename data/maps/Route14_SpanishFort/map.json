@@ -1,0 +1,54 @@
+{
+  "id": "MAP_ROUTE14_SPANISH_FORT",
+  "name": "Route14_SpanishFort",
+  "layout": "LAYOUT_ROUTE14_SPANISH_FORT",
+  "music": "MUS_RG_ROUTE24",
+  "region_map_section": "MAPSEC_ROUTE_14",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_ROUTE14_SPANISH_FORT_PG_GALAR_MOLTRES",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MOLTRES_GALAR)",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route14_SpanishFort_EventScript_PgGalarMoltres",
+      "flag": "FLAG_PG_GALAR_MOLTRES"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 8,
+      "elevation": 3,
+      "var": "FLAG_TEMP_1",
+      "var_value": "1",
+      "script": "Route14_SpanishFort_EventScript_Exit"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 9,
+      "elevation": 3,
+      "var": "FLAG_TEMP_1",
+      "var_value": "1",
+      "script": "Route14_SpanishFort_EventScript_Exit"
+    }
+  ],
+  "bg_events": []
+}

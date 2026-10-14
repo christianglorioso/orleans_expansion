@@ -307,6 +307,10 @@ import story_data_lairs as _lairs  # noqa: E402
 def _merge_lairs():
     for name, data in _lairs.ROUTES.items():
         _merge_into(OVERLAY.setdefault(name, {}), data)
+    # the Storm's Edge lighthouse's keeper stair: a plain warp event on a normal floor cell never fires (IsWarpMetatileBehavior), so the stair is a trigger that
+    # always fires (a never-set flag equal to 0, as the arenas' exits are) and warps to the lamp gallery's hatch; its warp event stays for the pairing
+    INTERIOR.setdefault("storms_edge_lighthouse", {}).setdefault("coord_events", []).append(
+        {"type": "trigger", "x": 4, "y": 2, "elevation": 0, "var": "FLAG_FINALE_NEVER_SET", "var_value": "0", "script": "StormsEdge_Lighthouse_EventScript_Stair"})
 
 
 _merge_lairs()

@@ -1,5 +1,6 @@
 Route17_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route17_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route17_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -62,56 +63,42 @@ Route17_Text_Route17HikerAfter:
 @ --- end route trainers ---
 
 Route17_OnTransitionPG:
-	call Route17_EventScript_PGSetup
 	end
 
-@ --- post-game (gen_postgame.py) ---
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route17_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route17_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route17_EventScript_LairOpenB2
+	end
 
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route17_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route17_EventScript_PGHide
-Route17_EventScript_PGSetupDone:
+Route17_EventScript_LairOpenB2:
+	call Route17_EventScript_StateSugarhouseOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route17_EventScript_PGHide:
-	setflag FLAG_PG_MOLTRES
-	return
-
-Route17_EventScript_PgMoltres::
-	lock
-	faceplayer
-	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
-	msgbox Route17_Text_PGMoltres, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_MOLTRES, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route17_EventScript_PgMoltresDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route17_EventScript_PgMoltresStill
-	release
+Route17_EventScript_LairEnterSugarhouse::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route17_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE17_SUGARHOUSE, 9, 12
+	waitstate
 	end
 
-Route17_EventScript_PgMoltresStill:
-	msgbox Route17_Text_PGStillMoltres, MSGBOX_DEFAULT
-	release
+Route17_Movement_LairFaceUp:
+	face_up
+	step_end
+
+
+@ The mill door (33, 9): barred until story 45 (a sign on the door cell, read from the south); from story 45 the cell walks and the trigger above enters.
+Route17_EventScript_MillDoor::
+	goto_if_ge VAR_ORLEANS_STORY, 45, Route17_EventScript_LairEnterSugarhouse
+	msgbox Route17_Text_MillDoorBarred, MSGBOX_SIGN
 	end
 
-Route17_EventScript_PgMoltresDone:
-	setflag FLAG_PG_MOLTRES
-	removeobject LOCALID_ROUTE17_PG_MOLTRES
-	release
-	end
-
-Route17_Text_PGMoltres:
-	.string "MOLTRES stands before you,\n"
-	.string "wings burning like a forge.$"
-
-Route17_Text_PGStillMoltres:
-	.string "MOLTRES shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route17_Text_MillDoorBarred:
+	.string "It's barred. Heat comes through\n"
+	.string "the planks.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -121,5 +108,9 @@ Route17_EventScript_RouteSign1::
 
 Route17_Text_RouteSign1:
 	.string "SUGAR MILL ROAD\nMind the rail cars.$"
+
+Route17_EventScript_StateSugarhouseOpen::
+	setmetatile 33, 9, 0x3A5, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

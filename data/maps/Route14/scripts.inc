@@ -12,6 +12,7 @@ Route14_OnTransition:
 	end
 
 Route14_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route14_EventScript_LairOpenB2
 	call_if_set FLAG_BADGE06_GET, Route14_EventScript_LairOpen
 	end
 
@@ -126,6 +127,39 @@ Route14_Text_Route14BlackBeltAfter:
 
 @ --- end route trainers ---
 
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route14_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route14_EventScript_LairOpenB2:
+	call Route14_EventScript_StateSpanishFortOpen
+	call Route14_EventScript_StateBushTrackOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route14_EventScript_LairEnterSpanishFort::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_LairFaceLeft
+	waitmovement 0
+	warp MAP_ROUTE14_SPANISH_FORT, 17, 8
+	waitstate
+	end
+
+Route14_EventScript_LairEnterBushTrack::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_LairFaceRight
+	waitmovement 0
+	warp MAP_ROUTE14_BUSH_TRACK, 2, 8
+	waitstate
+	end
+
+Route14_Movement_LairFaceLeft:
+	face_left
+	step_end
+
+Route14_Movement_LairFaceRight:
+	face_right
+	step_end
+
 @ --- mapgen: generated NPC scripts (begin) ---
 
 Route14_EventScript_SignCity::
@@ -147,6 +181,20 @@ Route14_EventScript_StateRougarouOpen::
 	setmetatile 26, 30, 0x277, FALSE
 	setmetatile 25, 31, 0x276, FALSE
 	setmetatile 26, 31, 0x278, FALSE
+	return
+
+Route14_EventScript_StateSpanishFortOpen::
+	setmetatile 0, 7, 0x285, FALSE
+	setmetatile 1, 7, 0x287, FALSE
+	setmetatile 0, 8, 0x286, FALSE
+	setmetatile 1, 8, 0x288, FALSE
+	return
+
+Route14_EventScript_StateBushTrackOpen::
+	setmetatile 26, 19, 0x27F, FALSE
+	setmetatile 27, 19, 0x281, FALSE
+	setmetatile 26, 20, 0x280, FALSE
+	setmetatile 27, 20, 0x282, FALSE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---

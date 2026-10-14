@@ -1217,7 +1217,19 @@
     "Route7_CelebiGlade",
     "Route11_SuicuneIsle",
     "Route2_RaikouClearing",
-    "Route16_EnteiField"
+    "Route16_EnteiField",
+    "OldWater_KnowingPool",
+    "Route1_HeartPool",
+    "Route17_Sugarhouse",
+    "Route23_UnfailingSpring",
+    "Route12_LeveeCrown",
+    "Route13_DeepWood",
+    "Route13_CourirGlade",
+    "Route3_WindsEye",
+    "Route14_SpanishFort",
+    "Route14_BushTrack",
+    "Route10_MilneburgPavilion",
+    "Route23_BountifulField"
   ],
   "gMapGroup_IndoorIsleMarais": [
     "IsleMarais_Shelter",

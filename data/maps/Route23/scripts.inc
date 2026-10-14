@@ -64,7 +64,6 @@ Route23_Text_Route23BlackBeltAfter:
 
 Route23_OnTransitionPG:
 	call Route23_EventScript_StoryWeather
-	call Route23_EventScript_PGSetup
 	end
 
 @ weather (weather_plan.py): sandstorm until Rayquaza lifts the dust storms, then clear. Runs from OnTransition, before the weather starts.
@@ -74,93 +73,11 @@ Route23_EventScript_StoryWeather:
 Route23_EventScript_StoryWeatherDone:
 	return
 
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route23_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route23_EventScript_PGHide
-Route23_EventScript_PGSetupDone:
-	return
-
-Route23_EventScript_PGHide:
-	setflag FLAG_PG_LANDORUS
-	setflag FLAG_PG_AZELF
-	return
-
-Route23_EventScript_PgLandorus::
-	lock
-	faceplayer
-	playmoncry SPECIES_LANDORUS, CRY_MODE_ENCOUNTER
-	msgbox Route23_Text_PGLandorus, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_LANDORUS, 62
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgLandorusDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgLandorusStill
-	release
-	end
-
-Route23_EventScript_PgLandorusStill:
-	msgbox Route23_Text_PGStillLandorus, MSGBOX_DEFAULT
-	release
-	end
-
-Route23_EventScript_PgLandorusDone:
-	setflag FLAG_PG_LANDORUS
-	removeobject LOCALID_ROUTE23_PG_LANDORUS
-	release
-	end
-
-Route23_EventScript_PgAzelf::
-	lock
-	faceplayer
-	playmoncry SPECIES_AZELF, CRY_MODE_ENCOUNTER
-	msgbox Route23_Text_PGAzelf, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_AZELF, 55
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route23_EventScript_PgAzelfDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route23_EventScript_PgAzelfStill
-	release
-	end
-
-Route23_EventScript_PgAzelfStill:
-	msgbox Route23_Text_PGStillAzelf, MSGBOX_DEFAULT
-	release
-	end
-
-Route23_EventScript_PgAzelfDone:
-	setflag FLAG_PG_AZELF
-	removeobject LOCALID_ROUTE23_PG_AZELF
-	release
-	end
-
-Route23_Text_PGLandorus:
-	.string "LANDORUS stands before you,\n"
-	.string "the ground trembling under it.$"
-
-Route23_Text_PGStillLandorus:
-	.string "LANDORUS shakes itself off,\n"
-	.string "still standing its ground.$"
-
-Route23_Text_PGAzelf:
-	.string "AZELF stands before you,\n"
-	.string "its will gleaming like a blade.$"
-
-Route23_Text_PGStillAzelf:
-	.string "AZELF shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
-
 @ Bloodmoon Ursaluna's lair (Route23_BloodmoonArroyo, story/Route23_BloodmoonArroyo.inc): the arroyo's way in is the cleft in the north scrub (22-23, rows 0-2),
 @ sealed in map.bin; from story 45 the generated Route23_EventScript_StateUrsalunaOpen swaps the open look in on load and arms the entrance trigger
 @ (FLAG_TEMP_1, cleared on every map load, so a sealed way never has a live trigger).
 Route23_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route23_EventScript_LairOpenB2
 	call_if_ge VAR_ORLEANS_STORY, 45, Route23_EventScript_LairOpen
 	end
 
@@ -179,6 +96,35 @@ Route23_EventScript_LairEnter::
 
 Route23_Movement_LairFaceUp:
 	face_up
+	step_end
+
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route23_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route23_EventScript_LairOpenB2:
+	call Route23_EventScript_StateAzelfOpen
+	call Route23_EventScript_StateLandorusOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route23_EventScript_LairEnterAzelf::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route23_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE23_UNFAILING_SPRING, 10, 13
+	waitstate
+	end
+
+Route23_EventScript_LairEnterLandorus::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route23_Movement_LairFaceDown
+	waitmovement 0
+	warp MAP_ROUTE23_BOUNTIFUL_FIELD, 10, 2
+	waitstate
+	end
+
+Route23_Movement_LairFaceDown:
+	face_down
 	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
@@ -218,6 +164,28 @@ Route23_EventScript_StateUrsalunaOpen::
 	setmetatile 23, 2, 0x2AA, FALSE
 	setmetatile 21, 2, 0x2A5, TRUE
 	setmetatile 21, 3, 0x2A6, TRUE
+	return
+
+Route23_EventScript_StateAzelfOpen::
+	setmetatile 33, 1, 0x2B0, FALSE
+	setmetatile 34, 1, 0x2B2, FALSE
+	setmetatile 33, 2, 0x2B1, FALSE
+	setmetatile 34, 2, 0x2B3, FALSE
+	setmetatile 32, 0, 0x20E, TRUE
+	setmetatile 33, 0, 0x20A, TRUE
+	setmetatile 34, 0, 0x209, TRUE
+	setmetatile 35, 0, 0x20D, TRUE
+	setmetatile 32, 1, 0x206, TRUE
+	setmetatile 35, 1, 0x20C, TRUE
+	setmetatile 32, 2, 0x29D, TRUE
+	setmetatile 35, 2, 0x29C, TRUE
+	return
+
+Route23_EventScript_StateLandorusOpen::
+	setmetatile 27, 38, 0x2B4, FALSE
+	setmetatile 28, 38, 0x2B6, FALSE
+	setmetatile 27, 39, 0x2B5, FALSE
+	setmetatile 28, 39, 0x2B7, FALSE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---

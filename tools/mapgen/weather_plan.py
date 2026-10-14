@@ -61,6 +61,20 @@ HEADER = {
     "Route2_RaikouClearing": "WEATHER_RAIN_THUNDERSTORM",  # battle: rain + Electric Terrain (B_THUNDERSTORM_TERRAIN)
     "Route16_EnteiField": "WEATHER_DROUGHT",               # battle: harsh sun
     "PointeRouge_IcePlant": "WEATHER_SNOW",                # battle: snow (B_OVERWORLD_SNOW >= GEN_9)
+    # batch 2 (user-approved mocks, 2026-10-14; the hand-off's weather column)
+    "OldWater_KnowingPool": "WEATHER_FOG_HORIZONTAL",       # battle: Misty Terrain
+    "Route1_HeartPool": "WEATHER_NONE",                     # the one bright, still place of Route 1's rain
+    "Route23_UnfailingSpring": "WEATHER_SANDSTORM",         # faint dust (the mock's first choice); battle: sandstorm
+    "StormsEdge_LighthouseGallery": "WEATHER_RAIN_THUNDERSTORM",   # always (the keeper's lamp is dark or lit, the storm stays); battle: rain + Electric Terrain
+    "Route12_LeveeCrown": "WEATHER_RAIN_THUNDERSTORM",      # battle: rain + Electric Terrain
+    "Route13_DeepWood": "WEATHER_SHADE",                    # the deep wood's gloom: nothing in battle
+    "Route13_CourirGlade": "WEATHER_NONE",
+    "Route3_WindsEye": "WEATHER_RAIN",                      # battle: rain
+    "Route14_SpanishFort": "WEATHER_SHADE",
+    "Route14_BushTrack": "WEATHER_NONE",
+    "Route10_MilneburgPavilion": "WEATHER_FOG_HORIZONTAL",  # battle: Misty Terrain
+    "Route17_Sugarhouse": "WEATHER_NONE",                   # an interior
+    "Route23_BountifulField": "WEATHER_NONE",               # the dust drops away in the hollow
 }
 
 # map -> (condition script text, weather it switches to); documentation and the bot test read this

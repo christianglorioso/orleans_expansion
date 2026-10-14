@@ -21,3 +21,16 @@ StormsEdge_Lighthouse_Text_KeeperDown:
 StormsEdge_Lighthouse_Text_KeeperRestored:
 	.string "Look at that beam sweep the bay!\n"
 	.string "ÉCLAIR's grid reached my lamp.$"
+
+@ The keeper's stair up to the lamp gallery (Zapdos' lair, StormsEdge_LighthouseGallery): the stair cell (4, 2) is a trigger that always fires (see story_overlay._merge_lairs)
+StormsEdge_Lighthouse_EventScript_Stair::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, StormsEdge_Lighthouse_Movement_FaceUp
+	waitmovement 0
+	warp MAP_STORMS_EDGE_LIGHTHOUSE_GALLERY, 10, 12
+	waitstate
+	end
+
+StormsEdge_Lighthouse_Movement_FaceUp:
+	face_up
+	step_end

@@ -1,5 +1,6 @@
 Route1_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route1_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route1_OnLoad
 	.byte 0
 
 @ ---------------------------------------------------------------- the south gate (before the first battle)
@@ -222,7 +223,6 @@ Route1_Text_ThroughTheReeds:
 
 Route1_OnTransitionPG:
 	call Route1_EventScript_StoryWeather
-	call Route1_EventScript_PGSetup
 	end
 
 @ weather (weather_plan.py): rain until story 6, then sunny with clouds. Runs from OnTransition, before the weather starts.
@@ -232,50 +232,27 @@ Route1_EventScript_StoryWeather:
 Route1_EventScript_StoryWeatherDone:
 	return
 
-@ --- post-game (gen_postgame.py) ---
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route1_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route1_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route1_EventScript_LairOpenB2
+	end
 
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route1_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route1_EventScript_PGHide
-Route1_EventScript_PGSetupDone:
+Route1_EventScript_LairOpenB2:
+	call Route1_EventScript_StateHeartPoolOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route1_EventScript_PGHide:
-	setflag FLAG_PG_MESPRIT
-	return
-
-Route1_EventScript_PgMesprit::
-	lock
-	faceplayer
-	playmoncry SPECIES_MESPRIT, CRY_MODE_ENCOUNTER
-	msgbox Route1_Text_PGMesprit, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_MESPRIT, 55
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route1_EventScript_PgMespritDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route1_EventScript_PgMespritStill
-	release
+Route1_EventScript_LairEnterMesprit::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route1_Movement_LairFaceRight
+	waitmovement 0
+	warp MAP_ROUTE1_HEART_POOL, 2, 8
+	waitstate
 	end
 
-Route1_EventScript_PgMespritStill:
-	msgbox Route1_Text_PGStillMesprit, MSGBOX_DEFAULT
-	release
-	end
+Route1_Movement_LairFaceRight:
+	face_right
+	step_end
 
-Route1_EventScript_PgMespritDone:
-	setflag FLAG_PG_MESPRIT
-	removeobject LOCALID_ROUTE1_PG_MESPRIT
-	release
-	end
-
-Route1_Text_PGMesprit:
-	.string "MESPRIT stands before you,\n"
-	.string "its heart glowing soft and warm.$"
-
-Route1_Text_PGStillMesprit:
-	.string "MESPRIT shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---

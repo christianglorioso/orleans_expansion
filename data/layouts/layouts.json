@@ -2468,10 +2468,10 @@
     {
       "id": "LAYOUT_STORMS_EDGE_LIGHTHOUSE_GALLERY",
       "name": "StormsEdge_LighthouseGallery_Layout",
-      "width": 11,
-      "height": 9,
-      "primary_tileset": "gTileset_OrleansBuilding",
-      "secondary_tileset": "gTileset_OrleansInterior",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairStorm",
       "border_filepath": "data/layouts/StormsEdge_LighthouseGallery/border.bin",
       "blockdata_filepath": "data/layouts/StormsEdge_LighthouseGallery/map.bin"
     },
@@ -3214,6 +3214,126 @@
       "secondary_tileset": "gTileset_OrleansLairsDry",
       "border_filepath": "data/layouts/Route16_EnteiField/border.bin",
       "blockdata_filepath": "data/layouts/Route16_EnteiField/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_WATER_KNOWING_POOL",
+      "name": "OldWater_KnowingPool_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairTrio",
+      "border_filepath": "data/layouts/OldWater_KnowingPool/border.bin",
+      "blockdata_filepath": "data/layouts/OldWater_KnowingPool/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1_HEART_POOL",
+      "name": "Route1_HeartPool_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairTrio",
+      "border_filepath": "data/layouts/Route1_HeartPool/border.bin",
+      "blockdata_filepath": "data/layouts/Route1_HeartPool/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE17_SUGARHOUSE",
+      "name": "Route17_Sugarhouse_Layout",
+      "width": 19,
+      "height": 14,
+      "primary_tileset": "gTileset_OrleansBuilding",
+      "secondary_tileset": "gTileset_OrleansLairSugarhouse",
+      "border_filepath": "data/layouts/Route17_Sugarhouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route17_Sugarhouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE23_UNFAILING_SPRING",
+      "name": "Route23_UnfailingSpring_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairField",
+      "border_filepath": "data/layouts/Route23_UnfailingSpring/border.bin",
+      "blockdata_filepath": "data/layouts/Route23_UnfailingSpring/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE12_LEVEE_CROWN",
+      "name": "Route12_LeveeCrown_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairStorm",
+      "border_filepath": "data/layouts/Route12_LeveeCrown/border.bin",
+      "blockdata_filepath": "data/layouts/Route12_LeveeCrown/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE13_DEEP_WOOD",
+      "name": "Route13_DeepWood_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairWoods",
+      "border_filepath": "data/layouts/Route13_DeepWood/border.bin",
+      "blockdata_filepath": "data/layouts/Route13_DeepWood/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE13_COURIR_GLADE",
+      "name": "Route13_CourirGlade_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairWoods",
+      "border_filepath": "data/layouts/Route13_CourirGlade/border.bin",
+      "blockdata_filepath": "data/layouts/Route13_CourirGlade/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE3_WINDS_EYE",
+      "name": "Route3_WindsEye_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairWoods",
+      "border_filepath": "data/layouts/Route3_WindsEye/border.bin",
+      "blockdata_filepath": "data/layouts/Route3_WindsEye/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE14_SPANISH_FORT",
+      "name": "Route14_SpanishFort_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairFort",
+      "border_filepath": "data/layouts/Route14_SpanishFort/border.bin",
+      "blockdata_filepath": "data/layouts/Route14_SpanishFort/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE14_BUSH_TRACK",
+      "name": "Route14_BushTrack_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairFort",
+      "border_filepath": "data/layouts/Route14_BushTrack/border.bin",
+      "blockdata_filepath": "data/layouts/Route14_BushTrack/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE10_MILNEBURG_PAVILION",
+      "name": "Route10_MilneburgPavilion_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairFort",
+      "border_filepath": "data/layouts/Route10_MilneburgPavilion/border.bin",
+      "blockdata_filepath": "data/layouts/Route10_MilneburgPavilion/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE23_BOUNTIFUL_FIELD",
+      "name": "Route23_BountifulField_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_OrleansGeneral",
+      "secondary_tileset": "gTileset_OrleansLairField",
+      "border_filepath": "data/layouts/Route23_BountifulField/border.bin",
+      "blockdata_filepath": "data/layouts/Route23_BountifulField/map.bin"
     }
   ]
 }

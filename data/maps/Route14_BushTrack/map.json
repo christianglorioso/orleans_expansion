@@ -1,0 +1,54 @@
+{
+  "id": "MAP_ROUTE14_BUSH_TRACK",
+  "name": "Route14_BushTrack",
+  "layout": "LAYOUT_ROUTE14_BUSH_TRACK",
+  "music": "MUS_RG_ROUTE24",
+  "region_map_section": "MAPSEC_ROUTE_14",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_ROUTE14_BUSH_TRACK_PG_GALAR_ZAPDOS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZAPDOS_GALAR)",
+      "x": 12,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route14_BushTrack_EventScript_PgGalarZapdos",
+      "flag": "FLAG_PG_GALAR_ZAPDOS"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 8,
+      "elevation": 3,
+      "var": "FLAG_TEMP_1",
+      "var_value": "1",
+      "script": "Route14_BushTrack_EventScript_Exit"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 9,
+      "elevation": 3,
+      "var": "FLAG_TEMP_1",
+      "var_value": "1",
+      "script": "Route14_BushTrack_EventScript_Exit"
+    }
+  ],
+  "bg_events": []
+}

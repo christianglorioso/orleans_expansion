@@ -45,6 +45,16 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "var": "FLAG_FINALE_NEVER_SET",
+      "var_value": "0",
+      "script": "StormsEdge_Lighthouse_EventScript_Stair"
+    }
+  ],
   "bg_events": []
 }

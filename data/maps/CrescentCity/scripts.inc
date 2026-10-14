@@ -17,7 +17,6 @@ CrescentCity_EventScript_OpenFrontierLandmark:
 CrescentCity_OnTransition:
 	setflag FLAG_VISITED_CRESCENT_CITY
 	call_if_ge VAR_ORLEANS_STORY, 45, CrescentCity_EventScript_OpenFrontierLandmark
-	call CrescentCity_EventScript_PGSetup
 	setflag FLAG_HIDE_CRESCENT_LAFAYETTE
 	setflag FLAG_HIDE_CRESCENT_WREN
 	setflag FLAG_HIDE_CRESCENT_GYM_USHER
@@ -389,124 +388,6 @@ CrescentCity_Text_ParadeStone:
 	.string "PARADE LEADER: Six verses! The whole\nparade felt that one. The little\p"
 	.string "QUAXLY you took is grown. Here, a\nstone for the big finish.\p"
 	.string "QUAQUAVALITE. Dance it out.$"
-
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-CrescentCity_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, CrescentCity_EventScript_PGHide
-CrescentCity_EventScript_PGSetupDone:
-	return
-
-CrescentCity_EventScript_PGHide:
-	setflag FLAG_PG_GALAR_ARTICUNO
-	setflag FLAG_PG_GALAR_ZAPDOS
-	setflag FLAG_PG_GALAR_MOLTRES
-	return
-
-CrescentCity_EventScript_PgGalarArticuno::
-	lock
-	faceplayer
-	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
-	msgbox CrescentCity_Text_PGGalarArticuno, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_ARTICUNO_GALAR, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarArticunoDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarArticunoStill
-	release
-	end
-
-CrescentCity_EventScript_PgGalarArticunoStill:
-	msgbox CrescentCity_Text_PGStillGalarArticuno, MSGBOX_DEFAULT
-	release
-	end
-
-CrescentCity_EventScript_PgGalarArticunoDone:
-	setflag FLAG_PG_GALAR_ARTICUNO
-	removeobject LOCALID_CRESCENT_CITY_PG_GALAR_ARTICUNO
-	release
-	end
-
-CrescentCity_EventScript_PgGalarZapdos::
-	lock
-	faceplayer
-	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
-	msgbox CrescentCity_Text_PGGalarZapdos, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_ZAPDOS_GALAR, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarZapdosDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarZapdosStill
-	release
-	end
-
-CrescentCity_EventScript_PgGalarZapdosStill:
-	msgbox CrescentCity_Text_PGStillGalarZapdos, MSGBOX_DEFAULT
-	release
-	end
-
-CrescentCity_EventScript_PgGalarZapdosDone:
-	setflag FLAG_PG_GALAR_ZAPDOS
-	removeobject LOCALID_CRESCENT_CITY_PG_GALAR_ZAPDOS
-	release
-	end
-
-CrescentCity_EventScript_PgGalarMoltres::
-	lock
-	faceplayer
-	playmoncry SPECIES_MOLTRES_GALAR, CRY_MODE_ENCOUNTER
-	msgbox CrescentCity_Text_PGGalarMoltres, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_MOLTRES_GALAR, 60
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, CrescentCity_EventScript_PgGalarMoltresDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CrescentCity_EventScript_PgGalarMoltresStill
-	release
-	end
-
-CrescentCity_EventScript_PgGalarMoltresStill:
-	msgbox CrescentCity_Text_PGStillGalarMoltres, MSGBOX_DEFAULT
-	release
-	end
-
-CrescentCity_EventScript_PgGalarMoltresDone:
-	setflag FLAG_PG_GALAR_MOLTRES
-	removeobject LOCALID_CRESCENT_CITY_PG_GALAR_MOLTRES
-	release
-	end
-
-CrescentCity_Text_PGGalarArticuno:
-	.string "GALARIAN ARTICUNO stands before you,\n"
-	.string "its gaze cold and proud.$"
-
-CrescentCity_Text_PGStillGalarArticuno:
-	.string "GALARIAN ARTICUNO shakes itself off,\n"
-	.string "still standing its ground.$"
-
-CrescentCity_Text_PGGalarZapdos:
-	.string "GALARIAN ZAPDOS stands before you,\n"
-	.string "kicking up sparks.$"
-
-CrescentCity_Text_PGStillGalarZapdos:
-	.string "GALARIAN ZAPDOS shakes itself off,\n"
-	.string "still standing its ground.$"
-
-CrescentCity_Text_PGGalarMoltres:
-	.string "GALARIAN MOLTRES stands before you,\n"
-	.string "flames dark as a bruise.$"
-
-CrescentCity_Text_PGStillGalarMoltres:
-	.string "GALARIAN MOLTRES shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
 
 @ The Battle Frontier (Chapter 10): the plaza opens at story 45 (the guard steps aside, FLAG_UNUSED_0x2D9). Each of the seven halls' doors is a real warp
 @ (crescent.py: every facility's "interior" is its vanilla lobby); each lobby's exits are warps retargeted to the same door (frontier_wire.py), so every way out

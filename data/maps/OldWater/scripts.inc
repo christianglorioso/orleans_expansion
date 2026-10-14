@@ -10,7 +10,6 @@ OldWater_MapScripts::
 @ the raid actors are hidden on every load; the scene brings them in (clearflag + addobject)
 OldWater_OnTransition:
 	setflag FLAG_VISITED_OLD_WATER
-	call OldWater_EventScript_PGSetup
 	setflag FLAG_HIDE_RAID_ISAAC
 	setflag FLAG_HIDE_RAID_GRUNT1
 	setflag FLAG_HIDE_RAID_GRUNT2
@@ -449,54 +448,6 @@ OldWater_Text_Cer5:
 	.string "the channel north of ROUTE 8. The\p"
 	.string "river carries you to its edge. Go\n"
 	.string "at dawn.$"
-
-@ --- post-game (gen_postgame.py) ---
-
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-OldWater_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, OldWater_EventScript_PGHide
-OldWater_EventScript_PGSetupDone:
-	return
-
-OldWater_EventScript_PGHide:
-	setflag FLAG_PG_UXIE
-	return
-
-OldWater_EventScript_PgUxie::
-	lock
-	faceplayer
-	playmoncry SPECIES_UXIE, CRY_MODE_ENCOUNTER
-	msgbox OldWater_Text_PGUxie, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_UXIE, 55
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, OldWater_EventScript_PgUxieDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, OldWater_EventScript_PgUxieStill
-	release
-	end
-
-OldWater_EventScript_PgUxieStill:
-	msgbox OldWater_Text_PGStillUxie, MSGBOX_DEFAULT
-	release
-	end
-
-OldWater_EventScript_PgUxieDone:
-	setflag FLAG_PG_UXIE
-	removeobject LOCALID_OLD_WATER_PG_UXIE
-	release
-	end
-
-OldWater_Text_PGUxie:
-	.string "UXIE stands before you,\n"
-	.string "its eyes shut, knowing everything.$"
-
-OldWater_Text_PGStillUxie:
-	.string "UXIE shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

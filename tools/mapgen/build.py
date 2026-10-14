@@ -595,8 +595,11 @@ class Builder:
             out = []
             for c in g.get("open", []):
                 x, y = c["x"], c["y"]
-                mid = hx(self.overlay(c["overlay"], x, y)) if "overlay" in c else hx(c["tile"]) if "tile" in c else self.blocks[y][x] & 0x3FF
-                out.append((x, y, mid, c.get("collision", 0)))
+                mid = (hx(self.overlay(c["overlay"], x, y, walk=bool(c.get("walk")), behavior=c.get("behavior"))) if "overlay" in c
+                       else hx(c["tile"]) if "tile" in c else self.blocks[y][x] & 0x3FF)
+                # a cell with neither overlay nor tile keeps the terrain AND its collision as built (a wall the sealed fill covers stays a wall)
+                dflt = 0 if ("overlay" in c or "tile" in c) else (self.blocks[y][x] >> COLLISION_SHIFT) & 3
+                out.append((x, y, mid, c.get("collision", dflt)))
             self.state_cells[name] = out
             for c in g.get("sealed", []):
                 x, y = c["x"], c["y"]

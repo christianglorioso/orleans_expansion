@@ -1,4 +1,5 @@
 Route10_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route10_OnLoad
 	.byte 0
 
 @ Chapter 5+ gate: the brothers' verse (gym 5, FLAG_BADGE05_GET) clears the log jam across Route 10's canal (x 11). A cut of
@@ -81,6 +82,30 @@ Route10_Text_Route10CamperAfter:
 
 @ --- end route trainers ---
 
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route10_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route10_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route10_EventScript_LairOpenB2
+	end
+
+Route10_EventScript_LairOpenB2:
+	call Route10_EventScript_StatePavilionOpen
+	setflag FLAG_TEMP_1
+	return
+
+Route10_EventScript_LairEnterPavilion::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route10_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE10_MILNEBURG_PAVILION, 10, 13
+	waitstate
+	end
+
+Route10_Movement_LairFaceUp:
+	face_up
+	step_end
+
 @ --- mapgen: generated NPC scripts (begin) ---
 
 Route10_EventScript_Jam1::
@@ -117,5 +142,12 @@ Route10_EventScript_RouteSign1::
 
 Route10_Text_RouteSign1:
 	.string "CRESCENT CITY LAKEFRONT\nBoats for the big lake leave here.$"
+
+Route10_EventScript_StatePavilionOpen::
+	setmetatile 30, 12, 0x287, FALSE
+	setmetatile 31, 12, 0x289, FALSE
+	setmetatile 30, 13, 0x288, FALSE
+	setmetatile 31, 13, 0x28A, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

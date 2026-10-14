@@ -15,22 +15,22 @@ def spec(x):
 # key, map, species const, species gfx name, level, (x, y), note
 STATICS = [
     dict(key="RAIKOU", map="Route2_RaikouClearing", sp="RAIKOU", level=60, at=(10, 10)),
-    dict(key="ZAPDOS", map="StormsEdge", sp="ZAPDOS", level=60, at=(22, 20)),
+    dict(key="ZAPDOS", map="StormsEdge_LighthouseGallery", sp="ZAPDOS", level=60, at=(10, 9)),
     dict(key="ENTEI", map="Route16_EnteiField", sp="ENTEI", level=60, at=(9, 10)),
-    dict(key="MOLTRES", map="Route17", sp="MOLTRES", level=60, at=(23, 14)),
+    dict(key="MOLTRES", map="Route17_Sugarhouse", sp="MOLTRES", level=60, at=(3, 6)),
     dict(key="SUICUNE", map="Route11_SuicuneIsle", sp="SUICUNE", level=60, at=(10, 7)),
     dict(key="ARTICUNO", map="PointeRouge_IcePlant", sp="ARTICUNO", level=60, at=(9, 5)),
-    dict(key="GALAR_ARTICUNO", map="CrescentCity", sp="ARTICUNO_GALAR", gfx="ARTICUNO_GALAR", level=60, at=(57, 22)),
-    dict(key="GALAR_ZAPDOS", map="CrescentCity", sp="ZAPDOS_GALAR", gfx="ZAPDOS_GALAR", level=60, at=(65, 35)),
-    dict(key="GALAR_MOLTRES", map="CrescentCity", sp="MOLTRES_GALAR", gfx="MOLTRES_GALAR", level=60, at=(54, 25)),
-    dict(key="TORNADUS", map="Route3", sp="TORNADUS", level=62, at=(25, 13)),
-    dict(key="THUNDURUS", map="Route12", sp="THUNDURUS", level=62, at=(14, 23)),
-    dict(key="LANDORUS", map="Route23", sp="LANDORUS", level=62, at=(24, 16)),
-    dict(key="AZELF", map="Route23", sp="AZELF", level=55, at=(27, 19)),
-    dict(key="MESPRIT", map="Route1", sp="MESPRIT", level=55, at=(15, 24)),
-    dict(key="UXIE", map="OldWater", sp="UXIE", level=55, at=(24, 29)),
-    dict(key="ZARUDE", map="Route13", sp="ZARUDE", level=55, at=(14, 19)),
-    dict(key="OGERPON", map="Route13", sp="OGERPON_TEAL", gfx="OGERPON", level=50, at=(12, 25)),
+    dict(key="GALAR_ARTICUNO", map="Route10_MilneburgPavilion", sp="ARTICUNO_GALAR", gfx="ARTICUNO_GALAR", level=60, at=(10, 7)),
+    dict(key="GALAR_ZAPDOS", map="Route14_BushTrack", sp="ZAPDOS_GALAR", gfx="ZAPDOS_GALAR", level=60, at=(12, 8)),
+    dict(key="GALAR_MOLTRES", map="Route14_SpanishFort", sp="MOLTRES_GALAR", gfx="MOLTRES_GALAR", level=60, at=(10, 6)),
+    dict(key="TORNADUS", map="Route3_WindsEye", sp="TORNADUS", level=62, at=(10, 7)),
+    dict(key="THUNDURUS", map="Route12_LeveeCrown", sp="THUNDURUS", level=62, at=(10, 6)),
+    dict(key="LANDORUS", map="Route23_BountifulField", sp="LANDORUS", level=62, at=(10, 6)),
+    dict(key="AZELF", map="Route23_UnfailingSpring", sp="AZELF", level=55, at=(10, 9)),
+    dict(key="MESPRIT", map="Route1_HeartPool", sp="MESPRIT", level=55, at=(10, 7)),
+    dict(key="UXIE", map="OldWater_KnowingPool", sp="UXIE", level=55, at=(10, 5)),
+    dict(key="ZARUDE", map="Route13_DeepWood", sp="ZARUDE", level=55, at=(10, 7)),
+    dict(key="OGERPON", map="Route13_CourirGlade", sp="OGERPON_TEAL", gfx="OGERPON", level=50, at=(10, 9)),
     dict(key="CELEBI", map="Route7_CelebiGlade", sp="CELEBI", level=50, at=(10, 10)),
     dict(key="URSALUNA_BM", map="Route23_BloodmoonArroyo", sp="URSALUNA_BLOODMOON", gfx="URSALUNA_BLOODMOON", level=60, at=(10, 8), night=True, done="FLAG_PG_URSALUNA_DONE"),
     # the raid arenas: the legendary Jayden took is back (only that one): Kyogre if the player took Groudon (pick 2), Groudon if the player took Kyogre
@@ -54,7 +54,11 @@ ITEMS = [
 
 # the legendary lairs (lairs.py builds these maps; story_data_lairs.py): their statics are placed there, not by a route spec's overlay. Articuno's lair is the
 # existing ice plant room (INTERIOR_KEYS)
-LAIR_MAPS = {"Route2_RaikouClearing", "Route16_EnteiField", "Route11_SuicuneIsle", "Route7_CelebiGlade", "Route23_BloodmoonArroyo"}
+LAIR_MAPS = {"Route2_RaikouClearing", "Route16_EnteiField", "Route11_SuicuneIsle", "Route7_CelebiGlade", "Route23_BloodmoonArroyo",
+             # batch 2 (story_data_lairs.LAIRS2); the gallery and the sugarhouse are lair-built rooms too
+             "OldWater_KnowingPool", "Route1_HeartPool", "Route23_UnfailingSpring", "StormsEdge_LighthouseGallery", "Route12_LeveeCrown", "Route13_DeepWood",
+             "Route13_CourirGlade", "Route3_WindsEye", "Route14_SpanishFort", "Route14_BushTrack", "Route10_MilneburgPavilion", "Route17_Sugarhouse",
+             "Route23_BountifulField"}
 
 # interior rooms: (mockup key, kind) so the generated people get a script label (read back from the built map.json by position)
 INTERIOR_KEYS = {"PointeRouge_IcePlant": "pointe_rouge_ice_plant", "CrescentCity_BlacksnakeBase": "crescent_city_blacksnake_base",

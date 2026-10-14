@@ -470,21 +470,31 @@ def lair_entrances():
     lair's own exit triggers sit on walkable cells of the lair and its encounter has a reachable neighbour (lairs.py --check)."""
     import lairs
     import story_data_lairs as D
+    old_states = {"rougarou": "RougarouOpen", "ursaluna": "UrsalunaOpen", "celebi": "CelebiOpen", "suicune": "SuicuneOpen", "raikou": "RaikouOpen", "entei": "EnteiOpen"}
     for key, lair in D.LAIRS.items():
         route = lair["route"]
-        state = {"rougarou": "RougarouOpen", "ursaluna": "UrsalunaOpen", "celebi": "CelebiOpen", "suicune": "SuicuneOpen",
-                 "raikou": "RaikouOpen", "entei": "EnteiOpen"}[key]
+        if not lair.get("enter") and key not in old_states:
+            continue                       # Uxie (the boatman's script warp) and Zapdos (the lighthouse stair) have no route entrance trigger
+        state = lair.get("state") or old_states[key]
+        script = f"{route}_EventScript_LairEnter{lair.get('enter') or ''}"
         land = (lair["back"][0], lair["back"][1])
-        trig = [(c["x"], c["y"]) for c in layout(route)[0]["coord_events"] if c.get("script") == f"{route}_EventScript_LairEnter"]
-        check(len(trig) == 2 and all(c.get("var") == D.TRIG and str(c.get("var_value")) == "1" for c in layout(route)[0]["coord_events"]
-                                     if c.get("script") == f"{route}_EventScript_LairEnter"),
-              f"{route}: the lair entrance has two triggers {trig} armed by {D.TRIG} (a sealed way never has a live one)")
+        trigs = [c for c in layout(route)[0]["coord_events"] if c.get("script") == script]
+        trig = [(c["x"], c["y"]) for c in trigs]
+        want = 1 if key == "moltres" else 2
+        check(len(trig) == want and all(c.get("var") == D.TRIG and str(c.get("var_value")) == "1" for c in trigs),
+              f"{route}: the {key} entrance has {want} trigger(s) {trig} armed by {D.TRIG} (a sealed way never has a live one)")
         opened = state_cells(route, state)
         g_shut, g_open = Grid(route), Grid(route, raised=opened)
         src = [lair["approach"]]
+        if key == "galar_articuno":        # the pier stub stands in the lake: reached by Surf, so the check is on the four plank cells themselves
+            cells = [(30, 12), (31, 12), (30, 13), (31, 13)]
+            check(all(g_shut.cell(*c)[0] == 1 for c in cells), f"{route}: SEALED, the pier's four cells are pilings (collision 1)")
+            check(all(opened.get(c, (1, 0))[0] == 0 for c in cells) and land in cells and all(c in opened for c in trig),
+                  f"{route}: OPEN (the state's {len(opened)} cells), the four plank cells are walkable ground and hold the triggers {trig} and the return cell {land}")
+            continue
         r_shut, r_open = g_shut.fill(src), g_open.fill(src)
-        check(all(c not in r_shut for c in trig), f"{route}: SEALED, no walker reaches the entrance trigger cells {trig} from {src[0]} (map.bin holds the closed look)")
-        check(all(c in r_open for c in trig) and land in r_open, f"{route}: OPEN (the state's {len(opened)} cells), the trigger cells {trig} and the return cell {land} are reachable from {src[0]}")
+        check(all(c not in r_shut for c in trig), f"{route}: SEALED, no walker reaches the {key} trigger cells {trig} from {src[0]} (map.bin holds the closed look)")
+        check(all(c in r_open for c in trig) and land in r_open, f"{route}: OPEN (the state's {len(opened)} cells), the {key} trigger cells {trig} and the return cell {land} are reachable from {src[0]}")
     bad = lairs.check()
     check(bad == 0, f"the {len(D.LAIRS)} lair maps match their generator, arrival and exits walk, every encounter has a reachable neighbour ({bad} problems)")
 
@@ -599,7 +609,8 @@ def frontier_gate():
     for (m, key, kind, flag, gfx, (x, y), s) in c10.all_objects():
         g = Grid(m)
         # an arena's legend stands on its dais (a blocking cell in the art): the player faces it from the cell below
-        fy = y + 1 if key in ("KYOGRE_RE", "GROUDON_RE", "ARTICUNO") else y         # (Articuno's ice dais blocks too)
+        # (Articuno's ice dais blocks too; so do Mesprit's pool, which it hovers over, and Uxie's rock, from the stepping stone / the walk below: batch 2's mocks)
+        fy = y + 1 if key in ("KYOGRE_RE", "GROUDON_RE", "ARTICUNO", "MESPRIT", "UXIE") else y
         if not (g.w > x and g.h > fy) or (g.cell(x, fy)[0] != 0):
             bad.append(f"{m} {key} {x},{fy} is not a walkable cell")
         o = [e for e in g.m["object_events"] if e.get("flag") == flag]

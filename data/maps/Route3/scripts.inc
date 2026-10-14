@@ -1,10 +1,10 @@
 Route3_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route3_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, Route3_OnLoad
 	.byte 0
 
 @ Jayden is only on the causeway for his scene (BridgeStandoff clears this flag), at any story value.
 Route3_OnTransition:
-	call Route3_EventScript_PGSetup
 	setflag FLAG_HIDE_ROUTE3_JAYDEN
 	end
 
@@ -206,53 +206,29 @@ Route3_Text_BridgeAfterwards:
 	.string "CRESCENT CITY lies ahead, across\n"
 	.string "the bridge.$"
 
-@ --- post-game (gen_postgame.py) ---
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route3_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route3_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route3_EventScript_LairOpenB2
+	end
 
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route3_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route3_EventScript_PGHide
-Route3_EventScript_PGSetupDone:
+Route3_EventScript_LairOpenB2:
+	call Route3_EventScript_StateTornadusOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route3_EventScript_PGHide:
-	setflag FLAG_PG_TORNADUS
-	return
-
-Route3_EventScript_PgTornadus::
-	lock
-	faceplayer
-	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
-	msgbox Route3_Text_PGTornadus, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_TORNADUS, 62
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route3_EventScript_PgTornadusDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route3_EventScript_PgTornadusStill
-	release
+Route3_EventScript_LairEnterTornadus::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route3_Movement_LairFaceUp
+	waitmovement 0
+	warp MAP_ROUTE3_WINDS_EYE, 10, 13
+	waitstate
 	end
 
-Route3_EventScript_PgTornadusStill:
-	msgbox Route3_Text_PGStillTornadus, MSGBOX_DEFAULT
-	release
-	end
-
-Route3_EventScript_PgTornadusDone:
-	setflag FLAG_PG_TORNADUS
-	removeobject LOCALID_ROUTE3_PG_TORNADUS
-	release
-	end
-
-Route3_Text_PGTornadus:
-	.string "TORNADUS stands before you,\n"
-	.string "wrapped in a roaring gale.$"
-
-Route3_Text_PGStillTornadus:
-	.string "TORNADUS shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
+Route3_Movement_LairFaceUp:
+	face_up
+	step_end
 
 @ --- mapgen: generated NPC scripts (begin) ---
 
@@ -276,5 +252,14 @@ Route3_EventScript_RouteSign2::
 
 Route3_Text_RouteSign2:
 	.string "CAUSEWAY ROAD\nWest: Storm's Edge. East: Crescent.$"
+
+Route3_EventScript_StateTornadusOpen::
+	setmetatile 27, 0, 0x085, FALSE
+	setmetatile 28, 0, 0x084, FALSE
+	setmetatile 27, 1, 0x00C, FALSE
+	setmetatile 28, 1, 0x00C, FALSE
+	setmetatile 27, 2, 0x00C, FALSE
+	setmetatile 28, 2, 0x00C, FALSE
+	return
 
 @ --- mapgen: generated NPC scripts (end) ---

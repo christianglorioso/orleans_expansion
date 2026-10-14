@@ -1,5 +1,6 @@
 Route12_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route12_OnTransitionPG
+	map_script MAP_SCRIPT_ON_LOAD, Route12_OnLoad
 	.byte 0
 
 @ --- route trainers (gen_route_trainers.py) ---
@@ -62,53 +63,29 @@ Route12_Text_Route12FishermanAfter:
 @ --- end route trainers ---
 
 Route12_OnTransitionPG:
-	call Route12_EventScript_PGSetup
 	end
 
-@ --- post-game (gen_postgame.py) ---
+@ Batch-2 legendary lairs' ways in (story_data_lairs.py, build.py gates()): each is sealed in map.bin; from story 45 the generated
+@ Route12_EventScript_State<Name>Open swaps the open look in on load and arms the entrance trigger (FLAG_TEMP_1, cleared on every map load,
+@ so a sealed way never has a live trigger). Entering = LairEnter<Name>; leaving = the lair's Exit script.
+Route12_OnLoad:
+	call_if_ge VAR_ORLEANS_STORY, 45, Route12_EventScript_LairOpenB2
+	end
 
-@ OnTransition: everything is hidden below story 45; at 45 and above the conditional ones decide for themselves
-Route12_EventScript_PGSetup:
-	call_if_lt VAR_ORLEANS_STORY, 45, Route12_EventScript_PGHide
-Route12_EventScript_PGSetupDone:
+Route12_EventScript_LairOpenB2:
+	call Route12_EventScript_StateThundurusOpen
+	setflag FLAG_TEMP_1
 	return
 
-Route12_EventScript_PGHide:
-	setflag FLAG_PG_THUNDURUS
-	return
-
-Route12_EventScript_PgThundurus::
-	lock
-	faceplayer
-	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
-	msgbox Route12_Text_PGThundurus, MSGBOX_DEFAULT
-	waitmoncry
-	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
-	setwildbattle SPECIES_THUNDURUS, 62
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route12_EventScript_PgThundurusDone
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route12_EventScript_PgThundurusStill
-	release
+Route12_EventScript_LairEnterThundurus::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Route12_Movement_LairFaceRight
+	waitmovement 0
+	warp MAP_ROUTE12_LEVEE_CROWN, 2, 10
+	waitstate
 	end
 
-Route12_EventScript_PgThundurusStill:
-	msgbox Route12_Text_PGStillThundurus, MSGBOX_DEFAULT
-	release
-	end
+Route12_Movement_LairFaceRight:
+	face_right
+	step_end
 
-Route12_EventScript_PgThundurusDone:
-	setflag FLAG_PG_THUNDURUS
-	removeobject LOCALID_ROUTE12_PG_THUNDURUS
-	release
-	end
-
-Route12_Text_PGThundurus:
-	.string "THUNDURUS stands before you,\n"
-	.string "thunder rolling around it.$"
-
-Route12_Text_PGStillThundurus:
-	.string "THUNDURUS shakes itself off,\n"
-	.string "still standing its ground.$"
-
-@ --- end post-game ---
