@@ -3267,30 +3267,31 @@ static void DerbyMain(u8 taskId)
             {
                 sDerby->delay--;
             }
+    // Orleans: Feebas races but has only animation 0 (looping): never switch it to anim 1 below
             else if (sDerby->delay == 0)
             {
                 DestroySpriteAndFreeResources(&gSprites[sDerby->CountdownSpriteId]);
-                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite1].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite2].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite3].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite4].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite5].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_COUNT)
+                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_FEEBAS)
                 {
                     gSprites[sDerby->RacerSprite6].animNum = 1;
                 }
