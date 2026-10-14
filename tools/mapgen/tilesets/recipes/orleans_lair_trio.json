@@ -1,0 +1,382 @@
+{
+ "_comment": "The lake trio's spirit pools (Uxie, Mesprit, Azelf). (own art, tools/mapgen/tilesets/lairs, batch 2). Registered by compose.py --register.",
+ "kind": "secondary",
+ "dir": "orleans_lair_trio",
+ "symbol": "gTileset_OrleansLairTrio",
+ "primary_mapping": "orleans_general.mapping.json",
+ "palette": "v2",
+ "sources": [
+  {
+   "name": "lt",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/lairs/lair_trio.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "group_rule": "fewest",
+   "metatiles": [
+    {
+     "id": "spring_C",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "spring_N",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "spring_S",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "spring_W",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "spring_E",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "spring_inNW",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "spring_inNE",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "spring_inSW",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "spring_inSE",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "spring_landSE",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "spring_landSW",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "spring_landNE",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "spring_landNW",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "spring_sTLBR",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "spring_sTRBL",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "spring_C2",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "spirit_uxie_0_0",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "spirit_uxie_0_1",
+     "bottom": [
+      0,
+      2
+     ]
+    },
+    {
+     "id": "spirit_mesprit_0_0",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "spirit_mesprit_0_1",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "step_pool",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "step_spring_S",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "fog_pool0",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "fog_pool1",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "lotus_y",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "lotus_p",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "lotus_pads",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "walk_grass",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "walk_water",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "walk_end",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "walk_spring_C",
+     "bottom": [
+      12,
+      1
+     ]
+    },
+    {
+     "id": "walk_spring_N",
+     "bottom": [
+      13,
+      1
+     ]
+    },
+    {
+     "id": "walk_spring_S",
+     "bottom": [
+      14,
+      1
+     ]
+    },
+    {
+     "id": "pirogue_0_0",
+     "bottom": [
+      0,
+      3
+     ]
+    },
+    {
+     "id": "pirogue_1_0",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "story_post_0_0",
+     "bottom": [
+      2,
+      3
+     ]
+    },
+    {
+     "id": "story_post_0_1",
+     "bottom": [
+      2,
+      4
+     ]
+    },
+    {
+     "id": "cords",
+     "bottom": [
+      3,
+      3
+     ]
+    },
+    {
+     "id": "telling_stone_0_0",
+     "bottom": [
+      4,
+      3
+     ]
+    },
+    {
+     "id": "telling_stone_1_0",
+     "bottom": [
+      5,
+      3
+     ]
+    },
+    {
+     "id": "telling_stone_0_1",
+     "bottom": [
+      4,
+      4
+     ]
+    },
+    {
+     "id": "telling_stone_1_1",
+     "bottom": [
+      5,
+      4
+     ]
+    },
+    {
+     "id": "reading_stone_0_0",
+     "bottom": [
+      6,
+      3
+     ]
+    },
+    {
+     "id": "reading_stone_1_0",
+     "bottom": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "iris_violet",
+     "bottom": [
+      8,
+      3
+     ]
+    },
+    {
+     "id": "iris_red",
+     "bottom": [
+      9,
+      3
+     ]
+    },
+    {
+     "id": "iris_yellow",
+     "bottom": [
+      10,
+      3
+     ]
+    },
+    {
+     "id": "garland_post_0_0",
+     "bottom": [
+      11,
+      3
+     ]
+    },
+    {
+     "id": "garland_post_0_1",
+     "bottom": [
+      11,
+      4
+     ]
+    },
+    {
+     "id": "fern",
+     "bottom": [
+      12,
+      3
+     ]
+    },
+    {
+     "id": "pebbles",
+     "bottom": [
+      13,
+      3
+     ]
+    }
+   ]
+  }
+ ]
+}

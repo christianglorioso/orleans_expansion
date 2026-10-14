@@ -1,0 +1,739 @@
+{
+ "_comment": "Spanish Fort (the Galarian birds). (own art, tools/mapgen/tilesets/lairs, batch 2). Registered by compose.py --register.",
+ "kind": "secondary",
+ "dir": "orleans_lair_fort",
+ "symbol": "gTileset_OrleansLairFort",
+ "primary_mapping": "orleans_general.mapping.json",
+ "palette": "v2",
+ "sources": [
+  {
+   "name": "lf",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/lairs/lair_fort.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "group_rule": "fewest",
+   "metatiles": [
+    {
+     "id": "rampart_0_0",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "rampart_0_1",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "rampart_ivy_0_0",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "rampart_ivy_0_1",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "casemate_0_0",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "casemate_1_0",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "casemate_0_1",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "casemate_1_1",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "casemate_glow_0_0",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "casemate_glow_1_0",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "casemate_glow_0_1",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "casemate_glow_1_1",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "pier_0_0",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "pier_0_1",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "rubble",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "floor_C",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "floor_N",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "floor_S",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "floor_W",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "floor_E",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "floor_inNW",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "floor_inNE",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "floor_inSW",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "floor_inSE",
+     "bottom": [
+      0,
+      2
+     ]
+    },
+    {
+     "id": "floor_landSE",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "floor_landSW",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "floor_landNE",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "floor_landNW",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "floor_sTLBR",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "floor_sTRBL",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "bandstand_0_0",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "bandstand_1_0",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "bandstand_2_0",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "bandstand_3_0",
+     "bottom": [
+      10,
+      2
+     ]
+    },
+    {
+     "id": "bandstand_0_1",
+     "bottom": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "bandstand_1_1",
+     "bottom": [
+      8,
+      3
+     ]
+    },
+    {
+     "id": "bandstand_2_1",
+     "bottom": [
+      9,
+      3
+     ]
+    },
+    {
+     "id": "bandstand_3_1",
+     "bottom": [
+      10,
+      3
+     ]
+    },
+    {
+     "id": "bandstand_0_2",
+     "bottom": [
+      7,
+      4
+     ]
+    },
+    {
+     "id": "bandstand_1_2",
+     "bottom": [
+      8,
+      4
+     ]
+    },
+    {
+     "id": "bandstand_2_2",
+     "bottom": [
+      9,
+      4
+     ]
+    },
+    {
+     "id": "bandstand_3_2",
+     "bottom": [
+      10,
+      4
+     ]
+    },
+    {
+     "id": "lamp_0_0",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "lamp_0_1",
+     "bottom": [
+      11,
+      3
+     ]
+    },
+    {
+     "id": "festoon",
+     "bottom": [
+      12,
+      2
+     ]
+    },
+    {
+     "id": "carousel_horse_0_0",
+     "bottom": [
+      13,
+      2
+     ]
+    },
+    {
+     "id": "carousel_horse_1_0",
+     "bottom": [
+      14,
+      2
+     ]
+    },
+    {
+     "id": "cannon_0_0",
+     "bottom": [
+      0,
+      5
+     ]
+    },
+    {
+     "id": "cannon_1_0",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "shot",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "rail_h",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "rail_end",
+     "bottom": [
+      4,
+      5
+     ]
+    },
+    {
+     "id": "start_gate_0_0",
+     "bottom": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "start_gate_1_0",
+     "bottom": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "start_gate_2_0",
+     "bottom": [
+      7,
+      5
+     ]
+    },
+    {
+     "id": "start_gate_0_1",
+     "bottom": [
+      5,
+      6
+     ]
+    },
+    {
+     "id": "start_gate_1_1",
+     "bottom": [
+      6,
+      6
+     ]
+    },
+    {
+     "id": "start_gate_2_1",
+     "bottom": [
+      7,
+      6
+     ]
+    },
+    {
+     "id": "judge_stand_0_0",
+     "bottom": [
+      8,
+      5
+     ]
+    },
+    {
+     "id": "judge_stand_1_0",
+     "bottom": [
+      9,
+      5
+     ]
+    },
+    {
+     "id": "judge_stand_0_1",
+     "bottom": [
+      8,
+      6
+     ]
+    },
+    {
+     "id": "judge_stand_1_1",
+     "bottom": [
+      9,
+      6
+     ]
+    },
+    {
+     "id": "judge_stand_0_2",
+     "bottom": [
+      8,
+      7
+     ]
+    },
+    {
+     "id": "judge_stand_1_2",
+     "bottom": [
+      9,
+      7
+     ]
+    },
+    {
+     "id": "finish_post_0_0",
+     "bottom": [
+      10,
+      5
+     ]
+    },
+    {
+     "id": "finish_post_0_1",
+     "bottom": [
+      10,
+      6
+     ]
+    },
+    {
+     "id": "benches_0_0",
+     "bottom": [
+      11,
+      5
+     ]
+    },
+    {
+     "id": "benches_1_0",
+     "bottom": [
+      12,
+      5
+     ]
+    },
+    {
+     "id": "hay",
+     "bottom": [
+      13,
+      5
+     ]
+    },
+    {
+     "id": "deck_C",
+     "bottom": [
+      14,
+      5
+     ]
+    },
+    {
+     "id": "deck_N",
+     "bottom": [
+      15,
+      5
+     ]
+    },
+    {
+     "id": "deck_S",
+     "bottom": [
+      0,
+      8
+     ]
+    },
+    {
+     "id": "deck_W",
+     "bottom": [
+      1,
+      8
+     ]
+    },
+    {
+     "id": "deck_E",
+     "bottom": [
+      2,
+      8
+     ]
+    },
+    {
+     "id": "deck_inNW",
+     "bottom": [
+      3,
+      8
+     ]
+    },
+    {
+     "id": "deck_inNE",
+     "bottom": [
+      4,
+      8
+     ]
+    },
+    {
+     "id": "deck_inSW",
+     "bottom": [
+      5,
+      8
+     ]
+    },
+    {
+     "id": "deck_inSE",
+     "bottom": [
+      6,
+      8
+     ]
+    },
+    {
+     "id": "deck_landSE",
+     "bottom": [
+      7,
+      8
+     ]
+    },
+    {
+     "id": "deck_landSW",
+     "bottom": [
+      8,
+      8
+     ]
+    },
+    {
+     "id": "deck_landNE",
+     "bottom": [
+      9,
+      8
+     ]
+    },
+    {
+     "id": "deck_landNW",
+     "bottom": [
+      10,
+      8
+     ]
+    },
+    {
+     "id": "deck_sTLBR",
+     "bottom": [
+      11,
+      8
+     ]
+    },
+    {
+     "id": "deck_sTRBL",
+     "bottom": [
+      12,
+      8
+     ]
+    },
+    {
+     "id": "bandstand_d_0_0",
+     "bottom": [
+      0,
+      9
+     ]
+    },
+    {
+     "id": "bandstand_d_1_0",
+     "bottom": [
+      1,
+      9
+     ]
+    },
+    {
+     "id": "bandstand_d_2_0",
+     "bottom": [
+      2,
+      9
+     ]
+    },
+    {
+     "id": "bandstand_d_3_0",
+     "bottom": [
+      3,
+      9
+     ]
+    },
+    {
+     "id": "bandstand_d_0_1",
+     "bottom": [
+      0,
+      10
+     ]
+    },
+    {
+     "id": "bandstand_d_1_1",
+     "bottom": [
+      1,
+      10
+     ]
+    },
+    {
+     "id": "bandstand_d_2_1",
+     "bottom": [
+      2,
+      10
+     ]
+    },
+    {
+     "id": "bandstand_d_3_1",
+     "bottom": [
+      3,
+      10
+     ]
+    },
+    {
+     "id": "bandstand_d_0_2",
+     "bottom": [
+      0,
+      11
+     ]
+    },
+    {
+     "id": "bandstand_d_1_2",
+     "bottom": [
+      1,
+      11
+     ]
+    },
+    {
+     "id": "bandstand_d_2_2",
+     "bottom": [
+      2,
+      11
+     ]
+    },
+    {
+     "id": "bandstand_d_3_2",
+     "bottom": [
+      3,
+      11
+     ]
+    },
+    {
+     "id": "lamp_d_0_0",
+     "bottom": [
+      4,
+      9
+     ]
+    },
+    {
+     "id": "lamp_d_0_1",
+     "bottom": [
+      4,
+      10
+     ]
+    },
+    {
+     "id": "festoon_d",
+     "bottom": [
+      5,
+      9
+     ]
+    },
+    {
+     "id": "table",
+     "bottom": [
+      6,
+      9
+     ]
+    },
+    {
+     "id": "gramophone",
+     "bottom": [
+      7,
+      9
+     ]
+    },
+    {
+     "id": "piling",
+     "bottom": [
+      8,
+      9
+     ]
+    }
+   ]
+  }
+ ]
+}

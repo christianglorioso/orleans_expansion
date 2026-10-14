@@ -223,7 +223,15 @@
 "patch:ovl_rk_wv_20__ekat_marshwater_inNW": 720,
 "patch:ovl_rk_wv_20__ekat_marshwater_inSW": 721,
 "patch:ovl_rk_wv_20__ekat_marshwater_landSW": 722,
-"patch:ovl_rk_wv_20__ekat_water_C": 723
+"patch:ovl_rk_wv_20__ekat_water_C": 723,
+"patch:ovl_le2_0_0__ekat_grass": 724,
+"patch:ovl_le2_0_1__ekat_tallgrass": 725,
+"patch:ovl_le2_1_0__bdg_swamp_W1_542aa1ca": 726,
+"patch:ovl_le2_1_1__bk_swamp_W0_b43e3fbf": 727,
+"patch:ovl_le2_2_0__ekat_grass": 728,
+"patch:ovl_le2_2_1__ekat_tallgrass": 729,
+"patch:ovl_le2_3_0__bdg_swamp_W1_542aa1ca": 730,
+"patch:ovl_le2_3_1__bk_swamp_W0_b43e3fbf": 731
 },
 "palettes": null,
 "tiles": {}

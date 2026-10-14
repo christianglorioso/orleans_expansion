@@ -1090,11 +1090,24 @@ def compose(recipe_path):
     # boat lifted off its original water onto ours, or a door tile given a door behaviour
     behaviors = behavior_ids() if r.get("patches") else {}
 
+    hidden_primary = {}
+
     def resolve(ref):
         if ref in names:
             return picked[names[ref]]
         if ref in hidden:
             return hidden[ref]
+        if ref.startswith("patch:bdg_") and ref not in names:
+            # a primary patch (swamp border baked over grass, tilesets/orleans_general.blends.json): its pixels are the overlay's ground
+            pid = ref[len("patch:"):]
+            if ref not in hidden_primary:
+                bl = [x for x in json.load(open(os.path.join(os.path.dirname(recipe_path), "..", "orleans_general.blends.json"))) if x.get("id") == pid]
+                if not bl:
+                    raise SystemExit(f"overlay base {ref}: not a primary patch")
+                spec_ = {"name": "bdgp_" + pid, "type": "image", "image": bl[0]["pixels"], "transparent": [], "metatiles": [{"id": "m", "bottom": [0, 0]}]}
+                srcp = make_source(spec_, recolor)
+                hidden_primary[ref] = [mt_ for nm_, mt_ in srcp.picks(spec_) if nm_ == "m"][0]
+            return hidden_primary[ref]
         src, mid = ref.split(":", 1)
         mt = sources[src].metatile(int(mid, 16))
         if mt is None:

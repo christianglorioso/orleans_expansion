@@ -1229,5 +1229,61 @@
    "art": "rk_wv:20",
    "walk": true
   }
+ },
+ {
+  "id": "ovl_le2_0_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:0_0"
+  }
+ },
+ {
+  "id": "ovl_le2_0_1__ekat_tallgrass",
+  "overlay": {
+   "base": "ekat:tallgrass",
+   "art": "le2:0_1"
+  }
+ },
+ {
+  "id": "ovl_le2_1_0__bdg_swamp_W1_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W1_542aa1ca",
+   "art": "le2:1_0"
+  }
+ },
+ {
+  "id": "ovl_le2_1_1__bk_swamp_W0_b43e3fbf",
+  "overlay": {
+   "base": "patch:bk_swamp_W0_b43e3fbf",
+   "art": "le2:1_1"
+  }
+ },
+ {
+  "id": "ovl_le2_2_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:2_0"
+  }
+ },
+ {
+  "id": "ovl_le2_2_1__ekat_tallgrass",
+  "overlay": {
+   "base": "ekat:tallgrass",
+   "art": "le2:2_1"
+  }
+ },
+ {
+  "id": "ovl_le2_3_0__bdg_swamp_W1_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W1_542aa1ca",
+   "art": "le2:3_0"
+  }
+ },
+ {
+  "id": "ovl_le2_3_1__bk_swamp_W0_b43e3fbf",
+  "overlay": {
+   "base": "patch:bk_swamp_W0_b43e3fbf",
+   "art": "le2:3_1"
+  }
  }
 ]

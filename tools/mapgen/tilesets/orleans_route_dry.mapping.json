@@ -187,7 +187,19 @@
 "patch:ovl_dry_o_5_5__dry_6_1": 684,
 "patch:ovl_mag_01__dry_1_2": 685,
 "patch:ovl_mag_02__dry_2_1": 686,
-"patch:ovl_dry_o_1_7__dry_0_13": 687
+"patch:ovl_dry_o_1_7__dry_0_13": 687,
+"patch:ovl_le2_4_0__dry_0_0": 688,
+"patch:ovl_le2_4_1__dry_0_0": 689,
+"patch:ovl_le2_5_0__dry_0_0": 690,
+"patch:ovl_le2_5_1__dry_0_0": 691,
+"patch:ovl_le2_6_0__dry_0_0": 692,
+"patch:ovl_le2_6_1__bd_dry_N_dry_1": 693,
+"patch:ovl_le2_7_0__dry_0_0": 694,
+"patch:ovl_le2_7_1__bd_dry_N_dry_0": 695,
+"patch:ovl_le2_8_0__dry_0_0": 696,
+"patch:ovl_le2_8_1__bd_dry_N_dry_1": 697,
+"patch:ovl_le2_9_0__dry_0_0": 698,
+"patch:ovl_le2_9_1__bd_dry_N_dry_0": 699
 },
 "palettes": null,
 "tiles": {}

@@ -1010,6 +1010,50 @@ const u16 gTilesetPalettes_OrleansInterior[][16] =
     INCGFX_U16("data/tilesets/secondary/orleans_interior/palettes/15.pal", ".gbapal"),
 };
 
+const u32 gTilesetTiles_OrleansLairField[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_field/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansLairField[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_field/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansLairFort[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_fort/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansLairFort[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_fort/palettes/15.pal", ".gbapal"),
+};
+
 const u32 gTilesetTiles_OrleansLairRootkin[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_rootkin/tiles.png", ".4bpp.fastSmol");
 
 const u16 gTilesetPalettes_OrleansLairRootkin[][16] =
@@ -1052,6 +1096,72 @@ const u16 gTilesetPalettes_OrleansLairStorm[][16] =
     INCGFX_U16("data/tilesets/secondary/orleans_lair_storm/palettes/13.pal", ".gbapal"),
     INCGFX_U16("data/tilesets/secondary/orleans_lair_storm/palettes/14.pal", ".gbapal"),
     INCGFX_U16("data/tilesets/secondary/orleans_lair_storm/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansLairSugarhouse[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_sugarhouse/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansLairSugarhouse[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_sugarhouse/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansLairTrio[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_trio/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansLairTrio[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_trio/palettes/15.pal", ".gbapal"),
+};
+
+const u32 gTilesetTiles_OrleansLairWoods[] = INCGFX_U32("data/tilesets/secondary/orleans_lair_woods/tiles.png", ".4bpp.fastSmol");
+
+const u16 gTilesetPalettes_OrleansLairWoods[][16] =
+{
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/00.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/01.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/02.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/03.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/04.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/05.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/06.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/07.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/08.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/09.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/10.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/11.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/12.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/13.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/14.pal", ".gbapal"),
+    INCGFX_U16("data/tilesets/secondary/orleans_lair_woods/palettes/15.pal", ".gbapal"),
 };
 
 const u32 gTilesetTiles_OrleansLairsDry[] = INCGFX_U32("data/tilesets/secondary/orleans_lairs_dry/tiles.png", ".4bpp.fastSmol");

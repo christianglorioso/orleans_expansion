@@ -1647,5 +1647,233 @@
    "base": "ekat:marshwater_inNW",
    "art": "wpr:0_0"
   }
+ },
+ {
+  "id": "ovl_le2_10_0__bk_swamp_out_NE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NE_f819ccaa",
+   "art": "le2:10_0"
+  }
+ },
+ {
+  "id": "ovl_le2_10_1__bk_swamp_out_SE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_SE_f819ccaa",
+   "art": "le2:10_1"
+  }
+ },
+ {
+  "id": "ovl_le2_11_0__bd_swamp_S_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_S_marsh_0",
+   "art": "le2:11_0"
+  }
+ },
+ {
+  "id": "ovl_le2_11_1__bd_swamp_N_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_N_marsh_0",
+   "art": "le2:11_1"
+  }
+ },
+ {
+  "id": "ovl_le2_12_0__bk_swamp_out_NE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_NE_f819ccaa",
+   "art": "le2:12_0"
+  }
+ },
+ {
+  "id": "ovl_le2_12_1__bk_swamp_out_SE_f819ccaa",
+  "overlay": {
+   "base": "patch:bk_swamp_out_SE_f819ccaa",
+   "art": "le2:12_1"
+  }
+ },
+ {
+  "id": "ovl_le2_13_0__bd_swamp_S_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_S_marsh_0",
+   "art": "le2:13_0"
+  }
+ },
+ {
+  "id": "ovl_le2_13_1__bd_swamp_N_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_N_marsh_0",
+   "art": "le2:13_1"
+  }
+ },
+ {
+  "id": "ovl_le2_2_4__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:2_4",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_le2_2_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:2_5",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_le2_3_4__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:3_4",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_le2_3_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:3_5",
+   "walk": true
+  }
+ },
+ {
+  "id": "ovl_le2_4_4__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:4_4"
+  }
+ },
+ {
+  "id": "ovl_le2_4_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:4_5"
+  }
+ },
+ {
+  "id": "ovl_le2_5_4__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:5_4"
+  }
+ },
+ {
+  "id": "ovl_le2_5_5__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "le2:5_5"
+  }
+ },
+ {
+  "id": "ovl_le2_0_2__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:0_2"
+  }
+ },
+ {
+  "id": "ovl_le2_0_3__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:0_3"
+  }
+ },
+ {
+  "id": "ovl_le2_12_2__bd_swamp_E_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_1",
+   "art": "le2:12_2"
+  }
+ },
+ {
+  "id": "ovl_le2_12_3__bd_swamp_E_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_0",
+   "art": "le2:12_3"
+  }
+ },
+ {
+  "id": "ovl_le2_13_2__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "le2:13_2"
+  }
+ },
+ {
+  "id": "ovl_le2_13_3__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "le2:13_3"
+  }
+ },
+ {
+  "id": "ovl_le2_14_0__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:14_0"
+  }
+ },
+ {
+  "id": "ovl_le2_14_1__ekat_grass",
+  "overlay": {
+   "base": "ekat:grass",
+   "art": "le2:14_1"
+  }
+ },
+ {
+  "id": "ovl_le2_15_0__bdg_swamp_W1_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W1_542aa1ca",
+   "art": "le2:15_0"
+  }
+ },
+ {
+  "id": "ovl_le2_15_1__bdg_swamp_W0_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W0_542aa1ca",
+   "art": "le2:15_1"
+  }
+ },
+ {
+  "id": "ovl_le2_1_2__bdg_swamp_W1_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W1_542aa1ca",
+   "art": "le2:1_2"
+  }
+ },
+ {
+  "id": "ovl_le2_1_3__bdg_swamp_W0_542aa1ca",
+  "overlay": {
+   "base": "patch:bdg_swamp_W0_542aa1ca",
+   "art": "le2:1_3"
+  }
+ },
+ {
+  "id": "ovl_le2_4_2__bd_swamp_E_marsh_1",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_1",
+   "art": "le2:4_2"
+  }
+ },
+ {
+  "id": "ovl_le2_4_3__bd_swamp_E_marsh_0",
+  "overlay": {
+   "base": "bd:swamp_E_marsh_0",
+   "art": "le2:4_3"
+  }
+ },
+ {
+  "id": "ovl_le2_5_2__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "le2:5_2"
+  }
+ },
+ {
+  "id": "ovl_le2_5_3__ekat_marsh_C",
+  "overlay": {
+   "base": "ekat:marsh_C",
+   "art": "le2:5_3"
+  }
  }
 ]

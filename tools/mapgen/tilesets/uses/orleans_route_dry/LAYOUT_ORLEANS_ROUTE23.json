@@ -130,6 +130,18 @@
 "patch:ovl_dry_o_6_6__dry_0_0",
 "patch:ovl_dry_o_7_5__dry_0_0",
 "patch:ovl_dry_o_7_6__dry_0_0",
+"patch:ovl_le2_4_0__dry_0_0",
+"patch:ovl_le2_4_1__dry_0_0",
+"patch:ovl_le2_5_0__dry_0_0",
+"patch:ovl_le2_5_1__dry_0_0",
+"patch:ovl_le2_6_0__dry_0_0",
+"patch:ovl_le2_6_1__bd_dry_N_dry_1",
+"patch:ovl_le2_7_0__dry_0_0",
+"patch:ovl_le2_7_1__bd_dry_N_dry_0",
+"patch:ovl_le2_8_0__dry_0_0",
+"patch:ovl_le2_8_1__bd_dry_N_dry_1",
+"patch:ovl_le2_9_0__dry_0_0",
+"patch:ovl_le2_9_1__bd_dry_N_dry_0",
 "patch:ovl_lent_10_0__bd_dry_S_dry_1",
 "patch:ovl_lent_10_1__dry_0_0",
 "patch:ovl_lent_8_0__bd_dry_E_dry_1",
@@ -151,5 +163,6 @@
 "patch:path_iNE",
 "patch:path_iSW",
 "patch:shrine_stone_dry",
-"patch:sign_dry"
+"patch:sign_dry",
+"pss:pd_N_by_dry1_2"
 ]

@@ -172,11 +172,26 @@ const u16 gMetatileAttributes_OrleansIcePlant[] = INCBIN_U16("data/tilesets/seco
 const u16 gMetatiles_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatiles.bin");
 const u16 gMetatileAttributes_OrleansInterior[] = INCBIN_U16("data/tilesets/secondary/orleans_interior/metatile_attributes.bin");
 
+const u16 gMetatiles_OrleansLairField[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_field/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairField[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_field/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairFort[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_fort/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairFort[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_fort/metatile_attributes.bin");
+
 const u16 gMetatiles_OrleansLairRootkin[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_rootkin/metatiles.bin");
 const u16 gMetatileAttributes_OrleansLairRootkin[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_rootkin/metatile_attributes.bin");
 
 const u16 gMetatiles_OrleansLairStorm[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_storm/metatiles.bin");
 const u16 gMetatileAttributes_OrleansLairStorm[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_storm/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairSugarhouse[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_sugarhouse/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairSugarhouse[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_sugarhouse/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairTrio[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_trio/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairTrio[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_trio/metatile_attributes.bin");
+
+const u16 gMetatiles_OrleansLairWoods[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_woods/metatiles.bin");
+const u16 gMetatileAttributes_OrleansLairWoods[] = INCBIN_U16("data/tilesets/secondary/orleans_lair_woods/metatile_attributes.bin");
 
 const u16 gMetatiles_OrleansLairsDry[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_dry/metatiles.bin");
 const u16 gMetatileAttributes_OrleansLairsDry[] = INCBIN_U16("data/tilesets/secondary/orleans_lairs_dry/metatile_attributes.bin");

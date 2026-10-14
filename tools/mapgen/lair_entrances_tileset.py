@@ -11,16 +11,16 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ART = os.path.join(HERE, "tilesets", "lairs", "entrances.json")
+ART2 = os.path.join(HERE, "tilesets", "lairs", "entrances_b2.json")    # batch 2: source `le2` (same scheme)
 TS = os.path.join(HERE, "tilesets")
 # the tilesets the six entrances stand on: Routes 7 and 11 (orleans_route), 14 (route_b), 16 (route_farm), 23 (route_dry); Route 2 uses primary pieces only
-ON = ("orleans_route", "orleans_route_b", "orleans_route_dry", "orleans_route_farm")
+# batch 2 adds Route 1 (orleans_bayou), 10, 12, 13 (orleans_route), 14 (route_b) and 23 (route_dry); Routes 3 and 17 stay primary / existing pieces only
+ON = ("orleans_bayou", "orleans_route", "orleans_route_b", "orleans_route_dry", "orleans_route_farm")
 
 
 def apply(r, c=None):
     """add (or refresh) the `lent` source in recipe r; True if it changed"""
-    doc = json.load(open(ART, encoding="utf-8"))
-    src = json.loads(json.dumps(doc["source"]))
-    want = [src]
+    want = [json.loads(json.dumps(json.load(open(a, encoding="utf-8"))["source"])) for a in (ART, ART2)]
     if not any(s["name"] == "bd" for s in r["sources"]):
         # the swamp wall cells the entrances stand over (bd:swamp_W_marsh_0 ...) are pieces of the PRIMARY: this recipe needs their art to draw an overlay over
         # them, but must not place them as metatiles of its own (every map would pick the duplicates up, and seam bands allow primary pieces only): overlay_only
