@@ -263,7 +263,8 @@ struct AchievementSaveData
     u8 rewardPending[ACHIEVEMENT_UNLOCKED_BYTES]; // unlocked but the reward is not handed over yet
     u8 popupQueue[ACHIEVEMENT_POPUP_QUEUE_SIZE];  // id + 1, 0 = empty
     u8 visited[8];                                // map visit bits (routes, shrines, Crescent buildings, islands)
-    u8 reserved[6];
+    u8 lairs[3];                                  // "discovered" bits of the 20 legendary lairs (achievements.c sLairMaps), first arrival
+    u8 reserved[3];
 }; // 56 bytes
 
 #define ACHIEVEMENT_SAVE_MAGIC 0xAC1E0001

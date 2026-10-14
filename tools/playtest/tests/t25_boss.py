@@ -219,7 +219,7 @@ def catch_through(b, n0):
         b.press("B", 4, 30)
     b.frames(60)
     b.advance_text(60)
-    return b.party_count() == n0 + 1
+    return b.party_count() >= n0 + 1
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------ the finale

@@ -122,9 +122,9 @@ def d2_kyogre(b, t):
     b.set_clock(12)
     b.frames(30)
     b.set_flag("FLAG_PG_ZAPDOS", False)
-    b.warp("StormsEdge", 22, 21)
+    b.warp("StormsEdge_LighthouseGallery", 10, 10)      # Zapdos' lair is the lighthouse's lamp gallery (batch 2)
     b.frames(40)
-    t.check("(setup) Storm's Edge has overworld weather", b.call("GetCurrentWeather") & 0xFF != 0, b.call("GetCurrentWeather") & 0xFF)
+    t.check("(setup) the lamp gallery has overworld weather", b.call("GetCurrentWeather") & 0xFF != 0, b.call("GetCurrentWeather") & 0xFF)
     b.face("U")
     b.press("A", 4, 26)
     t.check("Zapdos's lair starts a battle", T.start_battle(b, 200))
@@ -133,7 +133,7 @@ def d2_kyogre(b, t):
     w = b.r16(b.sym("gBattleWeather"))
     t.check("the player's Kyogre holding the Blue Orb reverts to Primal Kyogre", sp == T.SP("KYOGRE_PRIMAL"), sp)
     t.check("... and Primordial Sea is set under the overworld weather (gBattleWeather %#x)" % w, bool(w & RAIN_PRIMAL), "%#x" % w)
-    b.shot("primal_kyogre_stormsedge")
+    b.shot("primal_kyogre_gallery")
     T.end_battle(b)
 
 

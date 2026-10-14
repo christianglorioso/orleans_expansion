@@ -486,6 +486,19 @@ Raikou (Route 2), Entei (Route 16). Data: `story_data_lairs.py` (where, tilesets
 - The encounters (FLAG_PG_*, retired only on a catch, rolled when talked to; the night logic of the rougarou and Ursaluna) moved with their scripts; the old route spots are plain route again.
 - Weather (weather_plan.HEADER, user-approved): rougarou fog, Ursaluna sandstorm, Celebi sunny, Suicune rain, Raikou thunderstorm, Entei drought, Articuno snow; the battle takes it from the overworld weather (fog = Misty Terrain, thunderstorm = rain + Electric Terrain, snow = snow, sunny = nothing).
 
+## The legendary lairs, batch 2 (2026-10-14; art in `tilesets/lairs/` batch-2 files, mocks + hand-off in `../tile_review/set_pieces/lairs/batch2/`)
+Thirteen more lairs, 20 in all with batch 1 and the ice plant: Uxie (`OldWater_KnowingPool`, by the Canoe Docks boatman from story 45: a script warp, no town change), Mesprit (`Route1_HeartPool`), Azelf and
+Landorus (`Route23_UnfailingSpring`, `Route23_BountifulField`), Zapdos (`StormsEdge_LighthouseGallery`, the existing map redone at 20x16, `MAP_TYPE_ROUTE`; the hatch (10,12) is its warp to the lighthouse stair;
+map.bin holds the lamp dark, the generated `StateLanternLit` lights it on load once `FLAG_STORMS_EDGE_GRID_RESTORED`), Thundurus (`Route12_LeveeCrown`), Zarude and Ogerpon (`Route13_DeepWood`, `Route13_CourirGlade`),
+Tornadus (`Route3_WindsEye`), Galarian Moltres / Zapdos / Articuno (`Route14_SpanishFort`, `Route14_BushTrack`, `Route10_MilneburgPavilion`, the last by Surf: its pier stub is walkable land when open) and Moltres
+(`Route17_Sugarhouse`, a 19x14 interior behind the mill door). Data: `story_data_lairs.py` (`LAIRS2`, `ROUTES2`, `piece2`), scripts `story/<Map>.inc`.
+- The six secondaries (`orleans_lair_trio|woods|fort|sugarhouse|field`, and `orleans_lair_storm` as the superset: Raikou's ids unchanged) are registered like batch 1's. The entrance art is the overlay source `le2`
+  (`lair_entrances_tileset.py`, now also on `orleans_bayou` for Route 1). compose resolves an overlay base that is a primary `patch:bdg_*` cell (`hidden_primary`).
+- `lairs.py` builds every lair from `tile_review/.../batch2/<lair>_mock.json` (`JsonMock`; arrival / exits / stand cells per lair in `LAIRS2`). `build.py gates()` open cells may carry `walk` / `behavior`, and a cell with
+  no overlay keeps its collision as built. Zapdos' room left `interior_rooms.ROOMS` (`lairs.py` owns it). Weather: `weather_plan.HEADER`.
+- Achievements: `AchievementSaveData.lairs[3]` holds a "discovered" bit per lair (`sLairMaps` in `achievements.c`, set in `Achievement_OnMapEntered`); Shrine Seeker (#61) = the three pools + Celebi's glade + the Old Water + the Oldest Shrine.
+- `t23_lairs` covers all 20 lairs (sealed/open, enter/exit, hidden before 45, 2-bar boss, battle + overworld weather, no leak, KO leaves it standing, Master Ball catch retires it, soft-reset reroll, lamp, discovered bits).
+
 ## Source vs generated output (audit phase 3, S1: `gen_drift_check.py`)
 The story, trainer and NPC scripts are GENERATED, and the generated files are what ships. The source is authoritative; never hand-edit `data/maps/*/scripts.inc`, `src/data/trainers.party`,
 `src/data/battle_partners.party`, `include/constants/opponents.h` or the trainer block of a `story/*.inc` (a regeneration would revert it and the text in game would differ from the source).

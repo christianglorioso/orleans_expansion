@@ -78,8 +78,14 @@ def working_run(b, name, n):
         b.frames(6)
         b.hold("RIGHT")
         b.frames(90)
+        for _ in range(12):               # the whole 10 tiles must be walkable (water cells have collision 0 too, but only Surf crosses them)
+            if b.pos()[0] - x >= 10:
+                break
+            b.frames(20)
         b.release()
         moved = b.pos()[0] - x
+        if moved < 10:
+            continue
         for _ in range(40):
             if b.player_idle():
                 break

@@ -52,15 +52,23 @@ static const u16 sCrescentMaps[] =
     MAP_CRESCENT_CITY_TUTOR,
 };
 
+// the 20 legendary lairs (batch 1 and 2: tools/mapgen/story_data_lairs.py); AchievementSaveData.lairs holds a "discovered" bit per entry, set on first arrival
+static const u16 sLairMaps[] =
+{
+    MAP_ROUTE14_ROUGAROU_HOLLOW, MAP_ROUTE23_BLOODMOON_ARROYO, MAP_POINTE_ROUGE_ICE_PLANT, MAP_ROUTE7_CELEBI_GLADE, MAP_ROUTE11_SUICUNE_ISLE,
+    MAP_ROUTE2_RAIKOU_CLEARING, MAP_ROUTE16_ENTEI_FIELD,
+    MAP_OLD_WATER_KNOWING_POOL, MAP_ROUTE1_HEART_POOL, MAP_ROUTE23_UNFAILING_SPRING, MAP_STORMS_EDGE_LIGHTHOUSE_GALLERY, MAP_ROUTE12_LEVEE_CROWN,
+    MAP_ROUTE13_DEEP_WOOD, MAP_ROUTE13_COURIR_GLADE, MAP_ROUTE3_WINDS_EYE, MAP_ROUTE14_SPANISH_FORT, MAP_ROUTE14_BUSH_TRACK, MAP_ROUTE10_MILNEBURG_PAVILION,
+    MAP_ROUTE17_SUGARHOUSE, MAP_ROUTE23_BOUNTIFUL_FIELD,
+};
+enum { LAIR_CELEBI = 3, LAIR_KNOWING_POOL = 7, LAIR_HEART_POOL = 8, LAIR_UNFAILING_SPRING = 9 };
+
 static const u16 sRouteMaps[] =
 {
     MAP_ORLEANS_ROUTE1, MAP_ORLEANS_ROUTE2, MAP_ORLEANS_ROUTE3, MAP_ORLEANS_ROUTE4, MAP_ORLEANS_ROUTE5, MAP_ORLEANS_ROUTE6, MAP_ORLEANS_ROUTE7, MAP_ORLEANS_ROUTE8, MAP_ORLEANS_ROUTE9, MAP_ORLEANS_ROUTE10,
     MAP_ORLEANS_ROUTE11, MAP_ORLEANS_ROUTE12, MAP_ORLEANS_ROUTE13, MAP_ORLEANS_ROUTE14, MAP_ORLEANS_ROUTE15, MAP_ORLEANS_ROUTE16, MAP_ORLEANS_ROUTE17, MAP_ORLEANS_ROUTE18, MAP_ORLEANS_ROUTE19, MAP_ORLEANS_ROUTE20,
     MAP_ORLEANS_ROUTE21, MAP_ORLEANS_ROUTE22, MAP_ORLEANS_ROUTE23, MAP_ORLEANS_ROUTE24, MAP_ORLEANS_ROUTE25,
 };
-
-// the six Rootkin shrines: the Route 1 / 7 / 13 / 23 shrines, the Old Water and the Oldest Shrine (placeholder mapping, see notes)
-static const u8 sShrineBits[] = { VISIT_ROUTE1 + 0, VISIT_ROUTE1 + 6, VISIT_ROUTE1 + 12, VISIT_ROUTE1 + 22, VISIT_OLD_WATER, VISIT_OLDEST_SHRINE };
 
 static const u16 sSailorTrainers[] =
 {
@@ -131,6 +139,9 @@ void Achievement_OnMapEntered(void)
     for (i = 0; i < ARRAY_COUNT(sCrescentMaps); i++)
         if (sCrescentMaps[i] == map)
             SetVisited(VISIT_CRESCENT_FIRST + i);
+    for (i = 0; i < ARRAY_COUNT(sLairMaps); i++)
+        if (sLairMaps[i] == map)
+            Ach()->lairs[i / 8] |= 1 << (i % 8);
     if (map == MAP_LANDS_END_DROWNED_TEMPLE)
         SetVisited(VISIT_DROWNED_TEMPLE);
     if (map == MAP_OLD_WATER)
@@ -230,14 +241,16 @@ static bool32 Achievement_PredicateAllApplianceRotoms(void)
         && CaughtSpecies(SPECIES_ROTOM_FAN) && CaughtSpecies(SPECIES_ROTOM_MOW);
 }
 
+static bool32 LairDiscovered(u32 lair)
+{
+    return (Ach()->lairs[lair / 8] >> (lair % 8)) & 1;
+}
+
+// the six Rootkin shrines: the lake trio's three pools (Uxie, Mesprit, Azelf), Celebi's glade, the Old Water and the Oldest Shrine
 static bool32 Achievement_PredicateShrinesVisited(void)
 {
-    u32 i;
-
-    for (i = 0; i < ARRAY_COUNT(sShrineBits); i++)
-        if (!Visited(sShrineBits[i]))
-            return FALSE;
-    return TRUE;
+    return LairDiscovered(LAIR_KNOWING_POOL) && LairDiscovered(LAIR_HEART_POOL) && LairDiscovered(LAIR_UNFAILING_SPRING) && LairDiscovered(LAIR_CELEBI)
+        && Visited(VISIT_OLD_WATER) && Visited(VISIT_OLDEST_SHRINE);
 }
 
 static bool32 Achievement_PredicateTempleVisited(void)
