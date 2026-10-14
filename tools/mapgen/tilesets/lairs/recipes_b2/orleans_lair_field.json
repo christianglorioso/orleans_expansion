@@ -508,6 +508,503 @@
       1,
       7
      ]
+    },
+    {
+     "id": "green_C",
+     "bottom": [
+      2,
+      5
+     ]
+    },
+    {
+     "id": "green_N",
+     "bottom": [
+      3,
+      5
+     ]
+    },
+    {
+     "id": "green_S",
+     "bottom": [
+      4,
+      5
+     ]
+    },
+    {
+     "id": "green_W",
+     "bottom": [
+      5,
+      5
+     ]
+    },
+    {
+     "id": "green_E",
+     "bottom": [
+      6,
+      5
+     ]
+    },
+    {
+     "id": "green_inNW",
+     "bottom": [
+      7,
+      5
+     ]
+    },
+    {
+     "id": "green_inNE",
+     "bottom": [
+      8,
+      5
+     ]
+    },
+    {
+     "id": "green_inSW",
+     "bottom": [
+      9,
+      5
+     ]
+    },
+    {
+     "id": "green_inSE",
+     "bottom": [
+      10,
+      5
+     ]
+    },
+    {
+     "id": "green_landSE",
+     "bottom": [
+      11,
+      5
+     ]
+    },
+    {
+     "id": "green_landSW",
+     "bottom": [
+      12,
+      5
+     ]
+    },
+    {
+     "id": "green_landNE",
+     "bottom": [
+      13,
+      5
+     ]
+    },
+    {
+     "id": "green_landNW",
+     "bottom": [
+      14,
+      5
+     ]
+    },
+    {
+     "id": "green_sTLBR",
+     "bottom": [
+      15,
+      5
+     ]
+    },
+    {
+     "id": "green_sTRBL",
+     "bottom": [
+      0,
+      8
+     ]
+    },
+    {
+     "id": "crack_C",
+     "bottom": [
+      1,
+      8
+     ]
+    },
+    {
+     "id": "crack_N",
+     "bottom": [
+      2,
+      8
+     ]
+    },
+    {
+     "id": "crack_S",
+     "bottom": [
+      3,
+      8
+     ]
+    },
+    {
+     "id": "crack_W",
+     "bottom": [
+      4,
+      8
+     ]
+    },
+    {
+     "id": "crack_E",
+     "bottom": [
+      5,
+      8
+     ]
+    },
+    {
+     "id": "crack_inNW",
+     "bottom": [
+      6,
+      8
+     ]
+    },
+    {
+     "id": "crack_inNE",
+     "bottom": [
+      7,
+      8
+     ]
+    },
+    {
+     "id": "crack_inSW",
+     "bottom": [
+      8,
+      8
+     ]
+    },
+    {
+     "id": "crack_inSE",
+     "bottom": [
+      9,
+      8
+     ]
+    },
+    {
+     "id": "crack_landSE",
+     "bottom": [
+      10,
+      8
+     ]
+    },
+    {
+     "id": "crack_landSW",
+     "bottom": [
+      11,
+      8
+     ]
+    },
+    {
+     "id": "crack_landNE",
+     "bottom": [
+      12,
+      8
+     ]
+    },
+    {
+     "id": "crack_landNW",
+     "bottom": [
+      13,
+      8
+     ]
+    },
+    {
+     "id": "crack_sTLBR",
+     "bottom": [
+      14,
+      8
+     ]
+    },
+    {
+     "id": "crack_sTRBL",
+     "bottom": [
+      15,
+      8
+     ]
+    },
+    {
+     "id": "straw_N",
+     "bottom": [
+      0,
+      9
+     ]
+    },
+    {
+     "id": "straw_S",
+     "bottom": [
+      1,
+      9
+     ]
+    },
+    {
+     "id": "straw_W",
+     "bottom": [
+      2,
+      9
+     ]
+    },
+    {
+     "id": "straw_E",
+     "bottom": [
+      3,
+      9
+     ]
+    },
+    {
+     "id": "straw_inNW",
+     "bottom": [
+      4,
+      9
+     ]
+    },
+    {
+     "id": "straw_inNE",
+     "bottom": [
+      5,
+      9
+     ]
+    },
+    {
+     "id": "straw_inSW",
+     "bottom": [
+      6,
+      9
+     ]
+    },
+    {
+     "id": "straw_inSE",
+     "bottom": [
+      7,
+      9
+     ]
+    },
+    {
+     "id": "straw_landSE",
+     "bottom": [
+      8,
+      9
+     ]
+    },
+    {
+     "id": "straw_landSW",
+     "bottom": [
+      9,
+      9
+     ]
+    },
+    {
+     "id": "straw_landNE",
+     "bottom": [
+      10,
+      9
+     ]
+    },
+    {
+     "id": "straw_landNW",
+     "bottom": [
+      11,
+      9
+     ]
+    },
+    {
+     "id": "straw_sTLBR",
+     "bottom": [
+      12,
+      9
+     ]
+    },
+    {
+     "id": "straw_sTRBL",
+     "bottom": [
+      13,
+      9
+     ]
+    },
+    {
+     "id": "straw_C",
+     "bottom": [
+      14,
+      9
+     ]
+    },
+    {
+     "id": "spring_C",
+     "bottom": [
+      15,
+      9
+     ]
+    },
+    {
+     "id": "spring_N",
+     "bottom": [
+      0,
+      10
+     ]
+    },
+    {
+     "id": "spring_S",
+     "bottom": [
+      1,
+      10
+     ]
+    },
+    {
+     "id": "spring_W",
+     "bottom": [
+      2,
+      10
+     ]
+    },
+    {
+     "id": "spring_E",
+     "bottom": [
+      3,
+      10
+     ]
+    },
+    {
+     "id": "spring_inNW",
+     "bottom": [
+      4,
+      10
+     ]
+    },
+    {
+     "id": "spring_inNE",
+     "bottom": [
+      5,
+      10
+     ]
+    },
+    {
+     "id": "spring_inSW",
+     "bottom": [
+      6,
+      10
+     ]
+    },
+    {
+     "id": "spring_inSE",
+     "bottom": [
+      7,
+      10
+     ]
+    },
+    {
+     "id": "spring_landSE",
+     "bottom": [
+      8,
+      10
+     ]
+    },
+    {
+     "id": "spring_landSW",
+     "bottom": [
+      9,
+      10
+     ]
+    },
+    {
+     "id": "spring_landNE",
+     "bottom": [
+      10,
+      10
+     ]
+    },
+    {
+     "id": "spring_landNW",
+     "bottom": [
+      11,
+      10
+     ]
+    },
+    {
+     "id": "spring_sTLBR",
+     "bottom": [
+      12,
+      10
+     ]
+    },
+    {
+     "id": "spring_sTRBL",
+     "bottom": [
+      13,
+      10
+     ]
+    },
+    {
+     "id": "spirit_azelf_0_0",
+     "bottom": [
+      14,
+      10
+     ]
+    },
+    {
+     "id": "spirit_azelf_0_1",
+     "bottom": [
+      14,
+      11
+     ]
+    },
+    {
+     "id": "boil",
+     "bottom": [
+      15,
+      10
+     ]
+    },
+    {
+     "id": "cairn",
+     "bottom": [
+      0,
+      12
+     ]
+    },
+    {
+     "id": "cairn_dry",
+     "bottom": [
+      1,
+      12
+     ]
+    },
+    {
+     "id": "split_rock_0_0",
+     "bottom": [
+      2,
+      12
+     ]
+    },
+    {
+     "id": "split_rock_1_0",
+     "bottom": [
+      3,
+      12
+     ]
+    },
+    {
+     "id": "split_rock_0_1",
+     "bottom": [
+      2,
+      13
+     ]
+    },
+    {
+     "id": "split_rock_1_1",
+     "bottom": [
+      3,
+      13
+     ]
+    },
+    {
+     "id": "scrub_bush",
+     "bottom": [
+      4,
+      12
+     ]
+    },
+    {
+     "id": "roots",
+     "bottom": [
+      5,
+      12
+     ]
     }
    ]
   }

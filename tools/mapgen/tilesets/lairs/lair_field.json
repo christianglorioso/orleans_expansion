@@ -436,6 +436,336 @@
     232,
     184
    ]
+  ],
+  "POOL": [
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    40,
+    72,
+    80
+   ],
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    56,
+    96,
+    104
+   ],
+   [
+    80,
+    128,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    152,
+    200,
+    192
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    176,
+    192,
+    184
+   ],
+   [
+    200,
+    196,
+    184
+   ],
+   [
+    216,
+    224,
+    216
+   ]
+  ],
+  "SPIRIT": [
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    64,
+    104,
+    208
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    128,
+    184,
+    248
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    200,
+    196,
+    184
+   ],
+   [
+    248,
+    248,
+    232
+   ]
+  ],
+  "GREEN": [
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    88,
+    56
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    128,
+    124,
+    128
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    160,
+    156,
+    152
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    200,
+    196,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
+  "STRAW": [
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    240,
+    216,
+    120
+   ],
+   [
+    216,
+    184,
+    88
+   ],
+   [
+    176,
+    144,
+    64
+   ],
+   [
+    160,
+    128,
+    88
+   ]
+  ],
+  "SAND": [
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    184
+   ],
+   [
+    120,
+    88,
+    56
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    104,
+    72,
+    48
+   ],
+   [
+    144,
+    104,
+    64
+   ],
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    72,
+    112,
+    56
+   ]
   ]
  },
  "pieces": {
@@ -1578,6 +1908,1182 @@
    "walk": [],
    "lair": "landorus",
    "comment": "the dry country's shade tree (copied), blocking"
+  },
+  "green_C": {
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (C)"
+  },
+  "green_N": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (N)"
+  },
+  "green_S": {
+   "x": 4,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (S)"
+  },
+  "green_W": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (W)"
+  },
+  "green_E": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (E)"
+  },
+  "green_inNW": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (inNW)"
+  },
+  "green_inNE": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (inNE)"
+  },
+  "green_inSW": {
+   "x": 9,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (inSW)"
+  },
+  "green_inSE": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (inSE)"
+  },
+  "green_landSE": {
+   "x": 11,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (landSE)"
+  },
+  "green_landSW": {
+   "x": 12,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (landSW)"
+  },
+  "green_landNE": {
+   "x": 13,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (landNE)"
+  },
+  "green_landNW": {
+   "x": 14,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (landNW)"
+  },
+  "green_sTLBR": {
+   "x": 15,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (sTLBR)"
+  },
+  "green_sTRBL": {
+   "x": 0,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:green_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "the spring's green on the sand (sTRBL)"
+  },
+  "crack_C": {
+   "x": 1,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (C)"
+  },
+  "crack_N": {
+   "x": 2,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (N)"
+  },
+  "crack_S": {
+   "x": 3,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (S)"
+  },
+  "crack_W": {
+   "x": 4,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (W)"
+  },
+  "crack_E": {
+   "x": 5,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (E)"
+  },
+  "crack_inNW": {
+   "x": 6,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (inNW)"
+  },
+  "crack_inNE": {
+   "x": 7,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (inNE)"
+  },
+  "crack_inSW": {
+   "x": 8,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (inSW)"
+  },
+  "crack_inSE": {
+   "x": 9,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (inSE)"
+  },
+  "crack_landSE": {
+   "x": 10,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (landSE)"
+  },
+  "crack_landSW": {
+   "x": 11,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (landSW)"
+  },
+  "crack_landNE": {
+   "x": 12,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (landNE)"
+  },
+  "crack_landNW": {
+   "x": 13,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (landNW)"
+  },
+  "crack_sTLBR": {
+   "x": 14,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (sTLBR)"
+  },
+  "crack_sTRBL": {
+   "x": 15,
+   "y": 8,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:crack_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked earth on the sand (sTRBL)"
+  },
+  "straw_N": {
+   "x": 0,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand N (copied)"
+  },
+  "straw_S": {
+   "x": 1,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand S (copied)"
+  },
+  "straw_W": {
+   "x": 2,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand W (copied)"
+  },
+  "straw_E": {
+   "x": 3,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand E (copied)"
+  },
+  "straw_inNW": {
+   "x": 4,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand inNW (copied)"
+  },
+  "straw_inNE": {
+   "x": 5,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand inNE (copied)"
+  },
+  "straw_inSW": {
+   "x": 6,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand inSW (copied)"
+  },
+  "straw_inSE": {
+   "x": 7,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand inSE (copied)"
+  },
+  "straw_landSE": {
+   "x": 8,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand landSE (copied)"
+  },
+  "straw_landSW": {
+   "x": 9,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand landSW (copied)"
+  },
+  "straw_landNE": {
+   "x": 10,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand landNE (copied)"
+  },
+  "straw_landNW": {
+   "x": 11,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand landNW (copied)"
+  },
+  "straw_sTLBR": {
+   "x": 12,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand sTLBR (copied)"
+  },
+  "straw_sTRBL": {
+   "x": 13,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass on the sand sTRBL (copied)"
+  },
+  "straw_C": {
+   "x": 14,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:straw_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "straw-dry grass (copied)"
+  },
+  "spring_C": {
+   "x": 15,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_C"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (C)"
+  },
+  "spring_N": {
+   "x": 0,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_N"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (N)"
+  },
+  "spring_S": {
+   "x": 1,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_S"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (S)"
+  },
+  "spring_W": {
+   "x": 2,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_W"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (W)"
+  },
+  "spring_E": {
+   "x": 3,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_E"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (E)"
+  },
+  "spring_inNW": {
+   "x": 4,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_inNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (inNW)"
+  },
+  "spring_inNE": {
+   "x": 5,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_inNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (inNE)"
+  },
+  "spring_inSW": {
+   "x": 6,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_inSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (inSW)"
+  },
+  "spring_inSE": {
+   "x": 7,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_inSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (inSE)"
+  },
+  "spring_landSE": {
+   "x": 8,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_landSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (landSE)"
+  },
+  "spring_landSW": {
+   "x": 9,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_landSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (landSW)"
+  },
+  "spring_landNE": {
+   "x": 10,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_landNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (landNE)"
+  },
+  "spring_landNW": {
+   "x": 11,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_landNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (landNW)"
+  },
+  "spring_sTLBR": {
+   "x": 12,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_sTLBR"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (sTLBR)"
+  },
+  "spring_sTRBL": {
+   "x": 13,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:spring_sTRBL"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "the spring in its kerb of cut stone (blocking) (sTRBL)"
+  },
+  "spirit_azelf": {
+   "x": 14,
+   "y": 10,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lh:spirit_azelf_0_0"
+    ],
+    [
+     "lh:spirit_azelf_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x2 Azelf's standing stone, blocking"
+  },
+  "boil": {
+   "x": 15,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:boil"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 the spring's eye welling up, blocking"
+  },
+  "cairn": {
+   "x": 0,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:cairn"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 a cairn on the grass, blocking"
+  },
+  "cairn_dry": {
+   "x": 1,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:cairn_dry"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 a cairn on the sand, blocking"
+  },
+  "split_rock": {
+   "x": 2,
+   "y": 12,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lh:split_rock_0_0",
+     "lh:split_rock_1_0"
+    ],
+    [
+     "lh:split_rock_0_1",
+     "lh:split_rock_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "2x2 a boulder split by a sapling, blocking"
+  },
+  "scrub_bush": {
+   "x": 4,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:scrub_bush"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 a thorny dry-country bush, blocking"
+  },
+  "roots": {
+   "x": 5,
+   "y": 12,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:roots"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "1x1 roots snaking across the sand (walkable)"
   }
  }
 }

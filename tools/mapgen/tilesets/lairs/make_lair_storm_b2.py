@@ -75,28 +75,34 @@ NEW_FAMILIES = {
 
 
 # ---------------------------------------------------------------- Zapdos: the sky, the deck
-_BLOBS = [(8, 8, 12.0), (26, 6, 9.0), (20, 22, 12.5), (2, 26, 8.5)]
+# three cloud-heap designs, each a 2x2 block whose rim is always the dark rift between heaps, so the blocks can be laid in any order:
+# the mock picks one per block by a hash, which breaks the repetition (revision 2; the border block is design "a")
+_DESIGNS = {
+    "a": [(10, 11, 9.5), (22, 18, 8.0), (14, 23, 6.0)],
+    "b": [(16, 14, 11.0), (8, 22, 5.0), (25, 9, 5.5)],
+    "c": [(9, 9, 6.5), (21, 10, 6.0), (15, 21, 8.5), (26, 24, 4.0)],
+}
+_FLICKER = {"a": ((27, 5), (28, 6), (28, 7)), "b": ((4, 6), (5, 7), (5, 8), (6, 9)), "c": ()}
 
 
-def _cloud(i, j):
+def _cloud(design, i, j):
     f = 0.0
-    for (bx, by, r) in _BLOBS:
-        for ox in (-32, 0, 32):
-            for oy in (-32, 0, 32):
-                d = math.hypot(i + 0.5 - bx - ox, (j + 0.5 - by - oy) * 1.3) / r
-                f = max(f, 1.0 - d)
-    return f
+    for (bx, by, r) in _DESIGNS[design]:
+        d = math.hypot(i + 0.5 - bx, (j + 0.5 - by) * 1.3) / r
+        f = max(f, 1.0 - d)
+    rim = min(i + 0.5, 31.5 - i, j + 0.5, 31.5 - j)
+    return f * min(1.0, max(0.0, (rim - 1.0) / 4.0))
 
 
-def sky_tex(i, j):
-    """The storm seen from the gallery: great soft heaps of dark cloud, their upper edges catching the lamp, dithered into the black
-    rifts between them (periodic over 32 px: the 2x2 block); a far flicker of lightning in one rift."""
+def sky_tex(i, j, design="a"):
+    """The storm seen from the gallery: soft heaps of dark cloud, their upper edges catching the lamp, dithered into the black rifts
+    between them; a far flicker of lightning in a rift."""
     i, j = i % 32, j % 32
-    f = _cloud(i, j)
-    up = _cloud(i, (j - 3) % 32)
+    f = _cloud(design, i, j)
+    up = _cloud(design, i, max(0, j - 3))
     d = (i + j) % 2
     if f > 0.12 and up < f - 0.1:
-        c = S1 if (f > 0.3 or d) else S0                                 # the heaps' upper edges, lit
+        c = S1 if (f > 0.3 or d) else S0
     elif f > 0.3:
         c = S0
     elif f > 0.18:
@@ -107,19 +113,19 @@ def sky_tex(i, j):
         c = INK
     if f > 0.6 and (i * 5 + j * 3) % 37 == 0:
         c = S1
-    if (i, j) in ((30, 15), (31, 16), (31, 17), (0, 18)):
+    if (i, j) in _FLICKER[design]:
         c = SP1
     return c
 
 
-def sky_block():
+def sky_block(design="a"):
     out = {}
     for y in (0, 1):
         for x in (0, 1):
             cv = Canvas(1, 1)
             for j in range(16):
                 for i in range(16):
-                    cv.put(i, j, sky_tex(i + 16 * x, j + 16 * y))
+                    cv.put(i, j, sky_tex(i + 16 * x, j + 16 * y, design))
             out[f"{x}{y}"] = cv
     return out
 
@@ -146,8 +152,8 @@ def deck_style(i, j, inside, d):
     near = min(v for v in (d["dn"], d["ds"], d["dw"], d["de"], 9) if v is not None)
     if not inside:
         if d["dn"] is not None and d["dn"] <= 3:
-            return INK if d["dn"] == 1 else (S0 if d["dn"] == 2 else sky_tex(i, j))   # the lip under the south rail
-        return sky_tex(i, j)
+            return INK if d["dn"] == 1 else (S0 if d["dn"] == 2 else INK)    # the lip under the south rail
+        return INK if (i + j) % 7 else S0                                # the dark rift right round the deck
     if near == 1:
         return INK
     if near == 2:
@@ -557,9 +563,10 @@ def struck_pole():
 # ---------------------------------------------------------------- the sheet
 def build():
     P = RK.build()                                                      # batch 1 first: same order, same cells, same ids
-    sky = sky_block()
-    for k, cv in sky.items():
-        P.add(f"sky_{k}", cv, comment="the storm round the lamp gallery (the map's fill and border block)", lair="zapdos")
+    for design in ("a", "b", "c"):
+        for k, cv in sky_block(design).items():
+            P.add(f"sky_{design}_{k}", cv, comment=f"the storm round the lamp gallery, cloud heap {design} (design a is the border block)",
+                  lair="zapdos")
     deck = dual_set(deck_style, ro=7, ri=5, wob=0)
     P.add_set("deck", deck, walk=True, comment="the gallery's iron deck and railing on the storm", lair="zapdos")
     spark = deck["N"].copy()

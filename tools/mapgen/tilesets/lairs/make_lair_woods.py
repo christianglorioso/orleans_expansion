@@ -28,6 +28,7 @@ from lair_kit_b2 import (GRASS, WATER, Canvas, Pieces, dual_set, ellipse_body, h
                          write_b2)
 
 MARSH = tex_from(pcell("ekat:marsh_C"))
+TALL = tex_from(pcell("ekat:tallgrass"))                          # the deep wood's floor (Zarude's lair is tall grass)
 G, GD, GL, SH = (120, 160, 104), (104, 144, 96), (136, 176, 128), (96, 128, 88)
 MG, MGL = (120, 168, 128), (144, 184, 152)                       # the primary's marsh greens
 WA = (96, 136, 136)
@@ -90,6 +91,18 @@ def litter_style(i, j, inside, d):
     if near == 1 and (i + j) % 2:
         return GD
     return litter_tex(i, j)
+
+def on_tall(cv):
+    """The same piece over the deep wood's tall grass instead of the plain grass (every plain-grass pixel replaced)."""
+    out = cv.copy()
+    g = {G, GD, GL}
+    for j in range(out.h):
+        for i in range(out.w):
+            c = out.get(i, j)
+            if c in g and GRASS(i, j) == c:
+                out.put(i, j, TALL(i, j))
+    return out
+
 
 def great_cypress():
     """4x4 a giant old-growth cypress: the trunk rising out of the top into the canopy, Spanish moss and lianas hanging from it, its
@@ -231,6 +244,49 @@ def larder():
     return cv
 
 
+def fern_w():
+    """1x1 ferns of the deep wood's floor (walkable), in the canopy's greens."""
+    cv = ground(GRASS)
+    for (ang, ln) in [(-2.3, 7), (-1.9, 8), (-1.3, 8), (-0.8, 7), (-2.7, 6), (-0.4, 6)]:
+        x, y = 8.0, 13.0
+        for k in range(ln):
+            x += math.cos(ang)
+            y += math.sin(ang) + k * 0.08
+            xi, yi = int(round(x)), int(round(y))
+            cv.put(xi, yi, C_DK if k < 2 else (C_MID if k < ln - 2 else C_HL))
+            if k % 2 == 0:
+                cv.put(xi, yi - 1, C_HL if k < ln - 2 else GL)
+                cv.put(xi + (1 if math.cos(ang) > 0 else -1), yi + 1, C_DK)
+    return cv
+
+
+def roots_w(kind):
+    """1x1 cypress roots crawling over the ground (walkable): 'a' and 'b' runs, knotted, mossy."""
+    cv = ground(GRASS)
+    runs = [((0, 4), (15, 10)), ((3, 15), (11, 2))] if kind == "a" else [((0, 11), (15, 6)), ((7, 0), (5, 15))]
+    for (a, b) in runs:
+        n = 30
+        for k in range(n + 1):
+            t = k / n
+            x = a[0] + (b[0] - a[0]) * t + 1.2 * math.sin(t * 6 + len(kind))
+            y = a[1] + (b[1] - a[1]) * t
+            cv.put(round(x), round(y), BK1)
+            cv.put(round(x), round(y) + 1, BK0)
+            cv.put(round(x), round(y) - 1, BK2 if k % 4 else MOSSG)
+    return cv
+
+
+def undergrowth():
+    """1x1 a tangle of undergrowth: ferns, palmetto fans and vines over dark ground (blocking)."""
+    cv = ground(lambda i, j: C_DK if (i + j) % 3 else SH)
+    for (x, y) in [(3, 4), (10, 3), (6, 10), (13, 11)]:
+        for (dx, dy) in [(0, 0), (1, 0), (-1, 0), (0, -1), (1, 1), (-1, 1), (2, -1), (-2, -1)]:
+            cv.put(x + dx, y + dy, C_HL if dy < 0 else C_MID)
+    for k in range(16):
+        cv.put(k, round(7 + 2 * math.sin(k * 0.6)), C_MID)
+    return cv
+
+
 # ---------------------------------------------------------------- Ogerpon
 def dance_style(i, j, inside, d):
     """The dance ring: the grass danced down to bare packed earth, scuffed in arcs, tufts left at its rim."""
@@ -365,6 +421,41 @@ def courir_flag():
     return cv
 
 
+def coop():
+    """2x1 a chicken coop of weathered slats (the Courir chases chickens for its gumbo), a hen pecking by it."""
+    cv = ground(GRASS, 2, 1)
+    cv.rect(3, 4, 20, 10, WD2)
+    for x in range(3, 23, 3):
+        cv.vline(x, 4, 13, WD1)
+    cv.hline(2, 23, 3, WD3)
+    cv.hline(2, 23, 2, INK)
+    cv.hline(2, 23, 14, INK)
+    cv.vline(2, 2, 14, INK)
+    cv.vline(23, 2, 14, INK)
+    cv.rect(10, 8, 5, 6, INK)
+    for (i, j) in ellipse_body(27.5, 10, 2.6, 2.0):
+        cv.put(i, j, (248, 248, 232))
+    cv.put(29, 8, YN2)
+    cv.put(30, 9, YN1)
+    cv.put(26, 12, YN2)
+    return cv
+
+
+def capuchons():
+    """1x1 three capuchons (the Courir's tall cone hats) set out on a bench, fringed in the riders' colours."""
+    cv = ground(GRASS)
+    cv.rect(1, 11, 14, 3, WD2)
+    cv.hline(1, 14, 14, WD1)
+    for (x, c1, c2) in [(3, PU1, YN1), (8, BL1, RD1), (12, RD1, YN1)]:
+        for j in range(2, 11):
+            hw = (j - 2) * 0.28
+            for i in range(16):
+                if abs(i + 0.5 - x) <= hw + 0.5:
+                    cv.put(i, j, c1 if (i + j) % 3 else c2)
+        cv.hline(x - 2, x + 2, 11, c2)
+    return cv
+
+
 def gumbo_pot():
     """1x1 a black iron gumbo pot on a tripod over cold ashes (the Courir ends with gumbo)."""
     cv = ground(GRASS)
@@ -434,35 +525,46 @@ def wind_oak():
 
 
 def shell_style(i, j, inside, d):
-    """The chenier's crushed shell ridge on the grass."""
+    """The chenier's ridge: sand and crushed shell (inside) on the grass, rippled by the wind, white shell fragments in it."""
     near = min(v for v in (d["dn"], d["ds"], d["dw"], d["de"], 9) if v is not None)
     if not inside:
-        if near == 1 and (i + j) % 2 == 0:
-            return SHL3
+        if near == 1:
+            return OAT2 if (i + j) % 2 else GD
+        if near == 2 and (i * 3 + j) % 5 == 0:
+            return OAT1                                                  # sand blown onto the grass
         return GRASS(i, j)
     if near == 1:
-        return SHL3 if (i + j) % 2 else SHL2
-    n = hashn(i, j, 621)
-    if n < 0.12:
-        return SHL3
-    if n > 0.82:
+        return OAT2 if (i + j) % 3 else G
+    # wind ripples: long shallow ridges running north-south, lit on their west face
+    r = (i * 2 + round(2 * math.sin(j * 0.5))) % 9
+    if r == 0:
+        return OAT2
+    if r == 1:
         return SHL1
-    if (i * 2 + j * 5) % 17 == 0:
-        return G                                                         # grass pushing through
-    return SHL2
+    n = hashn(i, j, 621)
+    if n < 0.07:
+        return SHL1                                                      # shell fragments
+    if n < 0.11:
+        return SHL3
+    if n > 0.93:
+        return (248, 248, 232)
+    return OAT1 if hashn(i // 3, j // 2, 622) < 0.45 else SHL2
 
 
 def comb(kind):
-    """1x1 grass combed flat by the wind (walkable): 'h' east-west, 'v' north-south, 'a' / 'b' the two diagonals."""
+    """1x1 grass combed flat by the wind (walkable): long pale streaks of laid-over blades, 'h' east-west, 'v' north-south, 'a' / 'b'
+    the two diagonals."""
     cv = ground(GRASS)
     for j in range(16):
         for i in range(16):
             k = {"h": j, "v": i, "a": i + j, "b": i - j}[kind]
             along = {"h": i, "v": j, "a": i - j, "b": i + j}[kind]
-            if k % 5 == 0 and (along // 4) % 3 == 0:
+            if k % 4 == 0 and (along + k * 3) % 11 < 8:
                 cv.put(i, j, GL)
-            elif k % 5 == 1 and (along // 4) % 3 == 0 and (i + j) % 2:
-                cv.put(i, j, GD)
+            elif k % 4 == 1 and (along + k * 3) % 11 < 7:
+                cv.put(i, j, G)
+            elif k % 4 == 2 and (along + k) % 13 < 3:
+                cv.put(i, j, SH)
     return cv
 
 
@@ -521,7 +623,7 @@ def sea_oats():
 # ---------------------------------------------------------------- the sheet
 def build():
     P = Pieces("lj")
-    P.add("great_cypress", great_cypress(), comment="4x4 a giant old cypress, Zarude's bower in its hollow, blocking", lair="zarude")
+    P.add("great_cypress", on_tall(great_cypress()), comment="4x4 a giant old cypress, Zarude's bower in its hollow, blocking", lair="zarude")
     P.add("lianas", lianas(), comment="1x2 a curtain of lianas, blocking", lair="zarude")
     P.add("palmetto", palmetto(), comment="1x1 a dwarf palmetto, blocking", lair="zarude")
     for k in ("N", "C", "S"):
@@ -537,6 +639,16 @@ def build():
     P.add("costumes", costumes(), comment="2x1 Courir costumes drying on a line, blocking", lair="ogerpon")
     P.add("gumbo_pot", gumbo_pot(), comment="1x1 a gumbo pot on a tripod, blocking", lair="ogerpon")
     P.add("courir_flag", courir_flag(), comment="1x2 the Courir's flag on its pole, blocking", lair="ogerpon")
+    P.add("coop", coop(), comment="2x1 a chicken coop and a hen, blocking", lair="ogerpon")
+    P.add("capuchons", capuchons(), comment="1x1 capuchons set out on a bench, blocking", lair="ogerpon")
+    P.add("fern_w", fern_w(), walk=True, comment="1x1 ferns (walkable)", lair="ogerpon")
+    # the deep wood's pieces stand in tall grass (Zarude's floor)
+    P.add("roots_a", on_tall(roots_w("a")), walk=True, comment="1x1 cypress roots in the tall grass (walkable)", lair="zarude")
+    P.add("roots_b", on_tall(roots_w("b")), walk=True, comment="1x1 cypress roots in the tall grass (walkable)", lair="zarude")
+    P.add("fern_t", on_tall(fern_w()), walk=True, comment="1x1 ferns in the tall grass (walkable)", lair="zarude")
+    P.add("palmetto_t", on_tall(palmetto()), comment="1x1 a dwarf palmetto in the tall grass, blocking", lair="zarude")
+    P.add("lianas_t", on_tall(lianas()), comment="1x2 lianas over the tall grass, blocking", lair="zarude")
+    P.add("undergrowth", undergrowth(), comment="1x1 a tangle of undergrowth, blocking", lair="zarude")
     P.add("wind_oak", wind_oak(), comment="3x3 a wind-swept chenier live oak, blocking", lair="tornadus")
     P.add_set("shell", dual_set(shell_style, ro=6, ri=5, wob=1), walk=True, comment="the chenier's shell ridge", lair="tornadus")
     for k in ("h", "v", "a", "b"):

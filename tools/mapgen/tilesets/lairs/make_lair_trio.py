@@ -1,4 +1,4 @@
-"""Own art for the lake trio's three spirit pools (legendary lairs batch 2): Uxie's Knowing Pool (reached from the Old Water by
+"""Own art for the lake trio's spirit pools (legendary lairs batch 2): Uxie's Knowing Pool (reached from the Old Water by
 the Canoe Docks' boatman), Mesprit's Heart Pool (off Route 1) and Azelf's Unfailing Spring (off Route 23). One secondary,
 gTileset_OrleansLairTrio on gTileset_OrleansGeneral (prefix lt).
 
@@ -22,9 +22,8 @@ a spiral inlaid in the spirit's colour (Uxie yellow, Mesprit pink, Azelf blue), 
              strung between posts), telling_stone 2x2 (the broad stone the tellers sit before, Uxie's spiral), reading_stone 2x1
     mesprit  iris_violet / iris_red / iris_yellow 1x1   Louisiana irises (walkable), garland_post 1x2 (a cedar post wound with
              iris garlands and ribbons)
-    azelf    dry_<key> (cracked dry earth pressing in on the grass: the drought outside), boil 1x1 (the spring's eye, water welling up
-             through white sand), cairn / cairn_dry 1x1 (stones stacked by those who came for the will to go on), split_rock 2x2
-             (a boulder split by a sapling growing out of it)
+    azelf    (revision 2: Azelf's lair is dry country, so its pieces are placed in the Route 23 set, make_lair_field.py, which draws
+             them with this module's spring_style, spirit_stone, boil, cairn and split_rock)
 """
 import math
 import os
@@ -575,9 +574,9 @@ def build():
     P.add_set("spring", dual_set(spring_style, ro=7, ri=5, wob=0), walk=False,
               comment="a spring pool in a kerb of Rootkin cut stone (blocking)", lair="uxie mesprit azelf")
     P.add("spring_C2", pool_cv(), comment="open spring water (variant)", lair="uxie mesprit azelf")
-    for w in ("uxie", "mesprit", "azelf"):
+    for w in ("uxie", "mesprit"):
         P.add(f"spirit_{w}", spirit_stone(w), comment=f"1x2 {w}'s standing stone, its spiral glowing, blocking", lair=w)
-    P.add("step_pool", step_pool(), walk=True, comment="1x1 stepping stones across the pool (walkable)", lair="mesprit azelf")
+    P.add("step_pool", step_pool(), walk=True, comment="1x1 stepping stones across the pool (walkable)", lair="mesprit")
     sp = dual_set(spring_style, ro=7, ri=5, wob=0)
     P.add("step_spring_S", step_pool(sp["S"]), walk=True, comment="1x1 the stepping stones' first stone on the kerb (south)",
           lair="mesprit")
@@ -601,15 +600,9 @@ def build():
     for k in ("violet", "red", "yellow"):
         P.add(f"iris_{k}", iris(k), walk=True, comment=f"1x1 Louisiana irises ({k}), walkable", lair="mesprit")
     P.add("garland_post", garland_post(), comment="1x2 a cedar post wound with garlands and ribbons, blocking", lair="mesprit")
-    # Azelf
-    P.add_set("dry", dual_set(dry_style, ro=6, ri=5, wob=1), walk=True, comment="cracked dry earth on the grass", lair="azelf")
-    P.add("boil", boil(), comment="1x1 the spring's eye welling up, blocking", lair="azelf")
-    P.add("cairn", cairn(False), comment="1x1 a cairn on the grass, blocking", lair="azelf")
-    P.add("cairn_dry", cairn(True), comment="1x1 a cairn on the dry earth, blocking", lair="azelf")
-    P.add("split_rock", split_rock(), comment="2x2 a boulder split by a sapling, blocking", lair="azelf")
-    P.add("fern", fern(), walk=True, comment="1x1 ferns (walkable)", lair="uxie mesprit azelf")
-    P.add("tuft_dry", tuft(True), walk=True, comment="1x1 wiry grass on the cracked earth (walkable)", lair="azelf")
-    P.add("pebbles", tuft(False), walk=True, comment="1x1 pebbles in the grass (walkable)", lair="azelf uxie")
+    # (Azelf's pieces moved to the Route 23 set, make_lair_field.py, in revision 2: they are drawn here, placed there)
+    P.add("fern", fern(), walk=True, comment="1x1 ferns (walkable)", lair="uxie mesprit")
+    P.add("pebbles", tuft(False), walk=True, comment="1x1 pebbles in the grass (walkable)", lair="uxie")
     return P
 
 

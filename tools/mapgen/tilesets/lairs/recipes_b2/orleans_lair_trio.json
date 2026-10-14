@@ -160,107 +160,93 @@
      ]
     },
     {
-     "id": "spirit_azelf_0_0",
-     "bottom": [
-      2,
-      1
-     ]
-    },
-    {
-     "id": "spirit_azelf_0_1",
-     "bottom": [
-      2,
-      2
-     ]
-    },
-    {
      "id": "step_pool",
      "bottom": [
-      3,
+      2,
       1
      ]
     },
     {
      "id": "step_spring_S",
      "bottom": [
-      4,
+      3,
       1
      ]
     },
     {
      "id": "fog_pool0",
      "bottom": [
-      5,
+      4,
       1
      ]
     },
     {
      "id": "fog_pool1",
      "bottom": [
-      6,
+      5,
       1
      ]
     },
     {
      "id": "lotus_y",
      "bottom": [
-      7,
+      6,
       1
      ]
     },
     {
      "id": "lotus_p",
      "bottom": [
-      8,
+      7,
       1
      ]
     },
     {
      "id": "lotus_pads",
      "bottom": [
-      9,
+      8,
       1
      ]
     },
     {
      "id": "walk_grass",
      "bottom": [
-      10,
+      9,
       1
      ]
     },
     {
      "id": "walk_water",
      "bottom": [
-      11,
+      10,
       1
      ]
     },
     {
      "id": "walk_end",
      "bottom": [
-      12,
+      11,
       1
      ]
     },
     {
      "id": "walk_spring_C",
      "bottom": [
-      13,
+      12,
       1
      ]
     },
     {
      "id": "walk_spring_N",
      "bottom": [
-      14,
+      13,
       1
      ]
     },
     {
      "id": "walk_spring_S",
      "bottom": [
-      15,
+      14,
       1
      ]
     },
@@ -377,178 +363,17 @@
      ]
     },
     {
-     "id": "dry_C",
-     "bottom": [
-      12,
-      3
-     ]
-    },
-    {
-     "id": "dry_N",
-     "bottom": [
-      13,
-      3
-     ]
-    },
-    {
-     "id": "dry_S",
-     "bottom": [
-      14,
-      3
-     ]
-    },
-    {
-     "id": "dry_W",
-     "bottom": [
-      15,
-      3
-     ]
-    },
-    {
-     "id": "dry_E",
-     "bottom": [
-      0,
-      5
-     ]
-    },
-    {
-     "id": "dry_inNW",
-     "bottom": [
-      1,
-      5
-     ]
-    },
-    {
-     "id": "dry_inNE",
-     "bottom": [
-      2,
-      5
-     ]
-    },
-    {
-     "id": "dry_inSW",
-     "bottom": [
-      3,
-      5
-     ]
-    },
-    {
-     "id": "dry_inSE",
-     "bottom": [
-      4,
-      5
-     ]
-    },
-    {
-     "id": "dry_landSE",
-     "bottom": [
-      5,
-      5
-     ]
-    },
-    {
-     "id": "dry_landSW",
-     "bottom": [
-      6,
-      5
-     ]
-    },
-    {
-     "id": "dry_landNE",
-     "bottom": [
-      7,
-      5
-     ]
-    },
-    {
-     "id": "dry_landNW",
-     "bottom": [
-      8,
-      5
-     ]
-    },
-    {
-     "id": "dry_sTLBR",
-     "bottom": [
-      9,
-      5
-     ]
-    },
-    {
-     "id": "dry_sTRBL",
-     "bottom": [
-      10,
-      5
-     ]
-    },
-    {
-     "id": "boil",
-     "bottom": [
-      11,
-      5
-     ]
-    },
-    {
-     "id": "cairn",
-     "bottom": [
-      12,
-      5
-     ]
-    },
-    {
-     "id": "cairn_dry",
-     "bottom": [
-      13,
-      5
-     ]
-    },
-    {
-     "id": "split_rock_0_0",
-     "bottom": [
-      14,
-      5
-     ]
-    },
-    {
-     "id": "split_rock_1_0",
-     "bottom": [
-      15,
-      5
-     ]
-    },
-    {
-     "id": "split_rock_0_1",
-     "bottom": [
-      14,
-      6
-     ]
-    },
-    {
-     "id": "split_rock_1_1",
-     "bottom": [
-      15,
-      6
-     ]
-    },
-    {
      "id": "fern",
      "bottom": [
-      0,
-      7
-     ]
-    },
-    {
-     "id": "tuft_dry",
-     "bottom": [
-      1,
-      7
+      12,
+      3
      ]
     },
     {
      "id": "pebbles",
      "bottom": [
-      2,
-      7
+      13,
+      3
      ]
     }
    ]

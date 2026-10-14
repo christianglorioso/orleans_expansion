@@ -322,7 +322,8 @@ PLACEMENTS = {
     "Route1": {"tileset": "orleans_bayou", "lair": "mesprit", "open": [["spirit_gate_e", 26, 27]], "sealed": [["spirit_gate_e_moss", 26, 27]],
                "trigger": [[27, 27], [27, 28]], "heading": "east", "back": [26, 27, "LEFT"], "opens": "story 45"},
     "Route23_N": {"tileset": "orleans_route_dry", "lair": "azelf", "open": [["grove_gap", 33, 1]],
-                  "sealed": "the feather notch at x 33-34, rows 0-1, filled with the dry scrub block (as the Ursaluna cleft at 22-23)",
+                  "sealed": "the notch closed with the dry scrub block over x 32-35, rows 0-1 (the notch's corner cells too: in_NW/E/out_NW and "
+                            "in_NE/W/out_NE become block), bd:dry_S_dry_X on row 2 x 32-35, so the scrub runs on unbroken (no square patch)",
                   "trigger": [[33, 1], [34, 1]], "heading": "north", "back": [33, 2, "DOWN"], "opens": "story 45"},
     "Route23_S": {"tileset": "orleans_route_dry", "lair": "landorus", "open": [["field_gate", 27, 38]], "sealed": [["field_gate_shut", 27, 38]],
                   "trigger": [[27, 39], [28, 39]], "heading": "south", "back": [27, 37, "UP"], "opens": "story 45"},

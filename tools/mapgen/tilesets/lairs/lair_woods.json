@@ -1105,9 +1105,159 @@
    "lair": "ogerpon",
    "comment": "1x2 the Courir's flag on its pole, blocking"
   },
-  "wind_oak": {
+  "coop": {
    "x": 6,
    "y": 6,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lj:coop_0_0",
+     "lj:coop_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "2x1 a chicken coop and a hen, blocking"
+  },
+  "capuchons": {
+   "x": 8,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:capuchons"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x1 capuchons set out on a bench, blocking"
+  },
+  "fern_w": {
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:fern_w"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "1x1 ferns (walkable)"
+  },
+  "roots_a": {
+   "x": 10,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:roots_a"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 cypress roots in the tall grass (walkable)"
+  },
+  "roots_b": {
+   "x": 11,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:roots_b"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 cypress roots in the tall grass (walkable)"
+  },
+  "fern_t": {
+   "x": 12,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:fern_t"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 ferns in the tall grass (walkable)"
+  },
+  "palmetto_t": {
+   "x": 13,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:palmetto_t"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x1 a dwarf palmetto in the tall grass, blocking"
+  },
+  "lianas_t": {
+   "x": 14,
+   "y": 6,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:lianas_t_0_0"
+    ],
+    [
+     "lj:lianas_t_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x2 lianas over the tall grass, blocking"
+  },
+  "undergrowth": {
+   "x": 15,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:undergrowth"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x1 a tangle of undergrowth, blocking"
+  },
+  "wind_oak": {
+   "x": 0,
+   "y": 8,
    "w": 3,
    "h": 3,
    "rows": [
@@ -1132,8 +1282,8 @@
    "comment": "3x3 a wind-swept chenier live oak, blocking"
   },
   "shell_C": {
-   "x": 9,
-   "y": 6,
+   "x": 3,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1151,8 +1301,8 @@
    "comment": "the chenier's shell ridge (C)"
   },
   "shell_N": {
-   "x": 10,
-   "y": 6,
+   "x": 4,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1170,8 +1320,8 @@
    "comment": "the chenier's shell ridge (N)"
   },
   "shell_S": {
-   "x": 11,
-   "y": 6,
+   "x": 5,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1189,8 +1339,8 @@
    "comment": "the chenier's shell ridge (S)"
   },
   "shell_W": {
-   "x": 12,
-   "y": 6,
+   "x": 6,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1208,8 +1358,8 @@
    "comment": "the chenier's shell ridge (W)"
   },
   "shell_E": {
-   "x": 13,
-   "y": 6,
+   "x": 7,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1227,8 +1377,8 @@
    "comment": "the chenier's shell ridge (E)"
   },
   "shell_inNW": {
-   "x": 14,
-   "y": 6,
+   "x": 8,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1246,8 +1396,8 @@
    "comment": "the chenier's shell ridge (inNW)"
   },
   "shell_inNE": {
-   "x": 15,
-   "y": 6,
+   "x": 9,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1265,8 +1415,8 @@
    "comment": "the chenier's shell ridge (inNE)"
   },
   "shell_inSW": {
-   "x": 0,
-   "y": 9,
+   "x": 10,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1284,8 +1434,8 @@
    "comment": "the chenier's shell ridge (inSW)"
   },
   "shell_inSE": {
-   "x": 1,
-   "y": 9,
+   "x": 11,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1303,8 +1453,8 @@
    "comment": "the chenier's shell ridge (inSE)"
   },
   "shell_landSE": {
-   "x": 2,
-   "y": 9,
+   "x": 12,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1322,8 +1472,8 @@
    "comment": "the chenier's shell ridge (landSE)"
   },
   "shell_landSW": {
-   "x": 3,
-   "y": 9,
+   "x": 13,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1341,8 +1491,8 @@
    "comment": "the chenier's shell ridge (landSW)"
   },
   "shell_landNE": {
-   "x": 4,
-   "y": 9,
+   "x": 14,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1360,8 +1510,8 @@
    "comment": "the chenier's shell ridge (landNE)"
   },
   "shell_landNW": {
-   "x": 5,
-   "y": 9,
+   "x": 15,
+   "y": 8,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1379,8 +1529,8 @@
    "comment": "the chenier's shell ridge (landNW)"
   },
   "shell_sTLBR": {
-   "x": 6,
-   "y": 9,
+   "x": 0,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1398,8 +1548,8 @@
    "comment": "the chenier's shell ridge (sTLBR)"
   },
   "shell_sTRBL": {
-   "x": 7,
-   "y": 9,
+   "x": 1,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1417,8 +1567,8 @@
    "comment": "the chenier's shell ridge (sTRBL)"
   },
   "comb_h": {
-   "x": 8,
-   "y": 9,
+   "x": 2,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1436,8 +1586,8 @@
    "comment": "1x1 grass combed flat by the wind (h)"
   },
   "comb_v": {
-   "x": 9,
-   "y": 9,
+   "x": 3,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1455,8 +1605,8 @@
    "comment": "1x1 grass combed flat by the wind (v)"
   },
   "comb_a": {
-   "x": 10,
-   "y": 9,
+   "x": 4,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1474,8 +1624,8 @@
    "comment": "1x1 grass combed flat by the wind (a)"
   },
   "comb_b": {
-   "x": 11,
-   "y": 9,
+   "x": 5,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1493,8 +1643,8 @@
    "comment": "1x1 grass combed flat by the wind (b)"
   },
   "weathervane": {
-   "x": 12,
-   "y": 9,
+   "x": 6,
+   "y": 11,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1510,8 +1660,8 @@
    "comment": "1x2 an iron weathervane, blocking"
   },
   "chimes": {
-   "x": 13,
-   "y": 9,
+   "x": 7,
+   "y": 11,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1527,8 +1677,8 @@
    "comment": "1x2 shell chimes on a driftwood post, blocking"
   },
   "sea_oats": {
-   "x": 14,
-   "y": 9,
+   "x": 8,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [

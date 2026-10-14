@@ -1,4 +1,5 @@
-"""Own art for Landorus' lair (legendary lairs batch 2): the Field That Always Bears, off Route 23. Its own secondary,
+"""Own art for the two Route 23 lairs (legendary lairs batch 2): Landorus' Field That Always Bears and Azelf's Unfailing Spring
+(Azelf moved here from the trio set in revision 2: its lair is dry country, scrub-walled). One secondary,
 gTileset_OrleansLairField on gTileset_OrleansGeneral (prefix lh).
 
 usage (from the decomp root): python tools/mapgen/tilesets/lairs/make_lair_field.py
@@ -217,6 +218,141 @@ def jar():
     return cv
 
 
+# ---------------------------------------------------------------- Azelf's Unfailing Spring (moved here from the trio set: it is dry country)
+import make_lair_trio as T  # noqa: E402  (the spirit pools' spring, stone, cairn and boil art)
+
+GRASS = T.GRASS
+G, GD, GL, SH = T.G, T.GD, T.GL, T.SH
+PW0, PW1, PW2, PW3 = T.PW0, T.PW1, T.PW2, T.PW3
+CRK = (120, 88, 56)
+
+
+def green_style(i, j, inside, d):
+    """The spring's green on the sand (inside = grass): a ragged rim of dark grass, dust at its foot."""
+    near = min(v for v in (d["dn"], d["ds"], d["dw"], d["de"], 9) if v is not None)
+    if not inside:
+        if near == 1:
+            return DD3 if (i + j) % 2 else DD2
+        if near == 2 and (i * 3 + j) % 4 == 0:
+            return GD                                                    # blades straggling out onto the sand
+        return DRY(i, j)
+    if near == 1:
+        return SH if (i + j) % 3 else GD
+    if near == 2 and (i + 2 * j) % 5 == 0:
+        return DD2                                                       # sand showing through at the rim
+    return GRASS(i, j)
+
+
+def _crack(i, j):
+    best = []
+    for gy in range(j // 6 - 1, j // 6 + 2):
+        for gx in range(i // 6 - 1, i // 6 + 2):
+            px = gx * 6 + 0.5 + 5 * hashn(gx, gy, 441)
+            py = gy * 6 + 0.5 + 5 * hashn(gx, gy, 442)
+            best.append((px - i - 0.5) ** 2 + (py - j - 0.5) ** 2)
+    best.sort()
+    return best[1] ** 0.5 - best[0] ** 0.5
+
+
+def crack_style(i, j, inside, d):
+    """Cracked earth on the sand (inside): a dried-out hollow, its crust curling into plates."""
+    near = min(v for v in (d["dn"], d["ds"], d["dw"], d["de"], 9) if v is not None)
+    if not inside:
+        return DD2 if near == 1 and (i + j) % 2 else DRY(i, j)
+    if near == 1:
+        return DD2 if (i + j) % 2 else DD3
+    k = _crack(i + 32, j + 32)
+    if k < 0.32:
+        return CRK if hashn(i, j, 433) < 0.6 else DD3
+    if k < 0.75:
+        return DD3 if (i + j) % 2 else DD2
+    return DD1 if hashn(i, j, 434) > 0.2 else DL
+
+
+def dry_cell():
+    cv = Canvas(1, 1)
+    for j in range(16):
+        for i in range(16):
+            cv.put(i, j, DRY(i, j))
+    return cv
+
+
+def cairn_dry():
+    """1x1 a cairn on the sand: flat stones stacked by those who came for the will to go on."""
+    cv = T.cairn(False)
+    base = dry_cell()
+    for j in range(16):
+        for i in range(16):
+            if cv.get(i, j) in (G, GD, GL, SH):
+                cv.put(i, j, base.get(i, j))
+    for i in range(3, 14):
+        if cv.get(i, 15) == T.SH:
+            cv.put(i, 15, DD3)
+    return cv
+
+
+def scrub_bush():
+    """1x1 a thorny dry-country bush (blocking): grey-green tangles, a few red berries, its shadow on the sand."""
+    cv = dry_cell()
+    body = set()
+    for (x, y, r) in [(8, 9, 5.5), (5, 7, 3.5), (11, 6, 3.5)]:
+        body |= {(i, j) for (i, j) in ellipse_body(x, y, r, r * 0.8) if 0 <= i < 16 and 0 <= j < 16}
+    for (i, j) in body:
+        c = L2 if (i + j) % 3 else L1
+        if j < 6 and (i * 3 + j) % 5 == 0:
+            c = L3
+        if (i * 7 + j * 3) % 23 == 0:
+            c = B0
+        cv.put(i, j, c)
+    for (i, j) in list(body):
+        if (i, j + 1) not in body and j + 1 < 16:
+            cv.put(i, j + 1, DD3)
+    for (x, y) in [(6, 8), (10, 10), (9, 5)]:
+        cv.put(x, y, EM2)
+    return cv
+
+
+def roots():
+    """1x1 roots of the grove's trees snaking out across the sand toward the water (walkable)."""
+    cv = dry_cell()
+    for (a, b, w) in [((0, 3), (15, 9), 2), ((2, 15), (12, 6), 1), ((6, 0), (9, 15), 1)]:
+        n = 32
+        for k in range(n + 1):
+            t = k / n
+            x = a[0] + (b[0] - a[0]) * t + 1.3 * math.sin(t * 7)
+            y = a[1] + (b[1] - a[1]) * t
+            cv.put(round(x), round(y), B1)
+            if w > 1:
+                cv.put(round(x), round(y) + 1, B0)
+            cv.put(round(x), round(y) - 1, B2 if k % 3 == 0 else B1)
+    return cv
+
+
+R0 = (40, 40, 40)
+STONE_MAP = {T.ST2: R3, T.ST3: R4, T.ST4: R5, T.INK: R0, T.MO: L1, T.LF3: L3, T.STEM: L2, T.LF2: L2}
+
+
+def add_azelf(P):
+    P.add_set("green", dual_set(green_style, ro=6, ri=5, wob=1), walk=True, comment="the spring's green on the sand", lair="azelf")
+    P.add_set("crack", dual_set(crack_style, ro=6, ri=5, wob=1), walk=True, comment="cracked earth on the sand", lair="azelf")
+    from lair_kit_b2 import CORNER_KEYS
+    for k in [k for k in CORNER_KEYS.values() if k != "C"]:
+        P.add(f"straw_{k}", D1.dc(f"dry_grass_{k}"), walk=True, comment=f"straw-dry grass on the sand {k} (copied)", lair="azelf")
+    P.add("straw_C", D1.dc("dry_grass"), walk=True, comment="straw-dry grass (copied)", lair="azelf")
+    P.add_set("spring", dual_set(T.spring_style, ro=7, ri=5, wob=0), comment="the spring in its kerb of cut stone (blocking)", lair="azelf")
+    P.add("spirit_azelf", T.spirit_stone("azelf"), comment="1x2 Azelf's standing stone, blocking", lair="azelf")
+    P.add("boil", T.boil(), comment="1x1 the spring's eye welling up, blocking", lair="azelf")
+    P.add("cairn", T.cairn(False), comment="1x1 a cairn on the grass, blocking", lair="azelf")
+    P.add("cairn_dry", cairn_dry(), comment="1x1 a cairn on the sand, blocking", lair="azelf")
+    P.add("split_rock", T.split_rock(), comment="2x2 a boulder split by a sapling, blocking", lair="azelf")
+    P.add("scrub_bush", scrub_bush(), comment="1x1 a thorny dry-country bush, blocking", lair="azelf")
+    P.add("roots", roots(), walk=True, comment="1x1 roots snaking across the sand (walkable)", lair="azelf")
+    # colour economy: the Rootkin stone in the dry country's own greys, the sapling in the scrub's greens
+    for n in P.order:
+        if P.items[n]["lair"] == "azelf":
+            P.items[n]["cv"].recolor(STONE_MAP)
+
+
 def build():
     from lair_kit_b2 import CORNER_KEYS, MAPGEN, Pieces
     from PIL import Image
@@ -254,6 +390,7 @@ def build():
     from lair_kit_b2 import sheet_cell
     P.add("field_tree", over(sheet_cell(os.path.join(D1.SRC, "dry_country.png"), p["x"], p["y"], p["w"], p["h"]), DRY),
           comment="the dry country's shade tree (copied), blocking", lair="landorus")
+    add_azelf(P)
     # three near-duplicate pairs (<= 12 apart) in the copied cane and scrub art would be merged by compose's palette v2 (cells off by 11):
     # snap them here instead, so every cell draws exactly
     snap = {(72, 112, 48): (64, 112, 56), (40, 72, 40): (40, 80, 48), (240, 224, 184): (248, 232, 184)}
@@ -270,6 +407,12 @@ def families(P):
     ft = P.items["field_tree"]["cv"]
     fam["TREE"] = sorted({gba(ft.im.getpixel((i, j))[:3]) for j in range(ft.h) for i in range(ft.w)})
     fam.update({k: sorted({snap.get(gba(c), gba(c)) for c in v}) for k, v in NEW_FAMILIES.items()})
+    sm = lambda cs: sorted({STONE_MAP.get(c, c) for c in cs})  # noqa: E731
+    fam["POOL"] = sm(T.FAMILIES["POOL"])
+    fam["SPIRIT"] = sm([c for c in T.FAMILIES["SPIRIT"] if c not in (T.UX1, T.UX2, T.MS1, T.MS2)])
+    fam["GREEN"] = sm([G, GD, GL, SH, DD1, DD2, DD3, DL, CRK, T.ST2, T.ST3, T.ST4, T.INK, T.STEM, L3])
+    fam["STRAW"] = [DD1, DD2, DD3, DL, (240, 216, 120), ST, ST_D, (160, 128, 88)]
+    fam["SAND"] = [DH, DD1, DD2, DD3, DL, CRK, B0, B1, B2, L1, L2, L3, EM2, T.LF3, T.LF2]
     return {k: v for k, v in fam.items() if len(v) <= 15}
 
 

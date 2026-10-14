@@ -1198,7 +1198,7 @@
      1
     ]
    ],
-   "sealed": "the feather notch at x 33-34, rows 0-1, filled with the dry scrub block (as the Ursaluna cleft at 22-23)",
+   "sealed": "the notch closed with the dry scrub block over x 32-35, rows 0-1 (the notch's corner cells too: in_NW/E/out_NW and in_NE/W/out_NE become block), bd:dry_S_dry_X on row 2 x 32-35, so the scrub runs on unbroken (no square patch)",
    "trigger": [
     [
      33,

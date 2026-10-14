@@ -96,13 +96,6 @@ def set_res(prefix, name, allowed=(".",)):
 
 
 # ---------------------------------------------------------------- the lake trio (lt)
-def trio_map(P, fill="."):
-    base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), '"': ("P:ekat:marsh_C", True),
-            "p": ("lt:spring_C", False), "d": ("lt:dry_C", True)}
-    sets = [("p", set_res("lt", "spring"), False), ("~", water_res, False), ('"', marsh_res, True),
-            ("d", set_res("lt", "dry"), True)]
-    return LairMap(20, 16, base, sets, {"lt": P}, wall_style="swamp", fill=fill)
-
 
 def walk_line(m, x, y0, y1):
     """The rope-and-plank walk down column x: over the pool's own cells (C / N / S kerb) or over the grass."""
@@ -118,134 +111,12 @@ def walk_line(m, x, y0, y1):
             m.prop("lt", "walk_grass", x, y)
 
 
-def uxie(P):
-    m = trio_map(P)
-    frame_std(m)
-    m.disc("p", 9.0, 8.7, 4.6, 2.5)                       # the Knowing Pool
-    m.rect("~", 14, 10, 3, 3)                             # the canoe inlet in the east, where the boatman moors
-    walk_line(m, 10, 6, 12)
-    m.prop("lt", "telling_stone", 9, 3)
-    m.prop("lt", "story_post", 6, 3)
-    m.prop("lt", "story_post", 13, 3)
-    for x in (7, 8, 11, 12):
-        m.prop("lt", "cords", x, 3)
-    m.prop("lt", "story_post", 3, 4)
-    m.prop("lt", "story_post", 16, 4)
-    m.prop("lt", "cords", 4, 4)
-    m.prop("lt", "cords", 5, 4)
-    m.prop("lt", "cords", 14, 4)
-    m.prop("lt", "cords", 15, 4)
-    m.prop("lt", "reading_stone", 4, 11)
-    m.prop("lt", "reading_stone", 12, 12)
-    m.prop("lt", "spirit_uxie", 7, 11)
-    m.prop("lt", "pirogue", 14, 11)
-    m.resolve()
-    for (x, y, n) in [(5, 8, "fog_pool0"), (6, 8, "fog_pool1"), (7, 8, "fog_pool0"), (12, 7, "fog_pool1"), (13, 7, "fog_pool0"),
-                      (8, 9, "lotus_y"), (12, 9, "lotus_pads"), (7, 7, "lotus_pads"), (13, 9, "lotus_y")]:
-        if m.names[y][x] == "lt:spring_C" and (x, y) not in occupied(m):
-            m.prop("lt", n, x, y)
-    scatter(m, "lt", ["fern", "pebbles", "fern"], [(3, 7), (16, 7), (3, 9), (16, 8), (5, 12), (14, 12), (11, 11), (9, 12),
-                                                   (4, 6), (15, 6)])
-    m.obj("uxie", 10, 5, "Uxie (post-game) before the telling stone, its eyes shut")
-    m.obj("boatman", 13, 12, "the boatman who paddled you here (the way back is the walk south)")
-    m.obj("player", 10, 6, "the player at the walk's north end, facing north")
-    m.weather = "WEATHER_FOG_HORIZONTAL (the Old Water's own fog)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall. Reached from the Old Water: the Canoe Docks' boatman paddles you here (post-game).",
-        "The Knowing Pool: a still spring in a kerb of Rootkin cut stone, mist lying on it, yellow lotus. A rope-and-plank walk",
-        "crosses it from the landing to the north shore, where the telling stone (Uxie's spiral) stands in a line of memory posts",
-        "strung with knotted cords: every knot a telling. Uxie's standing stone, stone seats, the boatman's pirogue in the inlet.",
-        "Uxie at (10,5), the player at (10,6). The way back: the walk south through the gap (10-11, 14) to the Canoe Docks.",
-    ]
-    return m
 
-
-def mesprit(P):
-    m = trio_map(P)
-    frame_std(m)
-    for j in range(m.H):                                  # the Heart Pool: two lobes and a point
-        for i in range(m.W):
-            x, y = i + 0.5, j + 0.5
-            lobe = min(math.hypot(x - 7.6, y - 6.8), math.hypot(x - 12.4, y - 6.8)) <= 2.65
-            tri = 7.2 <= y <= 12.2 and abs(x - 10.0) <= max(1.6, (12.9 - y) * 1.0)
-            if lobe or tri:
-                m.g[j][i] = "p"
-    m.resolve()
-    for y in range(8, 14):                                # stepping stones up the heart from its point
-        if m.names[y][10] == "lt:spring_C":
-            m.prop("lt", "step_pool", 10, y)
-        elif m.names[y][10] == "lt:spring_S":
-            m.prop("lt", "step_spring_S", 10, y)
-    m.prop("lt", "spirit_mesprit", 10, 3)
-    for (x, y) in [(5, 3), (14, 3), (3, 6), (16, 6)]:
-        m.prop("lt", "garland_post", x, y)
-    m.resolve()
-    for (x, y, n) in [(6, 6, "lotus_p"), (14, 6, "lotus_y"), (8, 8, "lotus_pads"), (12, 8, "lotus_p"), (7, 5, "lotus_pads"),
-                      (13, 5, "lotus_pads"), (9, 10, "lotus_pads"), (11, 9, "lotus_y"), (8, 7, "lotus_y")]:
-        if m.names[y][x] == "lt:spring_C" and (x, y) not in occupied(m):
-            m.prop("lt", n, x, y)
-    ring = []
-    for k in range(64):
-        a = 2 * math.pi * k / 64
-        x, y = int(round(10.0 + 7.0 * math.cos(a))), int(round(7.8 + 4.6 * math.sin(a)))
-        if (x, y) not in ring:
-            ring.append((x, y))
-    scatter(m, "lt", ["iris_violet", "iris_red", "iris_yellow", "iris_violet", "iris_yellow", "iris_red"],
-            [c for c in ring if not (9 <= c[0] <= 11 and c[1] >= 11)])
-    scatter(m, "lt", ["iris_red", "iris_violet", "fern", "iris_yellow", "fern"],
-            [(7, 3), (12, 3), (4, 11), (15, 11), (6, 12), (13, 12), (3, 9), (16, 9), (4, 4), (15, 4)])
-    m.obj("mesprit", 10, 7, "Mesprit (post-game) hovering at the heart of the pool")
-    m.obj("player", 10, 8, "the player on the top stepping stone, facing north")
-    m.weather = "WEATHER_NONE (Route 1's rain stops at the trees: the pool is the one bright, still place)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "The Heart Pool: a heart-shaped spring in a kerb of Rootkin cut stone, pink and yellow American lotus on it, stepping",
-        "stones up from its point to its heart, where Mesprit hovers; its standing stone glows pink in the cleft beyond. A ring of",
-        "Louisiana irises (violet, copper-red, yellow) all round, cedar posts wound with garlands and ribbons: people come to wish here.",
-        "Mesprit at (10,7) over the water (its cell blocks), the player at (10,8) on the top stepping stone.",
-    ]
-    return m
-
-
-def azelf(P):
-    m = trio_map(P)
-    frame_std(m)
-    m.disc("p", 10.0, 7.0, 4.2, 2.1)                      # the Unfailing Spring
-    for (cx, cy, rx, ry) in [(5.6, 11.4, 1.8, 1.1), (7.0, 10.8, 1.3, 1.0), (14.4, 11.4, 1.8, 1.1), (13.0, 10.9, 1.2, 0.9),
-                             (15.2, 9.6, 1.0, 1.0)]:
-        m.disc("d", cx, cy, rx, ry)                       # the drought pressing in on the grove
-    m.resolve()
-    m.prop("lt", "boil", 10, 7)
-    m.prop("lt", "spirit_azelf", 10, 3)
-    m.prop("lt", "split_rock", 3, 7)
-    for (x, y, n) in [(5, 10, "cairn_dry"), (14, 11, "cairn_dry"), (15, 5, "cairn_dry"), (13, 10, "cairn"), (7, 3, "cairn"),
-                      (8, 12, "cairn"), (16, 8, "cairn"), (12, 3, "cairn"), (6, 11, "tuft_dry"), (15, 10, "tuft_dry"),
-                      (5, 5, "tuft_dry")]:
-        if free(m, x, y, "d" if n.endswith("dry") else "."):
-            m.prop("lt", n, x, y)
-    m.resolve()
-    for (x, y) in [(8, 7), (12, 6)]:
-        if m.names[y][x] == "lt:spring_C" and (x, y) not in occupied(m):
-            m.prop("lt", "lotus_pads", x, y)
-    scatter(m, "lt", ["fern", "pebbles", "fern"], [(4, 12), (16, 12), (11, 12), (3, 10), (16, 3), (3, 4), (12, 11), (4, 6),
-                                                   (15, 7), (5, 4), (14, 4), (8, 9), (12, 9), (9, 12)])
-    scatter(m, "lt", ["cairn"], [(5, 6), (15, 4), (7, 4), (13, 4)])
-    m.obj("azelf", 10, 10, "Azelf (post-game) on the spring's south lip")
-    m.obj("player", 10, 11, "the player, facing north")
-    m.weather = "WEATHER_NONE (Route 23 has its sandstorm; the grove is calm, the dust stops at the trees)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall (a grove in the dry country), the way in from the south (x 10-11, rows 14-15).",
-        "The Unfailing Spring: a spring in a kerb of Rootkin cut stone, its eye welling up through white sand; Azelf's standing",
-        "stone (blue) at its head. The grove holds out against the drought: cracked dry earth eats in at its edges; cairns stacked",
-        "by those who came for the will to go on; a boulder split clean in two by a sapling that grew through it.",
-        "Azelf at (10,10), the player at (10,11).",
-    ]
-    return m
 
 
 # ---------------------------------------------------------------- the storm lairs (ls, batch-1 Raikou's set extended)
 def zapdos(P):
-    base = {"k": ("ls:sky_00", False), "d": ("ls:deck_C", True)}
+    base = {"k": ("ls:sky_00", False), "d": ("ls:deck_C", True)}   # (sky_00 is a placeholder: every sky cell gets a design below)
     sets = [("d", set_res("ls", "deck", ("k",)), True)]
     m = LairMap(20, 16, base, sets, {"ls": P}, wall_style="none", fill="k")
     m.disc("d", 9.9, 8.0, 7.7, 5.7)                       # the gallery deck round the lantern
@@ -254,7 +125,8 @@ def zapdos(P):
     for y in range(m.H):
         for x in range(m.W):
             if m.names[y][x] == "ls:sky_00":
-                m.fixed[(x, y)] = f"ls:sky_{x & 1}{y & 1}"
+                design = "abc"[int(K.hashn(x // 2, y // 2, 977) * 3)]
+                m.fixed[(x, y)] = f"ls:sky_{design}_{x & 1}{y & 1}"
             elif m.names[y][x] == "ls:deck_N" and x % 3 == 1:
                 m.fixed[(x, y)] = "ls:deck_N_spark"
     m.prop("ls", "lantern", 8, 4)
@@ -270,10 +142,10 @@ def zapdos(P):
     m.obj("zapdos", 10, 9, "Zapdos (post-game) on the gallery deck before the lamp")
     m.obj("player", 10, 10, "the player, facing north")
     m.weather = "WEATHER_RAIN_THUNDERSTORM (Storm's Edge's own weather)"
-    m.border = "ls:sky_XY (the storm) - the map is the gallery deck floating in the storm, as Emerald's Sky Pillar top floats in cloud"
+    m.border = "ls:sky_a_XY (the storm, cloud design a) - the map is the gallery deck floating in the storm, as Emerald's Sky Pillar top floats in cloud"
     m.notes = [
         "20x16, the StormsEdge_LighthouseGallery map redone (it is an 11x9 Pokemon Center stand-in today); no wall: the deck floats in the",
-        "storm (border block = sky). The way in and out is the stair hatch at (10,12) (the warp to StormsEdge_Lighthouse warp 1, as now).",
+        "storm (three cloud-heap designs laid by a hash, border block = design a). The way in and out is the stair hatch at (10,12) (the warp to StormsEdge_Lighthouse warp 1, as now).",
         "The iron gallery deck with its railing round the rim, St Elmo's fire on the north rail; the lantern room in the middle (red dome,",
         "lightning rod, the great lens burning; dark until Eclair's grid is restored); hurricane-warning flags, an anemometer, the keeper's",
         "storm lantern, rope, rain puddles and rust on the plates. Zapdos at (10,9) before the lamp, the player at (10,10).",
@@ -285,11 +157,12 @@ def thundurus(P):
     base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), "r": ("ls:riprap0", False), "n": ("ls:slope_n0", False),
             "c": ("ls:crown0", True), "s": ("ls:slope_s0", True), "t": ("ls:toe0", True), "x": ("ls:scorch_C", True)}
     sets = [("x", set_res("ls", "scorch", (".",)), True)]
-    m = LairMap(20, 16, base, sets, {"ls": P}, wall_style="swamp")
-    frame_std(m)
-    for (row, ch) in [(2, "~"), (3, "~"), (4, "~"), (5, "r"), (6, "n"), (7, "c"), (8, "s"), (9, "t")]:
+    m = LairMapB2(20, 16, base, sets, {"ls": P}, wall_style="swamp")
+    frame_b2(m, "w", 5, n=[2] + [1] * 8 + [2], s=[2, 1, 2, 1, 1, 1, 1, 1, 1, 2], w=[2, 1, 1, 1, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 2, 1, 2])
+    for (row, ch) in [(2, "~"), (3, "~"), (4, "r"), (5, "n"), (6, "c"), (7, "s"), (8, "t")]:
         m.rect(ch, 0, row, 20, 1)
-    m.disc("x", 13.6, 11.9, 1.8, 1.0)                     # where the last bolt came down
+    m.disc("x", 7.4, 12.0, 1.6, 0.9)                      # where the last bolt came down
+    m.reserved |= set([(10, 6), (10, 7), (3, 10), (4, 10), (5, 10), (6, 10), (7, 10), (8, 10), (9, 10), (10, 10), (10, 9), (10, 8)])
     m.resolve()
     m.fixed = {}
     for y in range(m.H):
@@ -298,137 +171,52 @@ def thundurus(P):
             for b in ("riprap", "slope_n", "crown", "slope_s", "toe"):
                 if n == f"ls:{b}0" and x & 1:
                     m.fixed[(x, y)] = f"ls:{b}1"
-    m.prop("ls", "shack", 3, 10)
-    m.prop("ls", "bell_post", 7, 10)
-    m.prop("ls", "sandbags", 3, 7)
-    m.prop("ls", "sandbags", 15, 7)
-    m.prop("ls", "mile_post", 6, 7)
-    m.prop("ls", "struck_pole", 16, 10)
-    m.prop("ls", "glass", 13, 12)
-    m.obj("thundurus", 10, 7, "Thundurus (post-game) on the levee crown")
-    m.obj("player", 10, 8, "the player on the landward slope, facing north")
+    place(m, P, "ls", [(12, 9, "shack"), (15, 9, "bell_post"), (4, 9, "struck_pole"), (8, 12, "glass")], "thundurus")
+    for (x, y, n) in [(4, 6, "sandbags"), (14, 6, "sandbags"), (7, 6, "mile_post")]:
+        m.prop("ls", n, x, y)                             # on the crown road (a band, not plain ground: placed by hand)
+    m.obj("thundurus", 10, 6, "Thundurus (post-game) on the levee crown")
+    m.obj("player", 10, 7, "the player on the landward slope, facing north")
     m.weather = "WEATHER_RAIN_THUNDERSTORM"
     m.notes = [
-        "20x16, unconnected, swamp canopy wall over the river and the woods, the way in from the south (x 10-11, rows 14-15).",
-        "The levee crown above the river in a thunderstorm, drawn in the in-game levee's colours: riprap at the waterline, the shaded",
-        "river face, the shell-and-gravel crown road, the lit landward slope. The watchman's shack with its storm lantern lit, the",
-        "crevasse bell, sandbags along the crown, a mile marker, a line pole split by lightning and the scorch where the bolt came down.",
-        "Thundurus at (10,7) on the crown, the player at (10,8).",
+        "20x16, unconnected, swamp canopy over the river and the woods (irregular to the south), the way in from the WEST (rows 10-11),",
+        "as the Route 12 steps head east. The levee crown above the river in a thunderstorm, in the in-game levee's colours: riprap at",
+        "the waterline, the shaded river face, the shell-and-gravel crown road, the lit landward slope. The watchman's shack with its",
+        "storm lantern lit, the crevasse bell, sandbags, a mile marker, a line pole split by lightning and the scorch where it struck.",
+        "Thundurus at (10,6) on the crown, the player at (10,7).",
     ]
     return m
 
 
 # ---------------------------------------------------------------- the woods lairs (lj)
-def woods_map(P, extra_base=None, extra_sets=()):
-    base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), '"': ("P:ekat:marsh_C", True)}
-    base.update(extra_base or {})
-    sets = list(extra_sets) + [("~", water_res, False), ('"', marsh_res, True)]
-    return LairMap(20, 16, base, sets, {"lj": P}, wall_style="swamp")
+
+OFFSETS = sorted({(dx, dy) for dx in range(-2, 3) for dy in range(-2, 3)}, key=lambda o: (abs(o[0]) + abs(o[1]), o[1], o[0]))
 
 
-def place(m, P, prefix, items, label):
-    for (x, y, n) in items:
+def place(m, P, prefix, items, label, ground="."):
+    """Place props at (or, if that spot is taken, by a wall edge or across a terrain seam, as near as possible to) the given cells.
+    Cells in m.reserved (the encounter, the stand cell, the arrival and the exits) are never covered. Every cell must hold the
+    terrain the prop is drawn on (`ground`, or a 4th item element), so no prop shows a square of the wrong ground round it."""
+    reserved = set(getattr(m, "reserved", set()))
+    for it in items:
+        x, y, n = it[:3]
+        need = it[3] if len(it) > 3 else ground
         cv = P.items[n]["cv"]
-        if all(free(m, x + i, y + j, m.g[y + j][x + i]) for i in range(cv.cw) for j in range(cv.ch)):
-            m.prop(prefix, n, x, y)
+        for (dx, dy) in OFFSETS:
+            cells = [(x + dx + i, y + dy + j) for i in range(cv.cw) for j in range(cv.ch)]
+            if all(0 <= cx < m.W and 0 <= cy < m.H and m.g[cy][cx] == need and free(m, cx, cy, need)
+                   and (cx, cy) not in reserved for (cx, cy) in cells):
+                m.prop(prefix, n, x + dx, y + dy)
+                break
         else:
-            print(f"{label}: no room for {n} at {(x, y)}")
+            print(f"{label}: no room for {n} near {(x, y)}")
 
-
-def zarude(P):
-    m = woods_map(P)
-    frame_std(m)
-    m.rect('"', 4, 4, 4, 4)                               # marsh under the old cypresses
-    m.rect('"', 12, 4, 4, 4)
-    m.rect("~", 4, 9, 12, 2)                              # the black-water slough
-    m.resolve()
-    cypress(m, 4, 4)
-    cypress(m, 12, 4)
-    m.prop("lj", "great_cypress", 8, 3)
-    m.resolve()
-    for y in range(8, 12):                                # the fallen trunk across the slough
-        k = {"P:ekat:water_N": "N", "P:ekat:water_C": "C", "P:ekat:water_S": "S"}.get(m.names[y][10])
-        if k:
-            m.prop("lj", f"log_bridge_{k}", 10, y)
-    place(m, P, "lj", [(3, 11, "lianas"), (16, 11, "lianas"), (13, 12, "mossy_log"), (5, 12, "palmetto"), (7, 12, "palmetto"),
-                       (16, 8, "palmetto"), (3, 8, "palmetto"), (12, 7, "larder"), (16, 4, "lianas"), (3, 4, "lianas"),
-                       (8, 7, "palmetto"), (4, 12, "palmetto"), (15, 12, "palmetto")], "zarude")
-    m.obj("zarude", 10, 7, "Zarude (post-game) before its bower in the great cypress")
-    m.obj("player", 10, 8, "the player at the trunk-bridge's north end, facing north")
-    m.weather = "WEATHER_SHADE (the deep wood's gloom)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "The Deep Wood, in deep shade: old-growth cypress in their marsh (primary art) round a giant buttressed cypress",
-        "whose hollow is Zarude's bower of woven vines, Spanish moss and lianas hanging from it. A black-water slough crosses the wood",
-        "on a fallen trunk; curtains of lianas, dwarf palmettos, a mossy log, the troop's larder of muscadines and mayhaws.",
-        "Zarude at (10,7) before the bower, the player at (10,8) at the trunk's end.",
-    ]
-    return m
-
-
-def ogerpon(P):
-    m = woods_map(P, {"r": ("lj:dance_C", True)}, [("r", set_res("lj", "dance", (".",)), True)])
-    frame_std(m)
-    m.disc("r", 9.8, 10.0, 3.2, 2.0)                      # the dance ring
-    m.resolve()
-    m.rect('"', 13, 4, 4, 4)                              # a cypress in its marsh behind the gumbo fire
-    m.resolve()
-    cypress(m, 13, 4)
-    place(m, P, "lj", [(10, 5, "mask_teal"), (5, 8, "stake_blue"), (14, 9, "stake_red"), (5, 11, "stake_grey"),
-                       (3, 4, "workbench"), (11, 3, "gumbo_pot"), (14, 11, "costumes"), (16, 11, "lianas"), (8, 4, "courir_flag"),
-                       (6, 3, "palmetto"), (3, 7, "palmetto"), (16, 9, "palmetto"), (7, 12, "larder"), (12, 12, "palmetto"),
-                       (3, 11, "lianas"), (4, 6, "palmetto"), (8, 7, "palmetto"), (12, 7, "palmetto"), (16, 7, "lianas")], "ogerpon")
-    m.obj("ogerpon", 10, 10, "Ogerpon (Teal Mask, post-game) dancing in the ring")
-    m.obj("player", 10, 11, "the player, facing north")
-    m.weather = "WEATHER_NONE (a sunny clearing in the moss forest)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "The Courir glade: where the Courir de Mardi Gras riders come to dance, and leave their masks. A ring trampled flat by",
-        "dancing, a teal Courir mask (painted wire screen, yarn beard, tall capuchon) on its stake at the head of it, and three empty",
-        "stakes tied with ribbons in the colours of the Wellspring, Hearthflame and Cornerstone masks, waiting for them; the",
-        "mask-maker's bench, the Courir's flag, costumes drying on a line, the gumbo pot. Ogerpon at (10,10) in the ring, the player at (10,11).",
-    ]
-    return m
-
-
-def tornadus(P):
-    m = woods_map(P, {"s": ("lj:shell_C", True)}, [("s", set_res("lj", "shell", (".",)), True)])
-    frame_std(m)
-    m.disc("s", 10.0, 7.6, 2.6, 1.9)                      # the eye: bare shell
-    m.disc("s", 5.6, 11.4, 1.6, 1.0)
-    m.disc("s", 14.6, 11.6, 1.4, 0.9)
-    m.resolve()
-    for (x, y) in [(3, 3), (14, 3), (14, 8), (3, 8)]:
-        m.prop("lj", "wind_oak", x, y)
-    place(m, P, "lj", [(7, 3, "weathervane"), (7, 10, "chimes"), (13, 6, "chimes"), (12, 3, "sea_oats")], "tornadus")
-    for k in range(72):                                   # grass combed flat round the eye, the way the wind goes round
-        a = 2 * math.pi * k / 72
-        for r in (3.6, 4.6):
-            x, y = int(round(10.0 + r * 1.35 * math.cos(a))), int(round(7.6 + r * math.sin(a)))
-            tx, ty = -math.sin(a), math.cos(a)
-            kind = "h" if abs(tx) > 2 * abs(ty) else ("v" if abs(ty) > 2 * abs(tx) else ("a" if tx * ty < 0 else "b"))
-            if free(m, x, y) and not (9 <= x <= 11 and y >= 11):
-                m.prop("lj", f"comb_{kind}", x, y)
-    scatter(m, "lj", ["sea_oats"], [(5, 12), (8, 12), (12, 12), (3, 10), (6, 3), (16, 5)])
-    m.obj("tornadus", 10, 7, "Tornadus (post-game) in the eye")
-    m.obj("player", 10, 8, "the player, facing north")
-    m.weather = "WEATHER_RAIN (the storm's edge; in the eye itself the air is still)"
-    m.notes = [
-        "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
-        "The Wind's Eye: a chenier, a ridge of crushed shell where live oaks grow; every oak shorn low and swept east by the wind.",
-        "The grass is combed flat in a ring round a bare eye of shell where nothing moves; a weathervane swung hard round,",
-        "shell chimes streaming from driftwood posts, sea oats bent double. Tornadus at (10,7) in the eye, the player at (10,8).",
-    ]
-    return m
-
-
-# ---------------------------------------------------------------- the Galarian birds (lf)
 def galar(P):
     base = {".": ("P:ekat:grass", True), "f": ("lf:floor_C", True)}
     sets = [("f", set_res("lf", "floor", (".",)), True)]
-    m = LairMap(20, 16, base, sets, {"lf": P}, wall_style="swamp")
-    frame_std(m)
+    m = LairMapB2(20, 16, base, sets, {"lf": P}, wall_style="swamp")
+    frame_b2(m, "e", 4, n=[2] + [1] * 8 + [2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 1, 2, 1, 1, 1, 2], e=[2, 1, 1, 1, 1, 1, 2, 2])
     m.disc("f", 10.0, 9.0, 6.2, 3.3)                      # the old dance floor round the bandstand
+    m.reserved |= set([(6, 5), (6, 6), (10, 9), (10, 10), (15, 9), (15, 10), (16, 8), (17, 8)])
     m.resolve()
     m.prop("lf", "casemate_glow", 5, 3)
     m.prop("lf", "rampart", 7, 3)
@@ -438,8 +226,8 @@ def galar(P):
     m.prop("lf", "rampart", 12, 3)
     m.prop("lf", "casemate", 13, 3)
     m.prop("lf", "bandstand", 8, 6)
-    place(m, P, "lf", [(3, 6, "pier"), (16, 5, "pier"), (3, 10, "lamp"), (16, 9, "lamp"), (14, 12, "cannon"), (5, 12, "carousel_horse"),
-                       (13, 12, "shot"), (16, 8, "rubble"), (4, 5, "rubble"), (12, 12, "rubble")], "galar")
+    place(m, P, "lf", [(16, 3, "pier"), (16, 5, "pier"), (3, 9, "lamp"), (16, 10, "lamp"), (7, 12, "cannon"), (5, 12, "carousel_horse"),
+                       (9, 12, "shot"), (4, 5, "rubble"), (3, 4, "rubble")], "galar")
     for (x, y) in [(4, 9), (16, 11), (15, 5), (4, 8)]:
         if free(m, x, y):
             m.prop("lf", "festoon", x, y)
@@ -449,7 +237,7 @@ def galar(P):
     m.obj("player", 10, 10, "the player before the bandstand, facing north (Moltres: stand (6,6); Zapdos: stand (15,10))")
     m.weather = "WEATHER_SHADE (the woods have closed over the fort; the day/night tint makes it at dusk)"
     m.notes = [
-        "20x16, unconnected, swamp canopy wall, the way in from the south (x 10-11, rows 14-15: exit trigger).",
+        "20x16, unconnected, an irregular swamp canopy wall; the way in from the EAST (rows 8-9), as the Route 14 sally port faces west.",
         "Spanish Fort: an old brick fort in the marsh south of the city, turned jazz-age pleasure garden, then abandoned. The north",
         "rampart with its arched casemates (brick of the Drowned Ward); on the parade ground the bandstand under its verdigris dome,",
         "the cracked terrazzo dance floor, lamp posts with broken globes, strings of dead bulbs, a fallen carousel horse, a cannon.",
@@ -506,35 +294,31 @@ def moltres(P):
 def landorus(P):
     base = {"d": ("P:dry:0_0", True), "c": ("lh:clay_C", True), "t": ("lh:thresh_C", True)}
     sets = [("c", set_res("lh", "clay", ("d",)), True), ("t", set_res("lh", "thresh", ("d",)), True)]
-    m = LairMap(20, 16, base, sets, {"lh": P}, wall_style="lh", fill="d")
-    frame_std(m)
-    m.rect("c", 4, 4, 12, 4)                              # the field: tilled red clay
-    m.disc("t", 10.0, 11.0, 2.7, 1.6)                     # the threshing floor
+    m = LairMapB2(20, 16, base, sets, {"lh": P}, wall_style="lh", fill="d")
+    frame_b2(m, "n", 5, n=[2, 1, 2, 1, 1, 1, 1, 1, 2, 2], s=[2] + [1] * 8 + [2], w=[2, 1, 1, 1, 1, 1, 1, 2], e=[2, 2, 1, 1, 1, 1, 1, 2])
+    m.disc("t", 10.5, 5.6, 2.7, 1.5)                      # the threshing floor, just inside the way in
+    m.rect("c", 3, 9, 14, 4)                              # the field below the terrace: tilled red clay
+    m.reserved |= set([(10, 6), (10, 5), (10, 4), (10, 3)])
     m.resolve()
-    for y in (4, 5, 6):
-        for x in range(4, 15):
+    for y in (9, 10, 11):
+        for x in range(3, 16):
             if m.names[y][x] != "lh:clay_C" or 9 <= x <= 10:
                 continue
-            if x in (4, 14):
-                n = "cane"
-            elif y == 5:
-                n = "pumpkins"
-            else:
-                n = "corn_a" if (x + y) % 2 else "corn_b"
+            n = "cane" if x in (3, 15) else ("pumpkins" if y == 10 else ("corn_a" if (x + y) % 2 else "corn_b"))
             m.prop("lh", n, x, y)
     for x in range(3, 17):
-        if x not in (9, 10):
+        if x not in (9, 10, 11):
             m.prop("lh", "terrace_a" if x % 2 else "terrace_b", x, 8)
-    place(m, P, "lh", [(14, 11, "plough"), (13, 12, "basket"), (4, 10, "field_tree"), (7, 12, "jar"), (16, 9, "jar"), (16, 4, "scarecrow")], "landorus")
-    m.obj("landorus", 10, 10, "Landorus (post-game) on the threshing floor")
-    m.obj("player", 10, 11, "the player, facing north")
+    place(m, P, "lh", [(13, 5, "basket"), (4, 4, "field_tree"), (15, 4, "jar"), (6, 6, "plough"), (12, 11, "scarecrow", "c")], "landorus", ground="d")
+    m.obj("landorus", 10, 6, "Landorus (post-game) on the threshing floor")
+    m.obj("player", 10, 5, "the player, facing south (the way in is north of the floor)")
     m.weather = "WEATHER_NONE (Route 23's sandstorm drops away in the hollow: the field is still and gold)"
     m.notes = [
-        "20x16, unconnected, the dry scrub wall (Route 23's border art), the way in from the south (x 10-11, rows 14-15).",
-        "The Field That Always Bears: in a hollow of the dry country, a terraced field of red clay where the corn stands ripe, the",
-        "pumpkins swell and the cane is thick whatever the season, behind a dry-stone terrace wall with a way up through it. Below it",
-        "the round stone threshing floor where the dry country's farmers leave the first fruits; a clay water jar, an old plough, a",
-        "pecan at the field's edge. Landorus at (10,10) on the threshing floor, the player at (10,11).",
+        "20x16, unconnected, an irregular wall of the dry scrub (Route 23's border art); the way in from the NORTH (x 10-11), as the",
+        "Route 23 field gate opens south. The Field That Always Bears: just inside, the round stone threshing floor where the dry",
+        "country's farmers leave the first fruits; below it a dry-stone terrace wall with a way down, and the terraced field of red clay",
+        "where the corn stands ripe, the pumpkins swell and the cane is thick whatever the season; a scarecrow, an old plough, a pecan.",
+        "Landorus at (10,6) on the threshing floor, the player at (10,5) facing south.",
     ]
     return m
 
@@ -543,7 +327,7 @@ def landorus(P):
 ENTRANCES = {
     # lair: (placement key in entrances_b2.json, route map, crop (x, y, w, h), sealed actions, open actions)
     "mesprit": ("Route1", "Route1", (14, 20, 14, 12), [("ovl", "spirit_gate_e_moss", 26, 27)], [("ovl", "spirit_gate_e", 26, 27)]),
-    "azelf": ("Route23_N", "Route23", (24, 0, 18, 9), [("fill", "dry", 33, 0, 2, 2)], [("ovl", "grove_gap", 33, 1)]),
+    "azelf": ("Route23_N", "Route23", (24, 0, 18, 9), [("fill", "dry", 32, 0, 4, 2)], [("ovl", "grove_gap", 33, 1)]),
     "landorus": ("Route23_S", "Route23", (20, 31, 16, 9), [("ovl", "field_gate_shut", 27, 38)], [("ovl", "field_gate", 27, 38)]),
     "thundurus": ("Route12", "Route12", (14, 16, 14, 12), [("ovl", "levee_steps_e_log", 25, 22)], [("ovl", "levee_steps_e", 25, 22)]),
     "zarude": ("Route13_E", "Route13", (14, 19, 14, 12), [("ovl", "liana_curtain_e", 26, 25)], [("ovl", "liana_gap_e", 26, 25)]),
@@ -558,7 +342,8 @@ ENTRANCE_NOTES = {
                 "Sealed: a curtain of Spanish moss over the trail between two carved cedar posts. Open from story 45: the pink charms, the trail.",
                 "Walking east into (27,27) or (27,28) warps to the Heart Pool; it returns to (26,27) facing west."],
     "azelf": ["Route 23, the feather notch in the north scrub at x 33-34 (11 cells east of the Ursaluna cleft, same make).",
-              "Sealed: the notch filled with the scrub block. Open from story 45: a cleft with the grove's green beyond, a cedar post with blue charms.",
+              "Sealed: the notch closed with the scrub block over x 32-35 (its corner cells too, so no square patch), the south edge cells on",
+              "row 2 running on. Open from story 45: a cleft with the grove's green beyond, a cedar post with blue charms.",
               "Walking north into (33,1) or (34,1) warps to the Unfailing Spring; it returns to (33,2) facing south."],
     "landorus": ["Route 23, the bay in the south scrub at x 27-28 (rows 37-39), straight south of the road's bend.",
                  "Sealed: a split-rail field gate shut and chained. Open from story 45: the gate swung back, a cart track through.",
@@ -770,23 +555,362 @@ def town_door_mock(lair):
     return out
 
 
+# ---------------------------------------------------------------- revision 2: irregular walls, an entry on any side
+class LairMapB2(LairMap):
+    """LairMap plus: walk_fix (cells whose walkability the mock sets by hand after resolving, e.g. a walk laid over water at the gap),
+    and edge clearing: every cell the wall's edge pieces stand on is reset to the fill terrain first, so irregular walls never
+    meet a terrain set's transition (the edge cells need a plain cell under them)."""
+
+    def __init__(self, W, H, base, sets, pieces, wall_style="swamp", fill="."):
+        super().__init__(W, H, base, sets, pieces, wall_style=wall_style, fill=fill)
+        self.fill_ch = fill
+
+    def clear_edges(self):
+        """Reset the cells under the wall's edge pieces that hold a dual-set terrain (pool, path, clay, shell ...) to the fill, when
+        the 2x2 an edge piece stands on is mixed. Water and marsh are kept (the swamp wall has edge pieces for them); the cleared
+        area is bounded by the edge cells, so repeated resolves change nothing more."""
+        if self.wall_style == "none":
+            return
+        setch = getattr(self, "clear_chars", None) or ({c for (c, _, _) in self.sets} - {"~", '"', self.fill_ch})
+        for y in range(self.H):
+            for x in range(self.W):
+                if (x, y) in self.wall or not any((x + dx, y + dy) in self.wall for dx in (-1, 0, 1) for dy in (-1, 0, 1)):
+                    continue
+                quad = [(i, j) for (i, j) in ((x, y), (x + 1, y), (x, y + 1), (x + 1, y + 1)) if 0 <= i < self.W and 0 <= j < self.H]
+                if len({self.g[j][i] for (i, j) in quad}) > 1:
+                    for (i, j) in quad:
+                        if self.g[j][i] in setch:
+                            self.g[j][i] = self.fill_ch
+        for (i, j) in self.wall:
+            if self.g[j][i] in setch:
+                self.g[j][i] = self.fill_ch
+
+    def resolve(self):
+        self.clear_edges()
+        names = super().resolve()
+        for (x, y), w in getattr(self, "walk_fix", {}).items():
+            self.walk[y][x] = w
+        return names
+
+
+def frame_b2(m, side, gap, n=None, s=None, w=None, e=None):
+    """Walls of 2x2 blocks with a depth (in blocks) per block along each side (n / s: 10 entries, w / e: 8), and the way in cut
+    through `side` ('n', 's', 'w', 'e') at block `gap` along it. Sets m.entry {arrive, exit} and returns it."""
+    BW, BH = (m.W + 1) // 2, (m.H + 1) // 2
+    std = lambda L: [2] + [1] * (L - 2) + [2]  # noqa: E731
+    n, s, w, e = n or std(BW), s or std(BW), w or std(BH), e or std(BH)
+    b = set()
+    for k in range(BW):
+        b |= {(k, d) for d in range(n[k])}
+        b |= {(k, BH - 1 - d) for d in range(s[k])}
+    for k in range(BH):
+        b |= {(d, k) for d in range(w[k])}
+        b |= {(BW - 1 - d, k) for d in range(e[k])}
+    deep = 4
+    if side == "s":
+        b -= {(gap, BH - 1 - d) for d in range(deep)}
+    elif side == "n":
+        b -= {(gap, d) for d in range(deep)}
+    elif side == "w":
+        b -= {(d, gap) for d in range(deep)}
+    else:
+        b -= {(BW - 1 - d, gap) for d in range(deep)}
+    m.wall = set()
+    for (bx, by) in b:
+        for dy in (0, 1):
+            for dx in (0, 1):
+                m.wall.add((bx * 2 + dx, by * 2 + dy))
+    x, y = 2 * gap, 2 * gap
+    m.entry = {"s": {"arrive": [x, m.H - 3], "exit": [[x, m.H - 2], [x + 1, m.H - 2]]},
+               "n": {"arrive": [x, 2], "exit": [[x, 1], [x + 1, 1]]},
+               "w": {"arrive": [2, y], "exit": [[1, y], [1, y + 1]]},
+               "e": {"arrive": [m.W - 3, y], "exit": [[m.W - 2, y], [m.W - 2, y + 1]]}}[side]
+    m.entry_side = side
+    m.reserved = {tuple(m.entry["arrive"])} | {tuple(c) for c in m.entry["exit"]}
+    return m.entry
+
+
+def clump(m, *blocks):
+    """Extra wall blocks inside the map (block coordinates): the canopy pushing in."""
+    for (bx, by) in blocks:
+        for dy in (0, 1):
+            for dx in (0, 1):
+                m.wall.add((bx * 2 + dx, by * 2 + dy))
+
+
+def trio_map(P, fill="."):
+    base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), '"': ("P:ekat:marsh_C", True),
+            "p": ("lt:spring_C", False)}
+    sets = [("p", set_res("lt", "spring"), False), ("~", water_res, False), ('"', marsh_res, True)]
+    return LairMapB2(20, 16, base, sets, {"lt": P}, wall_style="swamp", fill=fill)
+
+
+def woods_map(P, extra_base=None, extra_sets=()):
+    base = {".": ("P:ekat:grass", True), "~": ("P:ekat:water_C", False), '"': ("P:ekat:marsh_C", True),
+            "t": ("P:ekat:tallgrass", True)}
+    base.update(extra_base or {})
+    sets = list(extra_sets) + [("~", water_res, False), ('"', marsh_res, True)]
+    return LairMapB2(20, 16, base, sets, {"lj": P}, wall_style="swamp")
+
+
+def grove(m, x, y, w=4, h=4, base="marsh"):
+    """A cypress in its marsh (primary art): the marsh rect (w x h) and the 3x3 tree in it."""
+    m.rect('"', x, y, w, h)
+    m.resolve()
+    cypress(m, x + (w - 3) // 2, y + (h - 3) // 2, base)
+
+
+def uxie(P):
+    m = trio_map(P, fill="~")
+    m.clear_chars = {".", "p"}                            # the island keeps off the trees: water all round, under the wall
+    frame_b2(m, "s", 5, n=[2, 1, 1, 1, 1, 1, 1, 1, 2, 2], s=[2, 2, 1, 1, 1, 1, 1, 1, 1, 2], w=[2, 1, 1, 2, 1, 1, 1, 2], e=[2, 1, 1, 1, 2, 1, 1, 2])
+    m.entry["exit"] = [[10, 14]]                           # (11, 14) is water: the walk is the way out
+    m.disc(".", 10.0, 7.5, 7.4, 4.8)                      # the island in the Old Water
+    m.disc("p", 10.0, 7.8, 3.4, 1.8)                      # the Knowing Pool on it
+    m.reserved |= set([(10, 5), (10, 6)])
+    m.resolve()
+    walk_line(m, 10, 6, 13)
+    m.fixed = {(10, 14): "lt:walk_end", (10, 15): "lt:walk_water"}
+    m.walk_fix = {(10, 14): True, (10, 15): True}
+    for (x, y) in [(10, 13), (10, 12)]:
+        if m.names[y][x].startswith("P:ekat:water") or m.names[y][x].startswith("P:bd:"):
+            m.fixed[(x, y)] = "lt:walk_water"
+            m.walk_fix[(x, y)] = True
+    m.prop("lt", "telling_stone", 9, 3)
+    place(m, P, "lt", [(7, 3, "story_post"), (12, 3, "story_post"), (8, 3, "cords"), (11, 3, "cords"), (5, 4, "story_post"),
+                       (14, 4, "story_post"), (6, 4, "cords"), (13, 4, "cords"), (4, 8, "reading_stone"), (14, 9, "reading_stone"),
+                       (6, 10, "spirit_uxie"), (3, 7, "fern")], "uxie")
+    m.resolve()
+    for (x, y, n) in [(6, 8, "fog_pool0"), (7, 8, "fog_pool1"), (12, 7, "fog_pool1"), (13, 7, "fog_pool0"),
+                      (8, 8, "lotus_y"), (12, 8, "lotus_pads"), (7, 7, "lotus_pads")]:
+        if m.names[y][x] == "lt:spring_C" and (x, y) not in occupied(m):
+            m.prop("lt", n, x, y)
+    # the boatman's pirogue moored beside the walk's end (over the water's edge cells), cypress standing in the open water
+    m.fixed[(11, 13)] = "lt:pirogue_0_0"
+    m.fixed[(12, 13)] = "lt:pirogue_1_0"
+    for (x, y) in [(2, 2), (15, 2), (2, 11), (15, 11)]:
+        if all(m.g[y + j][x + i] == "~" and (x + i, y + j) not in m.wall for i in range(3) for j in range(3)):
+            cypress(m, x, y, "water")
+    scatter(m, "lt", ["fern", "pebbles", "fern"], [(5, 6), (15, 6), (6, 11), (13, 11), (4, 9), (16, 8), (11, 10), (8, 10)])
+    m.obj("uxie", 10, 5, "Uxie (post-game) before the telling stone, its eyes shut")
+    m.obj("boatman", 12, 14, "the boatman in his pirogue (the way back is the walk south)")
+    m.obj("player", 10, 6, "the player at the walk's north end, facing north")
+    m.weather = "WEATHER_FOG_HORIZONTAL (the Old Water's own fog)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall standing in water all round (the Old Water's look: water at every edge,",
+        "cypress standing in it). Reached by the Canoe Docks' boatman (post-game); his pirogue is moored at the walk's end.",
+        "An island in the Old Water holds the Knowing Pool: a still spring in a kerb of Rootkin cut stone, mist and yellow lotus on it.",
+        "A rope-and-plank walk runs from the mooring over the water and across the pool to the telling stone (Uxie's spiral) in a",
+        "line of memory posts strung with knotted cords. Uxie at (10,5), the player at (10,6); the way back: the walk south (10,14).",
+    ]
+    return m
+
+
+def mesprit(P):
+    m = trio_map(P)
+    frame_b2(m, "w", 4, n=[2, 2, 1, 1, 1, 1, 1, 1, 2, 2], s=[2, 1, 1, 2, 1, 1, 1, 2, 1, 2], w=[2, 1, 1, 1, 1, 2, 1, 2], e=[2, 1, 2, 1, 1, 1, 1, 2])
+    for j in range(m.H):                                  # the Heart Pool: two lobes and a point
+        for i in range(m.W):
+            x, y = i + 0.5, j + 0.5
+            lobe = min(math.hypot(x - 8.1, y - 6.6), math.hypot(x - 12.9, y - 6.6)) <= 2.65
+            tri = 7.0 <= y <= 11.6 and abs(x - 10.5) <= max(1.6, (12.3 - y) * 1.0)
+            if lobe or tri:
+                m.g[j][i] = "p"
+    m.reserved |= set([(10, 7), (10, 8)])
+    m.resolve()
+    for y in range(8, 14):
+        if m.names[y][10] == "lt:spring_C":
+            m.prop("lt", "step_pool", 10, y)
+        elif m.names[y][10] == "lt:spring_S":
+            m.prop("lt", "step_spring_S", 10, y)
+    m.prop("lt", "spirit_mesprit", 10, 3)                 # in the cleft between the lobes, over the kerb
+    place(m, P, "lt", [(6, 3, "garland_post"), (14, 3, "garland_post"),
+                                         (4, 6, "garland_post"), (16, 8, "garland_post")], "mesprit")
+    m.resolve()
+    for (x, y, n) in [(7, 6, "lotus_p"), (13, 6, "lotus_y"), (8, 8, "lotus_pads"), (12, 8, "lotus_p"), (8, 5, "lotus_pads"),
+                      (13, 5, "lotus_pads"), (9, 10, "lotus_pads"), (12, 9, "lotus_y"), (9, 7, "lotus_y")]:
+        if m.names[y][x] == "lt:spring_C" and (x, y) not in occupied(m):
+            m.prop("lt", n, x, y)
+    ring = []
+    for k in range(64):
+        a = 2 * math.pi * k / 64
+        x, y = int(round(10.5 + 7.0 * math.cos(a))), int(round(7.6 + 4.6 * math.sin(a)))
+        if (x, y) not in ring:
+            ring.append((x, y))
+    scatter(m, "lt", ["iris_violet", "iris_red", "iris_yellow", "iris_violet", "iris_yellow", "iris_red"],
+            [c for c in ring if not (c[0] <= 3 and 7 <= c[1] <= 9)])
+    scatter(m, "lt", ["fern", "iris_red", "fern", "iris_violet"], [(4, 11), (15, 11), (6, 12), (13, 12), (3, 10), (16, 5), (5, 4)])
+    m.obj("mesprit", 10, 7, "Mesprit (post-game) hovering at the heart of the pool")
+    m.obj("player", 10, 8, "the player on the top stepping stone, facing north")
+    m.weather = "WEATHER_NONE (Route 1's rain stops at the trees: the pool is the one bright, still place)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall; the way in from the WEST (rows 8-9), as the Route 1 trail heads east.",
+        "The Heart Pool: a heart-shaped spring in a kerb of Rootkin cut stone, pink and yellow American lotus on it, stepping stones up",
+        "from its point to its heart, where Mesprit hovers; its standing stone glows pink in the cleft beyond. A ring of Louisiana",
+        "irises (violet, copper-red, yellow), cedar posts wound with garlands and ribbons: people come to wish here.",
+        "Mesprit at (10,7) over the water (its cell blocks), the player at (10,8) on the top stepping stone.",
+    ]
+    return m
+
+
+def azelf(P):
+    base = {"d": ("P:dry:0_0", True), ".": ("P:ekat:grass", True), "p": ("lh:spring_C", False), "k": ("lh:crack_C", True),
+            "w": ("lh:straw_C", True)}
+    sets = [("p", set_res("lh", "spring", (".",)), False), (".", lambda k, o: f"lh:green_{k}" if o <= {"d"} else None, True),
+            ("k", set_res("lh", "crack", ("d",)), True), ("w", set_res("lh", "straw", ("d",)), True)]
+    m = LairMapB2(20, 16, base, sets, {"lh": P}, wall_style="lh", fill="d")
+    frame_b2(m, "s", 5, n=[2, 1, 1, 1, 1, 1, 1, 1, 2, 2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 2, 1, 1, 1, 1, 2], e=[2, 1, 1, 1, 2, 1, 1, 2])
+    m.disc(".", 10.0, 7.4, 5.0, 3.4)                      # the green, only round the spring
+    m.disc("p", 10.0, 7.4, 2.8, 1.4)                      # the Unfailing Spring
+    for (cx, cy, rx, ry) in [(4.6, 11.6, 1.4, 0.9), (15.6, 11.6, 1.4, 1.0), (16.0, 4.2, 1.0, 0.8)]:
+        m.disc("k", cx, cy, rx, ry)                       # cracked earth
+    for (cx, cy, rx, ry) in [(4.2, 5.0, 1.3, 1.1), (13.4, 12.3, 1.4, 0.8), (6.6, 12.6, 1.0, 0.7)]:
+        m.disc("w", cx, cy, rx, ry)                       # straw-dry grass
+    m.reserved |= set([(10, 9), (10, 10), (10, 11), (10, 12)])
+    m.resolve()
+    m.prop("lh", "boil", 10, 7)
+    m.prop("lh", "spirit_azelf", 10, 4)                   # at the spring's head, over the kerb
+    place(m, P, "lh", [(6, 8, "split_rock"), (13, 6, "cairn"), (7, 5, "cairn")], "azelf", ground=".")
+    place(m, P, "lh", [(3, 7, "scrub_bush"), (16, 7, "scrub_bush"), (3, 3, "scrub_bush"), (16, 2, "scrub_bush"), (12, 13, "scrub_bush"),
+                       (5, 9, "roots"), (15, 9, "roots"), (8, 11, "roots"), (4, 12, "cairn_dry"), (16, 12, "cairn_dry"), (14, 3, "cairn_dry"),
+                       (6, 3, "cairn_dry"), (3, 9, "cairn_dry"), (17, 9, "scrub_bush"), (12, 11, "roots")], "azelf", ground="d")
+    m.obj("azelf", 10, 9, "Azelf (post-game) on the spring's south lip")
+    m.obj("player", 10, 10, "the player, facing north")
+    m.weather = "WEATHER_SANDSTORM (Route 23's own, faint: it is dust over dry country; or WEATHER_NONE if the user prefers the calm)"
+    m.notes = [
+        "20x16, unconnected, an irregular wall of the dry scrub (Route 23's border art), the way in from the south (x 10-11).",
+        "The Unfailing Spring: dry country, sand and cracked earth, straw-dry grass, thorn scrub, roots crawling toward the water;",
+        "only round the spring is the ground green. The spring wells up through white sand in a kerb of Rootkin cut stone, Azelf's blue",
+        "standing stone at its head; cairns stacked by those who came for the will to go on; a boulder split by a sapling.",
+        "Azelf at (10,9), the player at (10,10).",
+    ]
+    return m
+
+
+def zarude(P):
+    m = woods_map(P)
+    m.fill_ch = "t"
+    frame_b2(m, "w", 4, n=[2, 2, 2, 1, 1, 1, 1, 2, 2, 2], s=[2, 2, 1, 1, 1, 1, 1, 1, 2, 2], w=[2, 2, 1, 1, 1, 1, 2, 2], e=[2, 2, 1, 2, 1, 1, 2, 2])
+    clump(m, (2, 5), (7, 4))                              # the canopy pushing in
+    for y in range(m.H):                                  # undergrowth everywhere in the shade ...
+        for x in range(m.W):
+            m.g[y][x] = "t"
+    for x in range(0, 11):                                # ... but the trail in from the west to the tree
+        for y in (8, 9):
+            m.g[y][x] = "."
+    m.rect(".", 8, 7, 5, 3)                               # and the trodden ground before the bower
+    m.rect("~", 8, 10, 5, 2)                              # a black-water slough
+    m.reserved |= set([(10, 7), (10, 8), (9, 8), (8, 8), (7, 8), (6, 8), (5, 8), (4, 8), (3, 8)])
+    m.resolve()
+    m.prop("lj", "great_cypress", 8, 3)
+    m.resolve()
+    for y in range(9, 13):
+        k = {"P:ekat:water_N": "N", "P:ekat:water_C": "C", "P:ekat:water_S": "S"}.get(m.names[y][10])
+        if k:
+            m.prop("lj", f"log_bridge_{k}", 10, y)
+    place(m, P, "lj", [(12, 8, "larder")], "zarude", ground=".")
+    place(m, P, "lj", [(6, 6, "palmetto_t"), (13, 8, "palmetto_t"), (7, 6, "fern_t"), (4, 7, "roots_a"),
+                       (5, 6, "roots_b"), (12, 5, "roots_a"), (14, 6, "undergrowth"), (5, 4, "undergrowth"), (4, 5, "palmetto_t"),
+                       (15, 10, "undergrowth"), (6, 12, "fern_t"), (16, 8, "palmetto_t"), (5, 11, "palmetto_t"), (13, 12, "fern_t"),
+                       (3, 6, "fern_t"), (15, 4, "lianas_t"), (6, 10, "lianas_t"), (14, 11, "palmetto_t"), (16, 12, "fern_t"),
+                       (13, 4, "undergrowth"), (7, 4, "roots_b"), (3, 11, "undergrowth"), (12, 9, "roots_b")], "zarude", ground="t")
+    m.obj("zarude", 10, 7, "Zarude (post-game) before its bower in the great cypress")
+    m.obj("player", 10, 8, "the player, facing north")
+    m.weather = "WEATHER_SHADE (the deep wood's gloom)"
+    m.notes = [
+        "20x16, unconnected; the swamp canopy pushes in deep and irregular from every side, with clumps of it standing inside; the way",
+        "in from the WEST (rows 8-9), as the Route 13 trail heads east. The Deep Wood: tall grass and undergrowth in the shade, roots",
+        "crawling, palmettos and ferns, curtains of lianas; a black-water slough with a fallen trunk across it. At its head the giant",
+        "buttressed cypress, Zarude's bower of woven vines in its hollow, the troop's larder beside it.",
+        "Zarude at (10,7) before the bower, the player at (10,8).",
+    ]
+    return m
+
+
+def ogerpon(P):
+    m = woods_map(P, {"r": ("lj:dance_C", True)}, [("r", set_res("lj", "dance", (".",)), True)])
+    frame_b2(m, "e", 4, n=[2, 1, 1, 1, 2, 1, 1, 1, 2, 2], s=[2, 2, 1, 1, 1, 1, 2, 1, 1, 2], w=[2, 1, 2, 1, 1, 1, 1, 2], e=[2, 1, 1, 2, 1, 1, 1, 2])
+    m.disc("r", 9.4, 8.6, 3.0, 2.2)                       # the dance ring
+    m.rect("r", 12, 8, 6, 2)                              # the path in from the east
+    m.rect("r", 5, 4, 2, 4)                               # to the mask-maker's bench
+    m.rect("r", 9, 4, 2, 3)                               # to the mask at the ring's head
+    m.rect("r", 6, 10, 2, 3)                              # to the coop
+    m.reserved |= set([(10, 9), (10, 10)])
+    m.resolve()
+    for (gx, gy) in [(13, 11), (3, 3)]:
+        if all(m.g[gy + j][gx + i] == "." and (gx + i, gy + j) not in m.wall and not m.edge_cell(gx + i, gy + j)
+               for i in range(-1, 5) for j in range(-1, 4)):
+            grove(m, gx, gy, 4, 3)
+    place(m, P, "lj", [(10, 3, "mask_teal"), (6, 7, "stake_blue"), (13, 7, "stake_red"), (6, 10, "stake_grey"), (12, 11, "stake_red"),
+                       (3, 3, "workbench"), (7, 3, "courir_flag"), (12, 3, "courir_flag"), (3, 6, "capuchons"), (13, 5, "capuchons"),
+                       (3, 12, "coop"), (9, 12, "gumbo_pot"), (14, 11, "costumes"), (16, 4, "costumes"), (16, 12, "palmetto"),
+                       (14, 3, "palmetto"), (4, 9, "fern_w"), (11, 12, "fern_w"), (15, 6, "fern_w"), (3, 10, "palmetto")], "ogerpon")
+    m.obj("ogerpon", 10, 9, "Ogerpon (Teal Mask, post-game) dancing in the ring")
+    m.obj("player", 10, 10, "the player, facing north")
+    m.weather = "WEATHER_NONE (a sunny clearing in the moss forest)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall; the way in from the EAST (rows 8-9), as the Route 13 trail heads west.",
+        "The Courir glade: paths trampled to bare earth run in from the trail, to the mask-maker's bench and to the coop, round a dance",
+        "ring where the Courir de Mardi Gras riders dance. The teal mask on its stake at the ring's head; empty stakes tied with ribbons",
+        "in the Wellspring, Hearthflame and Cornerstone colours round it; the Courir's flags, capuchons set out on benches, costumes",
+        "drying, the coop (the Courir chases chickens for its gumbo) and the gumbo pot. Ogerpon at (10,9), the player at (10,10).",
+    ]
+    return m
+
+
+def tornadus(P):
+    m = woods_map(P, {"s": ("lj:shell_C", True)}, [("s", set_res("lj", "shell", (".",)), True)])
+    frame_b2(m, "s", 5, n=[2, 1, 1, 1, 1, 1, 1, 2, 1, 2], s=[2, 1, 2, 1, 1, 1, 1, 1, 1, 2], w=[2, 1, 1, 1, 2, 1, 1, 2], e=[2, 1, 1, 1, 1, 1, 2, 2])
+    for x in range(m.W):                                  # the chenier: a long ridge of shell and sand running west-east
+        y0 = 7.4 + 0.9 * math.sin(x * 0.45)
+        for y in range(m.H):
+            if abs(y + 0.5 - y0) <= 1.1 and 3 <= x <= 16:
+                m.g[y][x] = "s"
+    m.disc("s", 10.0, 7.4, 2.7, 1.9)                      # the eye: a bare round of shell on the ridge
+    grove(m, 12, 10, 3, 3)                                # cypress in the marsh below the ridge
+    m.reserved |= set([(10, 7), (10, 8), (10, 9), (10, 10), (10, 11), (10, 12)])
+    m.resolve()
+    place(m, P, "lj", [(3, 3, "wind_oak"), (13, 2, "wind_oak"), (3, 10, "wind_oak"), (8, 10, "wind_oak")], "tornadus")
+    place(m, P, "lj", [(7, 3, "weathervane"), (12, 3, "chimes"), (3, 7, "chimes"), (16, 6, "sea_oats"), (8, 9, "sea_oats"),
+                       (12, 9, "sea_oats"), (4, 6, "sea_oats"), (15, 8, "sea_oats")], "tornadus")
+    for k in range(80):                                   # grass combed flat round the eye, the way the wind goes round
+        a = 2 * math.pi * k / 80
+        for r in (3.8, 4.8):
+            x, y = int(round(10.0 + r * 1.4 * math.cos(a))), int(round(7.4 + r * math.sin(a)))
+            tx, ty = -math.sin(a), math.cos(a)
+            kind = "h" if abs(tx) > 2 * abs(ty) else ("v" if abs(ty) > 2 * abs(tx) else ("a" if tx * ty < 0 else "b"))
+            if free(m, x, y) and not (9 <= x <= 11 and y >= 12):
+                m.prop("lj", f"comb_{kind}", x, y)
+    m.obj("tornadus", 10, 7, "Tornadus (post-game) in the eye")
+    m.obj("player", 10, 8, "the player, facing north")
+    m.weather = "WEATHER_RAIN (the storm's edge; in the eye itself the air is still)"
+    m.notes = [
+        "20x16, unconnected, an irregular swamp canopy wall, the way in from the south (x 10-11).",
+        "The Wind's Eye: a chenier, a ridge of sand and crushed shell running west-east across the marsh, rippled by the wind, live",
+        "oaks on it shorn low and swept east; cypress in the marsh below. On the ridge a bare round of shell where nothing moves,",
+        "and round it the grass combed flat in streaks the way the wind goes round; a weathervane swung hard round, shell chimes",
+        "streaming, sea oats bent double. Tornadus at (10,7) in the eye, the player at (10,8).",
+    ]
+    return m
+
+
 # ---------------------------------------------------------------- the pipeline
 TILESETS = [  # (art script, module, recipe dir, sheet, prefix, primary dir, lairs, extends batch 1?)
     ("make_lair_trio.py", "make_lair_trio", "orleans_lair_trio", "lair_trio.png", "lt", "orleans_general",
-     "Uxie, Mesprit, Azelf", None),
+     "Uxie, Mesprit", None),
     ("make_lair_storm_b2.py", "make_lair_storm_b2", "orleans_lair_storm", "lair_storm_b2.png", "ls", "orleans_general",
      "Raikou (batch 1); Zapdos, Thundurus", "orleans_lair_storm"),
     ("make_lair_woods.py", "make_lair_woods", "orleans_lair_woods", "lair_woods.png", "lj", "orleans_general",
      "Zarude, Ogerpon, Tornadus", None),
     ("make_lair_fort.py", "make_lair_fort", "orleans_lair_fort", "lair_fort.png", "lf", "orleans_general", "the Galarian birds", None),
     ("make_lair_sugarhouse.py", "make_lair_sugarhouse", "orleans_lair_sugarhouse", "lair_sugarhouse.png", "lm", "orleans_building", "Moltres", None),
-    ("make_lair_field.py", "make_lair_field", "orleans_lair_field", "lair_field.png", "lh", "orleans_general", "Landorus", None),
+    ("make_lair_field.py", "make_lair_field", "orleans_lair_field", "lair_field.png", "lh", "orleans_general", "Landorus, Azelf (the Route 23 lairs)", None),
 ]
 
 LAIRS = [  # (key, title, builder, prefix of its pieces)
     ("uxie", "Uxie's Knowing Pool, by canoe from the Old Water", "uxie", "lt"),
     ("mesprit", "Mesprit's Heart Pool, off Route 1", "mesprit", "lt"),
-    ("azelf", "Azelf's Unfailing Spring, off Route 23", "azelf", "lt"),
+    ("azelf", "Azelf's Unfailing Spring, off Route 23", "azelf", "lh"),
     ("zapdos", "Zapdos: the lamp gallery of the Storm's Edge lighthouse", "zapdos", "ls"),
     ("thundurus", "Thundurus on the levee crown, off Route 12", "thundurus", "ls"),
     ("zarude", "Zarude's Deep Wood, off Route 13", "zarude", "lj"),
@@ -852,14 +976,15 @@ def build_lairs(mods, stats, only=None):
         st = stats.get(rec[2])
         enc = [o for o in m.objs if o[0] not in ("player", "boatman", "npc")]
         player = [o for o in m.objs if o[0] == "player"]
-        arrive = tuple(ENTRY[key]["arrive"])
+        entry = dict(ENTRY[key], **getattr(m, "entry", {}))
+        arrive = tuple(entry["arrive"])
         reach = bfs(m, arrive) if m.walk[arrive[1]][arrive[0]] else set()
         checks = []
         if arrive not in reach:
             checks.append(f"arrival {arrive} does not walk")
         if player and (player[0][1], player[0][2]) not in reach:
             checks.append(f"player cell {(player[0][1], player[0][2])} unreachable")
-        for e in ENTRY[key]["exit"]:
+        for e in entry["exit"]:
             if tuple(e) not in reach:
                 checks.append(f"exit {e} unreachable")
         lines = m.notes + ["Weather: " + getattr(m, "weather", "WEATHER_NONE"), "Before it opens: " + BEFORE[key]]
@@ -876,7 +1001,7 @@ def build_lairs(mods, stats, only=None):
             "encounter_cells": [{"species": o[0], "cell": [o[1], o[2]], "label": o[3]} for o in enc],
             "encounter_cell": [enc[0][1], enc[0][2]] if enc else None,
             "player_cell": [player[0][1], player[0][2]] if player else None,
-            "entry": ENTRY.get(key), "before": BEFORE[key], "weather": getattr(m, "weather", "WEATHER_NONE"),
+            "entry": entry, "before": BEFORE[key], "weather": getattr(m, "weather", "WEATHER_NONE"),
             "walk_check": checks or "ok"})
     return imgs, maps
 

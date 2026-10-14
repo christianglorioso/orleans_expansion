@@ -1149,64 +1149,176 @@
    "lair": "raikou",
    "comment": "1x1 wire_span_r: the line strung between the towers (landmark art)"
   },
-  "sky_00": {
+  "sky_a_00": {
    "x": 1,
    "y": 5,
    "w": 1,
    "h": 1,
    "rows": [
     [
-     "ls:sky_00"
+     "ls:sky_a_00"
     ]
    ],
    "walk": [],
    "lair": "zapdos",
-   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+   "comment": "the storm round the lamp gallery, cloud heap a (design a is the border block)"
   },
-  "sky_10": {
+  "sky_a_10": {
    "x": 2,
    "y": 5,
    "w": 1,
    "h": 1,
    "rows": [
     [
-     "ls:sky_10"
+     "ls:sky_a_10"
     ]
    ],
    "walk": [],
    "lair": "zapdos",
-   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+   "comment": "the storm round the lamp gallery, cloud heap a (design a is the border block)"
   },
-  "sky_01": {
+  "sky_a_01": {
    "x": 3,
    "y": 5,
    "w": 1,
    "h": 1,
    "rows": [
     [
-     "ls:sky_01"
+     "ls:sky_a_01"
     ]
    ],
    "walk": [],
    "lair": "zapdos",
-   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+   "comment": "the storm round the lamp gallery, cloud heap a (design a is the border block)"
   },
-  "sky_11": {
+  "sky_a_11": {
    "x": 4,
    "y": 5,
    "w": 1,
    "h": 1,
    "rows": [
     [
-     "ls:sky_11"
+     "ls:sky_a_11"
     ]
    ],
    "walk": [],
    "lair": "zapdos",
-   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+   "comment": "the storm round the lamp gallery, cloud heap a (design a is the border block)"
+  },
+  "sky_b_00": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_b_00"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap b (design a is the border block)"
+  },
+  "sky_b_10": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_b_10"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap b (design a is the border block)"
+  },
+  "sky_b_01": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_b_01"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap b (design a is the border block)"
+  },
+  "sky_b_11": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_b_11"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap b (design a is the border block)"
+  },
+  "sky_c_00": {
+   "x": 9,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_c_00"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap c (design a is the border block)"
+  },
+  "sky_c_10": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_c_10"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap c (design a is the border block)"
+  },
+  "sky_c_01": {
+   "x": 11,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_c_01"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap c (design a is the border block)"
+  },
+  "sky_c_11": {
+   "x": 12,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_c_11"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery, cloud heap c (design a is the border block)"
   },
   "deck_C": {
-   "x": 5,
+   "x": 13,
    "y": 5,
    "w": 1,
    "h": 1,
@@ -1225,7 +1337,7 @@
    "comment": "the gallery's iron deck and railing on the storm (C)"
   },
   "deck_N": {
-   "x": 6,
+   "x": 14,
    "y": 5,
    "w": 1,
    "h": 1,
@@ -1244,7 +1356,7 @@
    "comment": "the gallery's iron deck and railing on the storm (N)"
   },
   "deck_S": {
-   "x": 7,
+   "x": 15,
    "y": 5,
    "w": 1,
    "h": 1,
@@ -1263,8 +1375,8 @@
    "comment": "the gallery's iron deck and railing on the storm (S)"
   },
   "deck_W": {
-   "x": 8,
-   "y": 5,
+   "x": 0,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1282,8 +1394,8 @@
    "comment": "the gallery's iron deck and railing on the storm (W)"
   },
   "deck_E": {
-   "x": 9,
-   "y": 5,
+   "x": 1,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1301,8 +1413,8 @@
    "comment": "the gallery's iron deck and railing on the storm (E)"
   },
   "deck_inNW": {
-   "x": 10,
-   "y": 5,
+   "x": 2,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1320,8 +1432,8 @@
    "comment": "the gallery's iron deck and railing on the storm (inNW)"
   },
   "deck_inNE": {
-   "x": 11,
-   "y": 5,
+   "x": 3,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1339,8 +1451,8 @@
    "comment": "the gallery's iron deck and railing on the storm (inNE)"
   },
   "deck_inSW": {
-   "x": 12,
-   "y": 5,
+   "x": 4,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1358,8 +1470,8 @@
    "comment": "the gallery's iron deck and railing on the storm (inSW)"
   },
   "deck_inSE": {
-   "x": 13,
-   "y": 5,
+   "x": 5,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1377,8 +1489,8 @@
    "comment": "the gallery's iron deck and railing on the storm (inSE)"
   },
   "deck_landSE": {
-   "x": 14,
-   "y": 5,
+   "x": 6,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1396,8 +1508,8 @@
    "comment": "the gallery's iron deck and railing on the storm (landSE)"
   },
   "deck_landSW": {
-   "x": 15,
-   "y": 5,
+   "x": 7,
+   "y": 6,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1415,7 +1527,7 @@
    "comment": "the gallery's iron deck and railing on the storm (landSW)"
   },
   "deck_landNE": {
-   "x": 0,
+   "x": 8,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1434,7 +1546,7 @@
    "comment": "the gallery's iron deck and railing on the storm (landNE)"
   },
   "deck_landNW": {
-   "x": 1,
+   "x": 9,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1453,7 +1565,7 @@
    "comment": "the gallery's iron deck and railing on the storm (landNW)"
   },
   "deck_sTLBR": {
-   "x": 2,
+   "x": 10,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1472,7 +1584,7 @@
    "comment": "the gallery's iron deck and railing on the storm (sTLBR)"
   },
   "deck_sTRBL": {
-   "x": 3,
+   "x": 11,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1491,7 +1603,7 @@
    "comment": "the gallery's iron deck and railing on the storm (sTRBL)"
   },
   "deck_N_spark": {
-   "x": 4,
+   "x": 12,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1505,7 +1617,7 @@
    "comment": "the north rail, St Elmo's fire on its posts"
   },
   "deck_C2": {
-   "x": 5,
+   "x": 13,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1524,7 +1636,7 @@
    "comment": "deck plates with rust streaks"
   },
   "deck_C3": {
-   "x": 6,
+   "x": 14,
    "y": 6,
    "w": 1,
    "h": 1,
@@ -1543,8 +1655,8 @@
    "comment": "a rain puddle on the deck"
   },
   "lantern": {
-   "x": 7,
-   "y": 6,
+   "x": 0,
+   "y": 7,
    "w": 4,
    "h": 4,
    "rows": [
@@ -1578,8 +1690,8 @@
    "comment": "4x4 the lantern room, lamp lit (blocking)"
   },
   "lantern_dark": {
-   "x": 11,
-   "y": 6,
+   "x": 4,
+   "y": 7,
    "w": 4,
    "h": 4,
    "rows": [
@@ -1613,8 +1725,8 @@
    "comment": "4x4 the lantern room, lamp out (during the story)"
   },
   "hatch": {
-   "x": 15,
-   "y": 6,
+   "x": 8,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1632,8 +1744,8 @@
    "comment": "1x1 the stair hatch down into the lighthouse (the warp)"
   },
   "flag_mast": {
-   "x": 0,
-   "y": 10,
+   "x": 9,
+   "y": 7,
    "w": 1,
    "h": 3,
    "rows": [
@@ -1652,8 +1764,8 @@
    "comment": "1x3 the hurricane-warning flags on their mast, blocking"
   },
   "anemometer": {
-   "x": 1,
-   "y": 10,
+   "x": 10,
+   "y": 7,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1669,8 +1781,8 @@
    "comment": "1x2 a cup anemometer, blocking"
   },
   "storm_lamp": {
-   "x": 2,
-   "y": 10,
+   "x": 11,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1683,8 +1795,8 @@
    "comment": "1x1 the keeper's storm lantern and oil can, blocking"
   },
   "rope": {
-   "x": 3,
-   "y": 10,
+   "x": 12,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1697,8 +1809,8 @@
    "comment": "1x1 a coil of rope, blocking"
   },
   "riprap0": {
-   "x": 4,
-   "y": 10,
+   "x": 13,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1711,8 +1823,8 @@
    "comment": "the levee band: riprap"
   },
   "riprap1": {
-   "x": 5,
-   "y": 10,
+   "x": 14,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1725,8 +1837,8 @@
    "comment": "the levee band: riprap"
   },
   "slope_n0": {
-   "x": 6,
-   "y": 10,
+   "x": 15,
+   "y": 7,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1739,8 +1851,8 @@
    "comment": "the levee band: slope_n"
   },
   "slope_n1": {
-   "x": 7,
-   "y": 10,
+   "x": 0,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1753,8 +1865,8 @@
    "comment": "the levee band: slope_n"
   },
   "crown0": {
-   "x": 8,
-   "y": 10,
+   "x": 1,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1772,8 +1884,8 @@
    "comment": "the levee band: crown"
   },
   "crown1": {
-   "x": 9,
-   "y": 10,
+   "x": 2,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1791,8 +1903,8 @@
    "comment": "the levee band: crown"
   },
   "slope_s0": {
-   "x": 10,
-   "y": 10,
+   "x": 3,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1810,8 +1922,8 @@
    "comment": "the levee band: slope_s"
   },
   "slope_s1": {
-   "x": 11,
-   "y": 10,
+   "x": 4,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1829,8 +1941,8 @@
    "comment": "the levee band: slope_s"
   },
   "toe0": {
-   "x": 12,
-   "y": 10,
+   "x": 5,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1848,8 +1960,8 @@
    "comment": "the levee band: toe"
   },
   "toe1": {
-   "x": 13,
-   "y": 10,
+   "x": 6,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1867,8 +1979,8 @@
    "comment": "the levee band: toe"
   },
   "shack": {
-   "x": 0,
-   "y": 13,
+   "x": 7,
+   "y": 11,
    "w": 3,
    "h": 3,
    "rows": [
@@ -1893,8 +2005,8 @@
    "comment": "3x3 the levee watchman's shack, blocking"
   },
   "bell_post": {
-   "x": 3,
-   "y": 13,
+   "x": 10,
+   "y": 11,
    "w": 1,
    "h": 2,
    "rows": [
@@ -1910,8 +2022,8 @@
    "comment": "1x2 the crevasse bell, blocking"
   },
   "sandbags": {
-   "x": 4,
-   "y": 13,
+   "x": 11,
+   "y": 11,
    "w": 2,
    "h": 1,
    "rows": [
@@ -1925,8 +2037,8 @@
    "comment": "2x1 sandbags on the crown, blocking"
   },
   "mile_post": {
-   "x": 6,
-   "y": 13,
+   "x": 13,
+   "y": 11,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1939,8 +2051,8 @@
    "comment": "1x1 a levee mile marker, blocking"
   },
   "struck_pole": {
-   "x": 7,
-   "y": 13,
+   "x": 14,
+   "y": 11,
    "w": 1,
    "h": 3,
    "rows": [

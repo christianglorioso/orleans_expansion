@@ -802,25 +802,8 @@
    "lair": "mesprit",
    "comment": "1x2 mesprit's standing stone, its spiral glowing, blocking"
   },
-  "spirit_azelf": {
-   "x": 2,
-   "y": 1,
-   "w": 1,
-   "h": 2,
-   "rows": [
-    [
-     "lt:spirit_azelf_0_0"
-    ],
-    [
-     "lt:spirit_azelf_0_1"
-    ]
-   ],
-   "walk": [],
-   "lair": "azelf",
-   "comment": "1x2 azelf's standing stone, its spiral glowing, blocking"
-  },
   "step_pool": {
-   "x": 3,
+   "x": 2,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -835,11 +818,11 @@
      0
     ]
    ],
-   "lair": "mesprit azelf",
+   "lair": "mesprit",
    "comment": "1x1 stepping stones across the pool (walkable)"
   },
   "step_spring_S": {
-   "x": 4,
+   "x": 3,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -858,7 +841,7 @@
    "comment": "1x1 the stepping stones' first stone on the kerb (south)"
   },
   "fog_pool0": {
-   "x": 5,
+   "x": 4,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -872,7 +855,7 @@
    "comment": "1x1 mist on the pool"
   },
   "fog_pool1": {
-   "x": 6,
+   "x": 5,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -886,7 +869,7 @@
    "comment": "1x1 mist on the pool"
   },
   "lotus_y": {
-   "x": 7,
+   "x": 6,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -900,7 +883,7 @@
    "comment": "1x1 yellow American lotus on the pool, blocking"
   },
   "lotus_p": {
-   "x": 8,
+   "x": 7,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -914,7 +897,7 @@
    "comment": "1x1 a pink lotus (Mesprit's), blocking"
   },
   "lotus_pads": {
-   "x": 9,
+   "x": 8,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -928,7 +911,7 @@
    "comment": "1x1 lotus pads, blocking"
   },
   "walk_grass": {
-   "x": 10,
+   "x": 9,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -947,7 +930,7 @@
    "comment": "1x1 the rope-and-plank walk over grass"
   },
   "walk_water": {
-   "x": 11,
+   "x": 10,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -966,7 +949,7 @@
    "comment": "1x1 the rope-and-plank walk over water"
   },
   "walk_end": {
-   "x": 12,
+   "x": 11,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -985,7 +968,7 @@
    "comment": "1x1 the rope-and-plank walk over end"
   },
   "walk_spring_C": {
-   "x": 13,
+   "x": 12,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -1004,7 +987,7 @@
    "comment": "1x1 the walk across the pool (over spring_C)"
   },
   "walk_spring_N": {
-   "x": 14,
+   "x": 13,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -1023,7 +1006,7 @@
    "comment": "1x1 the walk across the pool (over spring_N)"
   },
   "walk_spring_S": {
-   "x": 15,
+   "x": 14,
    "y": 1,
    "w": 1,
    "h": 1,
@@ -1195,355 +1178,9 @@
    "lair": "mesprit",
    "comment": "1x2 a cedar post wound with garlands and ribbons, blocking"
   },
-  "dry_C": {
-   "x": 12,
-   "y": 3,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_C"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (C)"
-  },
-  "dry_N": {
-   "x": 13,
-   "y": 3,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_N"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (N)"
-  },
-  "dry_S": {
-   "x": 14,
-   "y": 3,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_S"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (S)"
-  },
-  "dry_W": {
-   "x": 15,
-   "y": 3,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_W"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (W)"
-  },
-  "dry_E": {
-   "x": 0,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_E"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (E)"
-  },
-  "dry_inNW": {
-   "x": 1,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_inNW"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (inNW)"
-  },
-  "dry_inNE": {
-   "x": 2,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_inNE"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (inNE)"
-  },
-  "dry_inSW": {
-   "x": 3,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_inSW"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (inSW)"
-  },
-  "dry_inSE": {
-   "x": 4,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_inSE"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (inSE)"
-  },
-  "dry_landSE": {
-   "x": 5,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_landSE"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (landSE)"
-  },
-  "dry_landSW": {
-   "x": 6,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_landSW"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (landSW)"
-  },
-  "dry_landNE": {
-   "x": 7,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_landNE"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (landNE)"
-  },
-  "dry_landNW": {
-   "x": 8,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_landNW"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (landNW)"
-  },
-  "dry_sTLBR": {
-   "x": 9,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_sTLBR"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (sTLBR)"
-  },
-  "dry_sTRBL": {
-   "x": 10,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:dry_sTRBL"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "cracked dry earth on the grass (sTRBL)"
-  },
-  "boil": {
-   "x": 11,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:boil"
-    ]
-   ],
-   "walk": [],
-   "lair": "azelf",
-   "comment": "1x1 the spring's eye welling up, blocking"
-  },
-  "cairn": {
-   "x": 12,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:cairn"
-    ]
-   ],
-   "walk": [],
-   "lair": "azelf",
-   "comment": "1x1 a cairn on the grass, blocking"
-  },
-  "cairn_dry": {
-   "x": 13,
-   "y": 5,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:cairn_dry"
-    ]
-   ],
-   "walk": [],
-   "lair": "azelf",
-   "comment": "1x1 a cairn on the dry earth, blocking"
-  },
-  "split_rock": {
-   "x": 14,
-   "y": 5,
-   "w": 2,
-   "h": 2,
-   "rows": [
-    [
-     "lt:split_rock_0_0",
-     "lt:split_rock_1_0"
-    ],
-    [
-     "lt:split_rock_0_1",
-     "lt:split_rock_1_1"
-    ]
-   ],
-   "walk": [],
-   "lair": "azelf",
-   "comment": "2x2 a boulder split by a sapling, blocking"
-  },
   "fern": {
-   "x": 0,
-   "y": 7,
+   "x": 12,
+   "y": 3,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1557,31 +1194,12 @@
      0
     ]
    ],
-   "lair": "uxie mesprit azelf",
+   "lair": "uxie mesprit",
    "comment": "1x1 ferns (walkable)"
   },
-  "tuft_dry": {
-   "x": 1,
-   "y": 7,
-   "w": 1,
-   "h": 1,
-   "rows": [
-    [
-     "lt:tuft_dry"
-    ]
-   ],
-   "walk": [
-    [
-     0,
-     0
-    ]
-   ],
-   "lair": "azelf",
-   "comment": "1x1 wiry grass on the cracked earth (walkable)"
-  },
   "pebbles": {
-   "x": 2,
-   "y": 7,
+   "x": 13,
+   "y": 3,
    "w": 1,
    "h": 1,
    "rows": [
@@ -1595,7 +1213,7 @@
      0
     ]
    ],
-   "lair": "azelf uxie",
+   "lair": "uxie",
    "comment": "1x1 pebbles in the grass (walkable)"
   }
  }

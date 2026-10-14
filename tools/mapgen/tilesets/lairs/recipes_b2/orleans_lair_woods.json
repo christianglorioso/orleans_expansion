@@ -405,234 +405,311 @@
      ]
     },
     {
-     "id": "wind_oak_0_0",
+     "id": "coop_0_0",
      "bottom": [
       6,
       6
      ]
     },
     {
-     "id": "wind_oak_1_0",
+     "id": "coop_1_0",
      "bottom": [
       7,
       6
      ]
     },
     {
-     "id": "wind_oak_2_0",
+     "id": "capuchons",
      "bottom": [
       8,
       6
      ]
     },
     {
-     "id": "wind_oak_0_1",
-     "bottom": [
-      6,
-      7
-     ]
-    },
-    {
-     "id": "wind_oak_1_1",
-     "bottom": [
-      7,
-      7
-     ]
-    },
-    {
-     "id": "wind_oak_2_1",
-     "bottom": [
-      8,
-      7
-     ]
-    },
-    {
-     "id": "wind_oak_0_2",
-     "bottom": [
-      6,
-      8
-     ]
-    },
-    {
-     "id": "wind_oak_1_2",
-     "bottom": [
-      7,
-      8
-     ]
-    },
-    {
-     "id": "wind_oak_2_2",
-     "bottom": [
-      8,
-      8
-     ]
-    },
-    {
-     "id": "shell_C",
+     "id": "fern_w",
      "bottom": [
       9,
       6
      ]
     },
     {
-     "id": "shell_N",
+     "id": "roots_a",
      "bottom": [
       10,
       6
      ]
     },
     {
-     "id": "shell_S",
+     "id": "roots_b",
      "bottom": [
       11,
       6
      ]
     },
     {
-     "id": "shell_W",
+     "id": "fern_t",
      "bottom": [
       12,
       6
      ]
     },
     {
-     "id": "shell_E",
+     "id": "palmetto_t",
      "bottom": [
       13,
       6
      ]
     },
     {
-     "id": "shell_inNW",
+     "id": "lianas_t_0_0",
      "bottom": [
       14,
       6
      ]
     },
     {
-     "id": "shell_inNE",
+     "id": "lianas_t_0_1",
+     "bottom": [
+      14,
+      7
+     ]
+    },
+    {
+     "id": "undergrowth",
      "bottom": [
       15,
       6
      ]
     },
     {
-     "id": "shell_inSW",
+     "id": "wind_oak_0_0",
+     "bottom": [
+      0,
+      8
+     ]
+    },
+    {
+     "id": "wind_oak_1_0",
+     "bottom": [
+      1,
+      8
+     ]
+    },
+    {
+     "id": "wind_oak_2_0",
+     "bottom": [
+      2,
+      8
+     ]
+    },
+    {
+     "id": "wind_oak_0_1",
      "bottom": [
       0,
       9
      ]
     },
     {
-     "id": "shell_inSE",
+     "id": "wind_oak_1_1",
      "bottom": [
       1,
       9
      ]
     },
     {
-     "id": "shell_landSE",
+     "id": "wind_oak_2_1",
      "bottom": [
       2,
       9
      ]
     },
     {
-     "id": "shell_landSW",
+     "id": "wind_oak_0_2",
+     "bottom": [
+      0,
+      10
+     ]
+    },
+    {
+     "id": "wind_oak_1_2",
+     "bottom": [
+      1,
+      10
+     ]
+    },
+    {
+     "id": "wind_oak_2_2",
+     "bottom": [
+      2,
+      10
+     ]
+    },
+    {
+     "id": "shell_C",
      "bottom": [
       3,
-      9
+      8
+     ]
+    },
+    {
+     "id": "shell_N",
+     "bottom": [
+      4,
+      8
+     ]
+    },
+    {
+     "id": "shell_S",
+     "bottom": [
+      5,
+      8
+     ]
+    },
+    {
+     "id": "shell_W",
+     "bottom": [
+      6,
+      8
+     ]
+    },
+    {
+     "id": "shell_E",
+     "bottom": [
+      7,
+      8
+     ]
+    },
+    {
+     "id": "shell_inNW",
+     "bottom": [
+      8,
+      8
+     ]
+    },
+    {
+     "id": "shell_inNE",
+     "bottom": [
+      9,
+      8
+     ]
+    },
+    {
+     "id": "shell_inSW",
+     "bottom": [
+      10,
+      8
+     ]
+    },
+    {
+     "id": "shell_inSE",
+     "bottom": [
+      11,
+      8
+     ]
+    },
+    {
+     "id": "shell_landSE",
+     "bottom": [
+      12,
+      8
+     ]
+    },
+    {
+     "id": "shell_landSW",
+     "bottom": [
+      13,
+      8
      ]
     },
     {
      "id": "shell_landNE",
      "bottom": [
-      4,
-      9
+      14,
+      8
      ]
     },
     {
      "id": "shell_landNW",
      "bottom": [
-      5,
-      9
+      15,
+      8
      ]
     },
     {
      "id": "shell_sTLBR",
      "bottom": [
-      6,
-      9
+      0,
+      11
      ]
     },
     {
      "id": "shell_sTRBL",
      "bottom": [
-      7,
-      9
+      1,
+      11
      ]
     },
     {
      "id": "comb_h",
      "bottom": [
-      8,
-      9
+      2,
+      11
      ]
     },
     {
      "id": "comb_v",
      "bottom": [
-      9,
-      9
+      3,
+      11
      ]
     },
     {
      "id": "comb_a",
      "bottom": [
-      10,
-      9
+      4,
+      11
      ]
     },
     {
      "id": "comb_b",
      "bottom": [
-      11,
-      9
+      5,
+      11
      ]
     },
     {
      "id": "weathervane_0_0",
      "bottom": [
-      12,
-      9
+      6,
+      11
      ]
     },
     {
      "id": "weathervane_0_1",
      "bottom": [
-      12,
-      10
+      6,
+      12
      ]
     },
     {
      "id": "chimes_0_0",
      "bottom": [
-      13,
-      9
+      7,
+      11
      ]
     },
     {
      "id": "chimes_0_1",
      "bottom": [
-      13,
-      10
+      7,
+      12
      ]
     },
     {
      "id": "sea_oats",
      "bottom": [
-      14,
-      9
+      8,
+      11
      ]
     }
    ]
