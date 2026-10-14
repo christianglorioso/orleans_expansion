@@ -12247,6 +12247,14 @@ void BS_CatchAfterVictory(void)
     }
 }
 
+void BS_BossIndicatorDefer(void)
+{
+    NATIVE_ARGS(u8 set);
+
+    gBattleStruct->boss.deferFormIndicator = cmd->set;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_RefreshBossHealthbox(void)
 {
     NATIVE_ARGS(u8 battler);
@@ -12267,6 +12275,8 @@ void BS_JumpIfNoBalls(void)
     }
     else
     {
+        // Orleans: tell the player why there is no catch prompt (0 = no balls, 1 = storage full)
+        gBattleCommunication[MULTISTRING_CHOOSER] = IsBagPocketNonEmpty(POCKET_POKE_BALLS) ? 1 : 0;
         gBattlescriptCurrInstr = cmd->jumpInstr;
     }
 }

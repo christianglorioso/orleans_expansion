@@ -942,8 +942,9 @@ static enum Species DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u
     fatherEggSpecies = GetEggSpecies(species[parentSlots[1]]);
     hasMotherEverstone = GetItemHoldEffect(GetBoxMonData(&daycare->mons[parentSlots[0]].mon, MON_DATA_HELD_ITEM)) == HOLD_EFFECT_PREVENT_EVOLVE;
     hasFatherEverstone = GetItemHoldEffect(GetBoxMonData(&daycare->mons[parentSlots[1]].mon, MON_DATA_HELD_ITEM)) == HOLD_EFFECT_PREVENT_EVOLVE;
-    motherIsForeign = IsSpeciesForeignRegionalForm(motherEggSpecies, currentRegion);
-    fatherIsForeign = IsSpeciesForeignRegionalForm(fatherEggSpecies, currentRegion);
+    // Orleans: Galarian Corsola is a native Orleans species (the dex has no plain Corsola), so its egg is never converted.
+    motherIsForeign = IsSpeciesForeignRegionalForm(motherEggSpecies, currentRegion) && motherEggSpecies != SPECIES_CORSOLA_GALAR;
+    fatherIsForeign = IsSpeciesForeignRegionalForm(fatherEggSpecies, currentRegion) && fatherEggSpecies != SPECIES_CORSOLA_GALAR;
 
     if (hasMotherEverstone)
         eggSpecies = motherEggSpecies;

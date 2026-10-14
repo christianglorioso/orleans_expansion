@@ -2969,6 +2969,7 @@ static const u16 sIllumiseEggMoveLearnset[] = {
 #if P_FAMILY_ROSELIA
 #if P_GEN_4_CROSS_EVOS
 static const u16 sBudewEggMoveLearnset[] = {
+    MOVE_BULLET_SEED, // Orleans: the sheet lists these two as Roselia egg moves; breeding/relearner use the base species
     MOVE_COTTON_SPORE,
     MOVE_EXTRASENSORY,
     MOVE_GIGA_DRAIN,
@@ -2978,6 +2979,7 @@ static const u16 sBudewEggMoveLearnset[] = {
     MOVE_MIND_READER,
     MOVE_NATURAL_GIFT,
     MOVE_PIN_MISSILE,
+    MOVE_POWER_WHIP,
     MOVE_RAZOR_LEAF,
     MOVE_SEED_BOMB,
     MOVE_SLEEP_POWDER,

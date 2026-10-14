@@ -2091,7 +2091,11 @@ enum WeatherFailure TryChangeBattleWeather(enum BattlerId battler, u32 battleWea
     if (gBattleWeather & gBattleWeatherInfo[battleWeatherId].flag)
         return WEATHER_FAILURE_SAME_WEATHER;
 
-    if (gBattleStruct->overworldWeatherPresent)
+    // Orleans: the three primal weathers override overworld weather, as in the main games.
+    if (gBattleStruct->overworldWeatherPresent
+     && ability != ABILITY_DESOLATE_LAND
+     && ability != ABILITY_PRIMORDIAL_SEA
+     && ability != ABILITY_DELTA_STREAM)
         return WEATHER_FAILURE_OVERWORLD;
 
     if (gBattleWeather & B_WEATHER_PRIMAL_ANY

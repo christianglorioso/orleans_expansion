@@ -2101,6 +2101,11 @@
 	.byte \battler
 	.endm
 
+	.macro bossindicatordefer set:req
+	callnative BS_BossIndicatorDefer
+	.byte \set
+	.endm
+
 	.macro catchornot
 	callnative BS_CatchOrNot
 	.endm

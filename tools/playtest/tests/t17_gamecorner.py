@@ -232,6 +232,31 @@ def run(b, t):
     t.check("a winning bet is paid out (coins above stake-less) after %d race(s)" % tries, won, "coins %d" % coins(b))
     b.shot("derby_won")
 
+    # --- Derby speeds (fix D3): Dodrio and Feebas read their own table rows, and Feebas really runs
+    import struct
+
+    def derby_speeds():
+        p = b.r32(b.sym("sDerby"))
+        fl = lambda o: [struct.unpack("<f", struct.pack("<I", b.r32(p + o + 4 * i)))[0] for i in range(6)]
+        return fl(32), fl(56)
+
+    b.call("GetNewDerby")
+    for i, v in enumerate([604, 713, 614, 3, 102, 202], 1):      # Dodrio cond 4, Feebas (shiny) cond 3, Dodrio (shiny) cond 4, Doduo 1 cond 3, Doduo 2 cond 2, Doduo 3 cond 2
+        b.set_var("VAR_DERBY_RACER_%d" % i, v)
+    b.call("SetCoins", 500)
+    t.check("the Derby window opens for the speed check", enter(b, 13, 4), b.callback2_name())
+    b.frames(30)
+    start, race = derby_speeds()
+    t.check("Dodrio races at its own speeds 4/7 x (1+cond/10), not Doduo's 4/5 (racers 1 and 3: %s)" % ([round(race[0], 2), round(race[2], 2)]),
+            abs(race[0] - 7 * (1 + 4 / 10.0)) < 0.01 and abs(start[0] - 4 * (1 + 4 / 10.0)) < 0.01 and abs(race[2] - 7 * (1 + 4 / 10.0)) < 0.01, (start, race))
+    t.check("Feebas (racer 2) has real speeds, not garbage/zero: start %.2f race %.2f" % (start[1], race[1]),
+            abs(start[1] - 3 * (1 + 3 / 10.0)) < 0.01 and abs(race[1] - 4 * (1 + 3 / 10.0)) < 0.01, (start, race))
+    t.check("Doduo (racers 4-6) keep their table speeds", abs(race[3] - 5 * 1.3) < 0.01 and abs(race[4] - 5 * 1.2) < 0.01 and abs(race[5] - 4 * 1.2) < 0.01, race)
+    c0 = coins(b)
+    derby_race(b, bet_steps=1)
+    t.check("a race with Feebas runs to the end (no hang) and settles the bet", b.map_name() == MAP and b.script_status() == 2 and coins(b) <= c0 + 100, "%d -> %d" % (c0, coins(b)))
+    b.shot("derby_feebas_race")
+
     # --- the prize counter: a Heart Scale for 100 coins
     b.call("SetCoins", 500)
     hs0 = bag(b, "ITEM_HEART_SCALE")

@@ -3945,6 +3945,8 @@ BattleScript_BossHealthBarBreakAndFormChange::
 	playanimation BS_TARGET, B_ANIM_MEGA_EVOLUTION
 	waitanimation
 	handleformchange BS_TARGET, 1
+	bossindicatordefer FALSE
+	refreshbosshealthbox BS_TARGET
 	printstring STRINGID_BOSSPHASETRANSFORMED
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_TARGET
@@ -3962,6 +3964,8 @@ BattleScript_BossHealthBarBreakAndPrimal::
 	playanimation BS_TARGET, B_ANIM_PRIMAL_REVERSION
 	waitanimation
 	handleformchange BS_TARGET, 1
+	bossindicatordefer FALSE
+	refreshbosshealthbox BS_TARGET
 	printstring STRINGID_BOSSPHASEPRIMAL
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_TARGET
@@ -6519,7 +6523,7 @@ BattleScript_WildBattleVictory::
 	playfaintcry BS_TARGET
 	waitcry
 BattleScript_WildBattleVictoryPrompt::
-	jumpifnoballs BattleScript_WildBattleVictoryRet
+	jumpifnoballs BattleScript_WildBattleVictoryBlocked
 	printstring STRINGID_VICTORYCATCH
 	setbyte gBattleCommunication, 0
 	catchornot
@@ -6527,6 +6531,9 @@ BattleScript_WildBattleVictoryPrompt::
 	catchaftervictory
 	return
 
+BattleScript_WildBattleVictoryBlocked:
+	printfromtable gVictoryCatchBlockedStringIds
+	waitmessage B_WAIT_TIME_LONG
 BattleScript_WildBattleVictoryRet:
 	handlefailedvictorycatch
 	return

@@ -716,14 +716,35 @@ static void MovePlayerNotOnBike(enum Direction direction, u16 heldKeys)
     sPlayerNotOnBikeFuncs[CheckMovementInputNotOnBike(direction)](direction, heldKeys);
 }
 
+// Orleans: with OW SPEED above 1x the turn-in-place animation finishes in 8/speed frames, so a normal D-pad tap
+// stepped instead of turning. A fresh turn now keeps the player from stepping for as many real frames as at 1x.
+#define TURN_IN_PLACE_HOLD_FRAMES 8
+static enum Direction sTurnHoldDirection = DIR_NONE;
+static u32 sTurnHoldStartFrame;
+
 static u8 CheckMovementInputNotOnBike(enum Direction direction)
 {
     if (direction == DIR_NONE)
+    {
+        sTurnHoldDirection = DIR_NONE;
         return gPlayerAvatar.runningState = NOT_MOVING;
+    }
     else if (direction != GetPlayerMovementDirection() && gPlayerAvatar.runningState != MOVING)
+    {
+        sTurnHoldDirection = direction;
+        sTurnHoldStartFrame = gMain.vblankCounter1;
         return gPlayerAvatar.runningState = TURN_DIRECTION;
+    }
+    else if (sTurnHoldDirection == direction && OverworldSpeedup_AdditionalIterations() != 0
+          && gMain.vblankCounter1 - sTurnHoldStartFrame < TURN_IN_PLACE_HOLD_FRAMES)
+    {
+        return gPlayerAvatar.runningState = NOT_MOVING; // still inside the tap window: stay turned, do not step yet
+    }
     else
+    {
+        sTurnHoldDirection = DIR_NONE;
         return gPlayerAvatar.runningState = MOVING;
+    }
 }
 
 static void PlayerNotOnBikeNotMoving(enum Direction direction, u16 heldKeys)

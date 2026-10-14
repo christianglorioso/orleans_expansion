@@ -59,8 +59,18 @@ def hp(b):
 
 def run(b, t):
     b.new_game()
-    b.give_mon("SPECIES_TOTODILE", 50)
     hs = healers()
+    # fix D1: with an EMPTY party (before the starter) no nurse may crash or hang; each says her line and the script ends
+    for name, lid, nx, ny, gfx in hs:
+        sp = spots(name, nx, ny)
+        if not sp:
+            continue
+        x, y, face = sp[0]
+        b.warp(name, x, y)
+        done = b.interact(face)
+        b.check_alive("empty-party nurse " + name)
+        t.check(f"{name}: an empty-party nurse ends the script (no crash)", done and b.script_status() == 2 and b.in_overworld(), b.where())
+    b.give_mon("SPECIES_TOTODILE", 50)
     t.check("found the healers (10 Centers, Camp cabin, Old Water healer and rest house)", len(hs) >= 12, [h[0] for h in hs])
     for name, lid, nx, ny, gfx in hs:
         t.check(f"{name}: healer sprite is the nurse", gfx == "OBJ_EVENT_GFX_NURSE", gfx)

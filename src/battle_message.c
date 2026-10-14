@@ -915,6 +915,14 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_S]                                    = COMPOUND_STRING("s"),
     [STRINGID_LOSTSOMEOFITSHP]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost some of its HP!"),
     [STRINGID_BELCHCANTUSE]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hasn't eaten any held Berries, so it can't possibly belch!\p"),
+    [STRINGID_VICTORYNOBALLS]                       = COMPOUND_STRING("You have no Poké Balls to catch\n{B_DEF_NAME} with!"),
+    [STRINGID_VICTORYNOROOM]                        = COMPOUND_STRING("There's no room left in the PC,\nso you can't catch {B_DEF_NAME}!"),
+};
+
+const u16 gVictoryCatchBlockedStringIds[] =
+{
+    STRINGID_VICTORYNOBALLS,
+    STRINGID_VICTORYNOROOM,
 };
 
 const u16 gBossHealthBarBreakStringIds[] =

@@ -748,6 +748,7 @@ const u8 *GetBossBarBreakScript(void)
 
     if (!DidBossPhaseChangeForm())
         return BattleScript_BossHealthBarBreak;
+    gBattleStruct->boss.deferFormIndicator = TRUE;
     if (species == SPECIES_KYOGRE_PRIMAL || species == SPECIES_GROUDON_PRIMAL)
         return BattleScript_BossHealthBarBreakAndPrimal;
     return BattleScript_BossHealthBarBreakAndFormChange;

@@ -2,6 +2,8 @@ Common_EventScript_PkmnCenterNurse::
 	lock
 	faceplayer
 	setvar VAR_0x8004, 0
+	getpartysize
+	goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterNurse_NoPkmn
 .if !IS_FRLG
 	specialvar VAR_RESULT, CountPlayerTrainerStars
 	goto_if_eq VAR_RESULT, 4, EventScript_PkmnCenterNurse_GoldCard
@@ -10,6 +12,16 @@ Common_EventScript_PkmnCenterNurse::
 	goto_if_eq VAR_RESULT, YES, EventScript_PkmnCenterNurse_HealPkmn
 	goto_if_eq VAR_RESULT, NO, EventScript_PkmnCenterNurse_Goodbye
 	end
+
+EventScript_PkmnCenterNurse_NoPkmn::
+	msgbox EventScript_PkmnCenterNurse_Text_NoPkmn, MSGBOX_DEFAULT
+	release
+	end
+
+EventScript_PkmnCenterNurse_Text_NoPkmn:
+	.string "Come back when you have a POKéMON\n"
+	.string "with you, dear. We'll take good care\l"
+	.string "of it.$"
 
 EventScript_PkmnCenterNurse_Goodbye::
 	message gText_WeHopeToSeeYouAgain

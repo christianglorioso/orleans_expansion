@@ -745,6 +745,7 @@ struct BattleStruct
         bool8 initialized;
         bool8 originalMovesStored;
         bool8 phaseChangedForm;
+        bool8 deferFormIndicator; // Orleans: hide the Alpha/Omega/Mega indicator until the form-change animation has played
     } boss; // Orleans: SoulGold boss battles (src/battle_boss.c)
     u32 incrementEchoedVoice:1;
     u32 echoedVoiceCounter:3;

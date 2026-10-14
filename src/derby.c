@@ -1554,7 +1554,7 @@ static const RaceSpeeds RaceSpeedsValues[] =
     {DERBY_SPECIES_DODUO_5, 3, 6}, // Doduo 5
     {DERBY_SPECIES_RATTATA, 5, 4}, // Rattata
     {DERBY_SPECIES_DODRIO, 4, 7}, // Dodrio
-    {DERBY_SPECIES_FEEBAS, 0, 0}, // Feebas
+    {DERBY_SPECIES_FEEBAS, 3, 4}, // Feebas: a real (slow) runner, Orleans
 };
 
 typedef struct  {
@@ -1844,7 +1844,7 @@ static inline u32 GetDerbySpeciesSpeedPay(u32 species, u32 condition)
     switch (species)
     {
     case DERBY_SPECIES_FEEBAS:
-        return BET_MULTIPLIER_JACKPOT; // Will never actually win lol
+        return BET_MULTIPLIER_3_0; // Orleans: Feebas really races (slowest runner), so it pays a long-shot x3, not a 9999 jackpot
     case DERBY_SPECIES_DODRIO:
         if (condition >= CONDITION_4_STAR)
             return BET_MULTIPLIER_1_1;
@@ -1870,12 +1870,12 @@ static inline u32 GetDerbySpeciesSpeedPay(u32 species, u32 condition)
 
 static void GetRacerSpeeds(u8 racerSpecies, u8 racer)
 {
-    u8 sSpeed;
-    u8 rSpeed;
+    u8 sSpeed = 4;
+    u8 rSpeed = 5;
     u8 condition;
     int i;
 
-    for (i = 0; i < DERBY_RACER_COUNT; i++)
+    for (i = 0; i < ARRAY_COUNT(RaceSpeedsValues); i++) // Orleans: all 8 rows (was 6: Dodrio/Feebas read garbage)
     {
         if (RaceSpeedsValues[i].SpeciesId == racerSpecies)
         {
@@ -3270,27 +3270,27 @@ static void DerbyMain(u8 taskId)
             else if (sDerby->delay == 0)
             {
                 DestroySpriteAndFreeResources(&gSprites[sDerby->CountdownSpriteId]);
-                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite1].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite2].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite3].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite4].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite5].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite6].animNum = 1;
                 }
@@ -3303,27 +3303,27 @@ static void DerbyMain(u8 taskId)
     case DERBY_STATE_RACE_START:
         if (sDerby->frames == 0)
         {
-            if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite1].x = gSprites[sDerby->RacerSprite1].x - (sDerby->racerSpeedStart[DERBY_RACER_1] / 2);
             }
-            if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite2].x = gSprites[sDerby->RacerSprite2].x - (sDerby->racerSpeedStart[DERBY_RACER_2] / 2);
             }
-            if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite3].x = gSprites[sDerby->RacerSprite3].x - (sDerby->racerSpeedStart[DERBY_RACER_3] / 2);
             }
-            if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite4].x = gSprites[sDerby->RacerSprite4].x - (sDerby->racerSpeedStart[DERBY_RACER_4] / 2);
             }
-            if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite5].x = gSprites[sDerby->RacerSprite5].x - (sDerby->racerSpeedStart[DERBY_RACER_5] / 2);
             }
-            if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_FEEBAS)
+            if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_COUNT)
             {
                 gSprites[sDerby->RacerSprite6].x = gSprites[sDerby->RacerSprite6].x - (sDerby->racerSpeedStart[DERBY_RACER_6] / 2);
             }
@@ -3372,27 +3372,27 @@ static void DerbyMain(u8 taskId)
             {
                 if (sDerby->frames == 0)
                 {
-                    if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite1].x = gSprites[sDerby->RacerSprite1].x - (sDerby->racerSpeedRace[DERBY_RACER_1] / 2);
                     }
-                    if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite2].x = gSprites[sDerby->RacerSprite2].x - (sDerby->racerSpeedRace[DERBY_RACER_2] / 2);
                     }
-                    if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite3].x = gSprites[sDerby->RacerSprite3].x - (sDerby->racerSpeedRace[DERBY_RACER_3] / 2);
                     }
-                    if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite4].x = gSprites[sDerby->RacerSprite4].x - (sDerby->racerSpeedRace[DERBY_RACER_4] / 2);
                     }
-                    if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite5].x = gSprites[sDerby->RacerSprite5].x - (sDerby->racerSpeedRace[DERBY_RACER_5] / 2);
                     }
-                    if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_FEEBAS)
+                    if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_COUNT)
                     {
                         gSprites[sDerby->RacerSprite6].x = gSprites[sDerby->RacerSprite6].x - (sDerby->racerSpeedRace[DERBY_RACER_6] / 2);
                     }

@@ -1270,6 +1270,13 @@ static void SpriteCB_PokeballGlowEffect(struct Sprite *sprite)
 static void PokeballGlowEffect_PlaceBalls(struct Sprite *sprite)
 {
     u8 spriteId;
+    // Orleans: an empty party (nurse before the starter) must not wrap sNumMons (u8) from 0 to 255.
+    if (sprite->sNumMons == 0)
+    {
+        sprite->sTimer = 32;
+        sprite->sState++;
+        return;
+    }
     if (sprite->sTimer == 0 || (--sprite->sTimer) == 0)
     {
         sprite->sTimer = 25;

@@ -313,6 +313,8 @@ const u32 *GetIndicatorSpriteSrc(enum BattlerId battler)
 u32 GetIndicatorPalTag(enum BattlerId battler)
 {
     enum Gimmick gimmick = GetActiveGimmick(battler);
+    if (gBattleStruct->boss.deferFormIndicator && !IsOnPlayerSide(battler))
+        return TAG_NONE; // Orleans: boss form change in progress, the indicator appears after the animation
     if (IsBattlerPrimalReverted(battler))
         return TAG_MISC_INDICATOR_PAL;
     else if (gGimmicksInfo[gimmick].indicatorPalTag != 0)
