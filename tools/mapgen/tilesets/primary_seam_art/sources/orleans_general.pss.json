@@ -1,0 +1,483 @@
+{
+ "_comment": "Add to the 'sources' of tools/mapgen/tilesets/recipes/orleans_general.json (through make_primary_recipe.py, which writes that recipe), then compose; the pieces land as pss:<id>. Bottom = the primary's own water_C / dry:0_0 cell (row 0, identical pixels, so no new tiles); top = row 1, magenta transparent.",
+ "name": "pss",
+ "type": "image",
+ "image": "tools/mapgen/tilesets/primary_seam_art/primary_seam_art.png",
+ "transparent": [
+  [
+   255,
+   0,
+   255
+  ]
+ ],
+ "metatiles": [
+  {
+   "id": "w_rock_a",
+   "bottom": [
+    0,
+    0
+   ],
+   "top": [
+    0,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "w_rock_b",
+   "bottom": [
+    0,
+    0
+   ],
+   "top": [
+    1,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "w_knee",
+   "bottom": [
+    0,
+    0
+   ],
+   "top": [
+    2,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER"
+  },
+  {
+   "id": "pd_NW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    3,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_N",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    4,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_NE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    5,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_W",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    6,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_E",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    7,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_SW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    8,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_S",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    9,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_SE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    10,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_iNW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    11,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_iNE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    12,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_iSW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    13,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_iSE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    14,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "pd_N_by_dry1_2",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    15,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_S_0",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    16,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_S_1",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    17,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_N_0",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    18,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_N_1",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    19,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_E_0",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    20,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_E_1",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    21,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_W_0",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    22,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_W_1",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    23,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_in_NW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    24,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_in_NE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    25,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_in_SW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    26,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_in_SE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    27,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_out_NW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    28,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_out_NE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    29,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_out_SW",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    30,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_out_SE",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    31,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_block_00",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    32,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_block_10",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    33,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_block_01",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    34,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  },
+  {
+   "id": "sc_block_11",
+   "bottom": [
+    1,
+    0
+   ],
+   "top": [
+    35,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL"
+  }
+ ]
+}

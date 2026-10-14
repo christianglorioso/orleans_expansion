@@ -1,0 +1,767 @@
+{
+ "_comment": "Primary-only seam-band pieces (make_primary_seam_art.py; seams2 specs A, B, D). Each piece = the named primary ground as the bottom layer + the top cell here (layer type covered, under the sprites). 'palettes' = the primary palette each top 8x8 tile fits (null = empty quadrant). new_tiles = 8x8 tiles not already in gTileset_OrleansGeneral (flip dedupe, counted in spec order B, D, A). Not integrated.",
+ "png": "primary_seam_art.png",
+ "tileset": "gTileset_OrleansGeneral",
+ "source": "pss",
+ "bases": {
+  "ekat:water_C": [
+   0,
+   0
+  ],
+  "dry:0_0": [
+   1,
+   0
+  ]
+ },
+ "counts": {
+  "B": {
+   "metatiles": 3,
+   "new_tiles": 12,
+   "cumulative_tiles": 12
+  },
+  "D": {
+   "metatiles": 13,
+   "new_tiles": 9,
+   "cumulative_tiles": 21
+  },
+  "A": {
+   "metatiles": 20,
+   "new_tiles": 57,
+   "cumulative_tiles": 78
+  },
+  "A1": {
+   "metatiles": 4,
+   "new_tiles": 15
+  },
+  "A2": {
+   "metatiles": 12,
+   "new_tiles": 31
+  },
+  "A3": {
+   "metatiles": 4,
+   "new_tiles": 11
+  }
+ },
+ "pieces": {
+  "w_rock_a": {
+   "spec": "B",
+   "tier": "B",
+   "metatile": "pss:w_rock_a",
+   "bottom": "ekat:water_C",
+   "top_cell": [
+    0,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER",
+   "palettes": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "new_tiles": 4,
+   "use": "rock awash (wp_rock_a's art) on open water; blocking (collision 1 in the map). Same top over any other water cell (water_E/W/S, lily, mudwater) is a free extra metatile: base + this top"
+  },
+  "w_rock_b": {
+   "spec": "B",
+   "tier": "B",
+   "metatile": "pss:w_rock_b",
+   "bottom": "ekat:water_C",
+   "top_cell": [
+    1,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER",
+   "palettes": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "new_tiles": 4,
+   "use": "rock awash (wp_rock_b's art) on open water; blocking (collision 1 in the map). Same top over any other water cell (water_E/W/S, lily, mudwater) is a free extra metatile: base + this top"
+  },
+  "w_knee": {
+   "spec": "B",
+   "tier": "B",
+   "metatile": "pss:w_knee",
+   "bottom": "ekat:water_C",
+   "top_cell": [
+    2,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_POND_WATER",
+   "palettes": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "new_tiles": 4,
+   "use": "cypress knee cluster (wp_knees_a's art) on open water; blocking (collision 1 in the map). Same top over any other water cell (water_E/W/S, lily, mudwater) is a free extra metatile: base + this top"
+  },
+  "pd_NW": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_NW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    3,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 3,
+   "use": "Johto path NW edge on dry ground (replaces johto:0D0 where the kerb's outside is dry:0_0)"
+  },
+  "pd_N": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_N",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    4,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path N edge on dry ground (replaces johto:0D1 where the kerb's outside is dry:0_0)"
+  },
+  "pd_NE": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_NE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    5,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path NE edge on dry ground (replaces johto:0D2 where the kerb's outside is dry:0_0)"
+  },
+  "pd_W": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_W",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    6,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path W edge on dry ground (replaces johto:0D8 where the kerb's outside is dry:0_0)"
+  },
+  "pd_E": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_E",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    7,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path E edge on dry ground (replaces johto:0DA where the kerb's outside is dry:0_0)"
+  },
+  "pd_SW": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_SW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    8,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path SW edge on dry ground (replaces johto:0E0 where the kerb's outside is dry:0_0)"
+  },
+  "pd_S": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_S",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    9,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path S edge on dry ground (replaces johto:0E1 where the kerb's outside is dry:0_0)"
+  },
+  "pd_SE": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_SE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    10,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 0,
+   "use": "Johto path SE edge on dry ground (replaces johto:0E2 where the kerb's outside is dry:0_0)"
+  },
+  "pd_iNW": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_iNW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    11,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path inner corner iNW with a dry-ground bite (replaces patch:path_iNW)"
+  },
+  "pd_iNE": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_iNE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    12,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path inner corner iNE with a dry-ground bite (replaces patch:path_iNE)"
+  },
+  "pd_iSW": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_iSW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    13,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path inner corner iSW with a dry-ground bite (replaces patch:path_iSW)"
+  },
+  "pd_iSE": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_iSE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    14,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path inner corner iSE with a dry-ground bite (replaces patch:path_iSE)"
+  },
+  "pd_N_by_dry1_2": {
+   "spec": "D",
+   "tier": "D",
+   "metatile": "pss:pd_N_by_dry1_2",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    15,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    5,
+    5,
+    5,
+    5
+   ],
+   "new_tiles": 1,
+   "use": "Johto path (on grass) N edge whose outside neighbour is the dry corner cell dry:1_2: the kerb is grass where dry:1_2's facing edge is grass and dry ground where it is sand (Route 23 x 8, rows 12 and 34)"
+  },
+  "sc_S_0": {
+   "spec": "A",
+   "tier": "A1",
+   "metatile": "pss:sc_S_0",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    16,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge S_0 on dry ground (= bd:dry_S_dry_0)"
+  },
+  "sc_S_1": {
+   "spec": "A",
+   "tier": "A1",
+   "metatile": "pss:sc_S_1",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    17,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge S_1 on dry ground (= bd:dry_S_dry_1)"
+  },
+  "sc_N_0": {
+   "spec": "A",
+   "tier": "A1",
+   "metatile": "pss:sc_N_0",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    18,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    null,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 3,
+   "use": "dry scrub wall edge N_0 on dry ground (= bd:dry_N_dry_0)"
+  },
+  "sc_N_1": {
+   "spec": "A",
+   "tier": "A1",
+   "metatile": "pss:sc_N_1",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    19,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge N_1 on dry ground (= bd:dry_N_dry_1)"
+  },
+  "sc_E_0": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_E_0",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    20,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge E_0 on dry ground (= bd:dry_E_dry_0)"
+  },
+  "sc_E_1": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_E_1",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    21,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge E_1 on dry ground (= bd:dry_E_dry_1)"
+  },
+  "sc_W_0": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_W_0",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    22,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge W_0 on dry ground (= bd:dry_W_dry_0)"
+  },
+  "sc_W_1": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_W_1",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    23,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall edge W_1 on dry ground (= bd:dry_W_dry_1)"
+  },
+  "sc_in_NW": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_in_NW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    24,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 2,
+   "use": "dry scrub wall edge in_NW on dry ground (= bd:dry_in_NW_dry)"
+  },
+  "sc_in_NE": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_in_NE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    25,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 0,
+   "use": "dry scrub wall edge in_NE on dry ground (= bd:dry_in_NE_dry)"
+  },
+  "sc_in_SW": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_in_SW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    26,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 3,
+   "use": "dry scrub wall edge in_SW on dry ground (= bd:dry_in_SW_dry)"
+  },
+  "sc_in_SE": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_in_SE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    27,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 2,
+   "use": "dry scrub wall edge in_SE on dry ground (= bd:dry_in_SE_dry)"
+  },
+  "sc_out_NW": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_out_NW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    28,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub outer corner out_NW on dry ground"
+  },
+  "sc_out_NE": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_out_NE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    29,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    null,
+    4,
+    null,
+    4
+   ],
+   "new_tiles": 2,
+   "use": "dry scrub outer corner out_NE on dry ground"
+  },
+  "sc_out_SW": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_out_SW",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    30,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    null,
+    null,
+    4,
+    4
+   ],
+   "new_tiles": 1,
+   "use": "dry scrub outer corner out_SW on dry ground"
+  },
+  "sc_out_SE": {
+   "spec": "A",
+   "tier": "A2",
+   "metatile": "pss:sc_out_SE",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    31,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    null,
+    null,
+    null,
+    4
+   ],
+   "new_tiles": 1,
+   "use": "dry scrub outer corner out_SE on dry ground"
+  },
+  "sc_block_00": {
+   "spec": "A",
+   "tier": "A3",
+   "metatile": "pss:sc_block_00",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    32,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 3,
+   "use": "dry scrub wall / border block cell (0,0) = bd:dry_scrub_00; blocking"
+  },
+  "sc_block_10": {
+   "spec": "A",
+   "tier": "A3",
+   "metatile": "pss:sc_block_10",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    33,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 2,
+   "use": "dry scrub wall / border block cell (1,0) = bd:dry_scrub_10; blocking"
+  },
+  "sc_block_01": {
+   "spec": "A",
+   "tier": "A3",
+   "metatile": "pss:sc_block_01",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    34,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 4,
+   "use": "dry scrub wall / border block cell (0,1) = bd:dry_scrub_01; blocking"
+  },
+  "sc_block_11": {
+   "spec": "A",
+   "tier": "A3",
+   "metatile": "pss:sc_block_11",
+   "bottom": "dry:0_0",
+   "top_cell": [
+    35,
+    1
+   ],
+   "layer": "covered",
+   "behavior": "MB_NORMAL",
+   "palettes": [
+    4,
+    4,
+    4,
+    4
+   ],
+   "new_tiles": 2,
+   "use": "dry scrub wall / border block cell (1,1) = bd:dry_scrub_11; blocking"
+  }
+ }
+}
