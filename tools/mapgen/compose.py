@@ -989,8 +989,13 @@ def sparse_primary(r, recipe_path, picked, names):
                 new_names[n] = j
     holes = [j for j in range(n_slots) if out[j] is None]
     pats = [re.compile(p) for p in r.get("shared", [])]
+    unplaced = set(r.get("drop_names", ()))    # seams review: shared pieces no built map places and no secondary needs a tile of (primary_seam_prune.py lists them)
+    dropped = 0
     for n, i in names.items():
         if n.startswith("johto:") or not picked[i] or not any(p.search(n) for p in pats):
+            continue
+        if n in unplaced and not n.startswith(tuple(r.get("keep_names", ()))):
+            dropped += 1
             continue
         if holes:
             j = holes.pop(0)
@@ -1002,6 +1007,8 @@ def sparse_primary(r, recipe_path, picked, names):
     missing = [x for x in keep["johto"] if f"johto:{x}" not in new_names]
     if missing:
         raise SystemExit(f"keep file names Johto metatiles that do not exist: {missing[:8]}")
+    if dropped:
+        print(f"  primary: {dropped} shared pieces no map places were left out")
     print(f"  primary: {sum(1 for x in out if x)} metatiles kept ({len(kept)} Johto at their old ids, "
           f"{len(new_names) - len(kept)} shared pieces), {len(holes)} free slots below id {n_slots}")
     return out, new_names

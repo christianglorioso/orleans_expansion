@@ -101,6 +101,8 @@ class Builder:
         DEMAND = os.path.exists(recipe) and bool(json.load(open(recipe, encoding="utf-8")).get("demand"))
         for m in self.ts.get("mappings", []):
             MAPPING.update(json.load(open(os.path.join(HERE, "tilesets", m)))["metatiles"])
+        if "pss:pd_N" in MAPPING and "path_g" in self.ts["autotile"]:      # the primary's path-on-dry-ground pieces (seams review spec D)
+            self.ts["autotile"]["path_d"] = {k: "pss:pd_" + k for k in ("NW", "N", "NE", "W", "E", "SW", "S", "SE", "iNW", "iNE", "iSW", "iSE")}
         grid_path = os.path.join(os.path.dirname(spec_path), self.spec["grid"])
         self.grid = [list(l.rstrip("\n")) for l in open(grid_path) if l.strip()]
         self.h, self.w = len(self.grid), len(self.grid[0])
@@ -173,6 +175,12 @@ class Builder:
                 self.octagon_land(a)
             elif a.get("kind") == "corners":
                 self.corners(a)
+        if "pss:pd_N_by_dry1_2" in MAPPING and "dry:1_2" in MAPPING:      # the path's N kerb under a dry corner cell (dry:1_2 above it): the primary's own kerb piece (spec D)
+            above, n_edge, plug = MAPPING["dry:1_2"], hx("0D1"), hx("pss:pd_N_by_dry1_2")
+            for y in range(1, self.h):
+                for x in range(self.w):
+                    if (self.blocks[y][x] & 0x3FF) == n_edge and (self.blocks[y - 1][x] & 0x3FF) == above:
+                        self.blocks[y][x] = (self.blocks[y][x] & ~0x3FF) | plug
         # patch-interior terrain (tall grass): only on cells whose four dual-grid corners are all inside
         # the patch; edge cells keep the patch's own border pieces so the edge stays soft
         for ch, t in T.items():
@@ -396,8 +404,9 @@ class Builder:
 
     def path_tile(self, x, y, a):
         con = a["connects"]
-        if (x, y) in self.band and self.key in ("route_16", "route_17") and "C" in a and a is self.ts["autotile"].get("path_g"):
-            return hx(a["C"])  # the Johto path through a dry-country seam band: plain dirt, no green kerb pieces against the sand
+        pd = self.ts["autotile"].get("path_d")
+        if pd and a is self.ts["autotile"].get("path_g"):
+            return self.path_d_tile(x, y, a, pd)       # the Johto path where its kerb's outside is plain dry ground (seam bands of the dry country)
         if not hasattr(self, "_decks"):  # a bridge's deck carries the road on: no kerb or rounded end against it
             self._decks = {(b["x"] + i, b["y"] + j) for b in self.spec.get("buildings", [])
                            if b.get("label") == "Bridge" for i, j in b.get("passable", [])}
@@ -416,6 +425,32 @@ class Builder:
                 if not same(x + dx, y + dy):
                     return hx(a[k])
         return hx(a[key or "C"])
+
+    def path_d_tile(self, x, y, a, pd):
+        """path_tile for a path on grass whose edges may face plain dry ground ('d'): the primary's path-on-dry pieces (pss:pd_*, the seam
+        art's spec D) on every edge whose outside is dry, the grass-kerbed Johto piece otherwise."""
+        con = a["connects"]
+        same = lambda i, j: self.same(i, j, con) or (i, j) in getattr(self, "_decks", ())
+        n, s_ = same(x, y - 1), same(x, y + 1)
+        w, e = same(x - 1, y), same(x + 1, y)
+        if not n and not s_:
+            n = s_ = True
+        if not w and not e:
+            w = e = True
+        key = ("N" if not n else "S" if not s_ else "") + ("W" if not w else "E" if not e else "")
+        dry = lambda i, j: self.at(i, j) == "d"
+        if not key:
+            if "iNW" in a:
+                for dx, dy, k in ((-1, -1, "iNW"), (1, -1, "iNE"), (-1, 1, "iSW"), (1, 1, "iSE")):
+                    if not same(x + dx, y + dy):
+                        return hx(pd[k]) if dry(x + dx, y + dy) else hx(a[k])
+            return hx(a["C"])
+        outside = [(x, y - 1) if "N" in key else (x, y + 1)] if len(key) == 1 and key in "NS" else []
+        if len(key) == 1 and key in "WE":
+            outside = [(x - 1, y) if key == "W" else (x + 1, y)]
+        if len(key) == 2:
+            outside = [(x, y - 1) if key[0] == "N" else (x, y + 1), (x - 1, y) if key[1] == "W" else (x + 1, y)]
+        return hx(pd[key]) if outside and all(dry(i, j) for i, j in outside) else hx(a[key])
 
     def shore_tile(self, x, y, a):
         con = a["connects"]

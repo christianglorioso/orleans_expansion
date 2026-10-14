@@ -1633,5 +1633,19 @@
    "base": "ekat:marshwater_inNW",
    "art": "wpr:1_0"
   }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_W",
+  "overlay": {
+   "base": "ekat:marshwater_W",
+   "art": "wpr:0_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_0_0__ekat_marshwater_inNW",
+  "overlay": {
+   "base": "ekat:marshwater_inNW",
+   "art": "wpr:0_0"
+  }
  }
 ]

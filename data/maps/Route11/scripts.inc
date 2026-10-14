@@ -73,10 +73,10 @@ Route11_Movement_LairFaceUp:
 @ --- mapgen: generated NPC scripts (begin) ---
 
 Route11_EventScript_StateSuicuneOpen::
-	setmetatile 28, 20, 0x287, TRUE
-	setmetatile 29, 20, 0x289, TRUE
-	setmetatile 28, 21, 0x288, FALSE
-	setmetatile 29, 21, 0x28A, FALSE
+	setmetatile 28, 20, 0x275, TRUE
+	setmetatile 29, 20, 0x277, TRUE
+	setmetatile 28, 21, 0x276, FALSE
+	setmetatile 29, 21, 0x278, FALSE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---

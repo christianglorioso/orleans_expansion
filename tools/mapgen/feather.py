@@ -589,6 +589,9 @@ def prepare_water(b, key, sp, keep_open):
     strict_all = getattr(b, "feather_strict", set())
     prepare_barrier(b, key, sp, P | structure, seam, strict_all, events=protected(b, key, extras=False))
     exp = surf_exposure(b, key, sp)
+    if exp:
+        seal_with_primary(b, key, sp, exp, P | structure | protected(b, key, extras=False))
+        exp = surf_exposure(b, key, sp)
     b.feather_exposed = exp
     if exp:
         b.feather_report.append("surf exposure after the barrier: " + ", ".join(f"{s}: {len(v)} positions" for s, v in exp.items()))
@@ -908,6 +911,51 @@ def prepare_barrier(b, key, sp, P, forbid, strict_all, maxl=4, events=()):
     if leaks:
         b.feather_report.append(f"surf barrier: {len(leaks)} boundary cells could not take a prop (leaks): {sorted(leaks)[:8]}")
     return len(leaks)
+
+
+PSS_PROPS = (("pss_rock_a", "pss:w_rock_a"), ("pss_rock_b", "pss:w_rock_b"), ("pss_knee", "pss:w_knee"))
+
+
+def seal_with_primary(b, key, sp, exp, P):
+    """Positions the barrier left open beside a connection (its seam band takes primary pieces only): a primary rock awash / cypress knee
+    (tilesets/primary_seam_art, spec B: metatiles of gTileset_OrleansGeneral, so a neighbour draws them right) plugs the first open water cell
+    of the line, where all eight neighbours are water too (the piece is the open-water tile with the rock on it)."""
+    br = __import__("band_rules")
+    mapping = br._build(b).MAPPING
+    names = [(k, nm) for k, nm in PSS_PROPS if nm in mapping]
+    if not names:
+        return 0
+    for k, nm in names:
+        b.ts["prefabs"].setdefault(k, {"_comment": "Surf-barrier prop that lives in the primary (seams review spec B).", "rows": [[nm]]})
+    w, h = b.w, b.h
+    water = {(x, y) for y in range(h) for x in range(w) if b.grid[y][x] in WATERCH}
+    blocked, _ = blocking_cells(b)
+    blocked |= set(getattr(b, "wall", ())) | set(getattr(b, "edge", {}))
+    occ = set(P)
+    for bd in b.spec.get("buildings", []):
+        occ |= {(x, y) for x, y, _ in br.prefab_cells(b, bd)}
+    rng = _rng(key, "pss")
+    placed = []
+    for side, positions in exp.items():
+        n, cell = side_geom(b, side)
+        for i in positions:
+            for k in range(0, 6):
+                c = cell(i, k)
+                if c in blocked or c not in water:
+                    break
+                if c in occ:
+                    continue
+                if any((c[0] + dx, c[1] + dy) not in water and 0 <= c[0] + dx < w and 0 <= c[1] + dy < h for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                    continue                         # the four neighbours are open water too (a diagonal bank is drawn round the plug)
+                p = rng.choice([k_ for k_, _ in names])
+                placed.append({"prefab": p, "x": c[0], "y": c[1], "label": "Surf barrier"})
+                occ.add(c)
+                blocked.add(c)
+                break
+    if placed:
+        b.spec["buildings"] = b.spec.get("buildings", []) + placed
+        b.border_log.append(f"feather surf seal (primary rocks): {len(placed)} plugs in the seam bands")
+    return len(placed)
 
 
 def surf_exposure(b, key, sp):

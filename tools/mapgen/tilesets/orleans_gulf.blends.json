@@ -1257,5 +1257,12 @@
    "base": "patch:blend_mud_S_inSE",
    "art": "wpr:4_0"
   }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_mudwater_inSE",
+  "overlay": {
+   "base": "ekat:mudwater_inSE",
+   "art": "wpr:5_0"
+  }
  }
 ]

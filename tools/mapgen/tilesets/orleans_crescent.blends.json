@@ -2793,5 +2793,19 @@
    "base": "ekat:water_C",
    "art": "lmk:5_9"
   }
+ },
+ {
+  "id": "ovl_wpr_4_0__ekat_water_weeds1",
+  "overlay": {
+   "base": "ekat:water_weeds1",
+   "art": "wpr:4_0"
+  }
+ },
+ {
+  "id": "ovl_wpr_5_0__ekat_water_inSW",
+  "overlay": {
+   "base": "ekat:water_inSW",
+   "art": "wpr:5_0"
+  }
  }
 ]

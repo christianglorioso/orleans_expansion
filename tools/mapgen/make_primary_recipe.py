@@ -41,6 +41,7 @@ SHARED = [
     r"^patch:bdg_",            # swamp border edge cells baked over grass (tilesets/orleans_general.blends.json)
     r"^bd:swamp_",             # border art, swamp style (make_borders.py): canopy block, wall-edge cells on marsh and water
     r"^dry:0_0$",              # the plain dry-country ground: the ONE dry fill a seam band may hold
+    r"^pss:",                  # the art agent's primary seam-band art (rocks awash / cypress knee on water, Johto path on dry ground), tilesets/primary_seam_art
 ]
 LMK_IDS = ("15_9", "8_11", "9_11", "10_11", "8_12", "9_12", "10_12")   # track, boxcar top row, boxcar bottom row
 # patches taken over from the route tileset (the canonical green-route recipe): their sources are all in the primary
@@ -95,6 +96,11 @@ def main(args):
         lmk = json.load(open(os.path.join(HERE, "sources", "orleans_custom", "route_landmarks.json"), encoding="utf-8"))["source"]
         lmk["metatiles"] = [m for m in lmk["metatiles"] if m["id"] in LMK_IDS]
         cur["sources"].append(lmk)
+        pss = json.load(open(os.path.join(HERE, "tilesets", "primary_seam_art", "sources", "orleans_general.pss.json"), encoding="utf-8"))
+        pss["metatiles"] = [m for m in pss["metatiles"] if m["id"].startswith(("w_", "pd_"))]      # specs B and D; the scrub (A) lives in the dry secondaries' reserved window
+        cur["sources"].append(pss)
+        cur["keep_names"] = ["pss:", "patch:tallgrass_marsh", "ekat:grass", "ekat:tallgrass", "ekat:marsh_C", "ekat:water_C"]      # + the pieces gen_metatile_labels.py names for the engine
+        cur["drop_names"] = json.load(open(os.path.join(HERE, "tilesets", "primary_drop_names.json"), encoding="utf-8"))["names"]      # compose.sparse_primary: unplaced shared pieces nobody reuses a tile of (seams review)
         cur["patches"] = [p for p in route["patches"] if p["id"].startswith(WANT_PATCH)]
         cur["shared"] = SHARED
         # grass and water must come out exact: keep the colours the route tileset keeps, plus the water the ekat sheet uses

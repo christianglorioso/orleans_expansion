@@ -135,10 +135,10 @@ Route7_Text_RouteSign2:
 	.string "OLD LOGGING RUN\nThe trunks floated down from here.$"
 
 Route7_EventScript_StateCelebiOpen::
-	setmetatile 34, 1, 0x27F, TRUE
-	setmetatile 35, 1, 0x281, TRUE
-	setmetatile 34, 2, 0x280, FALSE
-	setmetatile 35, 2, 0x282, FALSE
+	setmetatile 34, 1, 0x26D, TRUE
+	setmetatile 35, 1, 0x26F, TRUE
+	setmetatile 34, 2, 0x26E, FALSE
+	setmetatile 35, 2, 0x270, FALSE
 	return
 
 @ --- mapgen: generated NPC scripts (end) ---

@@ -14,10 +14,6 @@
 "ekat:marsh_landSW": "cab57075f79282a0f559",
 "ekat:marsh_landNE": "04afd1475e3c2c14705b",
 "ekat:marsh_landNW": "bf5ddfcb6a8076525e18",
-"ekat:marsh_landSE2": "baf1398cfbf92b869bee",
-"ekat:marsh_landSW2": "cab57075f79282a0f559",
-"ekat:marsh_landNE2": "04afd1475e3c2c14705b",
-"ekat:marsh_landNW2": "bf5ddfcb6a8076525e18",
 "ekat:marsh_plants1": "01516898b6fa9c47c386",
 "ekat:marsh_plants3": "38d447f0f009954d2dd2",
 "ekat:mud_N": "d98fa54f639b137912a4",
@@ -33,10 +29,6 @@
 "ekat:mud_landSW": "0aca26530ae66cb20e65",
 "ekat:mud_landNE": "c9a7609874580ad9c2b5",
 "ekat:mud_landNW": "aee917ccf5b9483454df",
-"ekat:mud_landSE2": "098dce21b86365236bd6",
-"ekat:mud_landSW2": "0aca26530ae66cb20e65",
-"ekat:mud_landNE2": "c9a7609874580ad9c2b5",
-"ekat:mud_landNW2": "aee917ccf5b9483454df",
 "ekat:mud_plants3": "c23e8c099e25c9d8acc7",
 "ekat:water_N": "8f1f12a61956f62dee20",
 "ekat:water_S": "3294793221f800899876",
@@ -51,18 +43,10 @@
 "ekat:water_landSW": "f8ab7fc1f9fdc15d8b2f",
 "ekat:water_landNE": "c5fe352f890fa8945c09",
 "ekat:water_landNW": "51a5b2860bf613163233",
-"ekat:water_landSE2": "351750260c8bf00f65ce",
-"ekat:water_landSW2": "f8ab7fc1f9fdc15d8b2f",
-"ekat:water_landNE2": "c5fe352f890fa8945c09",
-"ekat:water_landNW2": "51a5b2860bf613163233",
 "ekat:water_weeds1": "2eb69b2d1e9cdf28392a",
 "ekat:water_weeds2": "400943761847d85c5622",
 "ekat:water_lily": "86a758f50e2c8230f6de",
-"ekat:water_sTLBR": "fe433db7f39c9eefd699",
-"ekat:water_sTRBL": "8c002d5becb27bf1218b",
 "ekat:marsh_sTLBR": "1d6b9b777bdb5c14c118",
-"ekat:marsh_sTRBL": "bed70c170b29436b31dc",
-"ekat:mud_sTLBR": "9e47bbddce56c24b4f14",
 "ekat:mud_sTRBL": "48d4d06fcc61a7c919bf",
 "ekat:mudwater_N": "6bcbd39133077006a02c",
 "ekat:mudwater_S": "060e8d307cd0d2a5a4ad",
@@ -77,7 +61,6 @@
 "ekat:mudwater_landNE": "b90edb410eaae28b7334",
 "ekat:mudwater_landNW": "1605a3a6d432726dda8e",
 "ekat:mudwater_sTLBR": "db2a0fb0713586a9f336",
-"ekat:mudwater_sTRBL": "a0b117ea1e94b9a57f62",
 "ekat:marshwater_N": "0c81b1dcbfd201be3730",
 "ekat:marshwater_S": "f991e9b6a6de694e32c7",
 "ekat:marshwater_W": "2ffb1908a2e734519e8b",
@@ -90,34 +73,10 @@
 "ekat:marshwater_landSW": "378c324504c30075d503",
 "ekat:marshwater_landNE": "aa61cd8fab3d110386f2",
 "ekat:marshwater_landNW": "740b1668d39d17034b84",
-"ekat:marshwater_sTLBR": "ee75da9770c5aae33fe5",
-"ekat:marshwater_sTRBL": "ae3faf2d02fde58d8818",
 "ekat:tallgrass": "c23ed4cbe649be4496ad",
 "dry:0_0": "ac761f5a9da2ec1ac289",
-"brg:00": "e949fa0e271a83ab189d",
-"brg:10": "342cff5c67abbd0e8b00",
-"brg:20": "ba664fa65ddb3eebb9f0",
-"brg:01": "f4416d1eef1f9bc074bd",
 "brg:11": "f4416d1eef1f9bc074bd",
-"brg:21": "f4416d1eef1f9bc074bd",
-"brg:02": "f4416d1eef1f9bc074bd",
 "brg:12": "f4416d1eef1f9bc074bd",
-"brg:22": "f4416d1eef1f9bc074bd",
-"brg:03": "85a4e8b0622300cdf78b",
-"brg:13": "2915beb5e90ca3d1b9f8",
-"brg:23": "416765d4554bc3ae41e8",
-"brg:30": "55335cefd2f6ec4ac669",
-"brg:40": "e34fe814fe2817bd490a",
-"brg:50": "e34fe814fe2817bd490a",
-"brg:60": "7a5e2f2512fad6b03c70",
-"brg:31": "b95579bd7fe1713ea434",
-"brg:41": "e34fe814fe2817bd490a",
-"brg:51": "e34fe814fe2817bd490a",
-"brg:61": "bdb807fe53701f1c352f",
-"brg:32": "6346d37ca4360775ba57",
-"brg:42": "e34fe814fe2817bd490a",
-"brg:52": "e34fe814fe2817bd490a",
-"brg:62": "e9cd431d0bb936ccd2cc",
 "bd:swamp_E_marsh_0": "82da0ae8d7e28ed0ded5",
 "bd:swamp_E_marsh_1": "4ef05b0ca564d86db568",
 "bd:swamp_E_water_0": "60c0d3f2a92e17a98461",
@@ -146,51 +105,27 @@
 "bd:swamp_in_SE_water": "6880b78948e7deaa4580",
 "bd:swamp_in_SW_marsh": "4a4d080175b09b20e712",
 "bd:swamp_in_SW_water": "05f6cd384aa269bcde71",
-"patch:pier_3E3_grass": "4fac083246ac471a1dbe",
-"patch:pier_3E3_water_C": "84cf9fac489a0429336e",
-"patch:pier_3E3_water_N": "5decf452389ec17b1352",
-"patch:pier_3EB_grass": "8cb361646774f47e00a3",
-"patch:pier_3EB_water_C": "eb50ef3d9f4393378643",
-"patch:pier_3EB_water_N": "edde48d7a158492b8477",
-"patch:pier_3F3_grass": "26f757e39d017287c025",
-"patch:pier_3F3_water_C": "bfd037ae960d3b211204",
-"patch:pier_3F3_water_N": "a98ee06c8731c20b83f1",
 "patch:pier_3E0_water_C": "2e3b5161b8beb1393331",
-"patch:pier_3E0_water_N": "46ad7f035fc2229d2ce2",
 "patch:pier_3E0_grass": "80b7a6b1afb0879a2db3",
 "patch:pier_3E1_water_C": "4e2b69d55a9b19a2adec",
-"patch:pier_3E1_water_N": "44d9721d695e4f6aedf7",
 "patch:pier_3E1_grass": "2ddacb36850fa678081d",
 "patch:pier_3E2_water_C": "d54342b2b3e272e7e44b",
-"patch:pier_3E2_water_N": "1d73125dd318cc495eea",
 "patch:pier_3E2_grass": "d72d20fd7918728539ea",
 "patch:pier_3E8_water_C": "7396d360e198cd272ea8",
 "patch:pier_3E8_water_N": "81dd34ef7b6306d5d750",
 "patch:pier_3E8_grass": "9f1fa3d8fa871bf525e8",
 "patch:pier_3E9_water_C": "84d5b1983f20a1fc6765",
-"patch:pier_3E9_water_N": "0d461200524a8fbe6feb",
 "patch:pier_3E9_grass": "ad1cc7be0a6d4a30aced",
 "patch:pier_3EA_water_C": "fa97e9f332db7ddb732b",
-"patch:pier_3EA_water_N": "df459505ea4d803be1c4",
 "patch:pier_3EA_grass": "703fa87bcacdfb88085b",
 "patch:pier_3F0_water_C": "5f201dd65b4e45c48584",
-"patch:pier_3F0_water_N": "3d0f856da4dff05bb8d2",
 "patch:pier_3F0_grass": "a78d4bff15139e91bd5c",
 "patch:pier_3F1_water_C": "dcd2a6489a939a0c9fb4",
-"patch:pier_3F1_water_N": "47022102efafbf3ae287",
 "patch:pier_3F1_grass": "5e6ae8c101726d8aa950",
 "patch:pier_3F2_water_C": "29dd68a3dd9e3cc599ae",
-"patch:pier_3F2_water_N": "e8e6a282720ba888fcef",
-"patch:pier_3F2_grass": "3ebe4a3f1bfe7054c28b",
 "patch:pier_3F8_water_C": "f00060ab3091fbe7e628",
-"patch:pier_3F8_water_N": "faea609107539b56445d",
-"patch:pier_3F8_grass": "23cfe0f041bfd79b9d7c",
 "patch:pier_3F9_water_C": "cb302972de4263db1246",
-"patch:pier_3F9_water_N": "262fa3d3731c0f144ef6",
-"patch:pier_3F9_grass": "adc57a187546dca90b18",
 "patch:pier_3FA_water_C": "651fb85191618287aa78",
-"patch:pier_3FA_water_N": "4a7e4af43878d7bb70df",
-"patch:pier_3FA_grass": "8653cf8544c32ad616a1",
 "patch:cypress_00_marsh": "70de57b1536ba132fa55",
 "patch:cypress_10_marsh": "1c36df1a9703f1ee6a24",
 "patch:cypress_20_marsh": "75595a4ea6fbddab6281",
@@ -237,7 +172,6 @@
 "patch:ovl_brg_52__ekat_water_S__normal": "094fe434ef06a05b6605",
 "patch:ovl_brg_60__ekat_water_C__normal": "097248179004a98fdf15",
 "patch:ovl_brg_61__ekat_water_C__normal": "87bbf14bba22a229b1da",
-"patch:ovl_brg_62__ekat_mudwater_S__normal": "ca632aefad4c41e23943",
 "patch:ovl_brg_00__ekat_grass": "daeb97a77d800f43d158",
 "patch:ovl_brg_01__ekat_grass__normal": "a7d7bbf64eb116eb0062",
 "patch:ovl_brg_02__ekat_grass__normal": "a7d7bbf64eb116eb0062",
@@ -285,26 +219,12 @@
 "patch:ovl_mag_10__ekat_grass": "ebc124379b25aad04038",
 "patch:ovl_mag_11__ekat_grass": "d7d1f6c90873fbe0a613",
 "patch:ovl_mag_12__ekat_grass": "290d0737b72e43465673",
-"patch:ovl_props_crates__ekat_marsh_C": "dfda1a9e727b00d27d34",
-"patch:ovl_mag_00__ekat_water_S": "6e3e173a47cc607617f8",
-"patch:ovl_mag_10__ekat_water_S": "26829aea12aa9fda9204",
 "patch:ovl_props_barrel__dry_0_0": "b76f15718d28af4a7e6c",
 "patch:ovl_props_bench_0__dry_0_0": "073cd994625c04f96615",
 "patch:ovl_props_bench_1__dry_0_0": "8b6303a949e5c1906cc7",
 "patch:ovl_props_crates__dry_0_0": "4840aa9e81e24cb55385",
 "patch:ovl_props_lamp_post__dry_0_0": "5d0d4420bb77005ea3a5",
 "patch:ovl_props_lamp_top__dry_0_0": "69d9db9f9b04f1285aaf",
-"patch:ovl_mag_00__ekat_water_C": "fe1b0cc224962896a4a8",
-"patch:ovl_mag_00__ekat_water_N": "35dd7f328f0339236be4",
-"patch:ovl_mag_01__ekat_water_C": "00a3af61cb01d02c4d76",
-"patch:ovl_mag_02__ekat_water_C": "b4192031e7bd03f10c19",
-"patch:ovl_mag_10__ekat_water_E": "dd36b3b86b7e06eb2133",
-"patch:ovl_mag_10__ekat_water_N": "aeb0a44a054f38d6dc9b",
-"patch:ovl_mag_10__ekat_water_landSW": "e64ae2198bfac1256ab1",
-"patch:ovl_mag_11__ekat_water_C": "a58261b2c8323d88c995",
-"patch:ovl_mag_11__ekat_water_E": "7d59a9a413e9197391e2",
-"patch:ovl_mag_12__ekat_water_C": "d2abb59f3dde77344cec",
-"patch:ovl_mag_12__ekat_water_E": "d232573e0643706ce6c9",
 "patch:ovl_props_bench_0__ekat_grass": "55de552a2d15351c6ae2",
 "patch:ovl_props_bench_1__ekat_grass": "8a0ed296195797a63b7c",
 "patch:ovl_props_lamp_post__ekat_grass": "bf3b191bb4bfb5acb5d1",
@@ -315,10 +235,6 @@
 "patch:ovl_props_bench_1__ekat_water_landSE": "faf3e804b4b3e99c99a8",
 "patch:ovl_props_crates__ekat_water_landSE": "a702c847f835972e78df",
 "patch:ovl_props_crates__ekat_water_landSW": "8122f7dc19d65963472e",
-"patch:ovl_props_trap__ekat_grass": "5ea0e4cca21f4e02dbb6",
-"patch:ovl_props_bench_0__ekat_water_N": "1aa20f3b31086a910f50",
-"patch:ovl_props_bench_1__ekat_water_N": "6b163a6b297929a2481a",
-"patch:ovl_mag_02__dry_0_0": "60b2e487f4b7c28122ad",
 "patch:ovl_mag_12__dry_0_0": "8442c519186c33967121",
 "patch:ovl_lmk_15_9__johto_1C9": "980f637e3224d3b3a640",
 "patch:ovl_lmk_15_9__johto_1C8": "48032346f9a9b19dae2a",
@@ -7223,66 +7139,6 @@
 1,
 2
 ],
-"40322bd98190c3399d5d": [
-285,
-0,
-0,
-3
-],
-"fc79c5a0b883b880ef13": [
-285,
-0,
-1,
-3
-],
-"2d6cab4b365577818d52": [
-285,
-1,
-0,
-3
-],
-"c5a3d381a3802aaabfbf": [
-285,
-1,
-1,
-3
-],
-"6f04781636ffc4f3209b": [
-286,
-0,
-0,
-3
-],
-"1d5053d637bab8922fcc": [
-286,
-1,
-0,
-3
-],
-"ddc4ff2e5ea179cfa582": [
-287,
-0,
-0,
-3
-],
-"84fd7102c530bffec779": [
-287,
-0,
-1,
-3
-],
-"9178d9c485516cacb905": [
-287,
-1,
-0,
-3
-],
-"0ba7c060b1fc43f38fde": [
-287,
-1,
-1,
-3
-],
 "c7d3a01746f782d94b9a": [
 288,
 0,
@@ -11237,102 +11093,6 @@
 1,
 1
 ],
-"e889d4f3a4aec5ec63bd": [
-456,
-0,
-0,
-4
-],
-"7a14f3f8990d418e6993": [
-456,
-0,
-1,
-4
-],
-"ce343b46bbbdd0436b8d": [
-456,
-1,
-0,
-4
-],
-"9aa5fa6e33bbd005224a": [
-456,
-1,
-1,
-4
-],
-"771739c5962831f2b3ee": [
-457,
-0,
-0,
-4
-],
-"178106506e990585d7a0": [
-457,
-0,
-1,
-4
-],
-"4c9a2f9a6309c05c3c39": [
-457,
-1,
-0,
-4
-],
-"994dda3851e5eb1847fd": [
-457,
-1,
-1,
-4
-],
-"5512d2d19b34cf04bf04": [
-458,
-0,
-0,
-4
-],
-"b40401f2430621f8b131": [
-458,
-0,
-1,
-4
-],
-"c902d6c1ed8edd9ea67d": [
-458,
-1,
-0,
-4
-],
-"d0cf2b7445f4a173dcd9": [
-458,
-1,
-1,
-4
-],
-"3d7675a4b4f60fde6e30": [
-459,
-0,
-0,
-4
-],
-"d79ad8041e8d74bfd44a": [
-459,
-0,
-1,
-4
-],
-"f4270559c06a19fcd6b8": [
-459,
-1,
-0,
-4
-],
-"96c258e2e96f8df63023": [
-459,
-1,
-1,
-4
-],
 "4eb7c94b5f0c139210ab": [
 460,
 0,
@@ -12208,6 +11968,498 @@
 1,
 1,
 1
+],
+"adb0a541b06610567e3b": [
+285,
+0,
+0,
+2
+],
+"144a08b3b828f6dcd879": [
+285,
+0,
+1,
+2
+],
+"943f873f0d234886201f": [
+285,
+1,
+0,
+2
+],
+"b774778106dfb8e1879b": [
+285,
+1,
+1,
+2
+],
+"72b415d469d2bb8fb724": [
+286,
+0,
+0,
+2
+],
+"f50f19321753bd29b0f5": [
+286,
+0,
+1,
+2
+],
+"50cdf06f1b8bba85dd6f": [
+286,
+1,
+0,
+2
+],
+"a62d1d3c498891700640": [
+286,
+1,
+1,
+2
+],
+"2ebbe6ac6aa77f4594e8": [
+287,
+0,
+0,
+2
+],
+"f1a54068272248ef7805": [
+287,
+0,
+1,
+2
+],
+"58cd073a9361c617baf4": [
+287,
+1,
+0,
+2
+],
+"6c951e76e377aabba929": [
+287,
+1,
+1,
+2
+],
+"8b793eee38f3e5c5c824": [
+456,
+0,
+0,
+2
+],
+"3f403f922f4576a7baa4": [
+456,
+0,
+1,
+2
+],
+"aca3e26281129fdd0774": [
+456,
+1,
+0,
+2
+],
+"d85e14ee316c76b1d46a": [
+456,
+1,
+1,
+2
+],
+"929cee3272b8b61f0067": [
+457,
+0,
+0,
+2
+],
+"db8dbfc3e2a53a42b785": [
+457,
+0,
+1,
+2
+],
+"a1c5c3a4eb27294b611a": [
+457,
+1,
+0,
+2
+],
+"5e6e6236bc803ae7aae9": [
+457,
+1,
+1,
+2
+],
+"fd07ad92a09bf8f8e309": [
+458,
+0,
+0,
+2
+],
+"f0da037a6a074d622502": [
+458,
+0,
+1,
+2
+],
+"0a73d646ceaa9ec787fc": [
+458,
+1,
+0,
+2
+],
+"8a2abe0cfc8cefbc6693": [
+458,
+1,
+1,
+2
+],
+"5066ca63f7909462d273": [
+459,
+0,
+0,
+2
+],
+"85f08cfd1c68484961fd": [
+459,
+0,
+1,
+2
+],
+"ed0613a365820f79105b": [
+459,
+1,
+0,
+2
+],
+"8dc3417448f7ea5d296d": [
+459,
+1,
+1,
+2
+],
+"e4ab5db219376ab9c86e": [
+497,
+0,
+0,
+2
+],
+"70336c4383dece123894": [
+497,
+0,
+1,
+2
+],
+"11d272c854f5ec1c17ff": [
+497,
+1,
+0,
+2
+],
+"c67b591c2daf38dec8e5": [
+497,
+1,
+1,
+2
+],
+"1ce3785f8e939d04ef71": [
+498,
+0,
+0,
+2
+],
+"d1e39d637c8a13d4bf15": [
+498,
+0,
+1,
+2
+],
+"35c4b395387e42730ff2": [
+498,
+1,
+0,
+2
+],
+"347be87f6277c6be78ca": [
+498,
+1,
+1,
+2
+],
+"f99e8a6c73eee1154e56": [
+499,
+0,
+0,
+2
+],
+"cd637b4afadb78e37d6e": [
+499,
+0,
+1,
+2
+],
+"38e47e29bd6172a92165": [
+499,
+1,
+0,
+2
+],
+"6e64b50ac5cb7fc2e7e0": [
+499,
+1,
+1,
+2
+],
+"29cde0a329f2d9c5f810": [
+500,
+0,
+0,
+2
+],
+"4384658c487af2b1410a": [
+500,
+0,
+1,
+2
+],
+"fb75b13099e932caa307": [
+500,
+1,
+0,
+2
+],
+"d563a698b5bc80c23be3": [
+500,
+1,
+1,
+2
+],
+"66991e7a89d93343ed69": [
+501,
+0,
+0,
+2
+],
+"3125dc4cde8ffeca221f": [
+501,
+0,
+1,
+2
+],
+"f1b2a54b6fc759d61b14": [
+501,
+1,
+0,
+2
+],
+"e0d23d10cfb6b0ff1e51": [
+501,
+1,
+1,
+2
+],
+"32dcbdbe63b9a7db8c13": [
+502,
+0,
+0,
+5
+],
+"cb67443db714ad62d752": [
+502,
+0,
+1,
+5
+],
+"f4d80a38ce60a5f7546d": [
+502,
+1,
+0,
+5
+],
+"cb1a4c52536a8b361e91": [
+502,
+1,
+1,
+5
+],
+"63feffbb808cbe0fc817": [
+503,
+0,
+0,
+5
+],
+"7ff7e93a9dc9ff813f34": [
+503,
+0,
+1,
+5
+],
+"ea0b126f042ace9b4e94": [
+504,
+0,
+0,
+5
+],
+"db7d0529268089a8ec03": [
+504,
+0,
+1,
+5
+],
+"21091f6ad1357133e6b2": [
+504,
+1,
+0,
+5
+],
+"750f67b4e4e143d8ebe5": [
+504,
+1,
+1,
+5
+],
+"922d25f3e5a6fea968c0": [
+505,
+0,
+0,
+5
+],
+"1047f1334a31ce0bf44e": [
+505,
+0,
+1,
+5
+],
+"f042849ff8490efe7a4b": [
+505,
+1,
+0,
+5
+],
+"e4b60c30fa5a5cd46000": [
+505,
+1,
+1,
+5
+],
+"9457784e54d0324638e4": [
+506,
+0,
+0,
+5
+],
+"e4ae3e0c64d4bfb38888": [
+506,
+0,
+1,
+5
+],
+"0fe457d506786ce56fb6": [
+506,
+1,
+0,
+5
+],
+"c8fd3a9cf5bf2f29e6cb": [
+506,
+1,
+1,
+5
+],
+"5cfd23f30e6bf4a1b4c1": [
+507,
+0,
+0,
+5
+],
+"02dd86781ee9535b8ab9": [
+507,
+0,
+1,
+5
+],
+"06462d0012421ccbfc79": [
+507,
+1,
+0,
+5
+],
+"6049c9f425dd2cd44270": [
+507,
+1,
+1,
+5
+],
+"6ce9cecc74b7d3d92153": [
+508,
+0,
+0,
+5
+],
+"01bda7a5b923eb3ef0fe": [
+508,
+0,
+1,
+5
+],
+"d74b472a1bbc002366ba": [
+508,
+1,
+0,
+5
+],
+"15ac7bd59eb303e81f11": [
+508,
+1,
+1,
+5
+],
+"6e08d9d679f569ab8cda": [
+509,
+0,
+0,
+5
+],
+"cde31c15d205a5d2a3f8": [
+509,
+0,
+1,
+5
+],
+"2437eb80569c53b473e4": [
+509,
+1,
+0,
+5
+],
+"8bd67ee1ebc4a156b54d": [
+509,
+1,
+1,
+5
+],
+"dee0d5cf791010f7a8e4": [
+510,
+0,
+0,
+5
+],
+"5cf35211d8ebbdca66cd": [
+510,
+0,
+1,
+5
+],
+"1fbb0871282f2a275b97": [
+510,
+1,
+0,
+5
+],
+"57f83ee09ca9f8196c4c": [
+510,
+1,
+1,
+5
 ]
 },
 "tileset": "gTileset_OrleansGeneral",
@@ -12512,10 +12764,6 @@
 "ekat:marsh_landSW": 15,
 "ekat:marsh_landNE": 16,
 "ekat:marsh_landNW": 17,
-"ekat:marsh_landSE2": 18,
-"ekat:marsh_landSW2": 19,
-"ekat:marsh_landNE2": 20,
-"ekat:marsh_landNW2": 21,
 "ekat:marsh_plants1": 22,
 "ekat:marsh_plants3": 23,
 "ekat:mud_N": 24,
@@ -12531,10 +12779,6 @@
 "ekat:mud_landSW": 34,
 "ekat:mud_landNE": 35,
 "ekat:mud_landNW": 36,
-"ekat:mud_landSE2": 37,
-"ekat:mud_landSW2": 38,
-"ekat:mud_landNE2": 39,
-"ekat:mud_landNW2": 40,
 "ekat:mud_plants3": 41,
 "ekat:water_N": 43,
 "ekat:water_S": 44,
@@ -12549,18 +12793,10 @@
 "ekat:water_landSW": 53,
 "ekat:water_landNE": 54,
 "ekat:water_landNW": 55,
-"ekat:water_landSE2": 56,
-"ekat:water_landSW2": 57,
-"ekat:water_landNE2": 59,
-"ekat:water_landNW2": 60,
 "ekat:water_weeds1": 61,
 "ekat:water_weeds2": 62,
 "ekat:water_lily": 63,
-"ekat:water_sTLBR": 64,
-"ekat:water_sTRBL": 65,
 "ekat:marsh_sTLBR": 66,
-"ekat:marsh_sTRBL": 67,
-"ekat:mud_sTLBR": 68,
 "ekat:mud_sTRBL": 69,
 "ekat:mudwater_N": 70,
 "ekat:mudwater_S": 71,
@@ -12575,7 +12811,6 @@
 "ekat:mudwater_landNE": 80,
 "ekat:mudwater_landNW": 81,
 "ekat:mudwater_sTLBR": 82,
-"ekat:mudwater_sTRBL": 83,
 "ekat:marshwater_N": 84,
 "ekat:marshwater_S": 85,
 "ekat:marshwater_W": 86,
@@ -12588,34 +12823,10 @@
 "ekat:marshwater_landSW": 93,
 "ekat:marshwater_landNE": 94,
 "ekat:marshwater_landNW": 95,
-"ekat:marshwater_sTLBR": 96,
-"ekat:marshwater_sTRBL": 97,
 "ekat:tallgrass": 98,
 "dry:0_0": 99,
-"brg:00": 100,
-"brg:10": 101,
-"brg:20": 102,
-"brg:01": 103,
 "brg:11": 104,
-"brg:21": 105,
-"brg:02": 106,
 "brg:12": 107,
-"brg:22": 108,
-"brg:03": 109,
-"brg:13": 110,
-"brg:23": 111,
-"brg:30": 112,
-"brg:40": 113,
-"brg:50": 114,
-"brg:60": 115,
-"brg:31": 116,
-"brg:41": 117,
-"brg:51": 118,
-"brg:61": 119,
-"brg:32": 120,
-"brg:42": 121,
-"brg:52": 122,
-"brg:62": 123,
 "bd:swamp_E_marsh_0": 124,
 "bd:swamp_E_marsh_1": 125,
 "bd:swamp_E_water_0": 126,
@@ -12644,51 +12855,27 @@
 "bd:swamp_in_SE_water": 149,
 "bd:swamp_in_SW_marsh": 150,
 "bd:swamp_in_SW_water": 151,
-"patch:pier_3E3_grass": 152,
-"patch:pier_3E3_water_C": 153,
-"patch:pier_3E3_water_N": 154,
-"patch:pier_3EB_grass": 155,
-"patch:pier_3EB_water_C": 156,
-"patch:pier_3EB_water_N": 157,
-"patch:pier_3F3_grass": 158,
-"patch:pier_3F3_water_C": 159,
-"patch:pier_3F3_water_N": 160,
 "patch:pier_3E0_water_C": 161,
-"patch:pier_3E0_water_N": 162,
 "patch:pier_3E0_grass": 163,
 "patch:pier_3E1_water_C": 164,
-"patch:pier_3E1_water_N": 165,
 "patch:pier_3E1_grass": 166,
 "patch:pier_3E2_water_C": 167,
-"patch:pier_3E2_water_N": 168,
 "patch:pier_3E2_grass": 169,
 "patch:pier_3E8_water_C": 170,
 "patch:pier_3E8_water_N": 171,
 "patch:pier_3E8_grass": 172,
 "patch:pier_3E9_water_C": 173,
-"patch:pier_3E9_water_N": 174,
 "patch:pier_3E9_grass": 175,
 "patch:pier_3EA_water_C": 176,
-"patch:pier_3EA_water_N": 177,
 "patch:pier_3EA_grass": 178,
 "patch:pier_3F0_water_C": 179,
-"patch:pier_3F0_water_N": 180,
 "patch:pier_3F0_grass": 181,
 "patch:pier_3F1_water_C": 182,
-"patch:pier_3F1_water_N": 183,
 "patch:pier_3F1_grass": 184,
 "patch:pier_3F2_water_C": 185,
-"patch:pier_3F2_water_N": 186,
-"patch:pier_3F2_grass": 187,
 "patch:pier_3F8_water_C": 188,
-"patch:pier_3F8_water_N": 189,
-"patch:pier_3F8_grass": 190,
 "patch:pier_3F9_water_C": 191,
-"patch:pier_3F9_water_N": 192,
-"patch:pier_3F9_grass": 193,
 "patch:pier_3FA_water_C": 194,
-"patch:pier_3FA_water_N": 195,
-"patch:pier_3FA_grass": 196,
 "patch:cypress_00_marsh": 197,
 "patch:cypress_10_marsh": 198,
 "patch:cypress_20_marsh": 199,
@@ -12735,7 +12922,6 @@
 "patch:ovl_brg_52__ekat_water_S__normal": 269,
 "patch:ovl_brg_60__ekat_water_C__normal": 270,
 "patch:ovl_brg_61__ekat_water_C__normal": 271,
-"patch:ovl_brg_62__ekat_mudwater_S__normal": 272,
 "patch:ovl_brg_00__ekat_grass": 273,
 "patch:ovl_brg_01__ekat_grass__normal": 274,
 "patch:ovl_brg_02__ekat_grass__normal": 275,
@@ -12783,26 +12969,12 @@
 "patch:ovl_mag_10__ekat_grass": 320,
 "patch:ovl_mag_11__ekat_grass": 321,
 "patch:ovl_mag_12__ekat_grass": 322,
-"patch:ovl_props_crates__ekat_marsh_C": 323,
-"patch:ovl_mag_00__ekat_water_S": 324,
-"patch:ovl_mag_10__ekat_water_S": 325,
 "patch:ovl_props_barrel__dry_0_0": 326,
 "patch:ovl_props_bench_0__dry_0_0": 327,
 "patch:ovl_props_bench_1__dry_0_0": 328,
 "patch:ovl_props_crates__dry_0_0": 329,
 "patch:ovl_props_lamp_post__dry_0_0": 330,
 "patch:ovl_props_lamp_top__dry_0_0": 331,
-"patch:ovl_mag_00__ekat_water_C": 332,
-"patch:ovl_mag_00__ekat_water_N": 333,
-"patch:ovl_mag_01__ekat_water_C": 334,
-"patch:ovl_mag_02__ekat_water_C": 335,
-"patch:ovl_mag_10__ekat_water_E": 336,
-"patch:ovl_mag_10__ekat_water_N": 337,
-"patch:ovl_mag_10__ekat_water_landSW": 338,
-"patch:ovl_mag_11__ekat_water_C": 339,
-"patch:ovl_mag_11__ekat_water_E": 340,
-"patch:ovl_mag_12__ekat_water_C": 341,
-"patch:ovl_mag_12__ekat_water_E": 342,
 "patch:ovl_props_bench_0__ekat_grass": 343,
 "patch:ovl_props_bench_1__ekat_grass": 344,
 "patch:ovl_props_lamp_post__ekat_grass": 345,
@@ -12813,10 +12985,6 @@
 "patch:ovl_props_bench_1__ekat_water_landSE": 350,
 "patch:ovl_props_crates__ekat_water_landSE": 351,
 "patch:ovl_props_crates__ekat_water_landSW": 352,
-"patch:ovl_props_trap__ekat_grass": 353,
-"patch:ovl_props_bench_0__ekat_water_N": 354,
-"patch:ovl_props_bench_1__ekat_water_N": 355,
-"patch:ovl_mag_02__dry_0_0": 356,
 "patch:ovl_mag_12__dry_0_0": 357,
 "patch:ovl_lmk_15_9__johto_1C9": 358,
 "patch:ovl_lmk_15_9__johto_1C8": 359,
@@ -12830,7 +12998,23 @@
 "patch:bdg_swamp_out_NE_542aa1ca": 367,
 "patch:bdg_swamp_out_NW_542aa1ca": 368,
 "patch:bdg_swamp_out_SW_542aa1ca": 369,
-"patch:bdg_swamp_out_SE_542aa1ca": 370
+"patch:bdg_swamp_out_SE_542aa1ca": 370,
+"pss:w_rock_a": 459,
+"pss:w_rock_b": 460,
+"pss:w_knee": 461,
+"pss:pd_NW": 462,
+"pss:pd_N": 463,
+"pss:pd_NE": 464,
+"pss:pd_W": 465,
+"pss:pd_E": 466,
+"pss:pd_SW": 467,
+"pss:pd_S": 468,
+"pss:pd_SE": 469,
+"pss:pd_iNW": 470,
+"pss:pd_iNE": 471,
+"pss:pd_iSW": 472,
+"pss:pd_iSE": 473,
+"pss:pd_N_by_dry1_2": 474
 },
 "palettes": [
 [
@@ -16705,30 +16889,6 @@
 0,
 2
 ],
-"[[\"dir\", \"data/tilesets/secondary/route_40_hns\", 267], [\"dir\", \"data/tilesets/secondary/route_40_hns\", 10]]": [
-285,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/secondary/route_40_hns\", 283], [\"dir\", \"data/tilesets/secondary/route_40_hns\", 10]]": [
-286,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/secondary/route_40_hns\", 299], [\"dir\", \"data/tilesets/secondary/route_40_hns\", 10]]": [
-286,
-0,
-0,
-3
-],
-"[[\"dir\", \"data/tilesets/secondary/route_40_hns\", 315], [\"dir\", \"data/tilesets/secondary/route_40_hns\", 10]]": [
-287,
-0,
-0,
-3
-],
 "[[\"dir\", \"data/tilesets/secondary/route_40_hns\", 268], [\"dir\", \"data/tilesets/secondary/route_40_hns\", 10]]": [
 288,
 0,
@@ -18012,30 +18172,6 @@
 0,
 0,
 1
-],
-"[[\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 46], [\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 0]]": [
-456,
-0,
-0,
-4
-],
-"[[\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 47], [\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 0]]": [
-457,
-0,
-0,
-4
-],
-"[[\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 62], [\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 0]]": [
-458,
-0,
-0,
-4
-],
-"[[\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 63], [\"img\", \"tools/mapgen/sources/orleans_custom/props.png\", 0]]": [
-459,
-0,
-0,
-4
 ],
 "[[\"comp\", [[\"dir\", \"data/tilesets/primary/johto_general_hns\", 594], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1], 0, 0], [[\"dir\", \"data/tilesets/primary/johto_general_hns\", 594], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1], 0, 0]], [\"comp\", [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1], [\"dir\", \"data/tilesets/primary/johto_general_hns\", 1]]]": [
 460,
