@@ -128,7 +128,7 @@ def run(b, t):
         ("Route18 swimmer (turned along the water)", "Route18", (17, 20), (20, 20), (20, 21)),
         ("Route19 sailor (shore above the water)", "Route19", (15, 8), (15, 11), (14, 11)),
         ("Route19 boy (shore above the water)", "Route19", (23, 9), (23, 11), (22, 11)),
-        ("Route20 Germain (land above the water strip)", "Route20", (29, 8), (29, 9), (28, 9)),
+        ("Route20 Germain (land above the water strip; faces west since fix S, sees the water row 8)", "Route20", (29, 8), (26, 8), (26, 9)),
         ("Route22 Leontine (rock moved aside)", "Route22", (28, 14), (28, 17), (27, 17)),
         ("Route25 Genevieve (rock moved aside)", "Route25", (14, 14), (14, 17), (13, 17)),
     ]
