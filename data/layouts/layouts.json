@@ -1821,7 +1821,7 @@
       "width": 50,
       "height": 42,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansVillage",
+      "secondary_tileset": "gTileset_OrleansBayou",
       "border_filepath": "data/layouts/OldWater/border.bin",
       "blockdata_filepath": "data/layouts/OldWater/map.bin"
     },

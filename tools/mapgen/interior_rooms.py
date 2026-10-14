@@ -8,7 +8,7 @@ IM = dict(exterior="MAP_ISLE_MARAIS", exterior_spec="isle_marais.json", exterior
           group="gMapGroup_IndoorIsleMarais", mapsec="MAPSEC_ISLE_MARAIS", music="MUS_RG_PALLET")
 GO = dict(exterior="MAP_GRAND_OAK", exterior_spec="grand_oak.json", exterior_cfg="orleans_town",
           group="gMapGroup_IndoorGrandOak", mapsec="MAPSEC_GRAND_OAK", music="MUS_RG_CELADON")
-OW = dict(exterior="MAP_OLD_WATER", exterior_spec="old_water.json", exterior_cfg="orleans_village",
+OW = dict(exterior="MAP_OLD_WATER", exterior_spec="old_water.json", exterior_cfg="orleans_bayou",
           group="gMapGroup_IndoorOldWater", mapsec="MAPSEC_OLD_WATER", music="MUS_RG_FUCHSIA")
 HOME = dict(ref=True, tileset="orleans_home", secondary="gTileset_OrleansHome")
 HALL = dict(ref=True, tileset="orleans_hall", secondary="gTileset_OrleansHall")

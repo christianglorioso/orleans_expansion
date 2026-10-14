@@ -4,7 +4,13 @@
   "map_const": "MAP_OLD_WATER",
   "layout": "LAYOUT_OLD_WATER",
   "layout_dir": "data/layouts/OldWater",
-  "tileset": "orleans_village",
+  "tileset": "orleans_bayou",
+  "prefab_map": {
+    "walk_h8": "ow_walk_h8",
+    "walk_h9": "ow_walk_h9",
+    "walk_v5": "ow_walk_v5",
+    "walk_v6": "ow_walk_v6"
+  },
   "mockup": "../orleans_maps/10_old_water.png",
   "grid": "old_water.grid.txt",
   "edits": [],

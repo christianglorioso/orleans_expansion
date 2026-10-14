@@ -1,5 +1,5 @@
 """The Old Water (Rootkin village), polished by hand from the approved layout (mockup 10_old_water.png): 50 x 42 on the
-orleans_village tileset (demand-driven, palette v2).
+orleans_bayou tileset (shared with Isle Marais and Route 1 since the seams review) (demand-driven, palette v2).
 
 usage (from the decomp root):
     python -W ignore tools/mapgen/old_water.py [--ascii] [--dry-run] [--no-build] [--review]
@@ -525,8 +525,11 @@ def build():
 
 
 def prefab_sizes():
-    cfg = json.load(open(os.path.join(HERE, "tilesets", "orleans_village.json"), encoding="utf-8"))
-    return {k: (len(v["rows"][0]), len(v["rows"])) for k, v in cfg["prefabs"].items()}
+    cfg = json.load(open(os.path.join(HERE, "tilesets", "orleans_bayou.json"), encoding="utf-8"))
+    pm = load_spec().get("prefab_map", {})          # the rope walkways keep their own names on the shared bayou tileset
+    out = {k: (len(v["rows"][0]), len(v["rows"])) for k, v in cfg["prefabs"].items()}
+    out.update({k: out[v] for k, v in pm.items()})
+    return out
 
 
 def reconcile(spec, grid):
