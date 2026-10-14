@@ -112,7 +112,7 @@ enum {
     DERBY_SPECIES_DODUO_5,
     DERBY_SPECIES_RATTATA,
     DERBY_SPECIES_DODRIO,
-    DERBY_SPECIES_FEEBAS,
+    DERBY_SPECIES_CHEWTLE,
     DERBY_SPECIES_COUNT,
 };
 
@@ -227,9 +227,9 @@ static const u32 RattataGFX[] = INCGFX_U32("graphics/pokemon/rattata/anim_front.
 static const u16 RattataNormalPAL[] = INCGFX_U16("graphics/pokemon/rattata/normal.pal", ".gbapal");
 static const u16 RattataShinyPAL[] = INCGFX_U16("graphics/pokemon/rattata/shiny.pal", ".gbapal");
 
-static const u32 FeebasGFX[] = INCGFX_U32("graphics/pokemon/feebas/anim_front.png", ".4bpp.smol");
-static const u16 FeebasNormalPAL[] = INCGFX_U16("graphics/pokemon/feebas/normal.pal", ".gbapal");
-static const u16 FeebasShinyPAL[] = INCGFX_U16("graphics/pokemon/feebas/shiny.pal", ".gbapal");
+static const u32 ChewtleGFX[] = INCGFX_U32("graphics/pokemon/chewtle/anim_front.png", ".4bpp.smol");
+static const u16 ChewtleNormalPAL[] = INCGFX_U16("graphics/pokemon/chewtle/normal.pal", ".gbapal");
+static const u16 ChewtleShinyPAL[] = INCGFX_U16("graphics/pokemon/chewtle/shiny.pal", ".gbapal");
 
 // Betting Menu Text
 
@@ -238,7 +238,7 @@ static const u16 FeebasShinyPAL[] = INCGFX_U16("graphics/pokemon/feebas/shiny.pa
 static const u32 Name_DoduoGFX[] = INCGFX_U32("graphics/derby/species_name/name-doduo.png", ".4bpp.smol");
 static const u32 Name_DodrioGFX[] = INCGFX_U32("graphics/derby/species_name/name-dodrio.png", ".4bpp.smol");
 static const u32 Name_RattataGFX[] = INCGFX_U32("graphics/derby/species_name/name-rattata.png", ".4bpp.smol");
-static const u32 Name_FeebasGFX[] = INCGFX_U32("graphics/derby/species_name/name-feebas.png", ".4bpp.smol");
+static const u32 Name_ChewtleGFX[] = INCGFX_U32("graphics/derby/species_name/name-chewtle.png", ".4bpp.smol");
 
 static const u16 TextPAL[] = INCGFX_U16("graphics/derby/bet_text.pal", ".gbapal");
 
@@ -296,7 +296,7 @@ static const u32 P10_GFX[] = INCGFX_U32("graphics/derby/10p.png", ".4bpp.smol");
 
 // Pokemon OW Sprites
 
-static const u32 Feebas_OW_GFX[] = INCGFX_U32("graphics/derby/feebas_ow.png", ".4bpp.smol");
+static const u32 Chewtle_OW_GFX[] = INCGFX_U32("graphics/derby/chewtle_ow.png", ".4bpp.smol");
 static const u32 Doduo_OW_GFX[] = INCGFX_U32("graphics/derby/doduo_ow.png", ".4bpp.smol");
 static const u32 Rattata_OW_GFX[] = INCGFX_U32("graphics/derby/rattata_ow.png", ".4bpp.smol");
 static const u32 Dodrio_OW_GFX[] = INCGFX_U32("graphics/derby/dodrio_ow.png", ".4bpp.smol");
@@ -362,11 +362,11 @@ static const struct WindowTemplate sDerbyWinTemplates[] = {
 #define GFX_DODUO 3
 #define GFX_DODRIO 4
 #define GFX_RATTATA 5
-#define GFX_FEEBAS 6
+#define GFX_CHEWTLE 6
 #define GFX_NAME_DODUO 7
 #define GFX_NAME_RATTATA 8
 #define GFX_NAME_DODRIO 9
-#define GFX_NAME_FEEBAS 10
+#define GFX_NAME_CHEWTLE 10
 #define GFX_CONDITION_1 11
 #define GFX_CONDITION_2 12
 #define GFX_CONDITION_3 13
@@ -396,7 +396,7 @@ static const struct WindowTemplate sDerbyWinTemplates[] = {
 #define GFX_DODUO_OW 37
 #define GFX_RATTATA_OW 38
 #define GFX_DODRIO_OW 39
-#define GFX_FEEBAS_OW 40
+#define GFX_CHEWTLE_OW 40
 #define GFX_CURSOR 41
 #define GFX_COUNTDOWN_3 42
 #define GFX_COUNTDOWN_2 43
@@ -412,8 +412,8 @@ static const struct WindowTemplate sDerbyWinTemplates[] = {
 #define PAL_DODRIO_SHINY 6
 #define PAL_RATTATA 7
 #define PAL_RATTATA_SHINY 8
-#define PAL_FEEBAS 9
-#define PAL_FEEBAS_SHINY 10
+#define PAL_CHEWTLE 9
+#define PAL_CHEWTLE_SHINY 10
 #define PAL_BET_MENU_TEXT 11
 #define PAL_CONDITION 12
 #define PAL_UI 13
@@ -432,8 +432,8 @@ static const struct SpritePalette sSpritePalettes[] =
     { .data = DodrioShinyPAL,         .tag = PAL_DODRIO_SHINY },
     { .data = RattataNormalPAL,         .tag = PAL_RATTATA },
     { .data = RattataShinyPAL,         .tag = PAL_RATTATA_SHINY },
-    { .data = FeebasNormalPAL,         .tag = PAL_FEEBAS },
-    { .data = FeebasShinyPAL,         .tag = PAL_FEEBAS_SHINY },
+    { .data = ChewtleNormalPAL,         .tag = PAL_CHEWTLE },
+    { .data = ChewtleShinyPAL,         .tag = PAL_CHEWTLE_SHINY },
     { .data = TextPAL,                 .tag = PAL_BET_MENU_TEXT },
     { .data = ConditionPAL,             .tag = PAL_CONDITION },
     { .data = BetMenuUIPAL,             .tag = PAL_UI },
@@ -724,41 +724,48 @@ static const struct SpriteTemplate sSpriteTemplate_Rattata_OW_Shiny =
     .callback = SpriteCallbackDummy,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_Feebas_OW =
+static const struct CompressedSpriteSheet sSpriteSheet_Chewtle_OW =
 {
-    .data = Feebas_OW_GFX,
+    .data = Chewtle_OW_GFX,
     .size = 0x200,
-    .tag = GFX_FEEBAS_OW,
+    .tag = GFX_CHEWTLE_OW,
 };
 
-static const union AnimCmd sFeebasAnimCmd_0[] = 
+static const union AnimCmd sChewtleAnimCmd_0[] = 
 {
     ANIMCMD_FRAME(0, 20),
-    ANIMCMD_FRAME(8, 20),
-    ANIMCMD_JUMP(0)         // Loop back to the first frame (Frame 0)
+    ANIMCMD_END
 };
 
-static const union AnimCmd *const sFeebasAnimCmds[] = {
-    sFeebasAnimCmd_0,  // Looping animation
-};
-
-static const struct SpriteTemplate sSpriteTemplate_Feebas_OW_Normal =
+static const union AnimCmd sChewtleAnimCmd_1[] = 
 {
-    .tileTag = GFX_FEEBAS_OW,
-    .paletteTag = PAL_FEEBAS,
+    ANIMCMD_FRAME(0, 12), // Orleans: Chewtle plods, slower than Rattata (5)
+    ANIMCMD_FRAME(8, 12),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd *const sChewtleAnimCmds[] = {
+    sChewtleAnimCmd_0,  // Idle (race not started)
+    sChewtleAnimCmd_1,  // Plod
+};
+
+static const struct SpriteTemplate sSpriteTemplate_Chewtle_OW_Normal =
+{
+    .tileTag = GFX_CHEWTLE_OW,
+    .paletteTag = PAL_CHEWTLE,
     .oam = &sOamData_RatFish_OW,
-    .anims = sFeebasAnimCmds,
+    .anims = sChewtleAnimCmds,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
 };
 
-static const struct SpriteTemplate sSpriteTemplate_Feebas_OW_Shiny =
+static const struct SpriteTemplate sSpriteTemplate_Chewtle_OW_Shiny =
 {
-    .tileTag = GFX_FEEBAS_OW,
-    .paletteTag = PAL_FEEBAS_SHINY,
+    .tileTag = GFX_CHEWTLE_OW,
+    .paletteTag = PAL_CHEWTLE_SHINY,
     .oam = &sOamData_RatFish_OW,
-    .anims = sFeebasAnimCmds,
+    .anims = sChewtleAnimCmds,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy,
@@ -989,16 +996,16 @@ static const struct SpriteTemplate sSpriteTemplate_Name_Rattata =
     .callback = SpriteCallbackDummy,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_Name_Feebas =
+static const struct CompressedSpriteSheet sSpriteSheet_Name_Chewtle =
 {
-    .data = Name_FeebasGFX,
+    .data = Name_ChewtleGFX,
     .size = 0x400,
-    .tag = GFX_NAME_FEEBAS,
+    .tag = GFX_NAME_CHEWTLE,
 };
 
-static const struct SpriteTemplate sSpriteTemplate_Name_Feebas =
+static const struct SpriteTemplate sSpriteTemplate_Name_Chewtle =
 {
-    .tileTag = GFX_NAME_FEEBAS,
+    .tileTag = GFX_NAME_CHEWTLE,
     .paletteTag = PAL_BET_MENU_TEXT,
     .oam = &sOamData_Menu_Data,
     .anims = gDummySpriteAnimTable,
@@ -1503,17 +1510,17 @@ static const struct SpriteTemplate sSpriteTemplate_RattataShiny =
     .callback = SpriteCallbackDummy,
 };
 
-static const struct CompressedSpriteSheet sSpriteSheet_Feebas =
+static const struct CompressedSpriteSheet sSpriteSheet_Chewtle =
 {
-    .data = FeebasGFX,
+    .data = ChewtleGFX,
     .size = 0x800,
-    .tag = GFX_FEEBAS,
+    .tag = GFX_CHEWTLE,
 };
 
-static const struct SpriteTemplate sSpriteTemplate_FeebasNormal =
+static const struct SpriteTemplate sSpriteTemplate_ChewtleNormal =
 {
-    .tileTag = GFX_FEEBAS,
-    .paletteTag = PAL_FEEBAS,
+    .tileTag = GFX_CHEWTLE,
+    .paletteTag = PAL_CHEWTLE,
     .oam = &sOamData_Pokemon,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1521,10 +1528,10 @@ static const struct SpriteTemplate sSpriteTemplate_FeebasNormal =
     .callback = SpriteCallbackDummy,
 };
 
-static const struct SpriteTemplate sSpriteTemplate_FeebasShiny =
+static const struct SpriteTemplate sSpriteTemplate_ChewtleShiny =
 {
-    .tileTag = GFX_FEEBAS,
-    .paletteTag = PAL_FEEBAS_SHINY,
+    .tileTag = GFX_CHEWTLE,
+    .paletteTag = PAL_CHEWTLE_SHINY,
     .oam = &sOamData_Pokemon,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1540,7 +1547,7 @@ void StartDerby(void)
 }
 
 typedef struct  {
-    int SpeciesId; // 0-4 Doduo, 5 Rattata, 6 Dodrio, 7 Feebas
+    int SpeciesId; // 0-4 Doduo, 5 Rattata, 6 Dodrio, 7 Chewtle
     u8 StartSpeed;
     u8 RaceSpeed;
 } RaceSpeeds;
@@ -1554,7 +1561,7 @@ static const RaceSpeeds RaceSpeedsValues[] =
     {DERBY_SPECIES_DODUO_5, 3, 6}, // Doduo 5
     {DERBY_SPECIES_RATTATA, 5, 4}, // Rattata
     {DERBY_SPECIES_DODRIO, 4, 7}, // Dodrio
-    {DERBY_SPECIES_FEEBAS, 3, 4}, // Feebas: a real (slow) runner, Orleans
+    {DERBY_SPECIES_CHEWTLE, 3, 4}, // Chewtle: a real (slow) runner, Orleans
 };
 
 typedef struct  {
@@ -1743,62 +1750,62 @@ static const DodrioNames DodrioNamesValues[] = {
 typedef struct  {
     int ID;
     u8 NameString[16];
-} FeebasNames;
+} ChewtleNames;
 
-static const FeebasNames FeebasNamesValues[] = {
-    {0, _("FISK")},
-    {1, _("BINGLE")},
-    {2, _("EEL MCNEAL")},
-    {3, _("BASSINGA")},
-    {4, _("BEEFAS")},
-    {5, _("SKIPPER")},
-    {6, _("BONES")},
-    {7, _("KELPSTER")},
-    {8, _("LOOPDELOOP")},
-    {9, _("FINN")},
-    {10, _("TROUT TROUBLE")},
-    {11, _("THROTTLE")},
-    {12, _("STINKY")},
-    {13, _("MANOWAR")},
-    {14, _("NEPTUNE")},
-    {15, _("MIRAKLE B.")},
-    {16, _("FISH")},
-    {17, _("FREDDI FISH")},
-    {18, _("SWIMMY MCFLOP")},
-    {19, _("SOGGY")},
-    {20, _("WIGGLY")},
-    {21, _("GUPPY")},
-    {22, _("WATERLOG")},
-    {23, _("FLOUNDER")},
-    {24, _("THE DRIP")},
-    {25, _("WIGGLES")},
-    {26, _("BOOGERFISH")},
-    {27, _("THE BLOB")},
-    {28, _("DRIPDROP")},
-    {29, _("FEEBUS")},
-    {30, _("BIG HOSS")},
-    {31, _("SPLISHY")},
-    {32, _("BLOOP")},
-    {33, _("FLOPSTER")},
-    {34, _("WET TOWEL")},
-    {35, _("DISASTER")},
-    {36, _("MR. FIASCO")},
-    {37, _("SPLOOSH")},
-    {38, _("SKIDOOSH")},
-    {39, _("BELLYFLOP BOB")},
-    {40, _("GURGLES")},
-    {41, _("WIBBLE")},
-    {42, _("NOTSOFAST")},
-    {43, _("BLOOPMCSPLASH")},
-    {44, _("WET SHAME")},
-    {45, _("NOODLE")},
-    {46, _("MEATLOAF")},
-    {47, _("THEBIGSPLASH")},
-    {48, _("CANNONBALL")},
-    {49, _("GLUBGLUB")},
-    {50, _("FLOPSTAR")},
-    {51, _("PUDDLEHOPPER")},
-    {52, _("DR. FUME")},
+static const ChewtleNames ChewtleNamesValues[] = {
+    {0, _("SNAPPER")},
+    {1, _("SLOWPOKE")},
+    {2, _("SHELLY")},
+    {3, _("TURBO")},
+    {4, _("CRAWFISH")},
+    {5, _("MOSSBACK")},
+    {6, _("GATOR FOOD")},
+    {7, _("OLD SNAP")},
+    {8, _("BAYOU BEN")},
+    {9, _("LAGNIAPPE")},
+    {10, _("TORTUE")},
+    {11, _("CHOMPER")},
+    {12, _("SLOW ROLL")},
+    {13, _("SHELL SHOCK")},
+    {14, _("NO RUSH")},
+    {15, _("MUDDY")},
+    {16, _("BIG SNAP")},
+    {17, _("CHEWBERT")},
+    {18, _("HARD SHELL")},
+    {19, _("MR. SLOW")},
+    {20, _("PIROGUE")},
+    {21, _("CYPRESS")},
+    {22, _("BOG BOY")},
+    {23, _("DAWDLE")},
+    {24, _("SNAPDRAGON")},
+    {25, _("SHELLBY")},
+    {26, _("MOSSY")},
+    {27, _("TAKE IT EZ")},
+    {28, _("LAZY BONES")},
+    {29, _("GUMBO")},
+    {30, _("STUMPY")},
+    {31, _("TORTOISE")},
+    {32, _("CRAWL SPACE")},
+    {33, _("TERRAPIN")},
+    {34, _("SNAPJAW")},
+    {35, _("HOT SAUCE")},
+    {36, _("DUCKWEED")},
+    {37, _("PLODDER")},
+    {38, _("MUD PIE")},
+    {39, _("BOUDIN")},
+    {40, _("ROUX")},
+    {41, _("LILY PAD")},
+    {42, _("SLUGGO")},
+    {43, _("CHEW TOY")},
+    {44, _("FAIS DO-DO")},
+    {45, _("NOT TODAY")},
+    {46, _("SHELLSHOCKED")},
+    {47, _("STEADY EDDIE")},
+    {48, _("DRIFTWOOD")},
+    {49, _("SLOW GUMBO")},
+    {50, _("OLD TORTUE")},
+    {51, _("LAST PLACE")},
+    {52, _("BIG SHELL")},
 };
 
 #define MAX_NAMES 53
@@ -1843,8 +1850,8 @@ static inline u32 GetDerbySpeciesSpeedPay(u32 species, u32 condition)
 {
     switch (species)
     {
-    case DERBY_SPECIES_FEEBAS:
-        return BET_MULTIPLIER_3_0; // Orleans: Feebas really races (slowest runner), so it pays a long-shot x3, not a 9999 jackpot
+    case DERBY_SPECIES_CHEWTLE:
+        return BET_MULTIPLIER_3_0; // Orleans: Chewtle is the slowest runner, so it pays a long-shot x3, not a 9999 jackpot
     case DERBY_SPECIES_DODRIO:
         if (condition >= CONDITION_4_STAR)
             return BET_MULTIPLIER_1_1;
@@ -1875,7 +1882,7 @@ static void GetRacerSpeeds(u8 racerSpecies, u8 racer)
     u8 condition;
     int i;
 
-    for (i = 0; i < ARRAY_COUNT(RaceSpeedsValues); i++) // Orleans: all 8 rows (was 6: Dodrio/Feebas read garbage)
+    for (i = 0; i < ARRAY_COUNT(RaceSpeedsValues); i++) // Orleans: all 8 rows (was 6: Dodrio/Chewtle read garbage)
     {
         if (RaceSpeedsValues[i].SpeciesId == racerSpecies)
         {
@@ -1917,8 +1924,8 @@ void GetNewDerby(void)
         derbySpecies[i] = (Random() % DERBY_SPECIES_DODUO_COUNT); // Doduo 0-4
     }
 
-    odds = (Random() % 100); // Feebas: 0-99
-    if (odds != 99) // No Feebas
+    odds = (Random() % 100); // Chewtle: 0-99
+    if (odds != 99) // No Chewtle
     {
         odds = (Random() % 300); // Doduo/Dodrio/Rattata 0-2
 
@@ -1933,10 +1940,10 @@ void GetNewDerby(void)
             derbySpecies[odd_one] = DERBY_SPECIES_DODRIO;
         }
     }
-    else // Feebas
+    else // Chewtle
     {
         odd_one = (Random() % DERBY_RACER_COUNT); // Picks a random racer
-        derbySpecies[odd_one] = DERBY_SPECIES_FEEBAS;
+        derbySpecies[odd_one] = DERBY_SPECIES_CHEWTLE;
     }
 
     // Generate all derby species with random Doduo by default
@@ -2013,11 +2020,11 @@ static inline u32 CreateDodrioSprite(u32 shiny, u32 x, u32 y)
     return CreateSprite(&sSpriteTemplate_DodrioNormal, x, y, 0);
 }
 
-static inline u32 CreateFeebasSprite(u32 shiny, u32 x, u32 y)
+static inline u32 CreateChewtleSprite(u32 shiny, u32 x, u32 y)
 {
     if (shiny)
-        return CreateSprite(&sSpriteTemplate_FeebasShiny, x, y, 0);
-    return CreateSprite(&sSpriteTemplate_FeebasNormal, x, y, 0);
+        return CreateSprite(&sSpriteTemplate_ChewtleShiny, x, y, 0);
+    return CreateSprite(&sSpriteTemplate_ChewtleNormal, x, y, 0);
 }
 
 static inline u32 CreateDerbyMonSprite(u32 species, u32 shiny, u32 x)
@@ -2030,8 +2037,8 @@ static inline u32 CreateDerbyMonSprite(u32 species, u32 shiny, u32 x)
         return CreateRattataSprite(shiny, x, 100);
     case DERBY_SPECIES_DODRIO:
         return CreateDodrioSprite(shiny, x, 88);
-    case DERBY_SPECIES_FEEBAS:
-        return CreateFeebasSprite(shiny, x, 96);
+    case DERBY_SPECIES_CHEWTLE:
+        return CreateChewtleSprite(shiny, x, 96);
     }
 }
 
@@ -2045,7 +2052,7 @@ static void CreatePokemonSprites(void)
     LoadCompressedSpriteSheet(&sSpriteSheet_Doduo);
     LoadCompressedSpriteSheet(&sSpriteSheet_Rattata);
     LoadCompressedSpriteSheet(&sSpriteSheet_Dodrio);
-    LoadCompressedSpriteSheet(&sSpriteSheet_Feebas);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Chewtle);
 
     for (i = DERBY_RACER_1; i < DERBY_RACER_COUNT; i++)
     {
@@ -2089,7 +2096,7 @@ static void CreateMenuData(void)
     LoadCompressedSpriteSheet(&sSpriteSheet_Name_Doduo);
     LoadCompressedSpriteSheet(&sSpriteSheet_Name_Rattata);
     LoadCompressedSpriteSheet(&sSpriteSheet_Name_Dodrio);
-    LoadCompressedSpriteSheet(&sSpriteSheet_Name_Feebas);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Name_Chewtle);
     sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Doduo, 164, 60, 0);
 
     LoadCompressedSpriteSheet(&sSpriteSheet_Condition_1);
@@ -2140,9 +2147,9 @@ static void UpdatePokemonSpeciesNames(void)
         //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Dodrio);
         sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Dodrio, 164, 60, 0);
         break;
-    case DERBY_SPECIES_FEEBAS:
-        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Feebas);
-        sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Feebas, 164, 60, 0);
+    case DERBY_SPECIES_CHEWTLE:
+        //LoadCompressedSpriteSheet(&sSpriteSheet_Name_Chewtle);
+        sDerby->SpeciesNameSpriteId = CreateSprite(&sSpriteTemplate_Name_Chewtle, 164, 60, 0);
         break;
     }
 }
@@ -2345,11 +2352,11 @@ static void UpdateNicknames(void)
                 ShowName(DodrioNamesValues[i].NameString);
         }
         break;
-    case DERBY_SPECIES_FEEBAS:
+    case DERBY_SPECIES_CHEWTLE:
         for (i = 0; i < MAX_NAMES; i++)
         {
-            if (FeebasNamesValues[i].ID == RACER_NICKNAME(racerVar))
-                ShowName(FeebasNamesValues[i].NameString);
+            if (ChewtleNamesValues[i].ID == RACER_NICKNAME(racerVar))
+                ShowName(ChewtleNamesValues[i].NameString);
         }
         break;
     }
@@ -2922,11 +2929,11 @@ static inline u32 CreateDodrioOWSprite(u32 shiny, u32 x, u32 y, u32 position)
     return CreateSprite(&sSpriteTemplate_Dodrio_OW_Normal, x, y, position);
 }
 
-static inline u32 CreateFeebasOWSprite(u32 shiny, u32 x, u32 y, u32 position)
+static inline u32 CreateChewtleOWSprite(u32 shiny, u32 x, u32 y, u32 position)
 {
     if (shiny)
-        return CreateSprite(&sSpriteTemplate_Feebas_OW_Shiny, x, y, position);
-    return CreateSprite(&sSpriteTemplate_Feebas_OW_Normal, x, y, position);
+        return CreateSprite(&sSpriteTemplate_Chewtle_OW_Shiny, x, y, position);
+    return CreateSprite(&sSpriteTemplate_Chewtle_OW_Normal, x, y, position);
 }
 
 static inline u32 CreateDerbyMonOWSprite(u32 species, u32 shiny, u32 x, u32 yAdd, u32 position)
@@ -2941,9 +2948,9 @@ static inline u32 CreateDerbyMonOWSprite(u32 species, u32 shiny, u32 x, u32 yAdd
         return CreateRattataOWSprite(shiny, x, speciesY + yAdd, position);
     case DERBY_SPECIES_DODRIO:
         return CreateDodrioOWSprite(shiny, x, speciesY + yAdd, position);
-    case DERBY_SPECIES_FEEBAS:
+    case DERBY_SPECIES_CHEWTLE:
         speciesY = 56;
-        return CreateFeebasOWSprite(shiny, x, speciesY + yAdd, position);
+        return CreateChewtleOWSprite(shiny, x, speciesY + yAdd, position);
     }
 }
 
@@ -2957,7 +2964,7 @@ static void CreateRacers(void)
     LoadCompressedSpriteSheet(&sSpriteSheet_Doduo_OW);
     LoadCompressedSpriteSheet(&sSpriteSheet_Rattata_OW);
     LoadCompressedSpriteSheet(&sSpriteSheet_Dodrio_OW);
-    LoadCompressedSpriteSheet(&sSpriteSheet_Feebas_OW);
+    LoadCompressedSpriteSheet(&sSpriteSheet_Chewtle_OW);
 
     sDerby->RacerSprite1 = CreateDerbyMonOWSprite(sDerby->racerSpecies[DERBY_RACER_1], sDerby->racerShiny[DERBY_RACER_1], 224, yAdd, position);
 
@@ -3267,31 +3274,30 @@ static void DerbyMain(u8 taskId)
             {
                 sDerby->delay--;
             }
-    // Orleans: Feebas races but has only animation 0 (looping): never switch it to anim 1 below
             else if (sDerby->delay == 0)
             {
                 DestroySpriteAndFreeResources(&gSprites[sDerby->CountdownSpriteId]);
-                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_1] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite1].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_2] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite2].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_3] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite3].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_4] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite4].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_5] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite5].animNum = 1;
                 }
-                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_FEEBAS)
+                if (sDerby->racerSpecies[DERBY_RACER_6] != DERBY_SPECIES_COUNT)
                 {
                     gSprites[sDerby->RacerSprite6].animNum = 1;
                 }

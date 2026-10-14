@@ -232,30 +232,61 @@ def run(b, t):
     t.check("a winning bet is paid out (coins above stake-less) after %d race(s)" % tries, won, "coins %d" % coins(b))
     b.shot("derby_won")
 
-    # --- Derby speeds (fix D3): Dodrio and Feebas read their own table rows, and Feebas really runs
+    # --- Derby speeds (fix D3): Dodrio and Chewtle read their own table rows, and Chewtle (the slowest racer, own race art) really runs
     import struct
+    import shutil
 
     def derby_speeds():
         p = b.r32(b.sym("sDerby"))
         fl = lambda o: [struct.unpack("<f", struct.pack("<I", b.r32(p + o + 4 * i)))[0] for i in range(6)]
         return fl(32), fl(56)
 
-    b.call("GetNewDerby")
-    for i, v in enumerate([604, 713, 614, 3, 102, 202], 1):      # Dodrio cond 4, Feebas (shiny) cond 3, Dodrio (shiny) cond 4, Doduo 1 cond 3, Doduo 2 cond 2, Doduo 3 cond 2
-        b.set_var("VAR_DERBY_RACER_%d" % i, v)
-    b.call("SetCoins", 500)
-    t.check("the Derby window opens for the speed check", enter(b, 13, 4), b.callback2_name())
-    b.frames(30)
-    start, race = derby_speeds()
+    def chewtle_race(roster, label, shot_to=None):
+        b.call("GetNewDerby")
+        for i, v in enumerate(roster, 1):
+            b.set_var("VAR_DERBY_RACER_%d" % i, v)
+        b.call("SetCoins", 500)
+        ok = enter(b, 13, 4)
+        b.frames(30)
+        sp = derby_speeds()
+        if label == "chewtle_shiny":
+            b.press("RIGHT", 3, 10)       # the bet screen on racer 2 (the Chewtle): name plate + front picture
+            b.frames(30)
+            b.shot("derby_bet_chewtle")
+            b.press("LEFT", 3, 10)
+            b.frames(20)
+        b.press("A", 4, 20)
+        b.frames(30)
+        b.press("UP", 3, 8)
+        b.press("A", 4, 20)
+        shot = False
+        for _ in range(60):
+            b.frames(60 if not shot else 120)
+            if not b.in_overworld() and not shot:
+                b.frames(560)             # well into the race (after the countdown)
+                png = b.shot("derby_%s_race" % label)
+                if shot_to:
+                    Path(shot_to).parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(png, shot_to)
+                shot = True
+            if b.in_overworld():
+                break
+            b.press("A", 4, 10)
+        b.advance_text(60)
+        b.check_alive("derby " + label)
+        return ok, sp
+
+    ok, (start, race) = chewtle_race([604, 713, 614, 3, 102, 202], "chewtle_shiny")
+    t.check("the Derby window opens for the speed check", ok, b.callback2_name())
     t.check("Dodrio races at its own speeds 4/7 x (1+cond/10), not Doduo's 4/5 (racers 1 and 3: %s)" % ([round(race[0], 2), round(race[2], 2)]),
             abs(race[0] - 7 * (1 + 4 / 10.0)) < 0.01 and abs(start[0] - 4 * (1 + 4 / 10.0)) < 0.01 and abs(race[2] - 7 * (1 + 4 / 10.0)) < 0.01, (start, race))
-    t.check("Feebas (racer 2) has real speeds, not garbage/zero: start %.2f race %.2f" % (start[1], race[1]),
+    t.check("Chewtle (racer 2, shiny) has real speeds 3/4 x (1+cond/10): start %.2f race %.2f" % (start[1], race[1]),
             abs(start[1] - 3 * (1 + 3 / 10.0)) < 0.01 and abs(race[1] - 4 * (1 + 3 / 10.0)) < 0.01, (start, race))
     t.check("Doduo (racers 4-6) keep their table speeds", abs(race[3] - 5 * 1.3) < 0.01 and abs(race[4] - 5 * 1.2) < 0.01 and abs(race[5] - 4 * 1.2) < 0.01, race)
-    c0 = coins(b)
-    derby_race(b, bet_steps=1)
-    t.check("a race with Feebas runs to the end (no hang) and settles the bet", b.map_name() == MAP and b.script_status() == 2 and coins(b) <= c0 + 100, "%d -> %d" % (c0, coins(b)))
-    b.shot("derby_feebas_race")
+    t.check("a race with a shiny Chewtle runs to the end (no crash) and settles the bet", b.map_name() == MAP and b.script_status() == 2 and coins(b) <= 600, "coins %d" % coins(b))
+    ok, (start, race) = chewtle_race([703, 3, 102, 202, 4, 100], "chewtle_normal", "C:/Users/chris/orleans_expansion/tile_review/game_corner/chewtle_ingame.png")
+    t.check("a normal Chewtle race: Chewtle runs at 3/4 x (1+cond/10) and the race ends cleanly",
+            ok and abs(race[0] - 4 * (1 + 3 / 10.0)) < 0.01 and b.map_name() == MAP and b.script_status() == 2, (start, race, b.where()))
 
     # --- the prize counter: a Heart Scale for 100 coins
     b.call("SetCoins", 500)
