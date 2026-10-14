@@ -711,6 +711,8 @@ CrescentCity_EventScript_LeveeSign::
 	end
 
 CrescentCity_Text_LeveeSign:
+	.string "SOUTH: Route 14\nThe levee road.$"
+
 CrescentCity_EventScript_StateFlooded::
 	setmetatile 38, 63, 0x034, FALSE
 	setmetatile 39, 63, 0x02B, FALSE
@@ -800,7 +802,5 @@ CrescentCity_EventScript_StateFlooded::
 	setmetatile 65, 65, 0x033, TRUE
 	setmetatile 66, 65, 0x02E, TRUE
 	return
-
-	.string "SOUTH: Route 14\nThe levee road.$"
 
 @ --- mapgen: generated NPC scripts (end) ---

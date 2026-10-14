@@ -28,10 +28,6 @@ CrescentCity_Conservation_EventScript_Tally:
 	goto_if_unset FLAG_LAFAYETTE_REWARD_15, CrescentCity_Conservation_EventScript_Tier15
 	goto_if_lt VAR_0x800A, 25, CrescentCity_Conservation_EventScript_Progress15
 	goto_if_unset FLAG_APARTMENT_UNLOCKED, CrescentCity_Conservation_EventScript_Tier25
-	msgbox CrescentCity_Conservation_Text_Done, MSGBOX_DEFAULT
-	release
-	end
-
 	goto CrescentCity_Conservation_EventScript_CharmPhase
 
 @ Orleans: the SHINY CHARM for the finished regional dex (BASE species only: forms with their own number, Megas and mythicals do not count; see src/orleans_dex.c).
@@ -57,10 +53,10 @@ CrescentCity_Conservation_EventScript_CharmGive:
 	end
 
 CrescentCity_Conservation_EventScript_Done:
-CrescentCity_Conservation_EventScript_Progress:
-	msgbox CrescentCity_Conservation_Text_Progress, MSGBOX_DEFAULT
+	msgbox CrescentCity_Conservation_Text_Done, MSGBOX_DEFAULT
 	release
 	end
+
 CrescentCity_Conservation_Text_CharmProgress:
 	.string "LAFAYETTE: {STR_VAR_1}. Keep going!\n"
 	.string "The apartment is yours.\p"
@@ -79,6 +75,10 @@ CrescentCity_Conservation_Text_CharmGiven:
 	.string "LAFAYETTE: It makes rare colours\n"
 	.string "easier to find. They're out there.$"
 
+CrescentCity_Conservation_EventScript_Progress:
+	msgbox CrescentCity_Conservation_Text_Progress, MSGBOX_DEFAULT
+	release
+	end
 
 CrescentCity_Conservation_EventScript_Progress10:
 	msgbox CrescentCity_Conservation_Text_Progress10, MSGBOX_DEFAULT

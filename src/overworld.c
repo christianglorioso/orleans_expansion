@@ -1889,7 +1889,6 @@ void CB2_OverworldBasic(void)
     OverworldBasic();
 }
 
-void CB2_Overworld(void)
 // Overworld speed option (OW SPEED 1x-4x). Orleans port of SoulGold's overworld speedup (HashtagMarky's
 // "Overworld Speedup" tutorial, via Eemeliri/soulgold). N-1 extra sprite + camera updates run after the normal
 // frame; scripts, tasks, text, fades, VBlank and the clock (PlayTimeCounter_Update / fake RTC) tick once per frame.
@@ -1909,13 +1908,13 @@ u32 OverworldSpeedup_AdditionalIterations(void)
     return speed; // 2x = 1 extra iteration ... 4x = 3
 }
 
+void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
-    if (fading)
     u32 loops, extraLoops;
+    if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
-    if (fading)
 
     extraLoops = OverworldSpeedup_AdditionalIterations();
     for (loops = 0; loops < extraLoops; loops++)
@@ -1925,6 +1924,7 @@ u32 OverworldSpeedup_AdditionalIterations(void)
         UpdateCameraPanning();
     }
 
+    if (fading)
     {
         SetFieldVBlankCallback();
         return;
@@ -2156,6 +2156,7 @@ void CB2_ContinueSavedGame(void)
         ResetWinStreaks();
 
     FakeRtc_MigrateSave(); // Orleans: a save from before the in-game clock gets one
+    Orleans_CatchUpVisitedFlags(); // Orleans: Fly destinations for a save from before the region map
     LoadSaveblockMapHeader();
     ClearDiveAndHoleWarps();
     trainerHillMapId = GetCurrentTrainerHillMapId();
@@ -2634,8 +2635,8 @@ static void ResumeMap(bool32 a1)
     if (!a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
-    TryStartMirageTowerPulseBlendEffect();
     Achievement_OnMapEntered();
+    TryStartMirageTowerPulseBlendEffect();
 }
 
 static void InitObjectEventsLink(void)

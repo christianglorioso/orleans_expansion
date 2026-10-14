@@ -109,8 +109,8 @@ LandsEnd_EventScript_JaydenDone:
 
 @ 8.5: the storm cinematic; the dust storms on Route 23 lift (the Pointe Rouge gate keys on FLAG_DUST_STORMS_LIFTED); a Pelipper brings Tupelo's note
 LandsEnd_EventScript_RayquazaWakes:
-	fadescreen FADE_TO_WHITE
 	setflag FLAG_PREVENT_OVERWORLD_SPEEDUP @ storm cinematic: 1x (cleared on the next map load)
+	fadescreen FADE_TO_WHITE
 	playse SE_THUNDER
 	waitse
 	fadescreen FADE_FROM_WHITE

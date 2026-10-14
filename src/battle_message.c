@@ -2447,17 +2447,6 @@ static bool32 IsOrleansLegendBattle(void)
     return GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_CLASS_PKMN_TRAINER_2;
 }
 
-void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
-{
-    s32 i;
-// Orleans: legend raid opponents use TRAINER_CLASS_PKMN_TRAINER_2 (unused by vanilla trainers, name emptied in battle_main.c)
-static bool32 IsOrleansLegendBattle(void)
-{
-    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK)))
-        return FALSE;
-    return GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_CLASS_PKMN_TRAINER_2;
-}
-
 // Orleans: the item a wild Pokemon holds is announced after the intro (never for trainers). gStringVar3 = "" or "It's holding an Oran Berry.\p" (a double
 // battle names each holder: "Zigzagoon is holding a Leftovers.\p")
 static void BufferWildHeldItemText(void)
@@ -2515,6 +2504,9 @@ static void BufferWildDescription(u8 *dst, enum BattlerId battler)
     StringCopy(end, COMPOUND_STRING(" "));
 }
 
+void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
+{
+    s32 i;
     const u8 *stringPtr = NULL;
 
     gBattleMsgDataPtr = (struct BattleMsgData *)(&gBattleResources->bufferA[battler][4]);
@@ -2596,15 +2588,15 @@ static void BufferWildDescription(u8 *dst, enum BattlerId battler)
         }
         else
         {
+            BufferWildHeldItemText();
+            BufferWildDescription(gBattleTextBuff1, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
+            if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
+                BufferWildDescription(gBattleTextBuff2, GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
             if (IsGhostBattleWithoutScope())
                 stringPtr = sText_GhostAppearedCantId;
             else if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
                 stringPtr = sText_TheGhostAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
-            BufferWildHeldItemText();
-            BufferWildDescription(gBattleTextBuff1, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
-            if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
-                BufferWildDescription(gBattleTextBuff2, GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT));
                 stringPtr = sText_LegendaryPkmnAppeared;
             else if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
                 stringPtr = sText_TwoWildPkmnAppeared;

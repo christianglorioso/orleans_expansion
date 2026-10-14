@@ -649,12 +649,12 @@ gSpecials::
 	def_special OrleansSvc_MirrorFacing
 	def_special OrleansSvc_MirrorRight
 	def_special OrleansSvc_MirrorCheck
-	def_special StarterBall_Prepare
-	def_special StarterBall_ShowPic
-	def_special OrleansDex_CheckBaseComplete
 	def_special StartBlackJack
 	def_special StartGacha
 	def_special StartDerby
+	def_special StarterBall_Prepare
+	def_special StarterBall_ShowPic
+	def_special OrleansDex_CheckBaseComplete
 	def_special Achievement_UnlockVar8004
 	def_special Achievement_CheckAllSpecial
 	def_special Achievement_GetCountSpecial
