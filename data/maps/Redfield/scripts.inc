@@ -390,8 +390,8 @@ Redfield_Text_CayenneWait:
 Redfield_Text_CayenneTrial:
 	.string "CAYENNE: My mill runs on sunlight,\n"
 	.string "and so does my gym.\p"
-	.string "CAYENNE: Three sundials, six mirrors\n"
-	.string "Light them in order, by day.\p"
+	.string "CAYENNE: Three sundials, six\n"
+	.string "mirrors. Light them in order by day.\p"
 	.string "CAYENNE: The keeper in the shotgun\n"
 	.string "house knows the order, not angles.$"
 

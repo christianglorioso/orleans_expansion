@@ -69,6 +69,45 @@ def strip_section(text, name):
     return re.sub(rf"(?ms)^=== {name} ===\n.*?(?=^=== |\Z)", "", text)
 
 
+def assigned_slots(secs):
+    """name -> Hoenn slot exactly as main() assigns them (no writes); None if the pool is empty"""
+    slots = json.load(open(SLOTS, encoding="utf-8")) if os.path.exists(SLOTS) else {}
+    pool = vanilla_slots()
+    used = set(slots.values()) | set(FIXED.values())
+    for name in secs:
+        if name in FIXED:
+            slots[name] = FIXED[name]
+        elif name not in slots:
+            free = next((s for s in pool if s not in used), None)
+            if free is None:
+                return None
+            slots[name] = free
+            used.add(free)
+    return slots
+
+
+def render(secs, slots):
+    """(opponents.h text, trainers.party text) as they must be: the Orleans alias block / sections regenerated from the sources"""
+    # opponents.h: the alias block goes right before the NOTE comment (after the slice's own ids)
+    opp = open(OPP, encoding="utf-8", newline="").read().replace("\r\n", "\n")
+    if B_OPP in opp:
+        opp = re.sub(rf"(?s){re.escape(B_OPP)}.*?{re.escape(E_OPP)}\n+", "", opp)
+    block = B_OPP + "\n" + "".join(f"#define {n:48s} {slots[n]}\n" for n in secs) + E_OPP + "\n\n"
+    anchor = "// NOTE: Because each Trainer uses a flag"
+    if anchor not in opp:
+        sys.exit("opponents.h anchor not found")
+    opp = opp.replace(anchor, block + anchor, 1)
+    # trainers.party (trainerproc has no comment syntax between sections, so no markers): drop the Hoenn sections we
+    # took over and any earlier copy of an Orleans section, then append the current ones
+    party = open(PARTY, encoding="utf-8", newline="").read().replace("\r\n", "\n")
+    for name in secs:
+        party = strip_section(party, slots[name])
+    for name in slots:
+        party = strip_section(party, name)
+    party = party.rstrip("\n") + "\n\n" + "\n\n".join(secs[n] for n in secs) + "\n"
+    return opp, party
+
+
 def main(argv):
     check = "--check" in argv
     secs = read_sources()
@@ -99,24 +138,8 @@ def main(argv):
     if check:
         return
     json.dump(slots, open(SLOTS, "w", encoding="utf-8", newline="\n"), indent=1)
-    # opponents.h: the alias block goes right before the NOTE comment (after the slice's own ids)
-    opp = open(OPP, encoding="utf-8").read()
-    if B_OPP in opp:
-        opp = re.sub(rf"(?s){re.escape(B_OPP)}.*?{re.escape(E_OPP)}\n", "", opp)
-    block = B_OPP + "\n" + "".join(f"#define {n:48s} {slots[n]}\n" for n in secs) + E_OPP + "\n\n"
-    anchor = "// NOTE: Because each Trainer uses a flag"
-    if anchor not in opp:
-        sys.exit("opponents.h anchor not found")
-    opp = opp.replace(anchor, block + anchor, 1)
+    opp, party = render(secs, slots)
     open(OPP, "w", encoding="utf-8", newline="\n").write(opp)
-    # trainers.party (trainerproc has no comment syntax between sections, so no markers): drop the Hoenn sections we
-    # took over and any earlier copy of an Orleans section, then append the current ones
-    party = open(PARTY, encoding="utf-8").read()
-    for name in secs:
-        party = strip_section(party, slots[name])
-    for name in slots:
-        party = strip_section(party, name)
-    party = party.rstrip("\n") + "\n\n" + "\n\n".join(secs[n] for n in secs) + "\n"
     open(PARTY, "w", encoding="utf-8", newline="\n").write(party)
     print("wrote", OPP, "and", PARTY)
 

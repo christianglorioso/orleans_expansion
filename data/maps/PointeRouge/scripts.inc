@@ -262,7 +262,7 @@ PointeRouge_EventScript_Angler::
 	end
 
 PointeRouge_Text_Angler:
-	.string "The big ones hide under the bridges.\nKINGFISHER says the river is a gift.$"
+	.string "The big ones hide under the bridges.\nKINGFISHER says the river is a road.$"
 
 PointeRouge_EventScript_Kid::
 	msgbox PointeRouge_Text_Kid, MSGBOX_NPC

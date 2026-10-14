@@ -485,3 +485,18 @@ Raikou (Route 2), Entei (Route 16). Data: `story_data_lairs.py` (where, tilesets
   leaving = `<Lair>_EventScript_Exit` on (10..11, 14) (`warp` to the entrance cell, facing as the table says). `story_gates_check.lair_entrances` proves sealed / open by flood fill.
 - The encounters (FLAG_PG_*, retired only on a catch, rolled when talked to; the night logic of the rougarou and Ursaluna) moved with their scripts; the old route spots are plain route again.
 - Weather (weather_plan.HEADER, user-approved): rougarou fog, Ursaluna sandstorm, Celebi sunny, Suicune rain, Raikou thunderstorm, Entei drought, Articuno snow; the battle takes it from the overworld weather (fog = Misty Terrain, thunderstorm = rain + Electric Terrain, snow = snow, sunny = nothing).
+
+## Source vs generated output (audit phase 3, S1: `gen_drift_check.py`)
+The story, trainer and NPC scripts are GENERATED, and the generated files are what ships. The source is authoritative; never hand-edit `data/maps/*/scripts.inc`, `src/data/trainers.party`,
+`src/data/battle_partners.party`, `include/constants/opponents.h` or the trainer block of a `story/*.inc` (a regeneration would revert it and the text in game would differ from the source).
+| output | source | regenerate with |
+|---|---|---|
+| `story/<Map>.inc` block `route trainers` + `trainers/orleans_chN.party` | `story_data_chN.TRAINERS / EXTRA_PARTIES` | `gen_route_trainers.py chN` |
+| `src/data/battle_partners.party` (+ `battle_partner.h`) | `story_data_chN.PARTNERS` (`(const, team[, ivs])`, replaced in place, so order never changes) | `gen_route_trainers.py chN` |
+| `src/data/trainers.party` Orleans sections + `opponents.h` aliases | `trainers/*.party` (hand-written ones too: ch2, ch3, ch4 Kingfisher...) | `orleans_trainers.py` (idempotent) |
+| `data/maps/<Map>/scripts.inc` (head) | `story/<Map>.inc` | `story.py` |
+| `data/maps/<Map>/scripts.inc` (generated NPC block) + `map.json` events | the map spec + `story_overlay.py` / `story_data_*.py` | `build.py maps/<spec>.json` (twice if the `uses/` file changes: it is part of the input) |
+| interior rooms (`scripts.inc`, `map.json`, `map.bin`) | `interior_rooms*.py`, `story_overlay.py`, `story_data_*.ROOMS` | `build_interior.py <room>` |
+`python tools/mapgen/gen_drift_check.py` regenerates all of it into a scratch area and fails on any difference (about 80 s); `--fast` (trainer tables, party files, partners, story splice) is
+what `story_lint.py` runs, so a plain story lint fails on drift. A drifting source is fixed in the SOURCE, then regenerated. `build.py` also supports an object with `"elevation": 0` (an NPC spoken to
+from water and land alike: its cell becomes elevation 0 too, `free_elevation_cells`); a rest-spot cell (`interior_rest.REST`) always blocks, so it is faced and never walked onto.

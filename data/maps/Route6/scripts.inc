@@ -86,7 +86,7 @@ Route6_Text_Route6SwimmerDefeat:
 	.string "Outswum.$"
 
 Route6_Text_Route6SwimmerAfter:
-	.string "The current bends east. It wants to\ncarry you to the camp.$"
+	.string "The current bends west. It wants to\ncarry you to the camp.$"
 
 Route6_Text_Route6FishermanIntro:
 	.string "Fishing the old drowned road. The\nbig ones sleep on the pavement.$"

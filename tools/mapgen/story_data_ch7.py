@@ -43,7 +43,7 @@ TRAINERS = [
          intro=T("Fairies like sugar. So do I.", "Care to battle?"), defeat=T("Too sweet."),
          after=T("The cane workers leave a little", "sugar out for the Ribombee.")),
     dict(m="Route15", n=3, const="TRAINER_ORLEANS_ROUTE15_GENTLEMAN", name="AURELE", cls="Gentleman", pic="Gentleman", sex="Male", music="Male",
-         gfx="OBJ_EVENT_GFX_GENTLEMAN", face="DOWN", sight=4, team=[("Hypno", 43), ("Wyrdeer", 43), ("Mismagius", 44)],
+         gfx="OBJ_EVENT_GFX_GENTLEMAN", face="RIGHT", sight=4, team=[("Hypno", 43), ("Wyrdeer", 43), ("Mismagius", 44)],
          intro=T("A planter's life is quiet. A", "battle is a pleasant change."), defeat=T("Well fought."),
          after=T("I own the east field. Mind the", "rows. I count them.")),
     dict(m="Route15", n=4, const="TRAINER_ORLEANS_ROUTE15_CAMPER", name="JOCELYN", cls="Camper", pic="Camper", sex="Male", music="Male",
@@ -51,7 +51,7 @@ TRAINERS = [
          intro=T("The dry ground's a good place", "to pitch a tent. Or fight."), defeat=T("Tent's flat."),
          after=T("Dust everywhere. The north is", "worse, they say.")),
     dict(m="Route15", n=5, const="TRAINER_ORLEANS_ROUTE15_FISHERMAN", name="REMI", cls="Fisherman", pic="Fisherman", sex="Male", music="Hiker",
-         gfx="OBJ_EVENT_GFX_FISHERMAN", face="DOWN", sight=4, team=[("Seismitoad", 43), ("Politoed", 43), ("Jellicent", 44)],
+         gfx="OBJ_EVENT_GFX_FISHERMAN", face="LEFT", sight=4, team=[("Seismitoad", 43), ("Politoed", 43), ("Jellicent", 44)],
          intro=T("Irrigation ditches hold fish.", "Don't tell the planters."), defeat=T("Ditched."),
          after=T("The ditches are cooler than", "the river. The fish know.")),
     # ---- Route 16 (the pepper road, 43-45)
@@ -121,12 +121,12 @@ EXTRA_PARTIES = [
          ai="Check Bad Move / Try To Faint", iv=28),
 ]
 
-# Wren's partner parties (battle_partners.party, one per starter line like her Old Water variants)
-PARTNERS = [
-    ("PARTNER_WREN_CHIKORITA", "Meganium"),
-    ("PARTNER_WREN_FUECOCO", "Skeledirge"),
-    ("PARTNER_WREN_TOTODILE", "Feraligatr"),
-]
+# Wren's partner parties (battle_partners.party, one per starter line; partners.py): the Old Water raid (PARTNER_WREN_<starter>, IV 24)
+# and the Blacksnake base (PARTNER_WREN_BASE_<starter>, low level, IV 12; audit fix A2)
+PARTNERS = []
+for _starter, _final, _base in (("CHIKORITA", "Meganium", "Bayleef"), ("FUECOCO", "Skeledirge", "Fuecoco"), ("TOTODILE", "Feraligatr", "Croconaw")):
+    PARTNERS.append((f"PARTNER_WREN_{_starter}", [("Pelipper", 44, None), ("Roselia-Orleanian", 44, None), (_final, 46, None)], 24))
+    PARTNERS.append((f"PARTNER_WREN_BASE_{_starter}", [("Wingull", 21, None), ("Roselia-Orleanian", 21, None), (_base, 22, None)], 12))
 
 
 # ---------------------------------------------------------------------------------------------- Routes 14-17 overlay

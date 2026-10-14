@@ -5,7 +5,7 @@ For every `.string "..."` block (a label's strings up to the one ending in $) it
   * each page (text between \\p) is at most 2 lines (lines are separated by \\n or \\l)
   * only ASCII plus e-acute/E-acute and the curly double quotes the charmap has (no other Unicode)
   * the block ends with $
-usage: python tools/mapgen/story_lint.py [files...]   (default: every story/*.inc)
+usage: python tools/mapgen/story_lint.py [files...]   (default: every story/*.inc, plus the object caps and the fast source-vs-generated drift check)
 Exit code 1 if anything is wrong.
 """
 import glob
@@ -14,6 +14,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 OK_NON_ASCII = set("éÉ“”¥")  # accented e, curly quotes and the yen sign: all in charmap.txt
 CODES = {"PLAYER": 7, "RIVAL": 7, "STR_VAR_1": 12, "STR_VAR_2": 12, "STR_VAR_3": 12}
 
@@ -91,6 +92,18 @@ def lint_object_cap():
     return out
 
 
+def lint_drift():
+    """source vs generated drift (gen_drift_check.py, the fast half: trainer tables, party files, partners, story splice); the slow half
+    (outdoor and interior generators) runs with `python tools/mapgen/gen_drift_check.py`"""
+    import gen_drift_check
+    cwd = os.getcwd()
+    os.chdir(gen_drift_check.ROOT)
+    try:
+        return [p for p in gen_drift_check.check_trainers() + gen_drift_check.check_splice()]
+    finally:
+        os.chdir(cwd)
+
+
 def main(argv):
     files = argv or sorted(glob.glob(os.path.join(HERE, "story", "*.inc")))
     bad = []
@@ -98,6 +111,7 @@ def main(argv):
         bad += lint(f)
     if not argv:
         bad += lint_object_cap()
+        bad += lint_drift()
     for p in bad:
         print(p)
     print(f"{len(files)} files, {len(bad)} problems")
