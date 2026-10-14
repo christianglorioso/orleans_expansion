@@ -115,7 +115,8 @@ ROUTE24 = {
     # (fix B: the trigger sits on the visible dome door, the sign beside it)
     "signs": [{"id": "SaltShaft", "x": 39, "y": 6, "text": "", "custom": True}],
 }
-ROUTE25 = {"patch_objects": _patch("Route25")}
+# the sign (18, 6) is read from land (west cell) and from the water: elevation 0 matches both (audit S5, like Route 22's)
+ROUTE25 = {"patch_objects": _patch("Route25"), "patch_signs": {"RouteSign1": {"elevation": 0}}}
 ROUTE22 = {
     # the dive spot: Surf up to the ruin door and face it from the water cell (5, 24); the trigger is the door's water cell (5, 23), elevation 1
     # (a surfer's elevation). The Route 22 sign (2, 23) is elevation 0 (any) so it reads from the water too (fix B, ch8_2 S3)
@@ -150,7 +151,7 @@ OLD_WATER = {
         {"id": "LOCALID_OLD_WATER_CER_GROUDON", "gfx": "OBJ_EVENT_GFX_GROUDON_FRONT", "x": 26, "y": 29, "move": FACE + "DOWN", "text": "", "custom": True,
          "flag": "FLAG_HIDE_CER_GROUDON"},
         {"id": "LOCALID_OLD_WATER_CER_TUPELO", "gfx": "OBJ_EVENT_GFX_OLD_MAN", "x": 24, "y": 29, "move": FACE + "DOWN", "text": "", "custom": True,
-         "flag": "FLAG_HIDE_CER_TUPELO"},
+         "elevation": 0, "flag": "FLAG_HIDE_CER_TUPELO"},   # elevation 0: spoken to from the water cell north of him too (audit S5)
         {"id": "LOCALID_OLD_WATER_CER_JAYDEN", "gfx": "OBJ_EVENT_GFX_BOY_2", "x": 22, "y": 31, "move": FACE + "DOWN", "text": "", "custom": True,
          "flag": "FLAG_HIDE_CER_JAYDEN"},
         {"id": "LOCALID_OLD_WATER_CER_WREN", "gfx": "OBJ_EVENT_GFX_GIRL_3", "x": 21, "y": 32, "move": FACE + "UP", "text": "", "custom": True,

@@ -97,5 +97,7 @@
 "patch:ovl_wpr_4_0__ekat_water_C",
 "patch:ovl_wpr_5_0__ekat_water_C",
 "patch:ovl_wpr_6_0__ekat_water_C",
-"patch:ovl_wpr_7_0__ekat_water_C"
+"patch:ovl_wpr_7_0__ekat_water_C",
+"pss:w_knee",
+"pss:w_rock_b"
 ]

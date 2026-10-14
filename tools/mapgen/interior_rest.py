@@ -76,6 +76,14 @@ def apply_vanilla(root="."):
         w, h = lay["width"], lay["height"]
         blocked = {(o["x"], o["y"]) for o in m["object_events"]} | {(o["x"], o["y"]) for o in m["warp_events"]}
         check_cells(name, cells, lambda x, y: 0 <= x < w and 0 <= y < h and not (words[y * w + x] >> 10) & 3, blocked)
+        # a rest cell must block: a walkable cushion is walked onto when pressed toward, so its sign could never be faced (audit S3)
+        wl = list(words)
+        for x, y in cells:
+            wl[y * w + x] |= 1 << 10
+        if wl != list(words):
+            with open(f"{root}/{lay['blockdata_filepath']}", "wb") as f:
+                f.write(struct.pack(f"<{len(wl)}H", *wl))
+            changed.append(name + " (cushions block)")
         want = without_rest(m.get("bg_events", [])) + [event(x, y) for x, y in cells]
         if want != m.get("bg_events", []):
             m["bg_events"] = want

@@ -230,9 +230,9 @@ CrescentCity_Gym_Text_FifoletPost:
 	.string "FIFOLET: A girl from the swamp\n"
 	.string "asked after you. She waits at the\p"
 	.string "Drowned Ward gate, east of the\n"
-	.string "market. And the riverboat now\p"
-	.string "sails for POINTE ROUGE. The pass\n"
-	.string "is yours. The BADGE is the pass.$"
+	.string "market. The riverboat will sail\p"
+	.string "for POINTE ROUGE once that's\n"
+	.string "sorted. The BADGE is your pass.$"
 
 @ --- mapgen: generated NPC scripts (begin) ---
 

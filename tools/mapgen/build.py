@@ -529,6 +529,15 @@ class Builder:
         borders.apply(self)  # the inward walls and their edge cells (borders.py)
         self.gates()
         self.sight_cells()
+        self.free_elevation_cells()
+
+    def free_elevation_cells(self):
+        """An object with spec "elevation": 0 (ELEVATION_TRANSITION: it matches the player at any elevation) must stand on a cell of elevation 0
+        too, because a stationary NPC adopts the elevation of its cell when it spawns. Used for an NPC on a shore that is talked to from the
+        water as well as from land (Tupelo at the Old Water ceremony, audit S5: the player faces him from a surf cell, elevation 1)."""
+        for o in self.spec.get("objects", []):
+            if o.get("elevation") == 0 and 0 <= o["x"] < self.w and 0 <= o["y"] < self.h:
+                self.blocks[o["y"]][o["x"]] &= 0x0FFF
 
     def sight_cells(self):
         """A stationary NPC's elevation is the elevation of the cell it stands on (the engine overwrites the template value when the object

@@ -48,6 +48,7 @@
 #include "sound.h"
 #include "starter_choose.h"
 #include "string_util.h"
+#include "line_break.h"
 #include "strings.h"
 #include "task.h"
 #include "text.h"
@@ -3201,7 +3202,20 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
             break;
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_COMPETITIVE_VENDOR:
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sFrontierExchangeCorner_Competitive[selection] == ITEM_LIST_END ? gText_Exit : GetItemDescription(sFrontierExchangeCorner_Competitive[selection]), 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            // the description box is two lines tall: re-wrap the item's own three-line description to the box width in the small font
+            // (AddTextPrinterParameterized2 only shows what fits: the rest used to be cut off)
+            if (sFrontierExchangeCorner_Competitive[selection] == ITEM_LIST_END)
+            {
+                StringCopy(gStringVar4, gText_Exit);
+                AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            }
+            else
+            {
+                StringCopy(gStringVar4, GetItemDescription(sFrontierExchangeCorner_Competitive[selection]));
+                StripLineBreaks(gStringVar4);
+                BreakStringAutomatic(gStringVar4, 208, 2, FONT_SMALL, HIDE_SCROLL_PROMPT);
+                AddTextPrinterParameterized2(0, FONT_SMALL, gStringVar4, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            }
             ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Competitive[selection]);
             break;
         default:

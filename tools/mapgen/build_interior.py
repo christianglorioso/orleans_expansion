@@ -322,6 +322,9 @@ def build(room, door_warps):
         grid[y][x] = block(M[name_], coll, grid[y][x] >> 12)
     if not room.get("no_caps"):
         place_caps(grid, room["tileset"], M)
+    # rest spots are faced from the open side, so the cushion / bed cell itself must block (a walkable cell is walked onto, never faced)
+    for rx, ry in interior_rest.REST.get(name, []):
+        grid[ry][rx] |= 1 << 10
     # layout files
     d = f"data/layouts/{name}"
     os.makedirs(d, exist_ok=True)

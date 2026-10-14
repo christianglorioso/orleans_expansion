@@ -55,7 +55,7 @@ TRAINERS = [
          intro=T("Rain's coming. I can smell it.", "Heron's rain, they call it."), defeat=T("Drenched."),
          after=T("HERON keeps the rain. She lets", "it fall when it's ready.")),
     dict(m="Route20", n=4, const="TRAINER_ORLEANS_ROUTE20_SAILOR", name="GERMAIN", cls="Sailor", pic="Sailor", sex="Male", music="Male",
-         gfx=SAILOR, face="DOWN", sight=4, team=[("Wailord", 49), ("Pelipper", 50), ("Barbaracle", 50)],
+         gfx=SAILOR, face="LEFT", sight=4, team=[("Wailord", 49), ("Pelipper", 50), ("Barbaracle", 50)],
          intro=T("Last islet before Land's End.", "Toll's a battle!"), defeat=T("Toll paid."),
          after=T("The pilings go on for miles.", "Nobody remembers who built them.")),
     dict(m="Route20", n=5, const="TRAINER_ORLEANS_ROUTE20_SWIMMER_2", name="ANATOLE", cls="Swimmer M", pic="Swimmer M", sex="Male", music="Swimmer",
