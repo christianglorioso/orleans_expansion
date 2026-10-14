@@ -36,8 +36,7 @@ def apply(r, c):
     c["autotile"].pop("path", None)
     ekat = next(s for s in r["sources"] if s["name"] == "ekat")
     # marsh never meets water in the city (crescent.py keeps a grass bank between them), so no marsh-water set
-    c["autotile"]["water"]["alt_land"] = [a for a in c["autotile"]["water"].get("alt_land", []) if a["chars"] != '"']
-    drop = lambda i: i.startswith(("marshwater",))
+    drop = lambda i: False      # (the marsh-water bank set stays: Route 3's marsh meets water)
     ekat["metatiles"] = [m for m in ekat["metatiles"] if not drop(m["id"])]
     # the cypress and reed art is only ever used re-seated on marsh or water: keep it out of the tileset as raw
     # pieces (an overlay-only copy of the sheet that patches can still read)

@@ -441,7 +441,15 @@
 "patch:ovl_ccw_barrel_00__johto_1C9": 938,
 "patch:ovl_wpr_4_0__ekat_water_N": 939,
 "patch:ovl_wpr_4_0__ekat_water_W": 940,
-"patch:ovl_wpr_6_0__ekat_water_weeds1": 941
+"patch:ovl_wpr_6_0__ekat_water_weeds1": 941,
+"patch:blend_marsh_N_inNE": 942,
+"patch:blend_marsh_N_inNW": 943,
+"patch:blend_marsh_landNE_inSE": 944,
+"patch:blend_marsh_landNW_E": 945,
+"patch:blend_marsh_landNW_inSW": 946,
+"patch:blend_marsh_landSE_N": 947,
+"patch:blend_marsh_landSW_inNW": 948,
+"patch:blend_marsh_landSW_inSE": 949
 },
 "palettes": null,
 "tiles": {}

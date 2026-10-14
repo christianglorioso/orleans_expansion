@@ -175,7 +175,52 @@
    ],
    "smooth": "~",
    "neutral": "#I",
-   "alt_land": []
+   "alt_land": [
+    {
+     "chars": "\"",
+     "tiles": {
+      "N": "ekat:marshwater_N",
+      "S": "ekat:marshwater_S",
+      "W": "ekat:marshwater_W",
+      "E": "ekat:marshwater_E",
+      "inNW": "ekat:marshwater_inNW",
+      "inNE": "ekat:marshwater_inNE",
+      "inSW": "ekat:marshwater_inSW",
+      "inSE": "ekat:marshwater_inSE",
+      "landSE": "ekat:marshwater_landSE",
+      "landSW": "ekat:marshwater_landSW",
+      "landNE": "ekat:marshwater_landNE",
+      "landNW": "ekat:marshwater_landNW",
+      "sTLBR": "ekat:marshwater_sTLBR",
+      "sTRBL": "ekat:marshwater_sTRBL"
+     },
+     "blend": {
+      "name": "marsh",
+      "land": "ekat:marsh_C",
+      "patch": {
+       "N": "ekat:marsh_N",
+       "S": "ekat:marsh_S",
+       "W": "ekat:marsh_W",
+       "E": "ekat:marsh_E",
+       "inNW": "ekat:marsh_inNW",
+       "inNE": "ekat:marsh_inNE",
+       "inSW": "ekat:marsh_inSW",
+       "inSE": "ekat:marsh_inSE",
+       "landSE": "ekat:marsh_landSE",
+       "landSW": "ekat:marsh_landSW",
+       "landNE": "ekat:marsh_landNE",
+       "landNW": "ekat:marsh_landNW",
+       "sTLBR": "ekat:marsh_sTLBR",
+       "sTRBL": "ekat:marsh_sTRBL",
+       "C": [
+        "ekat:marsh_C",
+        "ekat:marsh_plants1",
+        "ekat:marsh_plants3"
+       ]
+      }
+     }
+    }
+   ]
   },
   "paved": {
    "_comment": "Johto flagstone paving on grass (primary 1B8-1CA): the cities' streets.",

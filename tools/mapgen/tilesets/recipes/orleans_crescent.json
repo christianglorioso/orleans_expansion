@@ -373,6 +373,150 @@
      ]
     },
     {
+     "id": "marshwater_N",
+     "bottom": [
+      2,
+      17
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_S",
+     "bottom": [
+      2,
+      21
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_W",
+     "bottom": [
+      0,
+      19
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_E",
+     "bottom": [
+      4,
+      19
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inNW",
+     "bottom": [
+      1,
+      18
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inNE",
+     "bottom": [
+      3,
+      18
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inSW",
+     "bottom": [
+      1,
+      20
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_inSE",
+     "bottom": [
+      3,
+      20
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_landSE",
+     "bottom": [
+      1,
+      17
+     ]
+    },
+    {
+     "id": "marshwater_landSW",
+     "bottom": [
+      3,
+      17
+     ]
+    },
+    {
+     "id": "marshwater_landNE",
+     "bottom": [
+      1,
+      21
+     ]
+    },
+    {
+     "id": "marshwater_landNW",
+     "bottom": [
+      3,
+      21
+     ]
+    },
+    {
+     "id": "marshwater_sTLBR",
+     "quads": [
+      [
+       1,
+       18,
+       0
+      ],
+      [
+       2,
+       15,
+       1
+      ],
+      [
+       2,
+       15,
+       2
+      ],
+      [
+       3,
+       20,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
+     "id": "marshwater_sTRBL",
+     "quads": [
+      [
+       2,
+       15,
+       0
+      ],
+      [
+       3,
+       18,
+       1
+      ],
+      [
+       1,
+       20,
+       2
+      ],
+      [
+       2,
+       15,
+       3
+      ]
+     ],
+     "behavior": "MB_POND_WATER"
+    },
+    {
      "id": "reeds_top",
      "bottom": [
       4,
