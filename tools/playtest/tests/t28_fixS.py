@@ -7,7 +7,7 @@
       rest cell no longer swallows the player (the cell blocks, the room stays connected)
   S4  Route 15 Trainer3 / Trainer5 and Route 20 Germain see more than one cell: the player stepping into the line is spotted
   S5  the Route 25 sign reads from its west cell; Tupelo at the Old Water ceremony answers from the water cell north of him
-  S6  Chloe fights with Joltik + Elekid
+  S6  Chloe fights with Joltik + Magnemite (Elekid is not in the Orleans dex)
   S7  Route 12's fishing table stays at or under Lutin's ace (43)
   S8  the Pry Bar's icon is no longer the Wailmer Pail placeholder
   S9  the Arena BP clerk's competitive shop: every description is at most two lines of the box (re-wrapped), none is empty
@@ -295,8 +295,8 @@ def run(b, t):
         b.frames(120)
         base = b.r32(b.sym("gEnemyPartyPtr"))
         got = [b.call("GetMonData2", base + k * 100, mon_data_ids()["MON_DATA_SPECIES"]) & 0xFFFF for k in range(2)]
-        want = [enum_value("species.h", "SPECIES_JOLTIK"), enum_value("species.h", "SPECIES_ELEKID")]
-        t.check("S6 Chloe's team is Joltik + Elekid", got == want, "%s vs %s" % (got, want))
+        want = [enum_value("species.h", "SPECIES_JOLTIK"), enum_value("species.h", "SPECIES_MAGNEMITE")]
+        t.check("S6 Chloe's team is Joltik + Magnemite", got == want, "%s vs %s" % (got, want))
         b.shot("chloe")
     else:
         t.check("S6 Chloe starts a battle", False, "no battle; %s" % b.where())
