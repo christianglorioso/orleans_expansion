@@ -40,6 +40,7 @@ void AllocateBattleResources(void)
         InitTrainerHillBattleStruct();
 
     gBattleStruct = AllocZeroed(sizeof(*gBattleStruct));
+    InitBossBattleData();
     gAiBattleData = AllocZeroed(sizeof(*gAiBattleData));
     gAiThinkingStruct = AllocZeroed(sizeof(*gAiThinkingStruct));
     gAiLogicData = AllocZeroed(sizeof(*gAiLogicData));
@@ -70,6 +71,8 @@ void AllocateBattleResources(void)
 
 void FreeBattleResources(void)
 {
+    bool32 wasBossBattle = (gBattleTypeFlags & BATTLE_TYPE_BOSS) || IsBossBattlePending();
+
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER && gMapHeader.regionMapSectionId == MAPSEC_TRAINER_TOWER_2)
         FreeTrainerTowerBattleStruct();
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_HILL)
@@ -96,6 +99,9 @@ void FreeBattleResources(void)
 
         FreeBattleGfxResources();
     }
+
+    if (wasBossBattle)
+        CancelBossBattleConfiguration();
 }
 
 void AdjustFriendshipOnBattleFaint(enum BattlerId battler)

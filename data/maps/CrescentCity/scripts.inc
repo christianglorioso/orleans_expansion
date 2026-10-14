@@ -410,6 +410,7 @@ CrescentCity_EventScript_PgGalarArticuno::
 	playmoncry SPECIES_ARTICUNO_GALAR, CRY_MODE_ENCOUNTER
 	msgbox CrescentCity_Text_PGGalarArticuno, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ARTICUNO_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -435,6 +436,7 @@ CrescentCity_EventScript_PgGalarZapdos::
 	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
 	msgbox CrescentCity_Text_PGGalarZapdos, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ZAPDOS_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -460,6 +462,7 @@ CrescentCity_EventScript_PgGalarMoltres::
 	playmoncry SPECIES_MOLTRES_GALAR, CRY_MODE_ENCOUNTER
 	msgbox CrescentCity_Text_PGGalarMoltres, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_MOLTRES_GALAR, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

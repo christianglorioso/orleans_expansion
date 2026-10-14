@@ -49,6 +49,7 @@ Pokémon Orleans could not exist without the work of many people. If you build o
   - the EX vitamins;
   - the overworld and battle speed options and the Fast Intro option;
   - the achievement system (the TROPHIES menu, unlock popups and the polled trophy table; Orleans has its own 100 trophies and placeholder rewards). The easing animation module it uses (`comfy_anim`) is by **Montblanc**, via SoulGold.
+  - the boss battle system (`src/battle_boss.c`: up to four health bars shown as barrier icons on the healthbox, a stat multiplier, form and moveset phases when a bar breaks, a last stand, and the boss's own moves restored before capture; the `setbossbattle` script command). The barrier icon art (`graphics/raid/raid_barrier.png`) is SoulGold's. Orleans uses it for the Kyogre, Groudon and Rayquaza raids and for the post-game lair and arena legends, with its own phase profiles.
   
   The SoulGold project also asks that RHH and the makers of Heart & Soul be credited.
   - Overworld Speedup by **HashtagMarky (Marky)**.

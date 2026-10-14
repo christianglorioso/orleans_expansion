@@ -282,6 +282,10 @@ extern const u8 BattleScript_MoveUsedHealBlockPrevents[];
 extern const u8 BattleScript_SelectingNotAllowedMoveHealBlockInPalace[];
 extern const u8 BattleScript_DefogClearHazards[];
 extern const u8 BattleScript_MegaEvolution[];
+extern const u8 BattleScript_BossMegaEvolution[];
+extern const u8 BattleScript_BossHealthBarBreak[];
+extern const u8 BattleScript_BossHealthBarBreakAndFormChange[];
+extern const u8 BattleScript_BossHealthBarBreakAndPrimal[];
 extern const u8 BattleScript_WishMegaEvolution[];
 extern const u8 BattleScript_MoveEffectClearSmog[];
 extern const u8 BattleScript_MoveEffectSmackDown[];
@@ -522,6 +526,7 @@ extern const u8 BattleScript_DecreaseStatChangeMessage[];
 extern const u8 BattleScript_DecreaseStatChangeMessageMinStat[];
 extern const u8 BattleScript_StatDidntChangeMessagePause[];
 extern const u8 BattleScript_WildBattleVictory[];
+extern const u8 BattleScript_WildBattleVictoryPrompt[];
 extern const u8 BattleScript_BelchFails[];
 extern const u8 BattleScript_MegaSolActivatesTwoTurnMove[];
 

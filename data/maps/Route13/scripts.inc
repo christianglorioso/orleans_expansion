@@ -84,6 +84,7 @@ Route13_EventScript_PgZarude::
 	playmoncry SPECIES_ZARUDE, CRY_MODE_ENCOUNTER
 	msgbox Route13_Text_PGZarude, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ZARUDE, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -109,6 +110,7 @@ Route13_EventScript_PgOgerpon::
 	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
 	msgbox Route13_Text_PGOgerpon, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_OGERPON_TEAL, 50
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

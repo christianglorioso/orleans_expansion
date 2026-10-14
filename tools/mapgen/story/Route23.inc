@@ -93,6 +93,7 @@ Route23_EventScript_PgLandorus::
 	playmoncry SPECIES_LANDORUS, CRY_MODE_ENCOUNTER
 	msgbox Route23_Text_PGLandorus, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_LANDORUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -118,6 +119,7 @@ Route23_EventScript_PgAzelf::
 	playmoncry SPECIES_AZELF, CRY_MODE_ENCOUNTER
 	msgbox Route23_Text_PGAzelf, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_AZELF, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

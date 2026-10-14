@@ -123,9 +123,11 @@ OldestShrine_EventScript_RayStart:
 @ Jayden's partner party depends on his starter (VAR_STARTER_MON 0 Chikorita, 1 Fuecoco, 2 Totodile) and on the legendary the player did NOT take
 @ (VAR_ORLEANS_LEGENDARY_PICK 1: the player has Kyogre, Jayden Groudon)
 OldestShrine_EventScript_RayBattle:
+	setbossbattle 4, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_RAYQUAZA
 	call_if_eq VAR_STARTER_MON, 0, OldestShrine_EventScript_BattleChikorita
 	call_if_eq VAR_STARTER_MON, 1, OldestShrine_EventScript_BattleFuecoco
 	call_if_eq VAR_STARTER_MON, 2, OldestShrine_EventScript_BattleTotodile
+	clearbossbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	@ a draw (both sides faint) is no win: it offers the retry too (audit fin S2)
 	goto_if_ne VAR_RESULT, B_OUTCOME_WON, OldestShrine_EventScript_RayLost
@@ -441,6 +443,7 @@ OldestShrine_EventScript_PgRayquaza::
 	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
 	msgbox OldestShrine_Text_PGRayquaza, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_RAYQUAZA_SHRINE
 	setwildbattle SPECIES_RAYQUAZA, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -232,6 +232,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_SLIDE_OFFSCREEN]        = gBattleAnimGeneral_SlideOffScreen,
     [B_ANIM_RESTORE_BG]             = gBattleAnimGeneral_RestoreBg,
     [B_ANIM_TOTEM_FLARE]            = gBattleAnimGeneral_TotemFlare,
+    [B_ANIM_BOSS_BARRIER_BREAK]     = gBattleAnimGeneral_BossBarrierBreak,
     [B_ANIM_GULP_MISSILE]           = gBattleAnimGeneral_GulpMissile,
     [B_ANIM_STRONG_WINDS]           = gBattleAnimGeneral_StrongWinds,
     [B_ANIM_PRIMAL_REVERSION]       = gBattleAnimGeneral_PrimalReversion,

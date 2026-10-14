@@ -38,7 +38,9 @@ LandsEnd_DrownedTemple_EventScript_KyogreRaid0::
 	goto_if_lt VAR_ORLEANS_STORY, 39, LandsEnd_DrownedTemple_EventScript_NotYet
 	msgbox LandsEnd_DrownedTemple_Text_KyogreIntro, MSGBOX_DEFAULT
 	closemessage
+	setbossbattle 3, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_KYOGRE
 	trainerbattle_no_intro TRAINER_ORLEANS_KYOGRE_RAID, LandsEnd_DrownedTemple_Text_KyogreDefeat
+	clearbossbattle
 	msgbox LandsEnd_DrownedTemple_Text_KyogreCalm, MSGBOX_DEFAULT
 	setflag FLAG_KYOGRE_CALMED
 	setflag FLAG_HIDE_KYOGRE_RAID
@@ -142,6 +144,7 @@ LandsEnd_DrownedTemple_EventScript_Pgkyogre_re1::
 	playmoncry SPECIES_KYOGRE, CRY_MODE_ENCOUNTER
 	msgbox LandsEnd_DrownedTemple_Text_PGKyogreRe, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_KYOGRE
 	setwildbattle SPECIES_KYOGRE, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

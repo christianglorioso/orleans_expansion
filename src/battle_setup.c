@@ -368,6 +368,8 @@ void BattleSetup_StartMultiBattle(void)
     {
         gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
     }
+    if (IsBossBattlePending() && (gSpecialVar_0x8005 & MULTI_BATTLE_2_VS_1)) // Orleans: the Rayquaza raid is a boss (SoulGold's system, src/battle_boss.c)
+        gBattleTypeFlags |= BATTLE_TYPE_BOSS;
 
     FillPartnerParty(gPartnerTrainerId);
     if (gSpecialVar_0x8005 & MULTI_BATTLE_CHOOSE_MONS) // Skip mons restoring(done in the script)
@@ -535,6 +537,8 @@ void BattleSetup_StartScriptedWildBattle(void)
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = 0;
+    if (IsBossBattlePending()) // Orleans: setbossbattle before setwildbattle/dowildbattle (src/battle_boss.c)
+        gBattleTypeFlags |= BATTLE_TYPE_BOSS;
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -1466,6 +1470,9 @@ void BattleSetup_StartTrainerBattle(void)
 
     if (TRAINER_BATTLE_PARAM.earlyRival && GetRivalBattleFlags() & RIVAL_BATTLE_TUTORIAL)
         gBattleTypeFlags |= BATTLE_TYPE_FIRST_BATTLE;
+
+    if (IsBossBattlePending() && !(gBattleTypeFlags & BATTLE_TYPE_DOUBLE)) // Orleans: a trainer-borne boss (the Kyogre and Groudon raids)
+        gBattleTypeFlags |= BATTLE_TYPE_BOSS;
 
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {

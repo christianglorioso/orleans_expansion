@@ -468,6 +468,7 @@ OldWater_EventScript_PgUxie::
 	playmoncry SPECIES_UXIE, CRY_MODE_ENCOUNTER
 	msgbox OldWater_Text_PGUxie, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_UXIE, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

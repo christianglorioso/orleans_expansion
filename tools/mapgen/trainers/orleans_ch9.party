@@ -259,7 +259,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Kyogre @ Blue Orb
+Kyogre
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Origin Pulse
@@ -276,7 +276,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
-Groudon @ Red Orb
+Groudon
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Precipice Blades
@@ -358,8 +358,8 @@ AI: Check Bad Move / Try To Faint
 Rayquaza
 Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Ascent
 - Extreme Speed
 - Earthquake
+- Dragon Claw
 - Dragon Dance
 

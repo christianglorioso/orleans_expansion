@@ -3603,6 +3603,14 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
         gBattleStruct->eventState.beforeFirstTurn++;
         break;
+    case FIRST_TURN_EVENTS_BOSS:
+        gBattleStruct->eventState.beforeFirstTurn++;
+        if (TryStartBossBattle())
+        {
+            BattleScriptExecute(BattleScript_BossMegaEvolution);
+            return;
+        }
+        break;
     case FIRST_TURN_EVENTS_TOTEM_BOOST:
         for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
         {
@@ -5952,6 +5960,9 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
 
 bool32 IsWildMonSmart(void)
 {
+    if (gBattleTypeFlags & BATTLE_TYPE_BOSS)
+        return TRUE;
+
 #if WE_SMART_WILD_AI_FLAG != 0
     return (FlagGet(WE_SMART_WILD_AI_FLAG));
 #else

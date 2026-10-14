@@ -192,6 +192,7 @@ StormsEdge_EventScript_PgZapdos::
 	playmoncry SPECIES_ZAPDOS, CRY_MODE_ENCOUNTER
 	msgbox StormsEdge_Text_PGZapdos, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ZAPDOS, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -38,6 +38,7 @@ Route14_RougarouHollow_EventScript_Rougarou::
 	playmoncry SPECIES_LYCANROC_MIDNIGHT, CRY_MODE_ENCOUNTER
 	msgbox Route14_RougarouHollow_Text_Rougarou1, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_LYCANROC
 	setwildbattle SPECIES_LYCANROC_MIDNIGHT, 42
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

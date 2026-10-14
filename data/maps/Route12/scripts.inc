@@ -83,6 +83,7 @@ Route12_EventScript_PgThundurus::
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
 	msgbox Route12_Text_PGThundurus, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_THUNDURUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

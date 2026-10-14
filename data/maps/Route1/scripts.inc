@@ -250,6 +250,7 @@ Route1_EventScript_PgMesprit::
 	playmoncry SPECIES_MESPRIT, CRY_MODE_ENCOUNTER
 	msgbox Route1_Text_PGMesprit, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_MESPRIT, 55
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

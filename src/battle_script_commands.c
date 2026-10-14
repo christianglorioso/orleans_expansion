@@ -1891,6 +1891,29 @@ static void Cmd_tryfaintmon(void)
         if (!IsBattlerAlive(battler)
          && !(gBattleStruct->battlerState[battler].notOnField))
         {
+            // Orleans: boss battles (SoulGold's system): a broken health bar refills instead of fainting
+            if (TryBossHealthBarBreak(battler))
+            {
+                gBattlerTarget = battler;
+                BattleScriptPush(cmd->nextInstr);
+                gBattlescriptCurrInstr = GetBossBarBreakScript();
+                return;
+            }
+
+            if (IsBossBattle()
+             && battler == GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)
+             && IsVictoryCatch())
+            {
+                u16 hp = 1;
+
+                gBattlerAttacker = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT);
+                gBattlerTarget = battler;
+                SetMonData(GetBattlerMon(battler), MON_DATA_HP, &hp);
+                BattleScriptPush(cmd->nextInstr);
+                gBattlescriptCurrInstr = BattleScript_WildBattleVictory;
+                return;
+            }
+
             if (gBattleMons[battler].volatiles.neutralizingGas)
             {
                 gBattleMons[battler].volatiles.neutralizingGas = FALSE;
@@ -7804,6 +7827,7 @@ static void FinalizeCapture(void)
 
     BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_3_SHAKES_SUCCESS);
     MarkBattlerForControllerExec(gBattlerAttacker);
+    RestoreBossOriginalMovesForCapture(gBattlerTarget); // Orleans: the caught boss gets its own moves back
     TryBattleFormChange(gBattlerTarget, FORM_CHANGE_END_BATTLE, GetBattlerAbility(gBattlerTarget));
     gBattlescriptCurrInstr = BattleScript_SuccessBallThrow;
     struct Pokemon *caughtMon = GetBattlerMon(gBattlerTarget);
@@ -12211,11 +12235,25 @@ void BS_CatchAfterVictory(void)
         gLastUsedItem = gSpecialVar_ItemId; // selected ball
         SetBallThrowShakes();
     }
+    else if (IsBossBattle()) // Orleans: the bag was cancelled; back to the Catch / Don't Catch choice
+    {
+        gBattleStruct->victoryCatchState = VICTORY_CATCH_START;
+        gBattlescriptCurrInstr = BattleScript_WildBattleVictoryPrompt;
+    }
     else // no item selected, do faint sequence
     {
         gBattleStruct->victoryCatchState = VICTORY_CATCH_FAINTED;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
+}
+
+void BS_RefreshBossHealthbox(void)
+{
+    NATIVE_ARGS(u8 battler);
+    enum BattlerId battler = GetBattlerForBattleScript(cmd->battler);
+
+    RefreshBossHealthbox(battler);
+    gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
 void BS_JumpIfNoBalls(void)

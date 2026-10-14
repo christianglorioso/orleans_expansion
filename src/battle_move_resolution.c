@@ -3671,8 +3671,21 @@ static enum MoveEndResult MoveEndFaintBlock(struct BattleCalcValues *cv)
 
             gBattleStruct->eventState.moveEndBlock++;
             break;
+        case FAINT_BLOCK_BOSS_PHASE:
+            if (TryBossHealthBarBreak(cv->battlerDef))
+            {
+                gBattleStruct->eventState.moveEndBlock = FAINT_BLOCK_COUNT;
+                BattleScriptCall(GetBossBarBreakScript());
+                result = MOVEEND_RESULT_RUN_SCRIPT;
+            }
+            else
+            {
+                gBattleStruct->eventState.moveEndBlock++;
+            }
+            break;
         case FAINT_BLOCK_VICTORY_CATCH:
-            if (IsVictoryCatch()
+            if (!IsBattlerAlive(cv->battlerDef)
+             && IsVictoryCatch()
              && gBattleStruct->victoryCatchState != VICTORY_CATCH_FAINTED
              && !IsOnPlayerSide(gBattlerTarget))
             {

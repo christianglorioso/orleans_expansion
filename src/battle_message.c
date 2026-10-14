@@ -892,6 +892,13 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PARTYCUREDFROSTBITE]                  = COMPOUND_STRING("{B_BUFF1}'s frostbite was cured!"),
     [STRINGID_PKMNATKNOTLOWERED]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s Attack was not lowered!"),
     [STRINGID_VICTORYCATCH]                         = COMPOUND_STRING("{B_DEF_NAME} is weak!\nThrow a Poké Ball now!"),
+    [STRINGID_BOSSHEALTHBARBREAK]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s barrier broke! It's still standing!"),
+    [STRINGID_BOSSLASTSTAND]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s barrier broke! It's making a last stand!"),
+    [STRINGID_BOSSSURGINGWITHPOWER]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is surging with power!"),
+    [STRINGID_BOSSTRANSFORMED]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed!"),
+    [STRINGID_BOSSPHASESURGINGWITHPOWER]            = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is surging with power!"),
+    [STRINGID_BOSSPHASETRANSFORMED]                 = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} transformed!"),
+    [STRINGID_BOSSPHASEPRIMAL]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} reverted to its\nprimal state!"),
     [STRINGID_CANTUSEMOVE]                          = COMPOUND_STRING("This move can't be used!\p"),
     [STRINGID_REFLECTWOREOFF]                       = COMPOUND_STRING("{B_DEF_TEAM1} side's Reflect wore off!"),
     [STRINGID_LIGHTSCREENWOREOFF]                   = COMPOUND_STRING("{B_DEF_TEAM1} side's Light Screen wore off!"),
@@ -908,6 +915,12 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_S]                                    = COMPOUND_STRING("s"),
     [STRINGID_LOSTSOMEOFITSHP]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost some of its HP!"),
     [STRINGID_BELCHCANTUSE]                         = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hasn't eaten any held Berries, so it can't possibly belch!\p"),
+};
+
+const u16 gBossHealthBarBreakStringIds[] =
+{
+    STRINGID_BOSSHEALTHBARBREAK,
+    STRINGID_BOSSLASTSTAND,
 };
 
 const u16 gTrainerUsedItemStringIds[] =

@@ -2192,6 +2192,24 @@
 	closebraillemessage
 	.endm
 
+	@ Orleans (boss battles from SoulGold by Eemeliri, src/battle_boss.c): makes the NEXT single battle (a setwildbattle/dowildbattle wild
+	@ fight, or a trainerbattle / multi_fixed_2_vs_1) a boss with 'bars' health bars (1-4). The bars are the barrier icons on the healthbox;
+	@ breaking one refills the HP and applies the next phase of 'phaseProfile' (BOSS_PHASE_PROFILE_*: a form and a moveset per bar).
+	@ megaSpecies SPECIES_NONE with no profile = the species' own Mega, if it has one. A wild boss is caught only after its last bar breaks
+	@ (the victory catch) or with a ball while fighting; its own moves are restored on capture. Ends with the battle (or clearbossbattle).
+	.macro setbossbattle bars=2, megaSpecies=SPECIES_NONE, statMultiplier=110, phaseProfile=BOSS_PHASE_PROFILE_NONE
+	callnative ScriptConfigureBossBattle, requests_effects=1
+	.2byte \bars
+	.2byte \megaSpecies
+	.2byte \statMultiplier
+	.2byte \phaseProfile
+	.endm
+
+	@ Cancels a pending boss battle when an encounter script exits before the battle starts.
+	.macro clearbossbattle
+	callnative ScriptCancelBossBattle, requests_effects=1
+	.endm
+
 	@ Creates a Pokémon with the modernFatefulEncounter bit set for an encounter
 	.macro seteventmon species:req, level:req, item=ITEM_NONE
 	setvar VAR_0x8004, \species

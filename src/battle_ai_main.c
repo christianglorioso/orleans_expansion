@@ -234,7 +234,10 @@ static u64 GetWildAiFlags(void)
     if (IsDoubleBattle())
         avgLevel = (GetMonData(&gParties[B_TRAINER_OPPONENT_A][0], MON_DATA_LEVEL) + GetMonData(&gParties[B_TRAINER_OPPONENT_A][1], MON_DATA_LEVEL)) / 2;
 
-    flags |= AI_FLAG_CHECK_BAD_MOVE;
+    if (gBattleTypeFlags & BATTLE_TYPE_BOSS)
+        flags |= AI_FLAG_BASIC_TRAINER | AI_FLAG_HP_AWARE; // Orleans: boss battles think like trainers
+    else
+        flags |= AI_FLAG_CHECK_BAD_MOVE;
     if (avgLevel >= 20)
         flags |= AI_FLAG_CHECK_VIABILITY;
     if (avgLevel >= 60)

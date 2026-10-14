@@ -9,7 +9,9 @@ LandsEnd_SaltCathedral_EventScript_GroudonRaid0::
 	goto_if_lt VAR_ORLEANS_STORY, 39, LandsEnd_SaltCathedral_EventScript_NotYet
 	msgbox LandsEnd_SaltCathedral_Text_GroudonIntro, MSGBOX_DEFAULT
 	closemessage
+	setbossbattle 3, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_GROUDON
 	trainerbattle_no_intro TRAINER_ORLEANS_GROUDON_RAID, LandsEnd_SaltCathedral_Text_GroudonDefeat
+	clearbossbattle
 	msgbox LandsEnd_SaltCathedral_Text_GroudonCalm, MSGBOX_DEFAULT
 	setflag FLAG_GROUDON_CALMED
 	setflag FLAG_HIDE_GROUDON_RAID
@@ -104,6 +106,7 @@ LandsEnd_SaltCathedral_EventScript_Pggroudon_re1::
 	playmoncry SPECIES_GROUDON, CRY_MODE_ENCOUNTER
 	msgbox LandsEnd_SaltCathedral_Text_PGGroudonRe, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, SPECIES_NONE, 110, BOSS_PHASE_PROFILE_GROUDON
 	setwildbattle SPECIES_GROUDON, 70
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

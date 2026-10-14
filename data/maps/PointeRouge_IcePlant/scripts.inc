@@ -24,6 +24,7 @@ PointeRouge_IcePlant_EventScript_Pgarticuno0::
 	playmoncry SPECIES_ARTICUNO, CRY_MODE_ENCOUNTER
 	msgbox PointeRouge_IcePlant_Text_PGArticuno, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ARTICUNO, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

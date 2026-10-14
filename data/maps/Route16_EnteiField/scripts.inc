@@ -41,6 +41,7 @@ Route16_EnteiField_EventScript_PgEntei::
 	playmoncry SPECIES_ENTEI, CRY_MODE_ENCOUNTER
 	msgbox Route16_EnteiField_Text_PGEntei, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_ENTEI, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

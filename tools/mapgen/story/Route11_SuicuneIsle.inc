@@ -41,6 +41,7 @@ Route11_SuicuneIsle_EventScript_PgSuicune::
 	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
 	msgbox Route11_SuicuneIsle_Text_PGSuicune, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_SUICUNE, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

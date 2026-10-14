@@ -2340,6 +2340,7 @@ BattleScript_EffectFutureSight::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectTeleport::
+	jumpifbattletype BATTLE_TYPE_BOSS, BattleScript_FailedFromAtkCanceler
 	jumpifgenconfiglowerthan CONFIG_B_TELEPORT_BEHAVIOR, GEN_8, BattleScript_EffectTeleportGen7
 	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_EffectBatonPass
 	jumpifside BS_ATTACKER, B_SIDE_PLAYER, BattleScript_EffectBatonPass
@@ -2736,7 +2737,7 @@ BattleScript_HandleFaintedMon::
 	setbyte sSHIFT_SWITCHED, 0
 	checkteamslost BattleScript_HandleFaintedMonMultiple
 	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_FaintedMonEnd
-	jumpifbattletype BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE, BattleScript_FaintedMonTryChoose
+	jumpifbattletype BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_BOSS, BattleScript_FaintedMonTryChoose
 	jumpifword CMP_NO_COMMON_BITS, gHitMarker, HITMARKER_PLAYER_FAINTED, BattleScript_FaintedMonTryChoose
 @ Yes/No for sending out a new Pokémon if one is defeated in a wild battle
 	printstring STRINGID_USENEXTPKMN
@@ -3908,6 +3909,64 @@ BattleScript_MegaEvolutionAfterString:
 	switchinabilities BS_SCRIPTING
 	effectsafterformchange
 	end3
+
+BattleScript_BossMegaEvolution::
+	flushtextbox
+	printstring STRINGID_BOSSSURGINGWITHPOWER
+	waitmessage B_WAIT_TIME_LONG
+	handleformchange BS_SCRIPTING, 0
+	playanimation BS_SCRIPTING, B_ANIM_MEGA_EVOLUTION
+	waitanimation
+	handleformchange BS_SCRIPTING, 1
+	printstring STRINGID_BOSSTRANSFORMED
+	waitmessage B_WAIT_TIME_LONG
+	switchinabilities BS_SCRIPTING
+	effectsafterformchange
+	end3
+
+BattleScript_BossHealthBarBreak::
+	refreshbosshealthbox BS_TARGET
+	playanimation BS_TARGET, B_ANIM_BOSS_BARRIER_BREAK, NULL
+	waitanimation
+	printfromtable gBossHealthBarBreakStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_BossHealthBarBreakAndFormChange::
+	refreshbosshealthbox BS_TARGET
+	playanimation BS_TARGET, B_ANIM_BOSS_BARRIER_BREAK, NULL
+	waitanimation
+	printfromtable gBossHealthBarBreakStringIds
+	waitmessage B_WAIT_TIME_LONG
+	flushtextbox
+	printstring STRINGID_BOSSPHASESURGINGWITHPOWER
+	waitmessage B_WAIT_TIME_LONG
+	handleformchange BS_TARGET, 0
+	playanimation BS_TARGET, B_ANIM_MEGA_EVOLUTION
+	waitanimation
+	handleformchange BS_TARGET, 1
+	printstring STRINGID_BOSSPHASETRANSFORMED
+	waitmessage B_WAIT_TIME_LONG
+	switchinabilities BS_TARGET
+	effectsafterformchange
+	return
+
+BattleScript_BossHealthBarBreakAndPrimal::
+	refreshbosshealthbox BS_TARGET
+	playanimation BS_TARGET, B_ANIM_BOSS_BARRIER_BREAK, NULL
+	waitanimation
+	printfromtable gBossHealthBarBreakStringIds
+	waitmessage B_WAIT_TIME_LONG
+	flushtextbox
+	handleformchange BS_TARGET, 0
+	playanimation BS_TARGET, B_ANIM_PRIMAL_REVERSION
+	waitanimation
+	handleformchange BS_TARGET, 1
+	printstring STRINGID_BOSSPHASEPRIMAL
+	waitmessage B_WAIT_TIME_LONG
+	switchinabilities BS_TARGET
+	effectsafterformchange
+	return
 
 BattleScript_WishMegaEvolution::
 	flushtextbox
@@ -6459,6 +6518,7 @@ BattleScript_SilphScopeUnveiled::
 BattleScript_WildBattleVictory::
 	playfaintcry BS_TARGET
 	waitcry
+BattleScript_WildBattleVictoryPrompt::
 	jumpifnoballs BattleScript_WildBattleVictoryRet
 	printstring STRINGID_VICTORYCATCH
 	setbyte gBattleCommunication, 0

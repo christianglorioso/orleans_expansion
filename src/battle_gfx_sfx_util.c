@@ -842,7 +842,10 @@ bool8 BattleInitAllSprites(u8 *state1, u8 *battler)
         if ((gBattleTypeFlags & BATTLE_TYPE_SAFARI) && *battler == 0)
             gHealthboxSpriteIds[*battler] = CreateSafariPlayerHealthboxSprites();
         else
+        {
             gHealthboxSpriteIds[*battler] = CreateBattlerHealthboxSprites(*battler);
+            CreateBossHealthBarSprites(*battler);
+        }
 
         (*battler)++;
         if (*battler == gBattlersCount)

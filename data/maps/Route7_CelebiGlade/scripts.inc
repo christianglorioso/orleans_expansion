@@ -41,6 +41,7 @@ Route7_CelebiGlade_EventScript_PgCelebi::
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	msgbox Route7_CelebiGlade_Text_PGCelebi, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_CELEBI, 50
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

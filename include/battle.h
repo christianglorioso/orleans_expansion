@@ -7,6 +7,7 @@
 #include "constants/battle_stat_change.h"
 #include "constants/abilities.h"
 #include "constants/battle.h"
+#include "battle_boss.h"
 #include "constants/battle_move_resolution.h"
 #include "constants/form_change_types.h"
 #include "constants/hold_effects.h"
@@ -729,6 +730,22 @@ struct BattleStruct
     bool8 burnedByLureLight[MAX_BATTLERS_COUNT]; // Orleans: Lure Light traps only the foes it burned
     enum SubmoveState submoveAnnouncement:2;
     enum VictoryCatch victoryCatchState:2;
+    struct
+    {
+        u16 megaSpecies;
+        enum Move originalMoves[MAX_MON_MOVES];
+        u8 originalPp[MAX_MON_MOVES];
+        u8 totalBars;
+        u8 barsRemaining;
+        u8 statMultiplier;
+        u8 phaseProfile;
+        bool8 autoMega;
+        u8 barrierSpriteIds[MAX_BOSS_HEALTH_BARS - 1];
+        bool8 active;
+        bool8 initialized;
+        bool8 originalMovesStored;
+        bool8 phaseChangedForm;
+    } boss; // Orleans: SoulGold boss battles (src/battle_boss.c)
     u32 incrementEchoedVoice:1;
     u32 echoedVoiceCounter:3;
     u32 attackAnimPlayed:1;

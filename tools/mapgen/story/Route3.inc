@@ -224,6 +224,7 @@ Route3_EventScript_PgTornadus::
 	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
 	msgbox Route3_Text_PGTornadus, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_TORNADUS, 62
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

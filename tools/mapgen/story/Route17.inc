@@ -83,6 +83,7 @@ Route17_EventScript_PgMoltres::
 	playmoncry SPECIES_MOLTRES, CRY_MODE_ENCOUNTER
 	msgbox Route17_Text_PGMoltres, MSGBOX_DEFAULT
 	waitmoncry
+	setbossbattle 2, BOSS_NO_FORM_CHANGE, 110
 	setwildbattle SPECIES_MOLTRES, 60
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome

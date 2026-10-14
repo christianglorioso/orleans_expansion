@@ -67,12 +67,14 @@ TRAINERS = [
 ]
 
 EXTRA_PARTIES = [
-    # the raids: one legendary each, the primal weather comes from its orb at switch-in (Primordial Sea / Desolate Land)
+    # the raids: one legendary each, each a BOSS battle (src/battle_boss.c, SoulGold's system; the scripts call setbossbattle first): Kyogre and
+    # Groudon have 3 health bars and start in their normal form, with no orb - the Primal Reversion (Primordial Sea / Desolate Land) happens when
+    # the first bar breaks (BOSS_PHASE_PROFILE_KYOGRE / _GROUDON). The moves below are the Primal ones; the boss phases set the real movesets.
     dict(const="TRAINER_ORLEANS_KYOGRE_RAID", name="KYOGRE", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
-         team=[("Kyogre", 60, ["Origin Pulse", "Ice Beam", "Thunder", "Calm Mind"], {"item": "Blue Orb"})],
+         team=[("Kyogre", 60, ["Origin Pulse", "Ice Beam", "Thunder", "Calm Mind"])],
          ai="Check Bad Move / Try To Faint", iv=31),
     dict(const="TRAINER_ORLEANS_GROUDON_RAID", name="GROUDON", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
-         team=[("Groudon", 60, ["Precipice Blades", "Fire Punch", "Rock Slide", "Swords Dance"], {"item": "Red Orb"})],
+         team=[("Groudon", 60, ["Precipice Blades", "Fire Punch", "Rock Slide", "Swords Dance"])],
          ai="Check Bad Move / Try To Faint", iv=31),
     # the Oldest Shrine's landing steps: Camille (Mega Weezing), then Andrew (Mega Metagross)
     dict(const="TRAINER_ORLEANS_CAMILLE_SHRINE", name="CAMILLE", cls="Aqua Admin", pic="Aqua Admin F", sex="Female", music="Aqua",
@@ -82,9 +84,10 @@ EXTRA_PARTIES = [
          team=[("Corviknight", 57), ("Gholdengo", 57), ("Excadrill", 58), ("Dragalge", 58), ("Magnezone", 58),
                ("Metagross", 60, [], {"item": "Metagrossite"})],
          ai="Check Bad Move / Try To Faint", iv=30),
-    # the Rayquaza raid: one Mega Rayquaza (Dragon Ascent) against the player and Jayden (2 v 1); Delta Stream overrides both primal weathers
+    # the Rayquaza raid: a 4-bar boss against the player and Jayden (2 v 1): Rayquaza for two bars, then Mega (Dragon Ascent; Delta Stream overrides
+    # both primal weathers). It has no Dragon Ascent here, so it does not Mega Evolve by itself; BOSS_PHASE_PROFILE_RAYQUAZA gives it the move and the form.
     dict(const="TRAINER_ORLEANS_RAYQUAZA_RAID", name="RAYQUAZA", cls="Pkmn Trainer 2", pic="Orleans Legend", sex="Male", music="Male",
-         team=[("Rayquaza", 66, ["Dragon Ascent", "Extreme Speed", "Earthquake", "Dragon Dance"])],
+         team=[("Rayquaza", 66, ["Extreme Speed", "Earthquake", "Dragon Claw", "Dragon Dance"])],
          ai="Check Bad Move / Try To Faint", iv=31),
 ]
 
