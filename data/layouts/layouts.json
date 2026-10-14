@@ -1961,7 +1961,7 @@
       "width": 50,
       "height": 26,
       "primary_tileset": "gTileset_OrleansGeneral",
-      "secondary_tileset": "gTileset_OrleansRoute",
+      "secondary_tileset": "gTileset_OrleansCrescent",
       "border_filepath": "data/layouts/Route6/border.bin",
       "blockdata_filepath": "data/layouts/Route6/map.bin"
     },

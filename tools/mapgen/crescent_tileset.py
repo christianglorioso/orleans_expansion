@@ -69,7 +69,7 @@ def apply(r, c):
     w = c["autotile"]["water"]
     w["alt_land"] = [a for a in w.get("alt_land", []) if a["chars"] != "L"]
     w["apply_on"] = w["apply_on"].replace("L", "")
-    # ---- Route 3 shares this tileset (seams review 2026-10-14, user rule: routes accommodate towns): the route family's pieces it
+    # ---- Routes 3 and 6 share this tileset (seams review 2026-10-14, user rule: routes accommodate towns): the route family's pieces it
     # needs, copied from orleans_route. Demand-driven, so Crescent City pays for none of them. Route 3's road is terrain 'R'
     # (the city's ':' is paving): the spec's "char_map" reads its ':' / '=' as 'R' and its '%' as '='.
     rr = json.load(open(os.path.join(HERE, "tilesets", "recipes", "orleans_route.json"), encoding="utf-8"))
@@ -79,21 +79,21 @@ def apply(r, c):
         if m["id"] not in have:
             ekat["metatiles"].append(m)
     for x in rr["sources"]:
-        if x["name"] in ("r40",) and not any(y["name"] == x["name"] for y in r["sources"]):
+        if x["name"] in ("r40", "lmk") and not any(y["name"] == x["name"] for y in r["sources"]):
             r["sources"].append(x)
     pid = {p_.get("id") for p_ in r["patches"]}
     for p_ in rr["patches"]:
         if p_.get("id") not in pid and p_.get("id", "").startswith(("pier_", "cypress_small", "reeds", "path_i", "tallgrass", "snag", "waterlog")):
             r["patches"].append(p_)
     for k, v in rc["prefabs"].items():
-        if k in ("pier", "cypress_small", "cypress_small_marsh", "cypress_small_water", "reeds_marsh", "snag_water", "waterlog", "log", "stump", "cypress"):
+        if k in ("pier", "cypress_small", "cypress_small_marsh", "cypress_small_water", "reeds_marsh", "snag_water", "waterlog", "log", "stump", "cypress", "sunken_ruin", "sunken_ruin_l"):
             c["prefabs"][k] = v
     c["prefabs"]["sign_g"] = rc["prefabs"]["sign"]       # the route's plain primary sign (the city's "sign" is its own notice board)
     c["variants"].update({k: v for k, v in rc.get("variants", {}).items() if k.startswith("pier_")})
     c["terrain"]["G"] = rc["terrain"]["G"]
     c["terrain"]["R"] = {"name": "road (route dirt)", "tile": "0D9", "elev": 3, "autotile": "path_g"}
     c["autotile"]["path_g"] = dict(rc["autotile"]["path"], connects="rR")     # the far bank's walk 'r' and the route's road share the dirt-path autotile
-    c["terrain"]["~"]["decor"] = rc["terrain"]["~"]["decor"]
+    # (water decor stays lily pads only: the weed tufts cost tiles Routes 3 + 6 do not have)
 
     # Ekat pieces nothing refers to (alternative diagonals, unused plant variations) stay out of the tileset
     import re

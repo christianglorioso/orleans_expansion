@@ -179,54 +179,6 @@
       "label": "Water prop"
     },
     {
-      "prefab": "reeds_marsh",
-      "x": 15,
-      "y": 18,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 11,
-      "y": 21,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 20,
-      "y": 20,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 17,
-      "y": 19,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 35,
-      "y": 3,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 21,
-      "y": 1,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 15,
-      "y": 21,
-      "label": "Reeds"
-    },
-    {
-      "prefab": "reeds_marsh",
-      "x": 23,
-      "y": 1,
-      "label": "Reeds"
-    },
-    {
       "prefab": "lamp",
       "x": 49,
       "y": 9,

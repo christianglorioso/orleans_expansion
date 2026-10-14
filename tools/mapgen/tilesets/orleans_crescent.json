@@ -1327,6 +1327,48 @@
     ]
    ]
   },
+  "sunken_ruin_l": {
+   "_comment": "Larger ruin in water: a pillar stump and a toppled carved capital half-sunk at a tilt (2x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:0_12"
+     },
+     {
+      "overlay": "lmk:1_12"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:0_13"
+     },
+     {
+      "overlay": "lmk:1_13"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
+  "sunken_ruin": {
+   "_comment": "A broken carved Rootkin pillar standing in water: ragged break, spiral carvings, moss from the waterline (1x2, blocking).",
+   "rows": [
+    [
+     {
+      "overlay": "lmk:5_9"
+     }
+    ],
+    [
+     {
+      "overlay": "lmk:5_10"
+     }
+    ]
+   ],
+   "door": null,
+   "passable": [],
+   "_lmk": true
+  },
   "sign_g": {
    "_comment": "Wooden sign (primary 003).",
    "rows": [

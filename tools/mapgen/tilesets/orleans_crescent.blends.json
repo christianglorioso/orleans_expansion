@@ -2693,5 +2693,105 @@
    "M": "ekat:marsh_inSE",
    "land": "ekat:marsh_C"
   }
+ },
+ {
+  "id": "bk_swamp_E1_e805cc08",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_E1_e805cc08.png",
+  "attr_of": "ekat:marshwater_N"
+ },
+ {
+  "id": "bk_swamp_N0_8490e987",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N0_8490e987.png",
+  "attr_of": "ekat:marsh_W"
+ },
+ {
+  "id": "bk_swamp_N1_9b836668",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_N1_9b836668.png",
+  "attr_of": "ekat:marsh_E"
+ },
+ {
+  "id": "bk_swamp_S1_9b836668",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_S1_9b836668.png",
+  "attr_of": "ekat:marsh_E"
+ },
+ {
+  "id": "bk_swamp_W1_e805cc08",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_W1_e805cc08.png",
+  "attr_of": "ekat:marshwater_N"
+ },
+ {
+  "id": "bk_swamp_in_NE_952f4355",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_in_NE_952f4355.png",
+  "attr_of": "ekat:marshwater_inNE"
+ },
+ {
+  "id": "bk_swamp_out_NE_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NE_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "bk_swamp_out_NW_5181453c",
+  "pixels": "tools/mapgen/tilesets/borders/bk_swamp_out_NW_5181453c.png",
+  "attr_of": "ekat:water_C"
+ },
+ {
+  "id": "blend_marsh_W_inSW",
+  "blend": {
+   "A": "ekat:water_W",
+   "B": "ekat:marshwater_W",
+   "M": "ekat:marsh_inSW",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "blend_marsh_landSE_inNE",
+  "blend": {
+   "A": "ekat:water_landSE",
+   "B": "ekat:marshwater_landSE",
+   "M": "ekat:marsh_inNE",
+   "land": "ekat:marsh_C"
+  }
+ },
+ {
+  "id": "ovl_lmk_0_12__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:0_12"
+  }
+ },
+ {
+  "id": "ovl_lmk_0_13__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:0_13"
+  }
+ },
+ {
+  "id": "ovl_lmk_1_12__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:1_12"
+  }
+ },
+ {
+  "id": "ovl_lmk_1_13__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:1_13"
+  }
+ },
+ {
+  "id": "ovl_lmk_5_10__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:5_10"
+  }
+ },
+ {
+  "id": "ovl_lmk_5_9__ekat_water_C",
+  "overlay": {
+   "base": "ekat:water_C",
+   "art": "lmk:5_9"
+  }
  }
 ]

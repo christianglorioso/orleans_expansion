@@ -133,7 +133,5 @@
 "patch:ovl_props_lamp_top__ekat_grass",
 "patch:path_iNE",
 "patch:path_iNW",
-"patch:path_iSW",
-"patch:reeds_marsh",
-"patch:reeds_top_marsh"
+"patch:path_iSW"
 ]

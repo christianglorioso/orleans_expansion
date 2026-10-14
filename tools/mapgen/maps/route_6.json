@@ -4,7 +4,7 @@
  "map_const": "MAP_ORLEANS_ROUTE6",
  "layout": "LAYOUT_ORLEANS_ROUTE6",
  "layout_dir": "data/layouts/Route6",
- "tileset": "orleans_route",
+ "tileset": "orleans_crescent",
  "mockup": "../orleans_maps/r06_route_6.png",
  "grid": "route_6.grid.txt",
  "edits": [
@@ -268,36 +268,6 @@
    "x": 10,
    "y": 20,
    "label": "Water prop"
-  },
-  {
-   "prefab": "reeds_marsh",
-   "x": 32,
-   "y": 1,
-   "label": "Reeds"
-  },
-  {
-   "prefab": "reeds_marsh",
-   "x": 22,
-   "y": 1,
-   "label": "Reeds"
-  },
-  {
-   "prefab": "reeds_marsh",
-   "x": 18,
-   "y": 1,
-   "label": "Reeds"
-  },
-  {
-   "prefab": "reeds_marsh",
-   "x": 34,
-   "y": 2,
-   "label": "Reeds"
-  },
-  {
-   "prefab": "reeds_marsh",
-   "x": 13,
-   "y": 1,
-   "label": "Reeds"
   },
   {
    "label": "Tree",
