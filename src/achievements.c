@@ -343,11 +343,6 @@ static u32 MaskCount(void)
          + HasMask(ITEM_CORNERSTONE_MASK, FLAG_PG_CORNERSTONE_MASK);
 }
 
-static bool32 Achievement_PredicateOgerponAndMasks(void)
-{
-    return CaughtSpecies(SPECIES_OGERPON_TEAL) && MaskCount() == 3;
-}
-
 #include "data/achievements.h"
 #include "data/achievement_rewards.h"
 

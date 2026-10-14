@@ -3028,7 +3028,7 @@ const struct TrainerMon gFallarborBattleTentMons[NUM_FALLARBOR_TENT_MONS] =
     },
     [FALLARBOR_TENT_MON_WINGULL] = {
         .species = SPECIES_WINGULL,
-        .moves = {MOVE_WING_ATTACK, MOVE_HAIL, MOVE_DOUBLE_TEAM, MOVE_SUPERSONIC},
+        .moves = {MOVE_WING_ATTACK, MOVE_SNOWSCAPE, MOVE_DOUBLE_TEAM, MOVE_SUPERSONIC},
         .heldItem = ITEM_RAWST_BERRY,
         .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 0),
         .nature = NATURE_MODEST,

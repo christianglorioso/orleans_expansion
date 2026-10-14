@@ -42,11 +42,42 @@ def _split(s):
     return [x.strip() for x in str(s).split(";") if x.strip()] if s else []
 
 
+# The project sheets still say "Hail"; the game uses MOVE_SNOWSCAPE in its place (MOVE_HAIL stays
+# defined but unused).  Map the sheet's names here rather than editing the sheets.
+MOVE_ALIASES = {"hail": "Snowscape"}
+
+
+def canon_move(name):
+    """Sheet move name -> the name the game uses (Hail -> Snowscape)."""
+    return MOVE_ALIASES.get(re.sub(r"[^a-z0-9]", "", str(name).lower()), name)
+
+
+def _dedupe(d):
+    """After the Hail->Snowscape rename a species can list Snowscape twice: keep the earliest level-up
+    entry (Evo/Form entries count as level 0/1) and one entry per list otherwise."""
+    best = None
+    for e in d["levelup"]:
+        if e[1] == "Snowscape" and (best is None or e[0] < best[0]):
+            best = e
+    d["levelup"] = [e for e in d["levelup"] if e[1] != "Snowscape" or e is best]
+    for key in ("tm", "tutor", "egg"):
+        out, got = [], False
+        for e in d[key]:
+            if e[0] == "Snowscape":
+                if got:
+                    continue
+                got = True
+            out.append(e)
+        d[key] = out
+
+
 def parse_move_tok(tok):
     """'Ancient Power †★' -> (name, pre_evo, star)"""
     pre = "†" in tok
     star = "★" in tok
     name = tok.replace("†", "").replace("★", "").strip()
+    m = re.match(r"^((?:\d+|Evo|Form) )?(.+)$", name)
+    name = (m.group(1) or "") + canon_move(m.group(2))
     return name, pre, star
 
 
@@ -75,6 +106,7 @@ def load_learnsets():
         for key, col in (("tm", 6), ("tutor", 8), ("egg", 10)):
             for tok in _split(r[col]):
                 d[key].append(parse_move_tok(tok))
+        _dedupe(d)
         out[int(r[0])] = d
     return out
 
@@ -87,7 +119,8 @@ def load_hack_additions():
 def load_move_index():
     ws = _wb("orleans_learnsets.xlsx")["Move Index"]
     rows = list(ws.iter_rows(values_only=True))
-    return rows[0], rows[1:]
+    body = [((canon_move(r[0]) if r[0] else r[0]),) + tuple(r[1:]) for r in rows[1:]]
+    return rows[0], body
 
 
 def norm(s):
@@ -101,8 +134,10 @@ def load_move_names():
     parts = re.split(r"\n    \[(MOVE_\w+)\] =", txt)
     for i in range(1, len(parts), 2):
         m = re.search(r'\.name = COMPOUND_STRING\("([^"]*)"\)', parts[i + 1])
-        if m:
+        if m and parts[i] != "MOVE_HAIL":
             out.setdefault(norm(m.group(1)), parts[i])
+    for alias, target in MOVE_ALIASES.items():
+        out[alias] = out[norm(target)]
     return out
 
 

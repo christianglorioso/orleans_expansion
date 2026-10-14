@@ -2,7 +2,7 @@
 
   * the 19 new trophies (ids 100-118) exist, with their progress read the way the TROPHIES menu reads it (Achievement_GetProgress / GetTarget);
   * the capture sets: with all but one member of a set caught the trophy stays locked and the progress shows n/size, the last one unlocks it (Water, Fire, Electric,
-    Fighting+Flying, Psychic+Flying, Dark+Flying, Grass+Dark; Ogerpon's three masks; the 18 other legendaries -> Legend Hunter; Ogerpon + masks -> #96);
+    Fighting+Flying, Psychic+Flying, Dark+Flying, Grass+Dark; Ogerpon's three masks; the 18 other legendaries -> Legend Hunter; Ogerpon alone -> #96 Legend: Ogerpon);
   * the gates: for every lair, with the post-game on and the trophy missing the way in stays shut (and its seal sign names the requirement), the trophy earned
     "elsewhere" (a bit set while the player is on another map) opens it on the next map load, and with the trophy but below story 45 it is shut again; the rougarou also
     needs the flood down; the lighthouse stair (Zapdos), the ice plant guard (Articuno) and the canoe boatman (Uxie) have their own flows;
@@ -118,12 +118,12 @@ def capture_sets(b, t):
     poll(b)
     pr, tg = progress(b, ach)
     t.check("Mask Collector: two of three masks -> locked, progress %d/%d" % (pr, tg), not LU.trophy(b, ach) and (pr, tg) == (2, 3), (pr, tg))
-    t.check("Ogerpon (#96) needs Ogerpon caught as well: still locked", not LU.trophy(b, OGERPON_MASK_ACH))
+    t.check("Legend: Ogerpon (#96) is just Ogerpon obtained (2026-10-14): it follows the catch, not the masks", bool(LU.trophy(b, OGERPON_MASK_ACH)) == bool(caught(b, "SPECIES_OGERPON_TEAL")))
     b.give_item("ITEM_CORNERSTONE_MASK")
     poll(b)
     t.check("Mask Collector: the third mask unlocks it", LU.trophy(b, ach))
     poll(b)
-    t.check("Legend: Ogerpon (#96) unlocks with Ogerpon caught (the legend set) and the three masks", LU.trophy(b, OGERPON_MASK_ACH))
+    t.check("Legend: Ogerpon (#96) is set once Ogerpon is caught, with or without the masks", LU.trophy(b, OGERPON_MASK_ACH) and caught(b, "SPECIES_OGERPON_TEAL"))
     legends = sets["LEGENDS"]
     t.check("the legend set is the spec's list (18 species, Rayquaza/Kyogre/Groudon not in it)", len(legends) == 18 and not {"SPECIES_RAYQUAZA", "SPECIES_KYOGRE", "SPECIES_GROUDON"} & set(legends))
 

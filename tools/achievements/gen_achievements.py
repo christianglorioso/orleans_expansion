@@ -83,7 +83,11 @@ def cstr(s):
 
 
 def wrap(s):
-    return "\\n".join(textwrap.wrap(s, WRAP))
+    # 36 characters a line where it fits the two footer lines; the old 38 only for the few long lair-gate texts
+    lines = textwrap.wrap(s, 36)
+    if len(lines) > 2:
+        lines = textwrap.wrap(s, WRAP)
+    return "\\n".join(lines)
 
 
 def gen_constants():

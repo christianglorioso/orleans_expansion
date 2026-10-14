@@ -516,7 +516,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     {
                         .species = SPECIES_SEALEO,
                         .heldItem = ITEM_NEVER_MELT_ICE,
-                        .moves = {MOVE_BLIZZARD, MOVE_ICE_BALL, MOVE_ENCORE, MOVE_HAIL},
+                        .moves = {MOVE_BLIZZARD, MOVE_ICE_BALL, MOVE_ENCORE, MOVE_SNOWSCAPE},
                         .hpEV = 255,
                         .spAttackEV = 255,
                         .otId = TRAINER_HILL_OTID,
@@ -1497,7 +1497,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         {
                                             .species = SPECIES_DELIBIRD,
                                             .heldItem = ITEM_SITRUS_BERRY,
-                                            .moves = {MOVE_PRESENT, MOVE_SPLASH, MOVE_HAIL, MOVE_PROTECT},
+                                            .moves = {MOVE_PRESENT, MOVE_SPLASH, MOVE_SNOWSCAPE, MOVE_PROTECT},
                                             .attackEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,

@@ -2062,7 +2062,7 @@ Level: 50
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Encore
 - Body Slam
-- Hail
+- Snowscape
 - Ice Ball
 
 Glalie
@@ -2078,7 +2078,7 @@ Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Attract
 - Double Edge
-- Hail
+- Snowscape
 - Blizzard
 
 Glalie
@@ -2086,7 +2086,7 @@ Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shadow Ball
 - Explosion
-- Hail
+- Snowscape
 - Ice Beam
 
 Walrein @ Sitrus Berry

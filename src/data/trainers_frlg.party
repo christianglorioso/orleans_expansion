@@ -6846,7 +6846,7 @@ Level: 52
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Ice Beam
 - Surf
-- Hail
+- Snowscape
 - Safeguard
 
 Cloyster
@@ -6854,7 +6854,7 @@ Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Spikes
 - Protect
-- Hail
+- Snowscape
 - Dive
 
 Slowbro
