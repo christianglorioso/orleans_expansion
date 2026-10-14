@@ -6524,6 +6524,12 @@ enum Species GetSpeciesPreEvolution(enum Species species)
         }
     }
 
+    // Orleans: an alternate form that no evolution entry names (Alolan Raichu: Pikachu's only evolution is the base
+    // Raichu, the regional condition was dropped) shares the pre-evolution of its base form.
+    enum Species baseSpecies = GET_BASE_SPECIES_ID(species);
+    if (baseSpecies != species && baseSpecies != SPECIES_NONE)
+        return GetSpeciesPreEvolution(baseSpecies);
+
     return SPECIES_NONE;
 }
 

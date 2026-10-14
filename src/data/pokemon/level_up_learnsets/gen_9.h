@@ -670,13 +670,7 @@ static const struct LevelUpMove sRaichuAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_SHOCK),
     LEVEL_UP_MOVE( 1, MOVE_THUNDER_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_THUNDERBOLT),
-    // Orleans: Pikachu's moves (sheet daggers); Raichu-Alola has no pre-evolution link, so they are listed here to stay relearnable
-    LEVEL_UP_MOVE( 9, MOVE_DOUBLE_KICK),
-    LEVEL_UP_MOVE(15, MOVE_SWIFT),
-    LEVEL_UP_MOVE(20, MOVE_ZIPPY_ZAP),
     LEVEL_UP_MOVE(30, MOVE_CHARGE),
-    LEVEL_UP_MOVE(36, MOVE_SPLISHY_SPLASH),
-    LEVEL_UP_MOVE(50, MOVE_WILD_CHARGE),
     LEVEL_UP_MOVE(99, MOVE_VOLT_TACKLE),
     LEVEL_UP_END
 };
@@ -769,6 +763,7 @@ static const struct LevelUpMove sSandslashAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_FURY_CUTTER),
     LEVEL_UP_MOVE( 1, MOVE_FURY_SWIPES),
     LEVEL_UP_MOVE( 1, MOVE_GYRO_BALL),
+    LEVEL_UP_MOVE( 1, MOVE_SNOWSCAPE),
     LEVEL_UP_MOVE( 1, MOVE_ICE_BALL),
     LEVEL_UP_MOVE( 1, MOVE_ICE_SHARD),
     LEVEL_UP_MOVE( 1, MOVE_ICICLE_CRASH),
@@ -783,7 +778,6 @@ static const struct LevelUpMove sSandslashAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ROLLOUT),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
-    LEVEL_UP_MOVE( 1, MOVE_SNOWSCAPE),
     LEVEL_UP_MOVE( 1, MOVE_SWIFT),
     LEVEL_UP_MOVE( 1, MOVE_SWORDS_DANCE),
     LEVEL_UP_END

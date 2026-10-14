@@ -9,7 +9,10 @@
   D6  a victory catch that cannot start (no Poke Balls) says why
   D7  OW 4x: a normal D-pad tap (up to 7 frames) turns in place instead of stepping, at every speed; a long press still walks
   D8  Ominous Wind / Razor Wind / Silver Wind are not Wind moves
-  D9  Budew's egg list carries Bullet Seed and Power Whip; Alolan Raichu can relearn Pikachu's five dagger moves
+  D9  (root-cause fixes, 2026-10-14) Budew's egg list carries Bullet Seed and Power Whip from the tooling (egg moves of any family member go to the
+      hatchable base species) and a Budew hatched from a Roserade that knows Power Whip has it; GetSpeciesPreEvolution/GetEggSpecies resolve alternate
+      forms with no evolution entry of their own (Alolan Raichu -> Pikachu -> Pichu, Hisuian Sliggoo -> Goomy), so the relearner offers Pikachu's
+      dagger moves to Alolan Raichu without them being copied into its learnset
   D10 Kingfisher opens with Tailwind in every one of several real fights
 (D3 Derby speeds live in t17_gamecorner; D11 is an investigation, see audit/21_fixes_D.md)
 """
@@ -338,7 +341,51 @@ def d9_moves(b, t):
     lv = relearn("GetRelearnerLevelUpMoves")
     want = ["DOUBLE_KICK", "SWIFT", "ZIPPY_ZAP", "SPLISHY_SPLASH", "WILD_CHARGE"]
     missing = [m for m in want if enum_value("moves.h", "MOVE_" + m) not in lv]
-    t.check("Alolan Raichu can relearn Pikachu's five dagger moves", not missing, missing)
+    t.check("Alolan Raichu can relearn Pikachu's five dagger moves (via the engine's pre-evolution lookup)", not missing, missing)
+    # the pre-evolution lookup itself, for alternate forms that no evolution entry names
+    sp = lambda n: enum_value("species.h", "SPECIES_" + n)
+    for form, want_pre in (("RAICHU_ALOLA", "PIKACHU"), ("SLIGGOO_HISUI", "GOOMY"), ("PIKACHU_COSPLAY", "PICHU"), ("RAICHU", "PIKACHU"),
+                           ("NINETALES_ALOLA", "VULPIX_ALOLA"), ("PICHU", None)):
+        got = b.call("GetSpeciesPreEvolution", sp(form)) & 0xFFFF
+        t.check("GetSpeciesPreEvolution(%s) == %s" % (form, want_pre), got == (sp(want_pre) if want_pre else 0), got)
+    for form, want_egg in (("RAICHU_ALOLA", "PICHU"), ("SLIGGOO_HISUI", "GOOMY"), ("ROSERADE_ORLEANIAN", "BUDEW_ORLEANIAN")):
+        got = b.call("GetEggSpecies", sp(form)) & 0xFFFF
+        t.check("GetEggSpecies(%s) == %s" % (form, want_egg), got == sp(want_egg), got)
+    # a second regional-form relearner case: Hisuian Sliggoo gets Goomy's level-up moves that Sliggoo-Hisui itself never learns
+    reset_party(b, ("SPECIES_SLIGGOO_HISUI", 100))
+    for slot in range(4):
+        b.call("SetMonMoveSlot", party, 0, slot)
+    lv2 = relearn("GetRelearnerLevelUpMoves")
+    t.check("Hisuian Sliggoo's relearner list is not empty at Lv100", len(lv2) > 0, len(lv2))
+    # Budew hatched from a Roserade that knows Power Whip: Roserade + Ditto at the Day Care
+    sb1 = b.save1()
+    dc = sb1 + 0x3138
+    for parent_sp in ("SPECIES_ROSERADE_ORLEANIAN", "SPECIES_ROSELIA_ORLEANIAN"):
+        b.set_flag("FLAG_PENDING_DAYCARE_EGG", False)
+        for i in range(0x150 // 4):
+            b.w32(dc + 4 * i, 0)
+        b.call("ZeroPlayerPartyMons")
+        b.give_mon(parent_sp, 40)
+        b.w16(b.sym("gStringVar4"), enum_value("moves.h", "MOVE_POWER_WHIP"))
+        b.call("SetMonData", party, T.MD["MON_DATA_MOVE1"], b.sym("gStringVar4"))
+        for i in range(20):
+            b.w32(dc + 4 * i, b.r32(party + 4 * i))
+        b.call("ZeroPlayerPartyMons")
+        b.give_mon("SPECIES_DITTO", 30)
+        for i in range(20):
+            b.w32(dc + 0x8C + 4 * i, b.r32(party + 4 * i))
+        b.call("ZeroPlayerPartyMons")
+        b.give_item("ITEM_OVAL_CHARM", 1)
+        sp_got, moves_got = None, []
+        for n in range(40000):
+            b.call("IncrementDaycareSteps")
+            if b.flag("FLAG_PENDING_DAYCARE_EGG"):
+                b.call("GiveEggFromDaycare")
+                sp_got = b.call("GetMonData2", party, T.MD["MON_DATA_SPECIES"]) & 0xFFFF
+                moves_got = [b.call("GetMonData2", party, T.MD["MON_DATA_MOVE1"] + k) & 0xFFFF for k in range(4)]
+                break
+        t.check("%s (knowing Power Whip) + Ditto hatches Budew" % parent_sp, sp_got == sp("BUDEW_ORLEANIAN"), sp_got)
+        t.check("... and the Budew knows Power Whip", enum_value("moves.h", "MOVE_POWER_WHIP") in moves_got, moves_got)
 
 
 # ------------------------------------------------------------------------------------------------------------------------------------------ D10

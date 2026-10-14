@@ -109,9 +109,12 @@ def level_up_and_egg(rows, sf):
         res = replace_array(egg, r"static const u16 " + p + r"\[\] = \{.*?\n\};\n", egg_text(p, r["egg"]))
         assert res is not None, p
         egg = res
-    # breedable species the engine has no egg-move array for (Voltorb, Impidimp, Magnemite): create one
+        if r["egg_from"]:
+            notes.append(f"{r['name']}: egg moves also taken from {', '.join(r['egg_from'])} (egg moves only matter on the hatchable base species)")
+    # hatchable base species the engine has no egg-move array for (Voltorb, Impidimp, Magnemite): create one.
+    # r["egg"] of a family's base species already holds the egg moves the sheet lists on any family member (learnset_model).
     for r in rows:
-        if r["const"] in EGG_ARRAY_NEW and r["egg"] and (not r["ptr_egg"] or "None" in r["ptr_egg"]):
+        if (r["const"] in EGG_ARRAY_NEW or r["egg_root"] == r["const"]) and r["egg"] and (not r["ptr_egg"] or "None" in r["ptr_egg"]):
             newp = "s" + g.pascal(r["const"]) + "EggMoveLearnset"
             blk = sf.get(r["const"])
             assert blk, r["const"]

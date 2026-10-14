@@ -36,11 +36,6 @@ mismatches = []
 info = []
 
 
-# Deliberate fix-phase decisions (D9) that differ from the sheet, exactly these and nothing else:
-DELIBERATE_EGG = {"Budew": ["MOVE_BULLET_SEED", "MOVE_POWER_WHIP"]}      # the sheet lists these two as Roselia egg moves; breeding/relearner use the base species
-DELIBERATE_LEVELUP = {"Alolan Raichu": [("MOVE_DOUBLE_KICK", 9), ("MOVE_SWIFT", 15), ("MOVE_ZIPPY_ZAP", 20), ("MOVE_SPLISHY_SPLASH", 36), ("MOVE_WILD_CHARGE", 50)]}  # Pikachu's pre-evolution relearn
-
-
 def bad(section, msg):
     mismatches.append(f"[{section}] {msg}")
 
@@ -183,16 +178,26 @@ def main():
     for r in rows:
         p = r["ptr_lv"]
         want_lv = sorted((m, l) for l, m in r["levelup"])
-        want_lv = sorted(want_lv + DELIBERATE_LEVELUP.get(r["name"], []))
         if lv.get(p) is None or sorted(lv[p]) != want_lv:
             bad("level-up", f"{r['name']}: built {len(lv.get(p) or [])} moves vs sheet {len(want_lv)}")
         if r["ptr_egg"] and "None" not in r["ptr_egg"]:
-            if sorted(eg.get(r["ptr_egg"], [])) != sorted(r["egg"] + DELIBERATE_EGG.get(r["name"], [])):
+            if sorted(eg.get(r["ptr_egg"], [])) != sorted(r["egg"]):
                 bad("egg", f"{r['name']}: built {sorted(eg.get(r['ptr_egg'], []))[:4]}.. vs sheet {sorted(r['egg'])[:4]}..")
         got = set(tc.get(r["ptr_tm"], []))
         want_t = set(r["tm"]) | set(r["tutor"])
         if got != want_t:
             bad("TM/tutor", f"{r['name']}: missing {sorted(want_t - got)[:4]} extra {sorted(got - want_t)[:4]}")
+    # egg moves only matter on the species that hatches: every egg move the sheet lists on any member of an evolution
+    # family must be in the built egg array of the family's base species (r["egg"] of the base row is that union)
+    byc = {r["const"]: r for r in rows}
+    for r in rows:
+        if r["egg_root"] != r["const"] and r["egg_own"] and r["egg_root"] in byc:
+            rt = byc[r["egg_root"]]
+            have = set(eg.get(rt["ptr_egg"], [])) if rt["ptr_egg"] and "None" not in rt["ptr_egg"] else set()
+            if set(r["egg_own"]) - have:
+                bad("egg", f"{r['name']}: egg moves {sorted(set(r['egg_own']) - have)} are not on the hatchable base species {rt['name']}")
+    for nm, rt in lm.ORPHAN_EGG:
+        bad("egg", f"{nm}: the family's hatchable base species {rt} is not a sheet row, its egg moves have nowhere to go")
     src = (ROOT / "include/constants/tms_hms.h").read_text(encoding="utf-8")
     tm_part = src.split("#define FOREACH_HM")[0]
     tms = ["MOVE_" + x for x in re.findall(r"F\((\w+)\)", tm_part)]
