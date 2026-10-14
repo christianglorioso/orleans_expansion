@@ -1,0 +1,880 @@
+{
+ "_comment": "The sugarhouse (Moltres): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lm:<id>' in gTileset_OrleansLairSugarhouse), walkable cells (the rest block), the lair it belongs to. Made by make_lair_sugarhouse.py (legendary lairs batch 2).",
+ "png": "lair_sugarhouse.png",
+ "tileset": "gTileset_OrleansLairSugarhouse",
+ "families": {
+  "WALL": [
+   [
+    200,
+    128,
+    88
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    128,
+    80,
+    72
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    56,
+    56
+   ],
+   [
+    232,
+    224,
+    176
+   ],
+   [
+    176,
+    200,
+    200
+   ],
+   [
+    120,
+    120,
+    128
+   ],
+   [
+    72,
+    72,
+    80
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    168,
+    136,
+    96
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    104,
+    80,
+    56
+   ]
+  ],
+  "FRONT": [
+   [
+    168,
+    136,
+    96
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    104,
+    80,
+    56
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    200,
+    128,
+    88
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    128,
+    80,
+    72
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    120,
+    120,
+    128
+   ],
+   [
+    72,
+    72,
+    80
+   ],
+   [
+    152,
+    40,
+    24
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    248,
+    160,
+    48
+   ],
+   [
+    248,
+    232,
+    136
+   ],
+   [
+    64,
+    56,
+    56
+   ]
+  ],
+  "FLOOR": [
+   [
+    168,
+    136,
+    96
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    104,
+    80,
+    56
+   ],
+   [
+    208,
+    184,
+    120
+   ],
+   [
+    168,
+    144,
+    88
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    152,
+    40,
+    24
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    248,
+    160,
+    48
+   ],
+   [
+    64,
+    56,
+    56
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ]
+  ],
+  "KETTLE": [
+   [
+    120,
+    120,
+    128
+   ],
+   [
+    72,
+    72,
+    80
+   ],
+   [
+    152,
+    152,
+    160
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    200,
+    128,
+    88
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    128,
+    80,
+    72
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    232,
+    176,
+    72
+   ],
+   [
+    200,
+    128,
+    48
+   ],
+   [
+    152,
+    80,
+    32
+   ],
+   [
+    152,
+    40,
+    24
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    248,
+    160,
+    48
+   ],
+   [
+    248,
+    232,
+    136
+   ]
+  ],
+  "WOOD": [
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    184,
+    152,
+    104
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    168,
+    136,
+    96
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    104,
+    80,
+    56
+   ],
+   [
+    232,
+    176,
+    72
+   ],
+   [
+    200,
+    128,
+    48
+   ],
+   [
+    152,
+    80,
+    32
+   ],
+   [
+    120,
+    120,
+    128
+   ],
+   [
+    72,
+    72,
+    80
+   ],
+   [
+    208,
+    184,
+    120
+   ],
+   [
+    168,
+    144,
+    88
+   ]
+  ],
+  "CANE": [
+   [
+    64,
+    104,
+    48
+   ],
+   [
+    112,
+    152,
+    64
+   ],
+   [
+    184,
+    192,
+    96
+   ],
+   [
+    208,
+    184,
+    120
+   ],
+   [
+    168,
+    144,
+    88
+   ],
+   [
+    168,
+    136,
+    96
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    104,
+    80,
+    56
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ]
+  ]
+ },
+ "pieces": {
+  "cap": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:cap"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "the north wall's top"
+  },
+  "wall": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "the brick wall"
+  },
+  "wall_window": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall_window"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "an arched barred window, daylight"
+  },
+  "wall_tools": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall_tools"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "skimmers and ladles on pegs"
+  },
+  "side_l": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:side_l"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "left side wall"
+  },
+  "side_r": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:side_r"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "right side wall"
+  },
+  "wall_s": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall_s"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "south wall"
+  },
+  "wall_sw": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall_sw"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "south-west corner"
+  },
+  "wall_se": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:wall_se"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "south-east corner"
+  },
+  "floor": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:floor"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "packed earth floor"
+  },
+  "floor_bagasse": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:floor_bagasse"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "floor strewn with bagasse"
+  },
+  "floor_glow": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:floor_glow"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "floor lit red by the furnace (near)"
+  },
+  "floor_glow_l": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:floor_glow_l"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "floor lit by the furnace (its west fringe)"
+  },
+  "floor_glow_r": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:floor_glow_r"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "floor lit by the furnace (its east fringe)"
+  },
+  "batterie": {
+   "x": 0,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "lm:batterie_0_0",
+     "lm:batterie_1_0",
+     "lm:batterie_2_0"
+    ],
+    [
+     "lm:batterie_0_1",
+     "lm:batterie_1_1",
+     "lm:batterie_2_1"
+    ],
+    [
+     "lm:batterie_0_2",
+     "lm:batterie_1_2",
+     "lm:batterie_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "3x3 the batterie: the smallest kettle over the open fire, blocking"
+  },
+  "sirop": {
+   "x": 3,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "lm:sirop_0_0",
+     "lm:sirop_1_0",
+     "lm:sirop_2_0"
+    ],
+    [
+     "lm:sirop_0_1",
+     "lm:sirop_1_1",
+     "lm:sirop_2_1"
+    ],
+    [
+     "lm:sirop_0_2",
+     "lm:sirop_1_2",
+     "lm:sirop_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "3x3 the sirop kettle, blocking"
+  },
+  "flambeau": {
+   "x": 6,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "lm:flambeau_0_0",
+     "lm:flambeau_1_0",
+     "lm:flambeau_2_0"
+    ],
+    [
+     "lm:flambeau_0_1",
+     "lm:flambeau_1_1",
+     "lm:flambeau_2_1"
+    ],
+    [
+     "lm:flambeau_0_2",
+     "lm:flambeau_1_2",
+     "lm:flambeau_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "3x3 the flambeau kettle, blocking"
+  },
+  "grande": {
+   "x": 9,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "lm:grande_0_0",
+     "lm:grande_1_0",
+     "lm:grande_2_0"
+    ],
+    [
+     "lm:grande_0_1",
+     "lm:grande_1_1",
+     "lm:grande_2_1"
+    ],
+    [
+     "lm:grande_0_2",
+     "lm:grande_1_2",
+     "lm:grande_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "3x3 the grande, the largest kettle, blocking"
+  },
+  "flue": {
+   "x": 12,
+   "y": 1,
+   "w": 2,
+   "h": 4,
+   "rows": [
+    [
+     "lm:flue_0_0",
+     "lm:flue_1_0"
+    ],
+    [
+     "lm:flue_0_1",
+     "lm:flue_1_1"
+    ],
+    [
+     "lm:flue_0_2",
+     "lm:flue_1_2"
+    ],
+    [
+     "lm:flue_0_3",
+     "lm:flue_1_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "2x4 the chimney stack the flue rises into, blocking"
+  },
+  "cooler": {
+   "x": 0,
+   "y": 5,
+   "w": 3,
+   "h": 1,
+   "rows": [
+    [
+     "lm:cooler_0_0",
+     "lm:cooler_1_0",
+     "lm:cooler_2_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "3x1 a sugar cooler, blocking"
+  },
+  "hogshead": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:hogshead"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "1x1 a molasses hogshead, blocking"
+  },
+  "cane": {
+   "x": 4,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lm:cane_0_0",
+     "lm:cane_1_0"
+    ],
+    [
+     "lm:cane_0_1",
+     "lm:cane_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "moltres",
+   "comment": "2x2 stacked cut cane, blocking"
+  },
+  "ash": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:ash"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "1x1 raked-out ash (walkable)"
+  },
+  "mat": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lm:mat"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "moltres",
+   "comment": "the threshold (south-arrow warp: the exit)"
+  }
+ }
+}

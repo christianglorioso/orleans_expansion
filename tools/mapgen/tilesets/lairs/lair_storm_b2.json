@@ -1,0 +1,1962 @@
+{
+ "_comment": "The storm lairs (Raikou; batch 2: Zapdos, Thundurus): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('ls:<id>' in gTileset_OrleansLairStorm), walkable cells (the rest block), the lair it belongs to. Made by make_lair_storm_b2.py (legendary lairs batch 2).",
+ "png": "lair_storm_b2.png",
+ "tileset": "gTileset_OrleansLairStorm",
+ "families": {
+  "SCORCH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    136,
+    120,
+    72
+   ],
+   [
+    104,
+    88,
+    56
+   ],
+   [
+    32,
+    28,
+    32
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    128,
+    120,
+    112
+   ],
+   [
+    168,
+    160,
+    152
+   ],
+   [
+    64,
+    96,
+    112
+   ],
+   [
+    120,
+    168,
+    184
+   ],
+   [
+    208,
+    240,
+    248
+   ]
+  ],
+  "METAL": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    160,
+    216,
+    248
+   ],
+   [
+    248,
+    248,
+    248
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "SNAG": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    40,
+    56,
+    40
+   ],
+   [
+    56,
+    48,
+    48
+   ],
+   [
+    56,
+    88,
+    56
+   ],
+   [
+    80,
+    120,
+    64
+   ],
+   [
+    88,
+    80,
+    72
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    128,
+    120
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    128,
+    96
+   ],
+   [
+    216,
+    192,
+    144
+   ]
+  ],
+  "TOWER": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    128,
+    64,
+    40
+   ],
+   [
+    128,
+    128,
+    120
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    168,
+    168,
+    160
+   ],
+   [
+    176,
+    96,
+    56
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    208,
+    208,
+    200
+   ]
+  ],
+  "WIRE": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    160,
+    216,
+    248
+   ],
+   [
+    216,
+    128,
+    64
+   ],
+   [
+    248,
+    248,
+    248
+   ]
+  ],
+  "WIRE_SPAN": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    136,
+    176,
+    128
+   ]
+  ],
+  "LAMP": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    200,
+    64,
+    48
+   ],
+   [
+    168,
+    40,
+    40
+   ],
+   [
+    120,
+    24,
+    32
+   ],
+   [
+    248,
+    248,
+    208
+   ],
+   [
+    248,
+    232,
+    144
+   ],
+   [
+    216,
+    168,
+    72
+   ],
+   [
+    64,
+    96,
+    112
+   ],
+   [
+    120,
+    168,
+    184
+   ],
+   [
+    248,
+    248,
+    248
+   ],
+   [
+    208,
+    208,
+    200
+   ]
+  ],
+  "DECK": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    128,
+    64,
+    40
+   ],
+   [
+    176,
+    96,
+    56
+   ],
+   [
+    208,
+    208,
+    200
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    160,
+    216,
+    248
+   ],
+   [
+    248,
+    248,
+    248
+   ],
+   [
+    120,
+    168,
+    184
+   ],
+   [
+    208,
+    240,
+    248
+   ]
+  ],
+  "LEVEE": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    80,
+    112,
+    72
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    120,
+    96,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    208,
+    208,
+    200
+   ],
+   [
+    168,
+    168,
+    160
+   ],
+   [
+    128,
+    128,
+    120
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    208,
+    240,
+    248
+   ],
+   [
+    208,
+    208,
+    200
+   ]
+  ],
+  "SHACK": [
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    216,
+    128,
+    64
+   ],
+   [
+    216,
+    168,
+    72
+   ],
+   [
+    64,
+    72,
+    88
+   ],
+   [
+    96,
+    112,
+    128
+   ],
+   [
+    136,
+    152,
+    168
+   ],
+   [
+    184,
+    200,
+    208
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    248,
+    232,
+    144
+   ]
+  ]
+ },
+ "pieces": {
+  "scorch_C": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (C)"
+  },
+  "scorch_N": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (N)"
+  },
+  "scorch_S": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (S)"
+  },
+  "scorch_W": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (W)"
+  },
+  "scorch_E": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (E)"
+  },
+  "scorch_inNW": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inNW)"
+  },
+  "scorch_inNE": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inNE)"
+  },
+  "scorch_inSW": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inSW)"
+  },
+  "scorch_inSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (inSE)"
+  },
+  "scorch_landSE": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landSE)"
+  },
+  "scorch_landSW": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landSW)"
+  },
+  "scorch_landNE": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landNE)"
+  },
+  "scorch_landNW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (landNW)"
+  },
+  "scorch_sTLBR": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (sTLBR)"
+  },
+  "scorch_sTRBL": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "burned ground on grass (sTRBL)"
+  },
+  "scorch_core": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:scorch_core"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "the strike's heart, fused char with lightning-fern scars"
+  },
+  "glass": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:glass"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "1x1 fulgurites standing out of the char, blocking"
+  },
+  "snag": {
+   "x": 1,
+   "y": 1,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "ls:snag_0_0",
+     "ls:snag_1_0",
+     "ls:snag_2_0"
+    ],
+    [
+     "ls:snag_0_1",
+     "ls:snag_1_1",
+     "ls:snag_2_1"
+    ],
+    [
+     "ls:snag_0_2",
+     "ls:snag_1_2",
+     "ls:snag_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "3x3 the lightning-struck cypress (landmark art)"
+  },
+  "tower": {
+   "x": 4,
+   "y": 1,
+   "w": 2,
+   "h": 4,
+   "rows": [
+    [
+     "ls:tower_0_0",
+     "ls:tower_1_0"
+    ],
+    [
+     "ls:tower_0_1",
+     "ls:tower_1_1"
+    ],
+    [
+     "ls:tower_0_2",
+     "ls:tower_1_2"
+    ],
+    [
+     "ls:tower_0_3",
+     "ls:tower_1_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "2x4 a power tower (landmark art), blocking"
+  },
+  "tower_down": {
+   "x": 6,
+   "y": 1,
+   "w": 4,
+   "h": 2,
+   "rows": [
+    [
+     "ls:tower_down_0_0",
+     "ls:tower_down_1_0",
+     "ls:tower_down_2_0",
+     "ls:tower_down_3_0"
+    ],
+    [
+     "ls:tower_down_0_1",
+     "ls:tower_down_1_1",
+     "ls:tower_down_2_1",
+     "ls:tower_down_3_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "4x2 a power tower knocked flat, blocking"
+  },
+  "transformer": {
+   "x": 10,
+   "y": 1,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "ls:transformer_0_0",
+     "ls:transformer_1_0"
+    ],
+    [
+     "ls:transformer_0_1",
+     "ls:transformer_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "raikou",
+   "comment": "2x2 a torn-down pole transformer, sparking, blocking"
+  },
+  "wire": {
+   "x": 12,
+   "y": 1,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_0_0",
+     "ls:wire_1_0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "2x1 a fallen live line (landmark art)"
+  },
+  "wire_span": {
+   "x": 14,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span: the line strung between the towers (landmark art)"
+  },
+  "wire_span_l": {
+   "x": 15,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span_l"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span_l: the line strung between the towers (landmark art)"
+  },
+  "wire_span_r": {
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:wire_span_r"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "raikou",
+   "comment": "1x1 wire_span_r: the line strung between the towers (landmark art)"
+  },
+  "sky_00": {
+   "x": 1,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_00"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+  },
+  "sky_10": {
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_10"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+  },
+  "sky_01": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_01"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+  },
+  "sky_11": {
+   "x": 4,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sky_11"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the storm round the lamp gallery (the map's fill and border block)"
+  },
+  "deck_C": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (C)"
+  },
+  "deck_N": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (N)"
+  },
+  "deck_S": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (S)"
+  },
+  "deck_W": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (W)"
+  },
+  "deck_E": {
+   "x": 9,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (E)"
+  },
+  "deck_inNW": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (inNW)"
+  },
+  "deck_inNE": {
+   "x": 11,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (inNE)"
+  },
+  "deck_inSW": {
+   "x": 12,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (inSW)"
+  },
+  "deck_inSE": {
+   "x": 13,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (inSE)"
+  },
+  "deck_landSE": {
+   "x": 14,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (landSE)"
+  },
+  "deck_landSW": {
+   "x": 15,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (landSW)"
+  },
+  "deck_landNE": {
+   "x": 0,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (landNE)"
+  },
+  "deck_landNW": {
+   "x": 1,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (landNW)"
+  },
+  "deck_sTLBR": {
+   "x": 2,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (sTLBR)"
+  },
+  "deck_sTRBL": {
+   "x": 3,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "the gallery's iron deck and railing on the storm (sTRBL)"
+  },
+  "deck_N_spark": {
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_N_spark"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "the north rail, St Elmo's fire on its posts"
+  },
+  "deck_C2": {
+   "x": 5,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_C2"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "deck plates with rust streaks"
+  },
+  "deck_C3": {
+   "x": 6,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:deck_C3"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "a rain puddle on the deck"
+  },
+  "lantern": {
+   "x": 7,
+   "y": 6,
+   "w": 4,
+   "h": 4,
+   "rows": [
+    [
+     "ls:lantern_0_0",
+     "ls:lantern_1_0",
+     "ls:lantern_2_0",
+     "ls:lantern_3_0"
+    ],
+    [
+     "ls:lantern_0_1",
+     "ls:lantern_1_1",
+     "ls:lantern_2_1",
+     "ls:lantern_3_1"
+    ],
+    [
+     "ls:lantern_0_2",
+     "ls:lantern_1_2",
+     "ls:lantern_2_2",
+     "ls:lantern_3_2"
+    ],
+    [
+     "ls:lantern_0_3",
+     "ls:lantern_1_3",
+     "ls:lantern_2_3",
+     "ls:lantern_3_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "4x4 the lantern room, lamp lit (blocking)"
+  },
+  "lantern_dark": {
+   "x": 11,
+   "y": 6,
+   "w": 4,
+   "h": 4,
+   "rows": [
+    [
+     "ls:lantern_dark_0_0",
+     "ls:lantern_dark_1_0",
+     "ls:lantern_dark_2_0",
+     "ls:lantern_dark_3_0"
+    ],
+    [
+     "ls:lantern_dark_0_1",
+     "ls:lantern_dark_1_1",
+     "ls:lantern_dark_2_1",
+     "ls:lantern_dark_3_1"
+    ],
+    [
+     "ls:lantern_dark_0_2",
+     "ls:lantern_dark_1_2",
+     "ls:lantern_dark_2_2",
+     "ls:lantern_dark_3_2"
+    ],
+    [
+     "ls:lantern_dark_0_3",
+     "ls:lantern_dark_1_3",
+     "ls:lantern_dark_2_3",
+     "ls:lantern_dark_3_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "4x4 the lantern room, lamp out (during the story)"
+  },
+  "hatch": {
+   "x": 15,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:hatch"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zapdos",
+   "comment": "1x1 the stair hatch down into the lighthouse (the warp)"
+  },
+  "flag_mast": {
+   "x": 0,
+   "y": 10,
+   "w": 1,
+   "h": 3,
+   "rows": [
+    [
+     "ls:flag_mast_0_0"
+    ],
+    [
+     "ls:flag_mast_0_1"
+    ],
+    [
+     "ls:flag_mast_0_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "1x3 the hurricane-warning flags on their mast, blocking"
+  },
+  "anemometer": {
+   "x": 1,
+   "y": 10,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "ls:anemometer_0_0"
+    ],
+    [
+     "ls:anemometer_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "1x2 a cup anemometer, blocking"
+  },
+  "storm_lamp": {
+   "x": 2,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:storm_lamp"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "1x1 the keeper's storm lantern and oil can, blocking"
+  },
+  "rope": {
+   "x": 3,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:rope"
+    ]
+   ],
+   "walk": [],
+   "lair": "zapdos",
+   "comment": "1x1 a coil of rope, blocking"
+  },
+  "riprap0": {
+   "x": 4,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:riprap0"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "the levee band: riprap"
+  },
+  "riprap1": {
+   "x": 5,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:riprap1"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "the levee band: riprap"
+  },
+  "slope_n0": {
+   "x": 6,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:slope_n0"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "the levee band: slope_n"
+  },
+  "slope_n1": {
+   "x": 7,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:slope_n1"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "the levee band: slope_n"
+  },
+  "crown0": {
+   "x": 8,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:crown0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: crown"
+  },
+  "crown1": {
+   "x": 9,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:crown1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: crown"
+  },
+  "slope_s0": {
+   "x": 10,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:slope_s0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: slope_s"
+  },
+  "slope_s1": {
+   "x": 11,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:slope_s1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: slope_s"
+  },
+  "toe0": {
+   "x": 12,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:toe0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: toe"
+  },
+  "toe1": {
+   "x": 13,
+   "y": 10,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:toe1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "thundurus",
+   "comment": "the levee band: toe"
+  },
+  "shack": {
+   "x": 0,
+   "y": 13,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "ls:shack_0_0",
+     "ls:shack_1_0",
+     "ls:shack_2_0"
+    ],
+    [
+     "ls:shack_0_1",
+     "ls:shack_1_1",
+     "ls:shack_2_1"
+    ],
+    [
+     "ls:shack_0_2",
+     "ls:shack_1_2",
+     "ls:shack_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "3x3 the levee watchman's shack, blocking"
+  },
+  "bell_post": {
+   "x": 3,
+   "y": 13,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "ls:bell_post_0_0"
+    ],
+    [
+     "ls:bell_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x2 the crevasse bell, blocking"
+  },
+  "sandbags": {
+   "x": 4,
+   "y": 13,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "ls:sandbags_0_0",
+     "ls:sandbags_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "2x1 sandbags on the crown, blocking"
+  },
+  "mile_post": {
+   "x": 6,
+   "y": 13,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "ls:mile_post"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x1 a levee mile marker, blocking"
+  },
+  "struck_pole": {
+   "x": 7,
+   "y": 13,
+   "w": 1,
+   "h": 3,
+   "rows": [
+    [
+     "ls:struck_pole_0_0"
+    ],
+    [
+     "ls:struck_pole_0_1"
+    ],
+    [
+     "ls:struck_pole_0_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "thundurus",
+   "comment": "1x3 a line pole split by lightning, blocking"
+  }
+ }
+}

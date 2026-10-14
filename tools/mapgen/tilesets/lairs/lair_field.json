@@ -1,0 +1,1583 @@
+{
+ "_comment": "The Field That Always Bears (Landorus): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lh:<id>' in gTileset_OrleansLairField), walkable cells (the rest block), the lair it belongs to. Made by make_lair_field.py (legendary lairs batch 2).",
+ "png": "lair_field.png",
+ "tileset": "gTileset_OrleansLairField",
+ "families": {
+  "SCRUB": [
+   [
+    24,
+    48,
+    32
+   ],
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    104,
+    96,
+    80
+   ],
+   [
+    152,
+    144,
+    120
+   ],
+   [
+    152,
+    184,
+    88
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    176,
+    144,
+    64
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    200,
+    192,
+    168
+   ],
+   [
+    216,
+    184,
+    88
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
+  "ROCK": [
+   [
+    40,
+    40,
+    40
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    64,
+    64,
+    64
+   ],
+   [
+    96,
+    88,
+    96
+   ],
+   [
+    104,
+    72,
+    48
+   ],
+   [
+    128,
+    120,
+    128
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    160,
+    152,
+    152
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    200,
+    192,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    240,
+    232,
+    216
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
+  "CLAY": [
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    136,
+    88,
+    64
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    168,
+    112,
+    80
+   ],
+   [
+    200,
+    144,
+    104
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    224,
+    176,
+    136
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
+  "CANE": [
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    112,
+    152,
+    56
+   ],
+   [
+    144,
+    144,
+    64
+   ],
+   [
+    160,
+    192,
+    80
+   ],
+   [
+    200,
+    192,
+    104
+   ],
+   [
+    208,
+    224,
+    128
+   ]
+  ],
+  "TREE": [
+   [
+    24,
+    48,
+    32
+   ],
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    104,
+    72,
+    48
+   ],
+   [
+    144,
+    104,
+    64
+   ],
+   [
+    152,
+    184,
+    88
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ],
+  "FIELD": [
+   [
+    40,
+    80,
+    48
+   ],
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    96,
+    144,
+    64
+   ],
+   [
+    136,
+    88,
+    64
+   ],
+   [
+    152,
+    184,
+    88
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    168,
+    112,
+    80
+   ],
+   [
+    176,
+    144,
+    64
+   ],
+   [
+    200,
+    144,
+    104
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    216,
+    184,
+    88
+   ],
+   [
+    224,
+    176,
+    136
+   ],
+   [
+    248,
+    160,
+    48
+   ]
+  ],
+  "TOOLS": [
+   [
+    64,
+    40,
+    32
+   ],
+   [
+    64,
+    64,
+    64
+   ],
+   [
+    104,
+    72,
+    48
+   ],
+   [
+    104,
+    96,
+    80
+   ],
+   [
+    144,
+    104,
+    64
+   ],
+   [
+    152,
+    144,
+    120
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    176,
+    144,
+    64
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    200,
+    192,
+    168
+   ],
+   [
+    216,
+    88,
+    32
+   ],
+   [
+    216,
+    184,
+    88
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    248,
+    232,
+    184
+   ]
+  ]
+ },
+ "pieces": {
+  "block_00": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:block_00"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_10": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:block_10"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_01": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:block_01"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "block_11": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:block_11"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "the dry scrub wall (border block cell)"
+  },
+  "S0": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:S0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "S1": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:S1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "N0": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:N0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "N1": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:N1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "E0": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:E0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "E1": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:E1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "W0": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:W0"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "W1": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:W1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's edge cell on dry ground"
+  },
+  "in_NW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:in_NW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_NE": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:in_NE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_SW": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:in_SW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's inner corner"
+  },
+  "in_SE": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:in_SE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's inner corner"
+  },
+  "out_NW": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:out_NW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_NE": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:out_NE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_SW": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:out_SW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "out_SE": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:out_SE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the scrub wall's outer corner (baked border cell)"
+  },
+  "clay_N": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground N"
+  },
+  "clay_S": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground S"
+  },
+  "clay_W": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground W"
+  },
+  "clay_E": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground E"
+  },
+  "clay_inNW": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground inNW"
+  },
+  "clay_inNE": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground inNE"
+  },
+  "clay_inSW": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground inSW"
+  },
+  "clay_inSE": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground inSE"
+  },
+  "clay_landSE": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground landSE"
+  },
+  "clay_landSW": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground landSW"
+  },
+  "clay_landNE": {
+   "x": 14,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground landNE"
+  },
+  "clay_landNW": {
+   "x": 15,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground landNW"
+  },
+  "clay_sTLBR": {
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground sTLBR"
+  },
+  "clay_sTRBL": {
+   "x": 1,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay on dry ground sTRBL"
+  },
+  "clay_C": {
+   "x": 2,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay"
+  },
+  "clay_C1": {
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_C1"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay"
+  },
+  "clay_C2": {
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:clay_C2"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "tilled red clay"
+  },
+  "corn_a": {
+   "x": 5,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:corn_a"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 ripe corn on the clay ridges, blocking"
+  },
+  "corn_b": {
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:corn_b"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 ripe corn (variant), blocking"
+  },
+  "pumpkins": {
+   "x": 7,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:pumpkins"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "1x1 pumpkins on their vines (walkable)"
+  },
+  "cane": {
+   "x": 8,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:cane"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 the dry country's sugar cane (copied), blocking"
+  },
+  "thresh_C": {
+   "x": 9,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (C)"
+  },
+  "thresh_N": {
+   "x": 10,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (N)"
+  },
+  "thresh_S": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (S)"
+  },
+  "thresh_W": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (W)"
+  },
+  "thresh_E": {
+   "x": 13,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (E)"
+  },
+  "thresh_inNW": {
+   "x": 14,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (inNW)"
+  },
+  "thresh_inNE": {
+   "x": 15,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (inNE)"
+  },
+  "thresh_inSW": {
+   "x": 0,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (inSW)"
+  },
+  "thresh_inSE": {
+   "x": 1,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (inSE)"
+  },
+  "thresh_landSE": {
+   "x": 2,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (landSE)"
+  },
+  "thresh_landSW": {
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (landSW)"
+  },
+  "thresh_landNE": {
+   "x": 4,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (landNE)"
+  },
+  "thresh_landNW": {
+   "x": 5,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (landNW)"
+  },
+  "thresh_sTLBR": {
+   "x": 6,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (sTLBR)"
+  },
+  "thresh_sTRBL": {
+   "x": 7,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:thresh_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "landorus",
+   "comment": "the stone threshing floor (sTRBL)"
+  },
+  "terrace_a": {
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:terrace_a"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 a dry-stone terrace wall, blocking"
+  },
+  "terrace_b": {
+   "x": 9,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:terrace_b"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 a dry-stone terrace wall (variant), blocking"
+  },
+  "plough": {
+   "x": 10,
+   "y": 3,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lh:plough_0_0",
+     "lh:plough_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "2x1 an old wooden plough in the furrow, blocking"
+  },
+  "scarecrow": {
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lh:scarecrow_0_0"
+    ],
+    [
+     "lh:scarecrow_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x2 a scarecrow in a straw hat, blocking"
+  },
+  "basket": {
+   "x": 13,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:basket"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 the first fruits on the threshing floor, blocking"
+  },
+  "jar": {
+   "x": 14,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lh:jar"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "1x1 a clay water jar, blocking"
+  },
+  "field_tree": {
+   "x": 0,
+   "y": 5,
+   "w": 2,
+   "h": 3,
+   "rows": [
+    [
+     "lh:field_tree_0_0",
+     "lh:field_tree_1_0"
+    ],
+    [
+     "lh:field_tree_0_1",
+     "lh:field_tree_1_1"
+    ],
+    [
+     "lh:field_tree_0_2",
+     "lh:field_tree_1_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "landorus",
+   "comment": "the dry country's shade tree (copied), blocking"
+  }
+ }
+}

@@ -1,0 +1,1549 @@
+{
+ "_comment": "The woods lairs (Zarude, Ogerpon, Tornadus): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lj:<id>' in gTileset_OrleansLairWoods), walkable cells (the rest block), the lair it belongs to. Made by make_lair_woods.py (legendary lairs batch 2).",
+ "png": "lair_woods.png",
+ "tileset": "gTileset_OrleansLairWoods",
+ "families": {
+  "FOREST": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    120,
+    168,
+    128
+   ],
+   [
+    144,
+    184,
+    152
+   ],
+   [
+    40,
+    56,
+    40
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    80,
+    112,
+    104
+   ],
+   [
+    104,
+    152,
+    120
+   ],
+   [
+    56,
+    40,
+    32
+   ],
+   [
+    96,
+    72,
+    56
+   ],
+   [
+    136,
+    104,
+    80
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "SLOUGH": [
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    120,
+    168,
+    128
+   ],
+   [
+    56,
+    40,
+    32
+   ],
+   [
+    96,
+    72,
+    56
+   ],
+   [
+    136,
+    104,
+    80
+   ],
+   [
+    176,
+    144,
+    112
+   ],
+   [
+    152,
+    168,
+    144
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    96,
+    48,
+    112
+   ],
+   [
+    168,
+    72,
+    104
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "MASK": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    200,
+    184
+   ],
+   [
+    48,
+    152,
+    144
+   ],
+   [
+    24,
+    96,
+    96
+   ],
+   [
+    232,
+    216,
+    96
+   ],
+   [
+    168,
+    160,
+    56
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    184,
+    152,
+    104
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    64,
+    96,
+    64
+   ]
+  ],
+  "RIBBON": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    48,
+    80,
+    176
+   ],
+   [
+    232,
+    88,
+    56
+   ],
+   [
+    168,
+    40,
+    40
+   ],
+   [
+    176,
+    168,
+    152
+   ],
+   [
+    112,
+    104,
+    96
+   ],
+   [
+    136,
+    72,
+    168
+   ],
+   [
+    232,
+    216,
+    96
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "OAK": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    128,
+    80
+   ],
+   [
+    72,
+    104,
+    64
+   ],
+   [
+    56,
+    80,
+    56
+   ],
+   [
+    168,
+    200,
+    136
+   ],
+   [
+    112,
+    152,
+    80
+   ],
+   [
+    160,
+    120,
+    80
+   ],
+   [
+    120,
+    88,
+    64
+   ],
+   [
+    80,
+    64,
+    48
+   ],
+   [
+    48,
+    40,
+    32
+   ],
+   [
+    152,
+    168,
+    144
+   ]
+  ],
+  "SHELL": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    240,
+    232,
+    216
+   ],
+   [
+    216,
+    208,
+    184
+   ],
+   [
+    176,
+    168,
+    144
+   ],
+   [
+    216,
+    192,
+    120
+   ],
+   [
+    176,
+    152,
+    88
+   ],
+   [
+    112,
+    120,
+    128
+   ],
+   [
+    64,
+    72,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    248,
+    248,
+    232
+   ]
+  ],
+  "BENCH": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    184,
+    152,
+    104
+   ],
+   [
+    88,
+    200,
+    184
+   ],
+   [
+    48,
+    152,
+    144
+   ],
+   [
+    232,
+    88,
+    56
+   ],
+   [
+    88,
+    136,
+    232
+   ],
+   [
+    112,
+    120,
+    128
+   ],
+   [
+    64,
+    72,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    232,
+    216,
+    96
+   ]
+  ]
+ },
+ "pieces": {
+  "great_cypress": {
+   "x": 0,
+   "y": 0,
+   "w": 4,
+   "h": 4,
+   "rows": [
+    [
+     "lj:great_cypress_0_0",
+     "lj:great_cypress_1_0",
+     "lj:great_cypress_2_0",
+     "lj:great_cypress_3_0"
+    ],
+    [
+     "lj:great_cypress_0_1",
+     "lj:great_cypress_1_1",
+     "lj:great_cypress_2_1",
+     "lj:great_cypress_3_1"
+    ],
+    [
+     "lj:great_cypress_0_2",
+     "lj:great_cypress_1_2",
+     "lj:great_cypress_2_2",
+     "lj:great_cypress_3_2"
+    ],
+    [
+     "lj:great_cypress_0_3",
+     "lj:great_cypress_1_3",
+     "lj:great_cypress_2_3",
+     "lj:great_cypress_3_3"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "4x4 a giant old cypress, Zarude's bower in its hollow, blocking"
+  },
+  "lianas": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:lianas_0_0"
+    ],
+    [
+     "lj:lianas_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x2 a curtain of lianas, blocking"
+  },
+  "palmetto": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:palmetto"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x1 a dwarf palmetto, blocking"
+  },
+  "log_bridge_N": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:log_bridge_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 a fallen trunk across the slough (over water_N)"
+  },
+  "log_bridge_C": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:log_bridge_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 a fallen trunk across the slough (over water_C)"
+  },
+  "log_bridge_S": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:log_bridge_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "zarude",
+   "comment": "1x1 a fallen trunk across the slough (over water_S)"
+  },
+  "mossy_log": {
+   "x": 9,
+   "y": 0,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lj:mossy_log_0_0",
+     "lj:mossy_log_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "2x1 a mossy fallen log, blocking"
+  },
+  "larder": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:larder"
+    ]
+   ],
+   "walk": [],
+   "lair": "zarude",
+   "comment": "1x1 wild fruit heaped on leaves, blocking"
+  },
+  "dance_C": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (C)"
+  },
+  "dance_N": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (N)"
+  },
+  "dance_S": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (S)"
+  },
+  "dance_W": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (W)"
+  },
+  "dance_E": {
+   "x": 0,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (E)"
+  },
+  "dance_inNW": {
+   "x": 1,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (inNW)"
+  },
+  "dance_inNE": {
+   "x": 2,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (inNE)"
+  },
+  "dance_inSW": {
+   "x": 3,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (inSW)"
+  },
+  "dance_inSE": {
+   "x": 4,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (inSE)"
+  },
+  "dance_landSE": {
+   "x": 5,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (landSE)"
+  },
+  "dance_landSW": {
+   "x": 6,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (landSW)"
+  },
+  "dance_landNE": {
+   "x": 7,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (landNE)"
+  },
+  "dance_landNW": {
+   "x": 8,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (landNW)"
+  },
+  "dance_sTLBR": {
+   "x": 9,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (sTLBR)"
+  },
+  "dance_sTRBL": {
+   "x": 10,
+   "y": 4,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:dance_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "ogerpon",
+   "comment": "the trampled dance ring (sTRBL)"
+  },
+  "mask_teal": {
+   "x": 11,
+   "y": 4,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:mask_teal_0_0"
+    ],
+    [
+     "lj:mask_teal_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x2 the teal mask stake, blocking"
+  },
+  "stake_blue": {
+   "x": 12,
+   "y": 4,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:stake_blue_0_0"
+    ],
+    [
+     "lj:stake_blue_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x2 the blue mask stake, blocking"
+  },
+  "stake_red": {
+   "x": 13,
+   "y": 4,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:stake_red_0_0"
+    ],
+    [
+     "lj:stake_red_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x2 the red mask stake, blocking"
+  },
+  "stake_grey": {
+   "x": 14,
+   "y": 4,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:stake_grey_0_0"
+    ],
+    [
+     "lj:stake_grey_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x2 the grey mask stake, blocking"
+  },
+  "workbench": {
+   "x": 0,
+   "y": 6,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lj:workbench_0_0",
+     "lj:workbench_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "2x1 the mask-maker's bench, blocking"
+  },
+  "costumes": {
+   "x": 2,
+   "y": 6,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lj:costumes_0_0",
+     "lj:costumes_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "2x1 Courir costumes drying on a line, blocking"
+  },
+  "gumbo_pot": {
+   "x": 4,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:gumbo_pot"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x1 a gumbo pot on a tripod, blocking"
+  },
+  "courir_flag": {
+   "x": 5,
+   "y": 6,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:courir_flag_0_0"
+    ],
+    [
+     "lj:courir_flag_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "ogerpon",
+   "comment": "1x2 the Courir's flag on its pole, blocking"
+  },
+  "wind_oak": {
+   "x": 6,
+   "y": 6,
+   "w": 3,
+   "h": 3,
+   "rows": [
+    [
+     "lj:wind_oak_0_0",
+     "lj:wind_oak_1_0",
+     "lj:wind_oak_2_0"
+    ],
+    [
+     "lj:wind_oak_0_1",
+     "lj:wind_oak_1_1",
+     "lj:wind_oak_2_1"
+    ],
+    [
+     "lj:wind_oak_0_2",
+     "lj:wind_oak_1_2",
+     "lj:wind_oak_2_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "tornadus",
+   "comment": "3x3 a wind-swept chenier live oak, blocking"
+  },
+  "shell_C": {
+   "x": 9,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (C)"
+  },
+  "shell_N": {
+   "x": 10,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (N)"
+  },
+  "shell_S": {
+   "x": 11,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (S)"
+  },
+  "shell_W": {
+   "x": 12,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (W)"
+  },
+  "shell_E": {
+   "x": 13,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (E)"
+  },
+  "shell_inNW": {
+   "x": 14,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (inNW)"
+  },
+  "shell_inNE": {
+   "x": 15,
+   "y": 6,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (inNE)"
+  },
+  "shell_inSW": {
+   "x": 0,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (inSW)"
+  },
+  "shell_inSE": {
+   "x": 1,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (inSE)"
+  },
+  "shell_landSE": {
+   "x": 2,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (landSE)"
+  },
+  "shell_landSW": {
+   "x": 3,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (landSW)"
+  },
+  "shell_landNE": {
+   "x": 4,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (landNE)"
+  },
+  "shell_landNW": {
+   "x": 5,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (landNW)"
+  },
+  "shell_sTLBR": {
+   "x": 6,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (sTLBR)"
+  },
+  "shell_sTRBL": {
+   "x": 7,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:shell_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "the chenier's shell ridge (sTRBL)"
+  },
+  "comb_h": {
+   "x": 8,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:comb_h"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "1x1 grass combed flat by the wind (h)"
+  },
+  "comb_v": {
+   "x": 9,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:comb_v"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "1x1 grass combed flat by the wind (v)"
+  },
+  "comb_a": {
+   "x": 10,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:comb_a"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "1x1 grass combed flat by the wind (a)"
+  },
+  "comb_b": {
+   "x": 11,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:comb_b"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "1x1 grass combed flat by the wind (b)"
+  },
+  "weathervane": {
+   "x": 12,
+   "y": 9,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:weathervane_0_0"
+    ],
+    [
+     "lj:weathervane_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "tornadus",
+   "comment": "1x2 an iron weathervane, blocking"
+  },
+  "chimes": {
+   "x": 13,
+   "y": 9,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lj:chimes_0_0"
+    ],
+    [
+     "lj:chimes_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "tornadus",
+   "comment": "1x2 shell chimes on a driftwood post, blocking"
+  },
+  "sea_oats": {
+   "x": 14,
+   "y": 9,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lj:sea_oats"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "tornadus",
+   "comment": "1x1 sea oats bent by the wind (walkable)"
+  }
+ }
+}

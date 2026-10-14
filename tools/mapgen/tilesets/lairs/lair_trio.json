@@ -1,0 +1,1602 @@
+{
+ "_comment": "The lake trio's spirit pools (Uxie, Mesprit, Azelf): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lt:<id>' in gTileset_OrleansLairTrio), walkable cells (the rest block), the lair it belongs to. Made by make_lair_trio.py (legendary lairs batch 2).",
+ "png": "lair_trio.png",
+ "tileset": "gTileset_OrleansLairTrio",
+ "families": {
+  "POOL": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    40,
+    72,
+    80
+   ],
+   [
+    56,
+    96,
+    104
+   ],
+   [
+    80,
+    128,
+    128
+   ],
+   [
+    152,
+    200,
+    192
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    80,
+    112,
+    64
+   ],
+   [
+    176,
+    192,
+    184
+   ],
+   [
+    216,
+    224,
+    216
+   ]
+  ],
+  "FLOWERS": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    152,
+    120,
+    216
+   ],
+   [
+    104,
+    72,
+    168
+   ],
+   [
+    216,
+    88,
+    56
+   ],
+   [
+    152,
+    48,
+    40
+   ],
+   [
+    232,
+    200,
+    96
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    232,
+    160,
+    176
+   ],
+   [
+    184,
+    104,
+    128
+   ]
+  ],
+  "LOTUS": [
+   [
+    40,
+    72,
+    80
+   ],
+   [
+    56,
+    96,
+    104
+   ],
+   [
+    80,
+    128,
+    128
+   ],
+   [
+    152,
+    200,
+    192
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    72,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ],
+   [
+    232,
+    200,
+    96
+   ],
+   [
+    248,
+    232,
+    160
+   ],
+   [
+    232,
+    160,
+    176
+   ],
+   [
+    184,
+    104,
+    128
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ]
+  ],
+  "SPIRIT": [
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    248,
+    224,
+    96
+   ],
+   [
+    200,
+    160,
+    40
+   ],
+   [
+    248,
+    168,
+    200
+   ],
+   [
+    208,
+    96,
+    144
+   ],
+   [
+    128,
+    184,
+    248
+   ],
+   [
+    64,
+    104,
+    208
+   ],
+   [
+    136,
+    176,
+    128
+   ]
+  ],
+  "WOOD": [
+   [
+    72,
+    56,
+    40
+   ],
+   [
+    112,
+    88,
+    56
+   ],
+   [
+    152,
+    120,
+    80
+   ],
+   [
+    184,
+    152,
+    88
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    40,
+    72,
+    80
+   ],
+   [
+    56,
+    96,
+    104
+   ],
+   [
+    80,
+    128,
+    128
+   ],
+   [
+    96,
+    136,
+    136
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ]
+  ],
+  "CEDAR": [
+   [
+    96,
+    56,
+    40
+   ],
+   [
+    136,
+    80,
+    56
+   ],
+   [
+    176,
+    112,
+    72
+   ],
+   [
+    216,
+    168,
+    72
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    152,
+    152
+   ],
+   [
+    224,
+    120,
+    48
+   ],
+   [
+    232,
+    160,
+    176
+   ],
+   [
+    248,
+    248,
+    232
+   ],
+   [
+    232,
+    200,
+    96
+   ],
+   [
+    152,
+    120,
+    216
+   ]
+  ],
+  "DRY": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    240,
+    224,
+    184
+   ],
+   [
+    224,
+    200,
+    144
+   ],
+   [
+    200,
+    168,
+    112
+   ],
+   [
+    160,
+    128,
+    88
+   ],
+   [
+    120,
+    88,
+    56
+   ],
+   [
+    128,
+    128,
+    112
+   ],
+   [
+    168,
+    168,
+    144
+   ],
+   [
+    208,
+    208,
+    184
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    64,
+    112,
+    56
+   ],
+   [
+    104,
+    144,
+    72
+   ]
+  ]
+ },
+ "pieces": {
+  "spring_C": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_C"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (C)"
+  },
+  "spring_N": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_N"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (N)"
+  },
+  "spring_S": {
+   "x": 2,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_S"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (S)"
+  },
+  "spring_W": {
+   "x": 3,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_W"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (W)"
+  },
+  "spring_E": {
+   "x": 4,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_E"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (E)"
+  },
+  "spring_inNW": {
+   "x": 5,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_inNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (inNW)"
+  },
+  "spring_inNE": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_inNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (inNE)"
+  },
+  "spring_inSW": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_inSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (inSW)"
+  },
+  "spring_inSE": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_inSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (inSE)"
+  },
+  "spring_landSE": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_landSE"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (landSE)"
+  },
+  "spring_landSW": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_landSW"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (landSW)"
+  },
+  "spring_landNE": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_landNE"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (landNE)"
+  },
+  "spring_landNW": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_landNW"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (landNW)"
+  },
+  "spring_sTLBR": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_sTLBR"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (sTLBR)"
+  },
+  "spring_sTRBL": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_sTRBL"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "a spring pool in a kerb of Rootkin cut stone (blocking) (sTRBL)"
+  },
+  "spring_C2": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:spring_C2"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit azelf",
+   "comment": "open spring water (variant)"
+  },
+  "spirit_uxie": {
+   "x": 0,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lt:spirit_uxie_0_0"
+    ],
+    [
+     "lt:spirit_uxie_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "1x2 uxie's standing stone, its spiral glowing, blocking"
+  },
+  "spirit_mesprit": {
+   "x": 1,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lt:spirit_mesprit_0_0"
+    ],
+    [
+     "lt:spirit_mesprit_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "mesprit",
+   "comment": "1x2 mesprit's standing stone, its spiral glowing, blocking"
+  },
+  "spirit_azelf": {
+   "x": 2,
+   "y": 1,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lt:spirit_azelf_0_0"
+    ],
+    [
+     "lt:spirit_azelf_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x2 azelf's standing stone, its spiral glowing, blocking"
+  },
+  "step_pool": {
+   "x": 3,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:step_pool"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "mesprit azelf",
+   "comment": "1x1 stepping stones across the pool (walkable)"
+  },
+  "step_spring_S": {
+   "x": 4,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:step_spring_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "mesprit",
+   "comment": "1x1 the stepping stones' first stone on the kerb (south)"
+  },
+  "fog_pool0": {
+   "x": 5,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:fog_pool0"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "1x1 mist on the pool"
+  },
+  "fog_pool1": {
+   "x": 6,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:fog_pool1"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "1x1 mist on the pool"
+  },
+  "lotus_y": {
+   "x": 7,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:lotus_y"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit",
+   "comment": "1x1 yellow American lotus on the pool, blocking"
+  },
+  "lotus_p": {
+   "x": 8,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:lotus_p"
+    ]
+   ],
+   "walk": [],
+   "lair": "mesprit",
+   "comment": "1x1 a pink lotus (Mesprit's), blocking"
+  },
+  "lotus_pads": {
+   "x": 9,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:lotus_pads"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie mesprit",
+   "comment": "1x1 lotus pads, blocking"
+  },
+  "walk_grass": {
+   "x": 10,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_grass"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the rope-and-plank walk over grass"
+  },
+  "walk_water": {
+   "x": 11,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_water"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the rope-and-plank walk over water"
+  },
+  "walk_end": {
+   "x": 12,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_end"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the rope-and-plank walk over end"
+  },
+  "walk_spring_C": {
+   "x": 13,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_spring_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the walk across the pool (over spring_C)"
+  },
+  "walk_spring_N": {
+   "x": 14,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_spring_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the walk across the pool (over spring_N)"
+  },
+  "walk_spring_S": {
+   "x": 15,
+   "y": 1,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:walk_spring_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie",
+   "comment": "1x1 the walk across the pool (over spring_S)"
+  },
+  "pirogue": {
+   "x": 0,
+   "y": 3,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lt:pirogue_0_0",
+     "lt:pirogue_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "2x1 a pirogue moored at the walk's end, blocking"
+  },
+  "story_post": {
+   "x": 2,
+   "y": 3,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lt:story_post_0_0"
+    ],
+    [
+     "lt:story_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "1x2 a memory post (carved glyph rings, knotted cords), blocking"
+  },
+  "cords": {
+   "x": 3,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:cords"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "1x1 memory cords strung between posts, blocking"
+  },
+  "telling_stone": {
+   "x": 4,
+   "y": 3,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lt:telling_stone_0_0",
+     "lt:telling_stone_1_0"
+    ],
+    [
+     "lt:telling_stone_0_1",
+     "lt:telling_stone_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "2x2 the telling stone, Uxie's spiral, blocking"
+  },
+  "reading_stone": {
+   "x": 6,
+   "y": 3,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lt:reading_stone_0_0",
+     "lt:reading_stone_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "uxie",
+   "comment": "2x1 a long stone seat, blocking"
+  },
+  "iris_violet": {
+   "x": 8,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:iris_violet"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "mesprit",
+   "comment": "1x1 Louisiana irises (violet), walkable"
+  },
+  "iris_red": {
+   "x": 9,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:iris_red"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "mesprit",
+   "comment": "1x1 Louisiana irises (red), walkable"
+  },
+  "iris_yellow": {
+   "x": 10,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:iris_yellow"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "mesprit",
+   "comment": "1x1 Louisiana irises (yellow), walkable"
+  },
+  "garland_post": {
+   "x": 11,
+   "y": 3,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lt:garland_post_0_0"
+    ],
+    [
+     "lt:garland_post_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "mesprit",
+   "comment": "1x2 a cedar post wound with garlands and ribbons, blocking"
+  },
+  "dry_C": {
+   "x": 12,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (C)"
+  },
+  "dry_N": {
+   "x": 13,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (N)"
+  },
+  "dry_S": {
+   "x": 14,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (S)"
+  },
+  "dry_W": {
+   "x": 15,
+   "y": 3,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (W)"
+  },
+  "dry_E": {
+   "x": 0,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (E)"
+  },
+  "dry_inNW": {
+   "x": 1,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (inNW)"
+  },
+  "dry_inNE": {
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (inNE)"
+  },
+  "dry_inSW": {
+   "x": 3,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (inSW)"
+  },
+  "dry_inSE": {
+   "x": 4,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (inSE)"
+  },
+  "dry_landSE": {
+   "x": 5,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (landSE)"
+  },
+  "dry_landSW": {
+   "x": 6,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (landSW)"
+  },
+  "dry_landNE": {
+   "x": 7,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (landNE)"
+  },
+  "dry_landNW": {
+   "x": 8,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (landNW)"
+  },
+  "dry_sTLBR": {
+   "x": 9,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (sTLBR)"
+  },
+  "dry_sTRBL": {
+   "x": 10,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:dry_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "cracked dry earth on the grass (sTRBL)"
+  },
+  "boil": {
+   "x": 11,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:boil"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 the spring's eye welling up, blocking"
+  },
+  "cairn": {
+   "x": 12,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:cairn"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 a cairn on the grass, blocking"
+  },
+  "cairn_dry": {
+   "x": 13,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:cairn_dry"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "1x1 a cairn on the dry earth, blocking"
+  },
+  "split_rock": {
+   "x": 14,
+   "y": 5,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lt:split_rock_0_0",
+     "lt:split_rock_1_0"
+    ],
+    [
+     "lt:split_rock_0_1",
+     "lt:split_rock_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "azelf",
+   "comment": "2x2 a boulder split by a sapling, blocking"
+  },
+  "fern": {
+   "x": 0,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:fern"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "uxie mesprit azelf",
+   "comment": "1x1 ferns (walkable)"
+  },
+  "tuft_dry": {
+   "x": 1,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:tuft_dry"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf",
+   "comment": "1x1 wiry grass on the cracked earth (walkable)"
+  },
+  "pebbles": {
+   "x": 2,
+   "y": 7,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lt:pebbles"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "azelf uxie",
+   "comment": "1x1 pebbles in the grass (walkable)"
+  }
+ }
+}

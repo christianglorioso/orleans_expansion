@@ -1,0 +1,515 @@
+{
+ "_comment": "The Field That Always Bears (Landorus) (own art, tools/mapgen/tilesets/lairs, batch 2). Budget check without touching data/: lair_mocks_b2.py composes it in a staging tree. To register (after the user approves batch 2): copy into tilesets/recipes/, set primary_mapping to 'orleans_general.mapping.json', compose --register.",
+ "kind": "secondary",
+ "dir": "orleans_lair_field",
+ "symbol": "gTileset_OrleansLairField",
+ "primary_mapping": "../orleans_general.mapping.json",
+ "palette": "v2",
+ "sources": [
+  {
+   "name": "lh",
+   "type": "image",
+   "image": "tools/mapgen/tilesets/lairs/lair_field.png",
+   "transparent": [
+    [
+     255,
+     0,
+     255
+    ]
+   ],
+   "group_rule": "fewest",
+   "metatiles": [
+    {
+     "id": "block_00",
+     "bottom": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "block_10",
+     "bottom": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "block_01",
+     "bottom": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "block_11",
+     "bottom": [
+      3,
+      0
+     ]
+    },
+    {
+     "id": "S0",
+     "bottom": [
+      4,
+      0
+     ]
+    },
+    {
+     "id": "S1",
+     "bottom": [
+      5,
+      0
+     ]
+    },
+    {
+     "id": "N0",
+     "bottom": [
+      6,
+      0
+     ]
+    },
+    {
+     "id": "N1",
+     "bottom": [
+      7,
+      0
+     ]
+    },
+    {
+     "id": "E0",
+     "bottom": [
+      8,
+      0
+     ]
+    },
+    {
+     "id": "E1",
+     "bottom": [
+      9,
+      0
+     ]
+    },
+    {
+     "id": "W0",
+     "bottom": [
+      10,
+      0
+     ]
+    },
+    {
+     "id": "W1",
+     "bottom": [
+      11,
+      0
+     ]
+    },
+    {
+     "id": "in_NW",
+     "bottom": [
+      12,
+      0
+     ]
+    },
+    {
+     "id": "in_NE",
+     "bottom": [
+      13,
+      0
+     ]
+    },
+    {
+     "id": "in_SW",
+     "bottom": [
+      14,
+      0
+     ]
+    },
+    {
+     "id": "in_SE",
+     "bottom": [
+      15,
+      0
+     ]
+    },
+    {
+     "id": "out_NW",
+     "bottom": [
+      0,
+      1
+     ]
+    },
+    {
+     "id": "out_NE",
+     "bottom": [
+      1,
+      1
+     ]
+    },
+    {
+     "id": "out_SW",
+     "bottom": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "out_SE",
+     "bottom": [
+      3,
+      1
+     ]
+    },
+    {
+     "id": "clay_N",
+     "bottom": [
+      4,
+      1
+     ]
+    },
+    {
+     "id": "clay_S",
+     "bottom": [
+      5,
+      1
+     ]
+    },
+    {
+     "id": "clay_W",
+     "bottom": [
+      6,
+      1
+     ]
+    },
+    {
+     "id": "clay_E",
+     "bottom": [
+      7,
+      1
+     ]
+    },
+    {
+     "id": "clay_inNW",
+     "bottom": [
+      8,
+      1
+     ]
+    },
+    {
+     "id": "clay_inNE",
+     "bottom": [
+      9,
+      1
+     ]
+    },
+    {
+     "id": "clay_inSW",
+     "bottom": [
+      10,
+      1
+     ]
+    },
+    {
+     "id": "clay_inSE",
+     "bottom": [
+      11,
+      1
+     ]
+    },
+    {
+     "id": "clay_landSE",
+     "bottom": [
+      12,
+      1
+     ]
+    },
+    {
+     "id": "clay_landSW",
+     "bottom": [
+      13,
+      1
+     ]
+    },
+    {
+     "id": "clay_landNE",
+     "bottom": [
+      14,
+      1
+     ]
+    },
+    {
+     "id": "clay_landNW",
+     "bottom": [
+      15,
+      1
+     ]
+    },
+    {
+     "id": "clay_sTLBR",
+     "bottom": [
+      0,
+      2
+     ]
+    },
+    {
+     "id": "clay_sTRBL",
+     "bottom": [
+      1,
+      2
+     ]
+    },
+    {
+     "id": "clay_C",
+     "bottom": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "clay_C1",
+     "bottom": [
+      3,
+      2
+     ]
+    },
+    {
+     "id": "clay_C2",
+     "bottom": [
+      4,
+      2
+     ]
+    },
+    {
+     "id": "corn_a",
+     "bottom": [
+      5,
+      2
+     ]
+    },
+    {
+     "id": "corn_b",
+     "bottom": [
+      6,
+      2
+     ]
+    },
+    {
+     "id": "pumpkins",
+     "bottom": [
+      7,
+      2
+     ]
+    },
+    {
+     "id": "cane",
+     "bottom": [
+      8,
+      2
+     ]
+    },
+    {
+     "id": "thresh_C",
+     "bottom": [
+      9,
+      2
+     ]
+    },
+    {
+     "id": "thresh_N",
+     "bottom": [
+      10,
+      2
+     ]
+    },
+    {
+     "id": "thresh_S",
+     "bottom": [
+      11,
+      2
+     ]
+    },
+    {
+     "id": "thresh_W",
+     "bottom": [
+      12,
+      2
+     ]
+    },
+    {
+     "id": "thresh_E",
+     "bottom": [
+      13,
+      2
+     ]
+    },
+    {
+     "id": "thresh_inNW",
+     "bottom": [
+      14,
+      2
+     ]
+    },
+    {
+     "id": "thresh_inNE",
+     "bottom": [
+      15,
+      2
+     ]
+    },
+    {
+     "id": "thresh_inSW",
+     "bottom": [
+      0,
+      3
+     ]
+    },
+    {
+     "id": "thresh_inSE",
+     "bottom": [
+      1,
+      3
+     ]
+    },
+    {
+     "id": "thresh_landSE",
+     "bottom": [
+      2,
+      3
+     ]
+    },
+    {
+     "id": "thresh_landSW",
+     "bottom": [
+      3,
+      3
+     ]
+    },
+    {
+     "id": "thresh_landNE",
+     "bottom": [
+      4,
+      3
+     ]
+    },
+    {
+     "id": "thresh_landNW",
+     "bottom": [
+      5,
+      3
+     ]
+    },
+    {
+     "id": "thresh_sTLBR",
+     "bottom": [
+      6,
+      3
+     ]
+    },
+    {
+     "id": "thresh_sTRBL",
+     "bottom": [
+      7,
+      3
+     ]
+    },
+    {
+     "id": "terrace_a",
+     "bottom": [
+      8,
+      3
+     ]
+    },
+    {
+     "id": "terrace_b",
+     "bottom": [
+      9,
+      3
+     ]
+    },
+    {
+     "id": "plough_0_0",
+     "bottom": [
+      10,
+      3
+     ]
+    },
+    {
+     "id": "plough_1_0",
+     "bottom": [
+      11,
+      3
+     ]
+    },
+    {
+     "id": "scarecrow_0_0",
+     "bottom": [
+      12,
+      3
+     ]
+    },
+    {
+     "id": "scarecrow_0_1",
+     "bottom": [
+      12,
+      4
+     ]
+    },
+    {
+     "id": "basket",
+     "bottom": [
+      13,
+      3
+     ]
+    },
+    {
+     "id": "jar",
+     "bottom": [
+      14,
+      3
+     ]
+    },
+    {
+     "id": "field_tree_0_0",
+     "bottom": [
+      0,
+      5
+     ]
+    },
+    {
+     "id": "field_tree_1_0",
+     "bottom": [
+      1,
+      5
+     ]
+    },
+    {
+     "id": "field_tree_0_1",
+     "bottom": [
+      0,
+      6
+     ]
+    },
+    {
+     "id": "field_tree_1_1",
+     "bottom": [
+      1,
+      6
+     ]
+    },
+    {
+     "id": "field_tree_0_2",
+     "bottom": [
+      0,
+      7
+     ]
+    },
+    {
+     "id": "field_tree_1_2",
+     "bottom": [
+      1,
+      7
+     ]
+    }
+   ]
+  }
+ ]
+}

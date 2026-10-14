@@ -1,0 +1,938 @@
+{
+ "_comment": "Spanish Fort (the Galarian birds): piece -> sheet cells (16 px, every cell opaque: props are baked over their ground), metatile names ('lf:<id>' in gTileset_OrleansLairFort), walkable cells (the rest block), the lair it belongs to. Made by make_lair_fort.py (legendary lairs batch 2).",
+ "png": "lair_fort.png",
+ "tileset": "gTileset_OrleansLairFort",
+ "families": {
+  "BRICK": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    200,
+    128,
+    88
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    128,
+    80,
+    72
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    48,
+    56,
+    80
+   ],
+   [
+    32,
+    32,
+    48
+   ],
+   [
+    152,
+    152,
+    120
+   ],
+   [
+    80,
+    112,
+    96
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ],
+  "GLOW": [
+   [
+    200,
+    128,
+    88
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    128,
+    80,
+    72
+   ],
+   [
+    88,
+    72,
+    80
+   ],
+   [
+    48,
+    56,
+    80
+   ],
+   [
+    32,
+    32,
+    48
+   ],
+   [
+    64,
+    96,
+    64
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    104,
+    56,
+    152
+   ],
+   [
+    168,
+    96,
+    216
+   ],
+   [
+    232,
+    184,
+    248
+   ],
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    152,
+    152,
+    120
+   ]
+  ],
+  "FLOOR": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    216,
+    208,
+    184
+   ],
+   [
+    184,
+    176,
+    152
+   ],
+   [
+    144,
+    136,
+    120
+   ],
+   [
+    176,
+    96,
+    80
+   ],
+   [
+    88,
+    120,
+    152
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    88,
+    72,
+    80
+   ]
+  ],
+  "BAND": [
+   [
+    216,
+    208,
+    184
+   ],
+   [
+    184,
+    176,
+    152
+   ],
+   [
+    144,
+    136,
+    120
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    200,
+    184
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    120,
+    176,
+    152
+   ],
+   [
+    80,
+    136,
+    120
+   ],
+   [
+    48,
+    88,
+    80
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    80,
+    112,
+    96
+   ],
+   [
+    104,
+    144,
+    96
+   ]
+  ],
+  "IRON": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    112,
+    120,
+    128
+   ],
+   [
+    64,
+    72,
+    80
+   ],
+   [
+    40,
+    40,
+    48
+   ],
+   [
+    248,
+    224,
+    128
+   ],
+   [
+    200,
+    160,
+    64
+   ],
+   [
+    176,
+    200,
+    200
+   ],
+   [
+    136,
+    104,
+    72
+   ],
+   [
+    88,
+    64,
+    48
+   ],
+   [
+    152,
+    152,
+    120
+   ],
+   [
+    144,
+    88,
+    80
+   ],
+   [
+    88,
+    72,
+    80
+   ]
+  ],
+  "CAROUSEL": [
+   [
+    120,
+    160,
+    104
+   ],
+   [
+    104,
+    144,
+    96
+   ],
+   [
+    136,
+    176,
+    128
+   ],
+   [
+    96,
+    128,
+    88
+   ],
+   [
+    240,
+    240,
+    224
+   ],
+   [
+    200,
+    200,
+    184
+   ],
+   [
+    152,
+    152,
+    136
+   ],
+   [
+    200,
+    56,
+    56
+   ],
+   [
+    136,
+    32,
+    40
+   ],
+   [
+    224,
+    184,
+    72
+   ],
+   [
+    168,
+    128,
+    48
+   ],
+   [
+    72,
+    104,
+    176
+   ],
+   [
+    40,
+    40,
+    48
+   ]
+  ]
+ },
+ "pieces": {
+  "rampart": {
+   "x": 0,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:rampart_0_0"
+    ],
+    [
+     "lf:rampart_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x2 the north rampart (grassed top, brick face), blocking"
+  },
+  "rampart_ivy": {
+   "x": 1,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:rampart_ivy_0_0"
+    ],
+    [
+     "lf:rampart_ivy_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x2 the rampart under ivy, blocking"
+  },
+  "casemate": {
+   "x": 2,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lf:casemate_0_0",
+     "lf:casemate_1_0"
+    ],
+    [
+     "lf:casemate_0_1",
+     "lf:casemate_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "2x2 an arched casemate, dark inside, blocking"
+  },
+  "casemate_glow": {
+   "x": 4,
+   "y": 0,
+   "w": 2,
+   "h": 2,
+   "rows": [
+    [
+     "lf:casemate_glow_0_0",
+     "lf:casemate_glow_1_0"
+    ],
+    [
+     "lf:casemate_glow_0_1",
+     "lf:casemate_glow_1_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "2x2 Moltres' casemate, violet embers in the dark, blocking"
+  },
+  "pier": {
+   "x": 6,
+   "y": 0,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:pier_0_0"
+    ],
+    [
+     "lf:pier_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x2 a ruined brick pier, blocking"
+  },
+  "rubble": {
+   "x": 7,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:rubble"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x1 fallen brick, blocking"
+  },
+  "floor_C": {
+   "x": 8,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_C"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (C)"
+  },
+  "floor_N": {
+   "x": 9,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_N"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (N)"
+  },
+  "floor_S": {
+   "x": 10,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_S"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (S)"
+  },
+  "floor_W": {
+   "x": 11,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_W"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (W)"
+  },
+  "floor_E": {
+   "x": 12,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_E"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (E)"
+  },
+  "floor_inNW": {
+   "x": 13,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_inNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (inNW)"
+  },
+  "floor_inNE": {
+   "x": 14,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_inNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (inNE)"
+  },
+  "floor_inSW": {
+   "x": 15,
+   "y": 0,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_inSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (inSW)"
+  },
+  "floor_inSE": {
+   "x": 0,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_inSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (inSE)"
+  },
+  "floor_landSE": {
+   "x": 1,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_landSE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (landSE)"
+  },
+  "floor_landSW": {
+   "x": 2,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_landSW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (landSW)"
+  },
+  "floor_landNE": {
+   "x": 3,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_landNE"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (landNE)"
+  },
+  "floor_landNW": {
+   "x": 4,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_landNW"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (landNW)"
+  },
+  "floor_sTLBR": {
+   "x": 5,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_sTLBR"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (sTLBR)"
+  },
+  "floor_sTRBL": {
+   "x": 6,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:floor_sTRBL"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "the old terrazzo dance floor (sTRBL)"
+  },
+  "bandstand": {
+   "x": 7,
+   "y": 2,
+   "w": 4,
+   "h": 3,
+   "rows": [
+    [
+     "lf:bandstand_0_0",
+     "lf:bandstand_1_0",
+     "lf:bandstand_2_0",
+     "lf:bandstand_3_0"
+    ],
+    [
+     "lf:bandstand_0_1",
+     "lf:bandstand_1_1",
+     "lf:bandstand_2_1",
+     "lf:bandstand_3_1"
+    ],
+    [
+     "lf:bandstand_0_2",
+     "lf:bandstand_1_2",
+     "lf:bandstand_2_2",
+     "lf:bandstand_3_2"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "4x3 the bandstand, blocking"
+  },
+  "lamp": {
+   "x": 11,
+   "y": 2,
+   "w": 1,
+   "h": 2,
+   "rows": [
+    [
+     "lf:lamp_0_0"
+    ],
+    [
+     "lf:lamp_0_1"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x2 a cast-iron lamp post, its globe broken, blocking"
+  },
+  "festoon": {
+   "x": 12,
+   "y": 2,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:festoon"
+    ]
+   ],
+   "walk": [
+    [
+     0,
+     0
+    ]
+   ],
+   "lair": "galar",
+   "comment": "1x1 a string of dead bulbs overhead (walkable)"
+  },
+  "carousel_horse": {
+   "x": 13,
+   "y": 2,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lf:carousel_horse_0_0",
+     "lf:carousel_horse_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "2x1 a fallen carousel horse, blocking"
+  },
+  "cannon": {
+   "x": 0,
+   "y": 5,
+   "w": 2,
+   "h": 1,
+   "rows": [
+    [
+     "lf:cannon_0_0",
+     "lf:cannon_1_0"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "2x1 an old iron cannon, blocking"
+  },
+  "shot": {
+   "x": 2,
+   "y": 5,
+   "w": 1,
+   "h": 1,
+   "rows": [
+    [
+     "lf:shot"
+    ]
+   ],
+   "walk": [],
+   "lair": "galar",
+   "comment": "1x1 a pyramid of shot, blocking"
+  }
+ }
+}
